@@ -1,4 +1,4 @@
-"""Single-model document UI. Only an explicit Parse click calls the model."""
+"""Document parsing and grounded chat. Model calls require explicit submission."""
 from __future__ import annotations
 
 import base64
@@ -8,6 +8,7 @@ from pathlib import Path
 import streamlit as st
 
 from src import usage
+from src import chat
 from src.models import DEFAULT_MODEL
 from src.graph import run_graph
 from src.markdown import parse_to_html
@@ -26,6 +27,13 @@ if st.session_state.get("usage_model_version") != DEFAULT_MODEL:
     st.session_state.pop("last_parse_result", None)
 
 _usage_display = st.empty()
+
+
+def clear_chat():
+    st.session_state["document_chat"] = []
+
+
+st.session_state.setdefault("document_chat", [])
 
 
 @st.cache_data(max_entries=8, show_spinner=False)
@@ -61,11 +69,15 @@ with st.sidebar:
         "Upload a document", type=["png", "jpg", "jpeg", "webp", "tif", "tiff", "pdf"], key="uploader"
     )
     if uploaded is None:
+        clear_chat()
+        st.session_state.pop("last_parse_result", None)
+        st.session_state.pop("upload_id", None)
         st.stop()
     raw = uploaded.getvalue()
     upload_id = hashlib.sha256(raw).hexdigest() + Path(uploaded.name).suffix.lower()
     dest = INBOX_DIR / upload_id
     if st.session_state.get("upload_id") != upload_id:
+        clear_chat()
         st.session_state["upload_id"] = upload_id
         st.session_state.pop("last_parse_result", None)
         st.session_state["upload_error"] = None
@@ -91,10 +103,16 @@ with st.sidebar:
 
 st.caption(f"Document: {uploaded.name}")
 valid_range = 1 <= start_page <= end_page <= total
+scope = (upload_id, int(start_page), end_page)
+if st.session_state.get("document_scope") != scope:
+    clear_chat()
+    st.session_state.pop("last_parse_result", None)
+    st.session_state["document_scope"] = scope
 if not valid_range:
     st.error(f"Page range must be within 1..{total}, with start no greater than end.")
 
 if st.button("Parse", disabled=not valid_range):
+    clear_chat()
     progress = st.progress(0, text="Preparing pages...")
 
     def update_progress(event):
@@ -134,8 +152,8 @@ else:
 
 doc_sha = result.get("doc_sha", "document") if result else "document"
 run_id = result.get("run_id", doc_sha) if result else upload_id
-tab_input, tab_md, tab_pdf, tab_html, tab_json = st.tabs(
-    ["Input preview", "Markdown", "Annotated", "HTML", "JSON"],
+tab_input, tab_md, tab_pdf, tab_html, tab_json, tab_chat = st.tabs(
+    ["Input preview", "Markdown", "Annotated", "HTML", "JSON", "Chat"],
     key="preview_tab", on_change="rerun",
 )
 
@@ -200,3 +218,34 @@ if tab_json.open:
             st.json(current_parse.model_dump())
         else:
             st.info("Parse the document to create grounded layout JSON.")
+
+if tab_chat.open:
+    with tab_chat:
+        pages = chat.document_pages(current_parse) if valid_range else {}
+        st.caption("Chat: GPT-6 Luna · medium reasoning")
+        if pages:
+            st.caption("Available pages: " + ", ".join(map(str, sorted(pages))))
+            missing = sorted(set(range(int(start_page), end_page + 1)) - set(pages))
+            if missing:
+                st.caption("Unavailable pages: " + ", ".join(map(str, missing)))
+        else:
+            st.info("Parse document pages before using chat.")
+        if st.button("Clear chat", key="clear_document_chat"):
+            clear_chat()
+        for turn in st.session_state.document_chat:
+            st.chat_message("user").text(turn["question"])
+            st.chat_message("assistant").text(turn["answer"])
+        question = st.chat_input("Ask about this document", key=f"document_question_{run_id}",
+                                 max_chars=chat.MAX_QUESTION, disabled=not bool(pages),
+                                 submit_mode="disable")
+        # Browser widget constraints are not an authorization boundary.
+        if question and pages and valid_range:
+            st.chat_message("user").text(question)
+            with st.spinner("Checking document evidence..."):
+                reply = chat.answer_document_question(current_parse, question,
+                                                       st.session_state.document_chat)
+            st.session_state.session_token_usage.extend(reply.usage)
+            st.session_state.document_chat.append(dict(question=question, answer=reply.answer,
+                                                       status=reply.status))
+            st.chat_message("assistant").text(reply.answer)
+            show_usage()

@@ -111,3 +111,48 @@ def test_migration_resets_legacy_ledger_without_repricing(uploaded):
     assert not app.exception and not app.subheader
     assert app.session_state["session_token_usage"] == []
     assert any("not been repriced" in item.value for item in app.info)
+
+
+def test_chat_submission_reruns_and_reset(uploaded, monkeypatch):
+    from src import chat
+    from tests.test_chat import document
+    calls = []
+    uploaded[0] = upload(pages=2)
+    # AppTest cannot select a tab; use the real tabs with Chat as the default.
+    tabs = st.tabs
+    monkeypatch.setattr(st, "tabs", lambda *a, **k: tabs(*a, default="Chat", **k))
+    monkeypatch.setattr(graph, "run_graph", lambda *a, **k: dict(
+        status="parsed", parse_result=document(), token_usage=[], run_id="run-chat"))
+    def answer(doc, question, history):
+        calls.append((question, len(history)))
+        return chat.ChatResult("Coverage lasts 30 days. (p. 2)", "answered")
+    monkeypatch.setattr(chat, "answer_document_question", answer)
+    app = AppTest.from_file(str(APP)).run()
+    app.session_state["preview_tab"] = "Chat"
+    app.run()
+    assert app.chat_input[0].disabled
+    app.button[0].click().run()
+    app.chat_input[0].set_value("How long?").run()
+    assert not app.exception and calls == [("How long?", 0)]
+    assert len(app.session_state["document_chat"]) == 1
+    app.run()
+    assert len(calls) == 1
+    app.button(key="clear_document_chat").click().run()
+    assert not app.session_state["document_chat"]
+    app.chat_input[0].set_value("How long?").run()
+    app.button[0].click().run()
+    assert not app.session_state["document_chat"]
+    app.chat_input[0].set_value("How long?").run()
+    app.number_input[0].set_value(2).run()
+    assert not app.session_state["document_chat"] and app.chat_input[0].disabled
+    uploaded[0] = None
+    app.run()
+    assert not app.session_state["document_chat"]
+    assert "last_parse_result" not in app.session_state
+
+
+def test_chat_sessions_do_not_share_history(uploaded):
+    one = AppTest.from_file(str(APP)).run()
+    one.session_state["document_chat"] = [dict(question="private", answer="private", status="answered")]
+    two = AppTest.from_file(str(APP)).run()
+    assert two.session_state["document_chat"] == []

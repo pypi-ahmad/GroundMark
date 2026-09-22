@@ -25,7 +25,7 @@ from langchain_openai import ChatOpenAI
 from openai import APIStatusError, APIConnectionError
 
 from src import usage as _usage
-from src.models import DEFAULT_MODEL, MODEL_RATES
+from src.models import DEFAULT_MODEL
 from src.diagnostics import ExtractionCallError, PageDiagnostic, filter_annotations, safe_identifier, token_count
 
 load_dotenv()
@@ -44,7 +44,7 @@ def _reasoning_kwargs() -> dict:
 
 
 def _build_llm(model: str = DEFAULT_MODEL) -> ChatOpenAI:
-    if model not in MODEL_RATES:
+    if model != DEFAULT_MODEL:
         raise ExtractConfigError("Unsupported model")
     api_key = os.environ.get("OPENAI_API_KEY")
     if not api_key:

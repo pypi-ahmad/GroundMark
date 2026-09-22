@@ -29,6 +29,13 @@ def test_prompt_missing_placeholder_fails():
         render_prompt("parse-page")
 
 
+@pytest.mark.parametrize("name", ["chat-answer", "chat-verify"])
+def test_chat_policies_load_outside_project(name, tmp_path, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    text = render_prompt(name)
+    assert "untrusted data" in text and "120 words" in text
+
+
 @pytest.mark.parametrize("name,values", [("parse-page", {
     "page_number": 2, "total_pages": 4, "width_px": 800,
     "height_px": 600, "document_context": "value {unknown}",
