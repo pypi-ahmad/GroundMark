@@ -3,7 +3,7 @@
 This file records the September 12 run. Its model, prompt, test count, and
 concurrency details are historical and do not describe the current runtime.
 
-The diagnostic fix was implemented. Five of the six approved pages parsed.
+The diagnostic fix is in place. Five of the six approved pages parsed.
 BadgeCare page 1 returned `finish_reason=content_filter`. Capturing the raw
 response retained metadata that automatic structured parsing had discarded,
 although the provider still rejected the page.
@@ -22,9 +22,9 @@ and rendered images, and an exact prompt snapshot. Earlier runs were preserved.
 | Masked Amerigroup_1 | 1 | parsed | 200 | stop |
 | Masked Amerigroup_1 | 2 | parsed | 200 | stop |
 
-The evaluator submitted each listed page once, with one image per call and the
-SDK client's retries set to zero. It captured six distinct request IDs. The run
-did not reveal whether the gateway retries internally.
+The evaluator sent each listed page once, with one image per call and the SDK
+client's retries set to zero. It captured six distinct request IDs. The run did
+not reveal whether the gateway retries internally.
 Model, temperature, reasoning setting, image rendering, and prompts were unchanged.
 The layout prompt also matches the original baseline byte for byte.
 

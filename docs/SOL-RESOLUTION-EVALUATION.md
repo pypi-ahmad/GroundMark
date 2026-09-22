@@ -3,10 +3,10 @@
 This file records the September 23 resolution experiment. The current runtime
 prompt has changed since the run, but the rendering decision remains in the code.
 
-Decision: retain 200-DPI PDF rendering capped at a 1,600-pixel long edge.
-The 300-DPI, 3,200-pixel candidate failed the agreed no-regression gate.
-This five-page comparison does not establish that higher-resolution input is
-worse for every document.
+Decision: retain 200-DPI PDF rendering capped at a 1,600-pixel long edge. The
+300-DPI, 3,200-pixel candidate failed the agreed no-regression gate. This
+five-page comparison does not establish that higher-resolution input is worse
+for every document.
 
 ## Run and limits
 

@@ -11,8 +11,10 @@ Next: src/usage.py, which turns these rates into a session cost estimate.
 """
 
 DEFAULT_MODEL = "gpt-6-sol"
+CHAT_MODEL = "gpt-6-luna"
 
 # USD per million tokens: input, cached input, cache write, output.
 MODEL_RATES = {
     DEFAULT_MODEL: (2.00, 0.20, 2.50, 10.00),
+    CHAT_MODEL: (0.10, 0.01, 0.125, 0.50),
 }

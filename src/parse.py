@@ -24,7 +24,7 @@ from openai import ContentFilterFinishReasonError
 from src.llm import _build_llm, _image_message, _invoke_structured
 from src.preprocess import preprocess_pages
 from src.prompts import render_prompt
-from src.models import DEFAULT_MODEL, MODEL_RATES
+from src.models import DEFAULT_MODEL
 from src.layout import ParsePage, ParseResult
 from src.diagnostics import ExtractionCallError, PageDiagnostic
 
@@ -76,7 +76,7 @@ def parse_document(
     context to the next page so headings and continued structures remain
     coherent across the document.
     """
-    if model not in MODEL_RATES:
+    if model != DEFAULT_MODEL:
         raise ValueError("Unsupported model")
     pages_payload = preprocess_pages(path, start_page=start_page, end_page=end_page)
     if not pages_payload:
