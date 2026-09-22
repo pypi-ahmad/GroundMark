@@ -4,8 +4,8 @@ This is a historical evaluation record. The current runtime has one rewritten
 `gpt-6-sol` prompt in `prompts/runtime/parse-page.md`; the prompt files discussed
 below are no longer part of the application.
 
-Decision: keep the baseline layout prompt used in this run. Both revised prompts improved
-form segmentation and reference-token overlap, but they introduced incorrect
+Decision: keep the baseline layout prompt used in this run. Both revised prompts
+improved form segmentation and reference-token overlap, but introduced incorrect
 values. The corrective candidate transposed a facility tax identifier that the
 baseline read correctly, so it failed the source-grounding acceptance gate. No
 third tuning round ran.
