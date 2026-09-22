@@ -1,0 +1,10 @@
+.env
+/.aiwg/
+/.codegraph/
+/.code-review-graph/
+/.firecrawl/
+/.remember/
+/.venv/
+data/
+__pycache__/
+*.pyc
