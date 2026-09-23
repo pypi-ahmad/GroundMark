@@ -1,0 +1,66 @@
+{
+  "schema_version": 1,
+  "diagram_type": "dataflow",
+  "meta": {
+    "title": "GroundMark Document Extraction Data Flow",
+    "viewBox": [1080, 600],
+    "quality_profile": "showcase"
+  },
+  "stages": [
+    { "label": "Ingest" },
+    { "label": "Preprocess" },
+    { "label": "Extract" },
+    { "label": "Structure" },
+    { "label": "Artifacts" }
+  ],
+  "nodes": [
+    { "id": "input_doc", "type": "external", "label": "Document Input", "sublabel": "PDF / image", "stage": 0, "row": 1, "width": 115, "tag": "source" },
+    { "id": "sha_hasher", "type": "backend", "label": "SHA Hasher", "sublabel": "file identifier", "stage": 1, "row": 0 },
+    { "id": "rasterizer", "type": "backend", "label": "Rasterizer", "sublabel": "pypdfium2 pages", "stage": 1, "row": 2 },
+    { "id": "sol_engine", "type": "cloud", "label": "gpt-6-sol", "sublabel": "visual extraction", "stage": 2, "row": 1, "tag": "model" },
+    { "id": "pydantic_val", "type": "backend", "label": "Layout Model", "sublabel": "blocks & reading order", "stage": 3, "row": 0 },
+    { "id": "annotator", "type": "backend", "label": "Annotator", "sublabel": "source page overlays", "stage": 3, "row": 2 },
+    { "id": "doc_renders", "type": "database", "label": "Text Formats", "sublabel": "Markdown & HTML", "stage": 4, "row": 0 },
+    { "id": "json_store", "type": "database", "label": "Layout JSON", "sublabel": "schema_version: 2", "stage": 4, "row": 1 },
+    { "id": "annotated_pdf", "type": "database", "label": "Visual Overlays", "sublabel": "PDF & page PNGs", "stage": 4, "row": 2 }
+  ],
+  "flows": [
+    { "id": "f_doc_hash", "from": "input_doc", "to": "sha_hasher", "label": "raw bytes", "variant": "default" },
+    { "id": "f_doc_raster", "from": "input_doc", "to": "rasterizer", "label": "source pages", "variant": "default" },
+    { "id": "f_raster_sol", "from": "rasterizer", "to": "sol_engine", "label": "page images", "variant": "emphasis" },
+    { "id": "f_sol_val", "from": "sol_engine", "to": "pydantic_val", "label": "block tokens", "variant": "emphasis" },
+    { "id": "f_val_annot", "from": "pydantic_val", "to": "annotator", "label": "valid boxes", "variant": "default" },
+    { "id": "f_val_renders", "from": "pydantic_val", "to": "doc_renders", "label": "rendered text", "route": "straight", "variant": "emphasis" },
+    { "id": "f_val_json", "from": "pydantic_val", "to": "json_store", "label": "grounded JSON", "variant": "default" },
+    { "id": "f_annot_overlay", "from": "annotator", "to": "annotated_pdf", "label": "page overlays", "route": "straight", "variant": "default" }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Deterministic Ingestion",
+      "items": [
+        "Source PDF or raster image is hashed to SHA-256 grounding ID",
+        "Pages capped at 1,600px on the long edge",
+        "Zero data modification during the preprocessing phase"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Structured Extraction",
+      "items": [
+        "gpt-6-sol parses layout, reading order, and normalized bounding boxes",
+        "Pydantic validates ParseResult structure and table bounds",
+        "Up to 12k previous page context fed sequentially"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Dual View Rendering",
+      "items": [
+        "Clean omits headers/footers when page roles are present",
+        "Full view preserves complete layout structure",
+        "Self-contained HTML embeds figure image crops directly"
+      ]
+    }
+  ]
+}

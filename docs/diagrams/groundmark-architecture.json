@@ -1,0 +1,69 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "GroundMark Architecture",
+    "quality_profile": "showcase"
+  },
+  "components": [
+    { "id": "input_doc", "type": "external", "label": "Document Input", "sublabel": "PDF / Image", "pos": [40, 70], "size": [120, 60] },
+    { "id": "ui_app", "type": "frontend", "label": "Streamlit UI", "sublabel": "Upload & Chat View", "pos": [40, 230], "size": [120, 60] },
+    { "id": "chat_engine", "type": "backend", "label": "Chat Engine", "sublabel": "Evidence Verification", "pos": [40, 390], "size": [120, 60] },
+    { "id": "luna_model", "type": "cloud", "label": "gpt-6-luna", "sublabel": "Draft + Verify", "pos": [230, 390], "size": [120, 60] },
+    { "id": "graph_coord", "type": "backend", "label": "Pipeline Graph", "sublabel": "preprocess -> parse", "pos": [420, 230], "size": [120, 60] },
+    { "id": "preprocessor", "type": "backend", "label": "Preprocessor", "sublabel": "Rasterize & Hash", "pos": [600, 230], "size": [120, 60] },
+    { "id": "sol_model", "type": "cloud", "label": "gpt-6-sol", "sublabel": "Visual Layout Model", "pos": [780, 70], "size": [120, 60] },
+    { "id": "parser_core", "type": "backend", "label": "Parser Engine", "sublabel": "Sequential Page Parse", "pos": [780, 230], "size": [120, 60] },
+    { "id": "renderer", "type": "backend", "label": "Artifact Renderer", "sublabel": "Markdown & HTML", "pos": [960, 70], "size": [120, 60] },
+    { "id": "layout_contract", "type": "backend", "label": "Grounding Model", "sublabel": "Blocks, Boxes & Order", "pos": [960, 230], "size": [120, 60] },
+    { "id": "annotator", "type": "backend", "label": "Annotator", "sublabel": "Box Overlay on Pages", "pos": [960, 390], "size": [120, 60] },
+    { "id": "run_store", "type": "backend", "label": "Local Files", "sublabel": "data/parse/runs/", "pos": [1140, 230], "size": [120, 60] }
+  ],
+  "boundaries": [
+    { "kind": "region", "label": "GroundMark Core Pipeline", "wraps": ["graph_coord", "preprocessor", "sol_model", "parser_core", "renderer", "layout_contract", "annotator", "run_store"] },
+    { "kind": "security-group", "label": "Evidence Verification Boundary", "wraps": ["chat_engine", "luna_model"] }
+  ],
+  "connections": [
+    { "from": "input_doc", "to": "ui_app", "variant": "emphasis" },
+    { "from": "ui_app", "to": "graph_coord" },
+    { "from": "graph_coord", "to": "preprocessor" },
+    { "from": "preprocessor", "to": "parser_core" },
+    { "from": "parser_core", "to": "sol_model", "label": "Visual Parse" },
+    { "from": "parser_core", "to": "layout_contract" },
+    { "from": "layout_contract", "to": "renderer", "label": "Structure" },
+    { "from": "layout_contract", "to": "annotator", "label": "Boxes", "labelDy": 24 },
+    { "from": "renderer", "to": "run_store", "label": "Markdown/HTML" },
+    { "from": "annotator", "to": "run_store", "label": "PDF Overlays" },
+    { "from": "ui_app", "to": "chat_engine" },
+    { "from": "chat_engine", "to": "luna_model", "label": "Verify & QA" }
+  ],
+  "cards": [
+    {
+      "dot": "cyan",
+      "title": "Document Parsing",
+      "items": [
+        "Sequential visual parsing with gpt-6-sol",
+        "Deterministic rasterization and page hashes",
+        "Strict block grounding with normalized bounding boxes"
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Artifact Generation",
+      "items": [
+        "Markdown and self-contained HTML exports",
+        "Source-matched figure crops and visual PDF annotations",
+        "Runs persisted under data/parse/runs/<run_id>"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Grounded Document Chat",
+      "items": [
+        "Evidence built from successfully parsed page blocks",
+        "Quotes checked against parsed text before display",
+        "Luna drafts and separately verifies the answer"
+      ]
+    }
+  ]
+}

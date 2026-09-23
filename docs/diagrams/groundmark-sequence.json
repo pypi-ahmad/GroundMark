@@ -1,0 +1,70 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "GroundMark Parse & Chat Sequence",
+    "viewBox": [1080, 600],
+    "column_fit": "spread",
+    "quality_profile": "showcase"
+  },
+  "participants": [
+    { "id": "user", "type": "external", "label": "User", "sublabel": "client operator" },
+    { "id": "ui", "type": "frontend", "label": "Streamlit UI", "sublabel": "web client" },
+    { "id": "graph", "type": "backend", "label": "Graph", "sublabel": "LangGraph run" },
+    { "id": "sol", "type": "cloud", "label": "gpt-6-sol", "sublabel": "visual parser" },
+    { "id": "chat", "type": "backend", "label": "Chat Engine", "sublabel": "evidence check" },
+    { "id": "luna", "type": "cloud", "label": "gpt-6-luna", "sublabel": "reasoning model" }
+  ],
+  "messages": [
+    { "id": "m1", "from": "user", "to": "ui", "y": 170, "label": "upload document & parse", "variant": "default" },
+    { "id": "m2", "from": "ui", "to": "graph", "y": 198, "label": "run_graph(source)", "variant": "emphasis" },
+    { "id": "m3", "from": "graph", "to": "sol", "y": 226, "label": "parse page images (12k context)", "variant": "emphasis" },
+    { "id": "m4", "from": "sol", "to": "graph", "y": 254, "label": "layout blocks & boxes", "variant": "return" },
+    { "id": "m5", "from": "graph", "to": "ui", "y": 282, "label": "MD, HTML, JSON, PDF", "variant": "return" },
+    { "id": "m6", "from": "user", "to": "ui", "y": 310, "label": "ask document question", "variant": "default" },
+    { "id": "m7", "from": "ui", "to": "chat", "y": 338, "label": "build evidence context", "variant": "default" },
+    { "id": "m8", "from": "chat", "to": "luna", "y": 366, "label": "draft answer with quotes", "variant": "emphasis" },
+    { "id": "m9", "from": "luna", "to": "chat", "y": 394, "label": "candidate text & cites", "variant": "return" },
+    { "id": "m10", "from": "chat", "to": "luna", "y": 422, "label": "verify after local quote check", "variant": "security" },
+    { "id": "m11", "from": "luna", "to": "chat", "y": 450, "label": "approval or rejection", "variant": "return" },
+    { "id": "m12", "from": "chat", "to": "ui", "y": 478, "label": "verified answer", "variant": "return" },
+    { "id": "m13", "from": "ui", "to": "user", "y": 506, "label": "display grounded reply", "variant": "return" }
+  ],
+  "activations": [
+    { "participant": "ui", "from": 170, "to": 287, "type": "frontend" },
+    { "participant": "graph", "from": 198, "to": 287, "type": "backend" },
+    { "participant": "sol", "from": 226, "to": 259, "type": "cloud" },
+    { "participant": "ui", "from": 310, "to": 511, "type": "frontend" },
+    { "participant": "chat", "from": 338, "to": 483, "type": "backend" },
+    { "participant": "luna", "from": 366, "to": 455, "type": "cloud" }
+  ],
+  "cards": [
+    {
+      "dot": "emerald",
+      "title": "Parsing Pipeline",
+      "items": [
+        "Sequential page dispatch with up to 12k preceding characters",
+        "Deterministic page rendering and SHA-256 grounding",
+        "Pydantic schema validation for blocks and bounding boxes"
+      ]
+    },
+    {
+      "dot": "cyan",
+      "title": "Artifact Production",
+      "items": [
+        "Markdown, HTML, JSON, and overlays follow parsing",
+        "Clean hides classified headers/footers without new model calls",
+        "Source figures cropped deterministically from valid boxes"
+      ]
+    },
+    {
+      "dot": "rose",
+      "title": "Evidence Verification",
+      "items": [
+        "Chat builds evidence strictly from successful parsed pages",
+        "Whitespace-normalized quote checks before verification",
+        "A separate Luna call checks each candidate answer"
+      ]
+    }
+  ]
+}
