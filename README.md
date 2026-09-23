@@ -2,11 +2,11 @@
 
 GroundMark turns scanned PDFs and images into layout-aware Markdown using `gpt-6-sol`.
 
-The parsing prompt asks the model to preserve the source text and layout. GroundMark does not extract business fields, apply a domain schema, or correct values. Transcription errors are still possible. The app keeps page, block, and bounding-box data for reading order, annotations, and JSON output. Document chat can then answer questions and summarize parsed pages.
+The model is asked to preserve the source text and layout, though transcription errors are still possible. GroundMark keeps page, block, and bounding-box data for reading order, annotations, and JSON output. It does not extract business fields, apply a domain schema, or correct values. Document chat answers questions and summarizes parsed pages.
 
 ## Install
 
-GroundMark requires Python 3.14+. The recommended installation uses uv and the GitHub release wheel; cloning and Git are not required:
+GroundMark requires Python 3.14+. We recommend installing the GitHub release wheel with uv. You do not need Git or a cloned checkout:
 
 ```powershell
 uv tool install --python 3.14 "https://github.com/pypi-ahmad/GroundMark/releases/download/v0.1.0/groundmark-0.1.0-py3-none-any.whl"
@@ -14,7 +14,7 @@ uv tool install --python 3.14 "https://github.com/pypi-ahmad/GroundMark/releases
 
 If `groundmark` is not on PATH, run `uv tool update-shell` and open a new terminal. [Install uv](https://docs.astral.sh/uv/getting-started/installation/) if needed.
 
-Alternatively, install the same wheel in a Python 3.14+ virtual environment:
+You can also install the wheel in a Python 3.14+ virtual environment:
 
 ```powershell
 # Using uv:
@@ -31,7 +31,7 @@ Use the GitHub URL when installing. The package named `groundmark` on PyPI belon
 
 ### Configure your endpoint
 
-Set your own key in PowerShell before starting the app:
+Set your API key in PowerShell before starting the app:
 
 ```powershell
 $env:OPENAI_API_KEY = "your-api-key"
@@ -62,7 +62,7 @@ groundmark invoice.pdf output --markdown --html
 groundmark invoice.pdf output --json --start-page 2 --end-page 5
 ```
 
-No format flag means Markdown with any referenced figure images. Format flags can be combined. Each command parses the selected pages once, regardless of how many formats you request.
+By default, the command writes Markdown and any figure images it references. You can combine format flags. The selected pages are parsed once, regardless of how many formats you request.
 
 | Option | Output or behavior |
 | --- | --- |
@@ -80,7 +80,7 @@ No format flag means Markdown with any referenced figure images. Format flags ca
 | `--overwrite` | Allow generated files to replace matching paths in a nonempty output directory |
 | `--version`, `--help` | Version and usage |
 
-Use a new or empty output directory unless you pass `--overwrite`. The input file must be outside that directory. Output filenames use the document's SHA-256 hash; the command prints generated paths. Progress and diagnostics go to stderr. Exit codes are `0` for success, `1` for failure, `2` for invalid arguments/configuration, `3` for partial extraction or export problems, and `130` for interruption. Usable partial output is retained.
+Use a new or empty output directory unless you pass `--overwrite`. The input file must be outside that directory. Output filenames use the document's SHA-256 hash; the command prints generated paths. Progress and diagnostics go to stderr. Exit codes are `0` for success, `1` for failure, `2` for invalid arguments/configuration, `3` for partial extraction or export problems, and `130` for interruption. The command keeps usable partial output.
 
 ### Clone and run locally
 
@@ -108,7 +108,7 @@ Each UI run saves its artifacts under `data/parse/runs/<run-id>/`. CLI extractio
 
 Markdown and HTML open in Clean view. Full also shows running headers and footers when the model has classified them. Both views keep unclassified content. JSON and chat include all extracted content from successful pages, while annotations show blocks with valid boxes. Tables without identified headers keep their first row as data. Figures with valid boxes appear as crops in the previews and HTML. **Download Markdown with images** packages the Markdown and crops in a ZIP.
 
-**Detailed layout (experimental)** adds heading levels, nested lists, checkbox states, merged cells, and page-header/footer roles. It is off by default. In a five-page comparison, mean word-token F1 rose from 95.67% to 95.99%, but source review found new transcription errors. See [Layout evaluation](docs/LAYOUT-EVALUATION.md) for the results and limits.
+Detailed layout (experimental) adds heading levels, nested lists, checkbox states, merged cells, and page-header/footer roles. It is off by default. In a five-page comparison, mean word-token F1 rose from 95.67% to 95.99%, but source review found new transcription errors. See [Layout evaluation](docs/LAYOUT-EVALUATION.md) for the results and limits.
 
 ## How it works
 
@@ -134,7 +134,7 @@ uv run python -m pytest
 ## Documentation
 
 - Use and development: [Runbook](docs/RUNBOOK.md), [Architecture](docs/ARCHITECTURE.md), [Model](docs/MODEL.md), [Prompt contract](docs/PROMPTS.md), [Data and output boundaries](docs/COMPLIANCE.md), [Contributing](docs/CONTRIBUTING.md).
-- Recorded evaluations: [Layout](docs/LAYOUT-EVALUATION.md), [Sol resolution](docs/SOL-RESOLUTION-EVALUATION.md), [Earlier prompts](docs/PROMPT-EVALUATION.md), [Content-filter diagnostics](docs/CONTENT-FILTER-DIAGNOSTICS.md). These dated reports preserve the methods and results of their original runs.
+- Recorded evaluations: [Layout](docs/LAYOUT-EVALUATION.md), [Sol resolution](docs/SOL-RESOLUTION-EVALUATION.md), [Earlier prompts](docs/PROMPT-EVALUATION.md), [Content-filter diagnostics](docs/CONTENT-FILTER-DIAGNOSTICS.md). These reports record the methods and results from each run.
 
 ## License
 
