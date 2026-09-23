@@ -11,7 +11,8 @@ from src import usage
 from src import chat
 from src.models import DEFAULT_MODEL
 from src.graph import run_graph
-from src.markdown import parse_to_html
+from src.markdown import parse_to_html, parse_to_markdown, markdown_bundle
+from src.figures import load_figures
 from src.preprocess import count_pages, preprocess_pages
 from src.ui.clipboard import copy_buttons
 
@@ -65,6 +66,8 @@ st.divider()
 with st.sidebar:
     st.header("Options")
     st.caption("Model: GPT-6 Sol")
+    detailed_layout = st.checkbox("Detailed layout (experimental)", value=False,
+                                 help="Captures heading levels, lists, merged cells, and running headers. The five-page evaluation found new transcription errors, so this is off by default.")
     uploaded = st.file_uploader(
         "Upload a document", type=["png", "jpg", "jpeg", "webp", "tif", "tiff", "pdf"], key="uploader"
     )
@@ -103,7 +106,7 @@ with st.sidebar:
 
 st.caption(f"Document: {uploaded.name}")
 valid_range = 1 <= start_page <= end_page <= total
-scope = (upload_id, int(start_page), end_page)
+scope = (upload_id, int(start_page), end_page, detailed_layout)
 if st.session_state.get("document_scope") != scope:
     clear_chat()
     st.session_state.pop("last_parse_result", None)
@@ -124,7 +127,7 @@ if st.button("Parse", disabled=not valid_range):
     with st.spinner("Parsing..."):
         try:
             result = run_graph(str(dest), start_page=int(start_page), end_page=end_page,
-                               model=DEFAULT_MODEL, on_progress=update_progress)
+                               model=DEFAULT_MODEL, detailed_layout=detailed_layout, on_progress=update_progress)
         except Exception:
             st.error("Unable to prepare this document. Check the file and page range.")
             result = None
@@ -142,6 +145,8 @@ if result:
         label = "Layout parsing incomplete" if status == "parsed_partial" else "Layout parsing failed"
         st.warning(f"{label}: {result['parse_error']}")
     current_parse = result.get("parse_result")
+    for warning in result.get("figure_warnings", []):
+        st.caption(warning)
     if current_parse and current_parse.page_diagnostics:
         with st.expander("API diagnostics", expanded=False):
             st.json([d.model_dump(exclude_none=True) for d in current_parse.page_diagnostics])
@@ -152,6 +157,23 @@ else:
 
 doc_sha = result.get("doc_sha", "document") if result else "document"
 run_id = result.get("run_id", doc_sha) if result else upload_id
+view = "full"
+if current_parse:
+    reading_view = st.segmented_control("Document view", ["Clean", "Full"], default="Clean",
+                                        key=f"{run_id}_document_view")
+    view = "full" if reading_view == "Full" else "clean"
+    st.caption("Clean view hides classified running page headers and footers. Unclassified content stays visible. JSON, annotations, and chat retain all content.")
+
+
+@st.cache_data(max_entries=8, show_spinner=False)
+def figure_assets(output_dir: str, parse_json: str):
+    from src.layout import ParseResult
+    return load_figures(ParseResult.model_validate_json(parse_json), output_dir)
+
+
+figures = {}
+if current_parse and result.get("output_dir"):
+    figures = figure_assets(result["output_dir"], current_parse.model_dump_json())
 tab_input, tab_md, tab_pdf, tab_html, tab_json, tab_chat = st.tabs(
     ["Input preview", "Markdown", "Annotated", "HTML", "JSON", "Chat"],
     key="preview_tab", on_change="rerun",
@@ -167,11 +189,15 @@ if tab_input.open:
 
 if tab_md.open:
     with tab_md:
-        md_text = result.get("markdown") if result else None
-        if md_text is not None and current_parse:
-            rendered_html = parse_to_html(current_parse)
-            st.download_button("Download Markdown", data=md_text, file_name=f"{doc_sha}.md",
+        if current_parse and current_parse.pages:
+            md_text = parse_to_markdown(current_parse, view=view, figures=figures)
+            rendered_html = parse_to_html(current_parse, view=view, figures=figures)
+            st.download_button("Download Markdown", data=md_text, file_name=f"{doc_sha}.{view}.md",
                                mime="text/markdown", key=f"{run_id}_download_md", on_click="ignore")
+            if figures:
+                st.download_button("Download Markdown with images", data=markdown_bundle(current_parse, view=view, figures=figures),
+                                   file_name=f"{doc_sha}.{view}.zip", mime="application/zip",
+                                   key=f"{run_id}_download_bundle", on_click="ignore")
             copy_buttons(data={"markdown": md_text, "html": rendered_html},
                          key=f"{run_id}_copy_md", height="content")
             markdown_view = st.segmented_control(
@@ -181,7 +207,9 @@ if tab_md.open:
             if markdown_view == "Raw":
                 st.code(md_text, language="markdown", wrap_lines=True, height=500)
             else:
-                st.markdown(md_text)
+                # All source text is escaped; only renderer-owned markup is enabled.
+                st.markdown(parse_to_markdown(current_parse, view=view, figures=figures, inline_images=True),
+                            unsafe_allow_html=True)
         else:
             st.info("Parse the document to create Markdown.")
 
@@ -200,8 +228,8 @@ if tab_pdf.open:
 if tab_html.open:
     with tab_html:
         if current_parse:
-            rendered_html = parse_to_html(current_parse)
-            st.download_button("Download HTML", data=rendered_html, file_name=f"{doc_sha}.html",
+            rendered_html = parse_to_html(current_parse, view=view, figures=figures)
+            st.download_button("Download HTML", data=rendered_html, file_name=f"{doc_sha}.{view}.html",
                                mime="text/html", key=f"{run_id}_download_html", on_click="ignore")
             st.iframe(rendered_html, height=800)
         else:

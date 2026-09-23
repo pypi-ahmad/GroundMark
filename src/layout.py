@@ -14,7 +14,7 @@ from __future__ import annotations
 
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 from src.diagnostics import PageDiagnostic
 
 # OpenAI's structured-outputs strict mode (with_structured_output(..., method="json_schema"))
@@ -39,7 +39,31 @@ class BBox(BaseModel):
     _check_xyxy = field_validator("xyxy")(_require_xyxy_len)
 
 
-class ParseBlock(BaseModel):
+class ListItem(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    text: str
+    marker: str
+    depth: int = Field(ge=0, le=12)
+    checked: bool | None
+
+
+class TableCell(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    row: int = Field(ge=0)
+    column: int = Field(ge=0)
+    rowspan: int = Field(ge=1)
+    colspan: int = Field(ge=1)
+    is_header: bool
+
+
+class BlockStructure(BaseModel):
+    model_config = ConfigDict(extra="forbid")
+    heading_level: Literal[1, 2, 3, 4, 5, 6] | None
+    list_items: list[ListItem] | None
+    table_cells: list[TableCell] | None
+
+
+class LegacyBlock(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     id: str
@@ -61,6 +85,48 @@ class ParseBlock(BaseModel):
         return [row + [""] * (width - len(row)) for row in value]
 
 
+class ParseBlock(LegacyBlock):
+    type: Literal[
+        "title", "heading", "text", "list", "table", "key_value", "figure", "marginalia", "other",
+        "page_header", "page_footer"
+    ]
+    structure: BlockStructure | None
+
+    @model_validator(mode="after")
+    def validate_structure(self):
+        if self.structure is None:
+            return self
+        structure = self.structure
+        if structure.heading_level is not None and self.type not in {"title", "heading"}:
+            raise ValueError("Heading level requires a heading block")
+        if structure.list_items is not None:
+            if self.type != "list":
+                raise ValueError("List items require a list block")
+            previous = -1
+            for item in structure.list_items:
+                if item.depth > previous + 1:
+                    raise ValueError("List nesting must start at zero and increase one level at a time")
+                previous = item.depth
+        if structure.table_cells is not None:
+            if self.type != "table" or not self.table or not self.table[0]:
+                raise ValueError("Table cells require a nonempty table")
+            height, width = len(self.table), len(self.table[0])
+            occupied = set()
+            for cell in structure.table_cells:
+                if cell.row + cell.rowspan > height or cell.column + cell.colspan > width:
+                    raise ValueError("Table span exceeds table bounds")
+                for row in range(cell.row, cell.row + cell.rowspan):
+                    for column in range(cell.column, cell.column + cell.colspan):
+                        if (row, column) in occupied:
+                            raise ValueError("Table cells overlap")
+                        if (row, column) != (cell.row, cell.column) and self.table[row][column]:
+                            raise ValueError("Covered table cells must be empty")
+                        occupied.add((row, column))
+            if len(occupied) != height * width:
+                raise ValueError("Table metadata must cover every cell")
+        return self
+
+
 class ParsePage(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
@@ -70,11 +136,40 @@ class ParsePage(BaseModel):
     blocks: list[ParseBlock]
 
 
+class LegacyParsePage(BaseModel):
+    """Original request contract, retained until detailed extraction passes source review."""
+    model_config = ConfigDict(extra="forbid")
+    page: int
+    width_px: int
+    height_px: int
+    blocks: list[LegacyBlock]
+
+    def to_page(self) -> ParsePage:
+        data = self.model_dump()
+        data["blocks"] = [{**b, "structure": None} for b in data["blocks"]]
+        return ParsePage.model_validate(data)
+
+
 class ParseResult(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
     doc_sha: str
+    schema_version: Literal[2] = 2
+    extraction_profile: Literal["legacy", "detailed"] = "legacy"
     pages: list[ParsePage]
     content_filtered_pages: list[int] = Field(default_factory=list)
     page_diagnostics: list[PageDiagnostic] = Field(default_factory=list)
     model: str = "gpt-6-sol"
+
+    @model_validator(mode="before")
+    @classmethod
+    def load_legacy(cls, value):
+        """Upgrade saved legacy artifacts in memory, never live page responses."""
+        if isinstance(value, dict) and "schema_version" not in value:
+            value = dict(value)
+            value["pages"] = [
+                {**page, "blocks": [{"structure": None, **block} if isinstance(block, dict) else block
+                                    for block in page.get("blocks", [])]}
+                if isinstance(page, dict) else page for page in value.get("pages", [])
+            ]
+        return value

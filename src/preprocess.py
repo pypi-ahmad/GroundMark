@@ -16,7 +16,7 @@ import hashlib
 import io
 from pathlib import Path
 
-from PIL import Image, ImageOps
+from PIL import Image
 
 # Matches the resolution used for the live evaluation corpus (see "the same
 # 1600-pixel page rendering" in docs/PROMPT-EVALUATION.md and docs/PROMPTS.md)
@@ -60,7 +60,7 @@ def count_pages(path: str | Path) -> int:
         pdf.close()
 
 
-def preprocess(path: str | Path, *, enhance_contrast: bool = False) -> dict:
+def preprocess(path: str | Path) -> dict:
     """Load an invoice file and return a model-ready payload.
 
     Always emits a PNG-encoded image (re-encoding is unavoidable once the
@@ -87,9 +87,6 @@ def preprocess(path: str | Path, *, enhance_contrast: bool = False) -> dict:
 
     image = image.convert("RGB")
     image = _cap_long_edge(image, MAX_LONG_EDGE)
-    if enhance_contrast:
-        image = ImageOps.autocontrast(image)
-
     buf = io.BytesIO()
     image.save(buf, format="PNG")
 
@@ -108,7 +105,6 @@ def preprocess_pages(
     *,
     start_page: int = 1,
     end_page: int | None = None,
-    enhance_contrast: bool = False,
     max_long_edge: int = MAX_LONG_EDGE,
     pdf_dpi: int = PDF_DPI,
 ) -> list[dict]:
@@ -149,8 +145,6 @@ def preprocess_pages(
     for page_number, image in zip(page_numbers, images):
         image = image.convert("RGB")
         image = _cap_long_edge(image, max_long_edge)
-        if enhance_contrast:
-            image = ImageOps.autocontrast(image)
         buf = io.BytesIO()
         image.save(buf, format="PNG")
         pages.append(

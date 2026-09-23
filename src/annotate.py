@@ -41,7 +41,10 @@ def annotate_document(
     parse_result: ParseResult,
     *,
     output_dir: str | Path = "data/annotated",
-) -> tuple[Path, Path]:
+    save_pdf: bool = True,
+    save_images: bool = True,
+    save_metadata: bool = True,
+) -> tuple[Path | None, Path | None]:
     """Draw every block's bbox onto a rasterized copy of each page and save a
     multi-page PDF, plus a sidecar .meta.json.
 
@@ -92,28 +95,31 @@ def annotate_document(
     out_dir = Path(output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     pdf_path = out_dir / f"{doc_sha}.pdf"
-    first, *rest = annotated_images
-    first.save(pdf_path, "PDF", save_all=True, append_images=rest)
+    if save_pdf:
+        first, *rest = annotated_images
+        first.save(pdf_path, "PDF", save_all=True, append_images=rest)
 
     # Also save each annotated page as its own PNG, so the UI can preview
     # them inline (st.image) without needing a PDF-viewer widget/dependency.
     pages_dir = out_dir / doc_sha
-    pages_dir.mkdir(parents=True, exist_ok=True)
-    for payload, image in zip(pages_payload, annotated_images):
-        image.save(pages_dir / f"page_{payload['page']:03d}.png")
+    if save_images:
+        pages_dir.mkdir(parents=True, exist_ok=True)
+        for payload, image in zip(pages_payload, annotated_images):
+            image.save(pages_dir / f"page_{payload['page']:03d}.png")
 
     meta_path = out_dir / f"{doc_sha}.meta.json"
-    meta_path.write_text(
-        json.dumps(
-            {
-                "doc_sha": doc_sha,
-                "pages": len(annotated_images),
-                "blocks_drawn": drawn,
-                "blocks_skipped": skipped,
-            },
-            indent=2,
-        ),
-        encoding="utf-8",
-    )
+    if save_metadata:
+        meta_path.write_text(
+            json.dumps(
+                {
+                    "doc_sha": doc_sha,
+                    "pages": len(annotated_images),
+                    "blocks_drawn": drawn,
+                    "blocks_skipped": skipped,
+                },
+                indent=2,
+            ),
+            encoding="utf-8",
+        )
 
-    return pdf_path, meta_path
+    return pdf_path if save_pdf else None, meta_path if save_metadata else None

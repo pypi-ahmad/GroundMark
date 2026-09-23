@@ -12,7 +12,9 @@ instructions in Python.
 from pathlib import Path
 
 
-PROMPT_DIR = Path(__file__).resolve().parents[1] / "prompts" / "runtime"
+PROMPT_DIR = Path(__file__).resolve().parent / "_runtime_prompts"
+if not PROMPT_DIR.is_dir():
+    PROMPT_DIR = Path(__file__).resolve().parents[1] / "prompts" / "runtime"
 
 
 def render_prompt(name: str, **values: object) -> str:

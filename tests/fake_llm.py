@@ -19,10 +19,15 @@ class FakeLLM:
         self.reasoning_effort = "medium"
         self.model_name = "gpt-6-sol"
         data = result.model_dump() if result is not None else None
-        raw = SimpleNamespace(status_code=200, headers={"x-request-id": "req-test"},
+        def create(**kwargs):
+            payload = data
+            if kwargs["response_format"]["json_schema"]["name"] == "LegacyParsePage" and payload:
+                payload = {**payload, "blocks": [{k: v for k, v in b.items() if k != "structure"}
+                                                 for b in payload["blocks"]]}
+            return SimpleNamespace(status_code=200, headers={"x-request-id": "req-test"},
                               parse=lambda: SimpleNamespace(model_dump=lambda: {
                                   "model": "test-model", "choices": [{"finish_reason": "stop",
-                                  "message": {"content": json.dumps(data)}}],
+                                  "message": {"content": json.dumps(payload)}}],
                               }))
         self.root_client = SimpleNamespace(chat=SimpleNamespace(completions=SimpleNamespace(
-            with_raw_response=SimpleNamespace(create=lambda **kwargs: raw))))
+            with_raw_response=SimpleNamespace(create=create))))

@@ -19,7 +19,7 @@ from src.llm import MODEL_NAME, _build_llm, _image_message, _invoke_structured
 from src.diagnostics import ExtractionCallError
 from src.parse import MAX_PARALLEL_PAGES
 from src.preprocess import preprocess_pages
-from src.layout import ParsePage
+from src.layout import ParsePage, LegacyParsePage
 
 ROOT = Path(__file__).resolve().parents[1]
 REFERENCES = Path(r"D:\AI\Github\OpenAI-Agentic-Document_extraction\data\GroundTruths")
@@ -77,7 +77,7 @@ def score_page(page: ParsePage, reference: dict) -> dict:
 
 
 def run_page(payload: dict, prompt: str, *, max_completion_tokens: int | None = None,
-             reasoning_effort: str | None = None) -> dict:
+             reasoning_effort: str | None = None, schema=LegacyParsePage) -> dict:
     started = time.perf_counter()
     outcome = {"page": payload["page"], "document_sha256": payload["doc_sha256"]}
     diagnostics = []
@@ -90,10 +90,12 @@ def run_page(payload: dict, prompt: str, *, max_completion_tokens: int | None = 
                              width_px=payload["width"], height_px=payload["height"],
                              document_context="")
         page = _invoke_structured(
-            llm, ParsePage, [_image_message(text, payload["base64"], payload["mime"])],
+            llm, schema, [_image_message(text, payload["base64"], payload["mime"])],
             call_name="parse_page", diagnostics=diagnostics,
             max_completion_tokens=max_completion_tokens,
         )
+        if isinstance(page, LegacyParsePage):
+            page = page.to_page()
         page = page.model_copy(update={"page": payload["page"], "width_px": payload["width"], "height_px": payload["height"]})
         outcome.update(status="parsed", result=page.model_dump())
     except ExtractionCallError as exc:

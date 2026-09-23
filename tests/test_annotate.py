@@ -25,7 +25,7 @@ def test_annotated_pdf_is_created(tmp_path, monkeypatch):
             ParsePage(
                 page=1, width_px=900, height_px=620,
                 blocks=[
-                    ParseBlock(
+                    ParseBlock(structure=None,
                         id="b1", type="key_value", text="Grand Total: 88.00",
                         bbox=BBox(page=1, xyxy=(0.6, 0.8, 0.95, 0.85)), conf=None, table=None,
                     ),
@@ -54,10 +54,10 @@ def test_missing_or_out_of_range_bbox_is_skipped_not_crashed(tmp_path, monkeypat
             ParsePage(
                 page=1, width_px=900, height_px=620,
                 blocks=[
-                    ParseBlock(
+                    ParseBlock(structure=None,
                         id="b1", type="text", text="no box", bbox=None, conf=None, table=None,
                     ),
-                    ParseBlock(
+                    ParseBlock(structure=None,
                         id="b2", type="text", text="off page",
                         bbox=BBox(page=1, xyxy=(0.5, 0.5, 1.5, 1.5)),  # out of 0-1 range
                         conf=None, table=None,
@@ -86,7 +86,7 @@ def test_block_type_label_is_drawn(tmp_path, monkeypatch):
             ParsePage(
                 page=1, width_px=900, height_px=620,
                 blocks=[
-                    ParseBlock(
+                    ParseBlock(structure=None,
                         id="b1", type="key_value", text="Grand Total: 88.00",
                         bbox=BBox(page=1, xyxy=(0.6, 0.8, 0.95, 0.85)), conf=None, table=None,
                     ),

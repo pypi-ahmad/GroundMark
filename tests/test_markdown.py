@@ -11,11 +11,18 @@ import json
 from pathlib import Path
 
 from src.markdown import parse_to_html, parse_to_markdown, render_and_save
-from src.layout import BBox, ParseBlock, ParsePage, ParseResult
+from src.layout import BBox, ParseBlock, ParsePage, ParseResult, BlockStructure, TableCell
+
+
+def table_structure(rows):
+    return BlockStructure(heading_level=None, list_items=None, table_cells=[
+        TableCell(row=r, column=c, rowspan=1, colspan=1, is_header=r == 0)
+        for r in range(rows) for c in range(2)
+    ])
 
 
 def test_ragged_model_table_rows_are_padded_without_changing_cells():
-    block = ParseBlock(
+    block = ParseBlock(structure=None,
         id="t1", type="table", text="A | B", bbox=None, conf=None,
         table=[["A", "B"], ["C"]],
     )
@@ -31,16 +38,16 @@ def _sample_result() -> ParseResult:
                 width_px=800,
                 height_px=600,
                 blocks=[
-                    ParseBlock(
+                    ParseBlock(structure=None,
                         id="h1", type="heading", text="Line Items",
                         bbox=BBox(page=1, xyxy=(0.1, 0.1, 0.5, 0.15)), conf=None, table=None,
                     ),
-                    ParseBlock(
+                    ParseBlock(structure=table_structure(2),
                         id="t1", type="table", text="",
                         bbox=BBox(page=1, xyxy=(0.1, 0.2, 0.9, 0.4)), conf=None,
                         table=[["Item", "Amount"], ["Widget A", "30.00"]],
                     ),
-                    ParseBlock(
+                    ParseBlock(structure=None,
                         id="p1", type="text", text="Thank you for your business.",
                         bbox=BBox(page=1, xyxy=(0.1, 0.5, 0.9, 0.55)), conf=None, table=None,
                     ),
@@ -81,7 +88,7 @@ def test_parse_to_html_escapes_content():
             ParsePage(
                 page=1, width_px=10, height_px=10,
                 blocks=[
-                    ParseBlock(
+                    ParseBlock(structure=None,
                         id="a", type="text", text="<script>alert(1)</script>",
                         bbox=None, conf=None, table=None,
                     )
@@ -101,7 +108,7 @@ def test_key_value_splits_on_first_colon():
             ParsePage(
                 page=1, width_px=10, height_px=10,
                 blocks=[
-                    ParseBlock(
+                    ParseBlock(structure=None,
                         id="k1", type="key_value", text="Invoice #: INV-1001", bbox=None,
                         conf=None, table=None,
                     )
@@ -119,8 +126,8 @@ def test_no_bbox_blocks_keep_model_order():
             ParsePage(
                 page=1, width_px=10, height_px=10,
                 blocks=[
-                    ParseBlock(id="a", type="text", text="first", bbox=None, conf=None, table=None),
-                    ParseBlock(id="b", type="text", text="second", bbox=None, conf=None, table=None),
+                    ParseBlock(structure=None, id="a", type="text", text="first", bbox=None, conf=None, table=None),
+                    ParseBlock(structure=None, id="b", type="text", text="second", bbox=None, conf=None, table=None),
                 ],
             )
         ],
@@ -142,10 +149,10 @@ def test_render_and_save_writes_md_next_to_json(tmp_path):
 def test_column_order_is_preserved_even_with_missing_bbox():
     result = _sample_result()
     result.pages[0].blocks = [
-        ParseBlock(id="a", type="text", text="Left top", bbox=BBox(page=1, xyxy=(0.1, 0.1, 0.4, 0.2)), conf=None, table=None),
-        ParseBlock(id="b", type="text", text="Left bottom", bbox=BBox(page=1, xyxy=(0.1, 0.7, 0.4, 0.8)), conf=None, table=None),
-        ParseBlock(id="c", type="text", text="Unpositioned note", bbox=None, conf=None, table=None),
-        ParseBlock(id="d", type="text", text="Right top", bbox=BBox(page=1, xyxy=(0.6, 0.1, 0.9, 0.2)), conf=None, table=None),
+        ParseBlock(structure=None, id="a", type="text", text="Left top", bbox=BBox(page=1, xyxy=(0.1, 0.1, 0.4, 0.2)), conf=None, table=None),
+        ParseBlock(structure=None, id="b", type="text", text="Left bottom", bbox=BBox(page=1, xyxy=(0.1, 0.7, 0.4, 0.8)), conf=None, table=None),
+        ParseBlock(structure=None, id="c", type="text", text="Unpositioned note", bbox=None, conf=None, table=None),
+        ParseBlock(structure=None, id="d", type="text", text="Right top", bbox=BBox(page=1, xyxy=(0.6, 0.1, 0.9, 0.2)), conf=None, table=None),
     ]
     for rendered in (parse_to_markdown(result), parse_to_html(result)):
         positions = [rendered.index(b.text) for b in result.pages[0].blocks]
@@ -156,6 +163,7 @@ def test_table_escaping_padding_and_line_breaks_preserve_source():
     result = _sample_result()
     table = result.pages[0].blocks[1]
     table.table = [["Field", "Value"], ["A|B", "C:\\temp\r\n<script>"], ["Blank"]]
+    table.structure = table_structure(3)
     before = result.model_dump_json()
     md = parse_to_markdown(result)
     html = parse_to_html(result)
@@ -174,16 +182,16 @@ def test_table_empty_and_unstructured_fallback():
     result = _sample_result()
     result.pages[0].blocks[1].table = None
     result.pages[0].blocks[1].text = "Unreadable grid <source>"
-    assert "Unreadable grid <source>" in parse_to_markdown(result)
+    assert "Unreadable grid &lt;source&gt;" in parse_to_markdown(result)
     assert "<pre>Unreadable grid &lt;source&gt;</pre>" in parse_to_html(result)
 
 
-def test_checkbox_words_render_as_notation_without_changing_extraction():
+def test_ordinary_checkbox_words_are_not_rewritten():
     result = _sample_result()
     block = result.pages[0].blocks[0]
     block.text = "Participating checked; Nonparticipating unchecked; status unchecked"
     before = result.model_dump_json()
 
-    assert "Participating [x]; Nonparticipating [ ]; status [ ]" in parse_to_markdown(result)
-    assert "Participating [x]; Nonparticipating [ ]; status [ ]" in parse_to_html(result)
+    assert block.text in parse_to_markdown(result)
+    assert block.text in parse_to_html(result)
     assert result.model_dump_json() == before

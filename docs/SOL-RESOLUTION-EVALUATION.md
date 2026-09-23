@@ -1,12 +1,15 @@
 # Sol resolution comparison: September 23, 2026
 
-This file records the September 23 resolution experiment. The current runtime
-prompt has changed since the run, but the rendering decision remains in the code.
+This report covers the September 23 resolution experiment. The prompt has
+changed since that run. Both extraction modes still use the chosen
+200-DPI/1,600-pixel rendering setting. The later
+[layout comparison](LAYOUT-EVALUATION.md) tested their different prompts and
+schemas at that setting.
 
-Decision: retain 200-DPI PDF rendering capped at a 1,600-pixel long edge. The
-300-DPI, 3,200-pixel candidate failed the agreed no-regression gate. This
-five-page comparison does not establish that higher-resolution input is worse
-for every document.
+The app kept 200-DPI PDF rendering with a 1,600-pixel long-edge cap. The
+300-DPI, 3,200-pixel candidate failed the agreed no-regression check. Five
+pages cannot show whether higher resolution helps or hurts across other
+documents.
 
 ## Run and limits
 
@@ -35,37 +38,36 @@ for every document.
 | Masked Amerigroup_1 | 2 | 95.79% | 96.48% |
 | Unweighted mean | | **95.57%** | **95.02%** |
 
-Two pages regressed, two tied, and one improved. The candidate failed
-the per-page no-regression requirement and the aggregate-improvement
-requirement, so it was not promoted. Visual source review was not performed after
-the metric gate failed. The results do not establish verified field-level OCR
-improvement. Token F1 does not establish correct identifiers, checkbox states,
-reading order, or table associations.
+Two pages regressed, two tied, and one improved. The candidate met neither the
+per-page no-regression requirement nor the aggregate-improvement requirement,
+so it was not promoted. No source-image review followed the failed metric
+check. The results provide no verified field-level OCR improvement.
+Token F1 cannot confirm identifiers, checkbox states, reading order, or table
+associations.
 
-Any future promotion also requires visual confirmation of at least one genuine
-correction with no new source errors. More live experiments need separate
-authorization; this run exhausted the approved ten requests.
+Any future promotion requires visual confirmation of at least one genuine
+correction without new source errors. This run used all ten approved requests;
+further live experiments need separate authorization.
 
 ## Verification and research
 
-The offline suite covers the request cap, budget reservation, unknown-usage
-stop, refusal handling, actual SDK retry/output settings, and promotion gate.
-A saved-response replay of the first document's approved pages 1-2 verified
-the full graph's Markdown, parse JSON, annotated PDF, two page PNGs, usage, and
-progress events with **zero additional API calls**. UI behavior was tested with
-Streamlit AppTest, not a manual browser session; clipboard JavaScript was not
-browser-tested.
+Offline tests cover the request cap, budget reservation, unknown-usage stop,
+refusal handling, SDK retry and output settings, and promotion check. A replay
+of saved responses for the first document's approved pages 1-2 checked the
+graph's Markdown, parse JSON, annotated PDF, two page PNGs, usage, and progress
+events with **zero additional API calls**. The UI was tested with Streamlit
+AppTest. There was no manual browser test of the UI or clipboard JavaScript.
 
-OpenAI recommends enlarging small text, which motivated this controlled comparison.
-Its current vision sizing table does not establish Sol-specific `original`
-behavior, so the comparison kept automatic detail. See the
-[vision guide](https://developers.openai.com/api/docs/guides/images-vision).
-Task-specific evaluation and source review are still needed alongside scores; see
-[evaluation guidance](https://developers.openai.com/api/docs/guides/evaluation-best-practices).
+OpenAI's [vision guide](https://developers.openai.com/api/docs/guides/images-vision)
+recommends enlarging small text, which motivated this comparison. Its sizing
+table does not establish Sol-specific `original` behavior, so both profiles
+used automatic detail. The [evaluation guidance](https://developers.openai.com/api/docs/guides/evaluation-best-practices)
+also calls for task-specific checks alongside scores; source review is still
+needed here.
 
-The UI changes use [dynamic tabs](https://docs.streamlit.io/develop/api-reference/layout/st.tabs)
-to defer hidden previews and keep page-progress updates on the script thread,
-following [Streamlit's threading guidance](https://docs.streamlit.io/develop/concepts/design/multithreading).
+The UI uses [dynamic tabs](https://docs.streamlit.io/develop/api-reference/layout/st.tabs)
+to defer hidden previews. Page-progress updates stay on the script thread, as
+described in [Streamlit's threading guidance](https://docs.streamlit.io/develop/concepts/design/multithreading).
 Pricing follows the [Sol model page](https://developers.openai.com/api/docs/models/gpt-6-sol).
 
 ## Reproduction
@@ -82,7 +84,7 @@ After authorizing a new paid comparison, choose a fresh output directory:
 uv run --no-project --python .venv\Scripts\python.exe python -X utf8 -m scripts.evaluate_resolution --live --output data/parse/sol-resolution-NEW
 ```
 
-The evaluator requires the existing allowlisted PDFs and reference files at
-the paths configured in `scripts/evaluate_prompts.py`. It does not overwrite
-existing output directories, inject reference text into prompts, or change the
-normal OCR default automatically.
+The evaluator reads the allowlisted PDFs and reference files at the paths in
+`scripts/evaluate_prompts.py`. It refuses an existing output directory and
+keeps reference text out of prompts. Running it does not change the normal OCR
+default.

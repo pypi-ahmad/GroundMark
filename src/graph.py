@@ -19,8 +19,7 @@ from langgraph.graph import END, START, StateGraph
 
 from src import usage
 from src.models import DEFAULT_MODEL
-from src.annotate import annotate_document
-from src.markdown import save_html_for_doc, save_markdown_for_doc
+from src.export import DEFAULT_FORMATS, FORMATS, export_result
 from src.parse import parse_document
 from src.preprocess import preprocess
 from src.layout import ParseResult
@@ -34,8 +33,6 @@ class GraphState(TypedDict, total=False):
     end_page: int | None
     model: str
     doc_sha: str
-    base64_image: str
-    mime: str
     parse_result: ParseResult | None
     markdown: str | None
     parse_error: str | None
@@ -48,6 +45,14 @@ class GraphState(TypedDict, total=False):
     markdown_path: str | None
     html_path: str | None
     annotated_page_paths: list[str]
+    figure_warnings: list[str]
+    detailed_layout: bool
+    formats: set[str]
+    view: str
+    annotation_metadata: bool
+    export_errors: list[str]
+    output_paths: list[str]
+    markdown_zip_path: str | None
 
 
 def node_preprocess(state: GraphState) -> dict:
@@ -57,8 +62,6 @@ def node_preprocess(state: GraphState) -> dict:
     run_id = state.get("run_id") or uuid4().hex
     return {
         "doc_sha": result["doc_sha256"],
-        "base64_image": result["base64"],
-        "mime": result["mime"],
         "run_id": run_id,
         "output_dir": state.get("output_dir", str(Path("data/parse/runs") / run_id)),
         "token_usage": state.get("token_usage", []),
@@ -78,6 +81,8 @@ def node_parse(state: GraphState) -> dict:
             usage_entries=state["token_usage"],
             on_progress=get_stream_writer(),
             output_dir=state["output_dir"],
+            detailed_layout=state.get("detailed_layout", False),
+            save_json=False,
         )
         filtered_pages = ", ".join(str(page) for page in result.content_filtered_pages)
         parse_error = (
@@ -89,44 +94,18 @@ def node_parse(state: GraphState) -> dict:
         if other_failures:
             summary = "; ".join(f"Page {d.page}: {d.outcome}" for d in other_failures)
             parse_error = f"{parse_error}; {summary}" if parse_error else summary
-        if not result.pages:
-            return {
-                "parse_result": result,
-                "markdown": None,
-                "parse_error": parse_error,
-                "annotated_pdf_path": None,
-                "status": "parse_failed",
-                "parse_json_path": str(Path(state["output_dir"]) / f"{result.doc_sha}.json"),
-            }
-
-        md_path = save_markdown_for_doc(result, output_dir=state["output_dir"])
-        html_path = save_html_for_doc(result, output_dir=state["output_dir"])
-        parse_status = "partial" if parse_error else "ok"
-        print(f"[ADE] parse: {parse_status}, {len(result.pages)} page(s) -> {md_path}")
-
-        annotated_pdf_path = None
-        annotated_page_paths = []
-        try:
-            # Annotation is a secondary, human-facing overlay on top of an
-            # already-successful parse; a failure here (e.g. a Pillow/font
-            # issue) must not discard the parse result that's already in hand.
-            pdf_path, _meta_path = annotate_document(state["image_path"], result,
-                                                    output_dir=Path(state["output_dir"]) / "annotated")
-            annotated_pdf_path = str(pdf_path)
-            annotated_page_paths = [str(p) for p in sorted((pdf_path.parent / result.doc_sha).glob("page_*.png"))]
-        except Exception as exc:
-            print(f"[ADE] annotate: skipped ({exc})")
-
+        artifacts = export_result(
+            state["image_path"], result, state["output_dir"],
+            formats=set(state.get("formats", DEFAULT_FORMATS)),
+            view=state.get("view", "full"),
+            annotation_metadata=state.get("annotation_metadata", True),
+        )
         return {
+            **artifacts,
             "parse_result": result,
-            "markdown": md_path.read_text(encoding="utf-8"),
             "parse_error": parse_error,
-            "annotated_pdf_path": annotated_pdf_path,
-            "annotated_page_paths": annotated_page_paths,
-            "markdown_path": str(md_path),
-            "html_path": str(html_path),
-            "parse_json_path": str(Path(state["output_dir"]) / f"{result.doc_sha}.json"),
-            "status": "parsed_partial" if parse_error else "parsed",
+            "status": ("parse_failed" if not result.pages else
+                       "parsed_partial" if parse_error else "parsed"),
         }
     except Exception as exc:
         print(f"[ADE] parse: skipped ({exc})")
@@ -153,9 +132,16 @@ def build_graph():
 
 def run_graph(image_path: str, *, start_page: int = 1, end_page: int | None = None,
               model: str = DEFAULT_MODEL,
-              on_progress: Callable[[dict], None] | None = None) -> dict:
+              detailed_layout: bool = False,
+              on_progress: Callable[[dict], None] | None = None,
+              output_dir: str | Path | None = None,
+              formats: set[str] | None = None, view: str = "full") -> dict:
     if model != DEFAULT_MODEL:
         raise ValueError("Unsupported model")
+    if formats is not None and (not formats or not formats <= FORMATS):
+        raise ValueError("Unsupported output formats")
+    if view not in {"full", "clean"}:
+        raise ValueError("Unsupported rendering view")
     entries: list[dict] = []
     run_id = uuid4().hex
     app = build_graph()
@@ -164,8 +150,12 @@ def run_graph(image_path: str, *, start_page: int = 1, end_page: int | None = No
         "start_page": start_page,
         "end_page": end_page,
         "model": model,
+        "detailed_layout": detailed_layout,
         "run_id": run_id,
-        "output_dir": str(Path("data/parse/runs") / run_id),
+        "output_dir": str(output_dir if output_dir is not None else Path("data/parse/runs") / run_id),
+        "formats": set(DEFAULT_FORMATS if formats is None else formats),
+        "view": view,
+        "annotation_metadata": formats is None,
         "token_usage": entries,
     }
     result = dict(initial_state)
@@ -183,9 +173,10 @@ def _main() -> None:
     parser.add_argument("--path", required=True, help="Path to a document image or PDF")
     parser.add_argument("--start-page", type=int, default=1)
     parser.add_argument("--end-page", type=int, default=None, help="Omit for through the last page")
+    parser.add_argument("--detailed-layout", action="store_true", help="Opt into experimental structure extraction")
     args = parser.parse_args()
 
-    result = run_graph(args.path, start_page=args.start_page, end_page=args.end_page)
+    result = run_graph(args.path, start_page=args.start_page, end_page=args.end_page, detailed_layout=args.detailed_layout)
 
     print(f"status: {result.get('status')}")
     print(f"doc_sha: {result.get('doc_sha')}")

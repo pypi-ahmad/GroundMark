@@ -12,15 +12,6 @@ Next: src/models.py for the per-model rate table this multiplies against.
 from __future__ import annotations
 from src.models import DEFAULT_MODEL, MODEL_RATES
 
-# Backward-compatible default rates.
-(
-    PRICE_PER_1M_INPUT,
-    PRICE_PER_1M_CACHED_INPUT,
-    PRICE_PER_1M_CACHE_WRITE,
-    PRICE_PER_1M_OUTPUT,
-) = MODEL_RATES[DEFAULT_MODEL]
-
-
 def record(call: str, model: str, usage_metadata: dict | None, *,
            usage_known: bool | None = None, entries: list[dict] | None = None) -> dict:
     known = usage_metadata is not None if usage_known is None else usage_known

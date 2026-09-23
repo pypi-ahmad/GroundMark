@@ -28,11 +28,11 @@ def test_parse_document_writes_json(tmp_path, monkeypatch):
         width_px=900,
         height_px=620,
         blocks=[
-            ParseBlock(
+            ParseBlock(structure=None,
                 id="b1", type="title", text="INVOICE",
                 bbox=BBox(page=1, xyxy=(0.0, 0.0, 0.3, 0.05)), conf=None, table=None,
             ),
-            ParseBlock(
+            ParseBlock(structure=None,
                 id="b2", type="text", text="Invoice #: INV-1001", bbox=None,
                 conf=None, table=None,
             ),
@@ -112,7 +112,7 @@ def test_sequential_outcomes_keep_page_identity_and_context(tmp_path, monkeypatc
         if outcome != "parsed":
             raise ExtractionCallError(diagnostic)
         return ParsePage(page=page_number, width_px=width, height_px=height, blocks=[
-            ParseBlock(id=f"p{page_number}", type="heading", text="Previous heading",
+            ParseBlock(structure=None, id=f"p{page_number}", type="heading", text="Previous heading",
                        bbox=None, conf=None, table=None)])
 
     monkeypatch.setattr(parse_module, "parse_page", fake_parse_page)

@@ -18,6 +18,7 @@ allowlist that keeps diagnostics safe to log/display.
 from __future__ import annotations
 
 import os
+from pathlib import Path
 
 from dotenv import load_dotenv
 from langchain_core.messages import HumanMessage, convert_to_openai_messages
@@ -28,7 +29,8 @@ from src import usage as _usage
 from src.models import DEFAULT_MODEL
 from src.diagnostics import ExtractionCallError, PageDiagnostic, filter_annotations, safe_identifier, token_count
 
-load_dotenv()
+if os.environ.get("GROUNDMARK_ENV_LOADED") != "1":
+    load_dotenv(Path.cwd() / ".env")
 
 MODEL_NAME = DEFAULT_MODEL
 
