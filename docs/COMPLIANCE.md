@@ -8,4 +8,4 @@ Uploaded files and generated artifacts stay on the local machine. Model requests
 
 Diagnostics show request status and token counts without printing credentials.
 
-The CLI uses the same endpoint and extraction rules as the UI. It saves only selected artifacts in the requested output directory. Environment variables override configuration files. The CLI does not accept keys as command-line arguments, and release artifacts contain no keys.
+The CLI uses the same endpoint and extraction rules as the UI. It saves only selected artifacts in the requested output directory. The filenames include the source stem and extraction time, while JSON keeps the source hash for grounding. Environment variables inherited by the process take priority over `.env`. The CLI does not accept keys as command-line arguments, and release artifacts contain no keys.

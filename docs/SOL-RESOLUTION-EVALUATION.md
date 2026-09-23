@@ -74,7 +74,7 @@ Pricing follows the [Sol model page](https://developers.openai.com/api/docs/mode
 Offline checks:
 
 ```powershell
-uv run --no-project --python .venv\Scripts\python.exe python -X utf8 -m pytest -q
+uv run --no-project --python .venv\Scripts\python.exe python -X utf8 -m pytest tests -q
 ```
 
 After authorizing a new paid comparison, choose a fresh output directory:
