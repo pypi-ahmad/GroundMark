@@ -9,21 +9,26 @@ import re
 import zipfile
 from pathlib import Path
 from typing import Literal
+from urllib.parse import quote
 
 from src.layout import ParseBlock, ParseResult, TableCell
+from src.output_names import artifact_name, figure_name
 
 View = Literal["full", "clean"]
 Figures = dict[str, bytes]
 
 
-def _blocks(result: ParseResult, view: View):
+def _blocks(result: ParseResult, view: View, output_basename=None, figures=None):
     if view not in {"full", "clean"}:
         raise ValueError("Unknown rendering view")
     for page in sorted(result.pages, key=lambda p: p.page):
         for index, block in enumerate(page.blocks):
             if view == "clean" and block.type in {"page_header", "page_footer"}:
                 continue
-            yield f"page_{page.page:03d}_figure_{index:03d}.png", block
+            name = figure_name(page.page, index, output_basename)
+            if figures and name not in figures:
+                name = figure_name(page.page, index)
+            yield name, block
 
 
 def _cell_html(text: str) -> str:
@@ -202,11 +207,11 @@ def _render_block(block: ParseBlock) -> str:
 
 
 def parse_to_markdown(result: ParseResult, *, view: View = "full", figures: Figures | None = None,
-                      inline_images: bool = False) -> str:
+                      inline_images: bool = False, output_basename: str | None = None) -> str:
     parts = []
-    for name, block in _blocks(result, view):
+    for name, block in _blocks(result, view, output_basename, figures):
         if block.type == "figure" and figures and name in figures:
-            source = "data:image/png;base64," + base64.b64encode(figures[name]).decode("ascii") if inline_images else f"images/{name}"
+            source = "data:image/png;base64," + base64.b64encode(figures[name]).decode("ascii") if inline_images else quote(f"images/{name}", safe="/")
             rendered = f"![Figure]({source})"
             if block.text:
                 rendered += "\n\n" + _md_text(block.text)
@@ -227,9 +232,10 @@ th { background:#eeeeee; } p { margin:0.6em 0; } img { max-width:100%; height:au
 </style>"""
 
 
-def parse_to_html(result: ParseResult, *, view: View = "full", figures: Figures | None = None) -> str:
+def parse_to_html(result: ParseResult, *, view: View = "full", figures: Figures | None = None,
+                  output_basename: str | None = None) -> str:
     parts = []
-    for name, block in _blocks(result, view):
+    for name, block in _blocks(result, view, output_basename, figures):
         if block.type == "figure" and figures and name in figures:
             image = base64.b64encode(figures[name]).decode("ascii")
             parts.append(f'<figure><img alt="Source figure" src="data:image/png;base64,{image}">'
@@ -239,11 +245,13 @@ def parse_to_html(result: ParseResult, *, view: View = "full", figures: Figures 
     return "<!doctype html><html><head><meta charset='utf-8'>" + _HTML_STYLE + "</head><body>" + "\n".join(parts) + "</body></html>"
 
 
-def markdown_bundle(result: ParseResult, *, view: View = "full", figures: Figures | None = None) -> bytes:
+def markdown_bundle(result: ParseResult, *, view: View = "full", figures: Figures | None = None,
+                    output_basename: str | None = None) -> bytes:
     buffer = io.BytesIO()
     with zipfile.ZipFile(buffer, "w", compression=zipfile.ZIP_DEFLATED) as archive:
-        archive.writestr("document.md", parse_to_markdown(result, view=view, figures=figures))
-        for name, block in _blocks(result, view):
+        archive.writestr(artifact_name(output_basename, ".md") if output_basename else "document.md",
+                         parse_to_markdown(result, view=view, figures=figures, output_basename=output_basename))
+        for name, block in _blocks(result, view, output_basename, figures):
             if block.type == "figure" and figures and name in figures:
                 archive.writestr(f"images/{name}", figures[name])
     return buffer.getvalue()
@@ -253,27 +261,27 @@ def render_and_save(parse_json_path: str | Path) -> Path:
     path = Path(parse_json_path)
     result = ParseResult.model_validate_json(path.read_text(encoding="utf-8"))
     from src.figures import load_figures
-    figures = load_figures(result, path.parent)
+    figures = load_figures(result, path.parent, output_basename=path.stem)
     output = path.with_suffix(".md")
-    output.write_text(parse_to_markdown(result, figures=figures), encoding="utf-8")
+    output.write_text(parse_to_markdown(result, figures=figures, output_basename=path.stem), encoding="utf-8")
     return output
 
 
 def save_markdown_for_doc(result: ParseResult, *, output_dir: str | Path = "data/parse",
-                          figures: Figures | None = None) -> Path:
+                          figures: Figures | None = None, output_basename: str | None = None) -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
-    path = out / f"{result.doc_sha}.md"
-    path.write_text(parse_to_markdown(result, figures=figures), encoding="utf-8")
+    path = out / artifact_name(output_basename or result.doc_sha, ".md")
+    path.write_text(parse_to_markdown(result, figures=figures, output_basename=output_basename), encoding="utf-8")
     return path
 
 
 def save_html_for_doc(result: ParseResult, *, output_dir: str | Path = "data/parse",
-                     figures: Figures | None = None) -> Path:
+                     figures: Figures | None = None, output_basename: str | None = None) -> Path:
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
-    path = out / f"{result.doc_sha}.html"
-    path.write_text(parse_to_html(result, figures=figures), encoding="utf-8")
+    path = out / artifact_name(output_basename or result.doc_sha, ".html")
+    path.write_text(parse_to_html(result, figures=figures, output_basename=output_basename), encoding="utf-8")
     return path
 
 

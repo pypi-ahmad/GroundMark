@@ -9,6 +9,7 @@ Next: src/parse.py, where the actual per-page work happens.
 from __future__ import annotations
 
 import argparse
+from datetime import UTC, datetime
 from collections.abc import Callable
 from pathlib import Path
 from typing import TypedDict
@@ -23,6 +24,7 @@ from src.export import DEFAULT_FORMATS, FORMATS, export_result
 from src.parse import parse_document
 from src.preprocess import preprocess
 from src.layout import ParseResult
+from src.output_names import reserve_basename
 
 # This graph only parses source pages into grounded layout data and Markdown.
 
@@ -53,9 +55,13 @@ class GraphState(TypedDict, total=False):
     export_errors: list[str]
     output_paths: list[str]
     markdown_zip_path: str | None
+    original_filename: str
+    started_at: str
+    output_basename: str
 
 
 def node_preprocess(state: GraphState) -> dict:
+    started_at = state.get("started_at") or datetime.now(UTC).isoformat()
     print(f"[ADE] preprocess: {state['image_path']}")
     result = preprocess(state["image_path"])
     # Preserve direct build_graph().invoke(...) callers as well as run_graph.
@@ -66,6 +72,8 @@ def node_preprocess(state: GraphState) -> dict:
         "output_dir": state.get("output_dir", str(Path("data/parse/runs") / run_id)),
         "token_usage": state.get("token_usage", []),
         "model": state.get("model", DEFAULT_MODEL),
+        "original_filename": state.get("original_filename", Path(state["image_path"]).name),
+        "started_at": started_at,
     }
 
 
@@ -94,14 +102,18 @@ def node_parse(state: GraphState) -> dict:
         if other_failures:
             summary = "; ".join(f"Page {d.page}: {d.outcome}" for d in other_failures)
             parse_error = f"{parse_error}; {summary}" if parse_error else summary
-        artifacts = export_result(
-            state["image_path"], result, state["output_dir"],
-            formats=set(state.get("formats", DEFAULT_FORMATS)),
-            view=state.get("view", "full"),
-            annotation_metadata=state.get("annotation_metadata", True),
-        )
+        with reserve_basename(state["original_filename"], datetime.fromisoformat(state["started_at"]),
+                              state["output_dir"]) as basename:
+            artifacts = export_result(
+                state["image_path"], result, state["output_dir"],
+                formats=set(state.get("formats", DEFAULT_FORMATS)),
+                view=state.get("view", "full"),
+                annotation_metadata=state.get("annotation_metadata", True),
+                output_basename=basename,
+            )
         return {
             **artifacts,
+            "output_basename": basename,
             "parse_result": result,
             "parse_error": parse_error,
             "status": ("parse_failed" if not result.pages else
@@ -135,7 +147,8 @@ def run_graph(image_path: str, *, start_page: int = 1, end_page: int | None = No
               detailed_layout: bool = False,
               on_progress: Callable[[dict], None] | None = None,
               output_dir: str | Path | None = None,
-              formats: set[str] | None = None, view: str = "full") -> dict:
+              formats: set[str] | None = None, view: str = "full",
+              original_filename: str | None = None) -> dict:
     if model != DEFAULT_MODEL:
         raise ValueError("Unsupported model")
     if formats is not None and (not formats or not formats <= FORMATS):
@@ -147,6 +160,8 @@ def run_graph(image_path: str, *, start_page: int = 1, end_page: int | None = No
     app = build_graph()
     initial_state: GraphState = {
         "image_path": image_path,
+        "original_filename": original_filename or Path(image_path).name,
+        "started_at": datetime.now(UTC).isoformat(),
         "start_page": start_page,
         "end_page": end_page,
         "model": model,

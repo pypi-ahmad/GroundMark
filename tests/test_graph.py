@@ -30,11 +30,7 @@ def test_parse_success_sets_status_and_artifacts(tmp_path, monkeypatch):
             doc_sha=doc_sha,
             pages=[ParsePage(page=1, width_px=900, height_px=620, blocks=[])],
         )
-        output_dir = Path(kwargs["output_dir"])
-        output_dir.mkdir(parents=True, exist_ok=True)
-        (output_dir / f"{doc_sha}.json").write_text(
-            result.model_dump_json(indent=2), encoding="utf-8"
-        )
+        assert kwargs["save_json"] is False
         return result
 
     monkeypatch.setattr(graph_module, "parse_document", fake_parse_document)

@@ -6,6 +6,7 @@ from src.annotate import annotate_document
 from src.figures import extract_figures
 from src.layout import ParseResult
 from src.markdown import markdown_bundle, parse_to_html, parse_to_markdown
+from src.output_names import artifact_name
 
 FORMATS = frozenset({"markdown", "html", "json", "annotated-pdf", "annotated-images", "markdown-zip"})
 DEFAULT_FORMATS = FORMATS - {"markdown-zip"}
@@ -13,9 +14,10 @@ DEFAULT_FORMATS = FORMATS - {"markdown-zip"}
 
 def export_result(source: str, result: ParseResult, output_dir: str | Path, *,
                   formats: set[str] | frozenset[str], view: str = "full",
-                  annotation_metadata: bool = False) -> dict:
+                  annotation_metadata: bool = False, output_basename: str | None = None) -> dict:
     directory = Path(output_dir)
     directory.mkdir(parents=True, exist_ok=True)
+    basename = output_basename or result.doc_sha
     artifacts = {
         "markdown": None, "markdown_path": None, "html_path": None,
         "parse_json_path": None, "markdown_zip_path": None,
@@ -24,7 +26,7 @@ def export_result(source: str, result: ParseResult, output_dir: str | Path, *,
     }
 
     def write(kind, suffix, value):
-        path = directory / f"{result.doc_sha}{suffix}"
+        path = directory / artifact_name(basename, suffix)
         if isinstance(value, bytes):
             path.write_bytes(value)
         else:
@@ -43,7 +45,7 @@ def export_result(source: str, result: ParseResult, output_dir: str | Path, *,
     figures = {}
     if formats & {"markdown", "html", "markdown-zip"}:
         figures, artifacts["figure_warnings"] = extract_figures(
-            source, result, directory, save_images="markdown" in formats)
+            source, result, directory, save_images="markdown" in formats, output_basename=output_basename)
         if "markdown" in formats:
             artifacts["output_paths"].extend(str(directory / "images" / name) for name in figures)
 
@@ -54,7 +56,7 @@ def export_result(source: str, result: ParseResult, output_dir: str | Path, *,
     ):
         if name in formats:
             try:
-                content = render(result, view=view, figures=figures)
+                content = render(result, view=view, figures=figures, output_basename=output_basename)
                 write(key, suffix, content)
                 if name == "markdown":
                     artifacts["markdown"] = content
@@ -68,6 +70,7 @@ def export_result(source: str, result: ParseResult, output_dir: str | Path, *,
                 save_pdf="annotated-pdf" in formats,
                 save_images="annotated-images" in formats,
                 save_metadata=annotation_metadata,
+                output_basename=output_basename,
             )
             if pdf:
                 artifacts["annotated_pdf_path"] = str(pdf)
@@ -75,7 +78,9 @@ def export_result(source: str, result: ParseResult, output_dir: str | Path, *,
             if metadata:
                 artifacts["output_paths"].append(str(metadata))
             if "annotated-images" in formats:
-                pages = sorted((directory / "annotated" / result.doc_sha).glob("page_*.png"))
+                prefix = f"{basename}_page_" if output_basename else "page_"
+                pages = sorted(p for p in (directory / "annotated" / basename).iterdir()
+                               if p.name.startswith(prefix) and p.suffix == ".png")
                 artifacts["annotated_page_paths"] = [str(p) for p in pages]
                 artifacts["output_paths"].extend(str(p) for p in pages)
         except Exception as exc:
