@@ -1,19 +1,20 @@
 # Prompt evaluation: September 12, 2026
 
-This is a historical evaluation record. The current runtime has one rewritten
-`gpt-6-sol` prompt in `prompts/runtime/parse-page.md`; the prompt files discussed
-below are no longer part of the application.
+This report covers the September 12 prompt comparison. The app now uses
+`prompts/runtime/parse-page.md` by default and offers
+`parse-page-structured.md` as an experimental opt-in. The candidates tested
+here are no longer in the app. The later
+[layout comparison](LAYOUT-EVALUATION.md) records the current decision.
 
-Decision: keep the baseline layout prompt used in this run. Both revised prompts
-improved form segmentation and reference-token overlap, but introduced incorrect
-values. The corrective candidate transposed a facility tax identifier that the
-baseline read correctly, so it failed the source-grounding acceptance gate. No
-third tuning round ran.
+The baseline layout prompt was kept. Both revisions improved form segmentation
+and reference-token overlap but introduced wrong values. The corrective version
+transposed a facility tax identifier that the baseline read correctly, failing
+the source-grounding acceptance check. There was no third tuning round.
 
-Six other runtime prompts were revised at the time. That version preserved reading
-order, escaped table cells safely, retained line breaks, and padded ragged rows for
-display. The ignored local artifact directory contains the captured candidates and
-results when those files are available in the checkout.
+Six other runtime prompts were revised during this work. That version kept
+reading order and line breaks, escaped table cells, and padded ragged rows for
+display. The ignored local artifact directory holds the candidates and results
+when those files are present in the checkout.
 
 ## Live scope and controls
 
@@ -25,24 +26,23 @@ results when those files are available in the checkout.
 | Masked Amerigroup_1 | 1 to 2 |
 
 There were 17 page invocations: six baseline, six candidate, and five corrective.
-BadgeCare page 1 was content-filtered in baseline and candidate, then skipped
-entirely in the corrective round. No other pages were submitted. No content-filter
-retry, bypass, model change, or reference-text injection was used.
+BadgeCare page 1 was content-filtered in the first two rounds and skipped in
+the corrective round. The run submitted no other pages and used no content-filter
+retry, bypass, model change, or reference-text injection.
 
-These runs used the pre-migration default model and temperature 0. They do not
-validate the current `gpt-6-sol` configuration. The runs used the same reasoning
-setting recorded in each manifest, the same 1600-pixel rendering,
-one image per request, and concurrency capped at 50. Those historical runs
-set the LangChain wrapper's retry field after constructing its SDK client;
-inspection later showed the underlying client still allowed two transient
-retries. The exact historical HTTP attempt count was not captured. The evaluator
-now sets retries to zero on the actual SDK client. Documents ran sequentially;
-their pages ran concurrently.
+These runs used the pre-migration default model and temperature 0, so they do
+not validate the current `gpt-6-sol` setup. They used the same reasoning setting
+recorded in each manifest, 1600-pixel rendering, one image per request, and a
+concurrency cap of 50. The code set the LangChain wrapper's retry field after
+creating its SDK client. Later inspection found that the client still allowed
+two transient retries; the actual number of HTTP attempts was not recorded.
+The evaluator now disables retries on the SDK client itself. Documents ran
+sequentially, while pages within each document ran concurrently.
 
 ## Measurements
 
-Results below cover the five successfully parsed pages. The sixth page counts
-against coverage and has no transcription score.
+The results cover five successfully parsed pages. The filtered sixth page counts
+toward coverage but has no transcription score.
 
 | Measurement | Baseline | Candidate | Corrective |
 | --- | ---: | ---: | ---: |
@@ -55,17 +55,17 @@ against coverage and has no transcription score.
 | Reported output tokens | 8,643 | 15,674 | 15,733 |
 | Mean successful-page latency | 18.03 s | 26.49 s | 27.28 s |
 
-Token overlap ignores punctuation, case, sequence, and field associations. It
-does not measure extraction accuracy. Spot checks were selected after inspection
-to diagnose errors; they measure visible value presence rather than exhaustive
-association accuracy or performance on unseen documents. Filtered requests gave
-no usage, so token totals include reported usage only. Timing comes from single
-runs and is not a latency benchmark.
+Token overlap ignores punctuation, case, sequence, and field associations, so
+it cannot establish extraction accuracy. The spot checks were chosen after
+inspection to diagnose errors. They measure whether selected values appear,
+not every field association or performance on unseen documents. Filtered
+requests returned no usage, so totals include reported tokens only. Timing
+comes from single runs and does not establish typical latency.
 
-The candidates turned these form sections into fields instead of tables. The zero
-ragged-table count therefore does not prove better extraction of genuine repeated-row
-tables. Live true-grid and merged-cell accuracy remain unmeasured on this corpus.
-Renderer behavior is covered separately by offline tests.
+The candidates represented these form sections as fields. This explains their
+zero ragged-table count but says little about extraction of genuine repeated-row
+tables. This corpus has no live measure of true-grid or merged-cell accuracy.
+Offline tests cover renderer behavior separately.
 
 ## Source review findings
 
@@ -86,13 +86,13 @@ Renderer behavior is covered separately by offline tests.
   its literal mark. Checkbox notation alone does not prove faithful transcription.
 
 LandingAI uses richer table-cell structures and may describe logos or represent
-forms differently. Reference disagreement was checked against source images;
-reference tokens were not assumed correct. The results do not support a universal
-accuracy claim.
+forms differently. When the reference differed, the source image was checked.
+The reference was not treated as automatically correct, and these results do
+not support a universal accuracy claim.
 
 ## Artifacts and checks
 
-Local artifacts live under `data/parse/prompt-eval-20260912/`:
+The local artifacts are under `data/parse/prompt-eval-20260912/`:
 
 - `comparison.html`: source images, escaped LandingAI Markdown, and all three
   extracted outputs; private document data stays in this ignored local directory.
@@ -101,12 +101,13 @@ Local artifacts live under `data/parse/prompt-eval-20260912/`:
   and exact prompt snapshots with hashes.
 - `baseline-prompts/`: original seven templates for comparison and rollback.
 
-The six non-layout prompt revisions passed offline rendering and composition tests.
-They were not live-tested on invoices because authorization covered only the listed
-medical-document pages. Required numeric fields in the legacy schemas could not
-represent missing values, and prompt wording did not change that limitation.
+The six non-layout prompt revisions passed offline rendering and composition
+tests. The live allowance covered only the listed medical-document pages, so
+invoices were not tested. Required numeric fields in the legacy schemas could
+not represent missing values; changing prompt wording did not fix that.
 
-At the time of this evaluation, the full offline suite passed 63 tests, including column ordering, table escaping,
-empty/ragged/multiline cells, Unicode/braces in templates, the exact live allowlist,
-skipping filtered pages, and existing partial-failure behavior. Runtime layout
-prompt bytes were checked against the baseline snapshot after rollback.
+At the time of the evaluation, 63 offline tests passed. They covered column
+ordering, table escaping, empty/ragged/multiline cells, Unicode and braces in
+templates, the exact live allowlist, filtered-page skipping, and partial
+failures. After rollback, the runtime layout prompt matched the baseline
+snapshot byte for byte.

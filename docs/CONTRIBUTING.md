@@ -1,16 +1,22 @@
 # Contributing
 
-Keep changes within the document product boundary: scanned PDFs or images become grounded Markdown, HTML, JSON, annotations, and chat over successfully parsed pages. Adding a business-field schema requires an explicit product decision.
+This project turns scanned PDFs and images into grounded Markdown, HTML, JSON, annotations, and chat over parsed pages. Keep changes within that work. A business-field schema needs an explicit product decision.
 
-Route `gpt-6-sol` calls through `src/llm.py`. Preserve page order and keep the page image authoritative when preceding-page context disagrees with it.
+Send `gpt-6-sol` requests through `src/llm.py`. Keep pages in source order and follow the page image when preceding-page context disagrees with it.
 
-Route document chat through `src/chat.py`. Keep Luna at medium reasoning, retain evidence validation and independent verification, and load every authored model instruction from Markdown. Never stream or persist unverified candidates. The optional live evaluation uses synthetic data: `uv run --no-project --python .venv\Scripts\python.exe -m scripts.evaluate_chat`.
+Keep document chat in `src/chat.py`, with Luna at medium reasoning, evidence checks, and separate answer verification. Store authored model instructions in Markdown. Do not stream or save unverified chat drafts. The optional chat evaluation uses synthetic data and makes paid calls: `uv run --no-project --python .venv\Scripts\python.exe -m scripts.evaluate_chat`.
+
+Layout schema changes must keep older JSON loadable. Presentation filters must not change stored extraction or chat evidence. Test structure and rendering changes against unknown metadata and source-text retention.
+
+Detailed layout remains optional because source review found new transcription errors. The [layout evaluation](LAYOUT-EVALUATION.md) records that result, along with word-token scores and the exhausted live-call allowance. A new paid comparison needs a new allowance and output directory. Keep dated reports faithful to their original runs when updating current guidance.
 
 Before submitting a change:
 
 1. Add or update focused tests.
-2. Install `requirements-dev.txt`, then run `uv run --no-project --python .venv\Scripts\python.exe -m pytest`.
+2. Run `uv sync`, then `uv run python -m pytest`.
 3. Run `git diff --check`.
 4. Update current documentation when behavior changes.
 
 Never commit credentials, uploaded documents, or generated run artifacts.
+
+For packaging or CLI changes, test format selection with fake responses, build with `uv build`, and verify the installed wheel outside the checkout. Keep `.env`, user documents, local indexes, and generated architecture screenshots out of release artifacts. Review release files before publishing. Use GitHub releases for distribution; the PyPI name belongs to another project. Contributions use the [MIT license](../LICENSE).
