@@ -1,7 +1,7 @@
 # Content-filter diagnostics: September 12, 2026
 
-This report covers the September 12 run. Its model, prompt, test count, and
-concurrency settings belong to that run. The current parser still records a
+The model, prompt, test count, and concurrency settings in this report describe
+the September 12 run. The current parser still records a
 diagnostic for each page and keeps successful pages available when another page
 fails or is filtered. The later [layout comparison](LAYOUT-EVALUATION.md)
 excluded the filtered BadgeCare page.
@@ -53,8 +53,8 @@ isolation, all-failed JSON persistence, and Streamlit diagnostics/stale-output
 checks. The UI was tested with Streamlit AppTest; there was no manual browser
 review.
 
-The manifest retains GroundTruth scores, which measure reference-token overlap
-rather than semantic correctness. Two successful pages had ragged tables that
+The manifest contains GroundTruth scores. These measure reference-token overlap,
+not semantic correctness. Two successful pages had ragged tables that
 the display padded. The run did not show an accuracy improvement or resolve
 those table structures.
 
