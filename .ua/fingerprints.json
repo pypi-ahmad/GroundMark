@@ -1,0 +1,6634 @@
+{
+  "version": "1.0.0",
+  "gitCommitHash": "05ad0a2a149c1919bd7e88ee7f651f272745c054",
+  "generatedAt": "2026-09-23T14:14:43.389Z",
+  "files": {
+    ".env.example": {
+      "filePath": ".env.example",
+      "contentHash": "a3791a117bffa17ee3a0625cbc2318dd647060c7dee7cd7f3561f2527b7cd735",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 14,
+      "hasStructuralAnalysis": true
+    },
+    ".github/workflows/openwiki-update.yml": {
+      "filePath": ".github/workflows/openwiki-update.yml",
+      "contentHash": "e00fd4758bb921d6a844798ef36364d7fe8cb024ca16497bf8f05bb4ac765419",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 78,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/assemble-review.json": {
+      "filePath": ".ua/.trash-1790154407/assemble-review.json",
+      "contentHash": "54a01773574f679a80b2d754c0dee28a94051ae28ad8fd912f771ffeade0f2f5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 14,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/assembled-graph.json": {
+      "filePath": ".ua/.trash-1790154407/assembled-graph.json",
+      "contentHash": "030a51a15f9ec6f21466152b439767c737f47e8491c25aea92bc051d5796073a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 10635,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/batch-0.json": {
+      "filePath": ".ua/.trash-1790154407/batch-0.json",
+      "contentHash": "4e651543b4413094fa6c2d8169ca17228694f2b26a59e7da0a3ddeabd29c64f5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 3279,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/batch-1.json": {
+      "filePath": ".ua/.trash-1790154407/batch-1.json",
+      "contentHash": "d63deaf4960b61b6d4494a1f4688ec2cf92aca9e2c172b2e9778d5f1c0a7ef75",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 3790,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/batch-2.json": {
+      "filePath": ".ua/.trash-1790154407/batch-2.json",
+      "contentHash": "1c9122d9fe107181f110c21e05f251159d780a3b73209500514a07afee295c77",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1563,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/batch-3.json": {
+      "filePath": ".ua/.trash-1790154407/batch-3.json",
+      "contentHash": "bc76a86459d8a89420a843bdd01be147f8e02665094d9e97a0b6a2cb89c48005",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1523,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/batch-4.json": {
+      "filePath": ".ua/.trash-1790154407/batch-4.json",
+      "contentHash": "1586fc6438424680b068b164c4a842527aa0a0e7802e434fbd78722c2ee8d03d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 183,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/batch-5.json": {
+      "filePath": ".ua/.trash-1790154407/batch-5.json",
+      "contentHash": "5f0b852da562dc3e9302c8e7d5f0edab9e7e8618bd6a57bd6ae9ff2978d5f16f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 46,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/batch-6.json": {
+      "filePath": ".ua/.trash-1790154407/batch-6.json",
+      "contentHash": "d5349b9968ab43550738f044e144ee8c69b44db2b3557ec9b5ff7671f3f2336d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 233,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/batch-7.json": {
+      "filePath": ".ua/.trash-1790154407/batch-7.json",
+      "contentHash": "6308994053c6dfd33c614f559a43032f7ea39473dca85be6baa064c9e7cd011b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 88,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/batch-8.json": {
+      "filePath": ".ua/.trash-1790154407/batch-8.json",
+      "contentHash": "369e24a24307544748b0c3b53a1e5124847a6f35bf389eed00e40d09923e1ce6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 454,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/batches.json": {
+      "filePath": ".ua/.trash-1790154407/batches.json",
+      "contentHash": "c83804f54f4d9f2b9c04b4cd306903b63a9ef05b962a9eb08bf07476358135ad",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2077,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/fingerprint-input.json": {
+      "filePath": ".ua/.trash-1790154407/fingerprint-input.json",
+      "contentHash": "cf59052f6a07ac3193dbf5ef44edf8ab750075afc646fe9fbf43f9425c7cc3e0",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 76,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/layers.json": {
+      "filePath": ".ua/.trash-1790154407/layers.json",
+      "contentHash": "f076ce781de1df20f57e5c2fe40b8e230cd74ee42e7488b3f6c377e4369d366c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 135,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/review.json": {
+      "filePath": ".ua/.trash-1790154407/review.json",
+      "contentHash": "74017649d9740f84a41f698f104f1d93c0f1da59a1e6b938c272fe00128215b9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 45,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/assemble_full_graph.py": {
+      "filePath": ".ua/.trash-1790154407/tmp/assemble_full_graph.py",
+      "contentHash": "038c0c23a39fad987ebb5246a59bc5aa980fdbc18a501dee77d2f8d8363046d8",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "datetime",
+          "specifiers": [
+            "datetime",
+            "timezone"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 33,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/build_layers.py": {
+      "filePath": ".ua/.trash-1790154407/tmp/build_layers.py",
+      "contentHash": "2cf03a63c4e6d750d20a5c5744b095142f5829c39522d3bbdb12cfb2bfa4984a",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 177,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/build_tour.py": {
+      "filePath": ".ua/.trash-1790154407/tmp/build_tour.py",
+      "contentHash": "0bde896c12072d9f15415d7d5fe529fead73f358a77eb87c2e1acf5b43a296ff",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 118,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/generate_all_batches.py": {
+      "filePath": ".ua/.trash-1790154407/tmp/generate_all_batches.py",
+      "contentHash": "042fd774cfdb82006d1e6b194219da90b8b894b431e2d2989b55d118ed7cf427",
+      "functions": [
+        {
+          "name": "get_symbol_summary",
+          "params": [
+            "file_path",
+            "name",
+            "is_func"
+          ],
+          "returnType": "tuple[str, list[str]]",
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "re",
+          "specifiers": [
+            "re"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        }
+      ],
+      "exports": [
+        "get_symbol_summary"
+      ],
+      "totalLines": 592,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/inspect_extracts.py": {
+      "filePath": ".ua/.trash-1790154407/tmp/inspect_extracts.py",
+      "contentHash": "ee90b4f83651e3908b87b7e4b939f60d0ca47ce2d1895907c832b888fbdae903",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 14,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/list_files.py": {
+      "filePath": ".ua/.trash-1790154407/tmp/list_files.py",
+      "contentHash": "9bf46fb1a1cf6e8a74b90724de44674f895c660336217b280c53a47985fbbedf",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 7,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-0.json": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-0.json",
+      "contentHash": "95db28bc7ac30a386496067d0dd4b311f7eb2bd253c392b9c9513b0bfec7935c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 128,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-1.json": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-1.json",
+      "contentHash": "30aee6d1765f56a16e3d150141bc9ba8a194f610c28cd048d892b185441c7c15",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 106,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-2.json": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-2.json",
+      "contentHash": "b42f0f0a768300be4bfcfd65b261b86cf2f920543d5590da1a54d352ecd6c12c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 80,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-3.json": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-3.json",
+      "contentHash": "79472a4e946c27f2f1957d440b0f6d28b700f7af7975ba478644fdb926bfe1ee",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 68,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-4.json": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-4.json",
+      "contentHash": "af98b4d6bbab0ed1cb0f8dca0a14748b086d0b6010a3966803d2fb97c6f5c93c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 70,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-5.json": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-5.json",
+      "contentHash": "d735ec3cab8f37d8829c3ab6c233c9e2c1f52bc1c378f1de753883b64a328497",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 28,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-6.json": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-6.json",
+      "contentHash": "16dde6f8c2ad6a9c7137153ff76c724da2025f273cd789950933c4d5b06ef945",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 77,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-7.json": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-7.json",
+      "contentHash": "b691c85b0f7792291a8030df587ebdd1f381a0c829ae6b2637dd2ca421c0891a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 35,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-8.json": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-8.json",
+      "contentHash": "eca21a000056d94939397425877db0425124a59da251f8702ef9512be641093f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 81,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-file-extract-results-0.json": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-file-extract-results-0.json",
+      "contentHash": "eefd9c1928993bf951b8295fdaafe539e193787dd859b7c00fbc79c9474b2e26",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 3870,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-file-extract-results-1.json": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-file-extract-results-1.json",
+      "contentHash": "43677769ff433cf7355dcb50d87a34e53b5e3d477befeb1864754e7eda989128",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 4233,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-file-extract-results-2.json": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-file-extract-results-2.json",
+      "contentHash": "9d936ca57b403de6b0d17110fcf411d61d05ae0e16509195b423902a6406c078",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2393,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-file-extract-results-3.json": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-file-extract-results-3.json",
+      "contentHash": "ec76b365ad52c46e7bc916d5d07c6f5ab2762f16ba5f16fe7274d273882774e1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1770,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-file-extract-results-4.json": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-file-extract-results-4.json",
+      "contentHash": "9336fed82b6d5181fc66339070807f9597f7b2c22d585276e2402517488e3c95",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 239,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-file-extract-results-5.json": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-file-extract-results-5.json",
+      "contentHash": "8d4b59c4dec6958d54b31ddabaaedd9abfc9c65d390a35969bd2a4c2db7e7659",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 126,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-file-extract-results-6.json": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-file-extract-results-6.json",
+      "contentHash": "a6e8e3aad890dcfeba5af92181d73fe7d96dfcf7c64adac1962e94a8f9d9c7ff",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 298,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-file-extract-results-7.json": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-file-extract-results-7.json",
+      "contentHash": "7acd9c48f7be0a093a07d8af14a9a3bfe4761c833b5a57a0e63d9d70f08ac27e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 138,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-file-extract-results-8.json": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-file-extract-results-8.json",
+      "contentHash": "31ca4aac1ab785b37ca31c63ed3c92737a6c3cf09b45ac82ed052c0b804e0617",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 872,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-import-map-input.json": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-import-map-input.json",
+      "contentHash": "d9d7438ad684d762fe877cf2497a197c2b0823939e77da725141203b0e88c98d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 425,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-import-map-output.json": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-import-map-output.json",
+      "contentHash": "dffee529df781ac733f7ff8fd338dbf7476e652601b2fb6c8b2e625437d60a53",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 200,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-inline-validate.cjs": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-inline-validate.cjs",
+      "contentHash": "11d35012e97d258954813204d1a92dbf400c03b3b35f88bcb91cdae21cc1e54d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 64,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tmp/ua-scan-files.json": {
+      "filePath": ".ua/.trash-1790154407/tmp/ua-scan-files.json",
+      "contentHash": "3bdd0671687a51d737b9daa6c7e2f217c5331a2bcb7f1bd0a9d016b20a783121",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 449,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790154407/tour.json": {
+      "filePath": ".ua/.trash-1790154407/tour.json",
+      "contentHash": "ef164b92c9222bab88682660ffda948669a30aa586f9dd67d7793fab49cb5062",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 96,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/assemble-review.json": {
+      "filePath": ".ua/.trash-1790159001/assemble-review.json",
+      "contentHash": "a300ae72d3e3b2f0bf7c1683075e76476359c25f5e89decbe5e2cb3508119be9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 14,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/assembled-graph.json": {
+      "filePath": ".ua/.trash-1790159001/assembled-graph.json",
+      "contentHash": "38c22fae577d41d2d53ba13630d77c8988a2f100ca88dcccb2dc3f9594255d1f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 11613,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/batch-0.json": {
+      "filePath": ".ua/.trash-1790159001/batch-0.json",
+      "contentHash": "6c01c9972305e15aa74e9f240b4b78472903c6bf4f76858f4d62b9800afed4f6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 4289,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/batch-1.json": {
+      "filePath": ".ua/.trash-1790159001/batch-1.json",
+      "contentHash": "7ddbba3d3315413dfdeda7fc72bc562c409a345fd029567cd0b53c919ceb118d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1768,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/batch-2.json": {
+      "filePath": ".ua/.trash-1790159001/batch-2.json",
+      "contentHash": "111c2b62ce9393df7f0a2e695ec9e5f3a27b8c4e9f00e958f369c5f0b0f3b16a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2107,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/batch-3.json": {
+      "filePath": ".ua/.trash-1790159001/batch-3.json",
+      "contentHash": "704a5945ae66a855adb92ca6b90f91a47cdcbbed4680575e0a8ea80987e4fec7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1756,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/batch-4.json": {
+      "filePath": ".ua/.trash-1790159001/batch-4.json",
+      "contentHash": "6d658b29bc7457dd244cb14dc7bb798d686aed6432cc2ebb1b03f54b61f6c61a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1564,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/batch-5.json": {
+      "filePath": ".ua/.trash-1790159001/batch-5.json",
+      "contentHash": "9ac7b4fba493f94edb8be715f4a927bdbcc0117c55498a9e45d79e705d856015",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 211,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/batch-6.json": {
+      "filePath": ".ua/.trash-1790159001/batch-6.json",
+      "contentHash": "672a0675910354289491b4f1287d734a29370453231ca8d4fbbba43d342bf414",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 233,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/batch-7.json": {
+      "filePath": ".ua/.trash-1790159001/batch-7.json",
+      "contentHash": "6308994053c6dfd33c614f559a43032f7ea39473dca85be6baa064c9e7cd011b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 88,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/batch-8.json": {
+      "filePath": ".ua/.trash-1790159001/batch-8.json",
+      "contentHash": "e96c6047500f651e91772d6d20e5d03728f8ce921d5ad640b7edd778a28282e6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 97,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/batches.json": {
+      "filePath": ".ua/.trash-1790159001/batches.json",
+      "contentHash": "509248fb8ad876cbbc0fd3680df2ac74a35e56163e72c7e4bd309d2530224dc5",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2246,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/fingerprint-input.json": {
+      "filePath": ".ua/.trash-1790159001/fingerprint-input.json",
+      "contentHash": "4f2d1e4ccebe4add647164f19a1835256af7e3d578414ac0783068e7d6be656f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 76,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/layers.json": {
+      "filePath": ".ua/.trash-1790159001/layers.json",
+      "contentHash": "a8e45d216a2894ed88ac38afec3fc6a8b5c5de0da626cae86259c7bd6c3f8b08",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 135,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/review.json": {
+      "filePath": ".ua/.trash-1790159001/review.json",
+      "contentHash": "5cf60f9ae989b9ebb9b7bca564057ecfc4175bacf9a5e62f246ad281b4f33853",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 38,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/assemble_full_graph.py": {
+      "filePath": ".ua/.trash-1790159001/tmp/assemble_full_graph.py",
+      "contentHash": "19f8a30e34f6bc8332665e0bf2c132acb49672f3d29e3fca1c138f4a8bf7ddae",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "datetime",
+          "specifiers": [
+            "datetime",
+            "timezone"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 33,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/build_layers_v2.py": {
+      "filePath": ".ua/.trash-1790159001/tmp/build_layers_v2.py",
+      "contentHash": "58e9c5587aa7582a2549a1315be932b7d8bb8025d5aa3effab1cdf564e57e8ea",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 176,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/build_tour.py": {
+      "filePath": ".ua/.trash-1790159001/tmp/build_tour.py",
+      "contentHash": "0601a9f3c2b40cf1df8c7c2a248094edff9f80386c339d382112996b355f3b32",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 118,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/changed-files.txt": {
+      "filePath": ".ua/.trash-1790159001/tmp/changed-files.txt",
+      "contentHash": "2d4ffca6b8d93cd1143e3e6f07eb9243b2110107add80da92ade2d62592ef00c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 53,
+      "hasStructuralAnalysis": false
+    },
+    ".ua/.trash-1790159001/tmp/generate_batches_v2.py": {
+      "filePath": ".ua/.trash-1790159001/tmp/generate_batches_v2.py",
+      "contentHash": "b14ea6c38ee5442e4eeb8a913db890a9774891c24d60ac8dd2eec07ff85fbc61",
+      "functions": [
+        {
+          "name": "get_symbol_summary",
+          "params": [
+            "file_path",
+            "name",
+            "is_func"
+          ],
+          "returnType": "tuple[str, list[str]]",
+          "exported": true,
+          "lineCount": 6
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        }
+      ],
+      "exports": [
+        "get_symbol_summary"
+      ],
+      "totalLines": 583,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/import-map-input.json": {
+      "filePath": ".ua/.trash-1790159001/tmp/import-map-input.json",
+      "contentHash": "e2804040578c978cb649cb914d160e873fbb1bb5160efef0afd907149b2fe148",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 425,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/import-map-output.json": {
+      "filePath": ".ua/.trash-1790159001/tmp/import-map-output.json",
+      "contentHash": "d6eb93bd5114b8c3eeb3d32a1813b0c2cac9aa7a3918bc84ce8e50a916446aa4",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 220,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/run_phase2.py": {
+      "filePath": ".ua/.trash-1790159001/tmp/run_phase2.py",
+      "contentHash": "4d529dc784974f16324c3bfdcf4e8e7485782a8b130f00ad730d9458ad02d2ce",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "subprocess",
+          "specifiers": [
+            "subprocess"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 48,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/scan-files.json": {
+      "filePath": ".ua/.trash-1790159001/tmp/scan-files.json",
+      "contentHash": "ceb110f47a0ec7e911adf4fe82e00bf0a982279c8f09c3ba25944eadecc54f0a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 449,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-0.json": {
+      "filePath": ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-0.json",
+      "contentHash": "7cbf57460ceea67b3bf15611e85f0b61d5f0fb3b5c3ed2b585668e9704e3dd52",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 140,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-1.json": {
+      "filePath": ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-1.json",
+      "contentHash": "55a779bdd94f21d407ea7be23f12298ade4c1319d35daab28542dad7703dcf6f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 113,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-2.json": {
+      "filePath": ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-2.json",
+      "contentHash": "0c44d5f9b8ec8f96a6f77dac9ffe799034dce220a9ba894918bd28fd2e34f0c6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 93,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-3.json": {
+      "filePath": ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-3.json",
+      "contentHash": "587b079632dd37f3ae7e6ad1add41ced2e655131eccdc46bbf77d7c192ec4f0a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 58,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-4.json": {
+      "filePath": ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-4.json",
+      "contentHash": "5202b4106600d8f9b0002b06d9267edbac4347f7647fef6ba2f677a35d8f7857",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 65,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-5.json": {
+      "filePath": ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-5.json",
+      "contentHash": "80ebae594f65ce7622e4e025bbfdbebbd22a732117a24ade1b543059cbdd1414",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 77,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-6.json": {
+      "filePath": ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-6.json",
+      "contentHash": "627b179d0d4c2efd6323ce0aff653a572e7887a6aa39a4bf47c449703074b098",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 77,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-7.json": {
+      "filePath": ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-7.json",
+      "contentHash": "b691c85b0f7792291a8030df587ebdd1f381a0c829ae6b2637dd2ca421c0891a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 35,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-8.json": {
+      "filePath": ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-8.json",
+      "contentHash": "e91ea1d577243cf120b04ec4159e68810d564b4f2e23d7d31f0e90f8b3a503ec",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 35,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/ua-file-extract-results-0.json": {
+      "filePath": ".ua/.trash-1790159001/tmp/ua-file-extract-results-0.json",
+      "contentHash": "ea20dda2607215435c0114bffbc1b01a104c59ae5444dc28d0409c960b6bac5e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 5037,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/ua-file-extract-results-1.json": {
+      "filePath": ".ua/.trash-1790159001/tmp/ua-file-extract-results-1.json",
+      "contentHash": "e363218c1c391f743ced31d2e08cc4b4e92046880c74ef89dca4619f62ff3dcf",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2391,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/ua-file-extract-results-2.json": {
+      "filePath": ".ua/.trash-1790159001/tmp/ua-file-extract-results-2.json",
+      "contentHash": "e9fb9f28e9db31888a248d2f16127261f838450c0bb8949c033fd47ec5978f29",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 3621,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/ua-file-extract-results-3.json": {
+      "filePath": ".ua/.trash-1790159001/tmp/ua-file-extract-results-3.json",
+      "contentHash": "5051a1f55f5799272a8189b5570f324ba0ce14aea39c2219c42454feeec0ca5a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1735,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/ua-file-extract-results-4.json": {
+      "filePath": ".ua/.trash-1790159001/tmp/ua-file-extract-results-4.json",
+      "contentHash": "51329cf1de3c8f944bbdb5da5ad8e2b469f6039532add7cfad9265d2a6ad092b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 2168,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/ua-file-extract-results-5.json": {
+      "filePath": ".ua/.trash-1790159001/tmp/ua-file-extract-results-5.json",
+      "contentHash": "498f28f3c104dc021e3b5682eded0acc9f35904dab5985a4082c6435d6759a88",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 313,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/ua-file-extract-results-6.json": {
+      "filePath": ".ua/.trash-1790159001/tmp/ua-file-extract-results-6.json",
+      "contentHash": "f36d32acd065066562a2bc22661ba1f2ccd135e20b73df522f3ce92a3b744e2b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 303,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/ua-file-extract-results-7.json": {
+      "filePath": ".ua/.trash-1790159001/tmp/ua-file-extract-results-7.json",
+      "contentHash": "7acd9c48f7be0a093a07d8af14a9a3bfe4761c833b5a57a0e63d9d70f08ac27e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 138,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/ua-file-extract-results-8.json": {
+      "filePath": ".ua/.trash-1790159001/tmp/ua-file-extract-results-8.json",
+      "contentHash": "1a1d9195893f3f19e5f8fbb20483aad6c8e0d9fc761731c2acfc4f9ac9bd951f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 126,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tmp/ua-inline-validate.cjs": {
+      "filePath": ".ua/.trash-1790159001/tmp/ua-inline-validate.cjs",
+      "contentHash": "11d35012e97d258954813204d1a92dbf400c03b3b35f88bcb91cdae21cc1e54d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 64,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.trash-1790159001/tour.json": {
+      "filePath": ".ua/.trash-1790159001/tour.json",
+      "contentHash": "43db7ce46fa4c5399e1c08478ad831f1cc678a86ac70f68fde3572a063fcb918",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 99,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/.understandignore": {
+      "filePath": ".ua/.understandignore",
+      "contentHash": "eff8b36d8eeb2a105db97d622b9ea6316de31db2726f6075051a9a1255833481",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 81,
+      "hasStructuralAnalysis": false
+    },
+    ".ua/config.json": {
+      "filePath": ".ua/config.json",
+      "contentHash": "08d37f20ea0af2233ae24f094723759f952381ecb6dd7f2aaa05ef96e95eae6b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 4,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/fingerprints.json": {
+      "filePath": ".ua/fingerprints.json",
+      "contentHash": "e3fcaadcb8ff811ef97e213ef4230e55c733df082133a363f7a6c32efa3b4287",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 5059,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/intermediate/scan-result.json": {
+      "filePath": ".ua/intermediate/scan-result.json",
+      "contentHash": "5cef71c79e6ab27090a48206e0d7d55ee78be3a0a856957ed4825ce7a82bd108",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 1636,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/knowledge-graph.json": {
+      "filePath": ".ua/knowledge-graph.json",
+      "contentHash": "8ec47cd5a72e8b5a85bb6aaa0ad8ed157ae738fbc0bc1f8b56bffb1e48567865",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 12266,
+      "hasStructuralAnalysis": true
+    },
+    ".ua/meta.json": {
+      "filePath": ".ua/meta.json",
+      "contentHash": "393203c9374766d53d72d2f006e0ea31b214fad1ef25e3cf80d1605836966f65",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 7,
+      "hasStructuralAnalysis": true
+    },
+    "AGENTS.md": {
+      "filePath": "AGENTS.md",
+      "contentHash": "e196ae5aef70399b7f4cd655c0440c5c589dbecac5863d6178aa1c195d5a4325",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 13,
+      "hasStructuralAnalysis": true
+    },
+    "CLAUDE.md": {
+      "filePath": "CLAUDE.md",
+      "contentHash": "cd617c809957b5aeb601ce9856109475f6da8ed78835148d17c3097dd4daa848",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": true
+    },
+    "README.md": {
+      "filePath": "README.md",
+      "contentHash": "50ad901f0705fdf2efdf94dc54b982275e613a99fdfba67b8684ea12e8ebca16",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 190,
+      "hasStructuralAnalysis": true
+    },
+    "docs/ARCHITECTURE.md": {
+      "filePath": "docs/ARCHITECTURE.md",
+      "contentHash": "d832a2d580fad8a66939f22f836cdaab5f0af4ba0bfbb902ca3efab7c71e6ee0",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 49,
+      "hasStructuralAnalysis": true
+    },
+    "docs/COMPLIANCE.md": {
+      "filePath": "docs/COMPLIANCE.md",
+      "contentHash": "dd2e5a392cba0b9ea572fc327a73fb2b7efb3c3a800e84f595323bb492bc2d75",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 12,
+      "hasStructuralAnalysis": true
+    },
+    "docs/CONTENT-FILTER-DIAGNOSTICS.md": {
+      "filePath": "docs/CONTENT-FILTER-DIAGNOSTICS.md",
+      "contentHash": "438d31d2c84df3da6c872387dee1f5e3117ffce8d12c6d09f7fe17acaeb0472b",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 62,
+      "hasStructuralAnalysis": true
+    },
+    "docs/CONTRIBUTING.md": {
+      "filePath": "docs/CONTRIBUTING.md",
+      "contentHash": "8d4a7027b0b91f1ea9795be92d95f602a7a1c03590f3dc22ee4a32494029ece3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 23,
+      "hasStructuralAnalysis": true
+    },
+    "docs/LAYOUT-EVALUATION.md": {
+      "filePath": "docs/LAYOUT-EVALUATION.md",
+      "contentHash": "39f75ddac41956994261e84e7d52363ed1111ca1c2132bf0b471b8a8189ef9da",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 45,
+      "hasStructuralAnalysis": true
+    },
+    "docs/MODEL.md": {
+      "filePath": "docs/MODEL.md",
+      "contentHash": "9b438c4e3e303fb757d8d62a5164daf2ef5dfb8288f1e5c0f0835bab09b5dad6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 25,
+      "hasStructuralAnalysis": true
+    },
+    "docs/POST-MARKDOWN-EXTRACTION-PLAN.md": {
+      "filePath": "docs/POST-MARKDOWN-EXTRACTION-PLAN.md",
+      "contentHash": "7ac94a0d30d24cfeaaae4918266b117fefb6c663d5aee77d55b17e17b78db767",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 115,
+      "hasStructuralAnalysis": true
+    },
+    "docs/PROMPT-EVALUATION.md": {
+      "filePath": "docs/PROMPT-EVALUATION.md",
+      "contentHash": "f33128e2b838f2fe238d220ba93ec3ed9178ad0f058566bb5196811ba1ed2dd2",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 107,
+      "hasStructuralAnalysis": true
+    },
+    "docs/PROMPTS.md": {
+      "filePath": "docs/PROMPTS.md",
+      "contentHash": "22e2a879c18f4a3e25b1f40300a651856051d7f4b1800bad5bfe8731d1f31b33",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    "docs/RUNBOOK.md": {
+      "filePath": "docs/RUNBOOK.md",
+      "contentHash": "d3f56db9502c006d35fac0edd9621b3055d09aa5de34c847e06078ff9d0f00b1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 65,
+      "hasStructuralAnalysis": true
+    },
+    "docs/SOL-RESOLUTION-EVALUATION.md": {
+      "filePath": "docs/SOL-RESOLUTION-EVALUATION.md",
+      "contentHash": "661b9510a304b9e6183316ec199832de45ba5b9181ee021d3e40cacc818c3d45",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 82,
+      "hasStructuralAnalysis": true
+    },
+    "docs/diagrams/groundmark-architecture.html": {
+      "filePath": "docs/diagrams/groundmark-architecture.html",
+      "contentHash": "23b275b25853b7c82918d6e53a3b514cbab789f26911cb5ffb4e5ed1a1b2fb61",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 14880,
+      "hasStructuralAnalysis": false
+    },
+    "docs/diagrams/groundmark-architecture.json": {
+      "filePath": "docs/diagrams/groundmark-architecture.json",
+      "contentHash": "0b9cb5a9b3640c73cf02892009be69d80706e635faac6099a7c23aa77edc2cf9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 70,
+      "hasStructuralAnalysis": true
+    },
+    "docs/diagrams/groundmark-architecture.visual-check.html": {
+      "filePath": "docs/diagrams/groundmark-architecture.visual-check.html",
+      "contentHash": "c09651aff322681f44cabb3d237964cbb4492b193900421de0c605dbf2c444a7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 33,
+      "hasStructuralAnalysis": false
+    },
+    "docs/diagrams/groundmark-architecture.visual-check.json": {
+      "filePath": "docs/diagrams/groundmark-architecture.visual-check.json",
+      "contentHash": "90165739ca52f3b39a1aec1eaf2a8a5ff0cb4e592c29f8b755c0731f90393c55",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 548,
+      "hasStructuralAnalysis": true
+    },
+    "docs/diagrams/groundmark-dataflow.html": {
+      "filePath": "docs/diagrams/groundmark-dataflow.html",
+      "contentHash": "758ed0b3a2881df66e91abb96815f9746ede416525a6cbde1283d35c98f89077",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 14843,
+      "hasStructuralAnalysis": false
+    },
+    "docs/diagrams/groundmark-dataflow.json": {
+      "filePath": "docs/diagrams/groundmark-dataflow.json",
+      "contentHash": "02cf6e2c94b277d6170cba2e96e1d7daef7215d7646afd065970421d21c0e762",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 67,
+      "hasStructuralAnalysis": true
+    },
+    "docs/diagrams/groundmark-dataflow.visual-check.html": {
+      "filePath": "docs/diagrams/groundmark-dataflow.visual-check.html",
+      "contentHash": "4a3c89c7707222b0b656cff06da10cfda177b6a6aa323af0b97fe055c89abb23",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 33,
+      "hasStructuralAnalysis": false
+    },
+    "docs/diagrams/groundmark-dataflow.visual-check.json": {
+      "filePath": "docs/diagrams/groundmark-dataflow.visual-check.json",
+      "contentHash": "e1a466870b074fd51e9e11203b7b488bf64ff515f6d36b8b362f5104b697c614",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 548,
+      "hasStructuralAnalysis": true
+    },
+    "docs/diagrams/groundmark-lifecycle.html": {
+      "filePath": "docs/diagrams/groundmark-lifecycle.html",
+      "contentHash": "f0bd9da7173bcbd9f5ac58bbad9cd33f984225828a924656bee55cddbe895578",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 14804,
+      "hasStructuralAnalysis": false
+    },
+    "docs/diagrams/groundmark-lifecycle.json": {
+      "filePath": "docs/diagrams/groundmark-lifecycle.json",
+      "contentHash": "8041d3e3c991e4ff22256794b016ba25d15e5d2145e8de66d6b72df436a23bf9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 33,
+      "hasStructuralAnalysis": true
+    },
+    "docs/diagrams/groundmark-lifecycle.visual-check.html": {
+      "filePath": "docs/diagrams/groundmark-lifecycle.visual-check.html",
+      "contentHash": "69895a2e1b6871aee91bb4d4c9e2df993c87920cb2b87b26165fd8551c30362d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 33,
+      "hasStructuralAnalysis": false
+    },
+    "docs/diagrams/groundmark-lifecycle.visual-check.json": {
+      "filePath": "docs/diagrams/groundmark-lifecycle.visual-check.json",
+      "contentHash": "22b6ecb85712589b4a9ff9c4cbf825194c5311b93c3f3cb6d12747625a8e097d",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 548,
+      "hasStructuralAnalysis": true
+    },
+    "docs/diagrams/groundmark-sequence.html": {
+      "filePath": "docs/diagrams/groundmark-sequence.html",
+      "contentHash": "396ec5f966e9b165605effe54ad0244c465ab6bc8bf9a9ffd44bab7123ca28b8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 14885,
+      "hasStructuralAnalysis": false
+    },
+    "docs/diagrams/groundmark-sequence.json": {
+      "filePath": "docs/diagrams/groundmark-sequence.json",
+      "contentHash": "b62d582da6a3584d0fa4ec9c55abe2a407afa42a7bacc3b27af8dbf5c1f30abb",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 71,
+      "hasStructuralAnalysis": true
+    },
+    "docs/diagrams/groundmark-sequence.visual-check.html": {
+      "filePath": "docs/diagrams/groundmark-sequence.visual-check.html",
+      "contentHash": "8d27704f547bf94ef3be0d2fb367d3e55c2492d73dabb276ae323042858ae2db",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 33,
+      "hasStructuralAnalysis": false
+    },
+    "docs/diagrams/groundmark-sequence.visual-check.json": {
+      "filePath": "docs/diagrams/groundmark-sequence.visual-check.json",
+      "contentHash": "8d3345a7bbfec58aab0f830880580249550259e0df274bcec4768a90362f02ed",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 548,
+      "hasStructuralAnalysis": true
+    },
+    "docs/diagrams/groundmark-workflow.html": {
+      "filePath": "docs/diagrams/groundmark-workflow.html",
+      "contentHash": "eb9d5b90c5d00adc50e22857ac3473cd832d7ead7e17b8a96f2aa59372df18dc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 14798,
+      "hasStructuralAnalysis": false
+    },
+    "docs/diagrams/groundmark-workflow.json": {
+      "filePath": "docs/diagrams/groundmark-workflow.json",
+      "contentHash": "863e35e0d4ed68997997ea47b6f980f8daf4ffb395ab1817710457719d960423",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 75,
+      "hasStructuralAnalysis": true
+    },
+    "docs/diagrams/groundmark-workflow.visual-check.html": {
+      "filePath": "docs/diagrams/groundmark-workflow.visual-check.html",
+      "contentHash": "8cf57760775815ae810ad47437c0c2ec0d46791ca974e29765d2ec93d2b41639",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 33,
+      "hasStructuralAnalysis": false
+    },
+    "docs/diagrams/groundmark-workflow.visual-check.json": {
+      "filePath": "docs/diagrams/groundmark-workflow.visual-check.json",
+      "contentHash": "d7526a68222f109e662d7041735f8f8b8184b233cb6a3260077e4b937e2aace3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 548,
+      "hasStructuralAnalysis": true
+    },
+    "knowledge/index.md": {
+      "filePath": "knowledge/index.md",
+      "contentHash": "609a067d7ccb0f52c7c72cadc05269cda2311789074a1d17391f6c37ced8d392",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 12,
+      "hasStructuralAnalysis": true
+    },
+    "npm/wheels/groundmark-0.1.0-py3-none-any.whl": {
+      "filePath": "npm/wheels/groundmark-0.1.0-py3-none-any.whl",
+      "contentHash": "2e8269f2fde04fd199e0cf5ef156abcc58f07c285b5f48e8ba7577e6538805eb",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 213,
+      "hasStructuralAnalysis": false
+    },
+    "openwiki/.claims/architecture/parsing-pipeline.json": {
+      "filePath": "openwiki/.claims/architecture/parsing-pipeline.json",
+      "contentHash": "819460246d9b6796481cb7766b301bd62ded94d112ce6431402febed1634bd1a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 99,
+      "hasStructuralAnalysis": true
+    },
+    "openwiki/.claims/concepts/layout-and-rendering.json": {
+      "filePath": "openwiki/.claims/concepts/layout-and-rendering.json",
+      "contentHash": "c5d8327178e708ba350f758c62319e8e9357d572bce9814cba8c8fc3253794e6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 109,
+      "hasStructuralAnalysis": true
+    },
+    "openwiki/.claims/features/document-chat.json": {
+      "filePath": "openwiki/.claims/features/document-chat.json",
+      "contentHash": "451d440c9e93586eb4027fe9e42056b5934018aa0d338a30e4c4bc64edf30baa",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 119,
+      "hasStructuralAnalysis": true
+    },
+    "openwiki/.claims/operations/development-and-testing.json": {
+      "filePath": "openwiki/.claims/operations/development-and-testing.json",
+      "contentHash": "746aabbe55d252675038d22d5c5403523f11071bccc4657849ad20c29710de69",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 99,
+      "hasStructuralAnalysis": true
+    },
+    "openwiki/.claims/quickstart.json": {
+      "filePath": "openwiki/.claims/quickstart.json",
+      "contentHash": "eb17a44d8eb3ac24b20a1044868c72b8253b7cb2c0380d32bc0477f8ad07200a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 93,
+      "hasStructuralAnalysis": true
+    },
+    "openwiki/.claims/workflows/artifacts-and-exports.json": {
+      "filePath": "openwiki/.claims/workflows/artifacts-and-exports.json",
+      "contentHash": "d045682f44decfaf377e7ea8a7368e73bb10b1b5216b6d0afb13ef4a07d4026f",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 79,
+      "hasStructuralAnalysis": true
+    },
+    "openwiki/.last-update.json": {
+      "filePath": "openwiki/.last-update.json",
+      "contentHash": "7e5c9a2ed17b27ee2df17bf281d5f3136a39ff3ad27508c820fc54ed10034549",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 9,
+      "hasStructuralAnalysis": true
+    },
+    "openwiki/.page-manifest.json": {
+      "filePath": "openwiki/.page-manifest.json",
+      "contentHash": "fecbfb3e18573ef96a21a3a97c06ad9e4534b047055977834234a536227d0b1c",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 48,
+      "hasStructuralAnalysis": true
+    },
+    "openwiki/architecture/index.md": {
+      "filePath": "openwiki/architecture/index.md",
+      "contentHash": "16a0626bd6fe1639e463d7c22ff2ced242d51e4f0c7253e71801c73562b52396",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 4,
+      "hasStructuralAnalysis": true
+    },
+    "openwiki/architecture/parsing-pipeline.md": {
+      "filePath": "openwiki/architecture/parsing-pipeline.md",
+      "contentHash": "ba545aeb224aac4873fcda16f89139d94d1b9c989ee4bb9f9b12bf855e32dfbf",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 62,
+      "hasStructuralAnalysis": true
+    },
+    "openwiki/concepts/index.md": {
+      "filePath": "openwiki/concepts/index.md",
+      "contentHash": "cd44655323f49a89ffb7b21b7677a4c368377cfa4d8e9a42cdd43f49bd34cb1a",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 4,
+      "hasStructuralAnalysis": true
+    },
+    "openwiki/concepts/layout-and-rendering.md": {
+      "filePath": "openwiki/concepts/layout-and-rendering.md",
+      "contentHash": "190f149c56d2da1b587b2b3cea463ef4f0c90d3c5fc8e5321f8dfc368d66cc53",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 63,
+      "hasStructuralAnalysis": true
+    },
+    "openwiki/features/document-chat.md": {
+      "filePath": "openwiki/features/document-chat.md",
+      "contentHash": "898859c75a792aa6be857c53af2532714bdf60081853fd105a41f721e63bdb20",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 58,
+      "hasStructuralAnalysis": true
+    },
+    "openwiki/features/index.md": {
+      "filePath": "openwiki/features/index.md",
+      "contentHash": "3c255c6da6f267485938199cd1059a68b1b077eda4b131edd96369d959542b91",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 4,
+      "hasStructuralAnalysis": true
+    },
+    "openwiki/index.md": {
+      "filePath": "openwiki/index.md",
+      "contentHash": "e8e2bea36d3afa0550ac10267b7cf36de7d6edd0eea588251ae5f07a28e8e5c6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 16,
+      "hasStructuralAnalysis": true
+    },
+    "openwiki/operations/development-and-testing.md": {
+      "filePath": "openwiki/operations/development-and-testing.md",
+      "contentHash": "d5bee1f95a14bae867ee82b1e5b3bc5d25b3e390587b6d32f245d12a4daa10a9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 65,
+      "hasStructuralAnalysis": true
+    },
+    "openwiki/operations/index.md": {
+      "filePath": "openwiki/operations/index.md",
+      "contentHash": "a7f0d750e2eacd43e46913e86fd535e58cf96855190f843d25e4c920099b2d78",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 4,
+      "hasStructuralAnalysis": true
+    },
+    "openwiki/quickstart.md": {
+      "filePath": "openwiki/quickstart.md",
+      "contentHash": "10de33e252c56c775b5edf67a02012efad8ae1a4c2299cf7fd3ac047aafba823",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 82,
+      "hasStructuralAnalysis": true
+    },
+    "openwiki/workflows/artifacts-and-exports.md": {
+      "filePath": "openwiki/workflows/artifacts-and-exports.md",
+      "contentHash": "135c88733ef391d72155876fb8dc90dfff00c1a1b42d03f0b497ec80212e92e1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 69,
+      "hasStructuralAnalysis": true
+    },
+    "openwiki/workflows/index.md": {
+      "filePath": "openwiki/workflows/index.md",
+      "contentHash": "1725c269956f6c4bda00f6f24472fbc5c899911cb2ea82fdfdad1a16adb9280e",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 4,
+      "hasStructuralAnalysis": true
+    },
+    "prompts/runtime/chat-answer.md": {
+      "filePath": "prompts/runtime/chat-answer.md",
+      "contentHash": "efdb80eb87fd05ee3e87c2f208b335fba4ec1e831458b1665b1117849175cf56",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 10,
+      "hasStructuralAnalysis": true
+    },
+    "prompts/runtime/chat-verify.md": {
+      "filePath": "prompts/runtime/chat-verify.md",
+      "contentHash": "5b7124625fa536e8594d5f434c587416fa890170c0e0a520904fc6ab50669aa1",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": true
+    },
+    "prompts/runtime/parse-page-structured.md": {
+      "filePath": "prompts/runtime/parse-page-structured.md",
+      "contentHash": "a7f0b5990fdd3fd4b010169235ae2f2ae47563008a5ec27814e97c9b74beeed8",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 67,
+      "hasStructuralAnalysis": true
+    },
+    "prompts/runtime/parse-page.md": {
+      "filePath": "prompts/runtime/parse-page.md",
+      "contentHash": "da5bfcc5d3fd4bff16db6eee2b68759f6c2d028c224230b2d7529624d7159ba7",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 61,
+      "hasStructuralAnalysis": true
+    },
+    "pyproject.toml": {
+      "filePath": "pyproject.toml",
+      "contentHash": "f3ef1ac5ac73b4997daf378b6b632e09b042834450a16f2da23157c532204440",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 44,
+      "hasStructuralAnalysis": true
+    },
+    "requirements-dev.txt": {
+      "filePath": "requirements-dev.txt",
+      "contentHash": "1438527233ce7beb1cdf4a046b8b5d38f140bd77217ef4df17d5592989d3ec15",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 3,
+      "hasStructuralAnalysis": false
+    },
+    "requirements.txt": {
+      "filePath": "requirements.txt",
+      "contentHash": "ef6846d0340bccdb75868a9ae23308281678dbf8c0ea3d848f95b29643221159",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 3,
+      "hasStructuralAnalysis": false
+    },
+    "run.cmd": {
+      "filePath": "run.cmd",
+      "contentHash": "da8d5d58d68a2d9b8cf57a32773005d567b63daf9a28ec97034d4ec6433e2e97",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 11,
+      "hasStructuralAnalysis": false
+    },
+    "scripts/evaluate_chat.py": {
+      "filePath": "scripts/evaluate_chat.py",
+      "contentHash": "d3d5780759f336ef188727e0c4bb87cea26699a8a915d0fc9e8f366a55ea1a62",
+      "functions": [
+        {
+          "name": "main",
+          "params": [],
+          "exported": true,
+          "lineCount": 24
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "src.chat",
+          "specifiers": [
+            "answer_document_question"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "ParseBlock",
+            "ParsePage",
+            "ParseResult"
+          ]
+        }
+      ],
+      "exports": [
+        "main"
+      ],
+      "totalLines": 37,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/evaluate_layout.py": {
+      "filePath": "scripts/evaluate_layout.py",
+      "contentHash": "14d1d4a9d95a05ceb5612ef5244318925c3e5bf1045f38fe33438b9433da8c83",
+      "functions": [
+        {
+          "name": "metric_gate",
+          "params": [
+            "pages"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "compare",
+          "params": [
+            "output",
+            "phase",
+            "runner"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 79
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "argparse",
+          "specifiers": [
+            "argparse"
+          ]
+        },
+        {
+          "source": "hashlib",
+          "specifiers": [
+            "hashlib"
+          ]
+        },
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "scripts.evaluate_prompts",
+          "specifiers": [
+            "REFERENCES",
+            "ROOT",
+            "run_page",
+            "score_page"
+          ]
+        },
+        {
+          "source": "scripts.evaluate_resolution",
+          "specifiers": [
+            "APPROVED_SAMPLES"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "ParsePage",
+            "LegacyParsePage"
+          ]
+        },
+        {
+          "source": "src.preprocess",
+          "specifiers": [
+            "preprocess_pages"
+          ]
+        },
+        {
+          "source": "src.usage",
+          "specifiers": [
+            "cost_usd"
+          ]
+        }
+      ],
+      "exports": [
+        "metric_gate",
+        "compare"
+      ],
+      "totalLines": 116,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/evaluate_prompts.py": {
+      "filePath": "scripts/evaluate_prompts.py",
+      "contentHash": "0cb703692b28a0ac573e6bc292d0defb61575f223b492a956be06280c3cee458",
+      "functions": [
+        {
+          "name": "plain_text",
+          "params": [
+            "value"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "tokens",
+          "params": [
+            "value"
+          ],
+          "returnType": "Counter",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "score_page",
+          "params": [
+            "page",
+            "reference"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 24
+        },
+        {
+          "name": "run_page",
+          "params": [
+            "payload",
+            "prompt",
+            "max_completion_tokens",
+            "reasoning_effort",
+            "schema"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 36
+        },
+        {
+          "name": "main",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 45
+        }
+      ],
+      "classes": [
+        {
+          "name": "_PlainText",
+          "methods": [
+            "__init__",
+            "handle_data"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "imports": [
+        {
+          "source": "argparse",
+          "specifiers": [
+            "argparse"
+          ]
+        },
+        {
+          "source": "base64",
+          "specifiers": [
+            "base64"
+          ]
+        },
+        {
+          "source": "collections",
+          "specifiers": [
+            "Counter"
+          ]
+        },
+        {
+          "source": "concurrent.futures",
+          "specifiers": [
+            "ThreadPoolExecutor"
+          ]
+        },
+        {
+          "source": "hashlib",
+          "specifiers": [
+            "hashlib"
+          ]
+        },
+        {
+          "source": "html.parser",
+          "specifiers": [
+            "HTMLParser"
+          ]
+        },
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "re",
+          "specifiers": [
+            "re"
+          ]
+        },
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "openai",
+          "specifiers": [
+            "ContentFilterFinishReasonError"
+          ]
+        },
+        {
+          "source": "src.llm",
+          "specifiers": [
+            "MODEL_NAME",
+            "_build_llm",
+            "_image_message",
+            "_invoke_structured"
+          ]
+        },
+        {
+          "source": "src.diagnostics",
+          "specifiers": [
+            "ExtractionCallError"
+          ]
+        },
+        {
+          "source": "src.parse",
+          "specifiers": [
+            "MAX_PARALLEL_PAGES"
+          ]
+        },
+        {
+          "source": "src.preprocess",
+          "specifiers": [
+            "preprocess_pages"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "ParsePage",
+            "LegacyParsePage"
+          ]
+        }
+      ],
+      "exports": [
+        "_PlainText",
+        "plain_text",
+        "tokens",
+        "score_page",
+        "run_page",
+        "main"
+      ],
+      "totalLines": 166,
+      "hasStructuralAnalysis": true
+    },
+    "scripts/evaluate_resolution.py": {
+      "filePath": "scripts/evaluate_resolution.py",
+      "contentHash": "824a618ead4e55b1e31fe14d25d39135e6c1ab3478a18cc5a58c41efdfa93968",
+      "functions": [
+        {
+          "name": "metric_gate",
+          "params": [
+            "pages"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "compare",
+          "params": [
+            "output",
+            "runner",
+            "max_requests",
+            "budget_usd"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 75
+        },
+        {
+          "name": "main",
+          "params": [],
+          "exported": true,
+          "lineCount": 8
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "argparse",
+          "specifiers": [
+            "argparse"
+          ]
+        },
+        {
+          "source": "base64",
+          "specifiers": [
+            "base64"
+          ]
+        },
+        {
+          "source": "hashlib",
+          "specifiers": [
+            "hashlib"
+          ]
+        },
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "time",
+          "specifiers": [
+            "time"
+          ]
+        },
+        {
+          "source": "scripts.evaluate_prompts",
+          "specifiers": [
+            "ROOT",
+            "REFERENCES",
+            "SAMPLES",
+            "run_page",
+            "score_page"
+          ]
+        },
+        {
+          "source": "src.models",
+          "specifiers": [
+            "DEFAULT_MODEL"
+          ]
+        },
+        {
+          "source": "src.preprocess",
+          "specifiers": [
+            "preprocess_pages"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "ParsePage"
+          ]
+        },
+        {
+          "source": "src.usage",
+          "specifiers": [
+            "cost_usd"
+          ]
+        }
+      ],
+      "exports": [
+        "metric_gate",
+        "compare",
+        "main"
+      ],
+      "totalLines": 126,
+      "hasStructuralAnalysis": true
+    },
+    "src/__init__.py": {
+      "filePath": "src/__init__.py",
+      "contentHash": "ecf9b480269ec94661a6a103f1883435d6f8e22f41f23e94b4ca8faeb47a0ec6",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 10,
+      "hasStructuralAnalysis": true
+    },
+    "src/annotate.py": {
+      "filePath": "src/annotate.py",
+      "contentHash": "f0d1310de415d65fd53cec4089111ee59708bcadf958668941bb22e23f9a3855",
+      "functions": [
+        {
+          "name": "_bbox_is_valid",
+          "params": [
+            "xyxy"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "annotate_document",
+          "params": [
+            "source_path",
+            "parse_result",
+            "output_dir",
+            "save_pdf",
+            "save_images",
+            "save_metadata",
+            "output_basename"
+          ],
+          "returnType": "tuple[Path | None, Path | None]",
+          "exported": true,
+          "lineCount": 90
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "base64",
+          "specifiers": [
+            "base64"
+          ]
+        },
+        {
+          "source": "io",
+          "specifiers": [
+            "io"
+          ]
+        },
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "PIL",
+          "specifiers": [
+            "Image",
+            "ImageDraw",
+            "ImageFont"
+          ]
+        },
+        {
+          "source": "src.preprocess",
+          "specifiers": [
+            "preprocess_pages"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "ParseResult"
+          ]
+        },
+        {
+          "source": "src.output_names",
+          "specifiers": [
+            "artifact_name"
+          ]
+        }
+      ],
+      "exports": [
+        "_bbox_is_valid",
+        "annotate_document"
+      ],
+      "totalLines": 130,
+      "hasStructuralAnalysis": true
+    },
+    "src/chat.py": {
+      "filePath": "src/chat.py",
+      "contentHash": "12d569db37a412e59cc4ce47a05c0a96579cf0ac12b201d2e90687019b8a970c",
+      "functions": [
+        {
+          "name": "document_pages",
+          "params": [
+            "result"
+          ],
+          "returnType": "dict[int, str]",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "_payload",
+          "params": [
+            "messages",
+            "schema"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "_call",
+          "params": [
+            "client",
+            "schema",
+            "prompt_name",
+            "data",
+            "result"
+          ],
+          "exported": true,
+          "lineCount": 33
+        },
+        {
+          "name": "_normalize",
+          "params": [
+            "text"
+          ],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "_validated_text",
+          "params": [
+            "draft",
+            "pages"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 20
+        },
+        {
+          "name": "answer_document_question",
+          "params": [
+            "parse_result",
+            "question",
+            "history",
+            "client"
+          ],
+          "returnType": "ChatResult",
+          "exported": true,
+          "lineCount": 44
+        }
+      ],
+      "classes": [
+        {
+          "name": "Evidence",
+          "methods": [],
+          "properties": [
+            "page",
+            "quote"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "Statement",
+          "methods": [],
+          "properties": [
+            "text",
+            "evidence"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "Draft",
+          "methods": [],
+          "properties": [
+            "decision",
+            "statements"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "Verification",
+          "methods": [],
+          "properties": [
+            "approved"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "ChatResult",
+          "methods": [],
+          "properties": [
+            "answer",
+            "status",
+            "usage",
+            "diagnostics"
+          ],
+          "exported": true,
+          "lineCount": 5
+        }
+      ],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "re",
+          "specifiers": [
+            "re"
+          ]
+        },
+        {
+          "source": "dataclasses",
+          "specifiers": [
+            "dataclass",
+            "field"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Literal"
+          ]
+        },
+        {
+          "source": "openai",
+          "specifiers": [
+            "OpenAI"
+          ]
+        },
+        {
+          "source": "pydantic",
+          "specifiers": [
+            "BaseModel",
+            "ConfigDict"
+          ]
+        },
+        {
+          "source": "src",
+          "specifiers": [
+            "usage"
+          ]
+        },
+        {
+          "source": "src.diagnostics",
+          "specifiers": [
+            "safe_identifier",
+            "token_count"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "ParseResult"
+          ]
+        },
+        {
+          "source": "src.models",
+          "specifiers": [
+            "CHAT_MODEL"
+          ]
+        },
+        {
+          "source": "src.prompts",
+          "specifiers": [
+            "render_prompt"
+          ]
+        }
+      ],
+      "exports": [
+        "Evidence",
+        "Statement",
+        "Draft",
+        "Verification",
+        "ChatResult",
+        "document_pages",
+        "_payload",
+        "_call",
+        "_normalize",
+        "_validated_text",
+        "answer_document_question"
+      ],
+      "totalLines": 191,
+      "hasStructuralAnalysis": true
+    },
+    "src/cli.py": {
+      "filePath": "src/cli.py",
+      "contentHash": "12eab900044868a549a60b1595b063b40b453566cb22686e1e543277887646ef",
+      "functions": [
+        {
+          "name": "main",
+          "params": [
+            "argv"
+          ],
+          "returnType": "int",
+          "exported": true,
+          "lineCount": 53
+        },
+        {
+          "name": "_extract",
+          "params": [
+            "args",
+            "parser",
+            "formats"
+          ],
+          "returnType": "int",
+          "exported": true,
+          "lineCount": 46
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "argparse",
+          "specifiers": [
+            "argparse"
+          ]
+        },
+        {
+          "source": "contextlib",
+          "specifiers": [
+            "redirect_stdout"
+          ]
+        },
+        {
+          "source": "importlib.metadata",
+          "specifiers": [
+            "version"
+          ]
+        },
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "subprocess",
+          "specifiers": [
+            "subprocess"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "dotenv",
+          "specifiers": [
+            "load_dotenv"
+          ]
+        }
+      ],
+      "exports": [
+        "main",
+        "_extract"
+      ],
+      "totalLines": 119,
+      "hasStructuralAnalysis": true
+    },
+    "src/diagnostics.py": {
+      "filePath": "src/diagnostics.py",
+      "contentHash": "c6a5942d5b6f6c424784a4e844e68dadffcd4acdc9539b8e09e9c31f2437923f",
+      "functions": [
+        {
+          "name": "safe_identifier",
+          "params": [
+            "value"
+          ],
+          "returnType": "str | None",
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "token_count",
+          "params": [
+            "value"
+          ],
+          "returnType": "int | None",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "filter_annotations",
+          "params": [
+            "data",
+            "source"
+          ],
+          "returnType": "list[FilterAnnotation]",
+          "exported": true,
+          "lineCount": 13
+        }
+      ],
+      "classes": [
+        {
+          "name": "FilterAnnotation",
+          "methods": [],
+          "properties": [
+            "source",
+            "category",
+            "filtered",
+            "severity"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "PageDiagnostic",
+          "methods": [],
+          "properties": [
+            "page",
+            "outcome",
+            "http_status",
+            "request_id",
+            "model",
+            "requested_model",
+            "finish_reason",
+            "usage_known",
+            "input_tokens",
+            "output_tokens",
+            "cached_tokens",
+            "cache_write_tokens",
+            "filters"
+          ],
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "ExtractionCallError",
+          "methods": [
+            "__init__"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "imports": [
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "re",
+          "specifiers": [
+            "re"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Literal"
+          ]
+        },
+        {
+          "source": "pydantic",
+          "specifiers": [
+            "BaseModel",
+            "Field"
+          ]
+        }
+      ],
+      "exports": [
+        "FilterAnnotation",
+        "PageDiagnostic",
+        "ExtractionCallError",
+        "safe_identifier",
+        "token_count",
+        "filter_annotations"
+      ],
+      "totalLines": 88,
+      "hasStructuralAnalysis": true
+    },
+    "src/export.py": {
+      "filePath": "src/export.py",
+      "contentHash": "109d4c1b4dce44e8ac86a2e01635e4585bb93a9036f9822e78abaf3a71c8e60c",
+      "functions": [
+        {
+          "name": "export_result",
+          "params": [
+            "source",
+            "result",
+            "output_dir",
+            "formats",
+            "view",
+            "annotation_metadata",
+            "output_basename"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 74
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "src.annotate",
+          "specifiers": [
+            "annotate_document"
+          ]
+        },
+        {
+          "source": "src.figures",
+          "specifiers": [
+            "extract_figures"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "ParseResult"
+          ]
+        },
+        {
+          "source": "src.markdown",
+          "specifiers": [
+            "markdown_bundle",
+            "parse_to_html",
+            "parse_to_markdown"
+          ]
+        },
+        {
+          "source": "src.output_names",
+          "specifiers": [
+            "artifact_name"
+          ]
+        }
+      ],
+      "exports": [
+        "export_result"
+      ],
+      "totalLines": 89,
+      "hasStructuralAnalysis": true
+    },
+    "src/figures.py": {
+      "filePath": "src/figures.py",
+      "contentHash": "0ba97a998dfe61dc57f045686e7d08c9cb9aa4e145d16d09d6d015f5bd007af4",
+      "functions": [
+        {
+          "name": "extract_figures",
+          "params": [
+            "source",
+            "result",
+            "output_dir",
+            "save_images",
+            "output_basename"
+          ],
+          "returnType": "tuple[dict[str, bytes], list[str]]",
+          "exported": true,
+          "lineCount": 33
+        },
+        {
+          "name": "load_figures",
+          "params": [
+            "result",
+            "output_dir",
+            "output_basename"
+          ],
+          "returnType": "dict[str, bytes]",
+          "exported": true,
+          "lineCount": 19
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "base64",
+          "specifiers": [
+            "base64"
+          ]
+        },
+        {
+          "source": "io",
+          "specifiers": [
+            "io"
+          ]
+        },
+        {
+          "source": "math",
+          "specifiers": [
+            "math"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "PIL",
+          "specifiers": [
+            "Image"
+          ]
+        },
+        {
+          "source": "src.annotate",
+          "specifiers": [
+            "_bbox_is_valid"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "ParseResult"
+          ]
+        },
+        {
+          "source": "src.output_names",
+          "specifiers": [
+            "figure_name"
+          ]
+        },
+        {
+          "source": "src.preprocess",
+          "specifiers": [
+            "preprocess_pages"
+          ]
+        }
+      ],
+      "exports": [
+        "extract_figures",
+        "load_figures"
+      ],
+      "totalLines": 71,
+      "hasStructuralAnalysis": true
+    },
+    "src/graph.py": {
+      "filePath": "src/graph.py",
+      "contentHash": "1229cbae3d0006b6a726fdd7e11be3d14252e5c64ff949b6c2226ac46fb9b5a8",
+      "functions": [
+        {
+          "name": "node_preprocess",
+          "params": [
+            "state"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "node_parse",
+          "params": [
+            "state"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 51
+        },
+        {
+          "name": "build_graph",
+          "params": [],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "run_graph",
+          "params": [
+            "image_path",
+            "start_page",
+            "end_page",
+            "model",
+            "detailed_layout",
+            "on_progress",
+            "output_dir",
+            "formats",
+            "view",
+            "original_filename"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 39
+        },
+        {
+          "name": "_main",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 19
+        }
+      ],
+      "classes": [
+        {
+          "name": "GraphState",
+          "methods": [],
+          "properties": [
+            "image_path",
+            "start_page",
+            "end_page",
+            "model",
+            "doc_sha",
+            "parse_result",
+            "markdown",
+            "parse_error",
+            "annotated_pdf_path",
+            "status",
+            "run_id",
+            "output_dir",
+            "token_usage",
+            "parse_json_path",
+            "markdown_path",
+            "html_path",
+            "annotated_page_paths",
+            "figure_warnings",
+            "detailed_layout",
+            "formats",
+            "view",
+            "annotation_metadata",
+            "export_errors",
+            "output_paths",
+            "markdown_zip_path",
+            "original_filename",
+            "started_at",
+            "output_basename"
+          ],
+          "exported": true,
+          "lineCount": 29
+        }
+      ],
+      "imports": [
+        {
+          "source": "argparse",
+          "specifiers": [
+            "argparse"
+          ]
+        },
+        {
+          "source": "datetime",
+          "specifiers": [
+            "UTC",
+            "datetime"
+          ]
+        },
+        {
+          "source": "collections.abc",
+          "specifiers": [
+            "Callable"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "TypedDict"
+          ]
+        },
+        {
+          "source": "uuid",
+          "specifiers": [
+            "uuid4"
+          ]
+        },
+        {
+          "source": "langgraph.config",
+          "specifiers": [
+            "get_stream_writer"
+          ]
+        },
+        {
+          "source": "langgraph.graph",
+          "specifiers": [
+            "END",
+            "START",
+            "StateGraph"
+          ]
+        },
+        {
+          "source": "src",
+          "specifiers": [
+            "usage"
+          ]
+        },
+        {
+          "source": "src.models",
+          "specifiers": [
+            "DEFAULT_MODEL"
+          ]
+        },
+        {
+          "source": "src.export",
+          "specifiers": [
+            "DEFAULT_FORMATS",
+            "FORMATS",
+            "export_result"
+          ]
+        },
+        {
+          "source": "src.parse",
+          "specifiers": [
+            "parse_document"
+          ]
+        },
+        {
+          "source": "src.preprocess",
+          "specifiers": [
+            "preprocess"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "ParseResult"
+          ]
+        },
+        {
+          "source": "src.output_names",
+          "specifiers": [
+            "reserve_basename"
+          ]
+        }
+      ],
+      "exports": [
+        "GraphState",
+        "node_preprocess",
+        "node_parse",
+        "build_graph",
+        "run_graph",
+        "_main"
+      ],
+      "totalLines": 209,
+      "hasStructuralAnalysis": true
+    },
+    "src/layout.py": {
+      "filePath": "src/layout.py",
+      "contentHash": "faab303886f3e0de72e0c67a1dd673e8e4e4e7680e52fa51a768df5c06a61cc8",
+      "functions": [
+        {
+          "name": "_require_xyxy_len",
+          "params": [
+            "v"
+          ],
+          "returnType": "tuple[float, ...]",
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "classes": [
+        {
+          "name": "BBox",
+          "methods": [],
+          "properties": [
+            "page",
+            "xyxy"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "ListItem",
+          "methods": [],
+          "properties": [
+            "text",
+            "marker",
+            "depth",
+            "checked"
+          ],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "TableCell",
+          "methods": [],
+          "properties": [
+            "row",
+            "column",
+            "rowspan",
+            "colspan",
+            "is_header"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "BlockStructure",
+          "methods": [],
+          "properties": [
+            "heading_level",
+            "list_items",
+            "table_cells"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "LegacyBlock",
+          "methods": [
+            "_rectangularize_table"
+          ],
+          "properties": [
+            "id",
+            "type",
+            "text",
+            "bbox",
+            "conf",
+            "table"
+          ],
+          "exported": true,
+          "lineCount": 20
+        },
+        {
+          "name": "ParseBlock",
+          "methods": [
+            "validate_structure"
+          ],
+          "properties": [
+            "type",
+            "structure"
+          ],
+          "exported": true,
+          "lineCount": 40
+        },
+        {
+          "name": "ParsePage",
+          "methods": [],
+          "properties": [
+            "page",
+            "width_px",
+            "height_px",
+            "blocks"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "LegacyParsePage",
+          "methods": [
+            "to_page"
+          ],
+          "properties": [
+            "page",
+            "width_px",
+            "height_px",
+            "blocks"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "ParseResult",
+          "methods": [
+            "load_legacy"
+          ],
+          "properties": [
+            "doc_sha",
+            "schema_version",
+            "extraction_profile",
+            "pages",
+            "content_filtered_pages",
+            "page_diagnostics",
+            "model"
+          ],
+          "exported": true,
+          "lineCount": 23
+        }
+      ],
+      "imports": [
+        {
+          "source": "typing",
+          "specifiers": [
+            "Literal"
+          ]
+        },
+        {
+          "source": "pydantic",
+          "specifiers": [
+            "BaseModel",
+            "ConfigDict",
+            "Field",
+            "field_validator",
+            "model_validator"
+          ]
+        },
+        {
+          "source": "src.diagnostics",
+          "specifiers": [
+            "PageDiagnostic"
+          ]
+        }
+      ],
+      "exports": [
+        "_require_xyxy_len",
+        "BBox",
+        "ListItem",
+        "TableCell",
+        "BlockStructure",
+        "LegacyBlock",
+        "ParseBlock",
+        "ParsePage",
+        "LegacyParsePage",
+        "ParseResult"
+      ],
+      "totalLines": 176,
+      "hasStructuralAnalysis": true
+    },
+    "src/llm.py": {
+      "filePath": "src/llm.py",
+      "contentHash": "3a3b453df65f5b8aa0605bad98a8e01f9d289e75923e3489beac7c2997372705",
+      "functions": [
+        {
+          "name": "_reasoning_kwargs",
+          "params": [],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "_build_llm",
+          "params": [
+            "model"
+          ],
+          "returnType": "ChatOpenAI",
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "_image_message",
+          "params": [
+            "text",
+            "image_b64",
+            "mime"
+          ],
+          "returnType": "HumanMessage",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "_invoke_structured",
+          "params": [
+            "llm",
+            "schema",
+            "messages",
+            "call_name",
+            "diagnostics",
+            "usage_entries",
+            "max_completion_tokens"
+          ],
+          "exported": true,
+          "lineCount": 99
+        }
+      ],
+      "classes": [
+        {
+          "name": "ExtractConfigError",
+          "methods": [],
+          "properties": [],
+          "exported": true,
+          "lineCount": 2
+        }
+      ],
+      "imports": [
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "dotenv",
+          "specifiers": [
+            "load_dotenv"
+          ]
+        },
+        {
+          "source": "langchain_core.messages",
+          "specifiers": [
+            "HumanMessage",
+            "convert_to_openai_messages"
+          ]
+        },
+        {
+          "source": "langchain_openai",
+          "specifiers": [
+            "ChatOpenAI"
+          ]
+        },
+        {
+          "source": "openai",
+          "specifiers": [
+            "APIStatusError",
+            "APIConnectionError"
+          ]
+        },
+        {
+          "source": "src",
+          "specifiers": [
+            "_usage"
+          ]
+        },
+        {
+          "source": "src.models",
+          "specifiers": [
+            "DEFAULT_MODEL"
+          ]
+        },
+        {
+          "source": "src.diagnostics",
+          "specifiers": [
+            "ExtractionCallError",
+            "PageDiagnostic",
+            "filter_annotations",
+            "safe_identifier",
+            "token_count"
+          ]
+        }
+      ],
+      "exports": [
+        "ExtractConfigError",
+        "_reasoning_kwargs",
+        "_build_llm",
+        "_image_message",
+        "_invoke_structured"
+      ],
+      "totalLines": 171,
+      "hasStructuralAnalysis": true
+    },
+    "src/markdown.py": {
+      "filePath": "src/markdown.py",
+      "contentHash": "6614f19abf8276d62d5e2cfdf06fcc434ff6181cc5bcb64e64e4e789c3b94bf0",
+      "functions": [
+        {
+          "name": "_blocks",
+          "params": [
+            "result",
+            "view",
+            "output_basename",
+            "figures"
+          ],
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "_cell_html",
+          "params": [
+            "text"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "_md_text",
+          "params": [
+            "text"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "_table_rows",
+          "params": [
+            "rows"
+          ],
+          "returnType": "list[list[str]]",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "_cells",
+          "params": [
+            "block"
+          ],
+          "returnType": "list[TableCell]",
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "_render_table_html",
+          "params": [
+            "rows",
+            "cells"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 20
+        },
+        {
+          "name": "_render_table",
+          "params": [
+            "rows"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "_simple_table",
+          "params": [
+            "block"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "_list_context",
+          "params": [
+            "block"
+          ],
+          "returnType": "tuple[str, str] | None",
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "_list_html",
+          "params": [
+            "block"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 23
+        },
+        {
+          "name": "_list_markdown",
+          "params": [
+            "block"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "_heading_level",
+          "params": [
+            "block"
+          ],
+          "returnType": "int",
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "_render_block_html",
+          "params": [
+            "block"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "_render_block",
+          "params": [
+            "block"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "parse_to_markdown",
+          "params": [
+            "result",
+            "view",
+            "figures",
+            "inline_images",
+            "output_basename"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "parse_to_html",
+          "params": [
+            "result",
+            "view",
+            "figures",
+            "output_basename"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "markdown_bundle",
+          "params": [
+            "result",
+            "view",
+            "figures",
+            "output_basename"
+          ],
+          "returnType": "bytes",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "render_and_save",
+          "params": [
+            "parse_json_path"
+          ],
+          "returnType": "Path",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "save_markdown_for_doc",
+          "params": [
+            "result",
+            "output_dir",
+            "figures",
+            "output_basename"
+          ],
+          "returnType": "Path",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "save_html_for_doc",
+          "params": [
+            "result",
+            "output_dir",
+            "figures",
+            "output_basename"
+          ],
+          "returnType": "Path",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "_main",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 4
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "argparse",
+          "specifiers": [
+            "argparse"
+          ]
+        },
+        {
+          "source": "base64",
+          "specifiers": [
+            "base64"
+          ]
+        },
+        {
+          "source": "html",
+          "specifiers": [
+            "html"
+          ]
+        },
+        {
+          "source": "io",
+          "specifiers": [
+            "io"
+          ]
+        },
+        {
+          "source": "re",
+          "specifiers": [
+            "re"
+          ]
+        },
+        {
+          "source": "zipfile",
+          "specifiers": [
+            "zipfile"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "typing",
+          "specifiers": [
+            "Literal"
+          ]
+        },
+        {
+          "source": "urllib.parse",
+          "specifiers": [
+            "quote"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "ParseBlock",
+            "ParseResult",
+            "TableCell"
+          ]
+        },
+        {
+          "source": "src.output_names",
+          "specifiers": [
+            "artifact_name",
+            "figure_name"
+          ]
+        }
+      ],
+      "exports": [
+        "_blocks",
+        "_cell_html",
+        "_md_text",
+        "_table_rows",
+        "_cells",
+        "_render_table_html",
+        "_render_table",
+        "_simple_table",
+        "_list_context",
+        "_list_html",
+        "_list_markdown",
+        "_heading_level",
+        "_render_block_html",
+        "_render_block",
+        "parse_to_markdown",
+        "parse_to_html",
+        "markdown_bundle",
+        "render_and_save",
+        "save_markdown_for_doc",
+        "save_html_for_doc",
+        "_main"
+      ],
+      "totalLines": 296,
+      "hasStructuralAnalysis": true
+    },
+    "src/models.py": {
+      "filePath": "src/models.py",
+      "contentHash": "5192b88f2de8d8ca2f6396590081256a03d1735395015343291b303dfd04e5f9",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 21,
+      "hasStructuralAnalysis": true
+    },
+    "src/output_names.py": {
+      "filePath": "src/output_names.py",
+      "contentHash": "276eca830b43822737ef7c71ed5a64abf2b59d699712739133a161ca91a7a0b1",
+      "functions": [
+        {
+          "name": "source_stem",
+          "params": [
+            "filename"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "artifact_name",
+          "params": [
+            "basename",
+            "suffix"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "figure_name",
+          "params": [
+            "page",
+            "index",
+            "basename"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "_occupied",
+          "params": [
+            "directory",
+            "basename"
+          ],
+          "returnType": "bool",
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "reserve_basename",
+          "params": [
+            "filename",
+            "started_at",
+            "directory"
+          ],
+          "exported": true,
+          "lineCount": 24
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "contextlib",
+          "specifiers": [
+            "contextmanager"
+          ]
+        },
+        {
+          "source": "datetime",
+          "specifiers": [
+            "UTC",
+            "datetime",
+            "timedelta"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "re",
+          "specifiers": [
+            "re"
+          ]
+        }
+      ],
+      "exports": [
+        "source_stem",
+        "artifact_name",
+        "figure_name",
+        "_occupied",
+        "reserve_basename"
+      ],
+      "totalLines": 67,
+      "hasStructuralAnalysis": true
+    },
+    "src/parse.py": {
+      "filePath": "src/parse.py",
+      "contentHash": "01f157507a9e97080c624dc0838f3f1c51caed02ab3398392a4c286337284aba",
+      "functions": [
+        {
+          "name": "_page_context",
+          "params": [
+            "page"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "parse_page",
+          "params": [
+            "image_b64",
+            "mime",
+            "page_number",
+            "width_px",
+            "height_px",
+            "diagnostics",
+            "model",
+            "usage_entries",
+            "document_context",
+            "total_pages",
+            "detailed_layout"
+          ],
+          "returnType": "ParsePage",
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "parse_document",
+          "params": [
+            "path",
+            "start_page",
+            "end_page",
+            "model",
+            "usage_entries",
+            "on_progress",
+            "output_dir",
+            "detailed_layout",
+            "save_json"
+          ],
+          "returnType": "ParseResult",
+          "exported": true,
+          "lineCount": 80
+        },
+        {
+          "name": "_main",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "argparse",
+          "specifiers": [
+            "argparse"
+          ]
+        },
+        {
+          "source": "collections.abc",
+          "specifiers": [
+            "Callable"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "openai",
+          "specifiers": [
+            "ContentFilterFinishReasonError"
+          ]
+        },
+        {
+          "source": "src.llm",
+          "specifiers": [
+            "_build_llm",
+            "_image_message",
+            "_invoke_structured"
+          ]
+        },
+        {
+          "source": "src.preprocess",
+          "specifiers": [
+            "preprocess_pages"
+          ]
+        },
+        {
+          "source": "src.prompts",
+          "specifiers": [
+            "render_prompt"
+          ]
+        },
+        {
+          "source": "src.models",
+          "specifiers": [
+            "DEFAULT_MODEL"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "ParsePage",
+            "ParseResult",
+            "LegacyParsePage"
+          ]
+        },
+        {
+          "source": "src.diagnostics",
+          "specifiers": [
+            "ExtractionCallError",
+            "PageDiagnostic"
+          ]
+        }
+      ],
+      "exports": [
+        "_page_context",
+        "parse_page",
+        "parse_document",
+        "_main"
+      ],
+      "totalLines": 167,
+      "hasStructuralAnalysis": true
+    },
+    "src/preprocess.py": {
+      "filePath": "src/preprocess.py",
+      "contentHash": "e0f2a881441edf4fb4571cc8bfdb4beb562532cd04fc6d5ffb1ba69eb0b4a815",
+      "functions": [
+        {
+          "name": "count_pages",
+          "params": [
+            "path"
+          ],
+          "returnType": "int",
+          "exported": true,
+          "lineCount": 26
+        },
+        {
+          "name": "preprocess",
+          "params": [
+            "path"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 38
+        },
+        {
+          "name": "preprocess_pages",
+          "params": [
+            "path",
+            "start_page",
+            "end_page",
+            "max_long_edge",
+            "pdf_dpi"
+          ],
+          "returnType": "list[dict]",
+          "exported": true,
+          "lineCount": 58
+        },
+        {
+          "name": "_cap_long_edge",
+          "params": [
+            "image",
+            "max_long_edge"
+          ],
+          "returnType": "Image.Image",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "_render_pdf_page_range",
+          "params": [
+            "p",
+            "start_page",
+            "end_page",
+            "dpi"
+          ],
+          "returnType": "tuple[list[int], list[Image.Image]]",
+          "exported": true,
+          "lineCount": 34
+        }
+      ],
+      "classes": [
+        {
+          "name": "PreprocessError",
+          "methods": [],
+          "properties": [],
+          "exported": true,
+          "lineCount": 2
+        }
+      ],
+      "imports": [
+        {
+          "source": "base64",
+          "specifiers": [
+            "base64"
+          ]
+        },
+        {
+          "source": "hashlib",
+          "specifiers": [
+            "hashlib"
+          ]
+        },
+        {
+          "source": "io",
+          "specifiers": [
+            "io"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "PIL",
+          "specifiers": [
+            "Image"
+          ]
+        }
+      ],
+      "exports": [
+        "PreprocessError",
+        "count_pages",
+        "preprocess",
+        "preprocess_pages",
+        "_cap_long_edge",
+        "_render_pdf_page_range"
+      ],
+      "totalLines": 206,
+      "hasStructuralAnalysis": true
+    },
+    "src/prompts.py": {
+      "filePath": "src/prompts.py",
+      "contentHash": "d426e925d468f2a35d1e9159830730959c2c8b6429ea285f479b017b461d3802",
+      "functions": [
+        {
+          "name": "render_prompt",
+          "params": [
+            "name"
+          ],
+          "returnType": "str",
+          "exported": true,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        }
+      ],
+      "exports": [
+        "render_prompt"
+      ],
+      "totalLines": 25,
+      "hasStructuralAnalysis": true
+    },
+    "src/ui/__init__.py": {
+      "filePath": "src/ui/__init__.py",
+      "contentHash": "e990cb52a9d25b9bf3ecff2898f423f9e99c616b419b257b4726cea5e7a4bae3",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 8,
+      "hasStructuralAnalysis": true
+    },
+    "src/ui/app.py": {
+      "filePath": "src/ui/app.py",
+      "contentHash": "a880ea6c5879e414bd16d1cb8ce3c39d647f8f9548eeedcc446b27045a6d73e1",
+      "functions": [
+        {
+          "name": "clear_chat",
+          "params": [],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "load_input_preview",
+          "params": [
+            "path",
+            "start_page",
+            "end_page"
+          ],
+          "returnType": "list[tuple[int, bytes]]",
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "show_usage",
+          "params": [],
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "figure_assets",
+          "params": [
+            "output_dir",
+            "parse_json",
+            "output_basename"
+          ],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "base64",
+          "specifiers": [
+            "base64"
+          ]
+        },
+        {
+          "source": "hashlib",
+          "specifiers": [
+            "hashlib"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "streamlit",
+          "specifiers": [
+            "st"
+          ]
+        },
+        {
+          "source": "src",
+          "specifiers": [
+            "usage"
+          ]
+        },
+        {
+          "source": "src",
+          "specifiers": [
+            "chat"
+          ]
+        },
+        {
+          "source": "src.models",
+          "specifiers": [
+            "DEFAULT_MODEL"
+          ]
+        },
+        {
+          "source": "src.graph",
+          "specifiers": [
+            "run_graph"
+          ]
+        },
+        {
+          "source": "src.markdown",
+          "specifiers": [
+            "parse_to_html",
+            "parse_to_markdown",
+            "markdown_bundle"
+          ]
+        },
+        {
+          "source": "src.figures",
+          "specifiers": [
+            "load_figures"
+          ]
+        },
+        {
+          "source": "src.preprocess",
+          "specifiers": [
+            "count_pages",
+            "preprocess_pages"
+          ]
+        },
+        {
+          "source": "src.ui.clipboard",
+          "specifiers": [
+            "copy_buttons"
+          ]
+        }
+      ],
+      "exports": [
+        "clear_chat",
+        "load_input_preview",
+        "show_usage",
+        "figure_assets"
+      ],
+      "totalLines": 282,
+      "hasStructuralAnalysis": true
+    },
+    "src/ui/clipboard.py": {
+      "filePath": "src/ui/clipboard.py",
+      "contentHash": "fe89547ea8eee54fc0120a7b75c63cc73502b20f023957eb9a39e8d3cf8cddf8",
+      "functions": [],
+      "classes": [],
+      "imports": [
+        {
+          "source": "streamlit",
+          "specifiers": [
+            "st"
+          ]
+        }
+      ],
+      "exports": [],
+      "totalLines": 82,
+      "hasStructuralAnalysis": true
+    },
+    "src/usage.py": {
+      "filePath": "src/usage.py",
+      "contentHash": "00dc291829097e3c0cdb0477ecf5482dc8c0bb38f37580bc55d7b54fdc4b3b68",
+      "functions": [
+        {
+          "name": "record",
+          "params": [
+            "call",
+            "model",
+            "usage_metadata",
+            "usage_known",
+            "entries"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "totals",
+          "params": [
+            "entries"
+          ],
+          "returnType": "dict",
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "cost_usd",
+          "params": [
+            "totals_dict",
+            "model"
+          ],
+          "returnType": "float",
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "session_cost_usd",
+          "params": [
+            "entries"
+          ],
+          "returnType": "float",
+          "exported": true,
+          "lineCount": 2
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "src.models",
+          "specifiers": [
+            "DEFAULT_MODEL",
+            "MODEL_RATES"
+          ]
+        }
+      ],
+      "exports": [
+        "record",
+        "totals",
+        "cost_usd",
+        "session_cost_usd"
+      ],
+      "totalLines": 67,
+      "hasStructuralAnalysis": true
+    },
+    "tests/__init__.py": {
+      "filePath": "tests/__init__.py",
+      "contentHash": "dd51fded8c982a5f6dcabd8549d434bc07379eb8f880ca0a8d1e074c2b1f0fcc",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 7,
+      "hasStructuralAnalysis": true
+    },
+    "tests/fake_llm.py": {
+      "filePath": "tests/fake_llm.py",
+      "contentHash": "969666bf13eefa0355957e1374ed539f09605aa5c788fe66a89aeffd547cbbd4",
+      "functions": [],
+      "classes": [
+        {
+          "name": "FakeLLM",
+          "methods": [
+            "__init__"
+          ],
+          "properties": [],
+          "exported": true,
+          "lineCount": 17
+        }
+      ],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "types",
+          "specifiers": [
+            "SimpleNamespace"
+          ]
+        }
+      ],
+      "exports": [
+        "FakeLLM"
+      ],
+      "totalLines": 34,
+      "hasStructuralAnalysis": true
+    },
+    "tests/fixtures/chat-evaluation.md": {
+      "filePath": "tests/fixtures/chat-evaluation.md",
+      "contentHash": "8a216f2fa9c44d5e1ded07a1fa32393425808a36834e5a1f55f43f5119fcb069",
+      "functions": [],
+      "classes": [],
+      "imports": [],
+      "exports": [],
+      "totalLines": 17,
+      "hasStructuralAnalysis": true
+    },
+    "tests/fixtures/make_invoice_png.py": {
+      "filePath": "tests/fixtures/make_invoice_png.py",
+      "contentHash": "6b136a261c4d16cbe5967bda0051c25aa166f69e2bfafb26e611636975e0cbd7",
+      "functions": [
+        {
+          "name": "make_invoice_image",
+          "params": [
+            "width",
+            "height"
+          ],
+          "returnType": "Image.Image",
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "main",
+          "params": [],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "PIL",
+          "specifiers": [
+            "Image",
+            "ImageDraw",
+            "ImageFont"
+          ]
+        }
+      ],
+      "exports": [
+        "make_invoice_image",
+        "main"
+      ],
+      "totalLines": 53,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_annotate.py": {
+      "filePath": "tests/test_annotate.py",
+      "contentHash": "af1689480462e1bec1f02e3be83bdb1aa8bcdcb0a454fdaa43d496b06f3f8d2c",
+      "functions": [
+        {
+          "name": "test_annotated_pdf_is_created",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 27
+        },
+        {
+          "name": "test_missing_or_out_of_range_bbox_is_skipped_not_crashed",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 30
+        },
+        {
+          "name": "test_block_type_label_is_drawn",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 23
+        },
+        {
+          "name": "test_content_filtered_pages_remain_in_annotated_pdf",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 17
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "src.annotate",
+          "specifiers": [
+            "annotate_document"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "BBox",
+            "ParseBlock",
+            "ParsePage",
+            "ParseResult"
+          ]
+        }
+      ],
+      "exports": [
+        "test_annotated_pdf_is_created",
+        "test_missing_or_out_of_range_bbox_is_skipped_not_crashed",
+        "test_block_type_label_is_drawn",
+        "test_content_filtered_pages_remain_in_annotated_pdf"
+      ],
+      "totalLines": 122,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_chat.py": {
+      "filePath": "tests/test_chat.py",
+      "contentHash": "175fc833bf964387f90b6b5f9abeda8836d4a03b4dd7744dcd3ee7ec4d4b7041",
+      "functions": [
+        {
+          "name": "document",
+          "params": [
+            "text"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "draft",
+          "params": [
+            "text",
+            "quote",
+            "page"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "client_for",
+          "params": [
+            "*bodies"
+          ],
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "test_grounded_answer_and_fixed_wire_contract",
+          "params": [
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "test_invalid_evidence_or_style_never_reaches_verifier",
+          "params": [
+            "candidate"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_rejections_are_fixed_and_not_verified",
+          "params": [
+            "decision",
+            "message"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "test_verifier_blocks_unsupported_claim_with_real_quote",
+          "params": [],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_provider_or_schema_failure_is_sanitized_and_accounted",
+          "params": [
+            "bodies"
+          ],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "test_local_limits_and_failed_pages_make_no_calls",
+          "params": [],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "test_only_recent_accepted_history_is_data",
+          "params": [],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "test_luna_remains_invalid_for_parser",
+          "params": [
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "test_tables_and_missing_pages",
+          "params": [],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "test_incomplete_response_never_exposes_text",
+          "params": [
+            "state"
+          ],
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "test_luna_cost_is_not_sol_cost",
+          "params": [],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_empty_layout_markers_do_not_enable_chat",
+          "params": [],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "test_provider_refusal_never_exposes_raw_text",
+          "params": [],
+          "exported": true,
+          "lineCount": 12
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "httpx",
+          "specifiers": [
+            "httpx"
+          ]
+        },
+        {
+          "source": "openai",
+          "specifiers": [
+            "OpenAI"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "src",
+          "specifiers": [
+            "chat"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "ParseBlock",
+            "ParsePage",
+            "ParseResult"
+          ]
+        }
+      ],
+      "exports": [
+        "document",
+        "draft",
+        "client_for",
+        "test_grounded_answer_and_fixed_wire_contract",
+        "test_invalid_evidence_or_style_never_reaches_verifier",
+        "test_rejections_are_fixed_and_not_verified",
+        "test_verifier_blocks_unsupported_claim_with_real_quote",
+        "test_provider_or_schema_failure_is_sanitized_and_accounted",
+        "test_local_limits_and_failed_pages_make_no_calls",
+        "test_only_recent_accepted_history_is_data",
+        "test_luna_remains_invalid_for_parser",
+        "test_tables_and_missing_pages",
+        "test_incomplete_response_never_exposes_text",
+        "test_luna_cost_is_not_sol_cost",
+        "test_empty_layout_markers_do_not_enable_chat",
+        "test_provider_refusal_never_exposes_raw_text"
+      ],
+      "totalLines": 170,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_cli.py": {
+      "filePath": "tests/test_cli.py",
+      "contentHash": "f4102c8d7c5f0980e0a95fc214154fc2f0b39910b04b2fbabc0c8f5f44f7cab8",
+      "functions": [
+        {
+          "name": "test_launcher_uses_workspace_and_installed_app",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "test_invalid_port_does_not_create_workspace",
+          "params": [
+            "port",
+            "tmp_path"
+          ],
+          "exported": true,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "src",
+          "specifiers": [
+            "cli"
+          ]
+        }
+      ],
+      "exports": [
+        "test_launcher_uses_workspace_and_installed_app",
+        "test_invalid_port_does_not_create_workspace"
+      ],
+      "totalLines": 37,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_cli_extraction.py": {
+      "filePath": "tests/test_cli_extraction.py",
+      "contentHash": "a8069a4272a5f8acf973a8fbe439d0561e5ad9fefc0633e6d80be78e18a51621",
+      "functions": [
+        {
+          "name": "extraction",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "test_selected_formats_only",
+          "params": [
+            "extraction",
+            "flags",
+            "extensions"
+          ],
+          "exported": true,
+          "lineCount": 20
+        },
+        {
+          "name": "test_json_skips_presentation",
+          "params": [
+            "extraction",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_invalid_options_fail_before_extraction",
+          "params": [
+            "extraction",
+            "flags"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_overwrite_preserves_unrelated_files",
+          "params": [
+            "extraction"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "test_input_inside_output_is_rejected",
+          "params": [
+            "extraction"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_missing_key_fails_before_extraction",
+          "params": [
+            "extraction",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "test_env_file_and_environment_precedence",
+          "params": [
+            "extraction",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "test_missing_explicit_env_file",
+          "params": [
+            "extraction"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_requested_export_failure_keeps_other_outputs",
+          "params": [
+            "extraction",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "test_parse_failure_writes_only_requested_diagnostics",
+          "params": [
+            "extraction",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "test_partial_parse_and_page_range",
+          "params": [
+            "extraction",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "test_rendering_view_does_not_filter_json",
+          "params": [
+            "extraction",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "test_graph_uses_upload_name_and_start_time_for_every_format",
+          "params": [
+            "extraction",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 22
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "re",
+          "specifiers": [
+            "re"
+          ]
+        },
+        {
+          "source": "urllib.parse",
+          "specifiers": [
+            "unquote"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "zipfile",
+          "specifiers": [
+            "zipfile"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "src",
+          "specifiers": [
+            "cli",
+            "parse"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "BBox",
+            "ParseBlock",
+            "ParsePage"
+          ]
+        }
+      ],
+      "exports": [
+        "extraction",
+        "test_selected_formats_only",
+        "test_json_skips_presentation",
+        "test_invalid_options_fail_before_extraction",
+        "test_overwrite_preserves_unrelated_files",
+        "test_input_inside_output_is_rejected",
+        "test_missing_key_fails_before_extraction",
+        "test_env_file_and_environment_precedence",
+        "test_missing_explicit_env_file",
+        "test_requested_export_failure_keeps_other_outputs",
+        "test_parse_failure_writes_only_requested_diagnostics",
+        "test_partial_parse_and_page_range",
+        "test_rendering_view_does_not_filter_json",
+        "test_graph_uses_upload_name_and_start_time_for_every_format"
+      ],
+      "totalLines": 197,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_diagnostics.py": {
+      "filePath": "tests/test_diagnostics.py",
+      "contentHash": "0d4d7aa93e9e0c4e411288b085c2bfe0debcec0618372e660f05f5d85461b23d",
+      "functions": [
+        {
+          "name": "call_response",
+          "params": [
+            "body",
+            "status",
+            "headers",
+            "transport_error"
+          ],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "completion",
+          "params": [
+            "finish",
+            "content",
+            "refusal"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "invoke",
+          "params": [
+            "llm",
+            "diagnostics",
+            "entries"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "test_live_evaluator_disables_retries_on_actual_client",
+          "params": [
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "test_sol_pricing_keeps_requested_model_when_provider_returns_alias",
+          "params": [],
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "test_create_retains_strict_schema_messages_settings_and_usage",
+          "params": [],
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "test_unsuccessful_output_never_becomes_valid_extraction",
+          "params": [
+            "finish",
+            "content",
+            "refusal",
+            "expected"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "test_http_errors_are_safe_and_not_retried",
+          "params": [
+            "status",
+            "code",
+            "expected"
+          ],
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "test_metadata_allowlist_removes_secret_values_snippets_and_arbitrary_headers",
+          "params": [
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "test_timeout_is_safe_and_missing_usage_stays_unknown",
+          "params": [],
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "test_missing_annotations_and_usage_and_old_result_compatibility",
+          "params": [],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "test_resolution_evaluator_sends_actual_output_cap_and_medium_reasoning",
+          "params": [
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "test_raw_client_cannot_bypass_single_model_guard",
+          "params": [],
+          "exported": true,
+          "lineCount": 10
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "types",
+          "specifiers": [
+            "SimpleNamespace"
+          ]
+        },
+        {
+          "source": "httpx",
+          "specifiers": [
+            "httpx"
+          ]
+        },
+        {
+          "source": "openai",
+          "specifiers": [
+            "OpenAI"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "src",
+          "specifiers": [
+            "usage"
+          ]
+        },
+        {
+          "source": "src.diagnostics",
+          "specifiers": [
+            "ExtractionCallError",
+            "PageDiagnostic"
+          ]
+        },
+        {
+          "source": "src.llm",
+          "specifiers": [
+            "_image_message",
+            "_invoke_structured"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "ParsePage",
+            "ParseResult"
+          ]
+        }
+      ],
+      "exports": [
+        "call_response",
+        "completion",
+        "invoke",
+        "test_live_evaluator_disables_retries_on_actual_client",
+        "test_sol_pricing_keeps_requested_model_when_provider_returns_alias",
+        "test_create_retains_strict_schema_messages_settings_and_usage",
+        "test_unsuccessful_output_never_becomes_valid_extraction",
+        "test_http_errors_are_safe_and_not_retried",
+        "test_metadata_allowlist_removes_secret_values_snippets_and_arbitrary_headers",
+        "test_timeout_is_safe_and_missing_usage_stays_unknown",
+        "test_missing_annotations_and_usage_and_old_result_compatibility",
+        "test_resolution_evaluator_sends_actual_output_cap_and_medium_reasoning",
+        "test_raw_client_cannot_bypass_single_model_guard"
+      ],
+      "totalLines": 226,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_graph.py": {
+      "filePath": "tests/test_graph.py",
+      "contentHash": "fc0e4ba1969e185c844e05879a6aab9de23ad7916e98af26f7f374d9f243553f",
+      "functions": [
+        {
+          "name": "test_parse_success_sets_status_and_artifacts",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 28
+        },
+        {
+          "name": "test_parse_failure_sets_status_and_error",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "test_overlapping_runs_isolate_usage_and_artifacts",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 31
+        },
+        {
+          "name": "test_usage_survives_post_request_failure",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "test_graph_rejects_other_models_before_preprocessing",
+          "params": [
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "test_direct_compiled_graph_initializes_run_state",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "test_partial_parse_keeps_artifacts_and_reports_filtered_pages",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 22
+        },
+        {
+          "name": "test_all_filtered_pages_fail_without_markdown_or_annotation",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 14
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "src",
+          "specifiers": [
+            "graph_module"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "ParsePage",
+            "ParseResult"
+          ]
+        }
+      ],
+      "exports": [
+        "test_parse_success_sets_status_and_artifacts",
+        "test_parse_failure_sets_status_and_error",
+        "test_overlapping_runs_isolate_usage_and_artifacts",
+        "test_usage_survives_post_request_failure",
+        "test_graph_rejects_other_models_before_preprocessing",
+        "test_direct_compiled_graph_initializes_run_state",
+        "test_partial_parse_keeps_artifacts_and_reports_filtered_pages",
+        "test_all_filtered_pages_fail_without_markdown_or_annotation"
+      ],
+      "totalLines": 172,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_launcher.py": {
+      "filePath": "tests/test_launcher.py",
+      "contentHash": "b9d6f0f0dfddb1ba98dcbfe4046e061285d3a21e492afda4fe56452d95c9dff5",
+      "functions": [
+        {
+          "name": "test_launcher_forwards_arguments_and_exit_status",
+          "params": [
+            "tmp_path",
+            "exit_code"
+          ],
+          "exported": true,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "os",
+          "specifiers": [
+            "os"
+          ]
+        },
+        {
+          "source": "subprocess",
+          "specifiers": [
+            "subprocess"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        }
+      ],
+      "exports": [
+        "test_launcher_forwards_arguments_and_exit_status"
+      ],
+      "totalLines": 25,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_layout_evaluation.py": {
+      "filePath": "tests/test_layout_evaluation.py",
+      "contentHash": "aa4e812fa1225ae85ee81c287039e8e474a65d2c0a8e2781419a3e523d747c68",
+      "functions": [
+        {
+          "name": "corpus",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "runner",
+          "params": [
+            "payload",
+            "prompt",
+            "**kwargs"
+          ],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "test_two_stages_share_ten_request_allowance",
+          "params": [
+            "corpus"
+          ],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "test_failure_stops_and_prevents_candidate",
+          "params": [
+            "corpus",
+            "status",
+            "known",
+            "expected"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "test_candidate_stops_before_exceeding_allowance",
+          "params": [
+            "corpus",
+            "field",
+            "value",
+            "reason"
+          ],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "test_metric_gate_rejects_regression",
+          "params": [
+            "corpus"
+          ],
+          "exported": true,
+          "lineCount": 5
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "scripts",
+          "specifiers": [
+            "evaluation"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "ParsePage",
+            "LegacyParsePage"
+          ]
+        }
+      ],
+      "exports": [
+        "corpus",
+        "runner",
+        "test_two_stages_share_ten_request_allowance",
+        "test_failure_stops_and_prevents_candidate",
+        "test_candidate_stops_before_exceeding_allowance",
+        "test_metric_gate_rejects_regression"
+      ],
+      "totalLines": 78,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_layout_structure.py": {
+      "filePath": "tests/test_layout_structure.py",
+      "contentHash": "20fc8947c3bb9bc913c04b2661ffe75208b90c01f58fb996e890f0eb4866332a",
+      "functions": [
+        {
+          "name": "block",
+          "params": [
+            "kind",
+            "text",
+            "structure",
+            "**kwargs"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "document",
+          "params": [
+            "*blocks"
+          ],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "structure",
+          "params": [
+            "**kwargs"
+          ],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "test_live_schema_requires_all_fields_and_legacy_load_does_not_change_input",
+          "params": [],
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "test_headings_lists_and_lines_preserve_structure_and_source",
+          "params": [],
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "test_merged_header_and_headerless_tables",
+          "params": [],
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "test_invalid_table_metadata_is_rejected",
+          "params": [
+            "cells"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "test_invalid_nesting_and_heading_level_are_rejected",
+          "params": [],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_clean_only_hides_running_furniture_and_chat_keeps_all_text",
+          "params": [],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "test_literal_markup_never_becomes_executable_or_formatting",
+          "params": [],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "test_list_labels_tail_and_unrepresented_text_are_not_lost",
+          "params": [],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "test_plain_bullets_numbering_and_missing_item_source",
+          "params": [],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "test_default_extraction_uses_original_contract_and_detailed_is_opt_in",
+          "params": [
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "test_figure_crop_bundle_and_fallback",
+          "params": [
+            "tmp_path"
+          ],
+          "exported": true,
+          "lineCount": 22
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "io",
+          "specifiers": [
+            "io"
+          ]
+        },
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "zipfile",
+          "specifiers": [
+            "zipfile"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "PIL",
+          "specifiers": [
+            "Image"
+          ]
+        },
+        {
+          "source": "pydantic",
+          "specifiers": [
+            "ValidationError"
+          ]
+        },
+        {
+          "source": "src.chat",
+          "specifiers": [
+            "document_pages"
+          ]
+        },
+        {
+          "source": "src.figures",
+          "specifiers": [
+            "extract_figures",
+            "load_figures"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "BBox",
+            "BlockStructure",
+            "ListItem",
+            "ParseBlock",
+            "ParsePage",
+            "ParseResult",
+            "TableCell"
+          ]
+        },
+        {
+          "source": "src.markdown",
+          "specifiers": [
+            "markdown_bundle",
+            "parse_to_html",
+            "parse_to_markdown"
+          ]
+        }
+      ],
+      "exports": [
+        "block",
+        "document",
+        "structure",
+        "test_live_schema_requires_all_fields_and_legacy_load_does_not_change_input",
+        "test_headings_lists_and_lines_preserve_structure_and_source",
+        "test_merged_header_and_headerless_tables",
+        "test_invalid_table_metadata_is_rejected",
+        "test_invalid_nesting_and_heading_level_are_rejected",
+        "test_clean_only_hides_running_furniture_and_chat_keeps_all_text",
+        "test_literal_markup_never_becomes_executable_or_formatting",
+        "test_list_labels_tail_and_unrepresented_text_are_not_lost",
+        "test_plain_bullets_numbering_and_missing_item_source",
+        "test_default_extraction_uses_original_contract_and_detailed_is_opt_in",
+        "test_figure_crop_bundle_and_fallback"
+      ],
+      "totalLines": 182,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_markdown.py": {
+      "filePath": "tests/test_markdown.py",
+      "contentHash": "fba3c817aa228e107fc5692e657ec6b6214c3e45f2b2bfc1299eed5214faaaeb",
+      "functions": [
+        {
+          "name": "table_structure",
+          "params": [
+            "rows"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_ragged_model_table_rows_are_padded_without_changing_cells",
+          "params": [],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "_sample_result",
+          "params": [],
+          "returnType": "ParseResult",
+          "exported": true,
+          "lineCount": 26
+        },
+        {
+          "name": "test_parse_to_markdown_snapshot",
+          "params": [],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "test_parse_to_html_renders_document_like_page",
+          "params": [],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "test_parse_to_html_escapes_content",
+          "params": [],
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "test_key_value_splits_on_first_colon",
+          "params": [],
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "test_no_bbox_blocks_keep_model_order",
+          "params": [],
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "test_render_and_save_writes_md_next_to_json",
+          "params": [
+            "tmp_path"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "test_column_order_is_preserved_even_with_missing_bbox",
+          "params": [],
+          "exported": true,
+          "lineCount": 11
+        },
+        {
+          "name": "test_table_escaping_padding_and_line_breaks_preserve_source",
+          "params": [],
+          "exported": true,
+          "lineCount": 13
+        },
+        {
+          "name": "test_table_empty_and_unstructured_fallback",
+          "params": [],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "test_ordinary_checkbox_words_are_not_rewritten",
+          "params": [],
+          "exported": true,
+          "lineCount": 9
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "src.markdown",
+          "specifiers": [
+            "parse_to_html",
+            "parse_to_markdown",
+            "render_and_save"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "BBox",
+            "ParseBlock",
+            "ParsePage",
+            "ParseResult",
+            "BlockStructure",
+            "TableCell"
+          ]
+        }
+      ],
+      "exports": [
+        "table_structure",
+        "test_ragged_model_table_rows_are_padded_without_changing_cells",
+        "_sample_result",
+        "test_parse_to_markdown_snapshot",
+        "test_parse_to_html_renders_document_like_page",
+        "test_parse_to_html_escapes_content",
+        "test_key_value_splits_on_first_colon",
+        "test_no_bbox_blocks_keep_model_order",
+        "test_render_and_save_writes_md_next_to_json",
+        "test_column_order_is_preserved_even_with_missing_bbox",
+        "test_table_escaping_padding_and_line_breaks_preserve_source",
+        "test_table_empty_and_unstructured_fallback",
+        "test_ordinary_checkbox_words_are_not_rewritten"
+      ],
+      "totalLines": 198,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_output_names.py": {
+      "filePath": "tests/test_output_names.py",
+      "contentHash": "6c3fb44e14174d58883fcf300a7d1639f4c29d9cc11eb416efd33fc124ce5e5e",
+      "functions": [
+        {
+          "name": "test_source_stem",
+          "params": [
+            "source",
+            "expected"
+          ],
+          "exported": true,
+          "lineCount": 2
+        },
+        {
+          "name": "test_utc_reservation_collision_and_cleanup",
+          "params": [
+            "tmp_path"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "test_collision_with_annotation_or_image_only",
+          "params": [
+            "tmp_path",
+            "relative"
+          ],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "test_json_rerender_resolves_figure_paths_with_special_characters",
+          "params": [
+            "tmp_path",
+            "legacy"
+          ],
+          "exported": true,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "datetime",
+          "specifiers": [
+            "UTC",
+            "datetime",
+            "timedelta",
+            "timezone"
+          ]
+        },
+        {
+          "source": "urllib.parse",
+          "specifiers": [
+            "unquote"
+          ]
+        },
+        {
+          "source": "re",
+          "specifiers": [
+            "re"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "PIL",
+          "specifiers": [
+            "Image"
+          ]
+        },
+        {
+          "source": "src.output_names",
+          "specifiers": [
+            "reserve_basename",
+            "source_stem"
+          ]
+        },
+        {
+          "source": "src.markdown",
+          "specifiers": [
+            "render_and_save"
+          ]
+        },
+        {
+          "source": "tests.test_layout_structure",
+          "specifiers": [
+            "block",
+            "document"
+          ]
+        }
+      ],
+      "exports": [
+        "test_source_stem",
+        "test_utc_reservation_collision_and_cleanup",
+        "test_collision_with_annotation_or_image_only",
+        "test_json_rerender_resolves_figure_paths_with_special_characters"
+      ],
+      "totalLines": 70,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_parse.py": {
+      "filePath": "tests/test_parse.py",
+      "contentHash": "1435b487e6944e69e88158e45f0258526b79bc88829b88d606f2d5e892c6dc14",
+      "functions": [
+        {
+          "name": "test_parse_document_writes_json",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 32
+        },
+        {
+          "name": "test_parse_document_respects_page_range",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "test_parse_document_keeps_pages_not_rejected_by_content_filter",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 21
+        },
+        {
+          "name": "test_sequential_outcomes_keep_page_identity_and_context",
+          "params": [
+            "tmp_path",
+            "monkeypatch",
+            "selected_model"
+          ],
+          "exported": true,
+          "lineCount": 29
+        },
+        {
+          "name": "test_all_failed_diagnostics_are_saved",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 16
+        },
+        {
+          "name": "test_progress_reports_completion_in_source_order",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 17
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "openai",
+          "specifiers": [
+            "ContentFilterFinishReasonError"
+          ]
+        },
+        {
+          "source": "src",
+          "specifiers": [
+            "parse_module"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "BBox",
+            "ParseBlock",
+            "ParsePage"
+          ]
+        },
+        {
+          "source": "tests.fake_llm",
+          "specifiers": [
+            "_FakeLLM"
+          ]
+        }
+      ],
+      "exports": [
+        "test_parse_document_writes_json",
+        "test_parse_document_respects_page_range",
+        "test_parse_document_keeps_pages_not_rejected_by_content_filter",
+        "test_sequential_outcomes_keep_page_identity_and_context",
+        "test_all_failed_diagnostics_are_saved",
+        "test_progress_reports_completion_in_source_order"
+      ],
+      "totalLines": 163,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_preprocess.py": {
+      "filePath": "tests/test_preprocess.py",
+      "contentHash": "491a52de5b3a379a795087153c4110d657190ad6ff09e43d38068646d4a3e3fb",
+      "functions": [
+        {
+          "name": "_ensure_fixtures",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "test_missing_file_raises",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "test_png_returns_base64",
+          "params": [],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "test_sha_stable",
+          "params": [],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_pdf_first_page",
+          "params": [
+            "tmp_path"
+          ],
+          "exported": true,
+          "lineCount": 9
+        },
+        {
+          "name": "_make_multi_page_pdf",
+          "params": [
+            "path"
+          ],
+          "returnType": "None",
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "test_preprocess_pages_defaults_to_whole_document",
+          "params": [
+            "tmp_path"
+          ],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "test_preprocess_pages_explicit_range",
+          "params": [
+            "tmp_path"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "test_preprocess_pages_end_page_none_goes_to_last_page",
+          "params": [
+            "tmp_path"
+          ],
+          "exported": true,
+          "lineCount": 7
+        },
+        {
+          "name": "test_preprocess_pages_single_image_is_one_page",
+          "params": [],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "test_invalid_pdf_ranges_fail",
+          "params": [
+            "tmp_path",
+            "start",
+            "end"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_resolution_profiles_and_no_raster_upscaling",
+          "params": [
+            "tmp_path"
+          ],
+          "exported": true,
+          "lineCount": 13
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "PIL",
+          "specifiers": [
+            "Image"
+          ]
+        },
+        {
+          "source": "src.preprocess",
+          "specifiers": [
+            "PreprocessError",
+            "preprocess",
+            "preprocess_pages"
+          ]
+        },
+        {
+          "source": "tests.fixtures.make_invoice_png",
+          "specifiers": [
+            "make_fixtures"
+          ]
+        }
+      ],
+      "exports": [
+        "_ensure_fixtures",
+        "test_missing_file_raises",
+        "test_png_returns_base64",
+        "test_sha_stable",
+        "test_pdf_first_page",
+        "_make_multi_page_pdf",
+        "test_preprocess_pages_defaults_to_whole_document",
+        "test_preprocess_pages_explicit_range",
+        "test_preprocess_pages_end_page_none_goes_to_last_page",
+        "test_preprocess_pages_single_image_is_one_page",
+        "test_invalid_pdf_ranges_fail",
+        "test_resolution_profiles_and_no_raster_upscaling"
+      ],
+      "totalLines": 118,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_prompt_evaluation.py": {
+      "filePath": "tests/test_prompt_evaluation.py",
+      "contentHash": "b7cf26bf3f9401fc8d23fdbea28bbc56ca9c60ce97a31af7b48c4ff74dcd1bc0",
+      "functions": [
+        {
+          "name": "test_live_manifest_is_limited_to_approved_six_pages",
+          "params": [],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+          "params": [],
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "test_corrective_run_skips_filtered_pages_before_rendering",
+          "params": [
+            "tmp_path",
+            "monkeypatch",
+            "all_filtered"
+          ],
+          "exported": true,
+          "lineCount": 30
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "sys",
+          "specifiers": [
+            "sys"
+          ]
+        },
+        {
+          "source": "types",
+          "specifiers": [
+            "SimpleNamespace"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "scripts",
+          "specifiers": [
+            "evaluation"
+          ]
+        },
+        {
+          "source": "scripts.evaluate_prompts",
+          "specifiers": [
+            "SAMPLES",
+            "plain_text",
+            "score_page"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "BBox",
+            "ParseBlock",
+            "ParsePage"
+          ]
+        }
+      ],
+      "exports": [
+        "test_live_manifest_is_limited_to_approved_six_pages",
+        "test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+        "test_corrective_run_skips_filtered_pages_before_rendering"
+      ],
+      "totalLines": 83,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_prompts.py": {
+      "filePath": "tests/test_prompts.py",
+      "contentHash": "77ac155fb67cc8c64a3741199c71bd4f14f5f5014e3d38a87e8399b116b2ce6c",
+      "functions": [
+        {
+          "name": "test_prompts_resolve_outside_project_and_preserve_substituted_text",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 10
+        },
+        {
+          "name": "test_prompt_missing_placeholder_fails",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "test_chat_policies_load_outside_project",
+          "params": [
+            "name",
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "test_all_runtime_templates_render_without_reformatting_data",
+          "params": [
+            "name",
+            "values"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_runtime_prompt_contains_fidelity_and_injection_boundaries",
+          "params": [],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "test_detailed_prompt_stays_in_markdown_and_preserves_contract",
+          "params": [],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "src.prompts",
+          "specifiers": [
+            "render_prompt"
+          ]
+        }
+      ],
+      "exports": [
+        "test_prompts_resolve_outside_project_and_preserve_substituted_text",
+        "test_prompt_missing_placeholder_fails",
+        "test_chat_policies_load_outside_project",
+        "test_all_runtime_templates_render_without_reformatting_data",
+        "test_runtime_prompt_contains_fidelity_and_injection_boundaries",
+        "test_detailed_prompt_stays_in_markdown_and_preserves_contract"
+      ],
+      "totalLines": 71,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_resolution_evaluation.py": {
+      "filePath": "tests/test_resolution_evaluation.py",
+      "contentHash": "05151b00ea87eab5a62748080c900618fcb2ef3045c9b57fe751e52265b7bbbb",
+      "functions": [
+        {
+          "name": "corpus",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 18
+        },
+        {
+          "name": "outcome",
+          "params": [
+            "payload",
+            "known",
+            "status",
+            "output_tokens"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "test_comparison_uses_only_five_pages_and_ten_bounded_requests",
+          "params": [
+            "corpus"
+          ],
+          "exported": true,
+          "lineCount": 15
+        },
+        {
+          "name": "test_request_limit_stops_before_next_call",
+          "params": [
+            "corpus",
+            "limit",
+            "expected"
+          ],
+          "exported": true,
+          "lineCount": 4
+        },
+        {
+          "name": "test_budget_reserves_next_request",
+          "params": [
+            "corpus"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "test_reported_spend_stops_next_request",
+          "params": [
+            "corpus"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "test_unknown_usage_stops_immediately",
+          "params": [
+            "corpus"
+          ],
+          "exported": true,
+          "lineCount": 3
+        },
+        {
+          "name": "test_rejected_pages_are_not_resubmitted_at_other_resolution",
+          "params": [
+            "corpus"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_limits_cannot_be_increased",
+          "params": [
+            "corpus"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_any_page_regression_blocks_promotion",
+          "params": [],
+          "exported": true,
+          "lineCount": 7
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "json",
+          "specifiers": [
+            "json"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "scripts",
+          "specifiers": [
+            "evaluation"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "ParsePage"
+          ]
+        }
+      ],
+      "exports": [
+        "corpus",
+        "outcome",
+        "test_comparison_uses_only_five_pages_and_ten_bounded_requests",
+        "test_request_limit_stops_before_next_call",
+        "test_budget_reserves_next_request",
+        "test_reported_spend_stops_next_request",
+        "test_unknown_usage_stops_immediately",
+        "test_rejected_pages_are_not_resubmitted_at_other_resolution",
+        "test_limits_cannot_be_increased",
+        "test_any_page_regression_blocks_promotion"
+      ],
+      "totalLines": 97,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_ui_diagnostics.py": {
+      "filePath": "tests/test_ui_diagnostics.py",
+      "contentHash": "363ac3b9cbd28d100c0d5f65667de891b3ae3c2bed5c02c76205bd00a31e9d9e",
+      "functions": [
+        {
+          "name": "upload",
+          "params": [
+            "color",
+            "pages"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "uploaded",
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "params": [
+            "uploaded",
+            "monkeypatch",
+            "has_diagnostics"
+          ],
+          "exported": true,
+          "lineCount": 17
+        },
+        {
+          "name": "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+          "params": [
+            "uploaded",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 25
+        },
+        {
+          "name": "test_same_name_new_bytes_reset_count_and_result",
+          "params": [
+            "uploaded",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 14
+        },
+        {
+          "name": "test_bad_upload_and_invalid_range_make_no_calls",
+          "params": [
+            "uploaded",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "test_migration_resets_legacy_ledger_without_repricing",
+          "params": [
+            "uploaded"
+          ],
+          "exported": true,
+          "lineCount": 8
+        },
+        {
+          "name": "test_chat_submission_reruns_and_reset",
+          "params": [
+            "uploaded",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 36
+        },
+        {
+          "name": "test_chat_sessions_do_not_share_history",
+          "params": [
+            "uploaded"
+          ],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "params": [
+            "uploaded",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 43
+        },
+        {
+          "name": "test_detailed_layout_requires_opt_in_and_resets_old_results",
+          "params": [
+            "uploaded",
+            "monkeypatch"
+          ],
+          "exported": true,
+          "lineCount": 15
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "io",
+          "specifiers": [
+            "io"
+          ]
+        },
+        {
+          "source": "pathlib",
+          "specifiers": [
+            "Path"
+          ]
+        },
+        {
+          "source": "types",
+          "specifiers": [
+            "SimpleNamespace"
+          ]
+        },
+        {
+          "source": "PIL",
+          "specifiers": [
+            "Image"
+          ]
+        },
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "streamlit",
+          "specifiers": [
+            "st"
+          ]
+        },
+        {
+          "source": "streamlit.testing.v1",
+          "specifiers": [
+            "AppTest"
+          ]
+        },
+        {
+          "source": "src",
+          "specifiers": [
+            "graph"
+          ]
+        },
+        {
+          "source": "src.diagnostics",
+          "specifiers": [
+            "PageDiagnostic"
+          ]
+        },
+        {
+          "source": "src.layout",
+          "specifiers": [
+            "ParseResult",
+            "ParsePage"
+          ]
+        }
+      ],
+      "exports": [
+        "upload",
+        "uploaded",
+        "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+        "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+        "test_same_name_new_bytes_reset_count_and_result",
+        "test_bad_upload_and_invalid_range_make_no_calls",
+        "test_migration_resets_legacy_ledger_without_repricing",
+        "test_chat_submission_reruns_and_reset",
+        "test_chat_sessions_do_not_share_history",
+        "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+        "test_detailed_layout_requires_opt_in_and_resets_old_results"
+      ],
+      "totalLines": 221,
+      "hasStructuralAnalysis": true
+    },
+    "tests/test_usage.py": {
+      "filePath": "tests/test_usage.py",
+      "contentHash": "2af63ba1e1c16671409092919d8a05bbc53d2358ca1f74fceea86fcf53995e30",
+      "functions": [
+        {
+          "name": "test_record_and_totals",
+          "params": [],
+          "exported": true,
+          "lineCount": 12
+        },
+        {
+          "name": "test_missing_usage_is_unknown",
+          "params": [],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_ledgers_do_not_share_entries",
+          "params": [],
+          "exported": true,
+          "lineCount": 6
+        },
+        {
+          "name": "test_cost_usd_uses_all_input_rates",
+          "params": [],
+          "exported": true,
+          "lineCount": 5
+        },
+        {
+          "name": "test_unknown_model_is_not_repriced_as_sol",
+          "params": [],
+          "exported": true,
+          "lineCount": 3
+        }
+      ],
+      "classes": [],
+      "imports": [
+        {
+          "source": "pytest",
+          "specifiers": [
+            "pytest"
+          ]
+        },
+        {
+          "source": "src",
+          "specifiers": [
+            "usage"
+          ]
+        }
+      ],
+      "exports": [
+        "test_record_and_totals",
+        "test_missing_usage_is_unknown",
+        "test_ledgers_do_not_share_entries",
+        "test_cost_usd_uses_all_input_rates",
+        "test_unknown_model_is_not_repriced_as_sol"
+      ],
+      "totalLines": 45,
+      "hasStructuralAnalysis": true
+    }
+  }
+}
