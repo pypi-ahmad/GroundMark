@@ -13,7 +13,7 @@ Detailed layout remains optional because source review found new transcription e
 Before submitting a change:
 
 1. Add or update focused tests.
-2. Run `uv sync`, then `uv run python -m pytest`.
+2. Run `uv sync`, then `uv run python -m pytest tests`.
 3. Run `git diff --check`.
 4. Update current documentation when behavior changes.
 

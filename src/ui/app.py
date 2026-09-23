@@ -106,7 +106,7 @@ with st.sidebar:
 
 st.caption(f"Document: {uploaded.name}")
 valid_range = 1 <= start_page <= end_page <= total
-scope = (upload_id, int(start_page), end_page, detailed_layout)
+scope = (upload_id, uploaded.name, int(start_page), end_page, detailed_layout)
 if st.session_state.get("document_scope") != scope:
     clear_chat()
     st.session_state.pop("last_parse_result", None)
@@ -127,7 +127,8 @@ if st.button("Parse", disabled=not valid_range):
     with st.spinner("Parsing..."):
         try:
             result = run_graph(str(dest), start_page=int(start_page), end_page=end_page,
-                               model=DEFAULT_MODEL, detailed_layout=detailed_layout, on_progress=update_progress)
+                               model=DEFAULT_MODEL, detailed_layout=detailed_layout, on_progress=update_progress,
+                               original_filename=uploaded.name)
         except Exception:
             st.error("Unable to prepare this document. Check the file and page range.")
             result = None
@@ -156,6 +157,7 @@ else:
     current_parse = None
 
 doc_sha = result.get("doc_sha", "document") if result else "document"
+output_basename = result.get("output_basename", doc_sha) if result else doc_sha
 run_id = result.get("run_id", doc_sha) if result else upload_id
 view = "full"
 if current_parse:
@@ -166,14 +168,14 @@ if current_parse:
 
 
 @st.cache_data(max_entries=8, show_spinner=False)
-def figure_assets(output_dir: str, parse_json: str):
+def figure_assets(output_dir: str, parse_json: str, output_basename: str):
     from src.layout import ParseResult
-    return load_figures(ParseResult.model_validate_json(parse_json), output_dir)
+    return load_figures(ParseResult.model_validate_json(parse_json), output_dir, output_basename=output_basename)
 
 
 figures = {}
 if current_parse and result.get("output_dir"):
-    figures = figure_assets(result["output_dir"], current_parse.model_dump_json())
+    figures = figure_assets(result["output_dir"], current_parse.model_dump_json(), output_basename)
 tab_input, tab_md, tab_pdf, tab_html, tab_json, tab_chat = st.tabs(
     ["Input preview", "Markdown", "Annotated", "HTML", "JSON", "Chat"],
     key="preview_tab", on_change="rerun",
@@ -190,13 +192,13 @@ if tab_input.open:
 if tab_md.open:
     with tab_md:
         if current_parse and current_parse.pages:
-            md_text = parse_to_markdown(current_parse, view=view, figures=figures)
-            rendered_html = parse_to_html(current_parse, view=view, figures=figures)
-            st.download_button("Download Markdown", data=md_text, file_name=f"{doc_sha}.{view}.md",
+            md_text = parse_to_markdown(current_parse, view=view, figures=figures, output_basename=output_basename)
+            rendered_html = parse_to_html(current_parse, view=view, figures=figures, output_basename=output_basename)
+            st.download_button("Download Markdown", data=md_text, file_name=f"{output_basename}.md",
                                mime="text/markdown", key=f"{run_id}_download_md", on_click="ignore")
             if figures:
-                st.download_button("Download Markdown with images", data=markdown_bundle(current_parse, view=view, figures=figures),
-                                   file_name=f"{doc_sha}.{view}.zip", mime="application/zip",
+                st.download_button("Download Markdown with images", data=markdown_bundle(current_parse, view=view, figures=figures, output_basename=output_basename),
+                                   file_name=f"{output_basename}.zip", mime="application/zip",
                                    key=f"{run_id}_download_bundle", on_click="ignore")
             copy_buttons(data={"markdown": md_text, "html": rendered_html},
                          key=f"{run_id}_copy_md", height="content")
@@ -208,7 +210,7 @@ if tab_md.open:
                 st.code(md_text, language="markdown", wrap_lines=True, height=500)
             else:
                 # All source text is escaped; only renderer-owned markup is enabled.
-                st.markdown(parse_to_markdown(current_parse, view=view, figures=figures, inline_images=True),
+                st.markdown(parse_to_markdown(current_parse, view=view, figures=figures, output_basename=output_basename, inline_images=True),
                             unsafe_allow_html=True)
         else:
             st.info("Parse the document to create Markdown.")
@@ -228,8 +230,8 @@ if tab_pdf.open:
 if tab_html.open:
     with tab_html:
         if current_parse:
-            rendered_html = parse_to_html(current_parse, view=view, figures=figures)
-            st.download_button("Download HTML", data=rendered_html, file_name=f"{doc_sha}.{view}.html",
+            rendered_html = parse_to_html(current_parse, view=view, figures=figures, output_basename=output_basename)
+            st.download_button("Download HTML", data=rendered_html, file_name=f"{output_basename}.html",
                                mime="text/html", key=f"{run_id}_download_html", on_click="ignore")
             st.iframe(rendered_html, height=800)
         else:
@@ -239,7 +241,7 @@ if tab_json.open:
     with tab_json:
         if current_parse:
             json_text = current_parse.model_dump_json(indent=2)
-            st.download_button("Download JSON", data=json_text, file_name=f"{doc_sha}.json",
+            st.download_button("Download JSON", data=json_text, file_name=f"{output_basename}.json",
                                mime="application/json", key=f"{run_id}_download_json", on_click="ignore")
             copy_buttons(data={"label": "Copy JSON", "text": json_text},
                          key=f"{run_id}_copy_json", height="content")

@@ -36,7 +36,7 @@ Private prompts, schemas, source hashes, responses, source images, and the share
 Run offline checks through the existing environment:
 
 ```powershell
-uv run --no-project --python .venv\Scripts\python.exe python -m pytest -q
+uv run --no-project --python .venv\Scripts\python.exe python -m pytest tests -q
 ```
 
 The ten-request allowance is exhausted. A new live comparison needs its own allowance and output directory. `scripts.evaluate_layout` runs baseline and candidate stages under one ten-request/$2 estimated allowance. It refuses to rerun a dispatched phase, stops when usage is missing or extraction fails, and reserves estimated cost before each request. Do not dispatch more requests from an incomplete or completed run.

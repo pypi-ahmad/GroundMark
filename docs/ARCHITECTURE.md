@@ -19,7 +19,7 @@ Detailed blocks have a nullable `structure` field. It holds the heading level, l
 | `src/llm.py` | Configure Sol and invoke structured visual parsing. |
 | `src/markdown.py` | Render layout blocks into Markdown and self-contained HTML. |
 | `src/annotate.py` | Draw valid model-provided block boxes on source pages. |
-| `src/figures.py` | Save source-matched figure crops using deterministic page/index filenames. |
+| `src/figures.py` | Save source-matched figure crops with the run basename and page/index suffixes. |
 | `src/ui/app.py` | Present document outputs and the document chat interface. |
 | `src/chat.py` | Answer questions over current parsed pages, check exact evidence, and verify scope and grounding before display. |
 
@@ -27,11 +27,15 @@ Diagnostics identify filtered and failed pages. The app still writes text artifa
 
 Each UI run writes to `data/parse/runs/<run-id>/`. A successful parse produces Markdown, HTML, and layout JSON. Successful annotation adds a PDF, page PNGs, and annotation metadata.
 
+`src/output_names.py` sanitizes the source filename and reserves one UTC basename for the run's exports. Graph state holds the original filename, extraction start time, and chosen basename. `doc_sha` remains the grounding identifier.
+
+The UI passes the uploaded name separately from its hashed cache path. Rerendering or downloading uses the same basename; a new parse gets a new timestamp. A temporary directory lock coordinates concurrent writers. If the name exists, GroundMark adds fractional seconds.
+
 Figure crops live in the run's `images/` directory. A missing or invalid box leaves a placeholder and a warning; the figure text stays in the extraction. HTML embeds the PNG data. Markdown links to images included in its ZIP download. The CLI JSON renderer loads adjacent crops when available.
 
 Programmatic rendering uses full content by default. The UI opens in Clean view, which hides blocks classified as page headers or footers. Unknown table headers remain ordinary cells. A simple table with an identified first header row uses Markdown; complex or headerless tables use generated HTML. Renderers escape source markup, keep list labels and trailing notes, and use the original text when list metadata conflicts with it. Rendering does not change the extraction data.
 
-The default extraction contract has no page-header/footer roles, so Clean and Full contain the same blocks for default results. Loading older JSON cannot infer heading depth, list nesting, or merged cells. Graph-written Markdown and HTML keep full content; UI downloads follow the selected view.
+The default extraction contract has no page-header/footer roles, so Clean and Full contain the same blocks for default results. Loading older JSON cannot infer heading depth, list nesting, or merged cells. GUI graph exports keep full content; UI downloads follow the selected view. CLI exports use the requested `--view`.
 
 The Chat tab works outside the parse graph. It builds evidence from successful pages' block text and table rows, including classified headers and footers. Clean view and display escaping do not affect that evidence. Luna receives the text with page numbers and a bounded amount of accepted history. Separate Markdown policies govern drafting and verification. Python checks quoted evidence and adds citations before Streamlit displays the approved text. Chat has no tools, filesystem access, or browsing. Session history clears when the upload is removed or replaced, the page range or extraction mode changes, or the document is parsed again.
 

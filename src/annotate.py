@@ -21,6 +21,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 from src.preprocess import preprocess_pages
 from src.layout import ParseResult
+from src.output_names import artifact_name
 
 BOX_COLOR = (220, 30, 30)
 LABEL_FONT_SIZE = 16
@@ -44,6 +45,7 @@ def annotate_document(
     save_pdf: bool = True,
     save_images: bool = True,
     save_metadata: bool = True,
+    output_basename: str | None = None,
 ) -> tuple[Path | None, Path | None]:
     """Draw every block's bbox onto a rasterized copy of each page and save a
     multi-page PDF, plus a sidecar .meta.json.
@@ -68,6 +70,7 @@ def annotate_document(
 
     pages_payload = preprocess_pages(source_path, start_page=start_page, end_page=end_page)
     doc_sha = pages_payload[0]["doc_sha256"]
+    basename = output_basename or doc_sha
     blocks_by_page = {page.page: page.blocks for page in parse_result.pages}
 
     font = ImageFont.load_default(size=LABEL_FONT_SIZE)
@@ -94,20 +97,21 @@ def annotate_document(
 
     out_dir = Path(output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-    pdf_path = out_dir / f"{doc_sha}.pdf"
+    pdf_path = out_dir / artifact_name(basename, ".pdf")
     if save_pdf:
         first, *rest = annotated_images
         first.save(pdf_path, "PDF", save_all=True, append_images=rest)
 
     # Also save each annotated page as its own PNG, so the UI can preview
     # them inline (st.image) without needing a PDF-viewer widget/dependency.
-    pages_dir = out_dir / doc_sha
+    pages_dir = out_dir / basename
     if save_images:
         pages_dir.mkdir(parents=True, exist_ok=True)
         for payload, image in zip(pages_payload, annotated_images):
-            image.save(pages_dir / f"page_{payload['page']:03d}.png")
+            name = f"page_{payload['page']:03d}.png"
+            image.save(pages_dir / (artifact_name(basename, "_" + name) if output_basename else name))
 
-    meta_path = out_dir / f"{doc_sha}.meta.json"
+    meta_path = out_dir / artifact_name(basename, ".meta.json")
     if save_metadata:
         meta_path.write_text(
             json.dumps(

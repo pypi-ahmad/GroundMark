@@ -10,11 +10,12 @@ from PIL import Image
 
 from src.annotate import _bbox_is_valid
 from src.layout import ParseResult
+from src.output_names import figure_name
 from src.preprocess import preprocess_pages
 
 
 def extract_figures(source: str | Path, result: ParseResult, output_dir: str | Path,
-                    *, save_images: bool = True) -> tuple[dict[str, bytes], list[str]]:
+                    *, save_images: bool = True, output_basename: str | None = None) -> tuple[dict[str, bytes], list[str]]:
     figures = {}
     warnings = []
     for page in result.pages:
@@ -35,7 +36,7 @@ def extract_figures(source: str | Path, result: ParseResult, output_dir: str | P
                                        math.ceil(x1 * image.width), math.ceil(y1 * image.height)))
                     buffer = io.BytesIO()
                     crop.save(buffer, format="PNG")
-                    name = f"page_{page.page:03d}_figure_{index:03d}.png"
+                    name = figure_name(page.page, index, output_basename)
                     directory = Path(output_dir) / "images"
                     data = buffer.getvalue()
                     if save_images:
@@ -48,20 +49,22 @@ def extract_figures(source: str | Path, result: ParseResult, output_dir: str | P
     return figures, warnings
 
 
-def load_figures(result: ParseResult, output_dir: str | Path) -> dict[str, bytes]:
+def load_figures(result: ParseResult, output_dir: str | Path, *, output_basename: str | None = None) -> dict[str, bytes]:
     figures = {}
     for page in result.pages:
         for index, block in enumerate(page.blocks):
             if block.type != "figure":
                 continue
-            name = f"page_{page.page:03d}_figure_{index:03d}.png"
-            try:
-                data = (Path(output_dir) / "images" / name).read_bytes()
-                with Image.open(io.BytesIO(data)) as image:
-                    if image.format != "PNG":
-                        continue
-                    image.verify()
-                figures[name] = data
-            except (OSError, ValueError):
-                continue
+            names = dict.fromkeys((figure_name(page.page, index, output_basename), figure_name(page.page, index)))
+            for name in names:
+                try:
+                    data = (Path(output_dir) / "images" / name).read_bytes()
+                    with Image.open(io.BytesIO(data)) as image:
+                        if image.format != "PNG":
+                            continue
+                        image.verify()
+                    figures[name] = data
+                    break
+                except (OSError, ValueError):
+                    continue
     return figures

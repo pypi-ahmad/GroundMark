@@ -1,6 +1,9 @@
 """Exercise real preprocessing and exports without model requests."""
 
 import os
+import re
+from urllib.parse import unquote
+from pathlib import Path
 import zipfile
 
 import pytest
@@ -47,11 +50,18 @@ def test_selected_formats_only(extraction, flags, extensions):
     assert {p.suffix for p in files} == extensions
     assert not any(p.name.endswith(".meta.json") for p in files)
     assert len(calls) == 1
+    primary = next(p for p in files if p.parent == output or p.suffix == ".pdf" or "_figure_" not in p.name)
+    basename = primary.stem.split("_page_")[0]
+    assert re.fullmatch(r"source document_\d{8}_\d{6}Z", basename)
+    assert all(p.name.startswith(basename) for p in files)
     if ".html" in extensions:
         assert "data:image/png;base64," in next(output.glob("*.html")).read_text()
     if ".zip" in extensions:
         with zipfile.ZipFile(next(output.glob("*.zip"))) as archive:
-            assert set(archive.namelist()) == {"document.md", "images/page_001_figure_000.png"}
+            assert set(archive.namelist()) == {f"{basename}.md", f"images/{basename}_page_001_figure_000.png"}
+            markdown = archive.read(f"{basename}.md").decode()
+            link = re.search(r"!\[Figure\]\(([^)]+)\)", markdown)[1]
+            assert unquote(link) in archive.namelist()
     assert not (source.parent / "data").exists()
 
 
@@ -160,3 +170,27 @@ def test_rendering_view_does_not_filter_json(extraction, monkeypatch):
     assert cli.main([str(source), str(output), "--markdown", "--json", "--view", "clean"]) == 0
     assert "Running header" not in next(output.glob("*.md")).read_text()
     assert "Running header" in next(output.glob("*.json")).read_text()
+
+
+def test_graph_uses_upload_name_and_start_time_for_every_format(extraction, monkeypatch):
+    from datetime import UTC, datetime
+    from src import graph
+    source, output, _ = extraction
+    class Clock(datetime):
+        current = datetime(2026, 9, 23, 10, 0, 45, 123456, tzinfo=UTC)
+        @classmethod
+        def now(cls, tz=None):
+            return cls.current
+    monkeypatch.setattr(graph, "datetime", Clock)
+    original = parse.parse_page
+    def page(*args, **kwargs):
+        Clock.current = datetime(2026, 9, 23, 10, 5, 0, tzinfo=UTC)
+        return original(*args, **kwargs)
+    monkeypatch.setattr(parse, "parse_page", page)
+    result = graph.run_graph(str(source), output_dir=output, formats=set(graph.FORMATS),
+                             original_filename="Uploaded report.pdf")
+    assert result["status"] == "parsed"
+    assert result["export_errors"] == []
+    assert result["output_basename"] == "Uploaded report_20260923_100045Z"
+    assert all(Path(p).name.startswith(result["output_basename"]) for p in result["output_paths"])
+    assert result["doc_sha"] == result["parse_result"].doc_sha

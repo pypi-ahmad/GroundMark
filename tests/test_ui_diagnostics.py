@@ -163,20 +163,23 @@ def test_document_view_changes_rendered_raw_copy_and_download_without_calls(uplo
     from src.ui import clipboard
     copies = []
     downloads = []
+    filenames = []
     monkeypatch.setattr(clipboard, "copy_buttons", lambda **kwargs: copies.append(kwargs["data"]))
     tabs = st.tabs
     monkeypatch.setattr(st, "tabs", lambda *a, **k: tabs(*a, default="Markdown", **k))
     original_download = st.download_button
     def download(label, data, **kwargs):
         downloads.append((label, data))
+        filenames.append(kwargs["file_name"])
         return original_download(label, data, **kwargs)
     monkeypatch.setattr(st, "download_button", download)
     current = document(block("page_header", "FAX METADATA"), block("text", "Body\nSecond line"),
                        block("table", table=[["A", "B"]]))
     calls = []
     def run(*a, **kw):
-        calls.append(1)
-        return dict(status="parsed", parse_result=current, markdown="unused", token_usage=[], run_id="view-test")
+        calls.append(kw["original_filename"])
+        return dict(status="parsed", parse_result=current, markdown="unused", token_usage=[], run_id="view-test",
+                    output_basename="same_20260923_100045Z")
     monkeypatch.setattr(graph, "run_graph", run)
     app = AppTest.from_file(str(APP)).run()
     app.button[0].click().run()
@@ -192,7 +195,12 @@ def test_document_view_changes_rendered_raw_copy_and_download_without_calls(uplo
     assert "FAX METADATA" in copies[-1]["markdown"]
     app.segmented_control(key="view-test_markdown_view").set_value("Raw").run()
     assert "FAX METADATA" in app.code[0].value
-    assert calls == [1]
+    assert calls == ["same.pdf"]
+    assert set(filenames) == {"same_20260923_100045Z.md"}
+    uploaded[0] = SimpleNamespace(name="renamed.pdf", getvalue=uploaded[0].getvalue)
+    app.run()
+    assert not app.exception
+    assert "last_parse_result" not in app.session_state
 
 
 def test_detailed_layout_requires_opt_in_and_resets_old_results(uploaded, monkeypatch):
