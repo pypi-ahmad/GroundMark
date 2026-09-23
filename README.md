@@ -26,7 +26,7 @@ You can also install the wheel in a Python 3.14+ virtual environment:
 # Using uv:
 uv venv --python 3.14
 uv pip install "https://github.com/pypi-ahmad/GroundMark/releases/download/v0.1.0/groundmark-0.1.0-py3-none-any.whl"
-uv run groundmark --help
+.\.venv\Scripts\groundmark.exe --help
 
 # Or, inside an activated virtual environment, using pip:
 pip install "https://github.com/pypi-ahmad/GroundMark/releases/download/v0.1.0/groundmark-0.1.0-py3-none-any.whl"
@@ -70,7 +70,7 @@ groundmark invoice.pdf output --markdown --html
 groundmark invoice.pdf output --json --start-page 2 --end-page 5
 ```
 
-By default, the command writes Markdown and any figure images it references. You can combine format flags. The selected pages are parsed once, regardless of how many formats you request.
+Without a format flag, the command writes Markdown and any figure images it references. You can combine format flags; the selected pages are parsed once for all requested formats.
 
 | Option | Output or behavior |
 | --- | --- |
@@ -122,7 +122,7 @@ Detailed layout (experimental) adds heading levels, nested lists, checkbox state
 
 ## How it works
 
-LangGraph runs a fixed sequence: preprocess, parse, finish. There is no automatic extraction review or correction loop. The default prompt and response contract do not classify running headers or footers, so Clean and Full show the same blocks in default-mode results. Switching views makes no model calls and cannot recover structure the parser did not capture.
+LangGraph runs a fixed preprocess, parse, and finish sequence. It has no automatic extraction review or correction loop. The default prompt and response contract do not classify running headers or footers, so Clean and Full show the same blocks in default-mode results. Switching views makes no model calls and cannot recover structure the parser did not capture.
 
 Saved JSON records `schema_version: 2` and the extraction profile. The JSON renderer can load older files. The GUI graph saves the full Markdown and HTML; UI downloads use the selected view. CLI exports use the view chosen with `--view`.
 
@@ -143,7 +143,7 @@ uv run python -m pytest tests
 
 ## Diagrams
 
-These views show the parsing path, artifact flow, run outcomes, and document chat. Each image has an interactive version.
+The diagrams show parsing, artifact flow, run outcomes, and document chat. Each image links to an interactive version.
 
 <details>
 <summary>Document parsing workflow</summary>

@@ -8,7 +8,7 @@ Blank or unset `OPENAI_BASE_URL` uses the SDK default. A missing explicit enviro
 
 `groundmark` opens the web UI at `http://127.0.0.1:5805`. Use `--workspace`, `--port`, `--host`, and `--headless` to configure the UI. An occupied port produces an error; the launcher does not terminate another server. `run.cmd` runs `uv run groundmark` from the checkout and forwards arguments.
 
-For terminal extraction, run `groundmark input.pdf output --all`, or `uv run groundmark input.pdf output --all` from the checkout. Without format flags, the command writes Markdown and its figure files. You can combine flags: `--markdown --html --json --annotated-pdf --annotated-images --markdown-zip`. `--all` selects every format. UI-only options cannot be combined with a source file.
+For terminal extraction, run `groundmark input.pdf output --all`, or `uv run groundmark input.pdf output --all` from the checkout. Without format flags, the command writes Markdown and its figure files. You can combine `--markdown --html --json --annotated-pdf --annotated-images --markdown-zip`, or use `--all` to select every format. UI-only options cannot be combined with a source file.
 
 The input must be outside the output directory. An existing nonempty output directory requires `--overwrite`; this permits another run while keeping existing files. Use a fresh directory to avoid mixing artifacts from different runs or page ranges. Before making model calls, the CLI checks the arguments and configuration, confirms that it can read the input, and validates the page range. Pages are 1-based and inclusive.
 
@@ -45,7 +45,7 @@ Clean and Full change the Markdown and HTML views, including copied and download
 
 The default extraction has no running-header or footer classifications, so Clean and Full show the same blocks for those results. Files written by the graph keep full content; UI downloads use the selected view. Switching views cannot add structure missing from the extraction.
 
-Detailed layout is experimental and off by default because source review found new transcription errors in this mode. Enabling it changes the prompt and response schema and clears the previous result. Select Parse to run it. CLI callers can pass `--detailed-layout` to `src.graph` or `src.parse`. Read the [layout evaluation](LAYOUT-EVALUATION.md) before using it for work where source values matter.
+Detailed layout is experimental and off by default because source review found new transcription errors in this mode. Enabling it changes the prompt and response schema and clears the previous result. Select Parse to run it in the UI, or pass `--detailed-layout` to `groundmark` with a source file and output directory. Direct callers can also pass `detailed_layout=True` to `run_graph` or `parse_document`. Read the [layout evaluation](LAYOUT-EVALUATION.md) before using it for work where source values matter.
 
 | Symptom | Check |
 | --- | --- |
