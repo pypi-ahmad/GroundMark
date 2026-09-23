@@ -13,7 +13,7 @@ the source-grounding acceptance check. There was no third tuning round.
 
 Six other runtime prompts were revised during this work. That version kept
 reading order and line breaks, escaped table cells, and padded ragged rows for
-display. The ignored local artifact directory holds the candidates and results
+display. The candidates and results are stored in the ignored local artifact directory
 when those files are present in the checkout.
 
 ## Live scope and controls
@@ -41,8 +41,8 @@ sequentially, while pages within each document ran concurrently.
 
 ## Measurements
 
-The results cover five successfully parsed pages. The filtered sixth page counts
-toward coverage but has no transcription score.
+Five pages parsed successfully and received transcription scores. The filtered
+sixth page counts toward coverage but has no transcription score.
 
 | Measurement | Baseline | Candidate | Corrective |
 | --- | ---: | ---: | ---: |
@@ -62,8 +62,8 @@ not every field association or performance on unseen documents. Filtered
 requests returned no usage, so totals include reported tokens only. Timing
 comes from single runs and does not establish typical latency.
 
-The candidates represented these form sections as fields. This explains their
-zero ragged-table count but says little about extraction of genuine repeated-row
+The candidates represented these form sections as fields. This explains why they
+produced no ragged tables, but tells us little about how they extract repeated-row
 tables. This corpus has no live measure of true-grid or merged-cell accuracy.
 Offline tests cover renderer behavior separately.
 

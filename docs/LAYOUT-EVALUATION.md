@@ -1,10 +1,10 @@
 # Layout comparison: September 23, 2026
 
-Detailed layout is available as an experiment. The original prompt and schema remain the default. Both modes have the rendering fixes, figure crops, portable downloads, and legacy JSON loading. They also share the 200-DPI/1,600-pixel rendering setting retained after the earlier [resolution comparison](SOL-RESOLUTION-EVALUATION.md).
+Detailed layout is experimental. The original prompt and schema remain the default. Both modes have the rendering fixes, figure crops, portable downloads, and legacy JSON loading. They also share the 200-DPI/1,600-pixel rendering setting retained after the earlier [resolution comparison](SOL-RESOLUTION-EVALUATION.md).
 
 ## Results
 
-The run processed five source pages once with each contract. Both used `gpt-6-sol`, medium reasoning, 200-DPI rendering capped at 1,600 pixels, automatic image detail, an 8,192-token completion cap, and no retries. Both profiles received empty preceding-page context, so this run did not test the normal multi-page context path.
+The run processed five source pages once with each contract. Both used `gpt-6-sol`, medium reasoning, 200-DPI rendering capped at 1,600 pixels, automatic image detail, an 8,192-token completion cap, and no retries. Neither profile received text from preceding pages, so this run did not test how the app normally carries context between pages.
 
 | Document | Page | Baseline token F1 | Candidate token F1 |
 | --- | ---: | ---: | ---: |
@@ -15,11 +15,11 @@ The run processed five source pages once with each contract. Both used `gpt-6-so
 | Masked Amerigroup_1 | 2 | 96.23% | 96.67% |
 | Unweighted mean | | **95.67%** | **95.99%** |
 
-All ten requests parsed successfully. Estimated cost was **$0.46442**, within the $2 allowance. The estimate uses repository token prices rather than provider billing. The run made no further live requests.
+All ten requests parsed successfully. Estimated cost was **$0.46442**, within the $2 allowance. The estimate uses repository token prices; it is not a provider bill. The run made no further live requests.
 
 Three pages tied on token F1 and two improved, so the metric check passed. Source review found new errors. On page 2 of Masked Amerigroup_1, the candidate read the handwritten initiation-date month as 10; the source and baseline showed 6. The other handwritten form also had changed contact digits. The higher token score did not establish better field accuracy.
 
-The candidate identified merged cells in the form table and classified running fax headers and footers. Those details make the reading view cleaner. The source errors kept the prompt from becoming the default, so detailed layout remains opt-in.
+The candidate identified merged cells in the form table and classified running fax headers and footers. Those details make the reading view cleaner, but the source errors kept the prompt from becoming the default. Detailed layout remains opt-in.
 
 ## Verification and limits
 

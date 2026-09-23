@@ -38,15 +38,14 @@ documents.
 | Masked Amerigroup_1 | 2 | 95.79% | 96.48% |
 | Unweighted mean | | **95.57%** | **95.02%** |
 
-Two pages regressed, two tied, and one improved. The candidate met neither the
-per-page no-regression requirement nor the aggregate-improvement requirement,
-so it was not promoted. No source-image review followed the failed metric
+Two pages regressed, two tied, and one improved. The candidate failed both requirements: no regression on any page
+and an improvement in the aggregate score. It was not promoted. No source-image review followed the failed metric
 check. The results provide no verified field-level OCR improvement.
 Token F1 cannot confirm identifiers, checkbox states, reading order, or table
 associations.
 
-Any future promotion requires visual confirmation of at least one genuine
-correction without new source errors. This run used all ten approved requests;
+Before promoting a future candidate, visually confirm at least one real
+correction without introducing new source errors. This run used all ten approved requests;
 further live experiments need separate authorization.
 
 ## Verification and research
