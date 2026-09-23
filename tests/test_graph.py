@@ -74,8 +74,8 @@ def test_overlapping_runs_isolate_usage_and_artifacts(tmp_path, monkeypatch):
 
     monkeypatch.chdir(tmp_path)
     barrier = Barrier(2)
-    monkeypatch.setattr(graph_module, "preprocess", lambda path: dict(doc_sha256="same", base64="", mime="image/png"))
-    monkeypatch.setattr(graph_module, "annotate_document", lambda *a, **k: (_ for _ in ()).throw(ValueError("skip")))
+    monkeypatch.setattr(graph_module, "preprocess", lambda path: dict(doc_sha256="same"))
+    monkeypatch.setattr("src.export.annotate_document", lambda *a, **k: (_ for _ in ()).throw(ValueError("skip")))
 
     def parse(path, **kwargs):
         barrier.wait(timeout=5)

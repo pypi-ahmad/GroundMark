@@ -13,7 +13,6 @@ from pydantic import BaseModel, ConfigDict
 from src import usage
 from src.diagnostics import safe_identifier, token_count
 from src.layout import ParseResult
-from src.markdown import parse_to_markdown
 from src.models import CHAT_MODEL
 from src.prompts import render_prompt
 
@@ -66,7 +65,11 @@ def document_pages(result: ParseResult | None) -> dict[int, str]:
         for page in result.pages if page.page not in failed
         if any(block.text.strip() or any(cell.strip() for row in (block.table or []) for cell in row)
                for block in page.blocks)
-        if (text := parse_to_markdown(result.model_copy(update={"pages": [page]})).strip())
+        if (text := "\n\n".join(
+            "\n".join(" | ".join(row) for row in block.table)
+            if block.type == "table" and block.table else block.text
+            for block in page.blocks
+        ).strip())
     }
 
 

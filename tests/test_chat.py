@@ -10,7 +10,7 @@ from src.layout import ParseBlock, ParsePage, ParseResult
 
 def document(text="Coverage lasts 30 days."):
     return ParseResult(doc_sha="synthetic", pages=[ParsePage(page=2, width_px=100,
-        height_px=100, blocks=[ParseBlock(id="b1", type="text", text=text,
+        height_px=100, blocks=[ParseBlock(structure=None, id="b1", type="text", text=text,
                                          bbox=None, conf=None, table=None)])])
 
 

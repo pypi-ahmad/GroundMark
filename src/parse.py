@@ -1,7 +1,8 @@
 """Active layout-parsing entry point. `parse_document` processes a page range
 in source order and calls `parse_page` (a thin wrapper over
-src/llm.py's `_invoke_structured`/`ParsePage`) once per page, then writes
-`<output_dir>/<doc_sha>.json` itself -- this is the only unconditionally-called
+src/llm.py's `_invoke_structured`/`ParsePage`) once per page. Direct callers
+get `<output_dir>/<doc_sha>.json` by default; the graph disables that write
+and owns selective exports instead. This is the only unconditionally-called
 consumer of src/llm.py's model-call plumbing in the active graph (see
 src/graph.py).
 
@@ -25,7 +26,7 @@ from src.llm import _build_llm, _image_message, _invoke_structured
 from src.preprocess import preprocess_pages
 from src.prompts import render_prompt
 from src.models import DEFAULT_MODEL
-from src.layout import ParsePage, ParseResult
+from src.layout import ParsePage, ParseResult, LegacyParsePage
 from src.diagnostics import ExtractionCallError, PageDiagnostic
 
 # Pages are parsed in order so each call can use preceding-page context.
@@ -47,16 +48,19 @@ def parse_page(
     *, diagnostics: list[PageDiagnostic] | None = None, model: str = DEFAULT_MODEL,
     usage_entries: list[dict] | None = None,
     document_context: str = "", total_pages: int = 1,
+    detailed_layout: bool = False,
 ) -> ParsePage:
     llm = _build_llm(model=model)
     text = render_prompt(
-        "parse-page", page_number=page_number, total_pages=total_pages,
+        "parse-page-structured" if detailed_layout else "parse-page", page_number=page_number, total_pages=total_pages,
         width_px=width_px, height_px=height_px, document_context=document_context,
     )
     result = _invoke_structured(
-        llm, ParsePage, [_image_message(text, image_b64, mime)], call_name="parse_page",
+        llm, ParsePage if detailed_layout else LegacyParsePage, [_image_message(text, image_b64, mime)], call_name="parse_page",
         diagnostics=diagnostics, usage_entries=usage_entries,
     )
+    if isinstance(result, LegacyParsePage):
+        result = result.to_page()
     # We already know the true page/geometry from preprocessing; only the
     # model's `blocks` are worth trusting.
     return result.model_copy(update={"page": page_number, "width_px": width_px, "height_px": height_px})
@@ -68,6 +72,8 @@ def parse_document(
     usage_entries: list[dict] | None = None,
     on_progress: Callable[[dict], None] | None = None,
     output_dir: str | Path = "data/parse",
+    detailed_layout: bool = False,
+    save_json: bool = True,
 ) -> ParseResult:
     """Layout-parse every page in [start_page, end_page] (1-based, inclusive;
     end_page=None means through the last page -- there is no page cap).
@@ -99,6 +105,7 @@ def parse_document(
                 usage_entries=usage_entries,
                 document_context="\n\n".join(context_parts)[-12000:],
                 total_pages=len(pages_payload),
+                detailed_layout=detailed_layout,
             )
             diagnostic = diagnostics[-1] if diagnostics else PageDiagnostic(outcome="parsed")
             return page, diagnostic.model_copy(update={"page": payload["page"]})
@@ -127,14 +134,16 @@ def parse_document(
     ]
     result = ParseResult(
         doc_sha=doc_sha,
+        extraction_profile="detailed" if detailed_layout else "legacy",
         pages=pages,
         content_filtered_pages=content_filtered_pages,
         page_diagnostics=[diagnostic for _, diagnostic in outcomes],
     )
 
-    out_dir = Path(output_dir)
-    out_dir.mkdir(parents=True, exist_ok=True)
-    (out_dir / f"{doc_sha}.json").write_text(result.model_dump_json(indent=2), encoding="utf-8")
+    if save_json:
+        out_dir = Path(output_dir)
+        out_dir.mkdir(parents=True, exist_ok=True)
+        (out_dir / f"{doc_sha}.json").write_text(result.model_dump_json(indent=2), encoding="utf-8")
 
     return result
 
@@ -144,9 +153,10 @@ def _main() -> None:
     parser.add_argument("--path", required=True, help="Path to a scanned image or PDF")
     parser.add_argument("--start-page", type=int, default=1)
     parser.add_argument("--end-page", type=int, default=None, help="Omit for through the last page")
+    parser.add_argument("--detailed-layout", action="store_true", help="Experimental structure extraction; has not passed source-fidelity review")
     args = parser.parse_args()
 
-    result = parse_document(args.path, start_page=args.start_page, end_page=args.end_page)
+    result = parse_document(args.path, start_page=args.start_page, end_page=args.end_page, detailed_layout=args.detailed_layout)
     print(f"doc_sha: {result.doc_sha}")
     print(f"pages parsed: {len(result.pages)}")
     print(f"written to data/parse/{result.doc_sha}.json")

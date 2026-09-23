@@ -36,7 +36,7 @@ def test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text
         {"grounding": {"page": 2, "range": {"start": 11, "end": 27}}},
     ]}}
     page = ParsePage(page=2, width_px=100, height_px=100, blocks=[
-        ParseBlock(id="b", type="table", text="A & B repeated", table=[["A", "B"]],
+        ParseBlock(structure=None, id="b", type="table", text="A & B repeated", table=[["A", "B"]],
                    bbox=BBox(page=2, xyxy=(0, 0, 1, 1)), conf=None)
     ])
     score = score_page(page, reference)

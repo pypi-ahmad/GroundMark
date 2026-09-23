@@ -156,3 +156,57 @@ def test_chat_sessions_do_not_share_history(uploaded):
     one.session_state["document_chat"] = [dict(question="private", answer="private", status="answered")]
     two = AppTest.from_file(str(APP)).run()
     assert two.session_state["document_chat"] == []
+
+
+def test_document_view_changes_rendered_raw_copy_and_download_without_calls(uploaded, monkeypatch):
+    from tests.test_layout_structure import block, document
+    from src.ui import clipboard
+    copies = []
+    downloads = []
+    monkeypatch.setattr(clipboard, "copy_buttons", lambda **kwargs: copies.append(kwargs["data"]))
+    tabs = st.tabs
+    monkeypatch.setattr(st, "tabs", lambda *a, **k: tabs(*a, default="Markdown", **k))
+    original_download = st.download_button
+    def download(label, data, **kwargs):
+        downloads.append((label, data))
+        return original_download(label, data, **kwargs)
+    monkeypatch.setattr(st, "download_button", download)
+    current = document(block("page_header", "FAX METADATA"), block("text", "Body\nSecond line"),
+                       block("table", table=[["A", "B"]]))
+    calls = []
+    def run(*a, **kw):
+        calls.append(1)
+        return dict(status="parsed", parse_result=current, markdown="unused", token_usage=[], run_id="view-test")
+    monkeypatch.setattr(graph, "run_graph", run)
+    app = AppTest.from_file(str(APP)).run()
+    app.button[0].click().run()
+    app.session_state["preview_tab"] = "Markdown"
+    app.run()
+    assert not app.exception
+    assert "FAX METADATA" not in copies[-1]["markdown"]
+    assert "Body<br>Second line" in copies[-1]["html"]
+    assert "<td>A</td>" in copies[-1]["markdown"]
+    assert any(label == "Download Markdown" and data == copies[-1]["markdown"] for label, data in downloads)
+    app.segmented_control(key="view-test_document_view").set_value("Full").run()
+    assert not app.exception
+    assert "FAX METADATA" in copies[-1]["markdown"]
+    app.segmented_control(key="view-test_markdown_view").set_value("Raw").run()
+    assert "FAX METADATA" in app.code[0].value
+    assert calls == [1]
+
+
+def test_detailed_layout_requires_opt_in_and_resets_old_results(uploaded, monkeypatch):
+    calls = []
+    def run(*a, **kw):
+        calls.append(kw["detailed_layout"])
+        return dict(status="parsed", token_usage=[])
+    monkeypatch.setattr(graph, "run_graph", run)
+    app = AppTest.from_file(str(APP)).run()
+    assert app.checkbox[0].value is False
+    app.button[0].click().run()
+    assert calls == [False]
+    app.checkbox[0].check().run()
+    assert "last_parse_result" not in app.session_state
+    assert calls == [False]
+    app.button[0].click().run()
+    assert calls == [False, True]

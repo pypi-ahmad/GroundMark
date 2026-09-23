@@ -59,3 +59,12 @@ def test_runtime_prompt_contains_fidelity_and_injection_boundaries():
     assert "every row has the same number of columns" in rendered
     assert "[ILLEGIBLE]" in rendered
     assert "Return only the structured response" in rendered
+
+
+def test_detailed_prompt_stays_in_markdown_and_preserves_contract():
+    text = render_prompt("parse-page-structured", page_number=2, total_pages=3,
+                         width_px=100, height_px=200, document_context="source {literal}")
+    assert "source {literal}" in text
+    assert "table_cells" in text and "heading_level" in text and "list_items" in text
+    assert "a table may have no headers" in text
+    assert "current page image is the only source" in text
