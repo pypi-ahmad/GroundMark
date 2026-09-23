@@ -6,6 +6,10 @@ GroundMark turns scanned PDFs and images into layout-aware Markdown using `gpt-6
 
 The model is asked to preserve the source text and layout, though transcription errors are still possible. GroundMark keeps page, block, and bounding-box data for reading order, annotations, and JSON output. It does not extract business fields, apply a domain schema, or correct values. Document chat answers questions and summarizes parsed pages.
 
+![GroundMark architecture: document input, parsing, exports, and document chat](docs/diagrams/groundmark.png)
+
+[Explore the interactive architecture](docs/diagrams/groundmark-architecture.html).
+
 ## Install
 
 GroundMark requires Python 3.14+. Install the GitHub release wheel with uv to use the app without cloning the repository:
@@ -136,6 +140,44 @@ For development, install the test dependency and run the suite through uv:
 uv sync
 uv run python -m pytest tests
 ```
+
+## Diagrams
+
+These views show the parsing path, artifact flow, run outcomes, and document chat. Each image has an interactive version.
+
+<details>
+<summary>Document parsing workflow</summary>
+
+![Document parsing workflow from upload through export and diagnostics](docs/diagrams/groundmark-document-parsing-workflow.png)
+
+[Explore the workflow](docs/diagrams/groundmark-workflow.html).
+</details>
+
+<details>
+<summary>Document extraction data flow</summary>
+
+![Data flow from source pages through layout validation to output artifacts](docs/diagrams/groundmark-document-extraction-data-flow.png)
+
+[Explore the data flow](docs/diagrams/groundmark-dataflow.html).
+</details>
+
+<details>
+<summary>Document execution lifecycle</summary>
+
+![Execution lifecycle with page diagnostics and full, partial, or failed parse outcomes](docs/diagrams/groundmark-document-execution-lifecycle.png)
+
+[Explore the lifecycle](docs/diagrams/groundmark-lifecycle.html).
+</details>
+
+<details>
+<summary>Parse and chat sequence</summary>
+
+![Parse and chat calls, including local quote checks and a separate verification call](docs/diagrams/groundmark-parse-chat-sequence.png)
+
+[Explore the sequence](docs/diagrams/groundmark-sequence.html).
+</details>
+
+The editable JSON and visual-check captures are in [docs/diagrams](docs/diagrams/).
 
 ## Documentation
 
