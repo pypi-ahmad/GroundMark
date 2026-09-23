@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:d5bee1f95a14bae867ee82b1e5b3bc5d25b3e390587b6d32f245d12a4daa10a9",
+  "claims": [
+    {
+      "id": "claim_cbadb942c76541bca0c857f675fd0d3c",
+      "statement": "GroundMark development uses Python 3.14+, uv synchronization, the explicit tests path, and git diff checks; normal tests fake model responses and make no paid calls.",
+      "evidence": [
+        {
+          "resource": "repo://docs/CONTRIBUTING.md#L13-L20",
+          "version": "repo-lines-v1:sha256:eb19a7f471e689cefb2b6b98f23c90a5a9eef63bb73fdae0e13b9e4d8d266b85:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDRkN2RjZWMwNDY5YjcxZjUzN2Q1MDljYTZlMWQyMDM2NTUxZTAwNTNmMTYwMWFkYjc1N2QxOTg4NTMwMzI5YyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNjJjMTZiNGRjNDZiNjY3NDFiZTE2YTVlMTcxYWM4YTI1NTRkYTgzYmI4NzMyOTk4ODcxMjkzOWQ4MzI4YTJlZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMWI0ZDlkNDA1ZTJjNzMyMWYzZjFiZmM3NmRhNDYzZjQ1MjQ2OGM4ZmQ1N2FkZmU0YjgzZDQxZDg3NmI4YTM0ZSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDE2MDAzMjM5OTNjZDBhZGNiMDA2N2ZkMTk5ODY0MDJlMTRmMTNiNGYwNDZkODU5MmFhYTY2ZmY2MjIzYzJmNSJ9"
+        },
+        {
+          "resource": "repo://docs/RUNBOOK.md#L34-L36",
+          "version": "repo-lines-v1:sha256:854ac2acd6fa852b4511a2f5899741e7fb1c39456787b6e50b852f7c9ceab84e:eyJzZWxlY3RlZExpbmVDb3VudCI6MywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzk2Y2Y4MDIyNDExODdmMzc4ODI3MDgwZmRlNTcyMzNjMWIyMzU0MzBhZjY5Nzg5ODA1NWFiYTY4OGQ5NjFhYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMWFmMTAwOGEyMTI5NmYxZmI2YzliZDc1OGJiMTE4OTFlOTZjMGQ3NjY5MDVhNWE2MTM2MGRkZTFiNzczMGRjMSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDUzZGNkMzAxOTA3MGY3Zjc0YmRkOTcwYmUyOTA3ZmI1ZjI4NWY1ZDY4MmEzNTM2ZDhlZGMxZWZlMWRhZDk1NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiYjBiMzU5YjBmZDIzYTZmZjIwYzJjMTQyZjdmZDFlMTRmNTFiZDY5ZTY5YzEyMzIyNDY4YmFmYjY1NWFhY2RmYyJ9"
+        },
+        {
+          "resource": "repo://docs/RUNBOOK.md#L58-L58",
+          "version": "repo-lines-v1:sha256:4abc30742585a1ef6b0da6227afbe6b6f8ec602ebcf72e126f4bff87c41440fc:eyJzZWxlY3RlZExpbmVDb3VudCI6MSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNGFiYzMwNzQyNTg1YTFlZjZiMGRhNjIyN2FmYmU2YjZmOGVjNjAyZWJjZjcyZTEyNmY0YmZmODdjNDE0NDBmYyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNGFiYzMwNzQyNTg1YTFlZjZiMGRhNjIyN2FmYmU2YjZmOGVjNjAyZWJjZjcyZTEyNmY0YmZmODdjNDE0NDBmYyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNmM2NjYxZDgwZGU3Y2NlM2ZkMDEzMzMxM2ZkMjE1NWE3ZmZhYmNkYjNjNDk5M2YxOWI0MWU4MjA0YjYwNDQ5MyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMjVjNWVkODc2YjQ5OTYxZjJiNGM1MmZkNzliMDM3YzhjZWRhYTk1NDNiNWNjYzRiNzNjZTFkZWE0YmQ5NGI5YyJ9"
+        },
+        {
+          "resource": "repo://pyproject.toml#L1-L32",
+          "version": "repo-lines-v1:sha256:d803da21d891f9a85b7a434b96768739435550b4e60ea43bdbbb12a6c2dbcb5d:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5NDE1Nzk4YzNkZmJkNmFiZGYyNjE5NmIzMTczNWVkNjkzMWNlYWFiZmYyMTZjMzJlOTEzYjg5NDNjMzFlYmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImZlMDdkMWEyNmJkZTE5YTAwMWVkOWRhMTUwMWMyMWI0YmE5ZTVmNmY5MGY5OTFiYWZmODVlOGM0OGM5ZWJkMzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_32cd9fba89af441ab5d93e90a523dc6b",
+      "statement": "Hatchling packages the src package and force-includes Markdown runtime prompts as package resources, while release builds exclude tests and live evaluation scripts.",
+      "evidence": [
+        {
+          "resource": "repo://docs/RUNBOOK.md#L34-L38",
+          "version": "repo-lines-v1:sha256:df6036fb49d3221017266d222352291b33fac2f7549877c8bf351712133e8a94:eyJzZWxlY3RlZExpbmVDb3VudCI6NSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNzk2Y2Y4MDIyNDExODdmMzc4ODI3MDgwZmRlNTcyMzNjMWIyMzU0MzBhZjY5Nzg5ODA1NWFiYTY4OGQ5NjFhYiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiNDM1NWFkNTRjODQ1NTJkZTYzZGI0YmVlOWE5YWMxNGUzOGY5YWIwZWQ1YzhjZTg5NGU3MjE5NzM5MzlmMzQ5ZiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNDUzZGNkMzAxOTA3MGY3Zjc0YmRkOTcwYmUyOTA3ZmI1ZjI4NWY1ZDY4MmEzNTM2ZDhlZGMxZWZlMWRhZDk1NyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNTRjMGZmMjk1MTYzOWVkNjM2NzcwOTBhMTIwNzlkZjc4N2EyNGEwODYzMGM1NmQ3ZWIxNWJjZmE4NTk2NjZjMCJ9"
+        },
+        {
+          "resource": "repo://pyproject.toml#L34-L41",
+          "version": "repo-lines-v1:sha256:3c953828a6f7ba05cdedd0907859b32d9f753ba0e6a2eca2770a1ece6a7146bb:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNTI3MDY2NmZmOTFjZjBhMTkyYmNmZDU5YTMxYmRjY2EwMjE4OGUwMmRkMDg0NTM2YTIyYWFjYmFkN2RmNjk5ZSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2ViNzAyNTc1OTNkYTA2ZjY4MmEzZGRkYTU0YTlkMjYwZDRmYzUxNGY2NDUyMzdmNWNhNzRiMDhmOGRhNjFhNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiY2NiODQ3OWZkZTJmODg5ZWJjNTgyY2QzY2RhNDgxMmZlN2U4ZTkyMjRmY2QzNGRkY2RlNzBiZTgzYmMxOWNiMSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjIsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZmZlYTM2ZmU1NjU5MDFlZWY1ZTgyMDUyZGJlNjg4ZGIyYmU5MTEwYTBiODZmMjc5Y2VlMDc3ZmNkMTVjOTE0YSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_85505f4dafe34ccbb6c75a5c0dfa59d6",
+      "statement": "Live prompt evaluation requires explicit --live authorization and is restricted to the configured six-page sample set while preserving prompt hashes and per-page manifests.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/evaluate_prompts.py#L117-L161",
+          "version": "repo-lines-v1:sha256:4ecd8763ef97ff43f5dcaa808e91b0105c289c96c6dfab66b7b0abe8a3526137:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3NTg1M2VjNmExYzc1ZjdmYjc1M2I5ODQ0NTc4NDgyMmFjZThjMDZiOGU1MjQ2MWJhZDk4MWI0Njk1NzY0MmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg2ZDQ1NjgyMTBjMGRkNTg0Y2E5M2RjZjE0YzdmMzFkZDk0ZmNiMDU0NDNlODNlYzc0MzRkMzdmNzY0NDlhYzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVkNGE3YjA2NTgyODAxYTc0M2M0MjI3ODk3NzIwZDIzZTFhNjk3Y2ZjNzBhZGQyOTA5N2QwYjEzY2QzZjUwNjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5ZjdmN2FhMTYzMDU2N2MxYjVlNjY0NGUyMWNiZWM4M2E0MzkzM2RjNWIwZGEwZDkwY2Q1M2JhNDhlOTEwZDIifQ"
+        },
+        {
+          "resource": "repo://scripts/evaluate_prompts.py#L24-L31",
+          "version": "repo-lines-v1:sha256:2165c6def7c563915d59859900716ef7e96a5d14e65d3ba22016f8ec0b25053a:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZjY5MTQ3NGQ3ZTE3YWVjMTJiZjk3NmU1MGQ0ZDU0YjEzZGM2OGEwNDM0MTFmYjg5YmIyNmZmOWQzM2M1Yzg4MyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiOWIzOWUwMjJlMGQ4NTQxMjAwMDNkNzkwYzI4Yjc1OTYyZWRkMzAzNzU2ZDUxMzMzZGY3NDVjZmI4NmVhMTFjZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMzRhYjBmMjBmZWEwMzMxMWRmZWFjZGE0MmZkNTU1ZjBlN2E0ZmNlZTljMjM5NThmZmYwNTg2NGI4ZWUyNGRhZCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjA3MTFhNTk0YzU5MDc5OGYxODE5OTdhYWIzNjY4ZjgwYTU2Mjk3YzdiM2ZiYzU3ZTVjN2E3ODVkOWNiMTlkNyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_6566a91ebc9447ad9c1c03f9bcb4da73",
+      "statement": "Resolution evaluation is bounded to ten requests and an estimated USD 2 budget, stops on unknown usage, avoids retrying rejected pages at another resolution, and promotes only nonregressing pages with positive aggregate F1 improvement.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/evaluate_resolution.py#L17-L41",
+          "version": "repo-lines-v1:sha256:edf1d74278c0756fd0f35abe59389bef882fba1f1ae1b52e6d3804f68c27f664:eyJzZWxlY3RlZExpbmVDb3VudCI6MjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkOGRjNzZkZDFiNWU4ZWI2NzU0YjcxZDZhNGMyYmY4ODkzMjdlNTMxMDhjM2Y4Mjg1YTU2ZjMwZWNhMGI4N2IiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdjMmQ2ODUzNTYzY2E5NmQ4MjhjZTBjMDk0OWZjN2ExMDZlMDU0YzQyMzBjM2MzYTgwOWY3NGI5OTM1ODU0MmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg2YmU0NzVjN2I5NjgyNmFmZjgwODNmNWI0M2E4MDVlZDA2N2I4ZTYyMDMyYmMzMDQwMjcyNDk5Y2JlNzcwMTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzOGMxNzllMmFlOTg3NDYwNDY4ZTlhYWRmYjRjMzQ2YjQ5NzEwOTIzZTY2OTk5MTIyYjJhZjhlNWYxNDNhZGQifQ"
+        },
+        {
+          "resource": "repo://scripts/evaluate_resolution.py#L66-L111",
+          "version": "repo-lines-v1:sha256:a7f03121af0550c42ef043a0cf6938f02f1dc64216d5c86113e7f4b499ade59e:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjZTEyYzA1NDMxMGRjYjVmMTAzMzVhZGVmYWMwZWYxMGEyYjM2ODJiZmQ4NWRhOTI4OGE3NjJkMDZjMTQ5MGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxODc0NTYzZjAyYzlmNGQ1ZjljYWZhZmI2ZmZhOGM5YjI2N2E2ZTA2NDE3M2YzNjA0NjkwOGI2ZTg0MzliYjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjgyMjQ5OTBlZTdmNDFmYjY2ZjQ0YjIzNDkzZWY3ZmNjZDA3OTM1NjgzODQ1YThkZjFlYmE3MmVmZWYyOTVkZTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMzZTY0NDc1YTNmMjliMWJmNGMxMWU1NDc1Mzg2YWZmZmZlNDM2ODU2Y2VlZTdkMzIxMTBkZWU4N2JkN2YzYTIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_e609972a0cef417c96e38862528dd82b",
+      "statement": "Layout evaluation requires an unchanged, completed baseline before the candidate phase, shares a ten-request and USD 2 bound, and leaves visual review pending after metric evaluation.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/evaluate_layout.py#L16-L57",
+          "version": "repo-lines-v1:sha256:7cd602699b67f8b8d48184200e352d4ede3477d3f37965a54d4059ffef96e309:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlMGRlNDFjNjA3ZGMxNWZlZTEwNTIzNWYyY2U1NzQxODU4YTA4NmE3MjFiYTcwZDZmNjY0Zjc4ZDU4OGI0OGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjczM2NlYTU5MTA5YzVjMzU1ZWU0MTc5NjQxNzBjOGJkMzQ1MjJhNThhM2I4ZDRlMDVlMWJlMWE0Y2FlZDlhNWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5ZmZmMmJlZDg4MGQyYTg5MzVlOGM3NzY3MGUwM2Y1ZWNiNTIwYmE0Zjc1YjZkYWVhYmNjZmMyMTUwNTA4NTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFlZDVlNmU0Y2MyN2ZiNTdjMjBiM2UxYzYxNWJjZTNkZmM1MDc1ZTI0MWE2NDcxOGQ4MTM1ODdhOWU3OTYwYzIifQ"
+        },
+        {
+          "resource": "repo://scripts/evaluate_layout.py#L63-L104",
+          "version": "repo-lines-v1:sha256:aa6b4de478b98ce1300c62ccd8f4ce253e31b1751a6f49b1981876bd376441ad:eyJzZWxlY3RlZExpbmVDb3VudCI6NDIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4OTFjMmJmNGQ3NTZjODZkNjg2ZGZjNjUwZGZiNzY3MzRjYWY0NTcxNmIzZjlkMWRhODUyYjUwNGRlMzAxNTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxODc0NTYzZjAyYzlmNGQ1ZjljYWZhZmI2ZmZhOGM5YjI2N2E2ZTA2NDE3M2YzNjA0NjkwOGI2ZTg0MzliYjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImZjZjlkN2Y0NDJmOWUyNDY2ZmJlOTRkNTczN2Y5ODk1MDU0NTA4NTEzNjFhZGFjNzM4MDQ3MTY4YzgxZjhhYjYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5ZjdmN2FhMTYzMDU2N2MxYjVlNjY0NGUyMWNiZWM4M2E0MzkzM2RjNWIwZGEwZDkwY2Q1M2JhNDhlOTEwZDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_9b91826592074f1f867e1da70f4d7b87",
+      "statement": "The optional live chat evaluation uses synthetic ParseResult data, persists case outcomes, and exits unsuccessfully unless every configured case passes.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/evaluate_chat.py#L1-L36",
+          "version": "repo-lines-v1:sha256:d3d5780759f336ef188727e0c4bb87cea26699a8a915d0fc9e8f366a55ea1a62:eyJzZWxlY3RlZExpbmVDb3VudCI6MzYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY5ODdiZmQ0NGE3Y2NjYzYyZGI3YTJiZTVlMmY0ZmI2NWRjYWQzMjEwZWJkMzQzMjQ1ZjBjZWIxMmE3N2RjMTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQzZDQ2NTk3ZjRkMGJiZjNkNjg2MzRiOGNiNWU2YmI4NmU5YzRlYzE4OTVjM2ExMDg3MjJlODMwMWU4MGZlOWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-23T13:34:05.703Z"
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "schemaVersion": 1,
+  "pages": {
+    "/openwiki/architecture/parsing-pipeline.md": {
+      "gitHead": "7383d46997dec7f85967902c759d731c2fffa2c1",
+      "sourceFingerprint": "sha256:7814010ef56b270fe05e9fb624d5e4fb2d30445caea45bd75a49c44b548d4e90",
+      "pageVersion": "sha256:ba545aeb224aac4873fcda16f89139d94d1b9c989ee4bb9f9b12bf855e32dfbf",
+      "completedBy": "codex",
+      "completedRunId": "6531f4b1-322a-4bb7-aaec-cca5692152ef"
+    },
+    "/openwiki/concepts/layout-and-rendering.md": {
+      "gitHead": "7383d46997dec7f85967902c759d731c2fffa2c1",
+      "sourceFingerprint": "sha256:7814010ef56b270fe05e9fb624d5e4fb2d30445caea45bd75a49c44b548d4e90",
+      "pageVersion": "sha256:190f149c56d2da1b587b2b3cea463ef4f0c90d3c5fc8e5321f8dfc368d66cc53",
+      "completedBy": "codex",
+      "completedRunId": "6531f4b1-322a-4bb7-aaec-cca5692152ef"
+    },
+    "/openwiki/features/document-chat.md": {
+      "gitHead": "7383d46997dec7f85967902c759d731c2fffa2c1",
+      "sourceFingerprint": "sha256:7814010ef56b270fe05e9fb624d5e4fb2d30445caea45bd75a49c44b548d4e90",
+      "pageVersion": "sha256:898859c75a792aa6be857c53af2532714bdf60081853fd105a41f721e63bdb20",
+      "completedBy": "codex",
+      "completedRunId": "6531f4b1-322a-4bb7-aaec-cca5692152ef"
+    },
+    "/openwiki/operations/development-and-testing.md": {
+      "gitHead": "7383d46997dec7f85967902c759d731c2fffa2c1",
+      "sourceFingerprint": "sha256:7814010ef56b270fe05e9fb624d5e4fb2d30445caea45bd75a49c44b548d4e90",
+      "pageVersion": "sha256:d5bee1f95a14bae867ee82b1e5b3bc5d25b3e390587b6d32f245d12a4daa10a9",
+      "completedBy": "codex",
+      "completedRunId": "6531f4b1-322a-4bb7-aaec-cca5692152ef"
+    },
+    "/openwiki/quickstart.md": {
+      "gitHead": "7383d46997dec7f85967902c759d731c2fffa2c1",
+      "sourceFingerprint": "sha256:7814010ef56b270fe05e9fb624d5e4fb2d30445caea45bd75a49c44b548d4e90",
+      "pageVersion": "sha256:10de33e252c56c775b5edf67a02012efad8ae1a4c2299cf7fd3ac047aafba823",
+      "completedBy": "codex",
+      "completedRunId": "6531f4b1-322a-4bb7-aaec-cca5692152ef"
+    },
+    "/openwiki/workflows/artifacts-and-exports.md": {
+      "gitHead": "7383d46997dec7f85967902c759d731c2fffa2c1",
+      "sourceFingerprint": "sha256:7814010ef56b270fe05e9fb624d5e4fb2d30445caea45bd75a49c44b548d4e90",
+      "pageVersion": "sha256:135c88733ef391d72155876fb8dc90dfff00c1a1b42d03f0b497ec80212e92e1",
+      "completedBy": "codex",
+      "completedRunId": "6531f4b1-322a-4bb7-aaec-cca5692152ef"
+    }
+  }
+}

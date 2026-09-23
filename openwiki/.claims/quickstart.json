@@ -1,0 +1,92 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:10de33e252c56c775b5edf67a02012efad8ae1a4c2299cf7fd3ac047aafba823",
+  "claims": [
+    {
+      "id": "claim_725dd360a4cf428c906ccfd42899c7e8",
+      "statement": "GroundMark requires Python 3.14+ and is distributed through a GitHub release wheel rather than the unrelated project using the same PyPI name.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L13-L33",
+          "version": "repo-lines-v1:sha256:4afa62b97a471f6d8b8b40a78011339e1004a0a27c62b1aef585b65738f7e4f3:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ4ZmY2NzE2YjdlYTU5ODk0ZGExNTI0YjZkMzQ5OTVmYzAzN2ZmNzcyM2QyMTU1MDUxYjA5MDg0MmI3MThlOTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwODU1YTYxYjhiMDk4MTEzNWMzZGYyYzMxMTQ0ZjEzYjQ0YzllZTRiMjMzYjYzNWJkNWQwNTdkMmEzNmYxZTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYzMmMxMTY0NzgxNjgxZDZjNDgyZWU0ZDk5N2E0MDRjOGJmMjRkMDA0Mjc2YTZkMDA0YjNlMGViNjYwNTNkNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU0MTdhOTQyMzE1MzM2MDk3YTRjOTE4ZmU1Y2NkMjQ4ZTQ0YTliODJlN2YwYmY0YTAyNzA1NzI3OGZlMjI1ZGIifQ"
+        },
+        {
+          "resource": "repo://pyproject.toml#L6-L20",
+          "version": "repo-lines-v1:sha256:701d5f7f31ae9c38f314e587bbff1edaee011b48db39277cca2d392d5217d1da:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmNjdlMzkxZTZmM2FjY2Q2NjA4YmQwYTJkOWYxOTgyNGNiYmFhMTJiMmUyYzBkNzc4OTc3NzdiMDBhNjk1Y2MiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkYThiOGNiNjhlN2EzZGE2ZTU2NGJkMTY4YThhZjU0MmE2NDJhNTIwYTE5MjMwMzgwNTgxODE3OGMyNzkwZmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA0NTljOWJkZDY3YTVhMjlhODcxZDAwZTdiZWQyYTU2MWZmMTM3OTY0ZTgzMTJlYTA4YzdlMGFhNDNlODI5YjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4MjBkNzMyZWMwM2VlOWE3OTJjODAxODk3YzQwMzg0ZDlhMTE1MDJiOTBmZTk2MGNjODIxZDdmZjcwNmE0ZDIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bfeca77c0159405d888eb2ab3899e224",
+      "statement": "The launcher reads OPENAI_API_KEY and optional OPENAI_BASE_URL from the process or selected workspace environment file, with existing process values taking precedence.",
+      "evidence": [
+        {
+          "resource": "repo://README.md#L35-L55",
+          "version": "repo-lines-v1:sha256:30e9cfb7422a00da9f55d0a1d4c7337be8257c4bcc65adad0f1973fa21d1dde0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM2MzQ3NThlMWNiYmIzMmUxMGRhZGJlMTY2MWFlOGNkYWJiMTExOWJiMjhhMmQyOWM5NDllMDkwMDRjNWZkYWEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjcyZGNlOWM0NmI1N2U4MTM2ZjIxZjRkYjgzMzA3NmM0OTBlZmQ1ZTA5ZGM1NGZkNGE1NjYzZTNkNGM5M2MyYjIifQ"
+        },
+        {
+          "resource": "repo://src/cli.py#L45-L51",
+          "version": "repo-lines-v1:sha256:0bdaa3bebb2d8b9016685d200c1fec55aac38a19595eded8fb13b7ef76aec83a:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNDJkMGIzOTliMjA4NmJkYWUyN2JkMjg5ZDMxNWQyNjc0MDkyMjBmOGVlZDVkMWRkOTM3ZTQzMzFiZGI4MjUwMSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2I2OGI5ZWMwZDNkZGJmYTQ2MTI4ZjVkYjA3MmUwYzJiZDUzODRhNmZlODhhZWViNjE3YmZjMTY4NDZlYjE4OCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNWYyODcwOGVkNjA1YzMzYjZlOWY4NzlkNzhmNjgwNWY0NDlkYWQzNDlhMzE0ZjczNmNjYjcwYzU3ZDg2OGJjMCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiOWVmZWFhYzA3MTJkYmExNzgzMmEyNWM4NGI5NjJiMGRmYjUxZWVlYWVmYWIwNzJjOWUyZTk5Mzg1NTk2N2ViOSJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_da0bf3e8d2434ad78a269fd10f16b05a",
+      "statement": "Invoking groundmark without a source launches Streamlit in the selected workspace, while supplying both a source and output directory runs terminal extraction into that caller-selected destination.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.py#L14-L17",
+          "version": "repo-lines-v1:sha256:bd5c755d04333661efab4f010544183713db3f83b4ee88d4e0ffa4798966e28d:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDFjYjYyOWQ2ZmIxYzc5YzVkMWUwN2IwMWQ4OWFkNDRkNTA4YWE1M2QxNTZhZTUwMTAwMGEyNGZiY2Y4MWI2MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMzU3MjM3OTFiNWZkMjQwNzE4ZDNmMjc2NTQzNjVlYTQ2OWMxOWNkOTIxMTUwY2RhN2UwMDJhMzQ5Y2Y1MzNlOCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZDdjOWM2NGIxNzlkMWRhZDVkNmYwMTQyOWJjOTYyMTA4ZTNhZmViMzE5ZjA4ODFjMmFkOTVjODY3MjQwM2EzOSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNDFhMjViZjcyM2UzZDQ5NGEwZTUzNGZmYjFmYjM0MmQwNDdmNzE4NjIyMmE0NmU5NWMzZWQzNGQ2MTE3YWJhOSJ9"
+        },
+        {
+          "resource": "repo://src/cli.py#L35-L66",
+          "version": "repo-lines-v1:sha256:736e2b9fbaaaa0b79db8fe495099a7a277d58f67eac60d7e468bcfca2e9f7262:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFlMzlhNmE5MWJiYzI1MzM1Y2U1ZjM4NjA5MWZhZTdjNzdhZDBkNzA2NzNiMjNiNDNjMjA4ZDEzZDk4ZDE0MWQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyODNjNzcwYjViMmU3OTQ0MDRlZjgzZDUwM2Y2ODYxZDNmYTQyYWUyOTNjZDM1ODMzNGY1NGVhZjYzMmE3NWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmZWJhM2RmYjE2MjcwNGNhYTUxZDY3ZWEzZmUyNjU2Mzk5NDcwNjBjNjRjYmZlNzVhMmVlZDRkMDZlODBhOTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjNmMzNhNTQxZWIyNTgwN2MyNzdmNmFjZTI2N2M4OGJmNGFkYWFmZGVhZmY0MThjYzcxZWZmYjNkZDRlMGRkNzcifQ"
+        },
+        {
+          "resource": "repo://src/cli.py#L69-L109",
+          "version": "repo-lines-v1:sha256:249558ce13462739a62588d859d980fb1d43d159765965a34163af130de5b8f9:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkMWRkYTVjZTFmNzQxZDdkZDMyMmVjOGM0NTdlNzkzOWNlYWIwNzg1NjJkY2FhNWRkMTNjOGE3M2UzOTk3NDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1ODU3MGUwY2UxMTg1OWNiZWFkNzVkOGQ3ZTM0NDJiNzA5NTVkZjIxYjE4Y2Q3Yzg5MTJkNWQ1ZTY2Mjk1ZjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiYjZhYzNlMjNkZjliNGM5ZmQ3Mjg1OTQ0MmE0NTVlZGRlOTU0N2E1NGU5MzYxNzIzOTBkNzk1OTdiNWYzM2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE1YTJiNGU0YmQyZDE1MWYxZTg4OTZlYTVmN2RkODI5NTExY2E3MGI0M2ZmZGRjN2JhNzhkODA2MmIzNmY3YjEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_940fe048166040f3b890e175e6f49ac6",
+      "statement": "CLI extraction defaults to Markdown, supports combined format selection from one parse, validates page and destination safety before model calls, and requires explicit overwrite for a nonempty destination.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.py#L25-L44",
+          "version": "repo-lines-v1:sha256:23ad4367b0c13fdecb93ea37c0094b2a544ccb3a3e2dd0a66fe2259d798818b0:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg5NmRmYzdlNDBkYzY2NWI4OTMzODExM2RjMzQxNzdiZWM3MDBjZDEzMjY0YzI5MTc5NzYxMjM3OWI3N2ExYTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJhNWI0NzQyOTJlM2FmMWM3Mzk1MmMyOTNlNTc0NTQwMDVjM2Y1MGVmOWI5ZGFmNTI5NGExZmM2YzBiZDg2MmUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ5YWE5Yzk0ZDVjYzg2NTY0ZmFiNDZjODFkNGI5NmFhZjAxYmZlZjdkN2IwNzk2Nzc4ODhhM2Y5MjZmMzFiYzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM3MTU1ODZjN2FkNzEwMjg5OTM2ZGMxZjNjZTk2NGZkMDMyMzhlYjJhYzZlOWUyNzcwM2VlODNlMjg0M2ZjZDUifQ"
+        },
+        {
+          "resource": "repo://src/cli.py#L52-L55",
+          "version": "repo-lines-v1:sha256:1d4a1cbc82ef13badc02ed74acdae8b00f6f9965c0e830ab4ae64e0d771a139e:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWFhODg2ZGNmZjViMmIwMzE3ODVjOGNjYjc2MzZhYTE5NzAzMWRmNTJlNzRmNzI0NTcyZWQwYTQyMGUxZjNiOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMmEwNTZiMjlhNWM1ZDRjNjJlZmQ3MGUzNmRhMDhlNTRiMDRiYzU3ODhjYmI0NTliNmM2ZTRhMmQ4MmQ5YmU0NSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYTk1N2QwZDkyZTgwMDMxN2E3Mzk0MDJjNDkyNTk2NTgxYTc5NmZhYWZlOWU0ODMyMTVmNjVmZTQ0NDgwYWE1YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZjBmMzZkYmEzM2I3NjQ5ZTc3NzRmZTBkNTY0ZTk3OWI4MDBkMmJlMWNhNDliZmQ1ODgzYjI0ZTQwMWY5YmRlNyJ9"
+        },
+        {
+          "resource": "repo://src/cli.py#L69-L98",
+          "version": "repo-lines-v1:sha256:44f34f63d211ddc69d23396c89040f0b40c0bb272d8637acbdebfd448ec04884:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkMWRkYTVjZTFmNzQxZDdkZDMyMmVjOGM0NTdlNzkzOWNlYWIwNzg1NjJkY2FhNWRkMTNjOGE3M2UzOTk3NDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRmNzg2NDJjNzFhN2FhOWVmZTNkZDQ0ZWExZGI3MTIzZjI4NWZlNzQ4NzczMGVjMWU0ZmNmMTZmZTViMzVlZTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiYjZhYzNlMjNkZjliNGM5ZmQ3Mjg1OTQ0MmE0NTVlZGRlOTU0N2E1NGU5MzYxNzIzOTBkNzk1OTdiNWYzM2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0MjNlNjJjMTlkZWVmZjEwODVmZmYwYmVmNGVjZmUzOGFhYjViODcwMDJhNzcwYWY3NTBkODhhOGJkNTBlMDcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_85435812d9c94e4f9c1edc36433e1bca",
+      "statement": "UI graph runs use isolated data/parse/runs directories, whereas terminal callers can direct the graph to their chosen output directory.",
+      "evidence": [
+        {
+          "resource": "repo://docs/RUNBOOK.md#L40-L46",
+          "version": "repo-lines-v1:sha256:bef27e57e8887819bea5dbafab0b8f39c2cad19e024cb5f20afe675c88415fed:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiYWIyNGFiYmMwYzk3OTIzZDJkNDJlZDJkZWYwYTA2NGFjZmU3YzgxMzkwOGNhM2MyYTAwNTY3YjdmMGQ5MmJmNyIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTEwYTg2OWYxNjk1MTIxYjEzMTNkMWU3YTc4MDQ0MTE2YWRkNTMxMzdhYTI1MmEzZDFiNzk5ZTViYjJlOWJhZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiYjBiMzU5YjBmZDIzYTZmZjIwYzJjMTQyZjdmZDFlMTRmNTFiZDY5ZTY5YzEyMzIyNDY4YmFmYjY1NWFhY2RmYyIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTBjZTBjNTkwODYxMGQ4MGYyOGZlMjMyOWIwZDhjNWVkNjA3MTExNjJmZDBlZWEzMGFjODVkYjAzMmZkZmUzOSJ9"
+        },
+        {
+          "resource": "repo://src/graph.py#L145-L175",
+          "version": "repo-lines-v1:sha256:025ff342f1a7535f66cc5b54126ebe1ffb72a0ea234225d22d6fef3c7ac1995a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhZDJhYzQ3ZTI1ZTc3M2YwY2U5MWQyYTVmNTg1MWM5M2EyMTVjYzI2ODI3ZjM4MGExODlmZmRkZTBmM2U1MGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MTlhNmRjYzA0ZTIxM2EzYzdhNzdhNDU2YjAxZTc2ZDFlZjc4Y2QwMGJiZWMxZDhmODE0NThmZTkzZWRjNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjNzk1ZmM2ZDgzZTQ4MTIwM2UxZWI1ZGFlNTNmZDI0NTM2YzVkZTk0YTAwM2ViNmQ0YmNmZjBkMzNiNjdmMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkZWU5ZDEyMGE1YmZhNTYzYmE4NDg4NTdkMjIwMzIyNDFhZDY2MzgxNDE1ZTE1NWJiZTgxN2I5MTNhNWZjMDIifQ"
+        },
+        {
+          "resource": "repo://src/graph.py#L63-L77",
+          "version": "repo-lines-v1:sha256:23c1761549bd4a9f81886f87f13c29a87a212c9b70052a4a3d23bcb432f17f91:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjYThjY2YwMWJkMDI5NmU1ZjRjMjk0NGQ4OGYzNWZjZDVlM2U3OTYzZGFiMWVhODdjOTM2MzM5YmYxNjdkOTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MTlhNmRjYzA0ZTIxM2EzYzdhNzdhNDU2YjAxZTc2ZDFlZjc4Y2QwMGJiZWMxZDhmODE0NThmZTkzZWRjNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIzNDE0MWMwNmRlZmE0NzI1YTI4ZWMyYWRiNjAxNTkxNjgxNjFmMDFhNjNhNzUxNmQ4OWZjZGQ4NTRiOGQyZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImIwNDllZWZmMzlmYzZiZmQ0NzcwMDQ1ZWU3Mjc3NjI2MTk0OTJhNDRkYmYzOGUxZjZlNjYwY2UwNGE4N2FlMWUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-23T13:34:05.703Z"
+  }
+}

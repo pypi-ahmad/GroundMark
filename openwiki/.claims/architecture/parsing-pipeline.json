@@ -1,0 +1,98 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:ba545aeb224aac4873fcda16f89139d94d1b9c989ee4bb9f9b12bf855e32dfbf",
+  "claims": [
+    {
+      "id": "claim_f03bfce65496426ca07ca061c1bed52e",
+      "statement": "GroundMark's extraction graph is a fixed preprocess-to-parse workflow whose run state includes isolated identifiers, output paths, usage, model, rendering, and export settings.",
+      "evidence": [
+        {
+          "resource": "repo://src/graph.py#L133-L183",
+          "version": "repo-lines-v1:sha256:ed52c910535adf43084f1fcc36f229c83d46518d5ca3c780183b7164ac45dbe8:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyMGVjZWE2NDAzNGJiZjgzNDZiNTNhNjNlZjM1M2M1OGM1YzE1N2Y2YTFiNTRmMjI2ODc2ODZlZWRiN2NmZWUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiY2MxZDEwMGEwMGZiN2Q4MjhmYzllOTgzOTMyNGZkMmExNTNhNjYzYzg5MTQyZGEwMGUwNDBiYWMwNDhiYmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYxZjlmZmQ5Nzg1N2Y1ZDE3MWYyNWJhZjQ0ZmVjMzg2MmQzYTU4NWE3NDliYzk0NGFjZjJlMjhhYjZhMWI2YWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmYzlkYzU3NmZkMTNjNzI2MzkzMDBhZDQ2YzU4YWI5NTZlYzRiOTI5NDQwMjY0MGNjNWY4NTFlNmJiNmQ0MjUifQ"
+        },
+        {
+          "resource": "repo://src/graph.py#L32-L60",
+          "version": "repo-lines-v1:sha256:2ac9ceb1895b0ba5fa8717ea712042790feddc39943db89909c2a347e5315721:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiODQzNjAyMDNiY2M0N2Q2NDJkODJmNWNkODVkNThlMTcwMWQyYzY5OGE3ZjEyNDllNmI3OGRhOGQ5ZmM1ODMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1ZDc0YzViNmQ1ZWU5MzFhYWIxOTdmYTc0YmE0YzA2OTgwY2RjNDc5Y2Y2NDBjYWMwY2MzNTRkN2M2OWYyYTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY3NWIyZWE2YjMyNmExZGM1NDdhNWVhYjdlZGU3ZmY1MjgwOWY0NWU1YzFlZWU4Y2EwMzJlZjJjNDNjMzM0YTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllY2IxODFmNjNmNTdmYTZhZWM1NzEzNjQ3MTVkYjBhNTNkZjY4ZmNjY2YxM2VlMTZjYzkyZGM4MzVjYTlhNTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3b7de115e9e94d63a050e2f51471b451",
+      "statement": "Parser execution accepts only gpt-6-sol, while detailed layout is an opt-in prompt and response schema that is normalized into the same ParsePage type as legacy extraction.",
+      "evidence": [
+        {
+          "resource": "repo://src/graph.py#L145-L175",
+          "version": "repo-lines-v1:sha256:025ff342f1a7535f66cc5b54126ebe1ffb72a0ea234225d22d6fef3c7ac1995a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhZDJhYzQ3ZTI1ZTc3M2YwY2U5MWQyYTVmNTg1MWM5M2EyMTVjYzI2ODI3ZjM4MGExODlmZmRkZTBmM2U1MGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE0MTlhNmRjYzA0ZTIxM2EzYzdhNzdhNDU2YjAxZTc2ZDFlZjc4Y2QwMGJiZWMxZDhmODE0NThmZTkzZWRjNTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjNzk1ZmM2ZDgzZTQ4MTIwM2UxZWI1ZGFlNTNmZDI0NTM2YzVkZTk0YTAwM2ViNmQ0YmNmZjBkMzNiNjdmMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkZWU5ZDEyMGE1YmZhNTYzYmE4NDg4NTdkMjIwMzIyNDFhZDY2MzgxNDE1ZTE1NWJiZTgxN2I5MTNhNWZjMDIifQ"
+        },
+        {
+          "resource": "repo://src/parse.py#L46-L66",
+          "version": "repo-lines-v1:sha256:2484bd276a44b9f76f051128772f02cb23f74134713832f950a67ef548a5830d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhOTM5NTBlNWUwZTdkYzE3ZTZkNThjZGU2MTdiNjExNTlmNjZkYWNhOGE4YTY0NmQ0ZmYyZjk5M2RlN2YxOGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA5ZmVmZGE1NmZlMmQ1ZjNkMDhlMGRmYWI3NzliOWIzNDVkMTNhMTQ4MzVhMzc5OThjZDU2NTU5ZTBhMTA4OWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhMjc0Yzg0ZTRmMmZkNjdmYzg1ZjU1NzlhNWUyNjAwMDI2NzQxMzAxZGRhMzMxYjNkNzlhMmY4MDcxNWEyYmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM0NmQwNGQ2NzgwYzg1NmY3N2ZjNTQyMGI4MmQzNDQ2ODIyZDRmZmM2MGM0NWRjNjQyOWNjNzQyMDdlYzlmN2QifQ"
+        },
+        {
+          "resource": "repo://src/parse.py#L69-L89",
+          "version": "repo-lines-v1:sha256:526e5b68dfa4f16d143d0286a774fe55ceded7f17b5f094c810d30273bdde9b5:eyJzZWxlY3RlZExpbmVDb3VudCI6MjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI2MDE4MWI2NDQ3NzcyM2ZhMDlmOGJhNDMzNWMxZWY5MGYxMTJiZmM2OGQ0MmQzZjM1NjFlMTA5Y2RmNzYxNzciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZhMzI1YzA0YmYyNDM3NzkzMzExNWRmMWQwNzcyMjY2ZTk0YWNhYTMxM2I4ODFkOGM2NmY2NDYyZjg1OWViN2MiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJiM2UxMTQ4MTAxOWVjODFkYjBhZmE4OGUxMTEwNTBmMTFlMWVlYmY3YWUwMDExZDNjYjVmNGMyMTlhMTg2ZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImNhZTQ3NWIyMjJmNjBkYTU1OGJlMDI5MGM4ZThhMTU3ODRiNjFkNzExNmIzZmE5ZTA2ZDcxMTM1ODk5ZjAxY2IifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6c25d244d8b1498687dc18b335401da4",
+      "statement": "Selected pages are parsed sequentially, successful-page text is bounded to the last 12000 characters as later-page context, failures do not abort later pages, and progress is emitted in source order.",
+      "evidence": [
+        {
+          "resource": "repo://src/parse.py#L81-L129",
+          "version": "repo-lines-v1:sha256:47f51fdd9a0a54f030cff4854e1050c2b689a4effc3b2e7a32120ab8707cef87:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBmZjNmOWI4ZWZhNGQ0YTdkOWU2YjgwMjZmZjJmZTBkZmVjZmYzNWQzZWY1NmUyMTBhYzIyYmJjNjkxY2Y1OTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5MmEwYzdkNTcxMzJjMTY0NDQxMTFhZjM0ZGMxMmQ1OTQzZDEyMGIxOGNiNzI2ZDMwYTYzNzM4ZDc1YmQ0MDkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg0YjdmOGMxZTQyZjQ5MjViOGUxNTkwMzVhZTVmODU1NjA0MDRkZmZjMzI4NzEyNjc3YTA5YzI0YTFjNDJmNzUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUxNWQwMjA4MDY0NzlmNGM2YmNiMzRhMTliNTAyMzYwN2RiNDU2M2FkMmU3NmI1M2RlN2ZlMTE5NjQwMTZiNDUifQ"
+        },
+        {
+          "resource": "repo://tests/test_parse.py#L146-L162",
+          "version": "repo-lines-v1:sha256:da9b5be44b174ca820efe4996b268c711303aff58b2b9a4c95bcc9c0df053444:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiZDI3YzAyZTRhMDcyZGUxYjY3M2Y2ZjNkOTJhMDE5NzE1MDA3ODY0N2NhYjFlM2YzZTM3OWIzZTFhMzJiZDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI2Nzc2NGZiNjQwMGE5YmU3NzIyMDNjMzU1MjcxOTdlNDU5YWQ2ZWQ2NTM2MThkMjMyZjk1NjUyN2Y1ZDRlNzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE2NjIyZTZmYWZlODljNjgzZTM3Zjk0OWMyOTEyNDkxNDA1MzM5OGY4MDEzNWNiMzg2ODAyOWJmMjA5ZDA3OGIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://tests/test_parse.py#L96-L125",
+          "version": "repo-lines-v1:sha256:46f29a1365854d4e6fa0fa271d5c8b57690491d0989c5573b22659dcbaaa1382:eyJzZWxlY3RlZExpbmVDb3VudCI6MzAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRjNzY3MjMyZmRkZjg2ZGNhNTBlZDRiODgyNTA4Yzc3N2RjZWM0ZGJiODkyNzkxYzgxODBmZTJjZGQ5NDIyYzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1MDljMzA4YTRhMTgyODM5N2YyZjMyYjBmYzEyY2M2YzE2OTI1YTU0MjA3MjdhYWU5ZWQxNmViZWI4NzM2MGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4NDIwNjgzZmI1N2E2MzE5MDU1ZjIzYmEyNWZkZjcxYzViYjUzNThlNzQzOGVmOGZiOThjNGNlNTIxY2Q2ZTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjdiZDgyYmExY2JmNzNjOTRiZDYwZjVhYmRjZGI2YjFmYmIwN2QwYmVkOGE4ZTQ0YjgxN2Q5ODRmNzA5OWEyNGYifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c33e0149685642abb83ead9875899f0c",
+      "statement": "Each attempted page is represented by an ordered diagnostic, and ParseResult retains successful pages, content-filtered page numbers, the extraction profile, and every page diagnostic.",
+      "evidence": [
+        {
+          "resource": "repo://src/diagnostics.py#L22-L48",
+          "version": "repo-lines-v1:sha256:b37d3ff5532b24deae488c14857ee12b70bdcb53ecfacd3d175fbd15cfa1da67:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjljZjU0YjJlN2Q5YTJiY2JkYjBmYTE0ODNkMjMxOTEzMzQ4OWY1N2VkYTFkNTQwMTY3M2VhOGY5ZWVmZTYyMGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJjNDNmMzhlODJjMTY2NjkxYWM3Mzc5ZmJhZmJmY2NmMjE3ZjUzYmIzNmVmODYxZTAwNmU4MzcyMTVmMjQxMzMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ4NmQ0Nzk2OWI2NjA2ZmM2YzVkODg1YjgwNjZmY2VjODFhNTA3NTZiODAzYTA1MjQxYTM2OTI3YjBmN2JlZDkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBiOTFiMWMwYmNmNDQ1YzMyOWUzZDg2YTc3NjFlM2JkYTA3NGE3YmQ2YzcyZTdjYzUyNmU1MGUwMDViYzhhMTgifQ"
+        },
+        {
+          "resource": "repo://src/parse.py#L94-L148",
+          "version": "repo-lines-v1:sha256:a2fa4bd7da38e572068f538a6e9a0bc7ed58855de5e5b3dae12f0acb68d90287:eyJzZWxlY3RlZExpbmVDb3VudCI6NTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxMjg2NDYyZDNjNmU1NGU2MjdmYmUwNmY5YjZiNDcyNzExNDViZGRmYzIzOTRhZjJkYWRmZjg0YzZkN2M2NDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiY2MxZDEwMGEwMGZiN2Q4MjhmYzllOTgzOTMyNGZkMmExNTNhNjYzYzg5MTQyZGEwMGUwNDBiYWMwNDhiYmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlhMDQyYjg5ZWYwYWNhNWIxODY2NTlmYTA4YmI0NDE2M2M4NGFhOTUyZTI1NmE1ODY4ZmYzYjM5MTYzZDlkZjMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmYzlkYzU3NmZkMTNjNzI2MzkzMDBhZDQ2YzU4YWI5NTZlYzRiOTI5NDQwMjY0MGNjNWY4NTFlNmJiNmQ0MjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_60d1f95ff7404050bc823f6314d2f8d8",
+      "statement": "The graph preserves usable artifacts for partial parses, reports parse_failed when no pages remain, and maps page failures into a summarized parse_error.",
+      "evidence": [
+        {
+          "resource": "repo://src/graph.py#L80-L130",
+          "version": "repo-lines-v1:sha256:08146ee71e981e4a37ef328951a02871f5f69fc545a50dcf6d3c3d65170ba6cf:eyJzZWxlY3RlZExpbmVDb3VudCI6NTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE5YzNmMjhkYTE4NzU2OWJlMzI4ZjRmYWJjNTk4MzY0MDQwMTI1NzllNmI5ZTM0M2Q4NmEzMDhiZjFiMWFlZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjgyNTFiZmFiY2ZiNmQ4OWZkOWY0ZTNiN2JjNGExNzRmZDkwYzk5ODE4NmU0ZmRlMmM4ZmEzNGU2ZDVjMjkzYWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImU5MzdmYjA3OGMyODFhN2I5NDNhZTNhNzE2YmNjNjNjYjRlZWQ2ZGNiY2E3NTZkNTc2ODNiMWNlMjA4ODUzNjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc3NzkzYzNhZGVjNWIyZDMwMjE3ZTYzNmEyZWQ2MDRjNjgwMDliM2JkY2Y5YWY0NjE2YjIzODQ4MzJmNGYwY2EifQ"
+        },
+        {
+          "resource": "repo://tests/test_graph.py#L134-L171",
+          "version": "repo-lines-v1:sha256:f46c7ca61fa00b7044ac9a39d3a8a9afd07bc95c973d7b7c755f452e85993d59:eyJzZWxlY3RlZExpbmVDb3VudCI6MzgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzZWRmZWUyZTdkYjA2Yjk3YjQ4MTdjYjRjMGM4MjUxOWQzODEyMzM2YTM4YTE0MTMzMTZhMGFhNzYxMzNmODMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjlhZGY3ZTc3MTUzZTI3N2MyM2M0YjVjNjdlZDNjNDdmOGQ0OTRmZTU4ODNhNDBiZmQwNDI1ZGVhYjVkNjU1NWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjAxOTNjYzdiNzhiYTg4MDU1Mzg3NjI5NGFlYzc1N2FmZWM0NTk0MDcyY2E3ZjI0Njk0MjE2ZjVmMWQ5MGZiODMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2a808f8b2a5949cf82dbe4e72867dca8",
+      "statement": "GroundMark sanitizes provider diagnostic identifiers against secret-like values and only accepts nonnegative integers, excluding booleans, as token counts.",
+      "evidence": [
+        {
+          "resource": "repo://src/diagnostics.py#L51-L72",
+          "version": "repo-lines-v1:sha256:4cc0f107d7480e2592bb9a7d387fcba4255ac2d0f5857eb3a994fdad2ffe77b8:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ2MmZjOWU0MjI5NTBkYWM5Y2ZiNGUwNjY5MGNkNmU1N2NhMTEzZjk1ZTljNGEzMGNkNTYwNzQ1ZjAwNTMxZmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk1YjI3OTI1MzQ3MDM1NDFkMGQ2OTI1OTg3NGY2YTdmYTBlZmYwYzZkMzg4MGE0MjY3ZjJkMWQyN2I2OTM3YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjFmNzIxYTRkOTc2ZjYwNzU1ZWUzMjgxYTY4Zjc2MTM0OGMzZWRjMTNhYjAyYmU1ODdiOTcyYzE1ZTBiZjhiMTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhNzdiYmQ2YjRkNGFhOTZkYzRlOWI4N2MwM2MwZGY4N2NjZTExOGU0NTU4MjBhZTVmMWYyNGRlYzNjNDZlYjkifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-23T13:34:05.703Z"
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:190f149c56d2da1b587b2b3cea463ef4f0c90d3c5fc8e5321f8dfc368d66cc53",
+  "claims": [
+    {
+      "id": "claim_f2cabab44b434ba9876a7916001f56da",
+      "statement": "ParseResult schema version 2 is the stable internal contract for successful pages, extraction profile, filtered pages, diagnostics, and model identity; legacy saved artifacts gain missing structure metadata in memory.",
+      "evidence": [
+        {
+          "resource": "repo://src/layout.py#L130-L175",
+          "version": "repo-lines-v1:sha256:a1c8891ab2193a144899532219e03bbcb73ae3f2d4a1a45c06ac87674f461850:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4N2UwYzI2ODQ4NjBlZjkxMDU4ODRlNWQ1MzkwNTIxNjdiZGY3NDRkNzk4NTg0N2FkYWM2NmZmMmNiYmY2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4ZWMwYTZjNTQwZmFlMDJmNzk4MWU5OWIwMDk2NmU1NzRmMzljMzZiOGMwN2QxYWFhZWU2MTFlNzc2MzcyZWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2NzNlMjg2Y2UzNGJkMzNmOTJkNWM4OTM0ZDU0NTVkYjFiOGI0YzdmZGRlOWQ3ZmM3MzI1MzE4Y2E4YWVhZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d328da55008c40ef96aa8a2823da59ff",
+      "statement": "Detailed block metadata is validated so headings apply only to heading blocks, list nesting increases incrementally from zero, and table cells cover the table without overlap, overflow, or nonempty covered cells.",
+      "evidence": [
+        {
+          "resource": "repo://src/layout.py#L88-L127",
+          "version": "repo-lines-v1:sha256:9c0a0d43dc83cf794b2bd81e287c0c6c1f50e1edac7aaf649f625335bf824e8e:eyJzZWxlY3RlZExpbmVDb3VudCI6NDAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEzMGFmODA4OGY0MjE4MGZjNDk3ODExZWYzNGRkMzhhODE2ZWYxNWZhMzA4ODcwOTdjNGFhOTM4MmY1ZTdjMDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRjNTQxN2M1NGQxZjliZjhlMDIzY2ZmYWJkZWQwNWJiYmJlZjU1MDA5Y2I4MDQ4N2U1YmZhNzA4ZGVhNWY4YzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc0OGM5NWEyMDNkZWZiYjc5NGIxZWI2NzFjYjIwMjMyNTFjMGU0NmEwNThlNDA5NmI0ZmY4NDVkOTQ5ZTJmY2YiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI3YWUwYmU3MmVjMjA2MzM2MzYzNzAxOTZjOWFkYmI2MzZjZjQ1NDhlODc2NWFkNTQxNjRhMTJmMWQ1ZThiMzMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_69f803929d0e41e18061782519d404b5",
+      "statement": "Renderers preserve page and block order, and Clean view hides only explicitly classified page headers and footers without mutating extraction data.",
+      "evidence": [
+        {
+          "resource": "repo://src/markdown.py#L21-L31",
+          "version": "repo-lines-v1:sha256:c791fd65aef3761a515263b5a1aabfb62c8ed84aad3edf7afae2159f02512e6e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1MDIwZjUxYzViZDgzMWY3NGQ1ZjYwMmFhMDNkNWQ0NzcyYWMyMmRjNjY2NDA5NmNkMTkwMTVhMDQwYTVlNTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzZDEwMzMxODdmNTg4Zjc5NDM3ZGJjZDU3ZmYyYjIwYzQzYjIzOWRlNjZlOWZhYzRiNGZlN2E5Yjg3ZTI4MjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1YTYxODdlYjM1MTgzODhkODA4MWMxZmNmNWM3MjkzZjIwNGI0ODFjZmIzMmExOGIzMWFiOTQ0YWI2ZjVjMWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE2NWEyM2NhYzliMGE4ODM0NjZiMDU0MWQ0MjNiODRkNjYzZjBkNzViNDYxYjRiOWM0MWZjMDQ1ZWY1MmE4OWMifQ"
+        },
+        {
+          "resource": "repo://tests/test_layout_structure.py#L49-L64",
+          "version": "repo-lines-v1:sha256:0ac896482b0c0fe91c9d5281e74f5d7ca6061a513b3ea29460328ad890a3ca5a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3MTExZjY0OWVkZTBiMzRlMzY3ZDA5MWJkZThlNDI0N2Q5YWFlZmE4NGM2OGJiOTI5ODY0ZGUzYzc4ZDNkZTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3NGNhMjliN2I1NjI1MmU3Y2VkOWMzZDUyN2RkNWYyOWQwNmJkNzMzMTVjZTI2NTljYmNkOGUyMmFhMDA1ODQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjOWFjYjQ0YmUzZmI2ZWVhMTY3NTc2YTQxODkyMzZiNDc2NzA1NGQxODMyYjNlYmU3OWJmNjVlNGE5ZjMzN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4MjUyZmY5NmQzMzJjYmE0MDMzYjNiMDIxZDRmNjdmZTE3MzM3MWY2YTQ3ODhiNjNmNDhiMjg0NmJhMzczZmIifQ"
+        },
+        {
+          "resource": "repo://tests/test_layout_structure.py#L98-L107",
+          "version": "repo-lines-v1:sha256:2fa4b768c48946166a1ec54bd6ab8f42cc47985a3fbf4bdb12004cf6eb5b6f57:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyODIzODVlOGMyMjgxYWIyZTU3NmFkODc1ZDI3Y2IxNzcxYjFkYzRhNGRhNTEwMmZkMTQ5YmU1ZTczNGQ5NmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3MmJkMjZjOWI4ZjRkOTI3MjVjYzc2MmE2N2I5YzFjOGEwZDU3YjA5YWFjNTE2NWFiOWI0M2ZlNmE0ZDI0ODEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhYmVhNzEwZDY2YzJmNmFmMTA0ZDcxMDg1ZjhlYmFkMzg1ODkwNmI1Y2UzZWI3ZmUzYTIyZjQ0NDljNjZiNGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjZmQ2NDY4YzZlYzE4MzNmMjIxOTA5YjVlYzU1NDlkYWNhYzY4MzhiNmE1MzlhMjRiM2FlNjlhYWFhODRiOGEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_793143a91345485cbf0266c072524ec5",
+      "statement": "GroundMark escapes source markup in Markdown and HTML so document content is displayed as data rather than executed or silently interpreted as formatting.",
+      "evidence": [
+        {
+          "resource": "repo://src/markdown.py#L34-L45",
+          "version": "repo-lines-v1:sha256:a8157d704e13dd5afbb884cad3b6ae7246ee25179527857ea6245ec828ecd9d1:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjI0NTViOWJhYzcxMmExOTdiNDM5YTEyNTAwMGMwMzRhMmI3NzY4NGUwNDdjY2M1NmQ2NjI0NjM2ZTAxNWIzNmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjOWI3OWEwMzA2MmIyMjAxYTA5NzNlNWM4M2ZjNzkzY2M4MjMxNjc0MzZhMDExZjVkMThiNTU0NDRkZTRiYzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNkMTJhZmQ0YjgyNDk3NmIwMDJmYzY0NDNiOTJkMzlmYTY4NmE2YjJiOWU5NGU5MTU1NmNiM2M1YTAxNjJmYzEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjEzMTc3ZjM4ZDcwOTk3N2VjYzA5NDM3MWIxZGU3OTRiNTYxOWQ2ZWJjMzgyYzU0OTc0ZTViYmU1NDQ1Y2NkNzcifQ"
+        },
+        {
+          "resource": "repo://tests/test_layout_structure.py#L110-L118",
+          "version": "repo-lines-v1:sha256:ab051321715f7a51ec0499a4ff4708bf1ba90054808d3bcc686adac04cb19b28:eyJzZWxlY3RlZExpbmVDb3VudCI6OSwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZGI2YWVhMjAwNzU3ZjRkNDI5MmRmYzM3Y2IwN2Q2OWJkMzIzNTNiNjdiZTA5OTgyNDEwYjNiNmUyOWQ4N2IyOSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiYmYxYWYwNzM3NGRkYjUxZTJkOWIwMDEwZjcwZTM3MDBmMTAzZmNjMGY3NjA1ZDMyN2ZmNGFiOWRmZWQyZjczZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZmM2YjAzMjY2YjFjZjc0OGQxZWIyMjRhNTdmMTZiYThjZGIxNDA1NTBiMjlmMWQzYzI0NjM2NTk1NmJlMDRhYSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiY2Q3MGFmMDhjMjEwYmM5MmFlMDYxZDFjOWY3OThhMmI5NzA1ZDllYzMzYmM2MjkwOTI1ZmU1YmQ5NWU2NjZjOCJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_fe5308a416db41e1af27d4ca7294e14b",
+      "statement": "Only a simple table with an explicit first-row header becomes a Markdown pipe table; merged, headerless, and legacy tables use escaped HTML semantics.",
+      "evidence": [
+        {
+          "resource": "repo://src/markdown.py#L190-L206",
+          "version": "repo-lines-v1:sha256:b69efc1eb6ee5964e2fc00786a61841d3724f89112c369ff63189b28d04dd0b0:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhlMmY2N2M4MWI4MDA2MmIzM2MxYzI0NTAyNzI5OTZmOWYxZmUzNWM1ZDNkYjhhZmE2NzQ2N2ViODAwNzU1OTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNlNDg1Mzk0OWFlZTUwOWM1MGViY2VjMzFjNDc4OTRkYjlkODVlM2FjYjA5ZjU0OTVhNjljM2QxM2E2ZjllNjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQxNzI5MzFmYzJkMWUyNjc3OGRlMDM5NTMxMzgyMWRjZjAxMTdhMzIzYjE2NTQ0NTg1NmQ4OGY1MjQyMWJiZDAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImM0YjVlOTliNDgyZTQ2MWE1OWNjODQ3NTE0MjU3NjkwNjNjZmYxMDMxYmVlZjA5ZWQ0NWNlYzljMGVkYTFlMTgifQ"
+        },
+        {
+          "resource": "repo://src/markdown.py#L53-L98",
+          "version": "repo-lines-v1:sha256:99e2041a98220fe16b4688cca78e3e07a2e747a842d4c7853ea66f3d5bef2eb0:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4NzJiZTYzNTdlMzg0MzQzMzY1MzY5ZGYyNTBkMzZjNjZjMDEyZDMyOTc0MGRmZTgzODc3MDVmMzk4YjA5YzQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiOTg5YmMxMzg0NjliNzcxM2QzNGE0ZWUzNjQ3ZjI3NTg2M2U0ODkzZWRkODhkNTIzMTM3OWQwYzY0ZmZiOTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJiYTY3YWFmZDJmNGNhMThmN2FjOTg1MWQ3NDg2YWRiMjQ5Yjc0NzQyM2MyYmY0Y2Q0ZmFiZDQ2ODA2YzM1OGEifQ"
+        },
+        {
+          "resource": "repo://tests/test_layout_structure.py#L67-L78",
+          "version": "repo-lines-v1:sha256:081303cbe718f411ec4f6329f25e44d0ca96d0b4e217d4eaa1af5935044126d5:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc0NjdmMmMzNzkwOTI3ZjRlYjNhZjQ5YzdiZDQxZDM0M2Q4NzliNzg4ZGY4MmQ0Y2JlYWM3NWM5ZjZiZjQxZGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBlZjdkNzRjODVhY2YwM2Y3MjY5NDVlNzMxMjA1YmRjZWMxNThjNjA4MzFjNjJmNzlmZjJhMjkzZWFlNmUzM2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ1MzU0OWNiOGM2ZjBiZDJmMTYyYmI2OWUyZTlmNjVlODQ5NzNhYTg1OTA0ZmY3MDI4ZTQ3MzcwMmUzZmFiOGMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_18c6a93d86ff49d5a4f1d0df5bd7ea0b",
+      "statement": "Structured list rendering reconciles metadata against original source text and falls back to escaped source when items or intervening content cannot be represented without loss.",
+      "evidence": [
+        {
+          "resource": "repo://src/markdown.py#L100-L165",
+          "version": "repo-lines-v1:sha256:038b6f099058841fc19e946af1aecf6cb1f400d1fd003ee048694ee74549ebed:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5OWFkNzUxNzhiNjZjNjQ2YTY1MTRiODVhYjI4ODM4MGQ3NTdhMDRmNTgzNTI1MmRkZGQ3MDVhOWEwMDUyZDAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhmMDJjMTlkY2MzNTNiOTUxZDMwNzExMWU4MGU5YWM5ZTQ1MWUyOGQyZGIwNjExMjE2OWQ2OWZkYTI4YzliZmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjlmOTEyYTZmODhiMzQyNDNhZDkyYjc1YWM0MGIxYmViOWY4ZWMyOTUwMDFkMjgyOGIwMmFiMDUxYWJlM2I3ZDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJkZTlkZWQ2ZWFiZjQyZGRkNWMzMWUzZDYyNmQzYjcyMTRhN2E1NjNmMmEzMGIyOTczYzRmNTNkNjNkNDE2ZTMifQ"
+        },
+        {
+          "resource": "repo://tests/test_layout_structure.py#L121-L142",
+          "version": "repo-lines-v1:sha256:59f80306572974727a79f2af53d039b6632492c11fcc13025ae3d5aa86fffdf4:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA0ZTc3NDNiMzBiODk3OWFlMzIxM2NjOTg3YmNiMGUxOTFmNWNhZjQ2MjlhYTI2NjNlZTIxNzdkZTRmYTI5ZGIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1NjFiYTI1YzJmYWEyNWFmNGQxOGQyZTYxMzc5YjBiYzZjZDQxZDEzMGRmZDY5NmIwYmMyN2RmYTliYjUyMzkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc4MmQzN2NmOTE5ZjlhNTA1MmZmNTQ0NmMyMjE3MzM5ZTcwMDI5MjY4MGUyNzE2ZTlmMjg3M2Q4NjViNTIxMDMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJmMjk2Yjc1ZGJkNjFkMTdmZjlkM2E5YTRlYjdkZDIxMzcyY2Q1ODE2N2FjOTZlODgzMGJhMTYwOWRjOWI1OTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bbd055bb0b7841ab8a532606c217dda2",
+      "statement": "Figure extraction uses source-matched normalized boxes and deterministic positional names; invalid or missing boxes degrade to warnings and textual placeholders while valid PNG crops can be embedded or bundled.",
+      "evidence": [
+        {
+          "resource": "repo://src/figures.py#L17-L70",
+          "version": "repo-lines-v1:sha256:9225e6af0550843588fbe968e9a0f97922ef0b3d6ee553a10a35eb599926b320:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhOWIwZGVkYTM3MDBkNDViZTVmYmQwNzE4YzkxY2Q2YWZjZTVkZTkzNzA5YzU3NDhkYWI4ZDUxMjg3YjQyNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViYzJhYWRlYmM3ZGQyNzI3YTI1YWI2MzBmODFjMWFhNzcwY2UxNzFhNjQ1MjU2NTkwYWExN2Q0YmY5ODNjYTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5Y2Y1OTM3ZjNiOWU1ZTA4NTM4M2QwOGFiZjNhYzc0NmUzM2ZjY2YyOTBhYWFiYjU4YjdhNmQ2ZDVmOWE5YWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://tests/test_layout_structure.py#L160-L181",
+          "version": "repo-lines-v1:sha256:5cb8f6da384a5b4a76a51214193d8c6282756d467350c1fa453f0196211c5e9f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0MWQ3MTViNTM1NDE4ODJiZGQ1MjE2OTE1ZDI5MTUxYTg1NTc4N2YyMTc4YmU3YmM3MmI0ZDVhMWE3OTY1NmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5NjBiOTg2Mzk0YzYzNTg1NGVhNjc3MGE4ZmFiMGZkZjE3Y2IwZThkOGE3NWIwMDNiM2JjY2FjNjExZTA3ODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcyMjRjOTZiYjFiOTY1MDVkMThiZmEwOGVhMDU0NzJlYmI4MjhhNzY5ODUxOTE3NGY4ZmIzZGQxNTM4MDNmN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-23T13:34:05.703Z"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:135c88733ef391d72155876fb8dc90dfff00c1a1b42d03f0b497ec80212e92e1",
+  "claims": [
+    {
+      "id": "claim_2f027d5971194256b9b331c7d72206ae",
+      "statement": "The graph owns run-isolated output directories and selective exports, while CLI extraction uses a validated caller-supplied directory and parses once for all selected formats.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.py#L69-L109",
+          "version": "repo-lines-v1:sha256:249558ce13462739a62588d859d980fb1d43d159765965a34163af130de5b8f9:eyJzZWxlY3RlZExpbmVDb3VudCI6NDEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNkMWRkYTVjZTFmNzQxZDdkZDMyMmVjOGM0NTdlNzkzOWNlYWIwNzg1NjJkY2FhNWRkMTNjOGE3M2UzOTk3NDEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE1ODU3MGUwY2UxMTg1OWNiZWFkNzVkOGQ3ZTM0NDJiNzA5NTVkZjIxYjE4Y2Q3Yzg5MTJkNWQ1ZTY2Mjk1ZjAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNiYjZhYzNlMjNkZjliNGM5ZmQ3Mjg1OTQ0MmE0NTVlZGRlOTU0N2E1NGU5MzYxNzIzOTBkNzk1OTdiNWYzM2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE1YTJiNGU0YmQyZDE1MWYxZTg4OTZlYTVmN2RkODI5NTExY2E3MGI0M2ZmZGRjN2JhNzhkODA2MmIzNmY3YjEifQ"
+        },
+        {
+          "resource": "repo://src/graph.py#L145-L183",
+          "version": "repo-lines-v1:sha256:50018f44295a8985a626ebdb7540cda16bf04796e76fac8988073518fb1eeab7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhZDJhYzQ3ZTI1ZTc3M2YwY2U5MWQyYTVmNTg1MWM5M2EyMTVjYzI2ODI3ZjM4MGExODlmZmRkZTBmM2U1MGMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImFiY2MxZDEwMGEwMGZiN2Q4MjhmYzllOTgzOTMyNGZkMmExNTNhNjYzYzg5MTQyZGEwMGUwNDBiYWMwNDhiYmYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjNzk1ZmM2ZDgzZTQ4MTIwM2UxZWI1ZGFlNTNmZDI0NTM2YzVkZTk0YTAwM2ViNmQ0YmNmZjBkMzNiNjdmMDUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjZmYzlkYzU3NmZkMTNjNzI2MzkzMDBhZDQ2YzU4YWI5NTZlYzRiOTI5NDQwMjY0MGNjNWY4NTFlNmJiNmQ0MjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_54b98d5ee7f645db9eeca8cc61db4bb1",
+      "statement": "All artifacts in a run share a sanitized source-and-UTC basename reserved across the output, annotated, and images directories with a temporary concurrent-writer lock and fractional-second collision fallback.",
+      "evidence": [
+        {
+          "resource": "repo://src/output_names.py#L9-L66",
+          "version": "repo-lines-v1:sha256:cd4dbc8444883147a4b798a8a7914f5c8dccddd30fdede0ebd551d6b0115eaaf:eyJzZWxlY3RlZExpbmVDb3VudCI6NTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA4Y2M4NmExNTk5ZGUwNmM0M2VmMTcxYTA3MzZkMTBhZjA4MmIzYTVhNjJiNGI5YmNjZjdmNGZhNWQwNDRiYjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY3ZDUxZWYyMmZjNTEyMzU3ZGFhNTc0MDM4ZjJlYzkyNGI5Y2UyNTAzMDQ1ZTAzODdlMjQ2Yzg0NzY3NTI4N2EiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjA5NDkxYWYwZDJhYTQ4M2Q0NmZiMjQyYjM3MWJkNmEwMmI2YTk5Y2FkMjJkMDE3YTRiNTg3MjEzNDBhNDFmNTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f7e6eb24e1e545d98bcfb24a5aabcda5",
+      "statement": "JSON is attempted even for an empty ParseResult, while figure, text, ZIP, and annotation exports are independently attempted and successful output paths survive failures in other formats.",
+      "evidence": [
+        {
+          "resource": "repo://src/export.py#L15-L88",
+          "version": "repo-lines-v1:sha256:da8c322bed62e03bbbebf8f78cc3b997a15cfb43c9aa56767f8228343a9081d1:eyJzZWxlY3RlZExpbmVDb3VudCI6NzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4NTk1ZTkxYmU0MzAwODAwYWM3NDQzMzk0M2JkYmQ5N2YwMjQxM2M1NTc2ZTRmNzBiMWU1ZGIxM2U5NGI1MjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3YzJhNDZhMDMxY2ZmMWRhZjdhNWUxNTJjZjRiOTdjOGJiNDJjZmYyNzljYzNjZTJkOTE2ZjdlZWQ5YzE1MjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI5Y2M1NjU1Mjc0MWYzZWE5Y2YzNTk2ZWVhOTg1YzU2ODk3M2Y4M2UwMDJiNDk5M2JhZWYyYjQ0NTAwYTMzYzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5c90dce45eaa41e797715b9ba3d4d352",
+      "statement": "Figure crops require a source hash match and a valid same-page box, use positional filenames, and degrade to warnings without discarding successful transcription.",
+      "evidence": [
+        {
+          "resource": "repo://src/figures.py#L17-L49",
+          "version": "repo-lines-v1:sha256:e452ab9d47e6a34235e3febb4f7f365c86890dcdccd604de043032648b62323e:eyJzZWxlY3RlZExpbmVDb3VudCI6MzMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhOWIwZGVkYTM3MDBkNDViZTVmYmQwNzE4YzkxY2Q2YWZjZTVkZTkzNzA5YzU3NDhkYWI4ZDUxMjg3YjQyNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2Yzk0NjVjYjUxNDQ1OThiY2EwN2UxZWIwY2Y0Yjc0ZDRhOTRiZDhjYzMwMTEwMzI3MzljMDQ0NTAyMDAxYjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5Y2Y1OTM3ZjNiOWU1ZTA4NTM4M2QwOGFiZjNhYzc0NmUzM2ZjY2YyOTBhYWFiYjU4YjdhNmQ2ZDVmOWE5YWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjYjRmN2NhMzc0NmJiNWVjNmZlYTZjODAyZjEyMGEwODgxMmJiNmZlYjRlMDdlYzBhMmM1MTM2MjVmM2NkMzEifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_f5f48b58c32046a583cc669f1f067b3d",
+      "statement": "Annotations rerasterize the covered page interval, draw only valid normalized boxes, skip invalid or missing boxes, and optionally persist counts in a metadata sidecar.",
+      "evidence": [
+        {
+          "resource": "repo://src/annotate.py#L30-L37",
+          "version": "repo-lines-v1:sha256:2be001e57ab84a955345040f2fe6ca7d5d271698a7f763a188d69e960d0ae806:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWViYTk5NzgxOTZkYjkxNjZiODIzMTE1ZWQ2ZjIzZmJhOGQxOTk1NzA2Zjg3YTQ1N2NjMjk3ZmM5NzYyZTk5MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2QzMzI0NDE0Y2NhMzA3OWJmMDRhMjcyY2M5NDEyYzhiZTk5NDhkODZiNzBhNWExMzdmYTA1NzE1MmFjMjFmNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmUyZWYyYTJlZmZkZjAzYTdiZTAyZWFlMTAxNDZkZjJlNTViMmE3MjQwOWVlZWMzN2ZlNTM0Y2I5NzdhMzQ0NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmE2NmZiOTg0MjdhNmVjOWExOTAxOTI1NzlkNjY5NTU3NGIyMWJlYWU3OThiMzM5YTlkZDg3NDUzZDQ0OTU4ZCJ9"
+        },
+        {
+          "resource": "repo://src/annotate.py#L40-L129",
+          "version": "repo-lines-v1:sha256:dc0488a0837266e546e8d755768df814ed58ba0aec67c431adb68a3abd852c67:eyJzZWxlY3RlZExpbmVDb3VudCI6OTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjBlMDliMTM1ZTJlY2I5NThmMjNhZTUxMDY1NmY4ZWVjMDE3ODExNDkyYWEyNThmMWUzNzAzNDQzNzkwYjVjM2UiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY5ODljYTg5NzY3YjIyNWQwODk5MDA1OGVlMjUzNzVmMTkzNmE3ZGQ0ZDAxZmNiZTNhM2JkYzEzOTdjYWE0YWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE3NDRkYmQ1YmJlODdmMTUzMDUzNDVjNTEwNGZkZTA2YmQ0MmNlYTFlMmNlZTlhNjdkZjFlZGY0Y2U3YjFjNzYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_df9b7d1443a64a81800c05d5d621ab93",
+      "statement": "The CLI reports completed paths separately from diagnostics and returns distinct codes for success, failed extraction, invalid arguments, partial or degraded output, and interruption.",
+      "evidence": [
+        {
+          "resource": "repo://src/cli.py#L93-L114",
+          "version": "repo-lines-v1:sha256:9135861bd130a18d531f71f468b00b0a944a8cd397da7ac7d16351e01a00cf12:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4ZTNiOTM2NDQzMWY1YjExMmRkZWQ5NDFlMDE4YWVjZjVkZTZhZjkyYWVjNGIzZWFkOGEwYTNhMTA5YTAxYzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNhZDU3NjdmNzc0MmI4YzFkNjlkOGVhYjIzNGZjMDk5MjkyYTczNTU0MGM5MzYzZmNiNDYxYTQ2M2FjZjY0NmQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjMwODM3YzA0NjJlMjFhOGQ2M2MyYmZiZGJmNjcwOGRkOTlmNTZjMzMyOTliMTRhZjA5YTdiYjM4NWEwZjUyNTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU5ZjdmN2FhMTYzMDU2N2MxYjVlNjY0NGUyMWNiZWM4M2E0MzkzM2RjNWIwZGEwZDkwY2Q1M2JhNDhlOTEwZDIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.5.2",
+    "at": "2026-09-23T13:34:05.703Z"
+  }
+}
