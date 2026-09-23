@@ -1,6 +1,6 @@
 # Contributing
 
-This project turns scanned PDFs and images into grounded Markdown, HTML, JSON, annotations, and chat over parsed pages. Keep changes within that scope. Adding a business-field schema requires an explicit product decision.
+GroundMark turns scanned PDFs and images into grounded Markdown, HTML, JSON, annotations, and chat over parsed pages. Keep changes within that scope. A business-field schema requires an explicit product decision.
 
 Send `gpt-6-sol` requests through `src/llm.py`. Keep pages in source order and follow the page image when preceding-page context disagrees with it.
 

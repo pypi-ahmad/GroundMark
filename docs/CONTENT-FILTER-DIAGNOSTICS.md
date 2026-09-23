@@ -1,10 +1,6 @@
 # Content-filter diagnostics: September 12, 2026
 
-The model, prompt, test count, and concurrency settings in this report describe
-the September 12 run. The current parser still records a
-diagnostic for each page and keeps successful pages available when another page
-fails or is filtered. The later [layout comparison](LAYOUT-EVALUATION.md)
-excluded the filtered BadgeCare page.
+The model, prompt, test count, and concurrency settings below apply to the September 12 run. The current parser records a diagnostic for each page and keeps successful pages available when another page fails or is filtered. The later [layout comparison](LAYOUT-EVALUATION.md) excluded the filtered BadgeCare page.
 
 Five of the six approved pages parsed. BadgeCare page 1 returned
 `finish_reason=content_filter`. Raw-response capture kept metadata that
@@ -39,10 +35,7 @@ BadgeCare evidence:
 - No recognized prompt/completion filter annotations were returned.
 - No rejected completion or refusal text was saved.
 
-The provider returned HTTP 200 with `content_filter`, rather than a request-time
-HTTP 400 rejection. The category and underlying reason are unknown. A provider
-review would need the request ID and timestamp. No message was sent to the
-provider.
+The provider returned HTTP 200 with `content_filter`, rather than rejecting the request with HTTP 400. The category and underlying reason are unknown. A provider review would need the request ID and timestamp. No message was sent to the provider.
 
 ## Validation and limits
 

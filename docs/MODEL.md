@@ -2,7 +2,7 @@
 
 Parsing uses `gpt-6-sol`. Each request contains one rasterized page image and asks for text and layout data in a structured response. The parser rejects other model identifiers before preprocessing or contacting the API.
 
-The response contains page dimensions, ordered blocks, block types, text, table cells, and optional normalized bounding boxes. Pydantic checks its shape locally. It does not contain domain records or inferred business fields.
+The response contains page dimensions, ordered blocks, block types, text, table cells, and optional normalized bounding boxes. Pydantic checks its shape locally. The schema has no domain records or inferred business fields.
 
 Both extraction modes use Sol. The default uses the original prompt and response contract. Detailed layout (experimental) asks for heading levels, list structure, table spans and headers, and running-header/footer roles. Word overlap improved in a five-page comparison, but source review found new errors, so this mode stays off by default. The [layout evaluation](LAYOUT-EVALUATION.md) records those findings. Schema validation checks the response structure; it cannot establish transcription accuracy.
 

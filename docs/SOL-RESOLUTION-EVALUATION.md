@@ -1,10 +1,6 @@
 # Sol resolution comparison: September 23, 2026
 
-This report covers the September 23 resolution experiment. The prompt has
-changed since that run. Both extraction modes still use the chosen
-200-DPI/1,600-pixel rendering setting. The later
-[layout comparison](LAYOUT-EVALUATION.md) tested their different prompts and
-schemas at that setting.
+This report covers the September 23 resolution experiment. The prompt has changed since that run. Both extraction modes still use the chosen 200-DPI/1,600-pixel rendering setting. The later [layout comparison](LAYOUT-EVALUATION.md) tested their different prompts and schemas at that setting.
 
 The app kept 200-DPI PDF rendering with a 1,600-pixel long-edge cap. The
 300-DPI, 3,200-pixel candidate failed the agreed no-regression check. Five
@@ -38,11 +34,7 @@ documents.
 | Masked Amerigroup_1 | 2 | 95.79% | 96.48% |
 | Unweighted mean | | **95.57%** | **95.02%** |
 
-Two pages regressed, two tied, and one improved. The candidate failed both requirements: no regression on any page
-and an improvement in the aggregate score. It was not promoted. No source-image review followed the failed metric
-check. The results provide no verified field-level OCR improvement.
-Token F1 cannot confirm identifiers, checkbox states, reading order, or table
-associations.
+Two pages regressed, two tied, and one improved. The candidate failed both requirements: no regression on any page and an improvement in the aggregate score. It was not promoted. No source-image review followed the failed metric check, so the results provide no verified field-level OCR improvement. Token F1 cannot confirm identifiers, checkbox states, reading order, or table associations.
 
 Before promoting a future candidate, visually confirm at least one real
 correction without introducing new source errors. This run used all ten approved requests;

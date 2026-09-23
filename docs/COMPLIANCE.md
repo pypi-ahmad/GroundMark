@@ -6,6 +6,6 @@ The app treats parser and chat responses as untrusted. Pydantic validates their 
 
 Uploaded files and generated artifacts stay on the local machine. Model requests transmit document content to the configured OpenAI-compatible endpoint: page images and preceding-page context for parsing; parsed text, the question, accepted history, and the draft answer for chat verification. Chat can include classified headers and footers from available pages, but does not send original files. Clean and Full affect presentation only. The app makes figure crops and ZIP downloads locally from the supplied source. Operators must choose endpoint retention, access, and privacy controls that fit their documents.
 
-Diagnostics show request status and token counts without printing credentials.
+Diagnostics report request status and token counts without printing credentials.
 
 The CLI uses the same endpoint and extraction rules as the UI. It saves only selected artifacts in the requested output directory. The filenames include the source stem and extraction time, while JSON keeps the source hash for grounding. Environment variables inherited by the process take priority over `.env`. The CLI does not accept keys as command-line arguments, and release artifacts contain no keys.

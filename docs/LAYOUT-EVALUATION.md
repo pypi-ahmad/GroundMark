@@ -1,6 +1,6 @@
 # Layout comparison: September 23, 2026
 
-Detailed layout is experimental. The original prompt and schema remain the default. Both modes have the rendering fixes, figure crops, portable downloads, and legacy JSON loading. They also share the 200-DPI/1,600-pixel rendering setting retained after the earlier [resolution comparison](SOL-RESOLUTION-EVALUATION.md).
+Detailed layout is experimental; the original prompt and schema remain the default. Both modes use the current renderer, figure crops, portable downloads, and legacy JSON loading. They share the 200-DPI/1,600-pixel rendering setting retained after the earlier [resolution comparison](SOL-RESOLUTION-EVALUATION.md).
 
 ## Results
 
@@ -19,7 +19,7 @@ All ten requests parsed successfully. Estimated cost was **$0.46442**, within th
 
 Three pages tied on token F1 and two improved, so the metric check passed. Source review found new errors. On page 2 of Masked Amerigroup_1, the candidate read the handwritten initiation-date month as 10; the source and baseline showed 6. The other handwritten form also had changed contact digits. The higher token score did not establish better field accuracy.
 
-The candidate identified merged cells in the form table and classified running fax headers and footers. Those details make the reading view cleaner, but the source errors kept the prompt from becoming the default. Detailed layout remains opt-in.
+The candidate identified merged cells in the form table and classified running fax headers and footers. The reading view was cleaner, but the source errors kept this prompt from becoming the default. Detailed layout remains opt-in.
 
 ## Verification and limits
 

@@ -6,7 +6,7 @@ Each template receives the source page number, selected-range page count, raster
 
 The prompts forbid summarizing, correcting, normalizing, or extracting business fields. They require character-by-character checks for names, addresses, dates, identifiers, codes, and long numbers. Table arrays must be rectangular, including empty trailing cells. The model uses `[ILLEGIBLE]` for unreadable text. It may use earlier pages to understand structure, but the current image decides what belongs on the page.
 
-Reusable model instructions live in Markdown under `prompts/runtime/`. Python supplies document data and page metadata. When editing a prompt, keep its placeholders and run `tests/test_prompts.py`. Review source images for any change to extraction behavior; the [layout comparison](LAYOUT-EVALUATION.md) found value errors despite better token overlap.
+The model instructions live in Markdown under `prompts/runtime/`. Python supplies document data and page metadata. When editing a prompt, keep its placeholders and run `tests/test_prompts.py`. Review source images after a change to extraction behavior; the [layout comparison](LAYOUT-EVALUATION.md) found value errors despite better token overlap.
 
 The default prompt requests `LegacyParsePage`. Its response becomes the current internal page type with unknown structure metadata. The experimental prompt requests `ParsePage`. Its structure fields are required but can be null. Parsing has no separate verification pass over extracted text. Rendering and Clean/Full selection use the saved result without another request.
 

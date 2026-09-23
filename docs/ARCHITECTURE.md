@@ -33,7 +33,7 @@ The UI passes the uploaded name separately from its hashed cache path. Rerenderi
 
 Figure crops live in the run's `images/` directory. A missing or invalid box leaves a placeholder and a warning; the figure text stays in the extraction. HTML embeds the PNG data. Markdown links to images included in its ZIP download. The CLI JSON renderer loads adjacent crops when available.
 
-Programmatic rendering uses full content by default. The UI opens in Clean view, which hides blocks classified as page headers or footers. Unknown table headers remain ordinary cells. A simple table with an identified first header row uses Markdown; complex or headerless tables use generated HTML. Renderers escape source markup, keep list labels and trailing notes, and use the original text when list metadata conflicts with it. Rendering does not change the extraction data.
+Programmatic rendering uses full content by default. The UI opens in Clean view, which hides blocks classified as page headers or footers. A table without identified headers keeps every row as data. A simple table with an identified first header row uses Markdown; complex or headerless tables use generated HTML. Renderers escape source markup, keep list labels and trailing notes, and use the original text when list metadata conflicts with it. Rendering leaves the extraction data unchanged.
 
 The default extraction contract has no page-header/footer roles, so Clean and Full contain the same blocks for default results. Loading older JSON cannot infer heading depth, list nesting, or merged cells. GUI graph exports keep full content; UI downloads follow the selected view. CLI exports use the requested `--view`.
 

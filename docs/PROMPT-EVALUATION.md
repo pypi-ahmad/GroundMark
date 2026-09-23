@@ -1,10 +1,6 @@
 # Prompt evaluation: September 12, 2026
 
-This report covers the September 12 prompt comparison. The app now uses
-`prompts/runtime/parse-page.md` by default and offers
-`parse-page-structured.md` as an experimental opt-in. The candidates tested
-here are no longer in the app. The later
-[layout comparison](LAYOUT-EVALUATION.md) records the current decision.
+This report covers the September 12 prompt comparison. The app now uses `prompts/runtime/parse-page.md` by default and offers `parse-page-structured.md` as an experimental opt-in. The candidates tested here are no longer in the app. The later [layout comparison](LAYOUT-EVALUATION.md) records the current decision.
 
 The baseline layout prompt was kept. Both revisions improved form segmentation
 and reference-token overlap but introduced wrong values. The corrective version
@@ -62,10 +58,7 @@ not every field association or performance on unseen documents. Filtered
 requests returned no usage, so totals include reported tokens only. Timing
 comes from single runs and does not establish typical latency.
 
-The candidates represented these form sections as fields. This explains why they
-produced no ragged tables, but tells us little about how they extract repeated-row
-tables. This corpus has no live measure of true-grid or merged-cell accuracy.
-Offline tests cover renderer behavior separately.
+The candidates represented these form sections as fields, which explains why they produced no ragged tables. The run tells us little about repeated-row tables and has no live measure of true-grid or merged-cell accuracy. Offline tests cover renderer behavior separately.
 
 ## Source review findings
 
