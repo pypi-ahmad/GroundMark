@@ -21,6 +21,11 @@ def test_launcher_uses_workspace_and_installed_app(tmp_path, monkeypatch):
     assert Path(command[4]).is_file()
     assert "--server.port=5806" in command
     assert "--server.address=127.0.0.1" in command
+    assert "--server.allowedHosts=127.0.0.1" in command
+    assert "--server.allowedHosts=localhost" in command
+    assert "--server.allowedHosts=::1" in command
+    assert "--server.enableCORS=true" in command
+    assert "--server.enableXsrfProtection=true" in command
     assert "--server.headless=true" in command
     assert kwargs["cwd"] == workspace.resolve()
     import os

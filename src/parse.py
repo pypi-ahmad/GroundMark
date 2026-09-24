@@ -18,15 +18,18 @@ from __future__ import annotations
 
 import argparse
 from collections.abc import Callable
+from itertools import chain
+from operator import length_hint
 from pathlib import Path
 
 from openai import ContentFilterFinishReasonError
 
 from src.llm import _build_llm, _image_message, _invoke_structured
-from src.preprocess import preprocess_pages
+from src.config import max_parse_output_tokens, max_table_cells
+from src.preprocess import inspect_source, iter_preprocessed_pages as preprocess_pages
 from src.prompts import render_prompt
 from src.models import DEFAULT_MODEL
-from src.layout import ParsePage, ParseResult, LegacyParsePage
+from src.layout import ParsePage, ParseResult, LegacyParsePage, expanded_table_cells
 from src.diagnostics import ExtractionCallError, PageDiagnostic
 
 # Pages are parsed in order so each call can use preceding-page context.
@@ -58,6 +61,7 @@ def parse_page(
     result = _invoke_structured(
         llm, ParsePage if detailed_layout else LegacyParsePage, [_image_message(text, image_b64, mime)], call_name="parse_page",
         diagnostics=diagnostics, usage_entries=usage_entries,
+        max_completion_tokens=max_parse_output_tokens(),
     )
     if isinstance(result, LegacyParsePage):
         result = result.to_page()
@@ -76,7 +80,7 @@ def parse_document(
     save_json: bool = True,
 ) -> ParseResult:
     """Layout-parse every page in [start_page, end_page] (1-based, inclusive;
-    end_page=None means through the last page -- there is no page cap).
+    end_page=None means through the last page, subject to the configured cap).
 
     Pages are parsed sequentially. Each successful page contributes bounded
     context to the next page so headings and continued structures remain
@@ -84,12 +88,19 @@ def parse_document(
     """
     if model != DEFAULT_MODEL:
         raise ValueError("Unsupported model")
-    pages_payload = preprocess_pages(path, start_page=start_page, end_page=end_page)
-    if not pages_payload:
-        raise ValueError("Page range contains no pages")
-    doc_sha = pages_payload[0]["doc_sha256"]
+    pages_payload = iter(preprocess_pages(path, start_page=start_page, end_page=end_page))
+    try:
+        first_payload = next(pages_payload)
+    except StopIteration as exc:
+        raise ValueError("Page range contains no pages") from exc
+    remaining = length_hint(pages_payload)
+    if end_page is None and remaining == 0:
+        total_selected = inspect_source(path)["pages"] - start_page + 1
+    else:
+        total_selected = remaining + 1 if end_page is None else end_page - start_page + 1
+    doc_sha = first_payload["doc_sha256"]
 
-    context_parts: list[str] = []
+    document_context = ""
 
     def parse_payload(payload: dict) -> tuple[ParsePage | None, PageDiagnostic]:
         diagnostics = []
@@ -103,8 +114,8 @@ def parse_document(
                 diagnostics=diagnostics,
                 model=model,
                 usage_entries=usage_entries,
-                document_context="\n\n".join(context_parts)[-12000:],
-                total_pages=len(pages_payload),
+                document_context=document_context,
+                total_pages=total_selected,
                 detailed_layout=detailed_layout,
             )
             diagnostic = diagnostics[-1] if diagnostics else PageDiagnostic(outcome="parsed")
@@ -118,14 +129,22 @@ def parse_document(
 
     outcomes = []
     successful = 0
-    for payload in pages_payload:
+    table_cells = 0
+    for payload in chain((first_payload,), pages_payload):
         outcome = parse_payload(payload)
+        if outcome[0] is not None:
+            added_cells = sum(expanded_table_cells(block.table or []) for block in outcome[0].blocks)
+            if table_cells + added_cells > max_table_cells():
+                outcome = (None, PageDiagnostic(page=payload["page"], outcome="invalid_response", requested_model=model))
+            else:
+                table_cells += added_cells
         outcomes.append(outcome)
         if outcome[0] is not None:
             successful += 1
-            context_parts.append(_page_context(outcome[0]))
+            page_context = _page_context(outcome[0])
+            document_context = (document_context + ("\n\n" if document_context else "") + page_context)[-12000:]
         if on_progress:
-            on_progress({"completed": len(outcomes), "total": len(pages_payload),
+            on_progress({"completed": len(outcomes), "total": total_selected,
                          "successful": successful, "failed": len(outcomes) - successful})
 
     pages = [page for page, _ in outcomes if page is not None]

@@ -22,7 +22,7 @@ from src import usage
 from src.models import DEFAULT_MODEL
 from src.export import DEFAULT_FORMATS, FORMATS, export_result
 from src.parse import parse_document
-from src.preprocess import preprocess
+from src.preprocess import inspect_source as preprocess
 from src.layout import ParseResult
 from src.output_names import reserve_basename
 

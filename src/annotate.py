@@ -15,11 +15,13 @@ from __future__ import annotations
 import base64
 import io
 import json
+import tempfile
 from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
+import pypdfium2 as pdfium
 
-from src.preprocess import preprocess_pages
+from src.preprocess import iter_preprocessed_pages
 from src.layout import ParseResult
 from src.output_names import artifact_name
 
@@ -50,11 +52,8 @@ def annotate_document(
     """Draw every block's bbox onto a rasterized copy of each page and save a
     multi-page PDF, plus a sidecar .meta.json.
 
-    No PDF library needed: every page is already rasterized for the rest of
-    this pipeline (via `preprocess_pages`), and Pillow itself can write a
-    multi-page PDF straight from those images. Overlaying boxes onto an
-    original PDF's own vector content (via pypdf/reportlab) would be a more
-    fragile path for the same result, so this project doesn't use either.
+    Pillow encodes each rasterized page separately. PDFium assembles those
+    encoded pages without retaining every page's decoded pixels at once.
 
     Blocks with a missing or out-of-range bbox are skipped and counted in the
     sidecar file.
@@ -68,48 +67,59 @@ def annotate_document(
     start_page = parsed_page_numbers[0] if parsed_page_numbers else 1
     end_page = parsed_page_numbers[-1] if parsed_page_numbers else 1
 
-    pages_payload = preprocess_pages(source_path, start_page=start_page, end_page=end_page)
-    doc_sha = pages_payload[0]["doc_sha256"]
+    pages_payload = iter_preprocessed_pages(source_path, start_page=start_page, end_page=end_page)
+    doc_sha = parse_result.doc_sha
     basename = output_basename or doc_sha
+    artifact_name(basename, ".pdf")  # Validate before creating any directories.
     blocks_by_page = {page.page: page.blocks for page in parse_result.pages}
 
     font = ImageFont.load_default(size=LABEL_FONT_SIZE)
-    annotated_images: list[Image.Image] = []
+    annotated_paths: list[tuple[int, Path]] = []
     drawn = 0
     skipped = 0
 
-    for payload in pages_payload:
-        image = Image.open(io.BytesIO(base64.b64decode(payload["base64"]))).convert("RGB")
-        draw = ImageDraw.Draw(image)
-
-        for block in blocks_by_page.get(payload["page"], []):
-            if block.bbox is None or not _bbox_is_valid(block.bbox.xyxy):
-                skipped += 1
-                continue
-            x0, y0, x1, y1 = block.bbox.xyxy
-            box_px = (x0 * image.width, y0 * image.height, x1 * image.width, y1 * image.height)
-            label = block.type
-            draw.rectangle(box_px, outline=BOX_COLOR, width=3)
-            draw.text((box_px[0], max(box_px[1] - LABEL_FONT_SIZE - 2, 0)), label, fill=BOX_COLOR, font=font)
-            drawn += 1
-
-        annotated_images.append(image)
-
     out_dir = Path(output_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
-    pdf_path = out_dir / artifact_name(basename, ".pdf")
-    if save_pdf:
-        first, *rest = annotated_images
-        first.save(pdf_path, "PDF", save_all=True, append_images=rest)
-
-    # Also save each annotated page as its own PNG, so the UI can preview
-    # them inline (st.image) without needing a PDF-viewer widget/dependency.
     pages_dir = out_dir / basename
     if save_images:
         pages_dir.mkdir(parents=True, exist_ok=True)
-        for payload, image in zip(pages_payload, annotated_images):
+
+    with tempfile.TemporaryDirectory(prefix="groundmark-annotate-") as temp_name:
+        temp_dir = Path(temp_name)
+        for payload in pages_payload:
+            with Image.open(io.BytesIO(base64.b64decode(payload["base64"]))) as decoded:
+                image = decoded.convert("RGB")
+            draw = ImageDraw.Draw(image)
+
+            for block in blocks_by_page.get(payload["page"], []):
+                if block.bbox is None or not _bbox_is_valid(block.bbox.xyxy):
+                    skipped += 1
+                    continue
+                x0, y0, x1, y1 = block.bbox.xyxy
+                box_px = (x0 * image.width, y0 * image.height, x1 * image.width, y1 * image.height)
+                label = block.type
+                draw.rectangle(box_px, outline=BOX_COLOR, width=3)
+                draw.text((box_px[0], max(box_px[1] - LABEL_FONT_SIZE - 2, 0)), label,
+                          fill=BOX_COLOR, font=font)
+                drawn += 1
+
             name = f"page_{payload['page']:03d}.png"
-            image.save(pages_dir / (artifact_name(basename, "_" + name) if output_basename else name))
+            target = (pages_dir / (artifact_name(basename, "_" + name) if output_basename else name)
+                      if save_images else temp_dir / name)
+            image.save(target)
+            image.close()
+            annotated_paths.append((payload["page"], target))
+
+        pdf_path = out_dir / artifact_name(basename, ".pdf")
+        if save_pdf:
+            with pdfium.PdfDocument.new() as document:
+                for _, path in annotated_paths:
+                    page_pdf = temp_dir / "page.pdf"
+                    with Image.open(path) as image:
+                        image.save(page_pdf, "PDF")
+                    with pdfium.PdfDocument(page_pdf) as page_document:
+                        document.import_pages(page_document)
+                document.save(pdf_path)
 
     meta_path = out_dir / artifact_name(basename, ".meta.json")
     if save_metadata:
@@ -117,7 +127,7 @@ def annotate_document(
             json.dumps(
                 {
                     "doc_sha": doc_sha,
-                    "pages": len(annotated_images),
+                    "pages": len(annotated_paths),
                     "blocks_drawn": drawn,
                     "blocks_skipped": skipped,
                 },
