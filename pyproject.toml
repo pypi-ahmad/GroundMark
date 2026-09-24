@@ -1,10 +1,10 @@
 [build-system]
-requires = ["hatchling>=1.27,<2"]
+requires = ["hatchling==1.32.4"]
 build-backend = "hatchling.build"
 
 [project]
 name = "groundmark"
-version = "0.1.0"
+version = "0.1.1"
 description = "Grounded document extraction with Markdown, HTML, annotations, and document chat"
 readme = "README.md"
 license = "MIT"
