@@ -4,9 +4,11 @@ The [README installation instructions](../README.md#install) cover GitHub wheel 
 
 Set `OPENAI_API_KEY`, and optionally `OPENAI_BASE_URL`, in the environment or a `.env` file. The launcher reads `.env` from the current folder, or from the UI's `--workspace` folder when provided. `--env-file PATH` selects a specific file. Variables already in the process take priority. After setting Windows User or Machine variables, open a new terminal so GroundMark inherits them.
 
-Blank or unset `OPENAI_BASE_URL` uses the SDK default. A missing explicit environment file produces an error. The endpoint must support Sol parsing and Luna chat; its URL does not select different models.
+Blank or unset `OPENAI_BASE_URL` uses the SDK default. Custom endpoints must use HTTPS, except for HTTP endpoints on localhost or a loopback IP. Credentials, query strings, and fragments are rejected in endpoint URLs. A missing explicit environment file produces an error. The endpoint must support Sol parsing and Luna chat; its URL does not select different models.
 
-`groundmark` opens the web UI at `http://127.0.0.1:5805`. Use `--workspace`, `--port`, `--host`, and `--headless` to configure the UI. An occupied port produces an error; the launcher does not terminate another server. `run.cmd` runs `uv run groundmark` from the checkout and forwards arguments.
+`groundmark` opens the web UI at `http://127.0.0.1:5805`. `--host` accepts only localhost or a loopback IP; the UI cannot be exposed to a LAN or public interface. Use `--workspace`, `--port`, and `--headless` to configure the remaining UI settings. An occupied port produces an error; the launcher does not terminate another server. `run.cmd` runs `uv run groundmark` from the checkout and forwards arguments.
+
+The default limits are 100 MiB per source, 250 selected pages, 50,000,000 pixels per raster image, and 16,384 output tokens per parse call. Override them with the positive-integer variables shown in `.env.example`; invalid or nonpositive values stop the operation.
 
 For terminal extraction, run `groundmark input.pdf output --all`, or `uv run groundmark input.pdf output --all` from the checkout. Without format flags, the command writes Markdown and its figure files. You can combine `--markdown --html --json --annotated-pdf --annotated-images --markdown-zip`, or use `--all` to select every format. UI-only options cannot be combined with a source file.
 
@@ -35,11 +37,28 @@ For development, use `uv sync` and `uv run python -m pytest tests`. The explicit
 
 Build with `uv build`. The wheel bundles runtime code, four Markdown prompts, and the MIT license. The source archive also contains build metadata and README. Neither includes private documents, credentials, tests, evaluation scripts, or generated architecture files.
 
-Publish releases on GitHub. This project does not publish to PyPI. Build from the release tag, attach the wheel, source archive, and `SHA256SUMS`, then test installation from the public asset URL. To upgrade a tool installation, use `uv tool install --force --python 3.14` with the new release's wheel URL. To remove it, use `uv tool uninstall groundmark`. pip and uv pip users install the new wheel URL in the same virtual environment.
+Run `uv run python scripts/verify_release_artifacts.py` after building into an empty `dist` directory. It checks an exact file manifest for both archives, rejects duplicate members, and compares runtime code, all four prompts, license, and other included source files with the checkout. New runtime modules must be added to the checker deliberately. CI pins Python 3.14.7, uv 0.12.18, and Hatchling 1.32.4; these pins still need reviewed updates.
+
+Publish releases on GitHub. This project does not publish to PyPI. A matching `v<project-version>` tag runs the release workflow, which tests and builds once, inspects both archives, smoke-tests the installed wheel, creates SHA-256 checksums and attestations, then publishes the draft as an immutable release. To upgrade a tool installation, use `uv tool install --force --python 3.14` with the new release's wheel URL. To remove it, use `uv tool uninstall groundmark`. pip and uv pip users install the new wheel URL in the same virtual environment.
 
 Upload a supported PDF or image, choose the first and last pages, and select Parse. You can use Input preview before making a model call. The Markdown, Annotated, HTML, and JSON tabs show the results.
 
-Each UI parse creates `data/parse/runs/<run-id>/`. You can download Markdown, an annotated PDF, HTML, and JSON. Copy controls are available for rendered Markdown, raw Markdown, and JSON.
+UI uploads and generated artifacts live in a session-specific temporary directory. Upload replacement and removal explicitly clean that directory; disposal of the temporary-directory object also attempts cleanup. Closing a browser tab does not guarantee immediate session disposal, deletion of Streamlit media/download buffers, or cancellation of an in-flight provider request. A crash can leave temporary files behind. Download anything you need to keep. CLI outputs remain in the destination you select. Copy controls are available for rendered Markdown, raw Markdown, and JSON.
+
+The launcher explicitly restricts accepted browser Host headers to localhost and loopback addresses and enables CORS and XSRF protections. These settings apply when launching with `groundmark`; starting Streamlit directly bypasses the launcher policy. This remains a local, single-user application, not an authenticated shared service.
+
+Resource limits in `.env.example` include 10,000 expanded table cells across a document, 128 retained figures, and 32 MiB of retained PNG figure data. Table padding and rendering enforce the cell budget; live extraction reports a page exceeding the remaining budget as `invalid_response`, preserving earlier successful pages. Figure extraction omits remaining crops with a warning when its budget is exhausted. Saved-figure imports reject over-budget collections. Saved JSON inputs use the source-byte limit. HTML/base64 and ZIP generation still make bounded copies of retained figure data. Annotation assembly encodes and imports one PDF page at a time; it retains the encoded PDF document, not every page's decoded pixels. These limits reduce allocation risk, but are not an OS-level memory or CPU sandbox.
+
+For releases produced by the attestation-enabled workflow, verify the downloaded wheel before installing it. Authenticate `gh` first, replace the tag below with the intended release, and require successful verification:
+
+```powershell
+$releaseTag = "v0.1.1" # Example only; this version must be published first.
+$releaseWheel = "groundmark-$($releaseTag.Substring(1))-py3-none-any.whl"
+gh attestation verify $releaseWheel --repo pypi-ahmad/GroundMark --signer-workflow pypi-ahmad/GroundMark/.github/workflows/release.yml --source-ref "refs/tags/$releaseTag" --deny-self-hosted-runners
+if ($LASTEXITCODE -ne 0) { throw "Release provenance verification failed" }
+```
+
+Repeat verification for a source archive if using it. Compare `Get-FileHash -Algorithm SHA256` with the release's `SHA256SUMS` as an additional integrity check; a checksum alone does not authenticate the publisher. Older releases may lack attestations. Do not treat a missing attestation as successful verification.
 
 Clean and Full change the Markdown and HTML views, including copied and downloaded output. Switching views does not call the model again. Clean hides blocks classified as running headers or footers. If the document has figure crops, download the Markdown ZIP to keep its images. HTML embeds them.
 

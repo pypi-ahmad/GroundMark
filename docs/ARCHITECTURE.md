@@ -25,7 +25,7 @@ Detailed blocks have a nullable `structure` field. It holds the heading level, l
 
 Diagnostics identify filtered and failed pages. The app still writes text artifacts for successful pages when another page fails. Annotation errors leave parsed text intact.
 
-Each UI run writes to `data/parse/runs/<run-id>/`. A successful parse produces Markdown, HTML, and layout JSON. Successful annotation adds a PDF, page PNGs, and annotation metadata.
+Each UI session uses an isolated temporary directory for uploads and generated artifacts. A successful parse produces Markdown, HTML, and layout JSON. Successful annotation adds a PDF, page PNGs, and annotation metadata. CLI runs persist only the selected formats in their requested output directory.
 
 `src/output_names.py` sanitizes the source filename and reserves one UTC basename for the run's exports. Graph state holds the original filename, extraction start time, and chosen basename. `doc_sha` remains the grounding identifier.
 
