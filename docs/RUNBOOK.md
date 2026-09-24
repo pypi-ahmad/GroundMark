@@ -52,7 +52,7 @@ Resource limits in `.env.example` include 10,000 expanded table cells across a d
 For releases produced by the attestation-enabled workflow, verify the downloaded wheel before installing it. Authenticate `gh` first, replace the tag below with the intended release, and require successful verification:
 
 ```powershell
-$releaseTag = "v0.1.1" # Example only; this version must be published first.
+$releaseTag = "v0.1.1"
 $releaseWheel = "groundmark-$($releaseTag.Substring(1))-py3-none-any.whl"
 gh attestation verify $releaseWheel --repo pypi-ahmad/GroundMark --signer-workflow pypi-ahmad/GroundMark/.github/workflows/release.yml --source-ref "refs/tags/$releaseTag" --deny-self-hosted-runners
 if ($LASTEXITCODE -ne 0) { throw "Release provenance verification failed" }
