@@ -26,6 +26,7 @@ from langchain_openai import ChatOpenAI
 from openai import APIStatusError, APIConnectionError
 
 from src import usage as _usage
+from src.config import validated_openai_base_url
 from src.models import DEFAULT_MODEL
 from src.diagnostics import ExtractionCallError, PageDiagnostic, filter_annotations, safe_identifier, token_count
 
@@ -51,11 +52,13 @@ def _build_llm(model: str = DEFAULT_MODEL) -> ChatOpenAI:
     api_key = os.environ.get("OPENAI_API_KEY")
     if not api_key:
         raise ExtractConfigError("OPENAI_API_KEY is not set")
-    base_url = os.environ.get("OPENAI_BASE_URL") or None
+    base_url = validated_openai_base_url()
     return ChatOpenAI(
         model=model,
         api_key=api_key,
         base_url=base_url,
+        timeout=60,
+        max_retries=0,
         **_reasoning_kwargs(),
     )
 

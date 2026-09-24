@@ -115,7 +115,22 @@ def test_content_filtered_pages_remain_in_annotated_pdf(tmp_path, monkeypatch):
         content_filtered_pages=[1, 3],
     )
 
-    _, meta_path = annotate_document(pdf_path, parse_result)
+    original_save = Image.Image.save
+    encoded_pages = []
+
+    def save_one_page(image, target, format=None, **kwargs):
+        if format == "PDF":
+            assert not kwargs.get("save_all") and not kwargs.get("append_images")
+            encoded_pages.append(image.size)
+        return original_save(image, target, format, **kwargs)
+
+    monkeypatch.setattr(Image.Image, "save", save_one_page)
+    annotated_pdf, meta_path = annotate_document(pdf_path, parse_result)
+
+    import pypdfium2 as pdfium
+    with pdfium.PdfDocument(annotated_pdf) as result_pdf:
+        assert len(result_pdf) == 3
+    assert len(encoded_pages) == 3
 
     meta = meta_path.read_text(encoding="utf-8")
     assert '"pages": 3' in meta

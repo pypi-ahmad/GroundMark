@@ -14,9 +14,12 @@ from __future__ import annotations
 import base64
 import hashlib
 import io
+from collections.abc import Iterator
 from pathlib import Path
 
 from PIL import Image
+
+from src.config import max_image_pixels, max_pages, max_source_bytes
 
 # Matches the resolution used for the live evaluation corpus (see "the same
 # 1600-pixel page rendering" in docs/PROMPT-EVALUATION.md and docs/PROMPTS.md)
@@ -39,13 +42,10 @@ def count_pages(path: str | Path) -> int:
     anything, so this is cheap enough to call right after upload to seed the
     page-range UI before the user picks a subset.
     """
-    p = Path(path)
-    if not p.is_file():
-        raise PreprocessError(f"file not found: {p}")
-
-    suffix = p.suffix.lower()
+    p, suffix = _validate_source(path)
     if suffix in _RASTER_EXTS:
         with Image.open(p) as image:
+            _validate_dimensions(image.width, image.height)
             image.verify()
         return 1
     if suffix != ".pdf":
@@ -60,6 +60,16 @@ def count_pages(path: str | Path) -> int:
         pdf.close()
 
 
+def inspect_source(path: str | Path) -> dict:
+    """Validate a source without loading it and return stable metadata."""
+    p, suffix = _validate_source(path)
+    digest = hashlib.sha256()
+    with p.open("rb") as source:
+        for chunk in iter(lambda: source.read(1024 * 1024), b""):
+            digest.update(chunk)
+    return {"path": p, "suffix": suffix, "pages": count_pages(p), "doc_sha256": digest.hexdigest()}
+
+
 def preprocess(path: str | Path) -> dict:
     """Load an invoice file and return a model-ready payload.
 
@@ -67,37 +77,10 @@ def preprocess(path: str | Path) -> dict:
     long edge is capped, and PDF pages are rasterized) so downstream code
     has exactly one mime type to deal with.
     """
-    p = Path(path)
-    if not p.is_file():
-        raise PreprocessError(f"file not found: {p}")
-
-    suffix = p.suffix.lower()
-    raw_bytes = p.read_bytes()
-
-    if suffix == ".pdf":
-        _, images = _render_pdf_page_range(p, start_page=1, end_page=1)
-        if not images:
-            raise PreprocessError(f"PDF has no pages: {p}")
-        image = images[0]
-    elif suffix in _RASTER_EXTS:
-        image = Image.open(io.BytesIO(raw_bytes))
-        image.load()
-    else:
-        raise PreprocessError(f"unsupported file type: {suffix}")
-
-    image = image.convert("RGB")
-    image = _cap_long_edge(image, MAX_LONG_EDGE)
-    buf = io.BytesIO()
-    image.save(buf, format="PNG")
-
-    return {
-        "doc_sha256": hashlib.sha256(raw_bytes).hexdigest(),
-        "mime": "image/png",
-        "base64": base64.b64encode(buf.getvalue()).decode("ascii"),
-        "width": image.width,
-        "height": image.height,
-        "pages": 1,
-    }
+    result = next(iter_preprocessed_pages(path, start_page=1, end_page=1))
+    result["pages"] = 1
+    result.pop("page", None)
+    return result
 
 
 def preprocess_pages(
@@ -111,44 +94,47 @@ def preprocess_pages(
     """Like `preprocess`, but one payload per page (a raster image is just page 1).
 
     `start_page`/`end_page` are 1-based and inclusive; `end_page=None` means
-    "through the last page" -- there is no artificial page cap, so a large
-    range is the caller's own choice. A raster image has exactly one page;
+    "through the last page". The configured selected-page limit still applies.
+    A raster image has exactly one page;
     any other range is rejected. Each returned dict adds a
     "page" key -- the page's true 1-based number in the source document --
     alongside the same doc_sha256/mime/base64/width/height shape
     `preprocess` returns.
     """
-    p = Path(path)
-    if not p.is_file():
-        raise PreprocessError(f"file not found: {p}")
+    return list(iter_preprocessed_pages(path, start_page=start_page, end_page=end_page,
+                                        max_long_edge=max_long_edge, pdf_dpi=pdf_dpi))
 
-    suffix = p.suffix.lower()
-    raw_bytes = p.read_bytes()
-    doc_sha256 = hashlib.sha256(raw_bytes).hexdigest()
+
+def iter_preprocessed_pages(
+    path: str | Path, *, start_page: int = 1, end_page: int | None = None,
+    max_long_edge: int = MAX_LONG_EDGE, pdf_dpi: int = PDF_DPI,
+) -> Iterator[dict]:
+    info = inspect_source(path)
+    p, suffix, doc_sha256, total = info["path"], info["suffix"], info["doc_sha256"], info["pages"]
     if max_long_edge < 1 or pdf_dpi < 1:
         raise PreprocessError("Rendering dimensions must be positive")
-    if start_page < 1 or (end_page is not None and end_page < start_page):
-        raise PreprocessError("Invalid page range")
+    end = total if end_page is None else end_page
+    if not 1 <= start_page <= end <= total:
+        raise PreprocessError(f"Page range must be within 1..{total}")
+    if end - start_page + 1 > max_pages():
+        raise PreprocessError(f"Selected page range exceeds the {max_pages()} page limit")
 
     if suffix == ".pdf":
-        page_numbers, images = _render_pdf_page_range(p, start_page=start_page, end_page=end_page, dpi=pdf_dpi)
-    elif suffix in _RASTER_EXTS:
-        if start_page != 1 or end_page not in (None, 1):
-            raise PreprocessError("Raster images have only one page")
-        image = Image.open(io.BytesIO(raw_bytes))
-        image.load()
-        page_numbers, images = [1], [image]
+        images = _iter_pdf_pages(p, start_page=start_page, end_page=end, dpi=pdf_dpi,
+                                 max_long_edge=max_long_edge)
     else:
-        raise PreprocessError(f"unsupported file type: {suffix}")
+        def raster():
+            with Image.open(p) as source:
+                _validate_dimensions(source.width, source.height)
+                source.load()
+                yield 1, _cap_long_edge(source.convert("RGB"), max_long_edge)
+        images = raster()
 
-    pages = []
-    for page_number, image in zip(page_numbers, images):
-        image = image.convert("RGB")
-        image = _cap_long_edge(image, max_long_edge)
-        buf = io.BytesIO()
-        image.save(buf, format="PNG")
-        pages.append(
-            {
+    for page_number, image in images:
+        try:
+            buf = io.BytesIO()
+            image.save(buf, format="PNG")
+            yield {
                 "page": page_number,
                 "doc_sha256": doc_sha256,
                 "mime": "image/png",
@@ -156,8 +142,8 @@ def preprocess_pages(
                 "width": image.width,
                 "height": image.height,
             }
-        )
-    return pages
+        finally:
+            image.close()
 
 
 def _cap_long_edge(image: Image.Image, max_long_edge: int) -> Image.Image:
@@ -169,37 +155,47 @@ def _cap_long_edge(image: Image.Image, max_long_edge: int) -> Image.Image:
     return image.resize(new_size, Image.LANCZOS)
 
 
-def _render_pdf_page_range(
-    p: Path, *, start_page: int, end_page: int | None, dpi: int = PDF_DPI
-) -> tuple[list[int], list[Image.Image]]:
+def _iter_pdf_pages(p: Path, *, start_page: int, end_page: int, dpi: int,
+                    max_long_edge: int) -> Iterator[tuple[int, Image.Image]]:
     """Render pages `start_page..end_page` (1-based, inclusive) of a PDF.
 
-    `end_page=None` means through the last page. No cap is applied here --
-    that's the caller's choice, since removing the fixed page limit was a
-    deliberate decision (see docs/ARCHITECTURE.md).
+    The caller validates the selected range and configured page limit before
+    this internal renderer is reached.
     """
     import pypdfium2 as pdfium  # native-Windows wheel, no Poppler/Docker
 
     pdf = pdfium.PdfDocument(str(p))
     try:
-        total = len(pdf)
-        start = start_page
-        end = end_page if end_page is not None else total
-        if not 1 <= start <= end <= total:
-            raise PreprocessError(f"Page range must be within 1..{total}")
-        page_numbers = list(range(start, end + 1))
-        # PDF points are 1/72 inch; the selected DPI is capped downstream.
-        images = []
-        for n in page_numbers:
+        for n in range(start_page, end_page + 1):
             page = pdf[n - 1]
             try:
-                bitmap = page.render(scale=dpi / 72)
+                width, height = page.get_size()
+                scale = min(dpi / 72, max_long_edge / max(width, height))
+                bitmap = page.render(scale=scale)
                 try:
-                    images.append(bitmap.to_pil().copy())
+                    image = bitmap.to_pil().convert("RGB").copy()
                 finally:
                     bitmap.close()
             finally:
                 page.close()
-        return page_numbers, images
+            _validate_dimensions(image.width, image.height)
+            yield n, image
     finally:
         pdf.close()
+
+
+def _validate_source(path: str | Path) -> tuple[Path, str]:
+    p = Path(path)
+    if not p.is_file():
+        raise PreprocessError(f"file not found: {p}")
+    suffix = p.suffix.lower()
+    if suffix not in _RASTER_EXTS | {".pdf"}:
+        raise PreprocessError(f"unsupported file type: {suffix}")
+    if p.stat().st_size > max_source_bytes():
+        raise PreprocessError(f"Source exceeds the {max_source_bytes() // (1024 * 1024)} MiB limit")
+    return p, suffix
+
+
+def _validate_dimensions(width: int, height: int) -> None:
+    if width < 1 or height < 1 or width * height > max_image_pixels():
+        raise PreprocessError(f"Image exceeds the {max_image_pixels()} pixel limit")

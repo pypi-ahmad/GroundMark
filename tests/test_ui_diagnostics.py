@@ -81,6 +81,7 @@ def test_same_name_new_bytes_reset_count_and_result(uploaded, monkeypatch):
     monkeypatch.setattr(graph, "run_graph", lambda *a, **k: dict(status="parsed", token_usage=[]))
     app = AppTest.from_file(str(APP)).run()
     first_id = app.session_state["upload_id"]
+    old_directory = Path(app.session_state["session_files"].name)
     app.button[0].click().run()
     assert app.subheader
     uploaded[0] = upload("red", pages=2)
@@ -90,13 +91,15 @@ def test_same_name_new_bytes_reset_count_and_result(uploaded, monkeypatch):
     assert app.session_state["detected_total_pages"] == 2
     assert app.session_state["start_page_input"] == 1
     assert app.session_state["end_page_input"] == 2
-    assert len(list(Path("data/inbox").glob("*.pdf"))) == 2
+    session_dir = Path(app.session_state["session_files"].name)
+    assert not old_directory.exists()
+    assert len(list(session_dir.glob("*.pdf"))) == 1
 
 
 def test_bad_upload_and_invalid_range_make_no_calls(uploaded, monkeypatch):
     monkeypatch.setattr(graph, "run_graph", lambda *a, **k: pytest.fail("Unexpected paid call"))
     app = AppTest.from_file(str(APP)).run()
-    app.number_input[0].set_value(2).run()
+    next(item for item in app.number_input if item.label == "Start page").set_value(2).run()
     assert app.button[0].disabled and app.error
     uploaded[0] = SimpleNamespace(name="broken.pdf", getvalue=lambda: b"not a PDF")
     app.run()
@@ -145,10 +148,12 @@ def test_chat_submission_reruns_and_reset(uploaded, monkeypatch):
     app.chat_input[0].set_value("How long?").run()
     app.number_input[0].set_value(2).run()
     assert not app.session_state["document_chat"] and app.chat_input[0].disabled
+    old_directory = Path(app.session_state["session_files"].name)
     uploaded[0] = None
     app.run()
     assert not app.session_state["document_chat"]
     assert "last_parse_result" not in app.session_state
+    assert not old_directory.exists()
 
 
 def test_chat_sessions_do_not_share_history(uploaded):

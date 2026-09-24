@@ -49,6 +49,12 @@ def main(argv: list[str] | None = None) -> int:
     load_dotenv(env_file, override=False)
     # Stop implicit dotenv discovery in subsequently imported model clients.
     os.environ["GROUNDMARK_ENV_LOADED"] = "1"
+    from src.config import ConfigError, max_source_mib, validate_loopback_host
+    try:
+        host = validate_loopback_host(args.host or "127.0.0.1")
+        upload_limit = max_source_mib()
+    except ConfigError as exc:
+        parser.error(str(exc))
     if args.file:
         try:
             return _extract(args, parser, set(FORMATS) if args.all else formats or {"markdown"})
@@ -58,7 +64,11 @@ def main(argv: list[str] | None = None) -> int:
     workspace.mkdir(parents=True, exist_ok=True)
     app = Path(__file__).resolve().parent / "ui" / "app.py"
     command = [sys.executable, "-m", "streamlit", "run", str(app),
-               f"--server.port={args.port or 5805}", f"--server.address={args.host or '127.0.0.1'}",
+               f"--server.port={args.port or 5805}", f"--server.address={host}",
+               "--server.allowedHosts=localhost", "--server.allowedHosts=127.0.0.1",
+               "--server.allowedHosts=::1", f"--server.allowedHosts={host.strip().strip('[]')}",
+               "--server.enableCORS=true", "--server.enableXsrfProtection=true",
+               f"--server.maxUploadSize={upload_limit}",
                f"--server.headless={str(args.headless).lower()}"]
     try:
         return subprocess.call(command, cwd=workspace)
@@ -67,6 +77,7 @@ def main(argv: list[str] | None = None) -> int:
 
 
 def _extract(args, parser, formats: set[str]) -> int:
+    from src.config import max_pages
     from src.preprocess import count_pages
 
     source = args.file.expanduser().resolve()
@@ -81,6 +92,8 @@ def _extract(args, parser, formats: set[str]) -> int:
     end = args.end_page if args.end_page is not None else pages
     if not 1 <= start <= end <= pages:
         parser.error(f"page range must be within 1..{pages}")
+    if end - start + 1 > max_pages():
+        parser.error(f"selected page range exceeds the {max_pages()} page limit")
     if destination.exists() and not destination.is_dir():
         parser.error("output directory is an existing file")
     if destination in source.parents:

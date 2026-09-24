@@ -4,6 +4,7 @@ from __future__ import annotations
 import base64
 import hashlib
 from pathlib import Path
+import tempfile
 
 import streamlit as st
 
@@ -13,10 +14,10 @@ from src.models import DEFAULT_MODEL
 from src.graph import run_graph
 from src.markdown import parse_to_html, parse_to_markdown, markdown_bundle
 from src.figures import load_figures
+from src.config import max_pages, max_source_bytes
 from src.preprocess import count_pages, preprocess_pages
 from src.ui.clipboard import copy_buttons
 
-INBOX_DIR = Path("data/inbox")
 st.set_page_config(page_title="ADE - Document Parsing", layout="wide")
 st.title("ADE - Agentic Document Extraction")
 
@@ -37,12 +38,15 @@ def clear_chat():
 st.session_state.setdefault("document_chat", [])
 
 
-@st.cache_data(max_entries=8, show_spinner=False)
-def load_input_preview(path: str, start_page: int, end_page: int) -> list[tuple[int, bytes]]:
-    return [
-        (page["page"], base64.b64decode(page["base64"]))
-        for page in preprocess_pages(path, start_page=start_page, end_page=end_page)
-    ]
+def _clear_session_files():
+    temporary = st.session_state.pop("session_files", None)
+    if temporary is not None:
+        temporary.cleanup()
+
+
+def load_input_preview(path: str, page_number: int) -> bytes:
+    page = preprocess_pages(path, start_page=page_number, end_page=page_number)[0]
+    return base64.b64decode(page["base64"])
 
 
 def show_usage():
@@ -72,47 +76,57 @@ with st.sidebar:
         "Upload a document", type=["png", "jpg", "jpeg", "webp", "tif", "tiff", "pdf"], key="uploader"
     )
     if uploaded is None:
+        _clear_session_files()
         clear_chat()
         st.session_state.pop("last_parse_result", None)
         st.session_state.pop("upload_id", None)
         st.stop()
+    if getattr(uploaded, "size", 0) > max_source_bytes():
+        st.error(f"Document exceeds the {max_source_bytes() // (1024 * 1024)} MiB upload limit.")
+        st.stop()
     raw = uploaded.getvalue()
+    if len(raw) > max_source_bytes():
+        st.error(f"Document exceeds the {max_source_bytes() // (1024 * 1024)} MiB upload limit.")
+        st.stop()
     upload_id = hashlib.sha256(raw).hexdigest() + Path(uploaded.name).suffix.lower()
-    dest = INBOX_DIR / upload_id
     if st.session_state.get("upload_id") != upload_id:
+        _clear_session_files()
+        temporary = tempfile.TemporaryDirectory(prefix="groundmark-ui-")
+        st.session_state["session_files"] = temporary
+        dest = Path(temporary.name) / upload_id
         clear_chat()
         st.session_state["upload_id"] = upload_id
         st.session_state.pop("last_parse_result", None)
         st.session_state["upload_error"] = None
         try:
-            INBOX_DIR.mkdir(parents=True, exist_ok=True)
             dest.write_bytes(raw)
             total = count_pages(dest)
             if total < 1:
                 raise ValueError("Document contains no pages")
             st.session_state["detected_total_pages"] = total
             st.session_state["start_page_input"] = 1
-            st.session_state["end_page_input"] = total
+            st.session_state["end_page_input"] = min(total, max_pages())
         except Exception:
             st.session_state["upload_error"] = "Cannot read this document. Upload a valid image or PDF."
     if st.session_state.get("upload_error"):
         st.error(st.session_state["upload_error"])
         st.stop()
     total = st.session_state["detected_total_pages"]
+    dest = Path(st.session_state["session_files"].name) / upload_id
     st.caption(f"Detected {total} page(s) in the uploaded file.")
     start_page = st.number_input("Start page", min_value=1, step=1, key="start_page_input")
     end_page_raw = st.number_input("End page", min_value=0, step=1, key="end_page_input")
     end_page = int(end_page_raw) or total
 
 st.caption(f"Document: {uploaded.name}")
-valid_range = 1 <= start_page <= end_page <= total
+valid_range = 1 <= start_page <= end_page <= total and end_page - start_page + 1 <= max_pages()
 scope = (upload_id, uploaded.name, int(start_page), end_page, detailed_layout)
 if st.session_state.get("document_scope") != scope:
     clear_chat()
     st.session_state.pop("last_parse_result", None)
     st.session_state["document_scope"] = scope
 if not valid_range:
-    st.error(f"Page range must be within 1..{total}, with start no greater than end.")
+    st.error(f"Page range must be within 1..{total} and select no more than {max_pages()} pages.")
 
 if st.button("Parse", disabled=not valid_range):
     clear_chat()
@@ -128,7 +142,8 @@ if st.button("Parse", disabled=not valid_range):
         try:
             result = run_graph(str(dest), start_page=int(start_page), end_page=end_page,
                                model=DEFAULT_MODEL, detailed_layout=detailed_layout, on_progress=update_progress,
-                               original_filename=uploaded.name)
+                               original_filename=uploaded.name,
+                               output_dir=Path(st.session_state["session_files"].name) / "outputs")
         except Exception:
             st.error("Unable to prepare this document. Check the file and page range.")
             result = None
@@ -167,7 +182,6 @@ if current_parse:
     st.caption("Clean view hides classified running page headers and footers. Unclassified content stays visible. JSON, annotations, and chat retain all content.")
 
 
-@st.cache_data(max_entries=8, show_spinner=False)
 def figure_assets(output_dir: str, parse_json: str, output_basename: str):
     from src.layout import ParseResult
     return load_figures(ParseResult.model_validate_json(parse_json), output_dir, output_basename=output_basename)
@@ -184,8 +198,9 @@ tab_input, tab_md, tab_pdf, tab_html, tab_json, tab_chat = st.tabs(
 if tab_input.open:
     with tab_input:
         try:
-            for page_number, image_bytes in load_input_preview(str(dest), int(start_page), end_page):
-                st.image(image_bytes, caption=f"Page {page_number}")
+            preview_page = st.number_input("Preview page", min_value=int(start_page), max_value=end_page,
+                                           value=int(start_page), step=1)
+            st.image(load_input_preview(str(dest), int(preview_page)), caption=f"Page {preview_page}")
         except Exception:
             st.error("Unable to render the selected input pages.")
 
@@ -209,9 +224,7 @@ if tab_md.open:
             if markdown_view == "Raw":
                 st.code(md_text, language="markdown", wrap_lines=True, height=500)
             else:
-                # All source text is escaped; only renderer-owned markup is enabled.
-                st.markdown(parse_to_markdown(current_parse, view=view, figures=figures, output_basename=output_basename, inline_images=True),
-                            unsafe_allow_html=True)
+                st.html(rendered_html)
         else:
             st.info("Parse the document to create Markdown.")
 
@@ -222,7 +235,10 @@ if tab_pdf.open:
             st.download_button("Download annotated PDF", data=Path(pdf_path).read_bytes(),
                                file_name=Path(pdf_path).name, mime="application/pdf",
                                key=f"{run_id}_download_annotated", on_click="ignore")
-            for page_png in result.get("annotated_page_paths", []):
+            annotated_pages = result.get("annotated_page_paths", [])
+            if annotated_pages:
+                page_png = st.selectbox("Preview annotated page", annotated_pages,
+                                        format_func=lambda path: Path(path).stem)
                 st.image(page_png, caption=Path(page_png).stem)
         else:
             st.info("Parse the document to create an annotated PDF.")
@@ -233,7 +249,7 @@ if tab_html.open:
             rendered_html = parse_to_html(current_parse, view=view, figures=figures, output_basename=output_basename)
             st.download_button("Download HTML", data=rendered_html, file_name=f"{output_basename}.html",
                                mime="text/html", key=f"{run_id}_download_html", on_click="ignore")
-            st.iframe(rendered_html, height=800)
+            st.html(rendered_html)
         else:
             st.info("Parse the document to create HTML.")
 

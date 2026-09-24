@@ -3,10 +3,8 @@
 Must not: assign `data.html` to the live page via `innerHTML` -- `data.html`
 is derived from the source document's own content by src/markdown.py's
 `parse_to_html`, so it's treated as text to copy, not as safe markup. It's
-parsed with `DOMParser` instead: nodes created that way are inert (an
-embedded `<script>` won't execute even once its nodes are moved into the
-hidden `#preview` element below), which a direct `innerHTML` assignment
-would not guarantee.
+parsed with `DOMParser` in a detached document. Only serialized strings
+are passed to the clipboard; parsed nodes are never inserted into the live DOM.
 
 Next: src/ui/app.py's Markdown preview tab, the only caller.
 """
@@ -21,7 +19,6 @@ copy_buttons = st.components.v2.component(
     <button type="button" id="raw">Copy Markdown</button>
     <button type="button" id="text">Copy</button>
     <span role="status" aria-live="polite"></span>
-    <div id="preview" aria-hidden="true"></div>
     """,
     css="""
     button {
@@ -32,12 +29,10 @@ copy_buttons = st.components.v2.component(
         padding: 0.5rem 0.75rem; cursor: pointer;
     }
     button:focus-visible { outline: 2px solid var(--st-primary-color); }
-    #preview { position: fixed; left: -10000px; width: 800px; }
     """,
     js="""
     export default function ({data, parentElement}) {
         const status = parentElement.querySelector('[role="status"]');
-        const preview = parentElement.querySelector('#preview');
         const textButton = parentElement.querySelector('#text');
         const markdownButtons = [parentElement.querySelector('#rendered'), parentElement.querySelector('#raw')];
         if (data.text !== undefined) {
@@ -55,9 +50,8 @@ copy_buttons = st.components.v2.component(
         }
         textButton.hidden = true;
         const parsed = new DOMParser().parseFromString(data.html, 'text/html');
-        preview.replaceChildren(...parsed.body.childNodes);
-        const renderedHtml = preview.innerHTML;
-        const renderedText = preview.innerText;
+        const renderedHtml = parsed.body.innerHTML;
+        const renderedText = parsed.body.textContent;
 
         for (const mode of ['raw', 'rendered']) {
             parentElement.querySelector('#' + mode).onclick = async () => {

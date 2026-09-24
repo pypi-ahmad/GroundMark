@@ -47,7 +47,7 @@ $env:OPENAI_BASE_URL = "https://your-endpoint.example/v1"
 
 You can put the variables in a `.env` file in the working folder or pass `--env-file path/to/settings.env`. Variables already present in the process take priority. If you set them as Windows User or Machine variables, open a new terminal before starting GroundMark so it inherits them.
 
-Leave `OPENAI_BASE_URL` unset or blank to use the SDK default. Never commit your key. See [.env.example](.env.example) for optional settings.
+Leave `OPENAI_BASE_URL` unset or blank to use the SDK default. Custom endpoints must use HTTPS; HTTP is accepted only for loopback addresses. Never commit your key. See [.env.example](.env.example) for optional resource limits.
 
 The endpoint must support the app's models and structured visual parsing. Parsing uses `gpt-6-sol`; document chat uses `gpt-6-luna`. Setting a base URL does not change those model names.
 
@@ -114,7 +114,7 @@ Windows users can also run `run.cmd`, which forwards launcher arguments. For dev
 - JSON shows the internal layout data with copy and download controls.
 - Chat answers document questions with `gpt-6-luna` at medium reasoning, using short responses and inline page references.
 
-Each UI run saves its artifacts under `data/parse/runs/<run-id>/`. CLI extraction writes selected artifacts to the supplied output directory.
+UI artifacts use a per-session temporary directory, cleaned when the upload is replaced or removed. Browser disconnects do not guarantee immediate cleanup or request cancellation; see the [runbook](docs/RUNBOOK.md). CLI extraction writes selected artifacts to the supplied output directory.
 
 Markdown and HTML open in Clean view. Full also shows running headers and footers when the model has classified them. Both views keep unclassified content. JSON and chat include all extracted content from successful pages, while annotations show blocks with valid boxes. Tables without identified headers keep their first row as data. Figures with valid boxes appear as crops in the previews and HTML. **Download Markdown with images** packages the Markdown and crops in a ZIP.
 

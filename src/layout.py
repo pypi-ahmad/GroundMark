@@ -16,6 +16,7 @@ from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
 from src.diagnostics import PageDiagnostic
+from src.config import max_table_cells
 
 # OpenAI's structured-outputs strict mode (with_structured_output(..., method="json_schema"))
 # requires every property in `required` (no field may rely on a Python default to be
@@ -28,6 +29,33 @@ def _require_xyxy_len(v: tuple[float, ...]) -> tuple[float, ...]:
     if len(v) != 4:
         raise ValueError("xyxy must have exactly 4 values (x0, y0, x1, y1)")
     return v
+
+
+def expanded_table_cells(rows: list[list[str]]) -> int:
+    return len(rows) * max((len(row) for row in rows), default=0)
+
+
+def check_document_tables(pages) -> None:
+    # Leave malformed shapes to Pydantic's ordinary field validation.
+    if not isinstance(pages, (list, tuple)):
+        return
+    total = 0
+    for page in pages:
+        blocks = page.get("blocks", []) if isinstance(page, dict) else getattr(page, "blocks", [])
+        if not isinstance(blocks, (list, tuple)):
+            continue
+        for block in blocks:
+            rows = block.get("table") if isinstance(block, dict) else getattr(block, "table", None)
+            if rows is not None and (not isinstance(rows, list) or not all(isinstance(row, list) for row in rows)):
+                continue
+            total += expanded_table_cells(rows or [])
+            if total > max_table_cells():
+                raise ValueError("Expanded tables exceed GROUNDMARK_MAX_TABLE_CELLS")
+
+
+def _bounded_blocks(value):
+    check_document_tables([{"blocks": value}])
+    return value
 
 
 class BBox(BaseModel):
@@ -82,6 +110,8 @@ class LegacyBlock(BaseModel):
         if not value:
             return value
         width = max(len(row) for row in value)
+        if len(value) * width > max_table_cells():
+            raise ValueError("Expanded table exceeds GROUNDMARK_MAX_TABLE_CELLS")
         return [row + [""] * (width - len(row)) for row in value]
 
 
@@ -135,6 +165,8 @@ class ParsePage(BaseModel):
     height_px: int
     blocks: list[ParseBlock]
 
+    _check_tables = field_validator("blocks", mode="before")(_bounded_blocks)
+
 
 class LegacyParsePage(BaseModel):
     """Original request contract, retained until detailed extraction passes source review."""
@@ -143,6 +175,8 @@ class LegacyParsePage(BaseModel):
     width_px: int
     height_px: int
     blocks: list[LegacyBlock]
+
+    _check_tables = field_validator("blocks", mode="before")(_bounded_blocks)
 
     def to_page(self) -> ParsePage:
         data = self.model_dump()
@@ -165,6 +199,8 @@ class ParseResult(BaseModel):
     @classmethod
     def load_legacy(cls, value):
         """Upgrade saved legacy artifacts in memory, never live page responses."""
+        if isinstance(value, dict):
+            check_document_tables(value.get("pages", []))
         if isinstance(value, dict) and "schema_version" not in value:
             value = dict(value)
             value["pages"] = [

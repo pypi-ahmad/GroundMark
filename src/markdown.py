@@ -11,7 +11,8 @@ from pathlib import Path
 from typing import Literal
 from urllib.parse import quote
 
-from src.layout import ParseBlock, ParseResult, TableCell
+from src.layout import ParseBlock, ParseResult, TableCell, check_document_tables
+from src.config import max_source_bytes, max_table_cells
 from src.output_names import artifact_name, figure_name
 
 View = Literal["full", "clean"]
@@ -19,6 +20,7 @@ Figures = dict[str, bytes]
 
 
 def _blocks(result: ParseResult, view: View, output_basename=None, figures=None):
+    check_document_tables(result.pages)
     if view not in {"full", "clean"}:
         raise ValueError("Unknown rendering view")
     for page in sorted(result.pages, key=lambda p: p.page):
@@ -47,6 +49,8 @@ def _md_text(text: str) -> str:
 
 def _table_rows(rows: list[list[str]]) -> list[list[str]]:
     width = max((len(row) for row in rows), default=0)
+    if len(rows) * width > max_table_cells():
+        raise ValueError("Expanded table exceeds GROUNDMARK_MAX_TABLE_CELLS")
     return [row + [""] * (width - len(row)) for row in rows]
 
 
@@ -223,12 +227,14 @@ def parse_to_markdown(result: ParseResult, *, view: View = "full", figures: Figu
 
 
 _HTML_STYLE = """<style>
-body { background:#ffffff; color:#000000; font-family:Georgia,'Times New Roman',serif;
+.groundmark-document { background:#ffffff; color:#000000; font-family:Georgia,'Times New Roman',serif;
        max-width:960px; margin:auto; padding:24px; line-height:1.5; }
-h1 { font-size:1.6em; } h2 { font-size:1.25em; } h3 { font-size:1.1em; }
-table { border-collapse:collapse; margin:12px 0; max-width:100%; }
-th,td { border:1px solid #777; padding:6px 10px; text-align:left; vertical-align:top; }
-th { background:#eeeeee; } p { margin:0.6em 0; } img { max-width:100%; height:auto; }
+.groundmark-document h1 { font-size:1.6em; } .groundmark-document h2 { font-size:1.25em; }
+.groundmark-document h3 { font-size:1.1em; }
+.groundmark-document table { border-collapse:collapse; margin:12px 0; max-width:100%; }
+.groundmark-document th,.groundmark-document td { border:1px solid #777; padding:6px 10px; text-align:left; vertical-align:top; }
+.groundmark-document th { background:#eeeeee; } .groundmark-document p { margin:0.6em 0; }
+.groundmark-document img { max-width:100%; height:auto; }
 </style>"""
 
 
@@ -242,7 +248,8 @@ def parse_to_html(result: ParseResult, *, view: View = "full", figures: Figures 
                          f'<figcaption>{_cell_html(block.text)}</figcaption></figure>')
         else:
             parts.append(_render_block_html(block))
-    return "<!doctype html><html><head><meta charset='utf-8'>" + _HTML_STYLE + "</head><body>" + "\n".join(parts) + "</body></html>"
+    csp = "<meta http-equiv='Content-Security-Policy' content=\"default-src 'none'; img-src data:; style-src 'unsafe-inline'; base-uri 'none'; form-action 'none'\">"
+    return "<!doctype html><html><head><meta charset='utf-8'>" + csp + _HTML_STYLE + "</head><body><div class='groundmark-document'>" + "\n".join(parts) + "</div></body></html>"
 
 
 def markdown_bundle(result: ParseResult, *, view: View = "full", figures: Figures | None = None,
@@ -259,7 +266,14 @@ def markdown_bundle(result: ParseResult, *, view: View = "full", figures: Figure
 
 def render_and_save(parse_json_path: str | Path) -> Path:
     path = Path(parse_json_path)
-    result = ParseResult.model_validate_json(path.read_text(encoding="utf-8"))
+    limit = max_source_bytes()
+    if path.stat().st_size > limit:
+        raise ValueError("Saved JSON exceeds GROUNDMARK_MAX_SOURCE_MIB")
+    with path.open("rb") as handle:
+        data = handle.read(limit + 1)
+    if len(data) > limit:
+        raise ValueError("Saved JSON exceeds GROUNDMARK_MAX_SOURCE_MIB")
+    result = ParseResult.model_validate_json(data)
     from src.figures import load_figures
     figures = load_figures(result, path.parent, output_basename=path.stem)
     output = path.with_suffix(".md")

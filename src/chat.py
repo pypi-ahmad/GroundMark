@@ -11,6 +11,7 @@ from openai import OpenAI
 from pydantic import BaseModel, ConfigDict
 
 from src import usage
+from src.config import validated_openai_base_url
 from src.diagnostics import safe_identifier, token_count
 from src.layout import ParseResult
 from src.models import CHAT_MODEL
@@ -164,7 +165,7 @@ def answer_document_question(parse_result, question, history=(), *, client=None)
             if not os.environ.get("OPENAI_API_KEY"):
                 return ChatResult("OPENAI_API_KEY is not set.", "configuration_error")
             client = OpenAI(api_key=os.environ["OPENAI_API_KEY"],
-                            base_url=os.environ.get("OPENAI_BASE_URL") or None,
+                            base_url=validated_openai_base_url(),
                             max_retries=0, timeout=60)
         draft = _call(client, Draft, "chat-answer", data, result)
         if draft.decision != "answer":
