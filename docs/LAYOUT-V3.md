@@ -1,6 +1,6 @@
 # PP-DocLayoutV3 runtime and parsing integration
 
-This checkout attempts local V3 analysis before Sol extraction in both CLI and GUI parsing. Dependencies remain an optional packaging extra. If V3 fails, extraction uses Sol blocks with explicit fallback diagnostics; there is no GUI off-switch. This integration is not part of the published v0.1.1 release.
+GroundMark attempts local V3 analysis before Sol extraction in both CLI and GUI parsing. Dependencies remain an optional packaging extra. If V3 fails, extraction uses Sol blocks with explicit fallback diagnostics; there is no GUI off-switch.
 
 ## Install and predict
 

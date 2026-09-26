@@ -10,7 +10,7 @@ Blank or unset `OPENAI_BASE_URL` uses the SDK default. Custom endpoints must use
 
 `groundmark` opens the web UI at `http://127.0.0.1:5805`. `--host` accepts only localhost or a loopback IP; the UI cannot be exposed to a LAN or public interface. Use `--workspace`, `--port`, and `--headless` to configure the remaining UI settings. An occupied port produces an error; the launcher does not terminate another server. `run.cmd` runs `uv run groundmark` from the checkout and forwards arguments.
 
-This checkout attempts PP-DocLayoutV3 before Sol extraction. Use `uv sync --extra layout` and `uv run --extra layout groundmark` for checkout runs. First preparation resolves the pinned weights in the user cache (or the configured local directory) and probes the actual GPU/CPU engine. Missing dependencies or failed initialization produce actionable diagnostics and use Sol-only extraction for the run. Individual V3 failures use Sol blocks for that page. Successful fallback pages retain the parsed outcome; inspect `layout_fallback`, `layout_stage`, and `layout_code` in JSON diagnostics. Base installs still support imports, saved artifacts, and offline tests. See [V3 configuration and metadata](LAYOUT-V3.md); the published v0.1.1 release predates this integration.
+GroundMark attempts PP-DocLayoutV3 before Sol extraction. Use `uv sync --extra layout` and `uv run --extra layout groundmark` for checkout runs. First preparation resolves the pinned weights in the user cache (or the configured local directory) and probes the actual GPU/CPU engine. Missing dependencies or failed initialization produce actionable diagnostics and use Sol-only extraction for the run. Individual V3 failures use Sol blocks for that page. Successful fallback pages retain the parsed outcome; inspect `layout_fallback`, `layout_stage`, and `layout_code` in JSON diagnostics. Base installs still support imports, saved artifacts, and offline tests. See [V3 configuration and metadata](LAYOUT-V3.md).
 
 Upload and preview remain lightweight. A valid Streamlit Parse click displays “Preparing PP-DocLayoutV3…” before starting the graph, then shows GPU (CUDA) or CPU. Initialization failure warns and continues with Sol; another Parse click retries V3 after the issue is resolved. Ordinary reruns and tab/view changes neither reload weights nor rerun inference. Model readiness is process-wide; parsed results and status display are session-local. Detailed layout remains a separate experimental Sol option.
 
@@ -76,7 +76,7 @@ Resource limits in `.env.example` include 10,000 expanded table cells across a d
 For releases produced by the attestation-enabled workflow, verify the downloaded wheel before installing it. Authenticate `gh` first, replace the tag below with the intended release, and require successful verification:
 
 ```powershell
-$releaseTag = "v0.1.1"
+$releaseTag = "v1.0.0"
 $releaseWheel = "groundmark-$($releaseTag.Substring(1))-py3-none-any.whl"
 gh attestation verify $releaseWheel --repo pypi-ahmad/GroundMark --signer-workflow pypi-ahmad/GroundMark/.github/workflows/release.yml --source-ref "refs/tags/$releaseTag" --deny-self-hosted-runners
 if ($LASTEXITCODE -ne 0) { throw "Release provenance verification failed" }

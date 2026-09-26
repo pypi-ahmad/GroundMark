@@ -15,7 +15,7 @@ The model is asked to preserve the source text and layout, though transcription 
 GroundMark requires Python 3.14+. Install the GitHub release wheel with uv to use the app without cloning the repository:
 
 ```powershell
-uv tool install --python 3.14 "https://github.com/pypi-ahmad/GroundMark/releases/download/v0.1.1/groundmark-0.1.1-py3-none-any.whl"
+uv tool install --python 3.14 "https://github.com/pypi-ahmad/GroundMark/releases/download/v1.0.0/groundmark-1.0.0-py3-none-any.whl"
 ```
 
 If `groundmark` is not on PATH, run `uv tool update-shell` and open a new terminal. [Install uv](https://docs.astral.sh/uv/getting-started/installation/) if needed.
@@ -25,11 +25,11 @@ You can also install the wheel in a Python 3.14+ virtual environment:
 ```powershell
 # Using uv:
 uv venv --python 3.14
-uv pip install "https://github.com/pypi-ahmad/GroundMark/releases/download/v0.1.1/groundmark-0.1.1-py3-none-any.whl"
+uv pip install "https://github.com/pypi-ahmad/GroundMark/releases/download/v1.0.0/groundmark-1.0.0-py3-none-any.whl"
 .\.venv\Scripts\groundmark.exe --help
 
 # Or, inside an activated virtual environment, using pip:
-pip install "https://github.com/pypi-ahmad/GroundMark/releases/download/v0.1.1/groundmark-0.1.1-py3-none-any.whl"
+pip install "https://github.com/pypi-ahmad/GroundMark/releases/download/v1.0.0/groundmark-1.0.0-py3-none-any.whl"
 groundmark --help
 ```
 
@@ -105,7 +105,7 @@ uv run --extra layout groundmark invoice.pdf output --all
 
 Windows users can also run `run.cmd`, which forwards launcher arguments. For development, run `uv run python -m pytest tests`. The [Runbook](docs/RUNBOOK.md) covers artifacts, builds, upgrades, and troubleshooting.
 
-This checkout attempts local PP-DocLayoutV3 analysis before each Sol extraction request. The `layout` extra supplies the runtime dependencies; base imports and offline tests still work without them. First use downloads the pinned official model into the user cache unless an explicit local model directory is configured. Preparation tries CUDA inference, then verifies CPU fallback if needed. If neither works, or dependencies are absent, extraction continues with Sol blocks and records a safe layout-fallback diagnostic. This integration is not in the published v0.1.1 wheel above. See [runtime configuration and verification](docs/LAYOUT-V3.md).
+GroundMark attempts local PP-DocLayoutV3 analysis before each Sol extraction request. The `layout` extra supplies the runtime dependencies; base imports and offline tests still work without them. First use downloads the pinned official model into the user cache unless an explicit local model directory is configured. Preparation tries CUDA inference, then verifies CPU fallback if needed. If neither works, or dependencies are absent, extraction continues with Sol blocks and records a safe layout-fallback diagnostic. See [runtime configuration and verification](docs/LAYOUT-V3.md).
 
 In Streamlit, the first valid Parse click shows “Preparing PP-DocLayoutV3…” and then the actual GPU (CUDA) or CPU device. Uploads and previews do not load the model. Preparation failure shows a warning and continues with Sol; another Parse click retries V3. The process keeps one ready model across reruns and uploads. Tab/view changes do not rerun inference. The Detailed layout checkbox remains a separate, experimental Sol structure option.
 
