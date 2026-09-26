@@ -142,7 +142,7 @@ def test_plain_bullets_numbering_and_missing_item_source():
     assert parse_to_markdown(result) == "Source without the requested items\n"
 
 
-def test_default_extraction_uses_original_contract_and_detailed_is_opt_in(monkeypatch):
+def test_default_extraction_uses_original_contract_and_detailed_is_opt_in(monkeypatch, fake_layout_runtime):
     from src import parse
     from src.layout import LegacyParsePage
     calls = []
@@ -151,8 +151,10 @@ def test_default_extraction_uses_original_contract_and_detailed_is_opt_in(monkey
         calls.append((schema, messages[0].content[0]["text"]))
         return schema(page=1, width_px=100, height_px=100, blocks=[])
     monkeypatch.setattr(parse, "_invoke_structured", invoke)
-    parse.parse_page("", "image/png", 1, 100, 100)
-    parse.parse_page("", "image/png", 1, 100, 100, detailed_layout=True)
+    from tests.fake_layout import payload
+    encoded = payload()["base64"]
+    parse.parse_page(encoded, "image/png", 1, 100, 100)
+    parse.parse_page(encoded, "image/png", 1, 100, 100, detailed_layout=True)
     assert calls[0][0] is LegacyParsePage and "table_cells" not in calls[0][1]
     assert calls[1][0] is ParsePage and "table_cells" in calls[1][1]
 

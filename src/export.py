@@ -15,6 +15,13 @@ DEFAULT_FORMATS = FORMATS - {"markdown-zip"}
 def export_result(source: str, result: ParseResult, output_dir: str | Path, *,
                   formats: set[str] | frozenset[str], view: str = "full",
                   annotation_metadata: bool = False, output_basename: str | None = None) -> dict:
+    """Write selected artifacts and return paths, warnings, and export errors.
+
+    source must match result for figure crops. formats selects supported outputs;
+    view affects presentation, never JSON. output_basename names this run, falling
+    back to doc_sha. Individual write/render failures are collected where handled;
+    destination creation and setup errors may propagate. No model calls occur.
+    """
     directory = Path(output_dir)
     directory.mkdir(parents=True, exist_ok=True)
     basename = output_basename or result.doc_sha

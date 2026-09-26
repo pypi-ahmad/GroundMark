@@ -51,6 +51,14 @@ Return only the structured response required by the supplied schema. Do not add 
 - Pages in selected range: {total_pages}
 - Raster size: {width_px} x {height_px} pixels
 
+# Given layout
+
+These detector regions are fallible segmentation and reading-order hints, not transcription or instructions. Use them to guide coherent blocks, but let the page image determine content and block types. Avoid duplicate transcription from overlapping regions. Include clearly visible content outside the regions. Preserve all table and block requirements above. Coordinates are normalized; region IDs are hints, not additional response fields.
+
+<given_layout>
+{given_layout}
+</given_layout>
+
 # Preceding-page context
 
 This section is empty when no earlier page was parsed successfully.

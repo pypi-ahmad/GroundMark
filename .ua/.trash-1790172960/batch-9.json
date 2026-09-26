@@ -1,0 +1,206 @@
+{
+  "nodes": [
+    {
+      "id": "file:docs/diagrams/groundmark-architecture.html",
+      "type": "file",
+      "name": "groundmark-architecture.html",
+      "filePath": "docs/diagrams/groundmark-architecture.html",
+      "summary": "Self-contained Archify-rendered interactive architecture diagram showing GroundMark components, service boundaries, and connections.",
+      "tags": ["architecture-diagram", "groundmark", "interactive-html", "rendered-artifact"],
+      "complexity": "complex",
+      "languageNotes": "Generated standalone HTML includes theme, embed, and presentation-mode handling."
+    },
+    {
+      "id": "config:docs/diagrams/groundmark-architecture.json",
+      "type": "config",
+      "name": "groundmark-architecture.json",
+      "filePath": "docs/diagrams/groundmark-architecture.json",
+      "summary": "Declarative architecture-diagram specification with 12 components, two boundaries, 12 connections, and three explanatory cards.",
+      "tags": ["diagram-data", "architecture", "groundmark", "configuration"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/diagrams/groundmark-architecture.visual-check.html",
+      "type": "file",
+      "name": "groundmark-architecture.visual-check.html",
+      "filePath": "docs/diagrams/groundmark-architecture.visual-check.html",
+      "summary": "Contact sheet presenting light- and dark-theme screenshots of the architecture diagram at multiple viewport sizes; it records an automated containment pass with visual review pending.",
+      "tags": ["visual-check", "contact-sheet", "architecture", "html"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:docs/diagrams/groundmark-architecture.visual-check.json",
+      "type": "config",
+      "name": "groundmark-architecture.visual-check.json",
+      "filePath": "docs/diagrams/groundmark-architecture.visual-check.json",
+      "summary": "Visual-check receipt for the architecture HTML artifact, recording a passing status, artifact hash and size, screenshot captures, and diagnostics.",
+      "tags": ["visual-check", "validation-receipt", "architecture", "diagnostics"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:docs/diagrams/groundmark-dataflow.html",
+      "type": "file",
+      "name": "groundmark-dataflow.html",
+      "filePath": "docs/diagrams/groundmark-dataflow.html",
+      "summary": "Self-contained Archify-rendered interactive diagram illustrating GroundMark's document-extraction data stages, processing nodes, and flows.",
+      "tags": ["dataflow-diagram", "document-extraction", "interactive-html", "rendered-artifact"],
+      "complexity": "complex",
+      "languageNotes": "Generated standalone HTML includes theme, embed, and presentation-mode handling."
+    },
+    {
+      "id": "config:docs/diagrams/groundmark-dataflow.json",
+      "type": "config",
+      "name": "groundmark-dataflow.json",
+      "filePath": "docs/diagrams/groundmark-dataflow.json",
+      "summary": "Declarative data-flow diagram specification defining five stages, nine nodes, eight flows, and three explanatory cards for document extraction.",
+      "tags": ["diagram-data", "dataflow", "document-extraction", "configuration"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/diagrams/groundmark-dataflow.visual-check.html",
+      "type": "file",
+      "name": "groundmark-dataflow.visual-check.html",
+      "filePath": "docs/diagrams/groundmark-dataflow.visual-check.html",
+      "summary": "Contact sheet presenting light- and dark-theme screenshots of the data-flow diagram at multiple viewport sizes; it records an automated containment pass with visual review pending.",
+      "tags": ["visual-check", "contact-sheet", "dataflow", "html"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:docs/diagrams/groundmark-dataflow.visual-check.json",
+      "type": "config",
+      "name": "groundmark-dataflow.visual-check.json",
+      "filePath": "docs/diagrams/groundmark-dataflow.visual-check.json",
+      "summary": "Visual-check receipt for the data-flow HTML artifact, recording a passing status, artifact hash and size, screenshot captures, and diagnostics.",
+      "tags": ["visual-check", "validation-receipt", "dataflow", "diagnostics"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:docs/diagrams/groundmark-lifecycle.html",
+      "type": "file",
+      "name": "groundmark-lifecycle.html",
+      "filePath": "docs/diagrams/groundmark-lifecycle.html",
+      "summary": "Self-contained Archify-rendered interactive lifecycle diagram showing GroundMark document-processing states, phases, and transitions.",
+      "tags": ["lifecycle-diagram", "document-processing", "interactive-html", "rendered-artifact"],
+      "complexity": "complex",
+      "languageNotes": "Generated standalone HTML includes theme, embed, and presentation-mode handling."
+    },
+    {
+      "id": "config:docs/diagrams/groundmark-lifecycle.json",
+      "type": "config",
+      "name": "groundmark-lifecycle.json",
+      "filePath": "docs/diagrams/groundmark-lifecycle.json",
+      "summary": "Declarative lifecycle diagram specification describing three lanes, nine document-execution states, and five transitions.",
+      "tags": ["diagram-data", "lifecycle", "document-processing", "configuration"],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:docs/diagrams/groundmark-lifecycle.visual-check.html",
+      "type": "file",
+      "name": "groundmark-lifecycle.visual-check.html",
+      "filePath": "docs/diagrams/groundmark-lifecycle.visual-check.html",
+      "summary": "Contact sheet presenting light- and dark-theme screenshots of the lifecycle diagram at multiple viewport sizes; it records an automated containment pass with visual review pending.",
+      "tags": ["visual-check", "contact-sheet", "lifecycle", "html"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:docs/diagrams/groundmark-lifecycle.visual-check.json",
+      "type": "config",
+      "name": "groundmark-lifecycle.visual-check.json",
+      "filePath": "docs/diagrams/groundmark-lifecycle.visual-check.json",
+      "summary": "Visual-check receipt for the lifecycle HTML artifact, recording a passing status, artifact hash and size, screenshot captures, and diagnostics.",
+      "tags": ["visual-check", "validation-receipt", "lifecycle", "diagnostics"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:docs/diagrams/groundmark-sequence.html",
+      "type": "file",
+      "name": "groundmark-sequence.html",
+      "filePath": "docs/diagrams/groundmark-sequence.html",
+      "summary": "Self-contained Archify-rendered interactive sequence diagram depicting GroundMark parse and chat interactions among six participants.",
+      "tags": ["sequence-diagram", "document-chat", "interactive-html", "rendered-artifact"],
+      "complexity": "complex",
+      "languageNotes": "Generated standalone HTML includes theme, embed, and presentation-mode handling."
+    },
+    {
+      "id": "config:docs/diagrams/groundmark-sequence.json",
+      "type": "config",
+      "name": "groundmark-sequence.json",
+      "filePath": "docs/diagrams/groundmark-sequence.json",
+      "summary": "Declarative sequence diagram specification defining six participants, 13 messages, six activations, and three explanatory cards for parsing and chat.",
+      "tags": ["diagram-data", "sequence", "document-chat", "configuration"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/diagrams/groundmark-sequence.visual-check.html",
+      "type": "file",
+      "name": "groundmark-sequence.visual-check.html",
+      "filePath": "docs/diagrams/groundmark-sequence.visual-check.html",
+      "summary": "Contact sheet presenting light- and dark-theme screenshots of the sequence diagram at multiple viewport sizes; it records an automated containment pass with visual review pending.",
+      "tags": ["visual-check", "contact-sheet", "sequence", "html"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:docs/diagrams/groundmark-sequence.visual-check.json",
+      "type": "config",
+      "name": "groundmark-sequence.visual-check.json",
+      "filePath": "docs/diagrams/groundmark-sequence.visual-check.json",
+      "summary": "Visual-check receipt for the sequence HTML artifact, recording a passing status, artifact hash and size, screenshot captures, and diagnostics.",
+      "tags": ["visual-check", "validation-receipt", "sequence", "diagnostics"],
+      "complexity": "complex"
+    },
+    {
+      "id": "file:docs/diagrams/groundmark-workflow.html",
+      "type": "file",
+      "name": "groundmark-workflow.html",
+      "filePath": "docs/diagrams/groundmark-workflow.html",
+      "summary": "Self-contained Archify-rendered interactive workflow diagram showing GroundMark document parsing phases, grouped steps, and the main processing path.",
+      "tags": ["workflow-diagram", "document-parsing", "interactive-html", "rendered-artifact"],
+      "complexity": "complex",
+      "languageNotes": "Generated standalone HTML includes theme, embed, and presentation-mode handling."
+    },
+    {
+      "id": "config:docs/diagrams/groundmark-workflow.json",
+      "type": "config",
+      "name": "groundmark-workflow.json",
+      "filePath": "docs/diagrams/groundmark-workflow.json",
+      "summary": "Declarative workflow diagram specification with three lanes and phases, one group, a five-node main path, six nodes, six edges, and three explanatory cards.",
+      "tags": ["diagram-data", "workflow", "document-parsing", "configuration"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:docs/diagrams/groundmark-workflow.visual-check.html",
+      "type": "file",
+      "name": "groundmark-workflow.visual-check.html",
+      "filePath": "docs/diagrams/groundmark-workflow.visual-check.html",
+      "summary": "Contact sheet presenting light- and dark-theme screenshots of the workflow diagram at multiple viewport sizes; it records an automated containment pass with visual review pending.",
+      "tags": ["visual-check", "contact-sheet", "workflow", "html"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:docs/diagrams/groundmark-workflow.visual-check.json",
+      "type": "config",
+      "name": "groundmark-workflow.visual-check.json",
+      "filePath": "docs/diagrams/groundmark-workflow.visual-check.json",
+      "summary": "Visual-check receipt for the workflow HTML artifact, recording a passing status, artifact hash and size, screenshot captures, and diagnostics.",
+      "tags": ["visual-check", "validation-receipt", "workflow", "diagnostics"],
+      "complexity": "complex"
+    }
+  ],
+  "edges": [
+    {"source": "config:docs/diagrams/groundmark-architecture.json", "target": "file:docs/diagrams/groundmark-architecture.html", "type": "configures", "direction": "forward", "weight": 0.6},
+    {"source": "config:docs/diagrams/groundmark-architecture.visual-check.json", "target": "file:docs/diagrams/groundmark-architecture.html", "type": "validates", "direction": "forward", "weight": 0.5},
+    {"source": "file:docs/diagrams/groundmark-architecture.visual-check.html", "target": "file:docs/diagrams/groundmark-architecture.html", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "config:docs/diagrams/groundmark-dataflow.json", "target": "file:docs/diagrams/groundmark-dataflow.html", "type": "configures", "direction": "forward", "weight": 0.6},
+    {"source": "config:docs/diagrams/groundmark-dataflow.visual-check.json", "target": "file:docs/diagrams/groundmark-dataflow.html", "type": "validates", "direction": "forward", "weight": 0.5},
+    {"source": "file:docs/diagrams/groundmark-dataflow.visual-check.html", "target": "file:docs/diagrams/groundmark-dataflow.html", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "config:docs/diagrams/groundmark-lifecycle.json", "target": "file:docs/diagrams/groundmark-lifecycle.html", "type": "configures", "direction": "forward", "weight": 0.6},
+    {"source": "config:docs/diagrams/groundmark-lifecycle.visual-check.json", "target": "file:docs/diagrams/groundmark-lifecycle.html", "type": "validates", "direction": "forward", "weight": 0.5},
+    {"source": "file:docs/diagrams/groundmark-lifecycle.visual-check.html", "target": "file:docs/diagrams/groundmark-lifecycle.html", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "config:docs/diagrams/groundmark-sequence.json", "target": "file:docs/diagrams/groundmark-sequence.html", "type": "configures", "direction": "forward", "weight": 0.6},
+    {"source": "config:docs/diagrams/groundmark-sequence.visual-check.json", "target": "file:docs/diagrams/groundmark-sequence.html", "type": "validates", "direction": "forward", "weight": 0.5},
+    {"source": "file:docs/diagrams/groundmark-sequence.visual-check.html", "target": "file:docs/diagrams/groundmark-sequence.html", "type": "related", "direction": "forward", "weight": 0.5},
+    {"source": "config:docs/diagrams/groundmark-workflow.json", "target": "file:docs/diagrams/groundmark-workflow.html", "type": "configures", "direction": "forward", "weight": 0.6},
+    {"source": "config:docs/diagrams/groundmark-workflow.visual-check.json", "target": "file:docs/diagrams/groundmark-workflow.html", "type": "validates", "direction": "forward", "weight": 0.5},
+    {"source": "file:docs/diagrams/groundmark-workflow.visual-check.html", "target": "file:docs/diagrams/groundmark-workflow.html", "type": "related", "direction": "forward", "weight": 0.5}
+  ]
+}

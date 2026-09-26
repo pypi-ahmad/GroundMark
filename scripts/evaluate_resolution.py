@@ -23,6 +23,7 @@ MAX_COMPLETION_TOKENS = 8192
 
 
 def metric_gate(pages: list[dict]) -> bool:
+    """Require five complete pairs, no candidate F1 regression, and some improvement."""
     if len(pages) != 10 or any(p["status"] != "parsed" for p in pages):
         return False
     by_page = {}
@@ -112,6 +113,7 @@ def compare(output: Path, *, runner=None, max_requests: int = MAX_REQUESTS,
 
 
 def main():
+    """Parse --live and output arguments, then dispatch the budgeted comparison."""
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--output", type=Path, required=True)
     parser.add_argument("--live", action="store_true")

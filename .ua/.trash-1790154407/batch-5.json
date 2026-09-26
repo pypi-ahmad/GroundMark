@@ -1,0 +1,46 @@
+{
+  "batchIndex": 5,
+  "totalBatches": 9,
+  "nodes": [
+    {
+      "id": "config:.ua/tmp/ua-import-map-input.json",
+      "type": "config",
+      "name": "ua-import-map-input.json",
+      "filePath": ".ua/tmp/ua-import-map-input.json",
+      "summary": "Intermediate input file for import map resolution.",
+      "tags": [
+        "configuration",
+        "temporary",
+        "build-artifact"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:.ua/tmp/ua-import-map-output.json",
+      "type": "config",
+      "name": "ua-import-map-output.json",
+      "filePath": ".ua/tmp/ua-import-map-output.json",
+      "summary": "Intermediate output file containing resolved project import graph.",
+      "tags": [
+        "configuration",
+        "temporary",
+        "build-artifact"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:.ua/tmp/ua-scan-files.json",
+      "type": "config",
+      "name": "ua-scan-files.json",
+      "filePath": ".ua/tmp/ua-scan-files.json",
+      "summary": "Temporary file list collected during repository scan phase.",
+      "tags": [
+        "configuration",
+        "temporary",
+        "build-artifact"
+      ],
+      "complexity": "complex"
+    }
+  ],
+  "edges": []
+}

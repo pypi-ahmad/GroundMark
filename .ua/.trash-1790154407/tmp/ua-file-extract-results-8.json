@@ -1,0 +1,872 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 8,
+  "filesSkipped": [
+    ".ua/.understandignore",
+    "tests/fixtures/.gitkeep"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 8,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 5,
+      "failed": 0,
+      "skipped": 3
+    }
+  },
+  "results": [
+    {
+      "path": ".ua/intermediate/batches.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 2077,
+      "nonEmptyLines": 2077,
+      "sections": [
+        {
+          "heading": "schemaVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "algorithm",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "totalFiles",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "totalBatches",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "exportsByPath",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "batches",
+          "level": 1,
+          "line": 309
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": ".ua/intermediate/scan-result.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 636,
+      "nonEmptyLines": 636,
+      "sections": [
+        {
+          "heading": "name",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "description",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "languages",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "frameworks",
+          "level": 1,
+          "line": 12
+        },
+        {
+          "heading": "files",
+          "level": 1,
+          "line": 19
+        },
+        {
+          "heading": "totalFiles",
+          "level": 1,
+          "line": 441
+        },
+        {
+          "heading": "filteredByIgnore",
+          "level": 1,
+          "line": 442
+        },
+        {
+          "heading": "estimatedComplexity",
+          "level": 1,
+          "line": 443
+        },
+        {
+          "heading": "importMap",
+          "level": 1,
+          "line": 444
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 9
+      }
+    },
+    {
+      "path": "src/ui/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 5,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/fake_llm.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 33,
+      "nonEmptyLines": 28,
+      "classes": [
+        {
+          "name": "FakeLLM",
+          "startLine": 17,
+          "endLine": 33,
+          "methods": [
+            "__init__"
+          ],
+          "properties": []
+        }
+      ],
+      "exports": [
+        {
+          "name": "FakeLLM",
+          "line": 17,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "__init__",
+          "callee": "result.model_dump",
+          "lineNumber": 21
+        },
+        {
+          "caller": "create",
+          "callee": "b.items",
+          "lineNumber": 25
+        },
+        {
+          "caller": "create",
+          "callee": "SimpleNamespace",
+          "lineNumber": 27
+        },
+        {
+          "caller": "create",
+          "callee": "SimpleNamespace",
+          "lineNumber": 28
+        },
+        {
+          "caller": "create",
+          "callee": "json.dumps",
+          "lineNumber": 30
+        },
+        {
+          "caller": "__init__",
+          "callee": "SimpleNamespace",
+          "lineNumber": 32
+        },
+        {
+          "caller": "__init__",
+          "callee": "SimpleNamespace",
+          "lineNumber": 32
+        },
+        {
+          "caller": "__init__",
+          "callee": "SimpleNamespace",
+          "lineNumber": 32
+        },
+        {
+          "caller": "__init__",
+          "callee": "SimpleNamespace",
+          "lineNumber": 33
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 0,
+        "classCount": 1
+      }
+    },
+    {
+      "path": "tests/fixtures/chat-evaluation.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 16,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": "tests/test_launcher.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 58,
+      "nonEmptyLines": 49,
+      "functions": [
+        {
+          "name": "test_launcher_installs_only_when_requirements_change",
+          "startLine": 17,
+          "endLine": 58,
+          "params": [
+            "tmp_path"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_launcher_installs_only_when_requirements_change",
+          "line": 16,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "Path",
+          "lineNumber": 18
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "(tmp_path / \"run.cmd\").write_bytes",
+          "lineNumber": 19
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "launcher.read_bytes",
+          "lineNumber": 19
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "(tmp_path / \"requirements.txt\").write_text",
+          "lineNumber": 20
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "(tmp_path / \"uv.cmd\").write_text",
+          "lineNumber": 21
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "(tmp_path / \"netstat.cmd\").write_text",
+          "lineNumber": 31
+        },
+        {
+          "caller": "launch",
+          "callee": "subprocess.run",
+          "lineNumber": 34
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "launch",
+          "lineNumber": 41
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "launch",
+          "lineNumber": 42
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "(tmp_path / \"calls.txt\").read_text().splitlines",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "(tmp_path / \"calls.txt\").read_text",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "sum",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "line.startswith",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "sum",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "line.startswith",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "(tmp_path / \"requirements.txt\").write_text",
+          "lineNumber": 47
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "(tmp_path / \"fail-install\").touch",
+          "lineNumber": 48
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "launch",
+          "lineNumber": 49
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "(tmp_path / \".venv/requirements-installed.txt\").read_text",
+          "lineNumber": 50
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "sum",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "line.startswith",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "(tmp_path / \"calls.txt\").read_text().splitlines",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "(tmp_path / \"calls.txt\").read_text",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "(tmp_path / \"fail-install\").unlink",
+          "lineNumber": 53
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "launch",
+          "lineNumber": 54
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "launch",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "(tmp_path / \"calls.txt\").read_text().splitlines",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "(tmp_path / \"calls.txt\").read_text",
+          "lineNumber": 56
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "sum",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "line.startswith",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "sum",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_launcher_installs_only_when_requirements_change",
+          "callee": "line.startswith",
+          "lineNumber": 58
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/test_parse.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 162,
+      "nonEmptyLines": 120,
+      "functions": [
+        {
+          "name": "test_parse_document_writes_json",
+          "startLine": 23,
+          "endLine": 54,
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_parse_document_respects_page_range",
+          "startLine": 57,
+          "endLine": 70,
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_parse_document_keeps_pages_not_rejected_by_content_filter",
+          "startLine": 73,
+          "endLine": 93,
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_sequential_outcomes_keep_page_identity_and_context",
+          "startLine": 97,
+          "endLine": 125,
+          "params": [
+            "tmp_path",
+            "monkeypatch",
+            "selected_model"
+          ]
+        },
+        {
+          "name": "test_all_failed_diagnostics_are_saved",
+          "startLine": 128,
+          "endLine": 143,
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_progress_reports_completion_in_source_order",
+          "startLine": 146,
+          "endLine": 162,
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_parse_document_writes_json",
+          "line": 23,
+          "isDefault": false
+        },
+        {
+          "name": "test_parse_document_respects_page_range",
+          "line": 57,
+          "isDefault": false
+        },
+        {
+          "name": "test_parse_document_keeps_pages_not_rejected_by_content_filter",
+          "line": 73,
+          "isDefault": false
+        },
+        {
+          "name": "test_sequential_outcomes_keep_page_identity_and_context",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "test_all_failed_diagnostics_are_saved",
+          "line": 128,
+          "isDefault": false
+        },
+        {
+          "name": "test_progress_reports_completion_in_source_order",
+          "line": 146,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_parse_document_writes_json",
+          "callee": "monkeypatch.chdir",
+          "lineNumber": 24
+        },
+        {
+          "caller": "test_parse_document_writes_json",
+          "callee": "ParsePage",
+          "lineNumber": 26
+        },
+        {
+          "caller": "test_parse_document_writes_json",
+          "callee": "ParseBlock",
+          "lineNumber": 31
+        },
+        {
+          "caller": "test_parse_document_writes_json",
+          "callee": "BBox",
+          "lineNumber": 33
+        },
+        {
+          "caller": "test_parse_document_writes_json",
+          "callee": "ParseBlock",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test_parse_document_writes_json",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 41
+        },
+        {
+          "caller": "test_parse_document_writes_json",
+          "callee": "_FakeLLM",
+          "lineNumber": 41
+        },
+        {
+          "caller": "test_parse_document_writes_json",
+          "callee": "parse_module.parse_document",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_parse_document_writes_json",
+          "callee": "str",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_parse_document_writes_json",
+          "callee": "len",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_parse_document_writes_json",
+          "callee": "len",
+          "lineNumber": 46
+        },
+        {
+          "caller": "test_parse_document_writes_json",
+          "callee": "Path",
+          "lineNumber": 50
+        },
+        {
+          "caller": "test_parse_document_writes_json",
+          "callee": "out_path.exists",
+          "lineNumber": 51
+        },
+        {
+          "caller": "test_parse_document_writes_json",
+          "callee": "json.loads",
+          "lineNumber": 52
+        },
+        {
+          "caller": "test_parse_document_writes_json",
+          "callee": "out_path.read_text",
+          "lineNumber": 52
+        },
+        {
+          "caller": "test_parse_document_writes_json",
+          "callee": "len",
+          "lineNumber": 54
+        },
+        {
+          "caller": "test_parse_document_respects_page_range",
+          "callee": "monkeypatch.chdir",
+          "lineNumber": 58
+        },
+        {
+          "caller": "test_parse_document_respects_page_range",
+          "callee": "Image.new",
+          "lineNumber": 62
+        },
+        {
+          "caller": "test_parse_document_respects_page_range",
+          "callee": "pages_imgs[0].save",
+          "lineNumber": 63
+        },
+        {
+          "caller": "test_parse_document_respects_page_range",
+          "callee": "ParsePage",
+          "lineNumber": 65
+        },
+        {
+          "caller": "test_parse_document_respects_page_range",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 66
+        },
+        {
+          "caller": "test_parse_document_respects_page_range",
+          "callee": "_FakeLLM",
+          "lineNumber": 66
+        },
+        {
+          "caller": "test_parse_document_respects_page_range",
+          "callee": "parse_module.parse_document",
+          "lineNumber": 68
+        },
+        {
+          "caller": "test_parse_document_respects_page_range",
+          "callee": "str",
+          "lineNumber": 68
+        },
+        {
+          "caller": "test_parse_document_keeps_pages_not_rejected_by_content_filter",
+          "callee": "monkeypatch.chdir",
+          "lineNumber": 74
+        },
+        {
+          "caller": "test_parse_document_keeps_pages_not_rejected_by_content_filter",
+          "callee": "Image.new",
+          "lineNumber": 78
+        },
+        {
+          "caller": "test_parse_document_keeps_pages_not_rejected_by_content_filter",
+          "callee": "page_images[0].save",
+          "lineNumber": 79
+        },
+        {
+          "caller": "fake_parse_page",
+          "callee": "ContentFilterFinishReasonError",
+          "lineNumber": 83
+        },
+        {
+          "caller": "fake_parse_page",
+          "callee": "ParsePage",
+          "lineNumber": 84
+        },
+        {
+          "caller": "test_parse_document_keeps_pages_not_rejected_by_content_filter",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 86
+        },
+        {
+          "caller": "test_parse_document_keeps_pages_not_rejected_by_content_filter",
+          "callee": "parse_module.parse_document",
+          "lineNumber": 88
+        },
+        {
+          "caller": "test_parse_document_keeps_pages_not_rejected_by_content_filter",
+          "callee": "json.loads",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_parse_document_keeps_pages_not_rejected_by_content_filter",
+          "callee": "(Path(\"data/parse\") / f\"{result.doc_sha}.json\").read_text",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_parse_document_keeps_pages_not_rejected_by_content_filter",
+          "callee": "Path",
+          "lineNumber": 92
+        },
+        {
+          "caller": "test_sequential_outcomes_keep_page_identity_and_context",
+          "callee": "monkeypatch.chdir",
+          "lineNumber": 100
+        },
+        {
+          "caller": "test_sequential_outcomes_keep_page_identity_and_context",
+          "callee": "dict",
+          "lineNumber": 101
+        },
+        {
+          "caller": "test_sequential_outcomes_keep_page_identity_and_context",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 103
+        },
+        {
+          "caller": "fake_parse_page",
+          "callee": "contexts.append",
+          "lineNumber": 108
+        },
+        {
+          "caller": "fake_parse_page",
+          "callee": "PageDiagnostic",
+          "lineNumber": 110
+        },
+        {
+          "caller": "fake_parse_page",
+          "callee": "diagnostics.append",
+          "lineNumber": 111
+        },
+        {
+          "caller": "fake_parse_page",
+          "callee": "ExtractionCallError",
+          "lineNumber": 113
+        },
+        {
+          "caller": "fake_parse_page",
+          "callee": "ParsePage",
+          "lineNumber": 114
+        },
+        {
+          "caller": "fake_parse_page",
+          "callee": "ParseBlock",
+          "lineNumber": 115
+        },
+        {
+          "caller": "test_sequential_outcomes_keep_page_identity_and_context",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 118
+        },
+        {
+          "caller": "test_sequential_outcomes_keep_page_identity_and_context",
+          "callee": "parse_module.parse_document",
+          "lineNumber": 119
+        },
+        {
+          "caller": "test_sequential_outcomes_keep_page_identity_and_context",
+          "callee": "json.loads",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_sequential_outcomes_keep_page_identity_and_context",
+          "callee": "Path(\"data/parse/mixed.json\").read_text",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_sequential_outcomes_keep_page_identity_and_context",
+          "callee": "Path",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_all_failed_diagnostics_are_saved",
+          "callee": "monkeypatch.chdir",
+          "lineNumber": 131
+        },
+        {
+          "caller": "test_all_failed_diagnostics_are_saved",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 132
+        },
+        {
+          "caller": "test_all_failed_diagnostics_are_saved",
+          "callee": "dict",
+          "lineNumber": 133
+        },
+        {
+          "caller": "fail",
+          "callee": "ExtractionCallError",
+          "lineNumber": 136
+        },
+        {
+          "caller": "fail",
+          "callee": "PageDiagnostic",
+          "lineNumber": 136
+        },
+        {
+          "caller": "test_all_failed_diagnostics_are_saved",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 138
+        },
+        {
+          "caller": "test_all_failed_diagnostics_are_saved",
+          "callee": "parse_module.parse_document",
+          "lineNumber": 139
+        },
+        {
+          "caller": "test_all_failed_diagnostics_are_saved",
+          "callee": "json.loads",
+          "lineNumber": 141
+        },
+        {
+          "caller": "test_all_failed_diagnostics_are_saved",
+          "callee": "Path(\"data/parse/failed.json\").read_text",
+          "lineNumber": 141
+        },
+        {
+          "caller": "test_all_failed_diagnostics_are_saved",
+          "callee": "Path",
+          "lineNumber": 141
+        },
+        {
+          "caller": "test_progress_reports_completion_in_source_order",
+          "callee": "monkeypatch.chdir",
+          "lineNumber": 147
+        },
+        {
+          "caller": "test_progress_reports_completion_in_source_order",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 148
+        },
+        {
+          "caller": "test_progress_reports_completion_in_source_order",
+          "callee": "dict",
+          "lineNumber": 149
+        },
+        {
+          "caller": "parse",
+          "callee": "ParsePage",
+          "lineNumber": 152
+        },
+        {
+          "caller": "progress",
+          "callee": "events.append",
+          "lineNumber": 156
+        },
+        {
+          "caller": "test_progress_reports_completion_in_source_order",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 158
+        },
+        {
+          "caller": "test_progress_reports_completion_in_source_order",
+          "callee": "parse_module.parse_document",
+          "lineNumber": 159
+        },
+        {
+          "caller": "test_progress_reports_completion_in_source_order",
+          "callee": "dict",
+          "lineNumber": 162
+        }
+      ],
+      "metrics": {
+        "importCount": 3,
+        "exportCount": 6,
+        "functionCount": 6,
+        "classCount": 0
+      }
+    }
+  ]
+}

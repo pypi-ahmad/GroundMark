@@ -1,0 +1,1364 @@
+{
+  "nodes": [
+    {
+      "id": "file:src/markdown.py",
+      "type": "file",
+      "name": "markdown.py",
+      "filePath": "src/markdown.py",
+      "summary": "Converts structured parse results into escaped Markdown and HTML, including tables, lists, headings, and figure links. It also writes standalone exports and bundles Markdown with its figures.",
+      "tags": [
+        "document-rendering",
+        "markdown",
+        "html-export",
+        "figures"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/markdown.py:_blocks",
+      "type": "function",
+      "name": "_blocks",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        21,
+        31
+      ],
+      "summary": "Iterates pages and blocks in page order, optionally filtering headers and footers, and assigns figure names.",
+      "tags": [
+        "function",
+        "rendering",
+        "document-rendering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/markdown.py:_render_table_html",
+      "type": "function",
+      "name": "_render_table_html",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        61,
+        80
+      ],
+      "summary": "Renders table rows as escaped HTML while preserving header-cell and span metadata.",
+      "tags": [
+        "function",
+        "rendering",
+        "document-rendering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/markdown.py:_render_table",
+      "type": "function",
+      "name": "_render_table",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        83,
+        92
+      ],
+      "summary": "Serializes a simple header-row table as escaped pipe-table Markdown.",
+      "tags": [
+        "function",
+        "rendering",
+        "document-rendering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/markdown.py:_list_context",
+      "type": "function",
+      "name": "_list_context",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        100,
+        121
+      ],
+      "summary": "Matches list-item metadata against source text and returns surrounding label and tail text when recoverable.",
+      "tags": [
+        "function",
+        "rendering",
+        "document-rendering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/markdown.py:_list_html",
+      "type": "function",
+      "name": "_list_html",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        124,
+        146
+      ],
+      "summary": "Renders list items as HTML while retaining labels and adjacent text.",
+      "tags": [
+        "function",
+        "rendering",
+        "document-rendering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/markdown.py:_list_markdown",
+      "type": "function",
+      "name": "_list_markdown",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        149,
+        165
+      ],
+      "summary": "Renders compatible list structures as Markdown and falls back when source context is irregular.",
+      "tags": [
+        "function",
+        "rendering",
+        "document-rendering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/markdown.py:_render_block_html",
+      "type": "function",
+      "name": "_render_block_html",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        172,
+        187
+      ],
+      "summary": "Converts one parsed block into its escaped HTML representation.",
+      "tags": [
+        "function",
+        "rendering",
+        "document-rendering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/markdown.py:_render_block",
+      "type": "function",
+      "name": "_render_block",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        190,
+        206
+      ],
+      "summary": "Converts one parsed block into Markdown, selecting specialized table, list, and figure handling as needed.",
+      "tags": [
+        "function",
+        "rendering",
+        "document-rendering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/markdown.py:parse_to_markdown",
+      "type": "function",
+      "name": "parse_to_markdown",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        209,
+        222
+      ],
+      "summary": "Builds Markdown from the parsed pages and blocks, with optional figure data and output-basename handling.",
+      "tags": [
+        "function",
+        "rendering",
+        "document-rendering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/markdown.py:parse_to_html",
+      "type": "function",
+      "name": "parse_to_html",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        235,
+        245
+      ],
+      "summary": "Builds HTML from the parsed pages and blocks, including escaped content and figure assets.",
+      "tags": [
+        "function",
+        "rendering",
+        "document-rendering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/markdown.py:markdown_bundle",
+      "type": "function",
+      "name": "markdown_bundle",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        248,
+        257
+      ],
+      "summary": "Packages a rendered Markdown document and its available figures into a ZIP artifact.",
+      "tags": [
+        "function",
+        "rendering",
+        "document-rendering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/markdown.py:render_and_save",
+      "type": "function",
+      "name": "render_and_save",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        260,
+        267
+      ],
+      "summary": "Loads a serialized parse result, renders Markdown, and writes the adjacent output file.",
+      "tags": [
+        "function",
+        "rendering",
+        "document-rendering"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:save_markdown_for_doc",
+      "type": "function",
+      "name": "save_markdown_for_doc",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        270,
+        276
+      ],
+      "summary": "Creates the output directory and saves a Markdown export for a document.",
+      "tags": [
+        "function",
+        "rendering",
+        "document-rendering"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:save_html_for_doc",
+      "type": "function",
+      "name": "save_html_for_doc",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        279,
+        285
+      ],
+      "summary": "Creates the output directory and saves an HTML export for a document.",
+      "tags": [
+        "function",
+        "rendering",
+        "document-rendering"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/output_names.py",
+      "type": "file",
+      "name": "output_names.py",
+      "filePath": "src/output_names.py",
+      "summary": "Builds safe, source-derived output basenames and deterministic figure names. It reserves timestamped artifact families while avoiding collisions across output folders and concurrent runs.",
+      "tags": [
+        "artifact-naming",
+        "filenames",
+        "collision-handling",
+        "utc-timestamps"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/output_names.py:source_stem",
+      "type": "function",
+      "name": "source_stem",
+      "filePath": "src/output_names.py",
+      "lineRange": [
+        9,
+        16
+      ],
+      "summary": "Extracts and sanitizes the uploaded filename stem, including Windows-reserved names and length limits.",
+      "tags": [
+        "function",
+        "artifact-naming",
+        "application-logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/output_names.py:artifact_name",
+      "type": "function",
+      "name": "artifact_name",
+      "filePath": "src/output_names.py",
+      "lineRange": [
+        19,
+        22
+      ],
+      "summary": "Validates an artifact basename before appending its requested suffix.",
+      "tags": [
+        "function",
+        "artifact-naming",
+        "application-logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/output_names.py:figure_name",
+      "type": "function",
+      "name": "figure_name",
+      "filePath": "src/output_names.py",
+      "lineRange": [
+        25,
+        27
+      ],
+      "summary": "Creates a page-and-index figure filename, optionally prefixed by the reserved output basename.",
+      "tags": [
+        "function",
+        "artifact-naming",
+        "application-logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/output_names.py:_occupied",
+      "type": "function",
+      "name": "_occupied",
+      "filePath": "src/output_names.py",
+      "lineRange": [
+        30,
+        39
+      ],
+      "summary": "Checks output, annotation, and image directories for case-insensitive filename-family collisions.",
+      "tags": [
+        "function",
+        "artifact-naming",
+        "application-logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/output_names.py:reserve_basename",
+      "type": "function",
+      "name": "reserve_basename",
+      "filePath": "src/output_names.py",
+      "lineRange": [
+        43,
+        66
+      ],
+      "summary": "Reserves a UTC-timestamped output basename, retrying on lock or artifact collisions and cleaning up its lock.",
+      "tags": [
+        "function",
+        "artifact-naming",
+        "application-logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/ui/app.py",
+      "type": "file",
+      "name": "app.py",
+      "filePath": "src/ui/app.py",
+      "summary": "Defines the Streamlit document-parsing interface, grounded chat state, upload preview, token-usage display, and figure-asset helpers. The UI delegates parsing and rendering to the application modules.",
+      "tags": [
+        "streamlit-ui",
+        "document-parsing",
+        "grounded-chat",
+        "usage-metrics"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/ui/app.py:clear_chat",
+      "type": "function",
+      "name": "clear_chat",
+      "filePath": "src/ui/app.py",
+      "lineRange": [
+        33,
+        34
+      ],
+      "summary": "Resets the Streamlit document-chat transcript in session state.",
+      "tags": [
+        "function",
+        "user-interface",
+        "application-logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/ui/app.py:load_input_preview",
+      "type": "function",
+      "name": "load_input_preview",
+      "filePath": "src/ui/app.py",
+      "lineRange": [
+        41,
+        45
+      ],
+      "summary": "Preprocesses a requested page range and decodes its base64 image previews.",
+      "tags": [
+        "function",
+        "user-interface",
+        "application-logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/ui/app.py:show_usage",
+      "type": "function",
+      "name": "show_usage",
+      "filePath": "src/ui/app.py",
+      "lineRange": [
+        48,
+        61
+      ],
+      "summary": "Aggregates session token totals and estimated cost, then displays usage metrics and any incomplete-usage notice.",
+      "tags": [
+        "function",
+        "user-interface",
+        "application-logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/ui/app.py:figure_assets",
+      "type": "function",
+      "name": "figure_assets",
+      "filePath": "src/ui/app.py",
+      "lineRange": [
+        171,
+        173
+      ],
+      "summary": "Loads figure image bytes associated with a serialized parse result and output basename.",
+      "tags": [
+        "function",
+        "user-interface",
+        "application-logic"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_cli_extraction.py",
+      "type": "file",
+      "name": "test_cli_extraction.py",
+      "filePath": "tests/test_cli_extraction.py",
+      "summary": "Exercises CLI extraction and export behavior with local fixtures and model calls stubbed out. Coverage includes format selection, validation failures, partial parsing, diagnostics, and output naming.",
+      "tags": [
+        "test",
+        "cli-extraction",
+        "exports",
+        "regression"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_cli_extraction.py:extraction",
+      "type": "function",
+      "name": "extraction",
+      "filePath": "tests/test_cli_extraction.py",
+      "lineRange": [
+        16,
+        32
+      ],
+      "summary": "Builds a temporary image input and patches parsing dependencies so CLI tests run without model requests.",
+      "tags": [
+        "test",
+        "pytest",
+        "cli-extraction"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_cli_extraction.py:test_selected_formats_only",
+      "type": "function",
+      "name": "test_selected_formats_only",
+      "filePath": "tests/test_cli_extraction.py",
+      "lineRange": [
+        46,
+        65
+      ],
+      "summary": "Checks that requested output formats are written without creating unrequested exports.",
+      "tags": [
+        "test",
+        "pytest",
+        "cli-extraction"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_cli_extraction.py:test_json_skips_presentation",
+      "type": "function",
+      "name": "test_json_skips_presentation",
+      "filePath": "tests/test_cli_extraction.py",
+      "lineRange": [
+        68,
+        72
+      ],
+      "summary": "Checks that JSON-only extraction does not invoke presentation rendering.",
+      "tags": [
+        "test",
+        "pytest",
+        "cli-extraction"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_cli_extraction.py:test_invalid_options_fail_before_extraction",
+      "type": "function",
+      "name": "test_invalid_options_fail_before_extraction",
+      "filePath": "tests/test_cli_extraction.py",
+      "lineRange": [
+        76,
+        80
+      ],
+      "summary": "Checks invalid CLI options are rejected before document extraction begins.",
+      "tags": [
+        "test",
+        "pytest",
+        "cli-extraction"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_cli_extraction.py:test_overwrite_preserves_unrelated_files",
+      "type": "function",
+      "name": "test_overwrite_preserves_unrelated_files",
+      "filePath": "tests/test_cli_extraction.py",
+      "lineRange": [
+        83,
+        92
+      ],
+      "summary": "Checks overwrite behavior does not remove unrelated files from the output directory.",
+      "tags": [
+        "test",
+        "pytest",
+        "cli-extraction"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_cli_extraction.py:test_input_inside_output_is_rejected",
+      "type": "function",
+      "name": "test_input_inside_output_is_rejected",
+      "filePath": "tests/test_cli_extraction.py",
+      "lineRange": [
+        95,
+        99
+      ],
+      "summary": "Checks the CLI rejects an input file located inside its output directory.",
+      "tags": [
+        "test",
+        "pytest",
+        "cli-extraction"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_cli_extraction.py:test_missing_key_fails_before_extraction",
+      "type": "function",
+      "name": "test_missing_key_fails_before_extraction",
+      "filePath": "tests/test_cli_extraction.py",
+      "lineRange": [
+        102,
+        107
+      ],
+      "summary": "Checks missing credentials fail before the parser is invoked.",
+      "tags": [
+        "test",
+        "pytest",
+        "cli-extraction"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_cli_extraction.py:test_env_file_and_environment_precedence",
+      "type": "function",
+      "name": "test_env_file_and_environment_precedence",
+      "filePath": "tests/test_cli_extraction.py",
+      "lineRange": [
+        110,
+        117
+      ],
+      "summary": "Checks environment-file values and existing environment variables follow the expected precedence.",
+      "tags": [
+        "test",
+        "pytest",
+        "cli-extraction"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_cli_extraction.py:test_missing_explicit_env_file",
+      "type": "function",
+      "name": "test_missing_explicit_env_file",
+      "filePath": "tests/test_cli_extraction.py",
+      "lineRange": [
+        120,
+        124
+      ],
+      "summary": "Checks a requested but missing environment file produces a clear failure.",
+      "tags": [
+        "test",
+        "pytest",
+        "cli-extraction"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_cli_extraction.py:test_requested_export_failure_keeps_other_outputs",
+      "type": "function",
+      "name": "test_requested_export_failure_keeps_other_outputs",
+      "filePath": "tests/test_cli_extraction.py",
+      "lineRange": [
+        127,
+        133
+      ],
+      "summary": "Checks one failed export does not discard successfully generated output formats.",
+      "tags": [
+        "test",
+        "pytest",
+        "cli-extraction"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_cli_extraction.py:test_parse_failure_writes_only_requested_diagnostics",
+      "type": "function",
+      "name": "test_parse_failure_writes_only_requested_diagnostics",
+      "filePath": "tests/test_cli_extraction.py",
+      "lineRange": [
+        136,
+        142
+      ],
+      "summary": "Checks parse failures write diagnostics only when that output was requested.",
+      "tags": [
+        "test",
+        "pytest",
+        "cli-extraction"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_cli_extraction.py:test_partial_parse_and_page_range",
+      "type": "function",
+      "name": "test_partial_parse_and_page_range",
+      "filePath": "tests/test_cli_extraction.py",
+      "lineRange": [
+        145,
+        159
+      ],
+      "summary": "Checks page-range selection and partial parsing preserve the expected outputs and diagnostics.",
+      "tags": [
+        "test",
+        "pytest",
+        "cli-extraction"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_cli_extraction.py:test_rendering_view_does_not_filter_json",
+      "type": "function",
+      "name": "test_rendering_view_does_not_filter_json",
+      "filePath": "tests/test_cli_extraction.py",
+      "lineRange": [
+        162,
+        172
+      ],
+      "summary": "Checks clean/full rendering choices do not change the JSON parse result.",
+      "tags": [
+        "test",
+        "pytest",
+        "cli-extraction"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_cli_extraction.py:test_graph_uses_upload_name_and_start_time_for_every_format",
+      "type": "function",
+      "name": "test_graph_uses_upload_name_and_start_time_for_every_format",
+      "filePath": "tests/test_cli_extraction.py",
+      "lineRange": [
+        175,
+        196
+      ],
+      "summary": "Checks all requested exports share a basename derived from the uploaded name and graph start time.",
+      "tags": [
+        "test",
+        "pytest",
+        "cli-extraction"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:tests/test_graph.py",
+      "type": "file",
+      "name": "test_graph.py",
+      "filePath": "tests/test_graph.py",
+      "summary": "Checks the parse graph lifecycle using a fake document parser, including status and error reporting, artifact persistence, concurrent-run isolation, usage accounting, and filtered pages.",
+      "tags": [
+        "test",
+        "graph-lifecycle",
+        "artifacts",
+        "regression"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_graph.py:test_parse_success_sets_status_and_artifacts",
+      "type": "function",
+      "name": "test_parse_success_sets_status_and_artifacts",
+      "filePath": "tests/test_graph.py",
+      "lineRange": [
+        20,
+        47
+      ],
+      "summary": "Checks a successful parse sets its status and creates the expected artifacts.",
+      "tags": [
+        "test",
+        "pytest",
+        "graph-lifecycle"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_graph.py:test_parse_failure_sets_status_and_error",
+      "type": "function",
+      "name": "test_parse_failure_sets_status_and_error",
+      "filePath": "tests/test_graph.py",
+      "lineRange": [
+        50,
+        63
+      ],
+      "summary": "Checks parser failures are reflected in the graph result status and error field.",
+      "tags": [
+        "test",
+        "pytest",
+        "graph-lifecycle"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_graph.py:test_overlapping_runs_isolate_usage_and_artifacts",
+      "type": "function",
+      "name": "test_overlapping_runs_isolate_usage_and_artifacts",
+      "filePath": "tests/test_graph.py",
+      "lineRange": [
+        66,
+        96
+      ],
+      "summary": "Checks concurrent graph runs keep their usage records and artifacts isolated.",
+      "tags": [
+        "test",
+        "pytest",
+        "graph-lifecycle"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_graph.py:test_usage_survives_post_request_failure",
+      "type": "function",
+      "name": "test_usage_survives_post_request_failure",
+      "filePath": "tests/test_graph.py",
+      "lineRange": [
+        99,
+        110
+      ],
+      "summary": "Checks token usage recorded before a later request failure remains in the result.",
+      "tags": [
+        "test",
+        "pytest",
+        "graph-lifecycle"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_graph.py:test_graph_rejects_other_models_before_preprocessing",
+      "type": "function",
+      "name": "test_graph_rejects_other_models_before_preprocessing",
+      "filePath": "tests/test_graph.py",
+      "lineRange": [
+        113,
+        116
+      ],
+      "summary": "Checks unsupported models are rejected before document preprocessing.",
+      "tags": [
+        "test",
+        "pytest",
+        "graph-lifecycle"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_graph.py:test_direct_compiled_graph_initializes_run_state",
+      "type": "function",
+      "name": "test_direct_compiled_graph_initializes_run_state",
+      "filePath": "tests/test_graph.py",
+      "lineRange": [
+        119,
+        131
+      ],
+      "summary": "Checks direct invocation of the compiled graph initializes its run state.",
+      "tags": [
+        "test",
+        "pytest",
+        "graph-lifecycle"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_graph.py:test_partial_parse_keeps_artifacts_and_reports_filtered_pages",
+      "type": "function",
+      "name": "test_partial_parse_keeps_artifacts_and_reports_filtered_pages",
+      "filePath": "tests/test_graph.py",
+      "lineRange": [
+        134,
+        155
+      ],
+      "summary": "Checks partial parsing preserves artifacts and reports filtered pages.",
+      "tags": [
+        "test",
+        "pytest",
+        "graph-lifecycle"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_graph.py:test_all_filtered_pages_fail_without_markdown_or_annotation",
+      "type": "function",
+      "name": "test_all_filtered_pages_fail_without_markdown_or_annotation",
+      "filePath": "tests/test_graph.py",
+      "lineRange": [
+        158,
+        171
+      ],
+      "summary": "Checks fully filtered documents fail without creating Markdown or annotation outputs.",
+      "tags": [
+        "test",
+        "pytest",
+        "graph-lifecycle"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:tests/test_output_names.py",
+      "type": "file",
+      "name": "test_output_names.py",
+      "filePath": "tests/test_output_names.py",
+      "summary": "Verifies safe source stems, UTC timestamp reservations, collision detection, lock cleanup, and figure-link resolution when rendering legacy and current parse artifacts.",
+      "tags": [
+        "test",
+        "artifact-naming",
+        "collision-handling",
+        "rendering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_output_names.py:test_source_stem",
+      "type": "function",
+      "name": "test_source_stem",
+      "filePath": "tests/test_output_names.py",
+      "lineRange": [
+        25,
+        26
+      ],
+      "summary": "Checks source filenames are sanitized into safe, bounded output stems.",
+      "tags": [
+        "test",
+        "pytest",
+        "artifact-naming"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_output_names.py:test_utc_reservation_collision_and_cleanup",
+      "type": "function",
+      "name": "test_utc_reservation_collision_and_cleanup",
+      "filePath": "tests/test_output_names.py",
+      "lineRange": [
+        29,
+        43
+      ],
+      "summary": "Checks UTC basename reservations advance on collisions and always clean up lock directories.",
+      "tags": [
+        "test",
+        "pytest",
+        "artifact-naming"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_output_names.py:test_collision_with_annotation_or_image_only",
+      "type": "function",
+      "name": "test_collision_with_annotation_or_image_only",
+      "filePath": "tests/test_output_names.py",
+      "lineRange": [
+        48,
+        53
+      ],
+      "summary": "Checks annotation and image artifacts also prevent reuse of a basename.",
+      "tags": [
+        "test",
+        "pytest",
+        "artifact-naming"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_output_names.py:test_json_rerender_resolves_figure_paths_with_special_characters",
+      "type": "function",
+      "name": "test_json_rerender_resolves_figure_paths_with_special_characters",
+      "filePath": "tests/test_output_names.py",
+      "lineRange": [
+        57,
+        69
+      ],
+      "summary": "Checks rerendering finds legacy and basename-prefixed figures when names contain special characters.",
+      "tags": [
+        "test",
+        "pytest",
+        "artifact-naming"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_blocks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_render_table_html",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_render_table",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_list_context",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_list_html",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_list_markdown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_render_block_html",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_render_block",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:parse_to_markdown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:parse_to_markdown",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:parse_to_html",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:parse_to_html",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:markdown_bundle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:markdown_bundle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:render_and_save",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:render_and_save",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:save_markdown_for_doc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:save_markdown_for_doc",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:save_html_for_doc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:save_html_for_doc",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "function:src/output_names.py:source_stem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "function:src/output_names.py:source_stem",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "function:src/output_names.py:artifact_name",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "function:src/output_names.py:artifact_name",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "function:src/output_names.py:figure_name",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "function:src/output_names.py:figure_name",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "function:src/output_names.py:_occupied",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "function:src/output_names.py:reserve_basename",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "function:src/output_names.py:reserve_basename",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "function:src/ui/app.py:clear_chat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "function:src/ui/app.py:clear_chat",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "function:src/ui/app.py:load_input_preview",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "function:src/ui/app.py:load_input_preview",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "function:src/ui/app.py:show_usage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "function:src/ui/app.py:show_usage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "function:src/ui/app.py:figure_assets",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "function:src/ui/app.py:figure_assets",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "function:tests/test_cli_extraction.py:extraction",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "function:tests/test_cli_extraction.py:test_selected_formats_only",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "function:tests/test_cli_extraction.py:test_json_skips_presentation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "function:tests/test_cli_extraction.py:test_invalid_options_fail_before_extraction",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "function:tests/test_cli_extraction.py:test_overwrite_preserves_unrelated_files",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "function:tests/test_cli_extraction.py:test_input_inside_output_is_rejected",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "function:tests/test_cli_extraction.py:test_missing_key_fails_before_extraction",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "function:tests/test_cli_extraction.py:test_env_file_and_environment_precedence",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "function:tests/test_cli_extraction.py:test_missing_explicit_env_file",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "function:tests/test_cli_extraction.py:test_requested_export_failure_keeps_other_outputs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "function:tests/test_cli_extraction.py:test_parse_failure_writes_only_requested_diagnostics",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "function:tests/test_cli_extraction.py:test_partial_parse_and_page_range",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "function:tests/test_cli_extraction.py:test_rendering_view_does_not_filter_json",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "function:tests/test_cli_extraction.py:test_graph_uses_upload_name_and_start_time_for_every_format",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_graph.py",
+      "target": "function:tests/test_graph.py:test_parse_success_sets_status_and_artifacts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_graph.py",
+      "target": "function:tests/test_graph.py:test_parse_failure_sets_status_and_error",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_graph.py",
+      "target": "function:tests/test_graph.py:test_overlapping_runs_isolate_usage_and_artifacts",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_graph.py",
+      "target": "function:tests/test_graph.py:test_usage_survives_post_request_failure",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_graph.py",
+      "target": "function:tests/test_graph.py:test_graph_rejects_other_models_before_preprocessing",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_graph.py",
+      "target": "function:tests/test_graph.py:test_direct_compiled_graph_initializes_run_state",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_graph.py",
+      "target": "function:tests/test_graph.py:test_partial_parse_keeps_artifacts_and_reports_filtered_pages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_graph.py",
+      "target": "function:tests/test_graph.py:test_all_filtered_pages_fail_without_markdown_or_annotation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_output_names.py",
+      "target": "function:tests/test_output_names.py:test_source_stem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_output_names.py",
+      "target": "function:tests/test_output_names.py:test_utc_reservation_collision_and_cleanup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_output_names.py",
+      "target": "function:tests/test_output_names.py:test_collision_with_annotation_or_image_only",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:tests/test_output_names.py",
+      "target": "function:tests/test_output_names.py:test_json_rerender_resolves_figure_paths_with_special_characters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    }
+  ]
+}

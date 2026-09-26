@@ -1,0 +1,2455 @@
+{
+  "scriptCompleted": true,
+  "entryPointCandidates": [
+    {
+      "id": "document:README.md",
+      "score": 5,
+      "name": "README.md",
+      "summary": "Project overview and user guide covering installation, endpoint configuration, web and terminal workflows, generated outputs, parsing behavior, document chat, diagrams, and licensing."
+    },
+    {
+      "id": "file:src/ui/app.py",
+      "score": 4,
+      "name": "app.py",
+      "summary": "Defines the Streamlit document-parsing interface, grounded chat state, upload preview, token-usage display, and figure-asset helpers. The UI delegates parsing and rendering to the application modules."
+    },
+    {
+      "id": "file:scripts/evaluate_layout.py",
+      "score": 3,
+      "name": "evaluate_layout.py",
+      "summary": "Evaluates layout detection accuracy against annotated ground truth across multiple document types."
+    },
+    {
+      "id": "file:tests/test_annotate.py",
+      "score": 3,
+      "name": "test_annotate.py",
+      "summary": "Unit tests verifying PDF and image bounding box rendering, clipping, and color assignment."
+    },
+    {
+      "id": "file:tests/test_cli_extraction.py",
+      "score": 3,
+      "name": "test_cli_extraction.py",
+      "summary": "Exercises CLI extraction and export behavior with local fixtures and model calls stubbed out. Coverage includes format selection, validation failures, partial parsing, diagnostics, and output naming."
+    }
+  ],
+  "fanInRanking": [
+    {
+      "id": "file:src/layout.py",
+      "fanIn": 26,
+      "name": "layout.py"
+    },
+    {
+      "id": "function:tests/test_chat.py:document",
+      "fanIn": 20,
+      "name": "document"
+    },
+    {
+      "id": "function:tests/test_layout_structure.py:document",
+      "fanIn": 20,
+      "name": "document"
+    },
+    {
+      "id": "file:src/__init__.py",
+      "fanIn": 14,
+      "name": "__init__.py"
+    },
+    {
+      "id": "file:src/chat.py",
+      "fanIn": 11,
+      "name": "chat.py"
+    },
+    {
+      "id": "file:src/preprocess.py",
+      "fanIn": 11,
+      "name": "preprocess.py"
+    },
+    {
+      "id": "function:tests/test_diagnostics.py:call_response",
+      "fanIn": 11,
+      "name": "call_response"
+    },
+    {
+      "id": "function:tests/test_layout_structure.py:block",
+      "fanIn": 11,
+      "name": "block"
+    },
+    {
+      "id": "file:src/diagnostics.py",
+      "fanIn": 9,
+      "name": "diagnostics.py"
+    },
+    {
+      "id": "file:src/output_names.py",
+      "fanIn": 9,
+      "name": "output_names.py"
+    },
+    {
+      "id": "function:tests/test_diagnostics.py:invoke",
+      "fanIn": 9,
+      "name": "invoke"
+    },
+    {
+      "id": "file:src/figures.py",
+      "fanIn": 8,
+      "name": "figures.py"
+    },
+    {
+      "id": "file:src/graph.py",
+      "fanIn": 8,
+      "name": "graph.py"
+    },
+    {
+      "id": "file:src/markdown.py",
+      "fanIn": 8,
+      "name": "markdown.py"
+    },
+    {
+      "id": "file:src/models.py",
+      "fanIn": 8,
+      "name": "models.py"
+    },
+    {
+      "id": "function:tests/test_chat.py:client_for",
+      "fanIn": 8,
+      "name": "client_for"
+    },
+    {
+      "id": "function:tests/test_diagnostics.py:completion",
+      "fanIn": 8,
+      "name": "completion"
+    },
+    {
+      "id": "function:tests/test_markdown.py:_sample_result",
+      "fanIn": 8,
+      "name": "_sample_result"
+    },
+    {
+      "id": "file:src/prompts.py",
+      "fanIn": 7,
+      "name": "prompts.py"
+    },
+    {
+      "id": "file:src/usage.py",
+      "fanIn": 7,
+      "name": "usage.py"
+    }
+  ],
+  "fanOutRanking": [
+    {
+      "id": "file:src/chat.py",
+      "fanOut": 19,
+      "name": "chat.py"
+    },
+    {
+      "id": "file:tests/test_chat.py",
+      "fanOut": 19,
+      "name": "test_chat.py"
+    },
+    {
+      "id": "file:tests/test_cli_extraction.py",
+      "fanOut": 18,
+      "name": "test_cli_extraction.py"
+    },
+    {
+      "id": "file:tests/test_diagnostics.py",
+      "fanOut": 18,
+      "name": "test_diagnostics.py"
+    },
+    {
+      "id": "file:tests/test_layout_structure.py",
+      "fanOut": 18,
+      "name": "test_layout_structure.py"
+    },
+    {
+      "id": "file:src/markdown.py",
+      "fanOut": 17,
+      "name": "markdown.py"
+    },
+    {
+      "id": "file:src/graph.py",
+      "fanOut": 16,
+      "name": "graph.py"
+    },
+    {
+      "id": "file:tests/test_markdown.py",
+      "fanOut": 15,
+      "name": "test_markdown.py"
+    },
+    {
+      "id": "file:tests/test_ui_diagnostics.py",
+      "fanOut": 15,
+      "name": "test_ui_diagnostics.py"
+    },
+    {
+      "id": "file:src/layout.py",
+      "fanOut": 14,
+      "name": "layout.py"
+    },
+    {
+      "id": "file:src/ui/app.py",
+      "fanOut": 14,
+      "name": "app.py"
+    },
+    {
+      "id": "file:tests/test_preprocess.py",
+      "fanOut": 14,
+      "name": "test_preprocess.py"
+    },
+    {
+      "id": "document:docs/ARCHITECTURE.md",
+      "fanOut": 13,
+      "name": "ARCHITECTURE.md"
+    },
+    {
+      "id": "file:scripts/evaluate_prompts.py",
+      "fanOut": 13,
+      "name": "evaluate_prompts.py"
+    },
+    {
+      "id": "file:src/parse.py",
+      "fanOut": 11,
+      "name": "parse.py"
+    },
+    {
+      "id": "file:tests/test_resolution_evaluation.py",
+      "fanOut": 11,
+      "name": "test_resolution_evaluation.py"
+    },
+    {
+      "id": "file:tests/test_graph.py",
+      "fanOut": 10,
+      "name": "test_graph.py"
+    },
+    {
+      "id": "file:scripts/evaluate_layout.py",
+      "fanOut": 9,
+      "name": "evaluate_layout.py"
+    },
+    {
+      "id": "file:scripts/evaluate_resolution.py",
+      "fanOut": 9,
+      "name": "evaluate_resolution.py"
+    },
+    {
+      "id": "file:tests/test_parse.py",
+      "fanOut": 9,
+      "name": "test_parse.py"
+    }
+  ],
+  "bfsTraversal": {
+    "startNode": "file:src/ui/app.py",
+    "order": [
+      "file:src/ui/app.py",
+      "file:src/__init__.py",
+      "file:src/chat.py",
+      "file:src/figures.py",
+      "file:src/graph.py",
+      "file:src/markdown.py",
+      "file:src/models.py",
+      "file:src/preprocess.py",
+      "file:src/ui/clipboard.py",
+      "file:src/usage.py",
+      "file:src/diagnostics.py",
+      "file:src/layout.py",
+      "file:src/prompts.py",
+      "file:src/annotate.py",
+      "file:src/output_names.py",
+      "file:src/export.py",
+      "file:src/parse.py",
+      "file:src/llm.py"
+    ],
+    "depthMap": {
+      "file:src/ui/app.py": 0,
+      "file:src/__init__.py": 1,
+      "file:src/chat.py": 1,
+      "file:src/figures.py": 1,
+      "file:src/graph.py": 1,
+      "file:src/markdown.py": 1,
+      "file:src/models.py": 1,
+      "file:src/preprocess.py": 1,
+      "file:src/ui/clipboard.py": 1,
+      "file:src/usage.py": 1,
+      "file:src/diagnostics.py": 2,
+      "file:src/layout.py": 2,
+      "file:src/prompts.py": 2,
+      "file:src/annotate.py": 2,
+      "file:src/output_names.py": 2,
+      "file:src/export.py": 2,
+      "file:src/parse.py": 2,
+      "file:src/llm.py": 3
+    },
+    "byDepth": {
+      "0": [
+        "file:src/ui/app.py"
+      ],
+      "1": [
+        "file:src/__init__.py",
+        "file:src/chat.py",
+        "file:src/figures.py",
+        "file:src/graph.py",
+        "file:src/markdown.py",
+        "file:src/models.py",
+        "file:src/preprocess.py",
+        "file:src/ui/clipboard.py",
+        "file:src/usage.py"
+      ],
+      "2": [
+        "file:src/diagnostics.py",
+        "file:src/layout.py",
+        "file:src/prompts.py",
+        "file:src/annotate.py",
+        "file:src/output_names.py",
+        "file:src/export.py",
+        "file:src/parse.py"
+      ],
+      "3": [
+        "file:src/llm.py"
+      ]
+    }
+  },
+  "nonCodeFiles": {
+    "documentation": [
+      {
+        "id": "document:requirements-dev.txt",
+        "name": "requirements-dev.txt",
+        "summary": "Development and testing dependencies including pytest, coverage, and linting tools."
+      },
+      {
+        "id": "document:requirements.txt",
+        "name": "requirements.txt",
+        "summary": "Production Python dependencies defining packages required for running GroundMark core and UI."
+      },
+      {
+        "id": "document:prompts/runtime/chat-answer.md",
+        "name": "chat-answer.md",
+        "summary": "Runtime prompt instructing the model to generate grounded document answers with page-level citations."
+      },
+      {
+        "id": "document:prompts/runtime/chat-verify.md",
+        "name": "chat-verify.md",
+        "summary": "Verification prompt validating answer statements against document evidence and citations."
+      },
+      {
+        "id": "document:prompts/runtime/parse-page-structured.md",
+        "name": "parse-page-structured.md",
+        "summary": "Structured JSON output prompt requesting strict bounding box coordinates and block types."
+      },
+      {
+        "id": "document:prompts/runtime/parse-page.md",
+        "name": "parse-page.md",
+        "summary": "Standard vision layout analysis prompt instructing model to identify blocks, reading order, and text."
+      },
+      {
+        "id": "document:tests/fixtures/chat-evaluation.md",
+        "name": "chat-evaluation.md",
+        "summary": "Golden evaluation dataset containing QA pairs and expected citations for chat benchmark tests."
+      },
+      {
+        "id": "document:AGENTS.md",
+        "name": "AGENTS.md",
+        "summary": "Repository guidance describing how to treat the generated OpenWiki index and where authoritative project information comes from."
+      },
+      {
+        "id": "document:CLAUDE.md",
+        "name": "CLAUDE.md",
+        "summary": "Claude-facing repository guidance that delegates its OpenWiki instructions to AGENTS.md."
+      },
+      {
+        "id": "document:README.md",
+        "name": "README.md",
+        "summary": "Project overview and user guide covering installation, endpoint configuration, web and terminal workflows, generated outputs, parsing behavior, document chat, diagrams, and licensing."
+      },
+      {
+        "id": "document:docs/ARCHITECTURE.md",
+        "name": "ARCHITECTURE.md",
+        "summary": "Describes GroundMark’s parse workflow, document structures, UI and CLI paths, rendering and export behavior, and document chat boundaries."
+      },
+      {
+        "id": "document:docs/COMPLIANCE.md",
+        "name": "COMPLIANCE.md",
+        "summary": "Explains what the application sends to its configured model endpoint, how it handles untrusted responses, and where uploaded files and generated artifacts remain."
+      },
+      {
+        "id": "document:docs/CONTENT-FILTER-DIAGNOSTICS.md",
+        "name": "CONTENT-FILTER-DIAGNOSTICS.md",
+        "summary": "Records a September 2026 live parsing run in which one page returned a content-filter result, with request evidence, offline validation, and accuracy limits."
+      },
+      {
+        "id": "document:docs/CONTRIBUTING.md",
+        "name": "CONTRIBUTING.md",
+        "summary": "Sets project boundaries and implementation guidance for parsing, chat, layout compatibility, focused testing, packaging, and release hygiene."
+      },
+      {
+        "id": "document:docs/LAYOUT-EVALUATION.md",
+        "name": "LAYOUT-EVALUATION.md",
+        "summary": "Reports a bounded comparison of the default and detailed layout contracts, including token scores, source-reviewed transcription errors, replay checks, and reasons the experimental mode remains optional."
+      },
+      {
+        "id": "document:docs/MODEL.md",
+        "name": "MODEL.md",
+        "summary": "Documents the parsing and chat model contracts, response validation, page context, local cost estimates, and the limits of offline versus live evaluation."
+      },
+      {
+        "id": "document:docs/PROMPT-EVALUATION.md",
+        "name": "PROMPT-EVALUATION.md",
+        "summary": "Summarizes a dated prompt comparison with its live-call scope, transcription measurements, source-review findings, artifacts, and limits on interpreting token overlap."
+      },
+      {
+        "id": "document:docs/PROMPTS.md",
+        "name": "PROMPTS.md",
+        "summary": "Describes the default and experimental parsing prompt contracts, their grounding and structure requirements, and the separate document-chat answer and verification policies."
+      },
+      {
+        "id": "document:docs/RUNBOOK.md",
+        "name": "RUNBOOK.md",
+        "summary": "Provides installation, configuration, UI and CLI usage, artifact locations, troubleshooting, development checks, and release procedures."
+      },
+      {
+        "id": "document:docs/SOL-RESOLUTION-EVALUATION.md",
+        "name": "SOL-RESOLUTION-EVALUATION.md",
+        "summary": "Records a five-page comparison of two image-resolution profiles, including token scores, request and cost limits, verification findings, and the decision to retain the existing rendering settings."
+      },
+      {
+        "id": "document:openwiki/index.md",
+        "name": "index.md",
+        "summary": "Provides the OpenWiki landing page, linking to the GroundMark quickstart and the architecture, concepts, features, operations, and workflows sections."
+      },
+      {
+        "id": "document:openwiki/quickstart.md",
+        "name": "quickstart.md",
+        "summary": "Explains GroundMark installation and configuration, Streamlit and CLI usage, output behavior, rendering choices, and the evidence limits of document chat."
+      },
+      {
+        "id": "document:knowledge/index.md",
+        "name": "index.md",
+        "summary": "Indexes governed project knowledge stored in Open Knowledge Format v0.2 and leaves a placeholder for concept links."
+      },
+      {
+        "id": "document:openwiki/architecture/index.md",
+        "name": "index.md",
+        "summary": "Navigation index linking to the repository’s parsing-pipeline architecture page."
+      },
+      {
+        "id": "document:openwiki/architecture/parsing-pipeline.md",
+        "name": "parsing-pipeline.md",
+        "summary": "Describes the fixed preprocess-to-parse graph, run-local state, sequential page requests, diagnostic outcomes, and preservation of partial extraction results."
+      },
+      {
+        "id": "document:openwiki/concepts/index.md",
+        "name": "index.md",
+        "summary": "Navigation index linking to the layout and rendering concept page."
+      },
+      {
+        "id": "document:openwiki/concepts/layout-and-rendering.md",
+        "name": "layout-and-rendering.md",
+        "summary": "Documents the stable ParseResult layout contract, structural validation, ordering and escaping rules, table/list fallbacks, and safe figure rendering."
+      },
+      {
+        "id": "document:openwiki/features/document-chat.md",
+        "name": "document-chat.md",
+        "summary": "Explains document-only chat over successful parsed pages, exact-quote evidence checks, independent answer verification, and fail-closed UI behavior."
+      },
+      {
+        "id": "document:openwiki/features/index.md",
+        "name": "index.md",
+        "summary": "Navigation index linking to the grounded document chat feature page."
+      },
+      {
+        "id": "document:openwiki/operations/development-and-testing.md",
+        "name": "development-and-testing.md",
+        "summary": "Summarizes uv-based setup, deterministic tests and packaging, plus separately authorized live evaluation harnesses and their bounds."
+      },
+      {
+        "id": "document:openwiki/operations/index.md",
+        "name": "index.md",
+        "summary": "Navigation index linking to the development, testing, and evaluation guidance."
+      },
+      {
+        "id": "document:openwiki/workflows/artifacts-and-exports.md",
+        "name": "artifacts-and-exports.md",
+        "summary": "Describes one-parse selective exports, run and destination ownership, collision-safe artifact naming, figure and annotation handling, and partial-result status."
+      },
+      {
+        "id": "document:openwiki/workflows/index.md",
+        "name": "index.md",
+        "summary": "Navigation index linking to the artifacts and exports workflow page."
+      }
+    ],
+    "infrastructure": [
+      {
+        "id": "pipeline:.github/workflows/openwiki-update.yml",
+        "name": "openwiki-update.yml",
+        "type": "pipeline",
+        "summary": "Runs OpenWiki on a schedule or manual dispatch, then opens a pull request with generated documentation updates. The workflow also removes transient run state and reports an OpenWiki failure after preserving any completed progress."
+      }
+    ],
+    "data": [],
+    "config": [
+      {
+        "id": "config:.env.example",
+        "name": ".env.example",
+        "summary": "Example environment file detailing API keys and runtime configuration parameters."
+      },
+      {
+        "id": "config:groundmark-architecture.json",
+        "name": "groundmark-architecture.json",
+        "summary": "Structured architecture model specification describing GroundMark subsystems and flows."
+      },
+      {
+        "id": "config:groundmark-architecture.visual-check.json",
+        "name": "groundmark-architecture.visual-check.json",
+        "summary": "Test run configuration and viewport dimensions for architecture visual verification."
+      },
+      {
+        "id": "config:pyproject.toml",
+        "name": "pyproject.toml",
+        "summary": "Modern Python project manifest configuring build metadata, dependencies, scripts, and tool settings."
+      },
+      {
+        "id": "config:docs/diagrams/groundmark-architecture.json",
+        "name": "groundmark-architecture.json",
+        "summary": "Declarative architecture-diagram specification with 12 components, two boundaries, 12 connections, and three explanatory cards."
+      },
+      {
+        "id": "config:docs/diagrams/groundmark-architecture.visual-check.json",
+        "name": "groundmark-architecture.visual-check.json",
+        "summary": "Visual-check receipt for the architecture HTML artifact, recording a passing status, artifact hash and size, screenshot captures, and diagnostics."
+      },
+      {
+        "id": "config:docs/diagrams/groundmark-dataflow.json",
+        "name": "groundmark-dataflow.json",
+        "summary": "Declarative data-flow diagram specification defining five stages, nine nodes, eight flows, and three explanatory cards for document extraction."
+      },
+      {
+        "id": "config:docs/diagrams/groundmark-dataflow.visual-check.json",
+        "name": "groundmark-dataflow.visual-check.json",
+        "summary": "Visual-check receipt for the data-flow HTML artifact, recording a passing status, artifact hash and size, screenshot captures, and diagnostics."
+      },
+      {
+        "id": "config:docs/diagrams/groundmark-lifecycle.json",
+        "name": "groundmark-lifecycle.json",
+        "summary": "Declarative lifecycle diagram specification describing three lanes, nine document-execution states, and five transitions."
+      },
+      {
+        "id": "config:docs/diagrams/groundmark-lifecycle.visual-check.json",
+        "name": "groundmark-lifecycle.visual-check.json",
+        "summary": "Visual-check receipt for the lifecycle HTML artifact, recording a passing status, artifact hash and size, screenshot captures, and diagnostics."
+      },
+      {
+        "id": "config:docs/diagrams/groundmark-sequence.json",
+        "name": "groundmark-sequence.json",
+        "summary": "Declarative sequence diagram specification defining six participants, 13 messages, six activations, and three explanatory cards for parsing and chat."
+      },
+      {
+        "id": "config:docs/diagrams/groundmark-sequence.visual-check.json",
+        "name": "groundmark-sequence.visual-check.json",
+        "summary": "Visual-check receipt for the sequence HTML artifact, recording a passing status, artifact hash and size, screenshot captures, and diagnostics."
+      },
+      {
+        "id": "config:docs/diagrams/groundmark-workflow.json",
+        "name": "groundmark-workflow.json",
+        "summary": "Declarative workflow diagram specification with three lanes and phases, one group, a five-node main path, six nodes, six edges, and three explanatory cards."
+      },
+      {
+        "id": "config:docs/diagrams/groundmark-workflow.visual-check.json",
+        "name": "groundmark-workflow.visual-check.json",
+        "summary": "Visual-check receipt for the workflow HTML artifact, recording a passing status, artifact hash and size, screenshot captures, and diagnostics."
+      },
+      {
+        "id": "config:openwiki/.last-update.json",
+        "name": ".last-update.json",
+        "summary": "Records the latest OpenWiki update timestamp, command, source revision, model, completion status, and output language."
+      },
+      {
+        "id": "config:openwiki/.page-manifest.json",
+        "name": ".page-manifest.json",
+        "summary": "Tracks generated OpenWiki pages with their source fingerprints, page versions, Git revision, and completion-run metadata."
+      },
+      {
+        "id": "config:openwiki/.claims/architecture/parsing-pipeline.json",
+        "name": "parsing-pipeline.json",
+        "summary": "OpenWiki evidence claims describe the extraction graph, parser and layout modes, page sequencing, diagnostics, partial failures, and usage sanitization."
+      },
+      {
+        "id": "config:openwiki/.claims/concepts/layout-and-rendering.json",
+        "name": "layout-and-rendering.json",
+        "summary": "OpenWiki evidence claims document ParseResult compatibility, structure validation, rendering behavior, markup safety, tables, lists, and figure extraction."
+      },
+      {
+        "id": "config:openwiki/.claims/features/document-chat.json",
+        "name": "document-chat.json",
+        "summary": "OpenWiki evidence claims describe document-only chat evidence, request limits, draft and verification checks, fail-closed behavior, and session reset rules."
+      },
+      {
+        "id": "config:openwiki/.claims/operations/development-and-testing.json",
+        "name": "development-and-testing.json",
+        "summary": "OpenWiki evidence claims record Python and packaging conventions plus bounded evaluation workflows and their safety requirements."
+      },
+      {
+        "id": "config:openwiki/.claims/quickstart.json",
+        "name": "quickstart.json",
+        "summary": "OpenWiki evidence claims summarize Python distribution, environment setup, UI launch, and command-line extraction behavior."
+      },
+      {
+        "id": "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+        "name": "artifacts-and-exports.json",
+        "summary": "Machine-readable, source-linked claims for the artifact and export workflow, including run isolation, collision-safe names, partial output, figure crops, annotations, and CLI outcomes."
+      }
+    ]
+  },
+  "clusters": [],
+  "layers": {
+    "count": 9,
+    "list": [
+      {
+        "id": "layer:user-interface",
+        "name": "CLI & User Interface",
+        "description": "Command-line and Streamlit entry points, UI helpers, and the Windows launcher that expose GroundMark workflows."
+      },
+      {
+        "id": "layer:document-chat",
+        "name": "Document Chat & Reasoning",
+        "description": "Conversational question answering and citation-grounding logic for parsed document pages."
+      },
+      {
+        "id": "layer:pipeline-orchestration",
+        "name": "Pipeline Orchestration & State Graph",
+        "description": "The parser facade, LangGraph execution graph, export coordination, and run-safe artifact naming."
+      },
+      {
+        "id": "layer:layout-and-vision-engine",
+        "name": "Layout Analysis & Document Vision",
+        "description": "Document raster preparation, layout and reading-order analysis, visual annotation, figure handling, and structured rendering."
+      },
+      {
+        "id": "layer:model-and-inference",
+        "name": "Model Access & Telemetry Core",
+        "description": "LLM access, prompt-template resolution, typed document models, API diagnostics, and token-cost accounting."
+      },
+      {
+        "id": "layer:evaluation-and-benchmarks",
+        "name": "Evaluation & Quality Benchmarks",
+        "description": "CLI benchmark runners and recorded evaluation reports for chat, layout, prompts, resolution, and diagnostics."
+      },
+      {
+        "id": "layer:testing-and-fixtures",
+        "name": "Test Suite & Mocks",
+        "description": "Automated regression tests, deterministic LLM substitutes, and synthetic or golden document fixtures."
+      },
+      {
+        "id": "layer:documentation-and-prompts",
+        "name": "Documentation & Runtime Prompts",
+        "description": "User and developer guides, OpenWiki and OKF indexes, architecture diagrams, and runtime instructions for parsing and grounded answers."
+      },
+      {
+        "id": "layer:configuration-and-build",
+        "name": "Configuration & Build Environment",
+        "description": "Python packaging and environment settings, dependency manifests, OpenWiki run metadata, and the documentation-refresh CI workflow."
+      }
+    ]
+  },
+  "nodeSummaryIndex": {
+    "file:src/layout.py": {
+      "name": "layout.py",
+      "type": "file",
+      "summary": "Core layout analysis engine detecting reading order, columns, headers, tables, and bounding boxes."
+    },
+    "function:src/layout.py:_require_xyxy_len": {
+      "name": "_require_xyxy_len",
+      "type": "function",
+      "summary": " Require Xyxy Len function in layout.py supporting layout operations."
+    },
+    "class:src/layout.py:BBox": {
+      "name": "BBox",
+      "type": "class",
+      "summary": "Bbox class in layout.py supporting layout operations."
+    },
+    "class:src/layout.py:ListItem": {
+      "name": "ListItem",
+      "type": "class",
+      "summary": "Listitem class in layout.py supporting layout operations."
+    },
+    "class:src/layout.py:TableCell": {
+      "name": "TableCell",
+      "type": "class",
+      "summary": "Tablecell class in layout.py supporting layout operations."
+    },
+    "class:src/layout.py:BlockStructure": {
+      "name": "BlockStructure",
+      "type": "class",
+      "summary": "Blockstructure class in layout.py supporting layout operations."
+    },
+    "class:src/layout.py:LegacyBlock": {
+      "name": "LegacyBlock",
+      "type": "class",
+      "summary": "Legacyblock class in layout.py supporting layout operations."
+    },
+    "class:src/layout.py:ParseBlock": {
+      "name": "ParseBlock",
+      "type": "class",
+      "summary": "Parseblock class in layout.py supporting layout operations."
+    },
+    "class:src/layout.py:ParsePage": {
+      "name": "ParsePage",
+      "type": "class",
+      "summary": "Parsepage class in layout.py supporting layout operations."
+    },
+    "class:src/layout.py:LegacyParsePage": {
+      "name": "LegacyParsePage",
+      "type": "class",
+      "summary": "Legacyparsepage class in layout.py supporting layout operations."
+    },
+    "class:src/layout.py:ParseResult": {
+      "name": "ParseResult",
+      "type": "class",
+      "summary": "Parseresult class in layout.py supporting layout operations."
+    },
+    "file:tests/test_annotate.py": {
+      "name": "test_annotate.py",
+      "type": "file",
+      "summary": "Unit tests verifying PDF and image bounding box rendering, clipping, and color assignment."
+    },
+    "function:tests/test_annotate.py:test_annotated_pdf_is_created": {
+      "name": "test_annotated_pdf_is_created",
+      "type": "function",
+      "summary": "Test Annotated Pdf Is Created function in test_annotate.py supporting test_annotate operations."
+    },
+    "function:tests/test_annotate.py:test_missing_or_out_of_range_bbox_is_skipped_not_crashed": {
+      "name": "test_missing_or_out_of_range_bbox_is_skipped_not_crashed",
+      "type": "function",
+      "summary": "Test Missing Or Out Of Range Bbox Is Skipped Not Crashed function in test_annotate.py supporting test_annotate operations."
+    },
+    "function:tests/test_annotate.py:test_block_type_label_is_drawn": {
+      "name": "test_block_type_label_is_drawn",
+      "type": "function",
+      "summary": "Test Block Type Label Is Drawn function in test_annotate.py supporting test_annotate operations."
+    },
+    "function:tests/test_annotate.py:test_content_filtered_pages_remain_in_annotated_pdf": {
+      "name": "test_content_filtered_pages_remain_in_annotated_pdf",
+      "type": "function",
+      "summary": "Test Content Filtered Pages Remain In Annotated Pdf function in test_annotate.py supporting test_annotate operations."
+    },
+    "file:tests/test_layout_evaluation.py": {
+      "name": "test_layout_evaluation.py",
+      "type": "file",
+      "summary": "Tests for layout evaluation runner, IoU computation, and scoring thresholds."
+    },
+    "function:tests/test_layout_evaluation.py:corpus": {
+      "name": "corpus",
+      "type": "function",
+      "summary": "Corpus function in test_layout_evaluation.py supporting test_layout_evaluation operations."
+    },
+    "function:tests/test_layout_evaluation.py:runner": {
+      "name": "runner",
+      "type": "function",
+      "summary": "Runner function in test_layout_evaluation.py supporting test_layout_evaluation operations."
+    },
+    "function:tests/test_layout_evaluation.py:test_two_stages_share_ten_request_allowance": {
+      "name": "test_two_stages_share_ten_request_allowance",
+      "type": "function",
+      "summary": "Test Two Stages Share Ten Request Allowance function in test_layout_evaluation.py supporting test_layout_evaluation operations."
+    },
+    "function:tests/test_layout_evaluation.py:test_failure_stops_and_prevents_candidate": {
+      "name": "test_failure_stops_and_prevents_candidate",
+      "type": "function",
+      "summary": "Test Failure Stops And Prevents Candidate function in test_layout_evaluation.py supporting test_layout_evaluation operations."
+    },
+    "function:tests/test_layout_evaluation.py:test_candidate_stops_before_exceeding_allowance": {
+      "name": "test_candidate_stops_before_exceeding_allowance",
+      "type": "function",
+      "summary": "Test Candidate Stops Before Exceeding Allowance function in test_layout_evaluation.py supporting test_layout_evaluation operations."
+    },
+    "function:tests/test_layout_evaluation.py:test_metric_gate_rejects_regression": {
+      "name": "test_metric_gate_rejects_regression",
+      "type": "function",
+      "summary": "Test Metric Gate Rejects Regression function in test_layout_evaluation.py supporting test_layout_evaluation operations."
+    },
+    "file:tests/test_layout_structure.py": {
+      "name": "test_layout_structure.py",
+      "type": "file",
+      "summary": "Verifies layout block hierarchy, reading order sorting, and column boundary detection."
+    },
+    "function:tests/test_layout_structure.py:block": {
+      "name": "block",
+      "type": "function",
+      "summary": "Block function in test_layout_structure.py supporting test_layout_structure operations."
+    },
+    "function:tests/test_layout_structure.py:document": {
+      "name": "document",
+      "type": "function",
+      "summary": "Document function in test_layout_structure.py supporting test_layout_structure operations."
+    },
+    "function:tests/test_layout_structure.py:structure": {
+      "name": "structure",
+      "type": "function",
+      "summary": "Structure function in test_layout_structure.py supporting test_layout_structure operations."
+    },
+    "function:tests/test_layout_structure.py:test_live_schema_requires_all_fields_and_legacy_load_does_not_change_input": {
+      "name": "test_live_schema_requires_all_fields_and_legacy_load_does_not_change_input",
+      "type": "function",
+      "summary": "Test Live Schema Requires All Fields And Legacy Load Does Not Change Input function in test_layout_structure.py supporting test_layout_structure operations."
+    },
+    "function:tests/test_layout_structure.py:test_headings_lists_and_lines_preserve_structure_and_source": {
+      "name": "test_headings_lists_and_lines_preserve_structure_and_source",
+      "type": "function",
+      "summary": "Test Headings Lists And Lines Preserve Structure And Source function in test_layout_structure.py supporting test_layout_structure operations."
+    },
+    "function:tests/test_layout_structure.py:test_merged_header_and_headerless_tables": {
+      "name": "test_merged_header_and_headerless_tables",
+      "type": "function",
+      "summary": "Test Merged Header And Headerless Tables function in test_layout_structure.py supporting test_layout_structure operations."
+    },
+    "function:tests/test_layout_structure.py:test_invalid_table_metadata_is_rejected": {
+      "name": "test_invalid_table_metadata_is_rejected",
+      "type": "function",
+      "summary": "Test Invalid Table Metadata Is Rejected function in test_layout_structure.py supporting test_layout_structure operations."
+    },
+    "function:tests/test_layout_structure.py:test_invalid_nesting_and_heading_level_are_rejected": {
+      "name": "test_invalid_nesting_and_heading_level_are_rejected",
+      "type": "function",
+      "summary": "Test Invalid Nesting And Heading Level Are Rejected function in test_layout_structure.py supporting test_layout_structure operations."
+    },
+    "function:tests/test_layout_structure.py:test_clean_only_hides_running_furniture_and_chat_keeps_all_text": {
+      "name": "test_clean_only_hides_running_furniture_and_chat_keeps_all_text",
+      "type": "function",
+      "summary": "Test Clean Only Hides Running Furniture And Chat Keeps All Text function in test_layout_structure.py supporting test_layout_structure operations."
+    },
+    "function:tests/test_layout_structure.py:test_literal_markup_never_becomes_executable_or_formatting": {
+      "name": "test_literal_markup_never_becomes_executable_or_formatting",
+      "type": "function",
+      "summary": "Test Literal Markup Never Becomes Executable Or Formatting function in test_layout_structure.py supporting test_layout_structure operations."
+    },
+    "function:tests/test_layout_structure.py:test_list_labels_tail_and_unrepresented_text_are_not_lost": {
+      "name": "test_list_labels_tail_and_unrepresented_text_are_not_lost",
+      "type": "function",
+      "summary": "Test List Labels Tail And Unrepresented Text Are Not Lost function in test_layout_structure.py supporting test_layout_structure operations."
+    },
+    "function:tests/test_layout_structure.py:test_plain_bullets_numbering_and_missing_item_source": {
+      "name": "test_plain_bullets_numbering_and_missing_item_source",
+      "type": "function",
+      "summary": "Test Plain Bullets Numbering And Missing Item Source function in test_layout_structure.py supporting test_layout_structure operations."
+    },
+    "function:tests/test_layout_structure.py:test_default_extraction_uses_original_contract_and_detailed_is_opt_in": {
+      "name": "test_default_extraction_uses_original_contract_and_detailed_is_opt_in",
+      "type": "function",
+      "summary": "Test Default Extraction Uses Original Contract And Detailed Is Opt In function in test_layout_structure.py supporting test_layout_structure operations."
+    },
+    "function:tests/test_layout_structure.py:test_figure_crop_bundle_and_fallback": {
+      "name": "test_figure_crop_bundle_and_fallback",
+      "type": "function",
+      "summary": "Test Figure Crop Bundle And Fallback function in test_layout_structure.py supporting test_layout_structure operations."
+    },
+    "file:tests/test_markdown.py": {
+      "name": "test_markdown.py",
+      "type": "file",
+      "summary": "Tests markdown generation from layout blocks, table serialization, and heading levels."
+    },
+    "function:tests/test_markdown.py:table_structure": {
+      "name": "table_structure",
+      "type": "function",
+      "summary": "Table Structure function in test_markdown.py supporting test_markdown operations."
+    },
+    "function:tests/test_markdown.py:test_ragged_model_table_rows_are_padded_without_changing_cells": {
+      "name": "test_ragged_model_table_rows_are_padded_without_changing_cells",
+      "type": "function",
+      "summary": "Test Ragged Model Table Rows Are Padded Without Changing Cells function in test_markdown.py supporting test_markdown operations."
+    },
+    "function:tests/test_markdown.py:_sample_result": {
+      "name": "_sample_result",
+      "type": "function",
+      "summary": " Sample Result function in test_markdown.py supporting test_markdown operations."
+    },
+    "function:tests/test_markdown.py:test_parse_to_markdown_snapshot": {
+      "name": "test_parse_to_markdown_snapshot",
+      "type": "function",
+      "summary": "Test Parse To Markdown Snapshot function in test_markdown.py supporting test_markdown operations."
+    },
+    "function:tests/test_markdown.py:test_parse_to_html_renders_document_like_page": {
+      "name": "test_parse_to_html_renders_document_like_page",
+      "type": "function",
+      "summary": "Test Parse To Html Renders Document Like Page function in test_markdown.py supporting test_markdown operations."
+    },
+    "function:tests/test_markdown.py:test_parse_to_html_escapes_content": {
+      "name": "test_parse_to_html_escapes_content",
+      "type": "function",
+      "summary": "Test Parse To Html Escapes Content function in test_markdown.py supporting test_markdown operations."
+    },
+    "function:tests/test_markdown.py:test_key_value_splits_on_first_colon": {
+      "name": "test_key_value_splits_on_first_colon",
+      "type": "function",
+      "summary": "Test Key Value Splits On First Colon function in test_markdown.py supporting test_markdown operations."
+    },
+    "function:tests/test_markdown.py:test_no_bbox_blocks_keep_model_order": {
+      "name": "test_no_bbox_blocks_keep_model_order",
+      "type": "function",
+      "summary": "Test No Bbox Blocks Keep Model Order function in test_markdown.py supporting test_markdown operations."
+    },
+    "function:tests/test_markdown.py:test_render_and_save_writes_md_next_to_json": {
+      "name": "test_render_and_save_writes_md_next_to_json",
+      "type": "function",
+      "summary": "Test Render And Save Writes Md Next To Json function in test_markdown.py supporting test_markdown operations."
+    },
+    "function:tests/test_markdown.py:test_column_order_is_preserved_even_with_missing_bbox": {
+      "name": "test_column_order_is_preserved_even_with_missing_bbox",
+      "type": "function",
+      "summary": "Test Column Order Is Preserved Even With Missing Bbox function in test_markdown.py supporting test_markdown operations."
+    },
+    "function:tests/test_markdown.py:test_table_escaping_padding_and_line_breaks_preserve_source": {
+      "name": "test_table_escaping_padding_and_line_breaks_preserve_source",
+      "type": "function",
+      "summary": "Test Table Escaping Padding And Line Breaks Preserve Source function in test_markdown.py supporting test_markdown operations."
+    },
+    "function:tests/test_markdown.py:test_table_empty_and_unstructured_fallback": {
+      "name": "test_table_empty_and_unstructured_fallback",
+      "type": "function",
+      "summary": "Test Table Empty And Unstructured Fallback function in test_markdown.py supporting test_markdown operations."
+    },
+    "function:tests/test_markdown.py:test_ordinary_checkbox_words_are_not_rewritten": {
+      "name": "test_ordinary_checkbox_words_are_not_rewritten",
+      "type": "function",
+      "summary": "Test Ordinary Checkbox Words Are Not Rewritten function in test_markdown.py supporting test_markdown operations."
+    },
+    "file:tests/test_prompt_evaluation.py": {
+      "name": "test_prompt_evaluation.py",
+      "type": "file",
+      "summary": "Tests prompt evaluation scoring algorithms and token comparison logic."
+    },
+    "function:tests/test_prompt_evaluation.py:test_live_manifest_is_limited_to_approved_six_pages": {
+      "name": "test_live_manifest_is_limited_to_approved_six_pages",
+      "type": "function",
+      "summary": "Test Live Manifest Is Limited To Approved Six Pages function in test_prompt_evaluation.py supporting test_prompt_evaluation operations."
+    },
+    "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text": {
+      "name": "test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "type": "function",
+      "summary": "Test Reference Scoring Uses Page Ranges And Does Not Double Count Table Text function in test_prompt_evaluation.py supporting test_prompt_evaluation operations."
+    },
+    "function:tests/test_prompt_evaluation.py:test_corrective_run_skips_filtered_pages_before_rendering": {
+      "name": "test_corrective_run_skips_filtered_pages_before_rendering",
+      "type": "function",
+      "summary": "Test Corrective Run Skips Filtered Pages Before Rendering function in test_prompt_evaluation.py supporting test_prompt_evaluation operations."
+    },
+    "file:tests/test_resolution_evaluation.py": {
+      "name": "test_resolution_evaluation.py",
+      "type": "file",
+      "summary": "Tests resolution benchmark metrics, execution limits, and scoring formulas."
+    },
+    "function:tests/test_resolution_evaluation.py:corpus": {
+      "name": "corpus",
+      "type": "function",
+      "summary": "Corpus function in test_resolution_evaluation.py supporting test_resolution_evaluation operations."
+    },
+    "function:tests/test_resolution_evaluation.py:outcome": {
+      "name": "outcome",
+      "type": "function",
+      "summary": "Outcome function in test_resolution_evaluation.py supporting test_resolution_evaluation operations."
+    },
+    "function:tests/test_resolution_evaluation.py:test_comparison_uses_only_five_pages_and_ten_bounded_requests": {
+      "name": "test_comparison_uses_only_five_pages_and_ten_bounded_requests",
+      "type": "function",
+      "summary": "Test Comparison Uses Only Five Pages And Ten Bounded Requests function in test_resolution_evaluation.py supporting test_resolution_evaluation operations."
+    },
+    "function:tests/test_resolution_evaluation.py:test_request_limit_stops_before_next_call": {
+      "name": "test_request_limit_stops_before_next_call",
+      "type": "function",
+      "summary": "Test Request Limit Stops Before Next Call function in test_resolution_evaluation.py supporting test_resolution_evaluation operations."
+    },
+    "function:tests/test_resolution_evaluation.py:test_budget_reserves_next_request": {
+      "name": "test_budget_reserves_next_request",
+      "type": "function",
+      "summary": "Test Budget Reserves Next Request function in test_resolution_evaluation.py supporting test_resolution_evaluation operations."
+    },
+    "function:tests/test_resolution_evaluation.py:test_reported_spend_stops_next_request": {
+      "name": "test_reported_spend_stops_next_request",
+      "type": "function",
+      "summary": "Test Reported Spend Stops Next Request function in test_resolution_evaluation.py supporting test_resolution_evaluation operations."
+    },
+    "function:tests/test_resolution_evaluation.py:test_unknown_usage_stops_immediately": {
+      "name": "test_unknown_usage_stops_immediately",
+      "type": "function",
+      "summary": "Test Unknown Usage Stops Immediately function in test_resolution_evaluation.py supporting test_resolution_evaluation operations."
+    },
+    "function:tests/test_resolution_evaluation.py:test_rejected_pages_are_not_resubmitted_at_other_resolution": {
+      "name": "test_rejected_pages_are_not_resubmitted_at_other_resolution",
+      "type": "function",
+      "summary": "Test Rejected Pages Are Not Resubmitted At Other Resolution function in test_resolution_evaluation.py supporting test_resolution_evaluation operations."
+    },
+    "function:tests/test_resolution_evaluation.py:test_limits_cannot_be_increased": {
+      "name": "test_limits_cannot_be_increased",
+      "type": "function",
+      "summary": "Test Limits Cannot Be Increased function in test_resolution_evaluation.py supporting test_resolution_evaluation operations."
+    },
+    "function:tests/test_resolution_evaluation.py:test_any_page_regression_blocks_promotion": {
+      "name": "test_any_page_regression_blocks_promotion",
+      "type": "function",
+      "summary": "Test Any Page Regression Blocks Promotion function in test_resolution_evaluation.py supporting test_resolution_evaluation operations."
+    },
+    "file:scripts/evaluate_layout.py": {
+      "name": "evaluate_layout.py",
+      "type": "file",
+      "summary": "Evaluates layout detection accuracy against annotated ground truth across multiple document types."
+    },
+    "function:scripts/evaluate_layout.py:metric_gate": {
+      "name": "metric_gate",
+      "type": "function",
+      "summary": "Metric Gate function in evaluate_layout.py supporting evaluate_layout operations."
+    },
+    "function:scripts/evaluate_layout.py:compare": {
+      "name": "compare",
+      "type": "function",
+      "summary": "Compare function in evaluate_layout.py supporting evaluate_layout operations."
+    },
+    "file:scripts/evaluate_resolution.py": {
+      "name": "evaluate_resolution.py",
+      "type": "file",
+      "summary": "Benchmarks layout parsing precision and latency across different image resolution settings."
+    },
+    "function:scripts/evaluate_resolution.py:metric_gate": {
+      "name": "metric_gate",
+      "type": "function",
+      "summary": "Metric Gate function in evaluate_resolution.py supporting evaluate_resolution operations."
+    },
+    "function:scripts/evaluate_resolution.py:compare": {
+      "name": "compare",
+      "type": "function",
+      "summary": "Compare function in evaluate_resolution.py supporting evaluate_resolution operations."
+    },
+    "function:scripts/evaluate_resolution.py:main": {
+      "name": "main",
+      "type": "function",
+      "summary": "Main function in evaluate_resolution.py supporting evaluate_resolution operations."
+    },
+    "file:src/models.py": {
+      "name": "models.py",
+      "type": "file",
+      "summary": "Pydantic data models for bounding boxes, layout blocks, parsed document pages, and chat messages."
+    },
+    "file:src/preprocess.py": {
+      "name": "preprocess.py",
+      "type": "file",
+      "summary": "Prepares and normalizes input documents, handling PDF rasterization, image resizing, and base64 encoding."
+    },
+    "function:src/preprocess.py:count_pages": {
+      "name": "count_pages",
+      "type": "function",
+      "summary": "Count Pages function in preprocess.py supporting preprocess operations."
+    },
+    "function:src/preprocess.py:preprocess": {
+      "name": "preprocess",
+      "type": "function",
+      "summary": "Preprocess function in preprocess.py supporting preprocess operations."
+    },
+    "function:src/preprocess.py:preprocess_pages": {
+      "name": "preprocess_pages",
+      "type": "function",
+      "summary": "Preprocess Pages function in preprocess.py supporting preprocess operations."
+    },
+    "function:src/preprocess.py:_cap_long_edge": {
+      "name": "_cap_long_edge",
+      "type": "function",
+      "summary": " Cap Long Edge function in preprocess.py supporting preprocess operations."
+    },
+    "function:src/preprocess.py:_render_pdf_page_range": {
+      "name": "_render_pdf_page_range",
+      "type": "function",
+      "summary": " Render Pdf Page Range function in preprocess.py supporting preprocess operations."
+    },
+    "class:src/preprocess.py:PreprocessError": {
+      "name": "PreprocessError",
+      "type": "class",
+      "summary": "Preprocesserror class in preprocess.py supporting preprocess operations."
+    },
+    "file:src/ui/clipboard.py": {
+      "name": "clipboard.py",
+      "type": "file",
+      "summary": "Clipboard helper module for copying markdown and chat answers directly to system clipboard."
+    },
+    "file:src/usage.py": {
+      "name": "usage.py",
+      "type": "file",
+      "summary": "Token usage ledger tracking prompt and completion tokens with USD cost computation."
+    },
+    "function:src/usage.py:record": {
+      "name": "record",
+      "type": "function",
+      "summary": "Record function in usage.py supporting usage operations."
+    },
+    "function:src/usage.py:totals": {
+      "name": "totals",
+      "type": "function",
+      "summary": "Totals function in usage.py supporting usage operations."
+    },
+    "function:src/usage.py:cost_usd": {
+      "name": "cost_usd",
+      "type": "function",
+      "summary": "Cost Usd function in usage.py supporting usage operations."
+    },
+    "function:src/usage.py:session_cost_usd": {
+      "name": "session_cost_usd",
+      "type": "function",
+      "summary": "Session Cost Usd function in usage.py supporting usage operations."
+    },
+    "file:tests/fixtures/make_invoice_png.py": {
+      "name": "make_invoice_png.py",
+      "type": "file",
+      "summary": "Fixture script dynamically generating synthetic invoice images with predictable layout elements."
+    },
+    "function:tests/fixtures/make_invoice_png.py:make_invoice_image": {
+      "name": "make_invoice_image",
+      "type": "function",
+      "summary": "Make Invoice Image function in make_invoice_png.py supporting make_invoice_png operations."
+    },
+    "function:tests/fixtures/make_invoice_png.py:main": {
+      "name": "main",
+      "type": "function",
+      "summary": "Main function in make_invoice_png.py supporting make_invoice_png operations."
+    },
+    "file:tests/test_preprocess.py": {
+      "name": "test_preprocess.py",
+      "type": "file",
+      "summary": "Tests image deskewing, resizing, base64 encoding, and PDF page rasterization."
+    },
+    "function:tests/test_preprocess.py:_ensure_fixtures": {
+      "name": "_ensure_fixtures",
+      "type": "function",
+      "summary": " Ensure Fixtures function in test_preprocess.py supporting test_preprocess operations."
+    },
+    "function:tests/test_preprocess.py:test_missing_file_raises": {
+      "name": "test_missing_file_raises",
+      "type": "function",
+      "summary": "Test Missing File Raises function in test_preprocess.py supporting test_preprocess operations."
+    },
+    "function:tests/test_preprocess.py:test_png_returns_base64": {
+      "name": "test_png_returns_base64",
+      "type": "function",
+      "summary": "Test Png Returns Base64 function in test_preprocess.py supporting test_preprocess operations."
+    },
+    "function:tests/test_preprocess.py:test_sha_stable": {
+      "name": "test_sha_stable",
+      "type": "function",
+      "summary": "Test Sha Stable function in test_preprocess.py supporting test_preprocess operations."
+    },
+    "function:tests/test_preprocess.py:test_pdf_first_page": {
+      "name": "test_pdf_first_page",
+      "type": "function",
+      "summary": "Test Pdf First Page function in test_preprocess.py supporting test_preprocess operations."
+    },
+    "function:tests/test_preprocess.py:_make_multi_page_pdf": {
+      "name": "_make_multi_page_pdf",
+      "type": "function",
+      "summary": " Make Multi Page Pdf function in test_preprocess.py supporting test_preprocess operations."
+    },
+    "function:tests/test_preprocess.py:test_preprocess_pages_defaults_to_whole_document": {
+      "name": "test_preprocess_pages_defaults_to_whole_document",
+      "type": "function",
+      "summary": "Test Preprocess Pages Defaults To Whole Document function in test_preprocess.py supporting test_preprocess operations."
+    },
+    "function:tests/test_preprocess.py:test_preprocess_pages_explicit_range": {
+      "name": "test_preprocess_pages_explicit_range",
+      "type": "function",
+      "summary": "Test Preprocess Pages Explicit Range function in test_preprocess.py supporting test_preprocess operations."
+    },
+    "function:tests/test_preprocess.py:test_preprocess_pages_end_page_none_goes_to_last_page": {
+      "name": "test_preprocess_pages_end_page_none_goes_to_last_page",
+      "type": "function",
+      "summary": "Test Preprocess Pages End Page None Goes To Last Page function in test_preprocess.py supporting test_preprocess operations."
+    },
+    "function:tests/test_preprocess.py:test_preprocess_pages_single_image_is_one_page": {
+      "name": "test_preprocess_pages_single_image_is_one_page",
+      "type": "function",
+      "summary": "Test Preprocess Pages Single Image Is One Page function in test_preprocess.py supporting test_preprocess operations."
+    },
+    "function:tests/test_preprocess.py:test_invalid_pdf_ranges_fail": {
+      "name": "test_invalid_pdf_ranges_fail",
+      "type": "function",
+      "summary": "Test Invalid Pdf Ranges Fail function in test_preprocess.py supporting test_preprocess operations."
+    },
+    "function:tests/test_preprocess.py:test_resolution_profiles_and_no_raster_upscaling": {
+      "name": "test_resolution_profiles_and_no_raster_upscaling",
+      "type": "function",
+      "summary": "Test Resolution Profiles And No Raster Upscaling function in test_preprocess.py supporting test_preprocess operations."
+    },
+    "file:src/__init__.py": {
+      "name": "__init__.py",
+      "type": "file",
+      "summary": "Root package initialization file for GroundMark document layout and chat analysis."
+    },
+    "file:src/cli.py": {
+      "name": "cli.py",
+      "type": "file",
+      "summary": "Command-line interface providing subcommands for document parsing, layout extraction, and pipeline runs."
+    },
+    "function:src/cli.py:main": {
+      "name": "main",
+      "type": "function",
+      "summary": "Main function in cli.py supporting cli operations."
+    },
+    "function:src/cli.py:_extract": {
+      "name": "_extract",
+      "type": "function",
+      "summary": " Extract function in cli.py supporting cli operations."
+    },
+    "file:tests/fake_llm.py": {
+      "name": "fake_llm.py",
+      "type": "file",
+      "summary": "Mock LLM client fixture providing deterministic responses for unit and integration testing."
+    },
+    "class:tests/fake_llm.py:FakeLLM": {
+      "name": "FakeLLM",
+      "type": "class",
+      "summary": "Fakellm class in fake_llm.py supporting fake_llm operations."
+    },
+    "file:tests/test_cli.py": {
+      "name": "test_cli.py",
+      "type": "file",
+      "summary": "Tests CLI option parsing, help text, flag validations, and error exit codes."
+    },
+    "function:tests/test_cli.py:test_launcher_uses_workspace_and_installed_app": {
+      "name": "test_launcher_uses_workspace_and_installed_app",
+      "type": "function",
+      "summary": "Test Launcher Uses Workspace And Installed App function in test_cli.py supporting test_cli operations."
+    },
+    "function:tests/test_cli.py:test_invalid_port_does_not_create_workspace": {
+      "name": "test_invalid_port_does_not_create_workspace",
+      "type": "function",
+      "summary": "Test Invalid Port Does Not Create Workspace function in test_cli.py supporting test_cli operations."
+    },
+    "file:tests/test_parse.py": {
+      "name": "test_parse.py",
+      "type": "file",
+      "summary": "Tests high-level document parser orchestration, multi-page parsing, and fallback behaviors."
+    },
+    "function:tests/test_parse.py:test_parse_document_writes_json": {
+      "name": "test_parse_document_writes_json",
+      "type": "function",
+      "summary": "Test Parse Document Writes Json function in test_parse.py supporting test_parse operations."
+    },
+    "function:tests/test_parse.py:test_parse_document_respects_page_range": {
+      "name": "test_parse_document_respects_page_range",
+      "type": "function",
+      "summary": "Test Parse Document Respects Page Range function in test_parse.py supporting test_parse operations."
+    },
+    "function:tests/test_parse.py:test_parse_document_keeps_pages_not_rejected_by_content_filter": {
+      "name": "test_parse_document_keeps_pages_not_rejected_by_content_filter",
+      "type": "function",
+      "summary": "Test Parse Document Keeps Pages Not Rejected By Content Filter function in test_parse.py supporting test_parse operations."
+    },
+    "function:tests/test_parse.py:test_sequential_outcomes_keep_page_identity_and_context": {
+      "name": "test_sequential_outcomes_keep_page_identity_and_context",
+      "type": "function",
+      "summary": "Test Sequential Outcomes Keep Page Identity And Context function in test_parse.py supporting test_parse operations."
+    },
+    "function:tests/test_parse.py:test_all_failed_diagnostics_are_saved": {
+      "name": "test_all_failed_diagnostics_are_saved",
+      "type": "function",
+      "summary": "Test All Failed Diagnostics Are Saved function in test_parse.py supporting test_parse operations."
+    },
+    "function:tests/test_parse.py:test_progress_reports_completion_in_source_order": {
+      "name": "test_progress_reports_completion_in_source_order",
+      "type": "function",
+      "summary": "Test Progress Reports Completion In Source Order function in test_parse.py supporting test_parse operations."
+    },
+    "file:tests/test_usage.py": {
+      "name": "test_usage.py",
+      "type": "file",
+      "summary": "Tests token usage accumulation, ledger calculations, and cost estimation formulas."
+    },
+    "function:tests/test_usage.py:test_record_and_totals": {
+      "name": "test_record_and_totals",
+      "type": "function",
+      "summary": "Test Record And Totals function in test_usage.py supporting test_usage operations."
+    },
+    "function:tests/test_usage.py:test_missing_usage_is_unknown": {
+      "name": "test_missing_usage_is_unknown",
+      "type": "function",
+      "summary": "Test Missing Usage Is Unknown function in test_usage.py supporting test_usage operations."
+    },
+    "function:tests/test_usage.py:test_ledgers_do_not_share_entries": {
+      "name": "test_ledgers_do_not_share_entries",
+      "type": "function",
+      "summary": "Test Ledgers Do Not Share Entries function in test_usage.py supporting test_usage operations."
+    },
+    "function:tests/test_usage.py:test_cost_usd_uses_all_input_rates": {
+      "name": "test_cost_usd_uses_all_input_rates",
+      "type": "function",
+      "summary": "Test Cost Usd Uses All Input Rates function in test_usage.py supporting test_usage operations."
+    },
+    "function:tests/test_usage.py:test_unknown_model_is_not_repriced_as_sol": {
+      "name": "test_unknown_model_is_not_repriced_as_sol",
+      "type": "function",
+      "summary": "Test Unknown Model Is Not Repriced As Sol function in test_usage.py supporting test_usage operations."
+    },
+    "file:scripts/evaluate_chat.py": {
+      "name": "evaluate_chat.py",
+      "type": "file",
+      "summary": "CLI evaluation script running automated document question answering benchmarks against ground truth."
+    },
+    "function:scripts/evaluate_chat.py:main": {
+      "name": "main",
+      "type": "function",
+      "summary": "Main function in evaluate_chat.py supporting evaluate_chat operations."
+    },
+    "file:src/chat.py": {
+      "name": "chat.py",
+      "type": "file",
+      "summary": "Multi-turn document conversational question answering with citation verification and structured reasoning."
+    },
+    "function:src/chat.py:document_pages": {
+      "name": "document_pages",
+      "type": "function",
+      "summary": "Document Pages function in chat.py supporting chat operations."
+    },
+    "function:src/chat.py:_payload": {
+      "name": "_payload",
+      "type": "function",
+      "summary": " Payload function in chat.py supporting chat operations."
+    },
+    "function:src/chat.py:_call": {
+      "name": "_call",
+      "type": "function",
+      "summary": " Call function in chat.py supporting chat operations."
+    },
+    "function:src/chat.py:_normalize": {
+      "name": "_normalize",
+      "type": "function",
+      "summary": " Normalize function in chat.py supporting chat operations."
+    },
+    "function:src/chat.py:_validated_text": {
+      "name": "_validated_text",
+      "type": "function",
+      "summary": " Validated Text function in chat.py supporting chat operations."
+    },
+    "function:src/chat.py:answer_document_question": {
+      "name": "answer_document_question",
+      "type": "function",
+      "summary": "Answer Document Question function in chat.py supporting chat operations."
+    },
+    "class:src/chat.py:Evidence": {
+      "name": "Evidence",
+      "type": "class",
+      "summary": "Evidence class in chat.py supporting chat operations."
+    },
+    "class:src/chat.py:Statement": {
+      "name": "Statement",
+      "type": "class",
+      "summary": "Statement class in chat.py supporting chat operations."
+    },
+    "class:src/chat.py:Draft": {
+      "name": "Draft",
+      "type": "class",
+      "summary": "Draft class in chat.py supporting chat operations."
+    },
+    "class:src/chat.py:Verification": {
+      "name": "Verification",
+      "type": "class",
+      "summary": "Verification class in chat.py supporting chat operations."
+    },
+    "class:src/chat.py:ChatResult": {
+      "name": "ChatResult",
+      "type": "class",
+      "summary": "Chatresult class in chat.py supporting chat operations."
+    },
+    "file:src/prompts.py": {
+      "name": "prompts.py",
+      "type": "file",
+      "summary": "Prompt template loader resolving system instructions and user templates from the prompts directory."
+    },
+    "function:src/prompts.py:render_prompt": {
+      "name": "render_prompt",
+      "type": "function",
+      "summary": "Render Prompt function in prompts.py supporting prompts operations."
+    },
+    "file:tests/test_chat.py": {
+      "name": "test_chat.py",
+      "type": "file",
+      "summary": "Tests for document chat pipeline, conversational context handling, and citation verification."
+    },
+    "function:tests/test_chat.py:document": {
+      "name": "document",
+      "type": "function",
+      "summary": "Document function in test_chat.py supporting test_chat operations."
+    },
+    "function:tests/test_chat.py:draft": {
+      "name": "draft",
+      "type": "function",
+      "summary": "Draft function in test_chat.py supporting test_chat operations."
+    },
+    "function:tests/test_chat.py:client_for": {
+      "name": "client_for",
+      "type": "function",
+      "summary": "Client For function in test_chat.py supporting test_chat operations."
+    },
+    "function:tests/test_chat.py:test_grounded_answer_and_fixed_wire_contract": {
+      "name": "test_grounded_answer_and_fixed_wire_contract",
+      "type": "function",
+      "summary": "Test Grounded Answer And Fixed Wire Contract function in test_chat.py supporting test_chat operations."
+    },
+    "function:tests/test_chat.py:test_invalid_evidence_or_style_never_reaches_verifier": {
+      "name": "test_invalid_evidence_or_style_never_reaches_verifier",
+      "type": "function",
+      "summary": "Test Invalid Evidence Or Style Never Reaches Verifier function in test_chat.py supporting test_chat operations."
+    },
+    "function:tests/test_chat.py:test_rejections_are_fixed_and_not_verified": {
+      "name": "test_rejections_are_fixed_and_not_verified",
+      "type": "function",
+      "summary": "Test Rejections Are Fixed And Not Verified function in test_chat.py supporting test_chat operations."
+    },
+    "function:tests/test_chat.py:test_verifier_blocks_unsupported_claim_with_real_quote": {
+      "name": "test_verifier_blocks_unsupported_claim_with_real_quote",
+      "type": "function",
+      "summary": "Test Verifier Blocks Unsupported Claim With Real Quote function in test_chat.py supporting test_chat operations."
+    },
+    "function:tests/test_chat.py:test_provider_or_schema_failure_is_sanitized_and_accounted": {
+      "name": "test_provider_or_schema_failure_is_sanitized_and_accounted",
+      "type": "function",
+      "summary": "Test Provider Or Schema Failure Is Sanitized And Accounted function in test_chat.py supporting test_chat operations."
+    },
+    "function:tests/test_chat.py:test_local_limits_and_failed_pages_make_no_calls": {
+      "name": "test_local_limits_and_failed_pages_make_no_calls",
+      "type": "function",
+      "summary": "Test Local Limits And Failed Pages Make No Calls function in test_chat.py supporting test_chat operations."
+    },
+    "function:tests/test_chat.py:test_only_recent_accepted_history_is_data": {
+      "name": "test_only_recent_accepted_history_is_data",
+      "type": "function",
+      "summary": "Test Only Recent Accepted History Is Data function in test_chat.py supporting test_chat operations."
+    },
+    "function:tests/test_chat.py:test_luna_remains_invalid_for_parser": {
+      "name": "test_luna_remains_invalid_for_parser",
+      "type": "function",
+      "summary": "Test Luna Remains Invalid For Parser function in test_chat.py supporting test_chat operations."
+    },
+    "function:tests/test_chat.py:test_tables_and_missing_pages": {
+      "name": "test_tables_and_missing_pages",
+      "type": "function",
+      "summary": "Test Tables And Missing Pages function in test_chat.py supporting test_chat operations."
+    },
+    "function:tests/test_chat.py:test_incomplete_response_never_exposes_text": {
+      "name": "test_incomplete_response_never_exposes_text",
+      "type": "function",
+      "summary": "Test Incomplete Response Never Exposes Text function in test_chat.py supporting test_chat operations."
+    },
+    "function:tests/test_chat.py:test_luna_cost_is_not_sol_cost": {
+      "name": "test_luna_cost_is_not_sol_cost",
+      "type": "function",
+      "summary": "Test Luna Cost Is Not Sol Cost function in test_chat.py supporting test_chat operations."
+    },
+    "function:tests/test_chat.py:test_empty_layout_markers_do_not_enable_chat": {
+      "name": "test_empty_layout_markers_do_not_enable_chat",
+      "type": "function",
+      "summary": "Test Empty Layout Markers Do Not Enable Chat function in test_chat.py supporting test_chat operations."
+    },
+    "function:tests/test_chat.py:test_provider_refusal_never_exposes_raw_text": {
+      "name": "test_provider_refusal_never_exposes_raw_text",
+      "type": "function",
+      "summary": "Test Provider Refusal Never Exposes Raw Text function in test_chat.py supporting test_chat operations."
+    },
+    "file:tests/test_prompts.py": {
+      "name": "test_prompts.py",
+      "type": "file",
+      "summary": "Verifies prompt template loading, variable substitution, and schema validation."
+    },
+    "function:tests/test_prompts.py:test_prompts_resolve_outside_project_and_preserve_substituted_text": {
+      "name": "test_prompts_resolve_outside_project_and_preserve_substituted_text",
+      "type": "function",
+      "summary": "Test Prompts Resolve Outside Project And Preserve Substituted Text function in test_prompts.py supporting test_prompts operations."
+    },
+    "function:tests/test_prompts.py:test_prompt_missing_placeholder_fails": {
+      "name": "test_prompt_missing_placeholder_fails",
+      "type": "function",
+      "summary": "Test Prompt Missing Placeholder Fails function in test_prompts.py supporting test_prompts operations."
+    },
+    "function:tests/test_prompts.py:test_chat_policies_load_outside_project": {
+      "name": "test_chat_policies_load_outside_project",
+      "type": "function",
+      "summary": "Test Chat Policies Load Outside Project function in test_prompts.py supporting test_prompts operations."
+    },
+    "function:tests/test_prompts.py:test_all_runtime_templates_render_without_reformatting_data": {
+      "name": "test_all_runtime_templates_render_without_reformatting_data",
+      "type": "function",
+      "summary": "Test All Runtime Templates Render Without Reformatting Data function in test_prompts.py supporting test_prompts operations."
+    },
+    "function:tests/test_prompts.py:test_runtime_prompt_contains_fidelity_and_injection_boundaries": {
+      "name": "test_runtime_prompt_contains_fidelity_and_injection_boundaries",
+      "type": "function",
+      "summary": "Test Runtime Prompt Contains Fidelity And Injection Boundaries function in test_prompts.py supporting test_prompts operations."
+    },
+    "function:tests/test_prompts.py:test_detailed_prompt_stays_in_markdown_and_preserves_contract": {
+      "name": "test_detailed_prompt_stays_in_markdown_and_preserves_contract",
+      "type": "function",
+      "summary": "Test Detailed Prompt Stays In Markdown And Preserves Contract function in test_prompts.py supporting test_prompts operations."
+    },
+    "file:scripts/evaluate_prompts.py": {
+      "name": "evaluate_prompts.py",
+      "type": "file",
+      "summary": "Compares layout extraction quality and token efficiency across different prompt template variations."
+    },
+    "function:scripts/evaluate_prompts.py:plain_text": {
+      "name": "plain_text",
+      "type": "function",
+      "summary": "Plain Text function in evaluate_prompts.py supporting evaluate_prompts operations."
+    },
+    "function:scripts/evaluate_prompts.py:tokens": {
+      "name": "tokens",
+      "type": "function",
+      "summary": "Tokens function in evaluate_prompts.py supporting evaluate_prompts operations."
+    },
+    "function:scripts/evaluate_prompts.py:score_page": {
+      "name": "score_page",
+      "type": "function",
+      "summary": "Score Page function in evaluate_prompts.py supporting evaluate_prompts operations."
+    },
+    "function:scripts/evaluate_prompts.py:run_page": {
+      "name": "run_page",
+      "type": "function",
+      "summary": "Run Page function in evaluate_prompts.py supporting evaluate_prompts operations."
+    },
+    "function:scripts/evaluate_prompts.py:main": {
+      "name": "main",
+      "type": "function",
+      "summary": "Main function in evaluate_prompts.py supporting evaluate_prompts operations."
+    },
+    "class:scripts/evaluate_prompts.py:_PlainText": {
+      "name": "_PlainText",
+      "type": "class",
+      "summary": " Plaintext class in evaluate_prompts.py supporting evaluate_prompts operations."
+    },
+    "file:src/diagnostics.py": {
+      "name": "diagnostics.py",
+      "type": "file",
+      "summary": "Tracks API response health, token usage per call, error classification, and content filter violations."
+    },
+    "function:src/diagnostics.py:safe_identifier": {
+      "name": "safe_identifier",
+      "type": "function",
+      "summary": "Safe Identifier function in diagnostics.py supporting diagnostics operations."
+    },
+    "function:src/diagnostics.py:token_count": {
+      "name": "token_count",
+      "type": "function",
+      "summary": "Token Count function in diagnostics.py supporting diagnostics operations."
+    },
+    "function:src/diagnostics.py:filter_annotations": {
+      "name": "filter_annotations",
+      "type": "function",
+      "summary": "Filter Annotations function in diagnostics.py supporting diagnostics operations."
+    },
+    "class:src/diagnostics.py:FilterAnnotation": {
+      "name": "FilterAnnotation",
+      "type": "class",
+      "summary": "Filterannotation class in diagnostics.py supporting diagnostics operations."
+    },
+    "class:src/diagnostics.py:PageDiagnostic": {
+      "name": "PageDiagnostic",
+      "type": "class",
+      "summary": "Pagediagnostic class in diagnostics.py supporting diagnostics operations."
+    },
+    "class:src/diagnostics.py:ExtractionCallError": {
+      "name": "ExtractionCallError",
+      "type": "class",
+      "summary": "Extractioncallerror class in diagnostics.py supporting diagnostics operations."
+    },
+    "file:src/llm.py": {
+      "name": "llm.py",
+      "type": "file",
+      "summary": "Low-level LLM client wrapper configuring OpenAI/vLLM clients with structured outputs and retry policies."
+    },
+    "function:src/llm.py:_reasoning_kwargs": {
+      "name": "_reasoning_kwargs",
+      "type": "function",
+      "summary": " Reasoning Kwargs function in llm.py supporting llm operations."
+    },
+    "function:src/llm.py:_build_llm": {
+      "name": "_build_llm",
+      "type": "function",
+      "summary": " Build Llm function in llm.py supporting llm operations."
+    },
+    "function:src/llm.py:_image_message": {
+      "name": "_image_message",
+      "type": "function",
+      "summary": " Image Message function in llm.py supporting llm operations."
+    },
+    "function:src/llm.py:_invoke_structured": {
+      "name": "_invoke_structured",
+      "type": "function",
+      "summary": " Invoke Structured function in llm.py supporting llm operations."
+    },
+    "class:src/llm.py:ExtractConfigError": {
+      "name": "ExtractConfigError",
+      "type": "class",
+      "summary": "Extractconfigerror class in llm.py supporting llm operations."
+    },
+    "file:src/parse.py": {
+      "name": "parse.py",
+      "type": "file",
+      "summary": "High-level parsing facade coordinating document preparation, model inference, and output formatting."
+    },
+    "function:src/parse.py:_page_context": {
+      "name": "_page_context",
+      "type": "function",
+      "summary": " Page Context function in parse.py supporting parse operations."
+    },
+    "function:src/parse.py:parse_page": {
+      "name": "parse_page",
+      "type": "function",
+      "summary": "Parse Page function in parse.py supporting parse operations."
+    },
+    "function:src/parse.py:parse_document": {
+      "name": "parse_document",
+      "type": "function",
+      "summary": "Parse Document function in parse.py supporting parse operations."
+    },
+    "function:src/parse.py:_main": {
+      "name": "_main",
+      "type": "function",
+      "summary": " Main function in parse.py supporting parse operations."
+    },
+    "file:tests/test_diagnostics.py": {
+      "name": "test_diagnostics.py",
+      "type": "file",
+      "summary": "Tests for content filter detection, error formatting, and diagnostic telemetry capture."
+    },
+    "function:tests/test_diagnostics.py:call_response": {
+      "name": "call_response",
+      "type": "function",
+      "summary": "Call Response function in test_diagnostics.py supporting test_diagnostics operations."
+    },
+    "function:tests/test_diagnostics.py:completion": {
+      "name": "completion",
+      "type": "function",
+      "summary": "Completion function in test_diagnostics.py supporting test_diagnostics operations."
+    },
+    "function:tests/test_diagnostics.py:invoke": {
+      "name": "invoke",
+      "type": "function",
+      "summary": "Invoke function in test_diagnostics.py supporting test_diagnostics operations."
+    },
+    "function:tests/test_diagnostics.py:test_live_evaluator_disables_retries_on_actual_client": {
+      "name": "test_live_evaluator_disables_retries_on_actual_client",
+      "type": "function",
+      "summary": "Test Live Evaluator Disables Retries On Actual Client function in test_diagnostics.py supporting test_diagnostics operations."
+    },
+    "function:tests/test_diagnostics.py:test_sol_pricing_keeps_requested_model_when_provider_returns_alias": {
+      "name": "test_sol_pricing_keeps_requested_model_when_provider_returns_alias",
+      "type": "function",
+      "summary": "Test Sol Pricing Keeps Requested Model When Provider Returns Alias function in test_diagnostics.py supporting test_diagnostics operations."
+    },
+    "function:tests/test_diagnostics.py:test_create_retains_strict_schema_messages_settings_and_usage": {
+      "name": "test_create_retains_strict_schema_messages_settings_and_usage",
+      "type": "function",
+      "summary": "Test Create Retains Strict Schema Messages Settings And Usage function in test_diagnostics.py supporting test_diagnostics operations."
+    },
+    "function:tests/test_diagnostics.py:test_unsuccessful_output_never_becomes_valid_extraction": {
+      "name": "test_unsuccessful_output_never_becomes_valid_extraction",
+      "type": "function",
+      "summary": "Test Unsuccessful Output Never Becomes Valid Extraction function in test_diagnostics.py supporting test_diagnostics operations."
+    },
+    "function:tests/test_diagnostics.py:test_http_errors_are_safe_and_not_retried": {
+      "name": "test_http_errors_are_safe_and_not_retried",
+      "type": "function",
+      "summary": "Test Http Errors Are Safe And Not Retried function in test_diagnostics.py supporting test_diagnostics operations."
+    },
+    "function:tests/test_diagnostics.py:test_metadata_allowlist_removes_secret_values_snippets_and_arbitrary_headers": {
+      "name": "test_metadata_allowlist_removes_secret_values_snippets_and_arbitrary_headers",
+      "type": "function",
+      "summary": "Test Metadata Allowlist Removes Secret Values Snippets And Arbitrary Headers function in test_diagnostics.py supporting test_diagnostics operations."
+    },
+    "function:tests/test_diagnostics.py:test_timeout_is_safe_and_missing_usage_stays_unknown": {
+      "name": "test_timeout_is_safe_and_missing_usage_stays_unknown",
+      "type": "function",
+      "summary": "Test Timeout Is Safe And Missing Usage Stays Unknown function in test_diagnostics.py supporting test_diagnostics operations."
+    },
+    "function:tests/test_diagnostics.py:test_missing_annotations_and_usage_and_old_result_compatibility": {
+      "name": "test_missing_annotations_and_usage_and_old_result_compatibility",
+      "type": "function",
+      "summary": "Test Missing Annotations And Usage And Old Result Compatibility function in test_diagnostics.py supporting test_diagnostics operations."
+    },
+    "function:tests/test_diagnostics.py:test_resolution_evaluator_sends_actual_output_cap_and_medium_reasoning": {
+      "name": "test_resolution_evaluator_sends_actual_output_cap_and_medium_reasoning",
+      "type": "function",
+      "summary": "Test Resolution Evaluator Sends Actual Output Cap And Medium Reasoning function in test_diagnostics.py supporting test_diagnostics operations."
+    },
+    "function:tests/test_diagnostics.py:test_raw_client_cannot_bypass_single_model_guard": {
+      "name": "test_raw_client_cannot_bypass_single_model_guard",
+      "type": "function",
+      "summary": "Test Raw Client Cannot Bypass Single Model Guard function in test_diagnostics.py supporting test_diagnostics operations."
+    },
+    "config:.env.example": {
+      "name": ".env.example",
+      "type": "config",
+      "summary": "Example environment file detailing API keys and runtime configuration parameters."
+    },
+    "file:groundmark-architecture.html": {
+      "name": "groundmark-architecture.html",
+      "type": "file",
+      "summary": "Standalone interactive architectural visualization and component dependency diagram."
+    },
+    "config:groundmark-architecture.json": {
+      "name": "groundmark-architecture.json",
+      "type": "config",
+      "summary": "Structured architecture model specification describing GroundMark subsystems and flows."
+    },
+    "file:groundmark-architecture.visual-check.html": {
+      "name": "groundmark-architecture.visual-check.html",
+      "type": "file",
+      "summary": "Multi-viewport responsive preview contact sheet for architecture diagram verification."
+    },
+    "config:groundmark-architecture.visual-check.json": {
+      "name": "groundmark-architecture.visual-check.json",
+      "type": "config",
+      "summary": "Test run configuration and viewport dimensions for architecture visual verification."
+    },
+    "config:pyproject.toml": {
+      "name": "pyproject.toml",
+      "type": "config",
+      "summary": "Modern Python project manifest configuring build metadata, dependencies, scripts, and tool settings."
+    },
+    "document:requirements-dev.txt": {
+      "name": "requirements-dev.txt",
+      "type": "document",
+      "summary": "Development and testing dependencies including pytest, coverage, and linting tools."
+    },
+    "document:requirements.txt": {
+      "name": "requirements.txt",
+      "type": "document",
+      "summary": "Production Python dependencies defining packages required for running GroundMark core and UI."
+    },
+    "file:run.cmd": {
+      "name": "run.cmd",
+      "type": "file",
+      "summary": "Windows batch launcher script setting up virtual environment and launching the Streamlit UI."
+    },
+    "document:prompts/runtime/chat-answer.md": {
+      "name": "chat-answer.md",
+      "type": "document",
+      "summary": "Runtime prompt instructing the model to generate grounded document answers with page-level citations."
+    },
+    "document:prompts/runtime/chat-verify.md": {
+      "name": "chat-verify.md",
+      "type": "document",
+      "summary": "Verification prompt validating answer statements against document evidence and citations."
+    },
+    "document:prompts/runtime/parse-page-structured.md": {
+      "name": "parse-page-structured.md",
+      "type": "document",
+      "summary": "Structured JSON output prompt requesting strict bounding box coordinates and block types."
+    },
+    "document:prompts/runtime/parse-page.md": {
+      "name": "parse-page.md",
+      "type": "document",
+      "summary": "Standard vision layout analysis prompt instructing model to identify blocks, reading order, and text."
+    },
+    "file:src/ui/__init__.py": {
+      "name": "__init__.py",
+      "type": "file",
+      "summary": "UI package initialization exposing UI components and helpers."
+    },
+    "file:tests/__init__.py": {
+      "name": "__init__.py",
+      "type": "file",
+      "summary": "Test package root initialization."
+    },
+    "document:tests/fixtures/chat-evaluation.md": {
+      "name": "chat-evaluation.md",
+      "type": "document",
+      "summary": "Golden evaluation dataset containing QA pairs and expected citations for chat benchmark tests."
+    },
+    "file:tests/test_launcher.py": {
+      "name": "test_launcher.py",
+      "type": "file",
+      "summary": "Tests launcher script behavior, environment validation, and dependency installation checks."
+    },
+    "function:tests/test_launcher.py:test_launcher_forwards_arguments_and_exit_status": {
+      "name": "test_launcher_forwards_arguments_and_exit_status",
+      "type": "function",
+      "summary": "Test Launcher Forwards Arguments And Exit Status function in test_launcher.py supporting test_launcher operations."
+    },
+    "pipeline:.github/workflows/openwiki-update.yml": {
+      "name": "openwiki-update.yml",
+      "type": "pipeline",
+      "summary": "Runs OpenWiki on a schedule or manual dispatch, then opens a pull request with generated documentation updates. The workflow also removes transient run state and reports an OpenWiki failure after preserving any completed progress."
+    },
+    "document:AGENTS.md": {
+      "name": "AGENTS.md",
+      "type": "document",
+      "summary": "Repository guidance describing how to treat the generated OpenWiki index and where authoritative project information comes from."
+    },
+    "document:CLAUDE.md": {
+      "name": "CLAUDE.md",
+      "type": "document",
+      "summary": "Claude-facing repository guidance that delegates its OpenWiki instructions to AGENTS.md."
+    },
+    "document:README.md": {
+      "name": "README.md",
+      "type": "document",
+      "summary": "Project overview and user guide covering installation, endpoint configuration, web and terminal workflows, generated outputs, parsing behavior, document chat, diagrams, and licensing."
+    },
+    "document:docs/ARCHITECTURE.md": {
+      "name": "ARCHITECTURE.md",
+      "type": "document",
+      "summary": "Describes GroundMark’s parse workflow, document structures, UI and CLI paths, rendering and export behavior, and document chat boundaries."
+    },
+    "document:docs/COMPLIANCE.md": {
+      "name": "COMPLIANCE.md",
+      "type": "document",
+      "summary": "Explains what the application sends to its configured model endpoint, how it handles untrusted responses, and where uploaded files and generated artifacts remain."
+    },
+    "document:docs/CONTENT-FILTER-DIAGNOSTICS.md": {
+      "name": "CONTENT-FILTER-DIAGNOSTICS.md",
+      "type": "document",
+      "summary": "Records a September 2026 live parsing run in which one page returned a content-filter result, with request evidence, offline validation, and accuracy limits."
+    },
+    "document:docs/CONTRIBUTING.md": {
+      "name": "CONTRIBUTING.md",
+      "type": "document",
+      "summary": "Sets project boundaries and implementation guidance for parsing, chat, layout compatibility, focused testing, packaging, and release hygiene."
+    },
+    "document:docs/LAYOUT-EVALUATION.md": {
+      "name": "LAYOUT-EVALUATION.md",
+      "type": "document",
+      "summary": "Reports a bounded comparison of the default and detailed layout contracts, including token scores, source-reviewed transcription errors, replay checks, and reasons the experimental mode remains optional."
+    },
+    "document:docs/MODEL.md": {
+      "name": "MODEL.md",
+      "type": "document",
+      "summary": "Documents the parsing and chat model contracts, response validation, page context, local cost estimates, and the limits of offline versus live evaluation."
+    },
+    "document:docs/PROMPT-EVALUATION.md": {
+      "name": "PROMPT-EVALUATION.md",
+      "type": "document",
+      "summary": "Summarizes a dated prompt comparison with its live-call scope, transcription measurements, source-review findings, artifacts, and limits on interpreting token overlap."
+    },
+    "document:docs/PROMPTS.md": {
+      "name": "PROMPTS.md",
+      "type": "document",
+      "summary": "Describes the default and experimental parsing prompt contracts, their grounding and structure requirements, and the separate document-chat answer and verification policies."
+    },
+    "document:docs/RUNBOOK.md": {
+      "name": "RUNBOOK.md",
+      "type": "document",
+      "summary": "Provides installation, configuration, UI and CLI usage, artifact locations, troubleshooting, development checks, and release procedures."
+    },
+    "document:docs/SOL-RESOLUTION-EVALUATION.md": {
+      "name": "SOL-RESOLUTION-EVALUATION.md",
+      "type": "document",
+      "summary": "Records a five-page comparison of two image-resolution profiles, including token scores, request and cost limits, verification findings, and the decision to retain the existing rendering settings."
+    },
+    "file:docs/diagrams/groundmark-architecture.html": {
+      "name": "groundmark-architecture.html",
+      "type": "file",
+      "summary": "Self-contained Archify-rendered interactive architecture diagram showing GroundMark components, service boundaries, and connections."
+    },
+    "config:docs/diagrams/groundmark-architecture.json": {
+      "name": "groundmark-architecture.json",
+      "type": "config",
+      "summary": "Declarative architecture-diagram specification with 12 components, two boundaries, 12 connections, and three explanatory cards."
+    },
+    "file:docs/diagrams/groundmark-architecture.visual-check.html": {
+      "name": "groundmark-architecture.visual-check.html",
+      "type": "file",
+      "summary": "Contact sheet presenting light- and dark-theme screenshots of the architecture diagram at multiple viewport sizes; it records an automated containment pass with visual review pending."
+    },
+    "config:docs/diagrams/groundmark-architecture.visual-check.json": {
+      "name": "groundmark-architecture.visual-check.json",
+      "type": "config",
+      "summary": "Visual-check receipt for the architecture HTML artifact, recording a passing status, artifact hash and size, screenshot captures, and diagnostics."
+    },
+    "file:docs/diagrams/groundmark-dataflow.html": {
+      "name": "groundmark-dataflow.html",
+      "type": "file",
+      "summary": "Self-contained Archify-rendered interactive diagram illustrating GroundMark's document-extraction data stages, processing nodes, and flows."
+    },
+    "config:docs/diagrams/groundmark-dataflow.json": {
+      "name": "groundmark-dataflow.json",
+      "type": "config",
+      "summary": "Declarative data-flow diagram specification defining five stages, nine nodes, eight flows, and three explanatory cards for document extraction."
+    },
+    "file:docs/diagrams/groundmark-dataflow.visual-check.html": {
+      "name": "groundmark-dataflow.visual-check.html",
+      "type": "file",
+      "summary": "Contact sheet presenting light- and dark-theme screenshots of the data-flow diagram at multiple viewport sizes; it records an automated containment pass with visual review pending."
+    },
+    "config:docs/diagrams/groundmark-dataflow.visual-check.json": {
+      "name": "groundmark-dataflow.visual-check.json",
+      "type": "config",
+      "summary": "Visual-check receipt for the data-flow HTML artifact, recording a passing status, artifact hash and size, screenshot captures, and diagnostics."
+    },
+    "file:docs/diagrams/groundmark-lifecycle.html": {
+      "name": "groundmark-lifecycle.html",
+      "type": "file",
+      "summary": "Self-contained Archify-rendered interactive lifecycle diagram showing GroundMark document-processing states, phases, and transitions."
+    },
+    "config:docs/diagrams/groundmark-lifecycle.json": {
+      "name": "groundmark-lifecycle.json",
+      "type": "config",
+      "summary": "Declarative lifecycle diagram specification describing three lanes, nine document-execution states, and five transitions."
+    },
+    "file:docs/diagrams/groundmark-lifecycle.visual-check.html": {
+      "name": "groundmark-lifecycle.visual-check.html",
+      "type": "file",
+      "summary": "Contact sheet presenting light- and dark-theme screenshots of the lifecycle diagram at multiple viewport sizes; it records an automated containment pass with visual review pending."
+    },
+    "config:docs/diagrams/groundmark-lifecycle.visual-check.json": {
+      "name": "groundmark-lifecycle.visual-check.json",
+      "type": "config",
+      "summary": "Visual-check receipt for the lifecycle HTML artifact, recording a passing status, artifact hash and size, screenshot captures, and diagnostics."
+    },
+    "file:docs/diagrams/groundmark-sequence.html": {
+      "name": "groundmark-sequence.html",
+      "type": "file",
+      "summary": "Self-contained Archify-rendered interactive sequence diagram depicting GroundMark parse and chat interactions among six participants."
+    },
+    "config:docs/diagrams/groundmark-sequence.json": {
+      "name": "groundmark-sequence.json",
+      "type": "config",
+      "summary": "Declarative sequence diagram specification defining six participants, 13 messages, six activations, and three explanatory cards for parsing and chat."
+    },
+    "file:docs/diagrams/groundmark-sequence.visual-check.html": {
+      "name": "groundmark-sequence.visual-check.html",
+      "type": "file",
+      "summary": "Contact sheet presenting light- and dark-theme screenshots of the sequence diagram at multiple viewport sizes; it records an automated containment pass with visual review pending."
+    },
+    "config:docs/diagrams/groundmark-sequence.visual-check.json": {
+      "name": "groundmark-sequence.visual-check.json",
+      "type": "config",
+      "summary": "Visual-check receipt for the sequence HTML artifact, recording a passing status, artifact hash and size, screenshot captures, and diagnostics."
+    },
+    "file:docs/diagrams/groundmark-workflow.html": {
+      "name": "groundmark-workflow.html",
+      "type": "file",
+      "summary": "Self-contained Archify-rendered interactive workflow diagram showing GroundMark document parsing phases, grouped steps, and the main processing path."
+    },
+    "config:docs/diagrams/groundmark-workflow.json": {
+      "name": "groundmark-workflow.json",
+      "type": "config",
+      "summary": "Declarative workflow diagram specification with three lanes and phases, one group, a five-node main path, six nodes, six edges, and three explanatory cards."
+    },
+    "file:docs/diagrams/groundmark-workflow.visual-check.html": {
+      "name": "groundmark-workflow.visual-check.html",
+      "type": "file",
+      "summary": "Contact sheet presenting light- and dark-theme screenshots of the workflow diagram at multiple viewport sizes; it records an automated containment pass with visual review pending."
+    },
+    "config:docs/diagrams/groundmark-workflow.visual-check.json": {
+      "name": "groundmark-workflow.visual-check.json",
+      "type": "config",
+      "summary": "Visual-check receipt for the workflow HTML artifact, recording a passing status, artifact hash and size, screenshot captures, and diagnostics."
+    },
+    "config:openwiki/.last-update.json": {
+      "name": ".last-update.json",
+      "type": "config",
+      "summary": "Records the latest OpenWiki update timestamp, command, source revision, model, completion status, and output language."
+    },
+    "config:openwiki/.page-manifest.json": {
+      "name": ".page-manifest.json",
+      "type": "config",
+      "summary": "Tracks generated OpenWiki pages with their source fingerprints, page versions, Git revision, and completion-run metadata."
+    },
+    "document:openwiki/index.md": {
+      "name": "index.md",
+      "type": "document",
+      "summary": "Provides the OpenWiki landing page, linking to the GroundMark quickstart and the architecture, concepts, features, operations, and workflows sections."
+    },
+    "document:openwiki/quickstart.md": {
+      "name": "quickstart.md",
+      "type": "document",
+      "summary": "Explains GroundMark installation and configuration, Streamlit and CLI usage, output behavior, rendering choices, and the evidence limits of document chat."
+    },
+    "document:knowledge/index.md": {
+      "name": "index.md",
+      "type": "document",
+      "summary": "Indexes governed project knowledge stored in Open Knowledge Format v0.2 and leaves a placeholder for concept links."
+    },
+    "config:openwiki/.claims/architecture/parsing-pipeline.json": {
+      "name": "parsing-pipeline.json",
+      "type": "config",
+      "summary": "OpenWiki evidence claims describe the extraction graph, parser and layout modes, page sequencing, diagnostics, partial failures, and usage sanitization."
+    },
+    "config:openwiki/.claims/concepts/layout-and-rendering.json": {
+      "name": "layout-and-rendering.json",
+      "type": "config",
+      "summary": "OpenWiki evidence claims document ParseResult compatibility, structure validation, rendering behavior, markup safety, tables, lists, and figure extraction."
+    },
+    "config:openwiki/.claims/features/document-chat.json": {
+      "name": "document-chat.json",
+      "type": "config",
+      "summary": "OpenWiki evidence claims describe document-only chat evidence, request limits, draft and verification checks, fail-closed behavior, and session reset rules."
+    },
+    "config:openwiki/.claims/operations/development-and-testing.json": {
+      "name": "development-and-testing.json",
+      "type": "config",
+      "summary": "OpenWiki evidence claims record Python and packaging conventions plus bounded evaluation workflows and their safety requirements."
+    },
+    "config:openwiki/.claims/quickstart.json": {
+      "name": "quickstart.json",
+      "type": "config",
+      "summary": "OpenWiki evidence claims summarize Python distribution, environment setup, UI launch, and command-line extraction behavior."
+    },
+    "config:openwiki/.claims/workflows/artifacts-and-exports.json": {
+      "name": "artifacts-and-exports.json",
+      "type": "config",
+      "summary": "Machine-readable, source-linked claims for the artifact and export workflow, including run isolation, collision-safe names, partial output, figure crops, annotations, and CLI outcomes."
+    },
+    "document:openwiki/architecture/index.md": {
+      "name": "index.md",
+      "type": "document",
+      "summary": "Navigation index linking to the repository’s parsing-pipeline architecture page."
+    },
+    "document:openwiki/architecture/parsing-pipeline.md": {
+      "name": "parsing-pipeline.md",
+      "type": "document",
+      "summary": "Describes the fixed preprocess-to-parse graph, run-local state, sequential page requests, diagnostic outcomes, and preservation of partial extraction results."
+    },
+    "document:openwiki/concepts/index.md": {
+      "name": "index.md",
+      "type": "document",
+      "summary": "Navigation index linking to the layout and rendering concept page."
+    },
+    "document:openwiki/concepts/layout-and-rendering.md": {
+      "name": "layout-and-rendering.md",
+      "type": "document",
+      "summary": "Documents the stable ParseResult layout contract, structural validation, ordering and escaping rules, table/list fallbacks, and safe figure rendering."
+    },
+    "document:openwiki/features/document-chat.md": {
+      "name": "document-chat.md",
+      "type": "document",
+      "summary": "Explains document-only chat over successful parsed pages, exact-quote evidence checks, independent answer verification, and fail-closed UI behavior."
+    },
+    "document:openwiki/features/index.md": {
+      "name": "index.md",
+      "type": "document",
+      "summary": "Navigation index linking to the grounded document chat feature page."
+    },
+    "document:openwiki/operations/development-and-testing.md": {
+      "name": "development-and-testing.md",
+      "type": "document",
+      "summary": "Summarizes uv-based setup, deterministic tests and packaging, plus separately authorized live evaluation harnesses and their bounds."
+    },
+    "document:openwiki/operations/index.md": {
+      "name": "index.md",
+      "type": "document",
+      "summary": "Navigation index linking to the development, testing, and evaluation guidance."
+    },
+    "document:openwiki/workflows/artifacts-and-exports.md": {
+      "name": "artifacts-and-exports.md",
+      "type": "document",
+      "summary": "Describes one-parse selective exports, run and destination ownership, collision-safe artifact naming, figure and annotation handling, and partial-result status."
+    },
+    "document:openwiki/workflows/index.md": {
+      "name": "index.md",
+      "type": "document",
+      "summary": "Navigation index linking to the artifacts and exports workflow page."
+    },
+    "file:src/annotate.py": {
+      "name": "annotate.py",
+      "type": "file",
+      "summary": "Rerasterizes the parsed page interval and overlays labels for valid normalized block boxes, optionally saving a multi-page PDF, per-page PNGs, and count metadata."
+    },
+    "function:src/annotate.py:_bbox_is_valid": {
+      "name": "_bbox_is_valid",
+      "type": "function",
+      "summary": "Accepts only normalized boxes with coordinates inside 0–1 and positive width and height."
+    },
+    "function:src/annotate.py:annotate_document": {
+      "name": "annotate_document",
+      "type": "function",
+      "summary": "Rasterizes the covered pages, draws labels for valid block boxes, and optionally writes annotated PDF, page images, and a metadata sidecar."
+    },
+    "file:src/export.py": {
+      "name": "export.py",
+      "type": "file",
+      "summary": "Writes independently selected JSON, Markdown, HTML, ZIP, figure, and annotation outputs from one ParseResult while retaining successful artifacts when another export fails."
+    },
+    "function:src/export.py:export_result": {
+      "name": "export_result",
+      "type": "function",
+      "summary": "Creates the output directory, attempts selected renderers and annotations independently, and returns paths, warnings, and export errors."
+    },
+    "file:src/figures.py": {
+      "name": "figures.py",
+      "type": "file",
+      "summary": "Extracts source-matched figure crops using page-position names and reloads only verified PNG crops; unavailable crops become warnings rather than extraction failures."
+    },
+    "function:src/figures.py:extract_figures": {
+      "name": "extract_figures",
+      "type": "function",
+      "summary": "Checks source identity and bounding boxes before cropping figures, optionally persists PNGs, and reports crop failures as warnings."
+    },
+    "function:src/figures.py:load_figures": {
+      "name": "load_figures",
+      "type": "function",
+      "summary": "Loads expected figure assets and accepts only files that Pillow verifies as PNG images."
+    },
+    "file:src/graph.py": {
+      "name": "graph.py",
+      "type": "file",
+      "summary": "Defines the two-node preprocess-to-parse LangGraph and its run entry point, which initializes isolated state, validates options, streams progress, and returns extraction status and artifacts."
+    },
+    "class:src/graph.py:GraphState": {
+      "name": "GraphState",
+      "type": "class",
+      "summary": "Typed state contract for document identity, parse results, output settings, diagnostics, usage, and generated artifact paths."
+    },
+    "function:src/graph.py:node_preprocess": {
+      "name": "node_preprocess",
+      "type": "function",
+      "summary": "Preprocesses the source and fills document hash, run identity, output destination, model, filename, and start-time defaults."
+    },
+    "function:src/graph.py:node_parse": {
+      "name": "node_parse",
+      "type": "function",
+      "summary": "Runs page parsing and export orchestration, records filtered and failed pages, and converts exceptions or partial results into explicit run status."
+    },
+    "function:src/graph.py:build_graph": {
+      "name": "build_graph",
+      "type": "function",
+      "summary": "Connects preprocess and parse nodes between LangGraph START and END and compiles the graph."
+    },
+    "function:src/graph.py:run_graph": {
+      "name": "run_graph",
+      "type": "function",
+      "summary": "Validates model and rendering options, creates isolated run state, streams graph execution, and returns final state with run-local usage."
+    },
+    "function:src/graph.py:_main": {
+      "name": "_main",
+      "type": "function",
+      "summary": "Implements the module CLI for parsing a document path and printing status, errors, and token totals."
+    },
+    "file:src/markdown.py": {
+      "name": "markdown.py",
+      "type": "file",
+      "summary": "Converts structured parse results into escaped Markdown and HTML, including tables, lists, headings, and figure links. It also writes standalone exports and bundles Markdown with its figures."
+    },
+    "function:src/markdown.py:_blocks": {
+      "name": "_blocks",
+      "type": "function",
+      "summary": "Iterates pages and blocks in page order, optionally filtering headers and footers, and assigns figure names."
+    },
+    "function:src/markdown.py:_render_table_html": {
+      "name": "_render_table_html",
+      "type": "function",
+      "summary": "Renders table rows as escaped HTML while preserving header-cell and span metadata."
+    },
+    "function:src/markdown.py:_render_table": {
+      "name": "_render_table",
+      "type": "function",
+      "summary": "Serializes a simple header-row table as escaped pipe-table Markdown."
+    },
+    "function:src/markdown.py:_list_context": {
+      "name": "_list_context",
+      "type": "function",
+      "summary": "Matches list-item metadata against source text and returns surrounding label and tail text when recoverable."
+    },
+    "function:src/markdown.py:_list_html": {
+      "name": "_list_html",
+      "type": "function",
+      "summary": "Renders list items as HTML while retaining labels and adjacent text."
+    },
+    "function:src/markdown.py:_list_markdown": {
+      "name": "_list_markdown",
+      "type": "function",
+      "summary": "Renders compatible list structures as Markdown and falls back when source context is irregular."
+    },
+    "function:src/markdown.py:_render_block_html": {
+      "name": "_render_block_html",
+      "type": "function",
+      "summary": "Converts one parsed block into its escaped HTML representation."
+    },
+    "function:src/markdown.py:_render_block": {
+      "name": "_render_block",
+      "type": "function",
+      "summary": "Converts one parsed block into Markdown, selecting specialized table, list, and figure handling as needed."
+    },
+    "function:src/markdown.py:parse_to_markdown": {
+      "name": "parse_to_markdown",
+      "type": "function",
+      "summary": "Builds Markdown from the parsed pages and blocks, with optional figure data and output-basename handling."
+    },
+    "function:src/markdown.py:parse_to_html": {
+      "name": "parse_to_html",
+      "type": "function",
+      "summary": "Builds HTML from the parsed pages and blocks, including escaped content and figure assets."
+    },
+    "function:src/markdown.py:markdown_bundle": {
+      "name": "markdown_bundle",
+      "type": "function",
+      "summary": "Packages a rendered Markdown document and its available figures into a ZIP artifact."
+    },
+    "function:src/markdown.py:render_and_save": {
+      "name": "render_and_save",
+      "type": "function",
+      "summary": "Loads a serialized parse result, renders Markdown, and writes the adjacent output file."
+    },
+    "function:src/markdown.py:save_markdown_for_doc": {
+      "name": "save_markdown_for_doc",
+      "type": "function",
+      "summary": "Creates the output directory and saves a Markdown export for a document."
+    },
+    "function:src/markdown.py:save_html_for_doc": {
+      "name": "save_html_for_doc",
+      "type": "function",
+      "summary": "Creates the output directory and saves an HTML export for a document."
+    },
+    "file:src/output_names.py": {
+      "name": "output_names.py",
+      "type": "file",
+      "summary": "Builds safe, source-derived output basenames and deterministic figure names. It reserves timestamped artifact families while avoiding collisions across output folders and concurrent runs."
+    },
+    "function:src/output_names.py:source_stem": {
+      "name": "source_stem",
+      "type": "function",
+      "summary": "Extracts and sanitizes the uploaded filename stem, including Windows-reserved names and length limits."
+    },
+    "function:src/output_names.py:artifact_name": {
+      "name": "artifact_name",
+      "type": "function",
+      "summary": "Validates an artifact basename before appending its requested suffix."
+    },
+    "function:src/output_names.py:figure_name": {
+      "name": "figure_name",
+      "type": "function",
+      "summary": "Creates a page-and-index figure filename, optionally prefixed by the reserved output basename."
+    },
+    "function:src/output_names.py:_occupied": {
+      "name": "_occupied",
+      "type": "function",
+      "summary": "Checks output, annotation, and image directories for case-insensitive filename-family collisions."
+    },
+    "function:src/output_names.py:reserve_basename": {
+      "name": "reserve_basename",
+      "type": "function",
+      "summary": "Reserves a UTC-timestamped output basename, retrying on lock or artifact collisions and cleaning up its lock."
+    },
+    "file:src/ui/app.py": {
+      "name": "app.py",
+      "type": "file",
+      "summary": "Defines the Streamlit document-parsing interface, grounded chat state, upload preview, token-usage display, and figure-asset helpers. The UI delegates parsing and rendering to the application modules."
+    },
+    "function:src/ui/app.py:clear_chat": {
+      "name": "clear_chat",
+      "type": "function",
+      "summary": "Resets the Streamlit document-chat transcript in session state."
+    },
+    "function:src/ui/app.py:load_input_preview": {
+      "name": "load_input_preview",
+      "type": "function",
+      "summary": "Preprocesses a requested page range and decodes its base64 image previews."
+    },
+    "function:src/ui/app.py:show_usage": {
+      "name": "show_usage",
+      "type": "function",
+      "summary": "Aggregates session token totals and estimated cost, then displays usage metrics and any incomplete-usage notice."
+    },
+    "function:src/ui/app.py:figure_assets": {
+      "name": "figure_assets",
+      "type": "function",
+      "summary": "Loads figure image bytes associated with a serialized parse result and output basename."
+    },
+    "file:tests/test_cli_extraction.py": {
+      "name": "test_cli_extraction.py",
+      "type": "file",
+      "summary": "Exercises CLI extraction and export behavior with local fixtures and model calls stubbed out. Coverage includes format selection, validation failures, partial parsing, diagnostics, and output naming."
+    },
+    "function:tests/test_cli_extraction.py:extraction": {
+      "name": "extraction",
+      "type": "function",
+      "summary": "Builds a temporary image input and patches parsing dependencies so CLI tests run without model requests."
+    },
+    "function:tests/test_cli_extraction.py:test_selected_formats_only": {
+      "name": "test_selected_formats_only",
+      "type": "function",
+      "summary": "Checks that requested output formats are written without creating unrequested exports."
+    },
+    "function:tests/test_cli_extraction.py:test_json_skips_presentation": {
+      "name": "test_json_skips_presentation",
+      "type": "function",
+      "summary": "Checks that JSON-only extraction does not invoke presentation rendering."
+    },
+    "function:tests/test_cli_extraction.py:test_invalid_options_fail_before_extraction": {
+      "name": "test_invalid_options_fail_before_extraction",
+      "type": "function",
+      "summary": "Checks invalid CLI options are rejected before document extraction begins."
+    },
+    "function:tests/test_cli_extraction.py:test_overwrite_preserves_unrelated_files": {
+      "name": "test_overwrite_preserves_unrelated_files",
+      "type": "function",
+      "summary": "Checks overwrite behavior does not remove unrelated files from the output directory."
+    },
+    "function:tests/test_cli_extraction.py:test_input_inside_output_is_rejected": {
+      "name": "test_input_inside_output_is_rejected",
+      "type": "function",
+      "summary": "Checks the CLI rejects an input file located inside its output directory."
+    },
+    "function:tests/test_cli_extraction.py:test_missing_key_fails_before_extraction": {
+      "name": "test_missing_key_fails_before_extraction",
+      "type": "function",
+      "summary": "Checks missing credentials fail before the parser is invoked."
+    },
+    "function:tests/test_cli_extraction.py:test_env_file_and_environment_precedence": {
+      "name": "test_env_file_and_environment_precedence",
+      "type": "function",
+      "summary": "Checks environment-file values and existing environment variables follow the expected precedence."
+    },
+    "function:tests/test_cli_extraction.py:test_missing_explicit_env_file": {
+      "name": "test_missing_explicit_env_file",
+      "type": "function",
+      "summary": "Checks a requested but missing environment file produces a clear failure."
+    },
+    "function:tests/test_cli_extraction.py:test_requested_export_failure_keeps_other_outputs": {
+      "name": "test_requested_export_failure_keeps_other_outputs",
+      "type": "function",
+      "summary": "Checks one failed export does not discard successfully generated output formats."
+    },
+    "function:tests/test_cli_extraction.py:test_parse_failure_writes_only_requested_diagnostics": {
+      "name": "test_parse_failure_writes_only_requested_diagnostics",
+      "type": "function",
+      "summary": "Checks parse failures write diagnostics only when that output was requested."
+    },
+    "function:tests/test_cli_extraction.py:test_partial_parse_and_page_range": {
+      "name": "test_partial_parse_and_page_range",
+      "type": "function",
+      "summary": "Checks page-range selection and partial parsing preserve the expected outputs and diagnostics."
+    },
+    "function:tests/test_cli_extraction.py:test_rendering_view_does_not_filter_json": {
+      "name": "test_rendering_view_does_not_filter_json",
+      "type": "function",
+      "summary": "Checks clean/full rendering choices do not change the JSON parse result."
+    },
+    "function:tests/test_cli_extraction.py:test_graph_uses_upload_name_and_start_time_for_every_format": {
+      "name": "test_graph_uses_upload_name_and_start_time_for_every_format",
+      "type": "function",
+      "summary": "Checks all requested exports share a basename derived from the uploaded name and graph start time."
+    },
+    "file:tests/test_graph.py": {
+      "name": "test_graph.py",
+      "type": "file",
+      "summary": "Checks the parse graph lifecycle using a fake document parser, including status and error reporting, artifact persistence, concurrent-run isolation, usage accounting, and filtered pages."
+    },
+    "function:tests/test_graph.py:test_parse_success_sets_status_and_artifacts": {
+      "name": "test_parse_success_sets_status_and_artifacts",
+      "type": "function",
+      "summary": "Checks a successful parse sets its status and creates the expected artifacts."
+    },
+    "function:tests/test_graph.py:test_parse_failure_sets_status_and_error": {
+      "name": "test_parse_failure_sets_status_and_error",
+      "type": "function",
+      "summary": "Checks parser failures are reflected in the graph result status and error field."
+    },
+    "function:tests/test_graph.py:test_overlapping_runs_isolate_usage_and_artifacts": {
+      "name": "test_overlapping_runs_isolate_usage_and_artifacts",
+      "type": "function",
+      "summary": "Checks concurrent graph runs keep their usage records and artifacts isolated."
+    },
+    "function:tests/test_graph.py:test_usage_survives_post_request_failure": {
+      "name": "test_usage_survives_post_request_failure",
+      "type": "function",
+      "summary": "Checks token usage recorded before a later request failure remains in the result."
+    },
+    "function:tests/test_graph.py:test_graph_rejects_other_models_before_preprocessing": {
+      "name": "test_graph_rejects_other_models_before_preprocessing",
+      "type": "function",
+      "summary": "Checks unsupported models are rejected before document preprocessing."
+    },
+    "function:tests/test_graph.py:test_direct_compiled_graph_initializes_run_state": {
+      "name": "test_direct_compiled_graph_initializes_run_state",
+      "type": "function",
+      "summary": "Checks direct invocation of the compiled graph initializes its run state."
+    },
+    "function:tests/test_graph.py:test_partial_parse_keeps_artifacts_and_reports_filtered_pages": {
+      "name": "test_partial_parse_keeps_artifacts_and_reports_filtered_pages",
+      "type": "function",
+      "summary": "Checks partial parsing preserves artifacts and reports filtered pages."
+    },
+    "function:tests/test_graph.py:test_all_filtered_pages_fail_without_markdown_or_annotation": {
+      "name": "test_all_filtered_pages_fail_without_markdown_or_annotation",
+      "type": "function",
+      "summary": "Checks fully filtered documents fail without creating Markdown or annotation outputs."
+    },
+    "file:tests/test_output_names.py": {
+      "name": "test_output_names.py",
+      "type": "file",
+      "summary": "Verifies safe source stems, UTC timestamp reservations, collision detection, lock cleanup, and figure-link resolution when rendering legacy and current parse artifacts."
+    },
+    "function:tests/test_output_names.py:test_source_stem": {
+      "name": "test_source_stem",
+      "type": "function",
+      "summary": "Checks source filenames are sanitized into safe, bounded output stems."
+    },
+    "function:tests/test_output_names.py:test_utc_reservation_collision_and_cleanup": {
+      "name": "test_utc_reservation_collision_and_cleanup",
+      "type": "function",
+      "summary": "Checks UTC basename reservations advance on collisions and always clean up lock directories."
+    },
+    "function:tests/test_output_names.py:test_collision_with_annotation_or_image_only": {
+      "name": "test_collision_with_annotation_or_image_only",
+      "type": "function",
+      "summary": "Checks annotation and image artifacts also prevent reuse of a basename."
+    },
+    "function:tests/test_output_names.py:test_json_rerender_resolves_figure_paths_with_special_characters": {
+      "name": "test_json_rerender_resolves_figure_paths_with_special_characters",
+      "type": "function",
+      "summary": "Checks rerendering finds legacy and basename-prefixed figures when names contain special characters."
+    },
+    "file:tests/test_ui_diagnostics.py": {
+      "name": "test_ui_diagnostics.py",
+      "type": "file",
+      "summary": "Streamlit AppTest regressions for current parse diagnostics, stale-artifact exclusion, rerun-safe usage and previews, chat isolation, upload identity, and opt-in detailed layout."
+    },
+    "function:tests/test_ui_diagnostics.py:upload": {
+      "name": "upload",
+      "type": "function",
+      "summary": "Builds an in-memory PDF upload object with a configurable page count and color for UI tests."
+    },
+    "function:tests/test_ui_diagnostics.py:uploaded": {
+      "name": "uploaded",
+      "type": "function",
+      "summary": "Provides a pytest fixture that changes to an isolated temporary directory and stubs Streamlit's uploader with a controllable upload object."
+    },
+    "function:tests/test_ui_diagnostics.py:test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts": {
+      "name": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+      "type": "function",
+      "summary": "Checks that a failed parse presents current diagnostics and reported usage without exposing stale Markdown, with diagnostic details conditional on their availability."
+    },
+    "function:tests/test_ui_diagnostics.py:test_sol_only_and_tab_reruns_do_not_repeat_calls": {
+      "name": "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+      "type": "function",
+      "summary": "Verifies the UI uses the Sol model path and that tab reruns preserve one parse call and one usage entry."
+    },
+    "function:tests/test_ui_diagnostics.py:test_same_name_new_bytes_reset_count_and_result": {
+      "name": "test_same_name_new_bytes_reset_count_and_result",
+      "type": "function",
+      "summary": "Checks that replacing an upload with different bytes under the same filename resets the displayed count and result."
+    },
+    "function:tests/test_ui_diagnostics.py:test_bad_upload_and_invalid_range_make_no_calls": {
+      "name": "test_bad_upload_and_invalid_range_make_no_calls",
+      "type": "function",
+      "summary": "Ensures malformed uploads and invalid page ranges are rejected before invoking the parsing graph."
+    },
+    "function:tests/test_ui_diagnostics.py:test_migration_resets_legacy_ledger_without_repricing": {
+      "name": "test_migration_resets_legacy_ledger_without_repricing",
+      "type": "function",
+      "summary": "Verifies migration clears the legacy usage ledger without repricing prior work."
+    },
+    "function:tests/test_ui_diagnostics.py:test_chat_submission_reruns_and_reset": {
+      "name": "test_chat_submission_reruns_and_reset",
+      "type": "function",
+      "summary": "Exercises chat submission and reset behavior across Streamlit reruns using a stubbed chat implementation and checks usage/history state."
+    },
+    "function:tests/test_ui_diagnostics.py:test_chat_sessions_do_not_share_history": {
+      "name": "test_chat_sessions_do_not_share_history",
+      "type": "function",
+      "summary": "Confirms separate UI instances do not share chat history."
+    },
+    "function:tests/test_ui_diagnostics.py:test_document_view_changes_rendered_raw_copy_and_download_without_calls": {
+      "name": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+      "type": "function",
+      "summary": "Checks rendered and raw document views, copy and download actions, and preview changes without triggering additional parsing calls."
+    },
+    "function:tests/test_ui_diagnostics.py:test_detailed_layout_requires_opt_in_and_resets_old_results": {
+      "name": "test_detailed_layout_requires_opt_in_and_resets_old_results",
+      "type": "function",
+      "summary": "Verifies detailed layout requires explicit opt-in and that enabling it clears prior results before rerunning."
+    }
+  },
+  "totalNodes": 360,
+  "totalEdges": 875
+}

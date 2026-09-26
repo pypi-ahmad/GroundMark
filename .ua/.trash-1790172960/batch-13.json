@@ -1,0 +1,928 @@
+{
+  "nodes": [
+    {
+      "id": "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "type": "config",
+      "name": "artifacts-and-exports.json",
+      "filePath": "openwiki/.claims/workflows/artifacts-and-exports.json",
+      "summary": "Machine-readable, source-linked claims for the artifact and export workflow, including run isolation, collision-safe names, partial output, figure crops, annotations, and CLI outcomes.",
+      "tags": [
+        "configuration",
+        "claims",
+        "evidence",
+        "exports"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:openwiki/architecture/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "openwiki/architecture/index.md",
+      "summary": "Navigation index linking to the repository’s parsing-pipeline architecture page.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:openwiki/architecture/parsing-pipeline.md",
+      "type": "document",
+      "name": "parsing-pipeline.md",
+      "filePath": "openwiki/architecture/parsing-pipeline.md",
+      "summary": "Describes the fixed preprocess-to-parse graph, run-local state, sequential page requests, diagnostic outcomes, and preservation of partial extraction results.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "parsing",
+        "diagnostics"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:openwiki/concepts/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "openwiki/concepts/index.md",
+      "summary": "Navigation index linking to the layout and rendering concept page.",
+      "tags": [
+        "documentation",
+        "concepts",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:openwiki/concepts/layout-and-rendering.md",
+      "type": "document",
+      "name": "layout-and-rendering.md",
+      "filePath": "openwiki/concepts/layout-and-rendering.md",
+      "summary": "Documents the stable ParseResult layout contract, structural validation, ordering and escaping rules, table/list fallbacks, and safe figure rendering.",
+      "tags": [
+        "documentation",
+        "layout",
+        "rendering",
+        "markdown"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:openwiki/features/document-chat.md",
+      "type": "document",
+      "name": "document-chat.md",
+      "filePath": "openwiki/features/document-chat.md",
+      "summary": "Explains document-only chat over successful parsed pages, exact-quote evidence checks, independent answer verification, and fail-closed UI behavior.",
+      "tags": [
+        "documentation",
+        "chat",
+        "grounding",
+        "verification"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:openwiki/features/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "openwiki/features/index.md",
+      "summary": "Navigation index linking to the grounded document chat feature page.",
+      "tags": [
+        "documentation",
+        "features",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:openwiki/operations/development-and-testing.md",
+      "type": "document",
+      "name": "development-and-testing.md",
+      "filePath": "openwiki/operations/development-and-testing.md",
+      "summary": "Summarizes uv-based setup, deterministic tests and packaging, plus separately authorized live evaluation harnesses and their bounds.",
+      "tags": [
+        "documentation",
+        "development",
+        "testing",
+        "evaluation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:openwiki/operations/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "openwiki/operations/index.md",
+      "summary": "Navigation index linking to the development, testing, and evaluation guidance.",
+      "tags": [
+        "documentation",
+        "operations",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:openwiki/workflows/artifacts-and-exports.md",
+      "type": "document",
+      "name": "artifacts-and-exports.md",
+      "filePath": "openwiki/workflows/artifacts-and-exports.md",
+      "summary": "Describes one-parse selective exports, run and destination ownership, collision-safe artifact naming, figure and annotation handling, and partial-result status.",
+      "tags": [
+        "documentation",
+        "exports",
+        "artifacts",
+        "workflow"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:openwiki/workflows/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "openwiki/workflows/index.md",
+      "summary": "Navigation index linking to the artifacts and exports workflow page.",
+      "tags": [
+        "documentation",
+        "workflows",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/annotate.py",
+      "type": "file",
+      "name": "annotate.py",
+      "filePath": "src/annotate.py",
+      "summary": "Rerasterizes the parsed page interval and overlays labels for valid normalized block boxes, optionally saving a multi-page PDF, per-page PNGs, and count metadata.",
+      "tags": [
+        "annotation",
+        "pdf",
+        "image-processing",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/annotate.py:_bbox_is_valid",
+      "type": "function",
+      "name": "_bbox_is_valid",
+      "filePath": "src/annotate.py",
+      "lineRange": [
+        30,
+        37
+      ],
+      "summary": "Accepts only normalized boxes with coordinates inside 0–1 and positive width and height.",
+      "tags": [
+        "validation",
+        "bounding-box",
+        "utility"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/annotate.py:annotate_document",
+      "type": "function",
+      "name": "annotate_document",
+      "filePath": "src/annotate.py",
+      "lineRange": [
+        40,
+        129
+      ],
+      "summary": "Rasterizes the covered pages, draws labels for valid block boxes, and optionally writes annotated PDF, page images, and a metadata sidecar.",
+      "tags": [
+        "annotation",
+        "pdf",
+        "image-processing",
+        "artifacts"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/export.py",
+      "type": "file",
+      "name": "export.py",
+      "filePath": "src/export.py",
+      "summary": "Writes independently selected JSON, Markdown, HTML, ZIP, figure, and annotation outputs from one ParseResult while retaining successful artifacts when another export fails.",
+      "tags": [
+        "exports",
+        "artifacts",
+        "serialization",
+        "partial-results"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/export.py:export_result",
+      "type": "function",
+      "name": "export_result",
+      "filePath": "src/export.py",
+      "lineRange": [
+        15,
+        88
+      ],
+      "summary": "Creates the output directory, attempts selected renderers and annotations independently, and returns paths, warnings, and export errors.",
+      "tags": [
+        "exports",
+        "artifacts",
+        "serialization",
+        "error-handling"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/figures.py",
+      "type": "file",
+      "name": "figures.py",
+      "filePath": "src/figures.py",
+      "summary": "Extracts source-matched figure crops using page-position names and reloads only verified PNG crops; unavailable crops become warnings rather than extraction failures.",
+      "tags": [
+        "figures",
+        "image-processing",
+        "validation",
+        "artifacts"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/figures.py:extract_figures",
+      "type": "function",
+      "name": "extract_figures",
+      "filePath": "src/figures.py",
+      "lineRange": [
+        17,
+        49
+      ],
+      "summary": "Checks source identity and bounding boxes before cropping figures, optionally persists PNGs, and reports crop failures as warnings.",
+      "tags": [
+        "figures",
+        "image-processing",
+        "validation",
+        "artifacts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/figures.py:load_figures",
+      "type": "function",
+      "name": "load_figures",
+      "filePath": "src/figures.py",
+      "lineRange": [
+        52,
+        70
+      ],
+      "summary": "Loads expected figure assets and accepts only files that Pillow verifies as PNG images.",
+      "tags": [
+        "figures",
+        "image-processing",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/graph.py",
+      "type": "file",
+      "name": "graph.py",
+      "filePath": "src/graph.py",
+      "summary": "Defines the two-node preprocess-to-parse LangGraph and its run entry point, which initializes isolated state, validates options, streams progress, and returns extraction status and artifacts.",
+      "tags": [
+        "entry-point",
+        "langgraph",
+        "pipeline",
+        "run-isolation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/graph.py:GraphState",
+      "type": "class",
+      "name": "GraphState",
+      "filePath": "src/graph.py",
+      "lineRange": [
+        32,
+        60
+      ],
+      "summary": "Typed state contract for document identity, parse results, output settings, diagnostics, usage, and generated artifact paths.",
+      "tags": [
+        "state",
+        "type-definition",
+        "pipeline"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/graph.py:node_preprocess",
+      "type": "function",
+      "name": "node_preprocess",
+      "filePath": "src/graph.py",
+      "lineRange": [
+        63,
+        77
+      ],
+      "summary": "Preprocesses the source and fills document hash, run identity, output destination, model, filename, and start-time defaults.",
+      "tags": [
+        "pipeline",
+        "preprocessing",
+        "run-isolation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/graph.py:node_parse",
+      "type": "function",
+      "name": "node_parse",
+      "filePath": "src/graph.py",
+      "lineRange": [
+        80,
+        130
+      ],
+      "summary": "Runs page parsing and export orchestration, records filtered and failed pages, and converts exceptions or partial results into explicit run status.",
+      "tags": [
+        "pipeline",
+        "parsing",
+        "diagnostics",
+        "exports"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/graph.py:build_graph",
+      "type": "function",
+      "name": "build_graph",
+      "filePath": "src/graph.py",
+      "lineRange": [
+        133,
+        142
+      ],
+      "summary": "Connects preprocess and parse nodes between LangGraph START and END and compiles the graph.",
+      "tags": [
+        "langgraph",
+        "pipeline",
+        "factory"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/graph.py:run_graph",
+      "type": "function",
+      "name": "run_graph",
+      "filePath": "src/graph.py",
+      "lineRange": [
+        145,
+        183
+      ],
+      "summary": "Validates model and rendering options, creates isolated run state, streams graph execution, and returns final state with run-local usage.",
+      "tags": [
+        "entry-point",
+        "pipeline",
+        "run-isolation",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/graph.py:_main",
+      "type": "function",
+      "name": "_main",
+      "filePath": "src/graph.py",
+      "lineRange": [
+        186,
+        204
+      ],
+      "summary": "Implements the module CLI for parsing a document path and printing status, errors, and token totals.",
+      "tags": [
+        "cli",
+        "entry-point",
+        "pipeline"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/annotate.py",
+      "target": "function:src/annotate.py:_bbox_is_valid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/annotate.py",
+      "target": "function:src/annotate.py:_bbox_is_valid",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/annotate.py",
+      "target": "function:src/annotate.py:annotate_document",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/annotate.py",
+      "target": "function:src/annotate.py:annotate_document",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/export.py",
+      "target": "function:src/export.py:export_result",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/export.py",
+      "target": "function:src/export.py:export_result",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/figures.py",
+      "target": "function:src/figures.py:extract_figures",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/figures.py",
+      "target": "function:src/figures.py:extract_figures",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/figures.py",
+      "target": "function:src/figures.py:load_figures",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/figures.py",
+      "target": "function:src/figures.py:load_figures",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "class:src/graph.py:GraphState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "class:src/graph.py:GraphState",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "function:src/graph.py:node_preprocess",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "function:src/graph.py:node_preprocess",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "function:src/graph.py:node_parse",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "function:src/graph.py:node_parse",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "function:src/graph.py:build_graph",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "function:src/graph.py:build_graph",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "function:src/graph.py:run_graph",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "function:src/graph.py:run_graph",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "function:src/graph.py:_main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "function:src/graph.py:_main",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "document:openwiki/architecture/index.md",
+      "target": "document:openwiki/architecture/parsing-pipeline.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/architecture/parsing-pipeline.md",
+      "target": "file:src/graph.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/architecture/parsing-pipeline.md",
+      "target": "file:src/preprocess.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/architecture/parsing-pipeline.md",
+      "target": "file:src/parse.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/architecture/parsing-pipeline.md",
+      "target": "file:src/diagnostics.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/concepts/index.md",
+      "target": "document:openwiki/concepts/layout-and-rendering.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/concepts/layout-and-rendering.md",
+      "target": "file:src/figures.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/concepts/layout-and-rendering.md",
+      "target": "file:src/layout.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/concepts/layout-and-rendering.md",
+      "target": "file:src/markdown.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/features/index.md",
+      "target": "document:openwiki/features/document-chat.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/features/document-chat.md",
+      "target": "file:src/chat.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/features/document-chat.md",
+      "target": "file:src/ui/app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/features/document-chat.md",
+      "target": "document:prompts/runtime/chat-answer.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/features/document-chat.md",
+      "target": "document:prompts/runtime/chat-verify.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/operations/index.md",
+      "target": "document:openwiki/operations/development-and-testing.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/operations/development-and-testing.md",
+      "target": "document:docs/CONTRIBUTING.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/operations/development-and-testing.md",
+      "target": "document:docs/RUNBOOK.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/operations/development-and-testing.md",
+      "target": "config:pyproject.toml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/workflows/artifacts-and-exports.md",
+      "target": "file:src/annotate.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/workflows/artifacts-and-exports.md",
+      "target": "file:src/export.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/workflows/artifacts-and-exports.md",
+      "target": "file:src/figures.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/workflows/artifacts-and-exports.md",
+      "target": "file:src/graph.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/workflows/artifacts-and-exports.md",
+      "target": "file:src/cli.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/workflows/artifacts-and-exports.md",
+      "target": "file:src/output_names.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/workflows/index.md",
+      "target": "document:openwiki/workflows/artifacts-and-exports.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "target": "file:src/annotate.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "target": "file:src/export.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "target": "file:src/figures.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "target": "file:src/graph.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "target": "file:src/cli.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "target": "file:src/output_names.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "function:src/annotate.py:annotate_document",
+      "target": "function:src/annotate.py:_bbox_is_valid",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/annotate.py:annotate_document",
+      "target": "function:src/preprocess.py:preprocess_pages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/annotate.py:annotate_document",
+      "target": "function:src/output_names.py:artifact_name",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/export.py:export_result",
+      "target": "function:src/output_names.py:artifact_name",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/export.py:export_result",
+      "target": "function:src/figures.py:extract_figures",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/export.py:export_result",
+      "target": "function:src/annotate.py:annotate_document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/export.py:export_result",
+      "target": "function:src/markdown.py:parse_to_markdown",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/export.py:export_result",
+      "target": "function:src/markdown.py:parse_to_html",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/export.py:export_result",
+      "target": "function:src/markdown.py:markdown_bundle",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/figures.py:extract_figures",
+      "target": "function:src/preprocess.py:preprocess_pages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/figures.py:extract_figures",
+      "target": "function:src/annotate.py:_bbox_is_valid",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/figures.py:extract_figures",
+      "target": "function:src/output_names.py:figure_name",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/figures.py:load_figures",
+      "target": "function:src/output_names.py:figure_name",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/graph.py:node_preprocess",
+      "target": "function:src/preprocess.py:preprocess",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/graph.py:node_parse",
+      "target": "function:src/parse.py:parse_document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/graph.py:node_parse",
+      "target": "function:src/output_names.py:reserve_basename",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/graph.py:node_parse",
+      "target": "function:src/export.py:export_result",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/graph.py:build_graph",
+      "target": "function:src/graph.py:node_preprocess",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/graph.py:build_graph",
+      "target": "function:src/graph.py:node_parse",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/graph.py:run_graph",
+      "target": "function:src/graph.py:build_graph",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/graph.py:_main",
+      "target": "function:src/graph.py:run_graph",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/graph.py:_main",
+      "target": "function:src/usage.py:totals",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

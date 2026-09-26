@@ -1,0 +1,233 @@
+{
+  "batchIndex": 6,
+  "totalBatches": 9,
+  "nodes": [
+    {
+      "id": "document:docs/ARCHITECTURE.md",
+      "type": "document",
+      "name": "ARCHITECTURE.md",
+      "filePath": "docs/ARCHITECTURE.md",
+      "summary": "System architecture document explaining pipeline stages, state management, and component responsibilities.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "system-design"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/COMPLIANCE.md",
+      "type": "document",
+      "name": "COMPLIANCE.md",
+      "filePath": "docs/COMPLIANCE.md",
+      "summary": "Data privacy and security compliance documentation regarding API transmissions and local retention.",
+      "tags": [
+        "documentation",
+        "compliance",
+        "security",
+        "privacy"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/CONTENT-FILTER-DIAGNOSTICS.md",
+      "type": "document",
+      "name": "CONTENT-FILTER-DIAGNOSTICS.md",
+      "filePath": "docs/CONTENT-FILTER-DIAGNOSTICS.md",
+      "summary": "Technical guide explaining content filter error detection, handling, and UI reporting.",
+      "tags": [
+        "documentation",
+        "diagnostics",
+        "content-safety"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/CONTRIBUTING.md",
+      "type": "document",
+      "name": "CONTRIBUTING.md",
+      "filePath": "docs/CONTRIBUTING.md",
+      "summary": "Contributor guidelines covering development workflow, testing standards, and pull request checklist.",
+      "tags": [
+        "documentation",
+        "contributing",
+        "developer-guide"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/LAYOUT-EVALUATION.md",
+      "type": "document",
+      "name": "LAYOUT-EVALUATION.md",
+      "filePath": "docs/LAYOUT-EVALUATION.md",
+      "summary": "Evaluation methodology and benchmark protocol for document layout detection accuracy.",
+      "tags": [
+        "documentation",
+        "evaluation",
+        "layout-benchmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/MODEL.md",
+      "type": "document",
+      "name": "MODEL.md",
+      "filePath": "docs/MODEL.md",
+      "summary": "Specifications of vision and language models supported by GroundMark and prompt engineering details.",
+      "tags": [
+        "documentation",
+        "models",
+        "vision-llm",
+        "specs"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/PROMPT-EVALUATION.md",
+      "type": "document",
+      "name": "PROMPT-EVALUATION.md",
+      "filePath": "docs/PROMPT-EVALUATION.md",
+      "summary": "Experimental analysis of prompt variation effects on OCR quality, layout fidelity, and token costs.",
+      "tags": [
+        "documentation",
+        "prompt-engineering",
+        "benchmarks"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/PROMPTS.md",
+      "type": "document",
+      "name": "PROMPTS.md",
+      "filePath": "docs/PROMPTS.md",
+      "summary": "Catalog of prompt templates used across layout parsing, structured extraction, and document QA.",
+      "tags": [
+        "documentation",
+        "prompts",
+        "reference"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/RUNBOOK.md",
+      "type": "document",
+      "name": "RUNBOOK.md",
+      "filePath": "docs/RUNBOOK.md",
+      "summary": "Operational runbook for deploying, debugging, and running GroundMark locally and in production.",
+      "tags": [
+        "documentation",
+        "runbook",
+        "operations",
+        "debugging"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/SOL-RESOLUTION-EVALUATION.md",
+      "type": "document",
+      "name": "SOL-RESOLUTION-EVALUATION.md",
+      "filePath": "docs/SOL-RESOLUTION-EVALUATION.md",
+      "summary": "Research findings on the trade-offs between image input resolution, OCR quality, and API latency.",
+      "tags": [
+        "documentation",
+        "resolution-study",
+        "benchmarks",
+        "vision"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/graph.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/layout.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/CONTENT-FILTER-DIAGNOSTICS.md",
+      "target": "file:src/diagnostics.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/LAYOUT-EVALUATION.md",
+      "target": "file:src/layout.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/LAYOUT-EVALUATION.md",
+      "target": "file:scripts/evaluate_layout.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/MODEL.md",
+      "target": "file:src/models.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/MODEL.md",
+      "target": "file:src/llm.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/PROMPT-EVALUATION.md",
+      "target": "file:src/prompts.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/PROMPT-EVALUATION.md",
+      "target": "file:scripts/evaluate_prompts.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/PROMPTS.md",
+      "target": "file:src/prompts.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/PROMPTS.md",
+      "target": "file:scripts/evaluate_prompts.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/SOL-RESOLUTION-EVALUATION.md",
+      "target": "file:src/preprocess.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/SOL-RESOLUTION-EVALUATION.md",
+      "target": "file:scripts/evaluate_resolution.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

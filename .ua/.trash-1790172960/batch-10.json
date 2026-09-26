@@ -1,0 +1,49 @@
+{
+  "nodes": [
+    {
+      "id": "config:openwiki/.last-update.json",
+      "type": "config",
+      "name": ".last-update.json",
+      "filePath": "openwiki/.last-update.json",
+      "summary": "Records the latest OpenWiki update timestamp, command, source revision, model, completion status, and output language.",
+      "tags": ["generation-metadata", "run-status", "provenance"],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:openwiki/.page-manifest.json",
+      "type": "config",
+      "name": ".page-manifest.json",
+      "filePath": "openwiki/.page-manifest.json",
+      "summary": "Tracks generated OpenWiki pages with their source fingerprints, page versions, Git revision, and completion-run metadata.",
+      "tags": ["page-manifest", "generation-metadata", "provenance"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:openwiki/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "openwiki/index.md",
+      "summary": "Provides the OpenWiki landing page, linking to the GroundMark quickstart and the architecture, concepts, features, operations, and workflows sections.",
+      "tags": ["documentation", "navigation", "knowledge-index"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:openwiki/quickstart.md",
+      "type": "document",
+      "name": "quickstart.md",
+      "filePath": "openwiki/quickstart.md",
+      "summary": "Explains GroundMark installation and configuration, Streamlit and CLI usage, output behavior, rendering choices, and the evidence limits of document chat.",
+      "tags": ["documentation", "quickstart", "installation", "cli", "streamlit-ui"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:openwiki/index.md",
+      "target": "document:openwiki/quickstart.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

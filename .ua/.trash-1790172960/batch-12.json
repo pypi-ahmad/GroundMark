@@ -1,0 +1,279 @@
+{
+  "nodes": [
+    {
+      "id": "document:knowledge/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "knowledge/index.md",
+      "summary": "Indexes governed project knowledge stored in Open Knowledge Format v0.2 and leaves a placeholder for concept links.",
+      "tags": [
+        "documentation",
+        "knowledge-base",
+        "okf",
+        "index"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:openwiki/.claims/architecture/parsing-pipeline.json",
+      "type": "config",
+      "name": "parsing-pipeline.json",
+      "filePath": "openwiki/.claims/architecture/parsing-pipeline.json",
+      "summary": "OpenWiki evidence claims describe the extraction graph, parser and layout modes, page sequencing, diagnostics, partial failures, and usage sanitization.",
+      "tags": [
+        "configuration",
+        "openwiki",
+        "evidence",
+        "parsing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:openwiki/.claims/concepts/layout-and-rendering.json",
+      "type": "config",
+      "name": "layout-and-rendering.json",
+      "filePath": "openwiki/.claims/concepts/layout-and-rendering.json",
+      "summary": "OpenWiki evidence claims document ParseResult compatibility, structure validation, rendering behavior, markup safety, tables, lists, and figure extraction.",
+      "tags": [
+        "configuration",
+        "openwiki",
+        "evidence",
+        "rendering"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:openwiki/.claims/features/document-chat.json",
+      "type": "config",
+      "name": "document-chat.json",
+      "filePath": "openwiki/.claims/features/document-chat.json",
+      "summary": "OpenWiki evidence claims describe document-only chat evidence, request limits, draft and verification checks, fail-closed behavior, and session reset rules.",
+      "tags": [
+        "configuration",
+        "openwiki",
+        "evidence",
+        "document-chat"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:openwiki/.claims/operations/development-and-testing.json",
+      "type": "config",
+      "name": "development-and-testing.json",
+      "filePath": "openwiki/.claims/operations/development-and-testing.json",
+      "summary": "OpenWiki evidence claims record Python and packaging conventions plus bounded evaluation workflows and their safety requirements.",
+      "tags": [
+        "configuration",
+        "openwiki",
+        "evidence",
+        "testing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "config:openwiki/.claims/quickstart.json",
+      "type": "config",
+      "name": "quickstart.json",
+      "filePath": "openwiki/.claims/quickstart.json",
+      "summary": "OpenWiki evidence claims summarize Python distribution, environment setup, UI launch, and command-line extraction behavior.",
+      "tags": [
+        "configuration",
+        "openwiki",
+        "evidence",
+        "quickstart"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:openwiki/.claims/architecture/parsing-pipeline.json",
+      "target": "file:src/diagnostics.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/architecture/parsing-pipeline.json",
+      "target": "file:src/graph.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/architecture/parsing-pipeline.json",
+      "target": "file:src/parse.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/architecture/parsing-pipeline.json",
+      "target": "file:tests/test_graph.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/architecture/parsing-pipeline.json",
+      "target": "file:tests/test_parse.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/concepts/layout-and-rendering.json",
+      "target": "file:src/figures.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/concepts/layout-and-rendering.json",
+      "target": "file:src/layout.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/concepts/layout-and-rendering.json",
+      "target": "file:src/markdown.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/concepts/layout-and-rendering.json",
+      "target": "file:tests/test_layout_structure.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/features/document-chat.json",
+      "target": "document:prompts/runtime/chat-answer.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/features/document-chat.json",
+      "target": "document:prompts/runtime/chat-verify.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/features/document-chat.json",
+      "target": "file:src/chat.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/features/document-chat.json",
+      "target": "file:src/ui/app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/features/document-chat.json",
+      "target": "file:tests/test_chat.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/features/document-chat.json",
+      "target": "file:tests/test_ui_diagnostics.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/operations/development-and-testing.json",
+      "target": "document:docs/CONTRIBUTING.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/operations/development-and-testing.json",
+      "target": "document:docs/RUNBOOK.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/operations/development-and-testing.json",
+      "target": "config:pyproject.toml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/operations/development-and-testing.json",
+      "target": "file:scripts/evaluate_chat.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/operations/development-and-testing.json",
+      "target": "file:scripts/evaluate_layout.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/operations/development-and-testing.json",
+      "target": "file:scripts/evaluate_prompts.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/operations/development-and-testing.json",
+      "target": "file:scripts/evaluate_resolution.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/quickstart.json",
+      "target": "document:docs/RUNBOOK.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/quickstart.json",
+      "target": "config:pyproject.toml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/quickstart.json",
+      "target": "document:README.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/quickstart.json",
+      "target": "file:src/cli.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/quickstart.json",
+      "target": "file:src/graph.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

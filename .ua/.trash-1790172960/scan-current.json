@@ -1,0 +1,1270 @@
+{
+  "scriptCompleted": true,
+  "contentDigest": "7f108ebc96d5b7a4509198118d9ed8210faaf5fe1dc1fde2d7ecdba4da61c9d3",
+  "files": [
+    {
+      "path": ".env.example",
+      "language": "config",
+      "sizeLines": 13,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".github/workflows/openwiki-update.yml",
+      "language": "yaml",
+      "sizeLines": 77,
+      "fileCategory": "infra"
+    },
+    {
+      "path": ".ua/.trash-1790154407/assemble-review.json",
+      "language": "json",
+      "sizeLines": 13,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/assembled-graph.json",
+      "language": "json",
+      "sizeLines": 10634,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/batch-0.json",
+      "language": "json",
+      "sizeLines": 3278,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/batch-1.json",
+      "language": "json",
+      "sizeLines": 3789,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/batch-2.json",
+      "language": "json",
+      "sizeLines": 1562,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/batch-3.json",
+      "language": "json",
+      "sizeLines": 1522,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/batch-4.json",
+      "language": "json",
+      "sizeLines": 182,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/batch-5.json",
+      "language": "json",
+      "sizeLines": 45,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/batch-6.json",
+      "language": "json",
+      "sizeLines": 232,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/batch-7.json",
+      "language": "json",
+      "sizeLines": 87,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/batch-8.json",
+      "language": "json",
+      "sizeLines": 453,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/batches.json",
+      "language": "json",
+      "sizeLines": 2076,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/fingerprint-input.json",
+      "language": "json",
+      "sizeLines": 75,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/layers.json",
+      "language": "json",
+      "sizeLines": 134,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/review.json",
+      "language": "json",
+      "sizeLines": 44,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/assemble_full_graph.py",
+      "language": "python",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/build_layers.py",
+      "language": "python",
+      "sizeLines": 176,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/build_tour.py",
+      "language": "python",
+      "sizeLines": 117,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/generate_all_batches.py",
+      "language": "python",
+      "sizeLines": 591,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/inspect_extracts.py",
+      "language": "python",
+      "sizeLines": 13,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/list_files.py",
+      "language": "python",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-0.json",
+      "language": "json",
+      "sizeLines": 127,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-1.json",
+      "language": "json",
+      "sizeLines": 105,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-2.json",
+      "language": "json",
+      "sizeLines": 79,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-3.json",
+      "language": "json",
+      "sizeLines": 67,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-4.json",
+      "language": "json",
+      "sizeLines": 69,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-5.json",
+      "language": "json",
+      "sizeLines": 27,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-6.json",
+      "language": "json",
+      "sizeLines": 76,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-7.json",
+      "language": "json",
+      "sizeLines": 34,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-8.json",
+      "language": "json",
+      "sizeLines": 80,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-file-extract-results-0.json",
+      "language": "json",
+      "sizeLines": 3869,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-file-extract-results-1.json",
+      "language": "json",
+      "sizeLines": 4232,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-file-extract-results-2.json",
+      "language": "json",
+      "sizeLines": 2392,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-file-extract-results-3.json",
+      "language": "json",
+      "sizeLines": 1769,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-file-extract-results-4.json",
+      "language": "json",
+      "sizeLines": 238,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-file-extract-results-5.json",
+      "language": "json",
+      "sizeLines": 125,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-file-extract-results-6.json",
+      "language": "json",
+      "sizeLines": 297,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-file-extract-results-7.json",
+      "language": "json",
+      "sizeLines": 137,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-file-extract-results-8.json",
+      "language": "json",
+      "sizeLines": 871,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-import-map-input.json",
+      "language": "json",
+      "sizeLines": 424,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-import-map-output.json",
+      "language": "json",
+      "sizeLines": 199,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-inline-validate.cjs",
+      "language": "javascript",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tmp/ua-scan-files.json",
+      "language": "json",
+      "sizeLines": 448,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790154407/tour.json",
+      "language": "json",
+      "sizeLines": 95,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/assemble-review.json",
+      "language": "json",
+      "sizeLines": 13,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/assembled-graph.json",
+      "language": "json",
+      "sizeLines": 11612,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/batch-0.json",
+      "language": "json",
+      "sizeLines": 4288,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/batch-1.json",
+      "language": "json",
+      "sizeLines": 1767,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/batch-2.json",
+      "language": "json",
+      "sizeLines": 2106,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/batch-3.json",
+      "language": "json",
+      "sizeLines": 1755,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/batch-4.json",
+      "language": "json",
+      "sizeLines": 1563,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/batch-5.json",
+      "language": "json",
+      "sizeLines": 210,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/batch-6.json",
+      "language": "json",
+      "sizeLines": 232,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/batch-7.json",
+      "language": "json",
+      "sizeLines": 87,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/batch-8.json",
+      "language": "json",
+      "sizeLines": 96,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/batches.json",
+      "language": "json",
+      "sizeLines": 2245,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/fingerprint-input.json",
+      "language": "json",
+      "sizeLines": 75,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/layers.json",
+      "language": "json",
+      "sizeLines": 134,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/review.json",
+      "language": "json",
+      "sizeLines": 37,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/assemble_full_graph.py",
+      "language": "python",
+      "sizeLines": 32,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/build_layers_v2.py",
+      "language": "python",
+      "sizeLines": 175,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/build_tour.py",
+      "language": "python",
+      "sizeLines": 117,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/changed-files.txt",
+      "language": "txt",
+      "sizeLines": 52,
+      "fileCategory": "docs"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/generate_batches_v2.py",
+      "language": "python",
+      "sizeLines": 582,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/import-map-input.json",
+      "language": "json",
+      "sizeLines": 424,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/import-map-output.json",
+      "language": "json",
+      "sizeLines": 219,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/run_phase2.py",
+      "language": "python",
+      "sizeLines": 47,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/scan-files.json",
+      "language": "json",
+      "sizeLines": 448,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-0.json",
+      "language": "json",
+      "sizeLines": 139,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-1.json",
+      "language": "json",
+      "sizeLines": 112,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-2.json",
+      "language": "json",
+      "sizeLines": 92,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-3.json",
+      "language": "json",
+      "sizeLines": 57,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-4.json",
+      "language": "json",
+      "sizeLines": 64,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-5.json",
+      "language": "json",
+      "sizeLines": 76,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-6.json",
+      "language": "json",
+      "sizeLines": 76,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-7.json",
+      "language": "json",
+      "sizeLines": 34,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-8.json",
+      "language": "json",
+      "sizeLines": 34,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/ua-file-extract-results-0.json",
+      "language": "json",
+      "sizeLines": 5036,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/ua-file-extract-results-1.json",
+      "language": "json",
+      "sizeLines": 2390,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/ua-file-extract-results-2.json",
+      "language": "json",
+      "sizeLines": 3620,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/ua-file-extract-results-3.json",
+      "language": "json",
+      "sizeLines": 1734,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/ua-file-extract-results-4.json",
+      "language": "json",
+      "sizeLines": 2167,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/ua-file-extract-results-5.json",
+      "language": "json",
+      "sizeLines": 312,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/ua-file-extract-results-6.json",
+      "language": "json",
+      "sizeLines": 302,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/ua-file-extract-results-7.json",
+      "language": "json",
+      "sizeLines": 137,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/ua-file-extract-results-8.json",
+      "language": "json",
+      "sizeLines": 125,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tmp/ua-inline-validate.cjs",
+      "language": "javascript",
+      "sizeLines": 63,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".ua/.trash-1790159001/tour.json",
+      "language": "json",
+      "sizeLines": 98,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/.understandignore",
+      "language": "unknown",
+      "sizeLines": 80,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".ua/config.json",
+      "language": "json",
+      "sizeLines": 3,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/fingerprints.json",
+      "language": "json",
+      "sizeLines": 5058,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/scan-result.json",
+      "language": "json",
+      "sizeLines": 674,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/knowledge-graph.json",
+      "language": "json",
+      "sizeLines": 11612,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/meta.json",
+      "language": "json",
+      "sizeLines": 6,
+      "fileCategory": "config"
+    },
+    {
+      "path": "AGENTS.md",
+      "language": "markdown",
+      "sizeLines": 12,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "CLAUDE.md",
+      "language": "markdown",
+      "sizeLines": 7,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "sizeLines": 189,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "language": "markdown",
+      "sizeLines": 48,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/COMPLIANCE.md",
+      "language": "markdown",
+      "sizeLines": 11,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/CONTENT-FILTER-DIAGNOSTICS.md",
+      "language": "markdown",
+      "sizeLines": 61,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/CONTRIBUTING.md",
+      "language": "markdown",
+      "sizeLines": 22,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/LAYOUT-EVALUATION.md",
+      "language": "markdown",
+      "sizeLines": 44,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/MODEL.md",
+      "language": "markdown",
+      "sizeLines": 24,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/POST-MARKDOWN-EXTRACTION-PLAN.md",
+      "language": "markdown",
+      "sizeLines": 114,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/PROMPT-EVALUATION.md",
+      "language": "markdown",
+      "sizeLines": 106,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/PROMPTS.md",
+      "language": "markdown",
+      "sizeLines": 15,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/RUNBOOK.md",
+      "language": "markdown",
+      "sizeLines": 64,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/SOL-RESOLUTION-EVALUATION.md",
+      "language": "markdown",
+      "sizeLines": 81,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/diagrams/groundmark-architecture.html",
+      "language": "html",
+      "sizeLines": 14879,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/diagrams/groundmark-architecture.json",
+      "language": "json",
+      "sizeLines": 69,
+      "fileCategory": "config"
+    },
+    {
+      "path": "docs/diagrams/groundmark-architecture.visual-check.html",
+      "language": "html",
+      "sizeLines": 32,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/diagrams/groundmark-architecture.visual-check.json",
+      "language": "json",
+      "sizeLines": 547,
+      "fileCategory": "config"
+    },
+    {
+      "path": "docs/diagrams/groundmark-dataflow.html",
+      "language": "html",
+      "sizeLines": 14842,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/diagrams/groundmark-dataflow.json",
+      "language": "json",
+      "sizeLines": 66,
+      "fileCategory": "config"
+    },
+    {
+      "path": "docs/diagrams/groundmark-dataflow.visual-check.html",
+      "language": "html",
+      "sizeLines": 32,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/diagrams/groundmark-dataflow.visual-check.json",
+      "language": "json",
+      "sizeLines": 547,
+      "fileCategory": "config"
+    },
+    {
+      "path": "docs/diagrams/groundmark-lifecycle.html",
+      "language": "html",
+      "sizeLines": 14803,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/diagrams/groundmark-lifecycle.json",
+      "language": "json",
+      "sizeLines": 32,
+      "fileCategory": "config"
+    },
+    {
+      "path": "docs/diagrams/groundmark-lifecycle.visual-check.html",
+      "language": "html",
+      "sizeLines": 32,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/diagrams/groundmark-lifecycle.visual-check.json",
+      "language": "json",
+      "sizeLines": 547,
+      "fileCategory": "config"
+    },
+    {
+      "path": "docs/diagrams/groundmark-sequence.html",
+      "language": "html",
+      "sizeLines": 14884,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/diagrams/groundmark-sequence.json",
+      "language": "json",
+      "sizeLines": 70,
+      "fileCategory": "config"
+    },
+    {
+      "path": "docs/diagrams/groundmark-sequence.visual-check.html",
+      "language": "html",
+      "sizeLines": 32,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/diagrams/groundmark-sequence.visual-check.json",
+      "language": "json",
+      "sizeLines": 547,
+      "fileCategory": "config"
+    },
+    {
+      "path": "docs/diagrams/groundmark-workflow.html",
+      "language": "html",
+      "sizeLines": 14797,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/diagrams/groundmark-workflow.json",
+      "language": "json",
+      "sizeLines": 74,
+      "fileCategory": "config"
+    },
+    {
+      "path": "docs/diagrams/groundmark-workflow.visual-check.html",
+      "language": "html",
+      "sizeLines": 32,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/diagrams/groundmark-workflow.visual-check.json",
+      "language": "json",
+      "sizeLines": 547,
+      "fileCategory": "config"
+    },
+    {
+      "path": "knowledge/index.md",
+      "language": "markdown",
+      "sizeLines": 11,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "npm/wheels/groundmark-0.1.0-py3-none-any.whl",
+      "language": "whl",
+      "sizeLines": 212,
+      "fileCategory": "code"
+    },
+    {
+      "path": "openwiki/.claims/architecture/parsing-pipeline.json",
+      "language": "json",
+      "sizeLines": 98,
+      "fileCategory": "config"
+    },
+    {
+      "path": "openwiki/.claims/concepts/layout-and-rendering.json",
+      "language": "json",
+      "sizeLines": 108,
+      "fileCategory": "config"
+    },
+    {
+      "path": "openwiki/.claims/features/document-chat.json",
+      "language": "json",
+      "sizeLines": 118,
+      "fileCategory": "config"
+    },
+    {
+      "path": "openwiki/.claims/operations/development-and-testing.json",
+      "language": "json",
+      "sizeLines": 98,
+      "fileCategory": "config"
+    },
+    {
+      "path": "openwiki/.claims/quickstart.json",
+      "language": "json",
+      "sizeLines": 92,
+      "fileCategory": "config"
+    },
+    {
+      "path": "openwiki/.claims/workflows/artifacts-and-exports.json",
+      "language": "json",
+      "sizeLines": 78,
+      "fileCategory": "config"
+    },
+    {
+      "path": "openwiki/.last-update.json",
+      "language": "json",
+      "sizeLines": 8,
+      "fileCategory": "config"
+    },
+    {
+      "path": "openwiki/.page-manifest.json",
+      "language": "json",
+      "sizeLines": 47,
+      "fileCategory": "config"
+    },
+    {
+      "path": "openwiki/architecture/index.md",
+      "language": "markdown",
+      "sizeLines": 3,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "openwiki/architecture/parsing-pipeline.md",
+      "language": "markdown",
+      "sizeLines": 61,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "openwiki/concepts/index.md",
+      "language": "markdown",
+      "sizeLines": 3,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "openwiki/concepts/layout-and-rendering.md",
+      "language": "markdown",
+      "sizeLines": 62,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "openwiki/features/document-chat.md",
+      "language": "markdown",
+      "sizeLines": 57,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "openwiki/features/index.md",
+      "language": "markdown",
+      "sizeLines": 3,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "openwiki/index.md",
+      "language": "markdown",
+      "sizeLines": 15,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "openwiki/operations/development-and-testing.md",
+      "language": "markdown",
+      "sizeLines": 64,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "openwiki/operations/index.md",
+      "language": "markdown",
+      "sizeLines": 3,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "openwiki/quickstart.md",
+      "language": "markdown",
+      "sizeLines": 81,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "openwiki/workflows/artifacts-and-exports.md",
+      "language": "markdown",
+      "sizeLines": 68,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "openwiki/workflows/index.md",
+      "language": "markdown",
+      "sizeLines": 3,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "prompts/runtime/chat-answer.md",
+      "language": "markdown",
+      "sizeLines": 9,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "prompts/runtime/chat-verify.md",
+      "language": "markdown",
+      "sizeLines": 7,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "prompts/runtime/parse-page-structured.md",
+      "language": "markdown",
+      "sizeLines": 66,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "prompts/runtime/parse-page.md",
+      "language": "markdown",
+      "sizeLines": 60,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "pyproject.toml",
+      "language": "toml",
+      "sizeLines": 43,
+      "fileCategory": "config"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "language": "txt",
+      "sizeLines": 2,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "requirements.txt",
+      "language": "txt",
+      "sizeLines": 2,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "run.cmd",
+      "language": "batch",
+      "sizeLines": 10,
+      "fileCategory": "script"
+    },
+    {
+      "path": "scripts/evaluate_chat.py",
+      "language": "python",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/evaluate_layout.py",
+      "language": "python",
+      "sizeLines": 115,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/evaluate_prompts.py",
+      "language": "python",
+      "sizeLines": 165,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/evaluate_resolution.py",
+      "language": "python",
+      "sizeLines": 125,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/__init__.py",
+      "language": "python",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/annotate.py",
+      "language": "python",
+      "sizeLines": 129,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/chat.py",
+      "language": "python",
+      "sizeLines": 190,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/cli.py",
+      "language": "python",
+      "sizeLines": 118,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/diagnostics.py",
+      "language": "python",
+      "sizeLines": 87,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/export.py",
+      "language": "python",
+      "sizeLines": 88,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/figures.py",
+      "language": "python",
+      "sizeLines": 70,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/graph.py",
+      "language": "python",
+      "sizeLines": 208,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/layout.py",
+      "language": "python",
+      "sizeLines": 175,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/llm.py",
+      "language": "python",
+      "sizeLines": 170,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/markdown.py",
+      "language": "python",
+      "sizeLines": 295,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/models.py",
+      "language": "python",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/output_names.py",
+      "language": "python",
+      "sizeLines": 66,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/parse.py",
+      "language": "python",
+      "sizeLines": 166,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/preprocess.py",
+      "language": "python",
+      "sizeLines": 205,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/prompts.py",
+      "language": "python",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/ui/__init__.py",
+      "language": "python",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/ui/app.py",
+      "language": "python",
+      "sizeLines": 281,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/ui/clipboard.py",
+      "language": "python",
+      "sizeLines": 81,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/usage.py",
+      "language": "python",
+      "sizeLines": 66,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/__init__.py",
+      "language": "python",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/fake_llm.py",
+      "language": "python",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/fixtures/chat-evaluation.md",
+      "language": "markdown",
+      "sizeLines": 16,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "tests/fixtures/make_invoice_png.py",
+      "language": "python",
+      "sizeLines": 52,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_annotate.py",
+      "language": "python",
+      "sizeLines": 121,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_chat.py",
+      "language": "python",
+      "sizeLines": 169,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_cli.py",
+      "language": "python",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_cli_extraction.py",
+      "language": "python",
+      "sizeLines": 196,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_diagnostics.py",
+      "language": "python",
+      "sizeLines": 225,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_graph.py",
+      "language": "python",
+      "sizeLines": 171,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_launcher.py",
+      "language": "python",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_layout_evaluation.py",
+      "language": "python",
+      "sizeLines": 77,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_layout_structure.py",
+      "language": "python",
+      "sizeLines": 181,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_markdown.py",
+      "language": "python",
+      "sizeLines": 197,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_output_names.py",
+      "language": "python",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_parse.py",
+      "language": "python",
+      "sizeLines": 162,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_preprocess.py",
+      "language": "python",
+      "sizeLines": 117,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_prompt_evaluation.py",
+      "language": "python",
+      "sizeLines": 82,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_prompts.py",
+      "language": "python",
+      "sizeLines": 70,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_resolution_evaluation.py",
+      "language": "python",
+      "sizeLines": 96,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_ui_diagnostics.py",
+      "language": "python",
+      "sizeLines": 220,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_usage.py",
+      "language": "python",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    }
+  ],
+  "totalFiles": 206,
+  "filteredByIgnore": 183,
+  "estimatedComplexity": "large",
+  "stats": {
+    "filesScanned": 206,
+    "byCategory": {
+      "config": 99,
+      "infra": 1,
+      "code": 60,
+      "docs": 35,
+      "markup": 10,
+      "script": 1
+    },
+    "byLanguage": {
+      "config": 1,
+      "yaml": 1,
+      "json": 97,
+      "python": 56,
+      "javascript": 2,
+      "txt": 3,
+      "unknown": 1,
+      "markdown": 32,
+      "html": 10,
+      "whl": 1,
+      "toml": 1,
+      "batch": 1
+    }
+  }
+}

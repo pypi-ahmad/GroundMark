@@ -3,7 +3,7 @@
 These types validate the parser's block geometry and JSON artifact. They are
 not a user-defined field extraction schema.
 
-Must not: give any of these models a field with a Python default (breaks
+Must not: give model-facing page/block models a field with a Python default (breaks
 OpenAI's strict json_schema mode -- see the comment block below and
 docs/MODEL.md) or a fixed-length tuple type.
 
@@ -12,6 +12,7 @@ Next: src/parse.py for how these types are populated.
 
 from __future__ import annotations
 
+import math
 from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
@@ -32,11 +33,17 @@ def _require_xyxy_len(v: tuple[float, ...]) -> tuple[float, ...]:
 
 
 def expanded_table_cells(rows: list[list[str]]) -> int:
+    """Count cells after rectangular padding, including omitted trailing blanks."""
     return len(rows) * max((len(row) for row in rows), default=0)
 
 
 def check_document_tables(pages) -> None:
     # Leave malformed shapes to Pydantic's ordinary field validation.
+    """Reject a document whose rectangularized tables exceed the cell budget.
+
+    Accept raw page dictionaries or page models. Malformed shapes are left to
+    field validation. Raise ValueError when the accumulated budget is exceeded.
+    """
     if not isinstance(pages, (list, tuple)):
         return
     total = 0
@@ -184,6 +191,160 @@ class LegacyParsePage(BaseModel):
         return ParsePage.model_validate(data)
 
 
+# Artifact-only metadata. These models are NOT reachable from either strict
+# Sol page schema. Keep them here so ParseResult and reconciliation share types
+# without an import-time cycle or an unvalidated arbitrary-JSON field.
+class _LayoutMetadata(BaseModel):
+    model_config = ConfigDict(extra="forbid", frozen=True, allow_inf_nan=False)
+
+
+Point = tuple[float, float]
+
+
+class NormalizedLayoutRegion(_LayoutMetadata):
+    index: int = Field(ge=0, strict=True)
+    class_id: int = Field(ge=0, le=24, strict=True)
+    raw_label: str = Field(min_length=1)
+    canonical_label: str
+    role_hint: str
+    score: float = Field(ge=0, le=1)
+    box_px: tuple[float, float, float, float]
+    polygon_px: tuple[Point, ...]
+    bbox: BBox
+    polygon: tuple[Point, ...]
+    order: int | None = Field(ge=0, lt=300, strict=True)
+    box_clipped: bool
+    polygon_clipped: bool
+
+    @model_validator(mode="after")
+    def validate_geometry(self):
+        # Geometry helpers are imported at validation time, after both modules
+        # have loaded; importing saved JSON never loads inference dependencies.
+        from src.layout_detector import LABELS
+        from src.layout_reconcile import ROLE_HINTS, _deduplicate, _validate_polygon
+        if self.canonical_label != LABELS[self.class_id] or self.role_hint != ROLE_HINTS[self.canonical_label]:
+            raise ValueError("Layout class metadata disagrees")
+        if not (self.box_px[0] < self.box_px[2] and self.box_px[1] < self.box_px[3]):
+            raise ValueError("Degenerate layout box")
+        if not all(math.isfinite(v) and 0 <= v <= 1 for v in (*self.bbox.xyxy, *(v for p in self.polygon for v in p))):
+            raise ValueError("Invalid normalized layout geometry")
+        if not (self.bbox.xyxy[0] < self.bbox.xyxy[2] and self.bbox.xyxy[1] < self.bbox.xyxy[3]):
+            raise ValueError("Degenerate normalized box")
+        _validate_polygon(_deduplicate(self.polygon_px))
+        _validate_polygon(list(self.polygon))
+        return self
+
+
+class NormalizedLayoutPage(_LayoutMetadata):
+    page: int = Field(ge=1, strict=True)
+    width_px: int = Field(ge=1, strict=True)
+    height_px: int = Field(ge=1, strict=True)
+    regions: tuple[NormalizedLayoutRegion, ...]
+    model_id: str
+    revision: str
+    engine: str
+    device: Literal["cpu", "cuda"]
+    fallback_reason: Literal["cuda_unavailable", "cuda_probe_failed"] | None
+    order_base: Literal[0]
+
+    @model_validator(mode="after")
+    def validate_regions(self):
+        for i, region in enumerate(self.regions):
+            if region.index != i or region.bbox.page != self.page:
+                raise ValueError("Invalid layout region identity")
+            x0, y0, x1, y1 = region.box_px
+            clipped = (max(0, x0), max(0, y0), min(self.width_px, x1), min(self.height_px, y1))
+            expected = tuple(v / size for v, size in zip(clipped, (self.width_px, self.height_px) * 2))
+            if expected != region.bbox.xyxy:
+                raise ValueError("Layout box does not match page dimensions")
+        return self
+
+
+class ReconcilePolicy(_LayoutMetadata):
+    min_score: float = Field(default=0.80, ge=0, le=1)
+    min_coverage: float = Field(default=0.90, gt=0, le=1)
+    max_center_distance: float = Field(default=0.05, ge=0, le=1)
+    min_iou_margin: float = Field(default=0.10, ge=0, le=1)
+    significant_coverage: float = Field(default=0.80, gt=0, le=1)
+
+
+MatchReason = Literal["split", "merge", "many_to_many", "low_score", "weak_overlap", "distant_centers",
+                      "not_mutual_best", "ambiguous", "role_disagreement", "label_disagreement",
+                      "missing_order", "missing_box", "invalid_box", "no_overlap"]
+
+
+class MatchEvidence(_LayoutMetadata):
+    block_index: int = Field(ge=0, strict=True)
+    region_index: int = Field(ge=0, strict=True)
+    iou: float = Field(ge=0, le=1)
+    sol_coverage: float = Field(ge=0, le=1)
+    region_coverage: float = Field(ge=0, le=1)
+    center_distance: float = Field(ge=0, le=1)
+    score: float = Field(ge=0, le=1)
+    reasons: tuple[MatchReason, ...] = ()
+
+
+class BlockDecision(_LayoutMetadata):
+    original_index: int = Field(ge=0, strict=True)
+    output_index: int = Field(ge=0, strict=True)
+    region_index: int | None = Field(ge=0, strict=True)
+    reasons: tuple[MatchReason, ...]
+
+
+class ReconciliationDetails(_LayoutMetadata):
+    policy_version: Literal["conservative-v1", "conservative-v2"] = "conservative-v1"
+    policy: ReconcilePolicy
+    candidates: tuple[MatchEvidence, ...]
+    decisions: tuple[BlockDecision, ...]
+    unmatched_region_indices: tuple[int, ...]
+
+
+class ReconciliationMetadata(ReconciliationDetails):
+    layout: NormalizedLayoutPage
+
+
+class LayoutPageArtifact(_LayoutMetadata):
+    layout: NormalizedLayoutPage
+    reconciliation: ReconciliationDetails | None = None
+
+    def check_parsed_page(self, parsed: ParsePage | None) -> None:
+        """Check at the page boundary as well as when loading an artifact."""
+        if parsed is not None and (parsed.page, parsed.width_px, parsed.height_px) != (
+                self.layout.page, self.layout.width_px, self.layout.height_px):
+            raise ValueError("Layout page dimensions disagree")
+        if self.reconciliation is not None:
+            if parsed is None or len(parsed.blocks) != len(self.reconciliation.decisions):
+                raise ValueError("Reconciliation requires a matching parsed page")
+            for decision in self.reconciliation.decisions:
+                if decision.region_index is not None:
+                    if parsed.blocks[decision.output_index].bbox != self.layout.regions[decision.region_index].bbox:
+                        raise ValueError("Reconciled geometry disagrees with artifact")
+
+    @model_validator(mode="after")
+    def validate_references(self):
+        details = self.reconciliation
+        if details is None:
+            return self
+        count, regions = len(details.decisions), set(range(len(self.layout.regions)))
+        if ([d.original_index for d in details.decisions] != list(range(count))
+                or sorted(d.output_index for d in details.decisions) != list(range(count))):
+            raise ValueError("Invalid reconciliation block indices")
+        matched = [d.region_index for d in details.decisions if d.region_index is not None]
+        if len(matched) != len(set(matched)) or not set(matched) <= regions:
+            raise ValueError("Invalid one-to-one region references")
+        if tuple(sorted(regions - set(matched))) != details.unmatched_region_indices:
+            raise ValueError("Invalid unmatched region references")
+        pairs = {(c.block_index, c.region_index): c for c in details.candidates}
+        if len(pairs) != len(details.candidates) or any(b >= count or r not in regions for b, r in pairs):
+            raise ValueError("Invalid candidate references")
+        for decision in details.decisions:
+            if decision.region_index is not None:
+                candidate = pairs.get((decision.original_index, decision.region_index))
+                if candidate is None or candidate.reasons:
+                    raise ValueError("Accepted match lacks eligible evidence")
+        return self
+
+
 class ParseResult(BaseModel):
     model_config = ConfigDict(extra="forbid")
 
@@ -193,7 +354,19 @@ class ParseResult(BaseModel):
     pages: list[ParsePage]
     content_filtered_pages: list[int] = Field(default_factory=list)
     page_diagnostics: list[PageDiagnostic] = Field(default_factory=list)
+    layout_metadata: list[LayoutPageArtifact] = Field(default_factory=list)
     model: str = "gpt-6-sol"
+
+    @model_validator(mode="after")
+    def validate_layout_metadata(self):
+        pages = {page.page: page for page in self.pages}
+        known_pages = set(pages) | {d.page for d in self.page_diagnostics}
+        identities = [entry.layout.page for entry in self.layout_metadata]
+        if len(identities) != len(set(identities)) or not set(identities) <= known_pages:
+            raise ValueError("Invalid layout page identities")
+        for entry in self.layout_metadata:
+            entry.check_parsed_page(pages.get(entry.layout.page))
+        return self
 
     @model_validator(mode="before")
     @classmethod

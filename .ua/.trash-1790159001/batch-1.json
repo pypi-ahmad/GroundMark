@@ -1,0 +1,1768 @@
+{
+  "batchIndex": 1,
+  "totalBatches": 9,
+  "nodes": [
+    {
+      "id": "file:scripts/evaluate_layout.py",
+      "type": "file",
+      "name": "evaluate_layout.py",
+      "filePath": "scripts/evaluate_layout.py",
+      "summary": "Evaluates layout detection accuracy against annotated ground truth across multiple document types.",
+      "tags": [
+        "evaluation",
+        "layout-eval",
+        "metrics",
+        "cli"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/evaluate_layout.py:metric_gate",
+      "type": "function",
+      "name": "metric_gate",
+      "filePath": "scripts/evaluate_layout.py",
+      "lineRange": [
+        16,
+        23
+      ],
+      "summary": "Metric Gate function in evaluate_layout.py supporting evaluate_layout operations.",
+      "tags": [
+        "function",
+        "evaluate-layout",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/evaluate_layout.py:compare",
+      "type": "function",
+      "name": "compare",
+      "filePath": "scripts/evaluate_layout.py",
+      "lineRange": [
+        26,
+        104
+      ],
+      "summary": "Compare function in evaluate_layout.py supporting evaluate_layout operations.",
+      "tags": [
+        "function",
+        "evaluate-layout",
+        "groundmark"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:scripts/evaluate_resolution.py",
+      "type": "file",
+      "name": "evaluate_resolution.py",
+      "filePath": "scripts/evaluate_resolution.py",
+      "summary": "Benchmarks layout parsing precision and latency across different image resolution settings.",
+      "tags": [
+        "evaluation",
+        "resolution-benchmark",
+        "latency",
+        "cli"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/evaluate_resolution.py:metric_gate",
+      "type": "function",
+      "name": "metric_gate",
+      "filePath": "scripts/evaluate_resolution.py",
+      "lineRange": [
+        25,
+        34
+      ],
+      "summary": "Metric Gate function in evaluate_resolution.py supporting evaluate_resolution operations.",
+      "tags": [
+        "function",
+        "evaluate-resolution",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/evaluate_resolution.py:compare",
+      "type": "function",
+      "name": "compare",
+      "filePath": "scripts/evaluate_resolution.py",
+      "lineRange": [
+        37,
+        111
+      ],
+      "summary": "Compare function in evaluate_resolution.py supporting evaluate_resolution operations.",
+      "tags": [
+        "function",
+        "evaluate-resolution",
+        "groundmark"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/evaluate_resolution.py:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "scripts/evaluate_resolution.py",
+      "lineRange": [
+        114,
+        121
+      ],
+      "summary": "Main function in evaluate_resolution.py supporting evaluate_resolution operations.",
+      "tags": [
+        "function",
+        "evaluate-resolution",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/graph.py",
+      "type": "file",
+      "name": "graph.py",
+      "filePath": "src/graph.py",
+      "summary": "Stateful document processing graph orchestrating preprocessing, parsing, and markdown generation.",
+      "tags": [
+        "orchestration",
+        "state-machine",
+        "pipeline",
+        "workflow"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/graph.py:node_preprocess",
+      "type": "function",
+      "name": "node_preprocess",
+      "filePath": "src/graph.py",
+      "lineRange": [
+        63,
+        77
+      ],
+      "summary": "Node Preprocess function in graph.py supporting graph operations.",
+      "tags": [
+        "function",
+        "graph",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/graph.py:node_parse",
+      "type": "function",
+      "name": "node_parse",
+      "filePath": "src/graph.py",
+      "lineRange": [
+        80,
+        130
+      ],
+      "summary": "Node Parse function in graph.py supporting graph operations.",
+      "tags": [
+        "function",
+        "graph",
+        "groundmark"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/graph.py:build_graph",
+      "type": "function",
+      "name": "build_graph",
+      "filePath": "src/graph.py",
+      "lineRange": [
+        133,
+        142
+      ],
+      "summary": "Build Graph function in graph.py supporting graph operations.",
+      "tags": [
+        "function",
+        "graph",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/graph.py:run_graph",
+      "type": "function",
+      "name": "run_graph",
+      "filePath": "src/graph.py",
+      "lineRange": [
+        145,
+        183
+      ],
+      "summary": "Run Graph function in graph.py supporting graph operations.",
+      "tags": [
+        "function",
+        "graph",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/graph.py:_main",
+      "type": "function",
+      "name": "_main",
+      "filePath": "src/graph.py",
+      "lineRange": [
+        186,
+        204
+      ],
+      "summary": " Main function in graph.py supporting graph operations.",
+      "tags": [
+        "function",
+        "graph",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/graph.py:GraphState",
+      "type": "class",
+      "name": "GraphState",
+      "filePath": "src/graph.py",
+      "lineRange": [
+        32,
+        60
+      ],
+      "summary": "Graphstate class in graph.py supporting graph operations.",
+      "tags": [
+        "class",
+        "graph",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/models.py",
+      "type": "file",
+      "name": "models.py",
+      "filePath": "src/models.py",
+      "summary": "Pydantic data models for bounding boxes, layout blocks, parsed document pages, and chat messages.",
+      "tags": [
+        "data-model",
+        "pydantic",
+        "schema",
+        "validation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/preprocess.py",
+      "type": "file",
+      "name": "preprocess.py",
+      "filePath": "src/preprocess.py",
+      "summary": "Prepares and normalizes input documents, handling PDF rasterization, image resizing, and base64 encoding.",
+      "tags": [
+        "preprocessing",
+        "pdf-rasterization",
+        "image-resizing",
+        "normalization"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/preprocess.py:count_pages",
+      "type": "function",
+      "name": "count_pages",
+      "filePath": "src/preprocess.py",
+      "lineRange": [
+        35,
+        60
+      ],
+      "summary": "Count Pages function in preprocess.py supporting preprocess operations.",
+      "tags": [
+        "function",
+        "preprocess",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/preprocess.py:preprocess",
+      "type": "function",
+      "name": "preprocess",
+      "filePath": "src/preprocess.py",
+      "lineRange": [
+        63,
+        100
+      ],
+      "summary": "Preprocess function in preprocess.py supporting preprocess operations.",
+      "tags": [
+        "function",
+        "preprocess",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/preprocess.py:preprocess_pages",
+      "type": "function",
+      "name": "preprocess_pages",
+      "filePath": "src/preprocess.py",
+      "lineRange": [
+        103,
+        160
+      ],
+      "summary": "Preprocess Pages function in preprocess.py supporting preprocess operations.",
+      "tags": [
+        "function",
+        "preprocess",
+        "groundmark"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/preprocess.py:_cap_long_edge",
+      "type": "function",
+      "name": "_cap_long_edge",
+      "filePath": "src/preprocess.py",
+      "lineRange": [
+        163,
+        169
+      ],
+      "summary": " Cap Long Edge function in preprocess.py supporting preprocess operations.",
+      "tags": [
+        "function",
+        "preprocess",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/preprocess.py:_render_pdf_page_range",
+      "type": "function",
+      "name": "_render_pdf_page_range",
+      "filePath": "src/preprocess.py",
+      "lineRange": [
+        172,
+        205
+      ],
+      "summary": " Render Pdf Page Range function in preprocess.py supporting preprocess operations.",
+      "tags": [
+        "function",
+        "preprocess",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/preprocess.py:PreprocessError",
+      "type": "class",
+      "name": "PreprocessError",
+      "filePath": "src/preprocess.py",
+      "lineRange": [
+        31,
+        32
+      ],
+      "summary": "Preprocesserror class in preprocess.py supporting preprocess operations.",
+      "tags": [
+        "class",
+        "preprocess",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/ui/app.py",
+      "type": "file",
+      "name": "app.py",
+      "filePath": "src/ui/app.py",
+      "summary": "Interactive Streamlit application providing document inspection, bounding box visualization, and chat.",
+      "tags": [
+        "ui",
+        "streamlit",
+        "frontend",
+        "inspection",
+        "chat"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/ui/app.py:clear_chat",
+      "type": "function",
+      "name": "clear_chat",
+      "filePath": "src/ui/app.py",
+      "lineRange": [
+        33,
+        34
+      ],
+      "summary": "Clear Chat function in app.py supporting app operations.",
+      "tags": [
+        "function",
+        "app",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/ui/app.py:load_input_preview",
+      "type": "function",
+      "name": "load_input_preview",
+      "filePath": "src/ui/app.py",
+      "lineRange": [
+        41,
+        45
+      ],
+      "summary": "Load Input Preview function in app.py supporting app operations.",
+      "tags": [
+        "function",
+        "app",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/ui/app.py:show_usage",
+      "type": "function",
+      "name": "show_usage",
+      "filePath": "src/ui/app.py",
+      "lineRange": [
+        48,
+        61
+      ],
+      "summary": "Show Usage function in app.py supporting app operations.",
+      "tags": [
+        "function",
+        "app",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/ui/app.py:figure_assets",
+      "type": "function",
+      "name": "figure_assets",
+      "filePath": "src/ui/app.py",
+      "lineRange": [
+        171,
+        173
+      ],
+      "summary": "Figure Assets function in app.py supporting app operations.",
+      "tags": [
+        "function",
+        "app",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/ui/clipboard.py",
+      "type": "file",
+      "name": "clipboard.py",
+      "filePath": "src/ui/clipboard.py",
+      "summary": "Clipboard helper module for copying markdown and chat answers directly to system clipboard.",
+      "tags": [
+        "utility",
+        "clipboard",
+        "ui-helper"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/usage.py",
+      "type": "file",
+      "name": "usage.py",
+      "filePath": "src/usage.py",
+      "summary": "Token usage ledger tracking prompt and completion tokens with USD cost computation.",
+      "tags": [
+        "usage",
+        "telemetry",
+        "cost-tracking",
+        "metrics"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/usage.py:record",
+      "type": "function",
+      "name": "record",
+      "filePath": "src/usage.py",
+      "lineRange": [
+        15,
+        35
+      ],
+      "summary": "Record function in usage.py supporting usage operations.",
+      "tags": [
+        "function",
+        "usage",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/usage.py:totals",
+      "type": "function",
+      "name": "totals",
+      "filePath": "src/usage.py",
+      "lineRange": [
+        38,
+        44
+      ],
+      "summary": "Totals function in usage.py supporting usage operations.",
+      "tags": [
+        "function",
+        "usage",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/usage.py:cost_usd",
+      "type": "function",
+      "name": "cost_usd",
+      "filePath": "src/usage.py",
+      "lineRange": [
+        47,
+        62
+      ],
+      "summary": "Cost Usd function in usage.py supporting usage operations.",
+      "tags": [
+        "function",
+        "usage",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/usage.py:session_cost_usd",
+      "type": "function",
+      "name": "session_cost_usd",
+      "filePath": "src/usage.py",
+      "lineRange": [
+        65,
+        66
+      ],
+      "summary": "Session Cost Usd function in usage.py supporting usage operations.",
+      "tags": [
+        "function",
+        "usage",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/fixtures/make_invoice_png.py",
+      "type": "file",
+      "name": "make_invoice_png.py",
+      "filePath": "tests/fixtures/make_invoice_png.py",
+      "summary": "Fixture script dynamically generating synthetic invoice images with predictable layout elements.",
+      "tags": [
+        "test-fixture",
+        "synthetic-data",
+        "image-generation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/fixtures/make_invoice_png.py:make_invoice_image",
+      "type": "function",
+      "name": "make_invoice_image",
+      "filePath": "tests/fixtures/make_invoice_png.py",
+      "lineRange": [
+        35,
+        43
+      ],
+      "summary": "Make Invoice Image function in make_invoice_png.py supporting make_invoice_png operations.",
+      "tags": [
+        "function",
+        "make-invoice-png",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/fixtures/make_invoice_png.py:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "tests/fixtures/make_invoice_png.py",
+      "lineRange": [
+        46,
+        48
+      ],
+      "summary": "Main function in make_invoice_png.py supporting make_invoice_png operations.",
+      "tags": [
+        "function",
+        "make-invoice-png",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_preprocess.py",
+      "type": "file",
+      "name": "test_preprocess.py",
+      "filePath": "tests/test_preprocess.py",
+      "summary": "Tests image deskewing, resizing, base64 encoding, and PDF page rasterization.",
+      "tags": [
+        "test",
+        "preprocessing",
+        "image-processing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:_ensure_fixtures",
+      "type": "function",
+      "name": "_ensure_fixtures",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        22,
+        24
+      ],
+      "summary": " Ensure Fixtures function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "function",
+        "test-preprocess",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:test_missing_file_raises",
+      "type": "function",
+      "name": "test_missing_file_raises",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        27,
+        29
+      ],
+      "summary": "Test Missing File Raises function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-preprocess"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:test_png_returns_base64",
+      "type": "function",
+      "name": "test_png_returns_base64",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        32,
+        37
+      ],
+      "summary": "Test Png Returns Base64 function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-preprocess"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:test_sha_stable",
+      "type": "function",
+      "name": "test_sha_stable",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        40,
+        44
+      ],
+      "summary": "Test Sha Stable function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-preprocess"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:test_pdf_first_page",
+      "type": "function",
+      "name": "test_pdf_first_page",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        47,
+        55
+      ],
+      "summary": "Test Pdf First Page function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-preprocess"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:_make_multi_page_pdf",
+      "type": "function",
+      "name": "_make_multi_page_pdf",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        58,
+        60
+      ],
+      "summary": " Make Multi Page Pdf function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "function",
+        "test-preprocess",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:test_preprocess_pages_defaults_to_whole_document",
+      "type": "function",
+      "name": "test_preprocess_pages_defaults_to_whole_document",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        63,
+        70
+      ],
+      "summary": "Test Preprocess Pages Defaults To Whole Document function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-preprocess"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:test_preprocess_pages_explicit_range",
+      "type": "function",
+      "name": "test_preprocess_pages_explicit_range",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        73,
+        79
+      ],
+      "summary": "Test Preprocess Pages Explicit Range function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-preprocess"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:test_preprocess_pages_end_page_none_goes_to_last_page",
+      "type": "function",
+      "name": "test_preprocess_pages_end_page_none_goes_to_last_page",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        82,
+        88
+      ],
+      "summary": "Test Preprocess Pages End Page None Goes To Last Page function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-preprocess"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:test_preprocess_pages_single_image_is_one_page",
+      "type": "function",
+      "name": "test_preprocess_pages_single_image_is_one_page",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        91,
+        94
+      ],
+      "summary": "Test Preprocess Pages Single Image Is One Page function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-preprocess"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:test_invalid_pdf_ranges_fail",
+      "type": "function",
+      "name": "test_invalid_pdf_ranges_fail",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        98,
+        102
+      ],
+      "summary": "Test Invalid Pdf Ranges Fail function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-preprocess"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:test_resolution_profiles_and_no_raster_upscaling",
+      "type": "function",
+      "name": "test_resolution_profiles_and_no_raster_upscaling",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        105,
+        117
+      ],
+      "summary": "Test Resolution Profiles And No Raster Upscaling function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-preprocess"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "function:scripts/evaluate_layout.py:metric_gate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "function:scripts/evaluate_layout.py:metric_gate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "function:scripts/evaluate_layout.py:compare",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "function:scripts/evaluate_layout.py:compare",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:scripts/evaluate_prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:scripts/evaluate_resolution.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:scripts/evaluate_layout.py:compare",
+      "target": "function:scripts/evaluate_prompts.py:score_page",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_layout.py:compare",
+      "target": "function:scripts/evaluate_prompts.py:score_page",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_layout.py:compare",
+      "target": "function:scripts/evaluate_prompts.py:score_page",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_layout.py:compare",
+      "target": "function:scripts/evaluate_layout.py:metric_gate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "function:scripts/evaluate_resolution.py:metric_gate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "function:scripts/evaluate_resolution.py:metric_gate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "function:scripts/evaluate_resolution.py:compare",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "function:scripts/evaluate_resolution.py:compare",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "function:scripts/evaluate_resolution.py:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "function:scripts/evaluate_resolution.py:main",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:scripts/evaluate_prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:scripts/evaluate_resolution.py:compare",
+      "target": "function:scripts/evaluate_prompts.py:score_page",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_resolution.py:compare",
+      "target": "function:scripts/evaluate_prompts.py:score_page",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_resolution.py:compare",
+      "target": "function:scripts/evaluate_prompts.py:score_page",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_resolution.py:compare",
+      "target": "function:scripts/evaluate_resolution.py:metric_gate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_resolution.py:main",
+      "target": "function:scripts/evaluate_resolution.py:compare",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "function:src/graph.py:node_preprocess",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "function:src/graph.py:node_preprocess",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "function:src/graph.py:node_parse",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "function:src/graph.py:node_parse",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "function:src/graph.py:build_graph",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "function:src/graph.py:build_graph",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "function:src/graph.py:run_graph",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "function:src/graph.py:run_graph",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "function:src/graph.py:_main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "function:src/graph.py:_main",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "class:src/graph.py:GraphState",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "class:src/graph.py:GraphState",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/export.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/output_names.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/parse.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:src/graph.py:node_parse",
+      "target": "function:src/parse.py:parse_document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/graph.py:node_parse",
+      "target": "function:src/parse.py:parse_document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/graph.py:node_parse",
+      "target": "function:src/parse.py:parse_document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/graph.py:node_parse",
+      "target": "function:src/output_names.py:reserve_basename",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/graph.py:node_parse",
+      "target": "function:src/export.py:export_result",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/graph.py:run_graph",
+      "target": "function:src/graph.py:build_graph",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/graph.py:_main",
+      "target": "function:src/graph.py:run_graph",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "function:src/preprocess.py:count_pages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "function:src/preprocess.py:count_pages",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "function:src/preprocess.py:preprocess",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "function:src/preprocess.py:preprocess",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "function:src/preprocess.py:preprocess_pages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "function:src/preprocess.py:preprocess_pages",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "function:src/preprocess.py:_cap_long_edge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "function:src/preprocess.py:_cap_long_edge",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "function:src/preprocess.py:_render_pdf_page_range",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "function:src/preprocess.py:_render_pdf_page_range",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "class:src/preprocess.py:PreprocessError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "class:src/preprocess.py:PreprocessError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/preprocess.py:preprocess",
+      "target": "function:src/preprocess.py:_render_pdf_page_range",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/preprocess.py:preprocess",
+      "target": "function:src/preprocess.py:_cap_long_edge",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/preprocess.py:preprocess_pages",
+      "target": "function:src/preprocess.py:_render_pdf_page_range",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/preprocess.py:preprocess_pages",
+      "target": "function:src/preprocess.py:_cap_long_edge",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "function:src/ui/app.py:clear_chat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "function:src/ui/app.py:clear_chat",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "function:src/ui/app.py:load_input_preview",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "function:src/ui/app.py:load_input_preview",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "function:src/ui/app.py:show_usage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "function:src/ui/app.py:show_usage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "function:src/ui/app.py:figure_assets",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "function:src/ui/app.py:figure_assets",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/chat.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/figures.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/graph.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/markdown.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/ui/clipboard.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:src/ui/app.py:figure_assets",
+      "target": "function:src/figures.py:load_figures",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/ui/app.py:figure_assets",
+      "target": "function:src/figures.py:load_figures",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/usage.py",
+      "target": "function:src/usage.py:record",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/usage.py",
+      "target": "function:src/usage.py:record",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/usage.py",
+      "target": "function:src/usage.py:totals",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/usage.py",
+      "target": "function:src/usage.py:totals",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/usage.py",
+      "target": "function:src/usage.py:cost_usd",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/usage.py",
+      "target": "function:src/usage.py:cost_usd",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/usage.py",
+      "target": "function:src/usage.py:session_cost_usd",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/usage.py",
+      "target": "function:src/usage.py:session_cost_usd",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/usage.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:src/usage.py:session_cost_usd",
+      "target": "function:src/usage.py:cost_usd",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/fixtures/make_invoice_png.py",
+      "target": "function:tests/fixtures/make_invoice_png.py:make_invoice_image",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/fixtures/make_invoice_png.py",
+      "target": "function:tests/fixtures/make_invoice_png.py:make_invoice_image",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/fixtures/make_invoice_png.py",
+      "target": "function:tests/fixtures/make_invoice_png.py:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/fixtures/make_invoice_png.py",
+      "target": "function:tests/fixtures/make_invoice_png.py:main",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/fixtures/make_invoice_png.py:main",
+      "target": "function:tests/fixtures/make_invoice_png.py:make_invoice_image",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:_ensure_fixtures",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:_ensure_fixtures",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_missing_file_raises",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_missing_file_raises",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_png_returns_base64",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_png_returns_base64",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_sha_stable",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_sha_stable",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_pdf_first_page",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_pdf_first_page",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:_make_multi_page_pdf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:_make_multi_page_pdf",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_preprocess_pages_defaults_to_whole_document",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_preprocess_pages_defaults_to_whole_document",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_preprocess_pages_explicit_range",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_preprocess_pages_explicit_range",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_preprocess_pages_end_page_none_goes_to_last_page",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_preprocess_pages_end_page_none_goes_to_last_page",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_preprocess_pages_single_image_is_one_page",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_preprocess_pages_single_image_is_one_page",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_invalid_pdf_ranges_fail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_invalid_pdf_ranges_fail",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_resolution_profiles_and_no_raster_upscaling",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_resolution_profiles_and_no_raster_upscaling",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "file:tests/fixtures/make_invoice_png.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:tests/test_preprocess.py:test_preprocess_pages_defaults_to_whole_document",
+      "target": "function:tests/test_preprocess.py:_make_multi_page_pdf",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_preprocess.py:test_preprocess_pages_explicit_range",
+      "target": "function:tests/test_preprocess.py:_make_multi_page_pdf",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_preprocess.py:test_preprocess_pages_end_page_none_goes_to_last_page",
+      "target": "function:tests/test_preprocess.py:_make_multi_page_pdf",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_preprocess.py:test_invalid_pdf_ranges_fail",
+      "target": "function:tests/test_preprocess.py:_make_multi_page_pdf",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "file:tests/test_preprocess.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

@@ -1,0 +1,113 @@
+{
+  "projectRoot": "D:\\AI\\GroundMark",
+  "batchFiles": [
+    {
+      "path": "scripts/evaluate_layout.py",
+      "language": "python",
+      "sizeLines": 115,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/evaluate_resolution.py",
+      "language": "python",
+      "sizeLines": 125,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/graph.py",
+      "language": "python",
+      "sizeLines": 208,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/models.py",
+      "language": "python",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/preprocess.py",
+      "language": "python",
+      "sizeLines": 205,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/ui/app.py",
+      "language": "python",
+      "sizeLines": 281,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/ui/clipboard.py",
+      "language": "python",
+      "sizeLines": 81,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/usage.py",
+      "language": "python",
+      "sizeLines": 66,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/fixtures/make_invoice_png.py",
+      "language": "python",
+      "sizeLines": 52,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_preprocess.py",
+      "language": "python",
+      "sizeLines": 117,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "scripts/evaluate_layout.py": [
+      "scripts/evaluate_prompts.py",
+      "scripts/evaluate_resolution.py",
+      "src/layout.py",
+      "src/preprocess.py",
+      "src/usage.py"
+    ],
+    "scripts/evaluate_resolution.py": [
+      "scripts/evaluate_prompts.py",
+      "src/layout.py",
+      "src/models.py",
+      "src/preprocess.py",
+      "src/usage.py"
+    ],
+    "src/graph.py": [
+      "src/__init__.py",
+      "src/export.py",
+      "src/layout.py",
+      "src/models.py",
+      "src/output_names.py",
+      "src/parse.py",
+      "src/preprocess.py",
+      "src/usage.py"
+    ],
+    "src/models.py": [],
+    "src/preprocess.py": [],
+    "src/ui/app.py": [
+      "src/__init__.py",
+      "src/chat.py",
+      "src/figures.py",
+      "src/graph.py",
+      "src/markdown.py",
+      "src/models.py",
+      "src/preprocess.py",
+      "src/ui/clipboard.py",
+      "src/usage.py"
+    ],
+    "src/ui/clipboard.py": [],
+    "src/usage.py": [
+      "src/models.py"
+    ],
+    "tests/fixtures/make_invoice_png.py": [],
+    "tests/test_preprocess.py": [
+      "src/preprocess.py",
+      "tests/fixtures/make_invoice_png.py"
+    ]
+  }
+}

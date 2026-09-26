@@ -5,7 +5,8 @@ gateway billing data).
 
 Must not: silently fall back to a default for an unrecognized model id --
 src/llm.py's `_build_llm` and src/parse.py's `parse_document` both raise
-instead (there is no automatic model fallback, see README.md).
+instead. Sol and Luna are never substituted with another API model. This is
+separate from the parser retaining Sol extraction when local V3 is unavailable.
 
 Next: src/usage.py, which turns these rates into a session cost estimate.
 """

@@ -1,0 +1,1523 @@
+{
+  "batchIndex": 3,
+  "totalBatches": 9,
+  "nodes": [
+    {
+      "id": "file:src/diagnostics.py",
+      "type": "file",
+      "name": "diagnostics.py",
+      "filePath": "src/diagnostics.py",
+      "summary": "Tracks API response health, token usage per call, error classification, and content filter violations.",
+      "tags": [
+        "diagnostics",
+        "telemetry",
+        "safety-filters",
+        "monitoring"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/diagnostics.py:safe_identifier",
+      "type": "function",
+      "name": "safe_identifier",
+      "filePath": "src/diagnostics.py",
+      "lineRange": [
+        51,
+        65
+      ],
+      "summary": "Safe Identifier function in diagnostics.py supporting diagnostics operations.",
+      "tags": [
+        "function",
+        "diagnostics",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/diagnostics.py:token_count",
+      "type": "function",
+      "name": "token_count",
+      "filePath": "src/diagnostics.py",
+      "lineRange": [
+        68,
+        72
+      ],
+      "summary": "Token Count function in diagnostics.py supporting diagnostics operations.",
+      "tags": [
+        "function",
+        "diagnostics",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/diagnostics.py:filter_annotations",
+      "type": "function",
+      "name": "filter_annotations",
+      "filePath": "src/diagnostics.py",
+      "lineRange": [
+        75,
+        87
+      ],
+      "summary": "Filter Annotations function in diagnostics.py supporting diagnostics operations.",
+      "tags": [
+        "function",
+        "diagnostics",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/diagnostics.py:FilterAnnotation",
+      "type": "class",
+      "name": "FilterAnnotation",
+      "filePath": "src/diagnostics.py",
+      "lineRange": [
+        22,
+        26
+      ],
+      "summary": "Filterannotation class in diagnostics.py supporting diagnostics operations.",
+      "tags": [
+        "class",
+        "diagnostics",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/diagnostics.py:PageDiagnostic",
+      "type": "class",
+      "name": "PageDiagnostic",
+      "filePath": "src/diagnostics.py",
+      "lineRange": [
+        29,
+        42
+      ],
+      "summary": "Pagediagnostic class in diagnostics.py supporting diagnostics operations.",
+      "tags": [
+        "class",
+        "diagnostics",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/diagnostics.py:ExtractionCallError",
+      "type": "class",
+      "name": "ExtractionCallError",
+      "filePath": "src/diagnostics.py",
+      "lineRange": [
+        45,
+        48
+      ],
+      "summary": "Extractioncallerror class in diagnostics.py supporting diagnostics operations.",
+      "tags": [
+        "class",
+        "diagnostics",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/llm.py",
+      "type": "file",
+      "name": "llm.py",
+      "filePath": "src/llm.py",
+      "summary": "Low-level LLM client wrapper configuring OpenAI/vLLM clients with structured outputs and retry policies.",
+      "tags": [
+        "llm-client",
+        "openai-api",
+        "structured-outputs",
+        "retry-logic"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/llm.py:_reasoning_kwargs",
+      "type": "function",
+      "name": "_reasoning_kwargs",
+      "filePath": "src/llm.py",
+      "lineRange": [
+        39,
+        43
+      ],
+      "summary": " Reasoning Kwargs function in llm.py supporting llm operations.",
+      "tags": [
+        "function",
+        "llm",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/llm.py:_build_llm",
+      "type": "function",
+      "name": "_build_llm",
+      "filePath": "src/llm.py",
+      "lineRange": [
+        46,
+        58
+      ],
+      "summary": " Build Llm function in llm.py supporting llm operations.",
+      "tags": [
+        "function",
+        "llm",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/llm.py:_image_message",
+      "type": "function",
+      "name": "_image_message",
+      "filePath": "src/llm.py",
+      "lineRange": [
+        61,
+        67
+      ],
+      "summary": " Image Message function in llm.py supporting llm operations.",
+      "tags": [
+        "function",
+        "llm",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/llm.py:_invoke_structured",
+      "type": "function",
+      "name": "_invoke_structured",
+      "filePath": "src/llm.py",
+      "lineRange": [
+        70,
+        168
+      ],
+      "summary": " Invoke Structured function in llm.py supporting llm operations.",
+      "tags": [
+        "function",
+        "llm",
+        "groundmark"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "class:src/llm.py:ExtractConfigError",
+      "type": "class",
+      "name": "ExtractConfigError",
+      "filePath": "src/llm.py",
+      "lineRange": [
+        35,
+        36
+      ],
+      "summary": "Extractconfigerror class in llm.py supporting llm operations.",
+      "tags": [
+        "class",
+        "llm",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/parse.py",
+      "type": "file",
+      "name": "parse.py",
+      "filePath": "src/parse.py",
+      "summary": "High-level parsing facade coordinating document preparation, model inference, and output formatting.",
+      "tags": [
+        "parser-facade",
+        "inference",
+        "document-processing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/parse.py:_page_context",
+      "type": "function",
+      "name": "_page_context",
+      "filePath": "src/parse.py",
+      "lineRange": [
+        35,
+        42
+      ],
+      "summary": " Page Context function in parse.py supporting parse operations.",
+      "tags": [
+        "function",
+        "parse",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/parse.py:parse_page",
+      "type": "function",
+      "name": "parse_page",
+      "filePath": "src/parse.py",
+      "lineRange": [
+        45,
+        65
+      ],
+      "summary": "Parse Page function in parse.py supporting parse operations.",
+      "tags": [
+        "function",
+        "parse",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/parse.py:parse_document",
+      "type": "function",
+      "name": "parse_document",
+      "filePath": "src/parse.py",
+      "lineRange": [
+        68,
+        145
+      ],
+      "summary": "Parse Document function in parse.py supporting parse operations.",
+      "tags": [
+        "function",
+        "parse",
+        "groundmark"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/parse.py:_main",
+      "type": "function",
+      "name": "_main",
+      "filePath": "src/parse.py",
+      "lineRange": [
+        148,
+        159
+      ],
+      "summary": " Main function in parse.py supporting parse operations.",
+      "tags": [
+        "function",
+        "parse",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/prompts.py",
+      "type": "file",
+      "name": "prompts.py",
+      "filePath": "src/prompts.py",
+      "summary": "Prompt template loader resolving system instructions and user templates from the prompts directory.",
+      "tags": [
+        "prompt-engineering",
+        "template-loader",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/prompts.py:render_prompt",
+      "type": "function",
+      "name": "render_prompt",
+      "filePath": "src/prompts.py",
+      "lineRange": [
+        18,
+        22
+      ],
+      "summary": "Render Prompt function in prompts.py supporting prompts operations.",
+      "tags": [
+        "function",
+        "prompts",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_diagnostics.py",
+      "type": "file",
+      "name": "test_diagnostics.py",
+      "filePath": "tests/test_diagnostics.py",
+      "summary": "Tests for content filter detection, error formatting, and diagnostic telemetry capture.",
+      "tags": [
+        "test",
+        "diagnostics",
+        "safety-filters"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:tests/test_diagnostics.py:call_response",
+      "type": "function",
+      "name": "call_response",
+      "filePath": "tests/test_diagnostics.py",
+      "lineRange": [
+        24,
+        36
+      ],
+      "summary": "Call Response function in test_diagnostics.py supporting test_diagnostics operations.",
+      "tags": [
+        "function",
+        "test-diagnostics",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_diagnostics.py:completion",
+      "type": "function",
+      "name": "completion",
+      "filePath": "tests/test_diagnostics.py",
+      "lineRange": [
+        39,
+        45
+      ],
+      "summary": "Completion function in test_diagnostics.py supporting test_diagnostics operations.",
+      "tags": [
+        "function",
+        "test-diagnostics",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_diagnostics.py:invoke",
+      "type": "function",
+      "name": "invoke",
+      "filePath": "tests/test_diagnostics.py",
+      "lineRange": [
+        48,
+        50
+      ],
+      "summary": "Invoke function in test_diagnostics.py supporting test_diagnostics operations.",
+      "tags": [
+        "function",
+        "test-diagnostics",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_diagnostics.py:test_live_evaluator_disables_retries_on_actual_client",
+      "type": "function",
+      "name": "test_live_evaluator_disables_retries_on_actual_client",
+      "filePath": "tests/test_diagnostics.py",
+      "lineRange": [
+        53,
+        67
+      ],
+      "summary": "Test Live Evaluator Disables Retries On Actual Client function in test_diagnostics.py supporting test_diagnostics operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-diagnostics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_diagnostics.py:test_sol_pricing_keeps_requested_model_when_provider_returns_alias",
+      "type": "function",
+      "name": "test_sol_pricing_keeps_requested_model_when_provider_returns_alias",
+      "filePath": "tests/test_diagnostics.py",
+      "lineRange": [
+        70,
+        83
+      ],
+      "summary": "Test Sol Pricing Keeps Requested Model When Provider Returns Alias function in test_diagnostics.py supporting test_diagnostics operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-diagnostics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_diagnostics.py:test_create_retains_strict_schema_messages_settings_and_usage",
+      "type": "function",
+      "name": "test_create_retains_strict_schema_messages_settings_and_usage",
+      "filePath": "tests/test_diagnostics.py",
+      "lineRange": [
+        86,
+        106
+      ],
+      "summary": "Test Create Retains Strict Schema Messages Settings And Usage function in test_diagnostics.py supporting test_diagnostics operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-diagnostics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_diagnostics.py:test_unsuccessful_output_never_becomes_valid_extraction",
+      "type": "function",
+      "name": "test_unsuccessful_output_never_becomes_valid_extraction",
+      "filePath": "tests/test_diagnostics.py",
+      "lineRange": [
+        117,
+        128
+      ],
+      "summary": "Test Unsuccessful Output Never Becomes Valid Extraction function in test_diagnostics.py supporting test_diagnostics operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-diagnostics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_diagnostics.py:test_http_errors_are_safe_and_not_retried",
+      "type": "function",
+      "name": "test_http_errors_are_safe_and_not_retried",
+      "filePath": "tests/test_diagnostics.py",
+      "lineRange": [
+        133,
+        146
+      ],
+      "summary": "Test Http Errors Are Safe And Not Retried function in test_diagnostics.py supporting test_diagnostics operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-diagnostics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_diagnostics.py:test_metadata_allowlist_removes_secret_values_snippets_and_arbitrary_headers",
+      "type": "function",
+      "name": "test_metadata_allowlist_removes_secret_values_snippets_and_arbitrary_headers",
+      "filePath": "tests/test_diagnostics.py",
+      "lineRange": [
+        149,
+        169
+      ],
+      "summary": "Test Metadata Allowlist Removes Secret Values Snippets And Arbitrary Headers function in test_diagnostics.py supporting test_diagnostics operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-diagnostics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_diagnostics.py:test_timeout_is_safe_and_missing_usage_stays_unknown",
+      "type": "function",
+      "name": "test_timeout_is_safe_and_missing_usage_stays_unknown",
+      "filePath": "tests/test_diagnostics.py",
+      "lineRange": [
+        172,
+        182
+      ],
+      "summary": "Test Timeout Is Safe And Missing Usage Stays Unknown function in test_diagnostics.py supporting test_diagnostics operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-diagnostics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_diagnostics.py:test_missing_annotations_and_usage_and_old_result_compatibility",
+      "type": "function",
+      "name": "test_missing_annotations_and_usage_and_old_result_compatibility",
+      "filePath": "tests/test_diagnostics.py",
+      "lineRange": [
+        185,
+        196
+      ],
+      "summary": "Test Missing Annotations And Usage And Old Result Compatibility function in test_diagnostics.py supporting test_diagnostics operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-diagnostics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_diagnostics.py:test_resolution_evaluator_sends_actual_output_cap_and_medium_reasoning",
+      "type": "function",
+      "name": "test_resolution_evaluator_sends_actual_output_cap_and_medium_reasoning",
+      "filePath": "tests/test_diagnostics.py",
+      "lineRange": [
+        199,
+        213
+      ],
+      "summary": "Test Resolution Evaluator Sends Actual Output Cap And Medium Reasoning function in test_diagnostics.py supporting test_diagnostics operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-diagnostics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_diagnostics.py:test_raw_client_cannot_bypass_single_model_guard",
+      "type": "function",
+      "name": "test_raw_client_cannot_bypass_single_model_guard",
+      "filePath": "tests/test_diagnostics.py",
+      "lineRange": [
+        216,
+        225
+      ],
+      "summary": "Test Raw Client Cannot Bypass Single Model Guard function in test_diagnostics.py supporting test_diagnostics operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-diagnostics"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_prompts.py",
+      "type": "file",
+      "name": "test_prompts.py",
+      "filePath": "tests/test_prompts.py",
+      "summary": "Verifies prompt template loading, variable substitution, and schema validation.",
+      "tags": [
+        "test",
+        "prompt-template",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_prompts.py:test_prompts_resolve_outside_project_and_preserve_substituted_text",
+      "type": "function",
+      "name": "test_prompts_resolve_outside_project_and_preserve_substituted_text",
+      "filePath": "tests/test_prompts.py",
+      "lineRange": [
+        15,
+        24
+      ],
+      "summary": "Test Prompts Resolve Outside Project And Preserve Substituted Text function in test_prompts.py supporting test_prompts operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-prompts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_prompts.py:test_prompt_missing_placeholder_fails",
+      "type": "function",
+      "name": "test_prompt_missing_placeholder_fails",
+      "filePath": "tests/test_prompts.py",
+      "lineRange": [
+        27,
+        29
+      ],
+      "summary": "Test Prompt Missing Placeholder Fails function in test_prompts.py supporting test_prompts operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-prompts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_prompts.py:test_chat_policies_load_outside_project",
+      "type": "function",
+      "name": "test_chat_policies_load_outside_project",
+      "filePath": "tests/test_prompts.py",
+      "lineRange": [
+        33,
+        36
+      ],
+      "summary": "Test Chat Policies Load Outside Project function in test_prompts.py supporting test_prompts operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-prompts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_prompts.py:test_all_runtime_templates_render_without_reformatting_data",
+      "type": "function",
+      "name": "test_all_runtime_templates_render_without_reformatting_data",
+      "filePath": "tests/test_prompts.py",
+      "lineRange": [
+        43,
+        47
+      ],
+      "summary": "Test All Runtime Templates Render Without Reformatting Data function in test_prompts.py supporting test_prompts operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-prompts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_prompts.py:test_runtime_prompt_contains_fidelity_and_injection_boundaries",
+      "type": "function",
+      "name": "test_runtime_prompt_contains_fidelity_and_injection_boundaries",
+      "filePath": "tests/test_prompts.py",
+      "lineRange": [
+        50,
+        61
+      ],
+      "summary": "Test Runtime Prompt Contains Fidelity And Injection Boundaries function in test_prompts.py supporting test_prompts operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-prompts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_prompts.py:test_detailed_prompt_stays_in_markdown_and_preserves_contract",
+      "type": "function",
+      "name": "test_detailed_prompt_stays_in_markdown_and_preserves_contract",
+      "filePath": "tests/test_prompts.py",
+      "lineRange": [
+        64,
+        70
+      ],
+      "summary": "Test Detailed Prompt Stays In Markdown And Preserves Contract function in test_prompts.py supporting test_prompts operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-prompts"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/diagnostics.py",
+      "target": "function:src/diagnostics.py:safe_identifier",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/diagnostics.py",
+      "target": "function:src/diagnostics.py:safe_identifier",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/diagnostics.py",
+      "target": "function:src/diagnostics.py:token_count",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/diagnostics.py",
+      "target": "function:src/diagnostics.py:token_count",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/diagnostics.py",
+      "target": "function:src/diagnostics.py:filter_annotations",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/diagnostics.py",
+      "target": "function:src/diagnostics.py:filter_annotations",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/diagnostics.py",
+      "target": "class:src/diagnostics.py:FilterAnnotation",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/diagnostics.py",
+      "target": "class:src/diagnostics.py:FilterAnnotation",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/diagnostics.py",
+      "target": "class:src/diagnostics.py:PageDiagnostic",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/diagnostics.py",
+      "target": "class:src/diagnostics.py:PageDiagnostic",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/diagnostics.py",
+      "target": "class:src/diagnostics.py:ExtractionCallError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/diagnostics.py",
+      "target": "class:src/diagnostics.py:ExtractionCallError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/llm.py",
+      "target": "function:src/llm.py:_reasoning_kwargs",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/llm.py",
+      "target": "function:src/llm.py:_reasoning_kwargs",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/llm.py",
+      "target": "function:src/llm.py:_build_llm",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/llm.py",
+      "target": "function:src/llm.py:_build_llm",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/llm.py",
+      "target": "function:src/llm.py:_image_message",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/llm.py",
+      "target": "function:src/llm.py:_image_message",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/llm.py",
+      "target": "function:src/llm.py:_invoke_structured",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/llm.py",
+      "target": "function:src/llm.py:_invoke_structured",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/llm.py",
+      "target": "class:src/llm.py:ExtractConfigError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/llm.py",
+      "target": "class:src/llm.py:ExtractConfigError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/llm.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/llm.py",
+      "target": "file:src/diagnostics.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/llm.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:src/llm.py:_build_llm",
+      "target": "function:src/llm.py:_reasoning_kwargs",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "function:src/parse.py:_page_context",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "function:src/parse.py:_page_context",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "function:src/parse.py:parse_page",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "function:src/parse.py:parse_page",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "function:src/parse.py:parse_document",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "function:src/parse.py:parse_document",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "function:src/parse.py:_main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "function:src/parse.py:_main",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "file:src/diagnostics.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "file:src/llm.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "file:src/prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:src/parse.py:parse_document",
+      "target": "function:src/preprocess.py:preprocess_pages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/parse.py:parse_document",
+      "target": "function:src/parse.py:_page_context",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/parse.py:parse_document",
+      "target": "class:src/layout.py:ParseResult",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/parse.py:parse_document",
+      "target": "class:src/layout.py:ParseResult",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/parse.py:parse_document",
+      "target": "class:src/layout.py:ParseResult",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/parse.py:_main",
+      "target": "function:src/parse.py:parse_document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/prompts.py",
+      "target": "function:src/prompts.py:render_prompt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/prompts.py",
+      "target": "function:src/prompts.py:render_prompt",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:call_response",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:call_response",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:completion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:completion",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:invoke",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:invoke",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:test_live_evaluator_disables_retries_on_actual_client",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:test_live_evaluator_disables_retries_on_actual_client",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:test_sol_pricing_keeps_requested_model_when_provider_returns_alias",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:test_sol_pricing_keeps_requested_model_when_provider_returns_alias",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:test_create_retains_strict_schema_messages_settings_and_usage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:test_create_retains_strict_schema_messages_settings_and_usage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:test_unsuccessful_output_never_becomes_valid_extraction",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:test_unsuccessful_output_never_becomes_valid_extraction",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:test_http_errors_are_safe_and_not_retried",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:test_http_errors_are_safe_and_not_retried",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:test_metadata_allowlist_removes_secret_values_snippets_and_arbitrary_headers",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:test_metadata_allowlist_removes_secret_values_snippets_and_arbitrary_headers",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:test_timeout_is_safe_and_missing_usage_stays_unknown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:test_timeout_is_safe_and_missing_usage_stays_unknown",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:test_missing_annotations_and_usage_and_old_result_compatibility",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:test_missing_annotations_and_usage_and_old_result_compatibility",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:test_resolution_evaluator_sends_actual_output_cap_and_medium_reasoning",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:test_resolution_evaluator_sends_actual_output_cap_and_medium_reasoning",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:test_raw_client_cannot_bypass_single_model_guard",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "function:tests/test_diagnostics.py:test_raw_client_cannot_bypass_single_model_guard",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "file:src/diagnostics.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "file:src/llm.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_live_evaluator_disables_retries_on_actual_client",
+      "target": "function:tests/test_diagnostics.py:call_response",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_sol_pricing_keeps_requested_model_when_provider_returns_alias",
+      "target": "function:tests/test_diagnostics.py:completion",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_sol_pricing_keeps_requested_model_when_provider_returns_alias",
+      "target": "function:tests/test_diagnostics.py:call_response",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_sol_pricing_keeps_requested_model_when_provider_returns_alias",
+      "target": "function:tests/test_diagnostics.py:invoke",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_create_retains_strict_schema_messages_settings_and_usage",
+      "target": "function:tests/test_diagnostics.py:call_response",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_create_retains_strict_schema_messages_settings_and_usage",
+      "target": "function:tests/test_diagnostics.py:completion",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_create_retains_strict_schema_messages_settings_and_usage",
+      "target": "function:tests/test_diagnostics.py:invoke",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_unsuccessful_output_never_becomes_valid_extraction",
+      "target": "function:tests/test_diagnostics.py:call_response",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_unsuccessful_output_never_becomes_valid_extraction",
+      "target": "function:tests/test_diagnostics.py:completion",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_unsuccessful_output_never_becomes_valid_extraction",
+      "target": "function:tests/test_diagnostics.py:invoke",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_http_errors_are_safe_and_not_retried",
+      "target": "function:tests/test_diagnostics.py:call_response",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_http_errors_are_safe_and_not_retried",
+      "target": "function:tests/test_diagnostics.py:invoke",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_metadata_allowlist_removes_secret_values_snippets_and_arbitrary_headers",
+      "target": "function:tests/test_diagnostics.py:completion",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_metadata_allowlist_removes_secret_values_snippets_and_arbitrary_headers",
+      "target": "function:tests/test_diagnostics.py:call_response",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_metadata_allowlist_removes_secret_values_snippets_and_arbitrary_headers",
+      "target": "function:tests/test_diagnostics.py:invoke",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_timeout_is_safe_and_missing_usage_stays_unknown",
+      "target": "function:tests/test_diagnostics.py:call_response",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_timeout_is_safe_and_missing_usage_stays_unknown",
+      "target": "function:tests/test_diagnostics.py:invoke",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_missing_annotations_and_usage_and_old_result_compatibility",
+      "target": "function:tests/test_diagnostics.py:completion",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_missing_annotations_and_usage_and_old_result_compatibility",
+      "target": "function:tests/test_diagnostics.py:call_response",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_missing_annotations_and_usage_and_old_result_compatibility",
+      "target": "function:tests/test_diagnostics.py:invoke",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_resolution_evaluator_sends_actual_output_cap_and_medium_reasoning",
+      "target": "function:tests/test_diagnostics.py:call_response",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_resolution_evaluator_sends_actual_output_cap_and_medium_reasoning",
+      "target": "function:tests/test_diagnostics.py:completion",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_raw_client_cannot_bypass_single_model_guard",
+      "target": "function:tests/test_diagnostics.py:call_response",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_raw_client_cannot_bypass_single_model_guard",
+      "target": "function:tests/test_diagnostics.py:completion",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_diagnostics.py:test_raw_client_cannot_bypass_single_model_guard",
+      "target": "function:tests/test_diagnostics.py:invoke",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/diagnostics.py",
+      "target": "file:tests/test_diagnostics.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_prompts_resolve_outside_project_and_preserve_substituted_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_prompts_resolve_outside_project_and_preserve_substituted_text",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_prompt_missing_placeholder_fails",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_prompt_missing_placeholder_fails",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_chat_policies_load_outside_project",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_chat_policies_load_outside_project",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_all_runtime_templates_render_without_reformatting_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_all_runtime_templates_render_without_reformatting_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_runtime_prompt_contains_fidelity_and_injection_boundaries",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_runtime_prompt_contains_fidelity_and_injection_boundaries",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_detailed_prompt_stays_in_markdown_and_preserves_contract",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_detailed_prompt_stays_in_markdown_and_preserves_contract",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "file:src/prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/prompts.py",
+      "target": "file:tests/test_prompts.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "file:tests/test_prompts.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

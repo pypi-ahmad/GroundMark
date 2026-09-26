@@ -1,0 +1,224 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 6,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 6,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 6
+    }
+  },
+  "results": [
+    {
+      "path": "knowledge/index.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 11,
+      "nonEmptyLines": 7,
+      "sections": [
+        {
+          "heading": "Project knowledge",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "Concepts",
+          "level": 2,
+          "line": 9
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "openwiki/.claims/architecture/parsing-pipeline.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 98,
+      "nonEmptyLines": 98,
+      "sections": [
+        {
+          "heading": "schemaVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "pageVersion",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "claims",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "verification",
+          "level": 1,
+          "line": 94
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "openwiki/.claims/concepts/layout-and-rendering.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 108,
+      "nonEmptyLines": 108,
+      "sections": [
+        {
+          "heading": "schemaVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "pageVersion",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "claims",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "verification",
+          "level": 1,
+          "line": 104
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "openwiki/.claims/features/document-chat.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 118,
+      "nonEmptyLines": 118,
+      "sections": [
+        {
+          "heading": "schemaVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "pageVersion",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "claims",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "verification",
+          "level": 1,
+          "line": 114
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "openwiki/.claims/operations/development-and-testing.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 98,
+      "nonEmptyLines": 98,
+      "sections": [
+        {
+          "heading": "schemaVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "pageVersion",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "claims",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "verification",
+          "level": 1,
+          "line": 94
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "openwiki/.claims/quickstart.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 92,
+      "nonEmptyLines": 92,
+      "sections": [
+        {
+          "heading": "schemaVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "pageVersion",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "claims",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "verification",
+          "level": 1,
+          "line": 88
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    }
+  ]
+}

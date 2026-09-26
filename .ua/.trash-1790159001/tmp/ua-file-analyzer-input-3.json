@@ -1,0 +1,58 @@
+{
+  "projectRoot": "D:\\AI\\GroundMark",
+  "batchFiles": [
+    {
+      "path": "scripts/evaluate_chat.py",
+      "language": "python",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/chat.py",
+      "language": "python",
+      "sizeLines": 190,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/prompts.py",
+      "language": "python",
+      "sizeLines": 24,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_chat.py",
+      "language": "python",
+      "sizeLines": 169,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_prompts.py",
+      "language": "python",
+      "sizeLines": 70,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "scripts/evaluate_chat.py": [
+      "src/chat.py",
+      "src/layout.py"
+    ],
+    "src/chat.py": [
+      "src/__init__.py",
+      "src/diagnostics.py",
+      "src/layout.py",
+      "src/models.py",
+      "src/prompts.py",
+      "src/usage.py"
+    ],
+    "src/prompts.py": [],
+    "tests/test_chat.py": [
+      "src/__init__.py",
+      "src/chat.py",
+      "src/layout.py"
+    ],
+    "tests/test_prompts.py": [
+      "src/prompts.py"
+    ]
+  }
+}

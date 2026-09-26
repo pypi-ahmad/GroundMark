@@ -1,0 +1,112 @@
+{
+  "projectRoot": "D:\\AI\\GroundMark",
+  "batchFiles": [
+    {
+      "path": "openwiki/.claims/workflows/artifacts-and-exports.json",
+      "language": "json",
+      "sizeLines": 78,
+      "fileCategory": "config"
+    },
+    {
+      "path": "openwiki/architecture/index.md",
+      "language": "markdown",
+      "sizeLines": 3,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "openwiki/architecture/parsing-pipeline.md",
+      "language": "markdown",
+      "sizeLines": 61,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "openwiki/concepts/index.md",
+      "language": "markdown",
+      "sizeLines": 3,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "openwiki/concepts/layout-and-rendering.md",
+      "language": "markdown",
+      "sizeLines": 62,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "openwiki/features/document-chat.md",
+      "language": "markdown",
+      "sizeLines": 57,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "openwiki/features/index.md",
+      "language": "markdown",
+      "sizeLines": 3,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "openwiki/operations/development-and-testing.md",
+      "language": "markdown",
+      "sizeLines": 64,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "openwiki/operations/index.md",
+      "language": "markdown",
+      "sizeLines": 3,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "openwiki/workflows/artifacts-and-exports.md",
+      "language": "markdown",
+      "sizeLines": 68,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "openwiki/workflows/index.md",
+      "language": "markdown",
+      "sizeLines": 3,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "src/annotate.py",
+      "language": "python",
+      "sizeLines": 129,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/export.py",
+      "language": "python",
+      "sizeLines": 88,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/figures.py",
+      "language": "python",
+      "sizeLines": 70,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/graph.py",
+      "language": "python",
+      "sizeLines": 208,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "openwiki/.claims/workflows/artifacts-and-exports.json": [],
+    "openwiki/architecture/index.md": [],
+    "openwiki/architecture/parsing-pipeline.md": [],
+    "openwiki/concepts/index.md": [],
+    "openwiki/concepts/layout-and-rendering.md": [],
+    "openwiki/features/document-chat.md": [],
+    "openwiki/features/index.md": [],
+    "openwiki/operations/development-and-testing.md": [],
+    "openwiki/operations/index.md": [],
+    "openwiki/workflows/artifacts-and-exports.md": [],
+    "openwiki/workflows/index.md": [],
+    "src/annotate.py": [],
+    "src/export.py": [],
+    "src/figures.py": [],
+    "src/graph.py": []
+  }
+}

@@ -1,0 +1,724 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 10,
+  "filesSkipped": [
+    "docs/diagrams/groundmark-architecture.html",
+    "docs/diagrams/groundmark-architecture.visual-check.html",
+    "docs/diagrams/groundmark-dataflow.html",
+    "docs/diagrams/groundmark-dataflow.visual-check.html",
+    "docs/diagrams/groundmark-lifecycle.html",
+    "docs/diagrams/groundmark-lifecycle.visual-check.html",
+    "docs/diagrams/groundmark-sequence.html",
+    "docs/diagrams/groundmark-sequence.visual-check.html",
+    "docs/diagrams/groundmark-workflow.html",
+    "docs/diagrams/groundmark-workflow.visual-check.html"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 10,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 10
+    }
+  },
+  "results": [
+    {
+      "path": "docs/diagrams/groundmark-architecture.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 69,
+      "nonEmptyLines": 69,
+      "sections": [
+        {
+          "heading": "schema_version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "diagram_type",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "meta",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "components",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "boundaries",
+          "level": 1,
+          "line": 22
+        },
+        {
+          "heading": "connections",
+          "level": 1,
+          "line": 26
+        },
+        {
+          "heading": "cards",
+          "level": 1,
+          "line": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "docs/diagrams/groundmark-architecture.visual-check.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 547,
+      "nonEmptyLines": 547,
+      "sections": [
+        {
+          "heading": "schemaVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "ok",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "command",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "status",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "visualReview",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "artifact",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "state",
+          "level": 1,
+          "line": 12
+        },
+        {
+          "heading": "chrome",
+          "level": 1,
+          "line": 16
+        },
+        {
+          "heading": "diagnostics",
+          "level": 1,
+          "line": 20
+        },
+        {
+          "heading": "containment",
+          "level": 1,
+          "line": 21
+        },
+        {
+          "heading": "readability",
+          "level": 1,
+          "line": 150
+        },
+        {
+          "heading": "viewerChrome",
+          "level": 1,
+          "line": 280
+        },
+        {
+          "heading": "captures",
+          "level": 1,
+          "line": 409
+        },
+        {
+          "heading": "sidecars",
+          "level": 1,
+          "line": 543
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "docs/diagrams/groundmark-dataflow.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 66,
+      "nonEmptyLines": 66,
+      "sections": [
+        {
+          "heading": "schema_version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "diagram_type",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "meta",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "stages",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "nodes",
+          "level": 1,
+          "line": 16
+        },
+        {
+          "heading": "flows",
+          "level": 1,
+          "line": 27
+        },
+        {
+          "heading": "cards",
+          "level": 1,
+          "line": 37
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "docs/diagrams/groundmark-dataflow.visual-check.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 547,
+      "nonEmptyLines": 547,
+      "sections": [
+        {
+          "heading": "schemaVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "ok",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "command",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "status",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "visualReview",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "artifact",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "state",
+          "level": 1,
+          "line": 12
+        },
+        {
+          "heading": "chrome",
+          "level": 1,
+          "line": 16
+        },
+        {
+          "heading": "diagnostics",
+          "level": 1,
+          "line": 20
+        },
+        {
+          "heading": "containment",
+          "level": 1,
+          "line": 21
+        },
+        {
+          "heading": "readability",
+          "level": 1,
+          "line": 150
+        },
+        {
+          "heading": "viewerChrome",
+          "level": 1,
+          "line": 280
+        },
+        {
+          "heading": "captures",
+          "level": 1,
+          "line": 409
+        },
+        {
+          "heading": "sidecars",
+          "level": 1,
+          "line": 543
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "docs/diagrams/groundmark-lifecycle.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 32,
+      "nonEmptyLines": 32,
+      "sections": [
+        {
+          "heading": "schema_version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "diagram_type",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "meta",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "lanes",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "states",
+          "level": 1,
+          "line": 14
+        },
+        {
+          "heading": "transitions",
+          "level": 1,
+          "line": 25
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "docs/diagrams/groundmark-lifecycle.visual-check.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 547,
+      "nonEmptyLines": 547,
+      "sections": [
+        {
+          "heading": "schemaVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "ok",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "command",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "status",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "visualReview",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "artifact",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "state",
+          "level": 1,
+          "line": 12
+        },
+        {
+          "heading": "chrome",
+          "level": 1,
+          "line": 16
+        },
+        {
+          "heading": "diagnostics",
+          "level": 1,
+          "line": 20
+        },
+        {
+          "heading": "containment",
+          "level": 1,
+          "line": 21
+        },
+        {
+          "heading": "readability",
+          "level": 1,
+          "line": 150
+        },
+        {
+          "heading": "viewerChrome",
+          "level": 1,
+          "line": 280
+        },
+        {
+          "heading": "captures",
+          "level": 1,
+          "line": 409
+        },
+        {
+          "heading": "sidecars",
+          "level": 1,
+          "line": 543
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "docs/diagrams/groundmark-sequence.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 70,
+      "nonEmptyLines": 70,
+      "sections": [
+        {
+          "heading": "schema_version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "diagram_type",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "meta",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "participants",
+          "level": 1,
+          "line": 10
+        },
+        {
+          "heading": "messages",
+          "level": 1,
+          "line": 18
+        },
+        {
+          "heading": "activations",
+          "level": 1,
+          "line": 33
+        },
+        {
+          "heading": "cards",
+          "level": 1,
+          "line": 41
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "docs/diagrams/groundmark-sequence.visual-check.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 547,
+      "nonEmptyLines": 547,
+      "sections": [
+        {
+          "heading": "schemaVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "ok",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "command",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "status",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "visualReview",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "artifact",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "state",
+          "level": 1,
+          "line": 12
+        },
+        {
+          "heading": "chrome",
+          "level": 1,
+          "line": 16
+        },
+        {
+          "heading": "diagnostics",
+          "level": 1,
+          "line": 20
+        },
+        {
+          "heading": "containment",
+          "level": 1,
+          "line": 21
+        },
+        {
+          "heading": "readability",
+          "level": 1,
+          "line": 150
+        },
+        {
+          "heading": "viewerChrome",
+          "level": 1,
+          "line": 280
+        },
+        {
+          "heading": "captures",
+          "level": 1,
+          "line": 409
+        },
+        {
+          "heading": "sidecars",
+          "level": 1,
+          "line": 543
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "docs/diagrams/groundmark-workflow.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 74,
+      "nonEmptyLines": 74,
+      "sections": [
+        {
+          "heading": "schema_version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "diagram_type",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "meta",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "lanes",
+          "level": 1,
+          "line": 9
+        },
+        {
+          "heading": "phases",
+          "level": 1,
+          "line": 14
+        },
+        {
+          "heading": "groups",
+          "level": 1,
+          "line": 19
+        },
+        {
+          "heading": "mainPath",
+          "level": 1,
+          "line": 22
+        },
+        {
+          "heading": "nodes",
+          "level": 1,
+          "line": 29
+        },
+        {
+          "heading": "edges",
+          "level": 1,
+          "line": 37
+        },
+        {
+          "heading": "cards",
+          "level": 1,
+          "line": 45
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "docs/diagrams/groundmark-workflow.visual-check.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 547,
+      "nonEmptyLines": 547,
+      "sections": [
+        {
+          "heading": "schemaVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "ok",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "command",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "status",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "visualReview",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "artifact",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "state",
+          "level": 1,
+          "line": 12
+        },
+        {
+          "heading": "chrome",
+          "level": 1,
+          "line": 16
+        },
+        {
+          "heading": "diagnostics",
+          "level": 1,
+          "line": 20
+        },
+        {
+          "heading": "containment",
+          "level": 1,
+          "line": 21
+        },
+        {
+          "heading": "readability",
+          "level": 1,
+          "line": 150
+        },
+        {
+          "heading": "viewerChrome",
+          "level": 1,
+          "line": 280
+        },
+        {
+          "heading": "captures",
+          "level": 1,
+          "line": 409
+        },
+        {
+          "heading": "sidecars",
+          "level": 1,
+          "line": 543
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    }
+  ]
+}

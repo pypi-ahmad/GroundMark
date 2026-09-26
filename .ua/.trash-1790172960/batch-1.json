@@ -1,0 +1,19 @@
+{
+  "nodes": [
+    {
+      "id": "pipeline:.github/workflows/openwiki-update.yml",
+      "type": "pipeline",
+      "name": "openwiki-update.yml",
+      "filePath": ".github/workflows/openwiki-update.yml",
+      "summary": "Runs OpenWiki on a schedule or manual dispatch, then opens a pull request with generated documentation updates. The workflow also removes transient run state and reports an OpenWiki failure after preserving any completed progress.",
+      "tags": [
+        "ci-cd",
+        "documentation",
+        "automation",
+        "pull-request"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": []
+}

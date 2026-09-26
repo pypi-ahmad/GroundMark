@@ -21,4 +21,10 @@ def render_prompt(name: str, **values: object) -> str:
     # Resolved relative to this file's own location, not the caller's cwd, so
     # rendering works the same whether invoked from the repo root, a test's
     # tmp_path (tests monkeypatch.chdir), or anywhere else.
+    """Load a packaged or checkout template and format the supplied values.
+
+    name is an internal prompt stem. Return text without trailing newlines;
+    missing placeholders raise KeyError and missing files raise OSError.
+    No model calls or document reads occur.
+    """
     return (PROMPT_DIR / f"{name}.md").read_text(encoding="utf-8").rstrip("\r\n").format(**values)

@@ -1,0 +1,901 @@
+{
+  "schemaVersion": 1,
+  "algorithm": "louvain",
+  "totalFiles": 206,
+  "totalBatches": 9,
+  "exportsByPath": {
+    ".ua/.trash-1790154407/tmp/assemble_full_graph.py": [],
+    ".ua/.trash-1790154407/tmp/build_layers.py": [],
+    ".ua/.trash-1790154407/tmp/build_tour.py": [],
+    ".ua/.trash-1790154407/tmp/generate_all_batches.py": [
+      "get_symbol_summary"
+    ],
+    ".ua/.trash-1790154407/tmp/inspect_extracts.py": [],
+    ".ua/.trash-1790154407/tmp/list_files.py": [],
+    ".ua/.trash-1790154407/tmp/ua-inline-validate.cjs": [],
+    ".ua/.trash-1790159001/tmp/assemble_full_graph.py": [],
+    ".ua/.trash-1790159001/tmp/build_layers_v2.py": [],
+    ".ua/.trash-1790159001/tmp/build_tour.py": [],
+    ".ua/.trash-1790159001/tmp/generate_batches_v2.py": [
+      "get_symbol_summary"
+    ],
+    ".ua/.trash-1790159001/tmp/run_phase2.py": [],
+    ".ua/.trash-1790159001/tmp/ua-inline-validate.cjs": [],
+    ".ua/.understandignore": [],
+    "npm/wheels/groundmark-0.1.0-py3-none-any.whl": [],
+    "scripts/evaluate_chat.py": [
+      "main"
+    ],
+    "scripts/evaluate_layout.py": [
+      "metric_gate",
+      "compare"
+    ],
+    "scripts/evaluate_prompts.py": [
+      "_PlainText",
+      "plain_text",
+      "tokens",
+      "score_page",
+      "run_page",
+      "main"
+    ],
+    "scripts/evaluate_resolution.py": [
+      "metric_gate",
+      "compare",
+      "main"
+    ],
+    "src/__init__.py": [],
+    "src/annotate.py": [
+      "_bbox_is_valid",
+      "annotate_document"
+    ],
+    "src/chat.py": [
+      "Evidence",
+      "Statement",
+      "Draft",
+      "Verification",
+      "ChatResult",
+      "document_pages",
+      "_payload",
+      "_call",
+      "_normalize",
+      "_validated_text",
+      "answer_document_question"
+    ],
+    "src/cli.py": [
+      "main",
+      "_extract"
+    ],
+    "src/diagnostics.py": [
+      "FilterAnnotation",
+      "PageDiagnostic",
+      "ExtractionCallError",
+      "safe_identifier",
+      "token_count",
+      "filter_annotations"
+    ],
+    "src/export.py": [
+      "export_result"
+    ],
+    "src/figures.py": [
+      "extract_figures",
+      "load_figures"
+    ],
+    "src/graph.py": [
+      "GraphState",
+      "node_preprocess",
+      "node_parse",
+      "build_graph",
+      "run_graph",
+      "_main"
+    ],
+    "src/layout.py": [
+      "_require_xyxy_len",
+      "BBox",
+      "ListItem",
+      "TableCell",
+      "BlockStructure",
+      "LegacyBlock",
+      "ParseBlock",
+      "ParsePage",
+      "LegacyParsePage",
+      "ParseResult"
+    ],
+    "src/llm.py": [
+      "ExtractConfigError",
+      "_reasoning_kwargs",
+      "_build_llm",
+      "_image_message",
+      "_invoke_structured"
+    ],
+    "src/markdown.py": [
+      "_blocks",
+      "_cell_html",
+      "_md_text",
+      "_table_rows",
+      "_cells",
+      "_render_table_html",
+      "_render_table",
+      "_simple_table",
+      "_list_context",
+      "_list_html",
+      "_list_markdown",
+      "_heading_level",
+      "_render_block_html",
+      "_render_block",
+      "parse_to_markdown",
+      "parse_to_html",
+      "markdown_bundle",
+      "render_and_save",
+      "save_markdown_for_doc",
+      "save_html_for_doc",
+      "_main"
+    ],
+    "src/models.py": [],
+    "src/output_names.py": [
+      "source_stem",
+      "artifact_name",
+      "figure_name",
+      "_occupied",
+      "reserve_basename"
+    ],
+    "src/parse.py": [
+      "_page_context",
+      "parse_page",
+      "parse_document",
+      "_main"
+    ],
+    "src/preprocess.py": [
+      "PreprocessError",
+      "count_pages",
+      "preprocess",
+      "preprocess_pages",
+      "_cap_long_edge",
+      "_render_pdf_page_range"
+    ],
+    "src/prompts.py": [
+      "render_prompt"
+    ],
+    "src/ui/__init__.py": [],
+    "src/ui/app.py": [
+      "clear_chat",
+      "load_input_preview",
+      "show_usage",
+      "figure_assets"
+    ],
+    "src/ui/clipboard.py": [],
+    "src/usage.py": [
+      "record",
+      "totals",
+      "cost_usd",
+      "session_cost_usd"
+    ],
+    "tests/__init__.py": [],
+    "tests/fake_llm.py": [
+      "FakeLLM"
+    ],
+    "tests/fixtures/make_invoice_png.py": [
+      "make_invoice_image",
+      "main"
+    ],
+    "tests/test_annotate.py": [
+      "test_annotated_pdf_is_created",
+      "test_missing_or_out_of_range_bbox_is_skipped_not_crashed",
+      "test_block_type_label_is_drawn",
+      "test_content_filtered_pages_remain_in_annotated_pdf"
+    ],
+    "tests/test_chat.py": [
+      "document",
+      "draft",
+      "client_for",
+      "test_grounded_answer_and_fixed_wire_contract",
+      "test_invalid_evidence_or_style_never_reaches_verifier",
+      "test_rejections_are_fixed_and_not_verified",
+      "test_verifier_blocks_unsupported_claim_with_real_quote",
+      "test_provider_or_schema_failure_is_sanitized_and_accounted",
+      "test_local_limits_and_failed_pages_make_no_calls",
+      "test_only_recent_accepted_history_is_data",
+      "test_luna_remains_invalid_for_parser",
+      "test_tables_and_missing_pages",
+      "test_incomplete_response_never_exposes_text",
+      "test_luna_cost_is_not_sol_cost",
+      "test_empty_layout_markers_do_not_enable_chat",
+      "test_provider_refusal_never_exposes_raw_text"
+    ],
+    "tests/test_cli.py": [
+      "test_launcher_uses_workspace_and_installed_app",
+      "test_invalid_port_does_not_create_workspace"
+    ],
+    "tests/test_cli_extraction.py": [
+      "extraction",
+      "test_selected_formats_only",
+      "test_json_skips_presentation",
+      "test_invalid_options_fail_before_extraction",
+      "test_overwrite_preserves_unrelated_files",
+      "test_input_inside_output_is_rejected",
+      "test_missing_key_fails_before_extraction",
+      "test_env_file_and_environment_precedence",
+      "test_missing_explicit_env_file",
+      "test_requested_export_failure_keeps_other_outputs",
+      "test_parse_failure_writes_only_requested_diagnostics",
+      "test_partial_parse_and_page_range",
+      "test_rendering_view_does_not_filter_json",
+      "test_graph_uses_upload_name_and_start_time_for_every_format"
+    ],
+    "tests/test_diagnostics.py": [
+      "call_response",
+      "completion",
+      "invoke",
+      "test_live_evaluator_disables_retries_on_actual_client",
+      "test_sol_pricing_keeps_requested_model_when_provider_returns_alias",
+      "test_create_retains_strict_schema_messages_settings_and_usage",
+      "test_unsuccessful_output_never_becomes_valid_extraction",
+      "test_http_errors_are_safe_and_not_retried",
+      "test_metadata_allowlist_removes_secret_values_snippets_and_arbitrary_headers",
+      "test_timeout_is_safe_and_missing_usage_stays_unknown",
+      "test_missing_annotations_and_usage_and_old_result_compatibility",
+      "test_resolution_evaluator_sends_actual_output_cap_and_medium_reasoning",
+      "test_raw_client_cannot_bypass_single_model_guard"
+    ],
+    "tests/test_graph.py": [
+      "test_parse_success_sets_status_and_artifacts",
+      "test_parse_failure_sets_status_and_error",
+      "test_overlapping_runs_isolate_usage_and_artifacts",
+      "test_usage_survives_post_request_failure",
+      "test_graph_rejects_other_models_before_preprocessing",
+      "test_direct_compiled_graph_initializes_run_state",
+      "test_partial_parse_keeps_artifacts_and_reports_filtered_pages",
+      "test_all_filtered_pages_fail_without_markdown_or_annotation"
+    ],
+    "tests/test_launcher.py": [
+      "test_launcher_forwards_arguments_and_exit_status"
+    ],
+    "tests/test_layout_evaluation.py": [
+      "corpus",
+      "runner",
+      "test_two_stages_share_ten_request_allowance",
+      "test_failure_stops_and_prevents_candidate",
+      "test_candidate_stops_before_exceeding_allowance",
+      "test_metric_gate_rejects_regression"
+    ],
+    "tests/test_layout_structure.py": [
+      "block",
+      "document",
+      "structure",
+      "test_live_schema_requires_all_fields_and_legacy_load_does_not_change_input",
+      "test_headings_lists_and_lines_preserve_structure_and_source",
+      "test_merged_header_and_headerless_tables",
+      "test_invalid_table_metadata_is_rejected",
+      "test_invalid_nesting_and_heading_level_are_rejected",
+      "test_clean_only_hides_running_furniture_and_chat_keeps_all_text",
+      "test_literal_markup_never_becomes_executable_or_formatting",
+      "test_list_labels_tail_and_unrepresented_text_are_not_lost",
+      "test_plain_bullets_numbering_and_missing_item_source",
+      "test_default_extraction_uses_original_contract_and_detailed_is_opt_in",
+      "test_figure_crop_bundle_and_fallback"
+    ],
+    "tests/test_markdown.py": [
+      "table_structure",
+      "test_ragged_model_table_rows_are_padded_without_changing_cells",
+      "_sample_result",
+      "test_parse_to_markdown_snapshot",
+      "test_parse_to_html_renders_document_like_page",
+      "test_parse_to_html_escapes_content",
+      "test_key_value_splits_on_first_colon",
+      "test_no_bbox_blocks_keep_model_order",
+      "test_render_and_save_writes_md_next_to_json",
+      "test_column_order_is_preserved_even_with_missing_bbox",
+      "test_table_escaping_padding_and_line_breaks_preserve_source",
+      "test_table_empty_and_unstructured_fallback",
+      "test_ordinary_checkbox_words_are_not_rewritten"
+    ],
+    "tests/test_output_names.py": [
+      "test_source_stem",
+      "test_utc_reservation_collision_and_cleanup",
+      "test_collision_with_annotation_or_image_only",
+      "test_json_rerender_resolves_figure_paths_with_special_characters"
+    ],
+    "tests/test_parse.py": [
+      "test_parse_document_writes_json",
+      "test_parse_document_respects_page_range",
+      "test_parse_document_keeps_pages_not_rejected_by_content_filter",
+      "test_sequential_outcomes_keep_page_identity_and_context",
+      "test_all_failed_diagnostics_are_saved",
+      "test_progress_reports_completion_in_source_order"
+    ],
+    "tests/test_preprocess.py": [
+      "_ensure_fixtures",
+      "test_missing_file_raises",
+      "test_png_returns_base64",
+      "test_sha_stable",
+      "test_pdf_first_page",
+      "_make_multi_page_pdf",
+      "test_preprocess_pages_defaults_to_whole_document",
+      "test_preprocess_pages_explicit_range",
+      "test_preprocess_pages_end_page_none_goes_to_last_page",
+      "test_preprocess_pages_single_image_is_one_page",
+      "test_invalid_pdf_ranges_fail",
+      "test_resolution_profiles_and_no_raster_upscaling"
+    ],
+    "tests/test_prompt_evaluation.py": [
+      "test_live_manifest_is_limited_to_approved_six_pages",
+      "test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "test_corrective_run_skips_filtered_pages_before_rendering"
+    ],
+    "tests/test_prompts.py": [
+      "test_prompts_resolve_outside_project_and_preserve_substituted_text",
+      "test_prompt_missing_placeholder_fails",
+      "test_chat_policies_load_outside_project",
+      "test_all_runtime_templates_render_without_reformatting_data",
+      "test_runtime_prompt_contains_fidelity_and_injection_boundaries",
+      "test_detailed_prompt_stays_in_markdown_and_preserves_contract"
+    ],
+    "tests/test_resolution_evaluation.py": [
+      "corpus",
+      "outcome",
+      "test_comparison_uses_only_five_pages_and_ten_bounded_requests",
+      "test_request_limit_stops_before_next_call",
+      "test_budget_reserves_next_request",
+      "test_reported_spend_stops_next_request",
+      "test_unknown_usage_stops_immediately",
+      "test_rejected_pages_are_not_resubmitted_at_other_resolution",
+      "test_limits_cannot_be_increased",
+      "test_any_page_regression_blocks_promotion"
+    ],
+    "tests/test_ui_diagnostics.py": [
+      "upload",
+      "uploaded",
+      "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+      "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+      "test_same_name_new_bytes_reset_count_and_result",
+      "test_bad_upload_and_invalid_range_make_no_calls",
+      "test_migration_resets_legacy_ledger_without_repricing",
+      "test_chat_submission_reruns_and_reset",
+      "test_chat_sessions_do_not_share_history",
+      "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+      "test_detailed_layout_requires_opt_in_and_resets_old_results"
+    ],
+    "tests/test_usage.py": [
+      "test_record_and_totals",
+      "test_missing_usage_is_unknown",
+      "test_ledgers_do_not_share_entries",
+      "test_cost_usd_uses_all_input_rates",
+      "test_unknown_model_is_not_repriced_as_sol"
+    ]
+  },
+  "batches": [
+    {
+      "batchIndex": 1,
+      "files": [
+        {
+          "path": ".github/workflows/openwiki-update.yml",
+          "language": "yaml",
+          "sizeLines": 77,
+          "fileCategory": "infra"
+        }
+      ],
+      "batchImportData": {
+        ".github/workflows/openwiki-update.yml": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 2,
+      "files": [
+        {
+          "path": "AGENTS.md",
+          "language": "markdown",
+          "sizeLines": 12,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "CLAUDE.md",
+          "language": "markdown",
+          "sizeLines": 7,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "README.md",
+          "language": "markdown",
+          "sizeLines": 189,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        "AGENTS.md": [],
+        "CLAUDE.md": [],
+        "README.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 8,
+      "files": [
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "language": "markdown",
+          "sizeLines": 48,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/COMPLIANCE.md",
+          "language": "markdown",
+          "sizeLines": 11,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/CONTENT-FILTER-DIAGNOSTICS.md",
+          "language": "markdown",
+          "sizeLines": 61,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/CONTRIBUTING.md",
+          "language": "markdown",
+          "sizeLines": 22,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/LAYOUT-EVALUATION.md",
+          "language": "markdown",
+          "sizeLines": 44,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/MODEL.md",
+          "language": "markdown",
+          "sizeLines": 24,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/PROMPT-EVALUATION.md",
+          "language": "markdown",
+          "sizeLines": 106,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/PROMPTS.md",
+          "language": "markdown",
+          "sizeLines": 15,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/RUNBOOK.md",
+          "language": "markdown",
+          "sizeLines": 64,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/SOL-RESOLUTION-EVALUATION.md",
+          "language": "markdown",
+          "sizeLines": 81,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        "docs/ARCHITECTURE.md": [],
+        "docs/COMPLIANCE.md": [],
+        "docs/CONTENT-FILTER-DIAGNOSTICS.md": [],
+        "docs/CONTRIBUTING.md": [],
+        "docs/LAYOUT-EVALUATION.md": [],
+        "docs/MODEL.md": [],
+        "docs/PROMPT-EVALUATION.md": [],
+        "docs/PROMPTS.md": [],
+        "docs/RUNBOOK.md": [],
+        "docs/SOL-RESOLUTION-EVALUATION.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 9,
+      "files": [
+        {
+          "path": "docs/diagrams/groundmark-architecture.html",
+          "language": "html",
+          "sizeLines": 14879,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "docs/diagrams/groundmark-architecture.json",
+          "language": "json",
+          "sizeLines": 69,
+          "fileCategory": "config"
+        },
+        {
+          "path": "docs/diagrams/groundmark-architecture.visual-check.html",
+          "language": "html",
+          "sizeLines": 32,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "docs/diagrams/groundmark-architecture.visual-check.json",
+          "language": "json",
+          "sizeLines": 547,
+          "fileCategory": "config"
+        },
+        {
+          "path": "docs/diagrams/groundmark-dataflow.html",
+          "language": "html",
+          "sizeLines": 14842,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "docs/diagrams/groundmark-dataflow.json",
+          "language": "json",
+          "sizeLines": 66,
+          "fileCategory": "config"
+        },
+        {
+          "path": "docs/diagrams/groundmark-dataflow.visual-check.html",
+          "language": "html",
+          "sizeLines": 32,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "docs/diagrams/groundmark-dataflow.visual-check.json",
+          "language": "json",
+          "sizeLines": 547,
+          "fileCategory": "config"
+        },
+        {
+          "path": "docs/diagrams/groundmark-lifecycle.html",
+          "language": "html",
+          "sizeLines": 14803,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "docs/diagrams/groundmark-lifecycle.json",
+          "language": "json",
+          "sizeLines": 32,
+          "fileCategory": "config"
+        },
+        {
+          "path": "docs/diagrams/groundmark-lifecycle.visual-check.html",
+          "language": "html",
+          "sizeLines": 32,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "docs/diagrams/groundmark-lifecycle.visual-check.json",
+          "language": "json",
+          "sizeLines": 547,
+          "fileCategory": "config"
+        },
+        {
+          "path": "docs/diagrams/groundmark-sequence.html",
+          "language": "html",
+          "sizeLines": 14884,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "docs/diagrams/groundmark-sequence.json",
+          "language": "json",
+          "sizeLines": 70,
+          "fileCategory": "config"
+        },
+        {
+          "path": "docs/diagrams/groundmark-sequence.visual-check.html",
+          "language": "html",
+          "sizeLines": 32,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "docs/diagrams/groundmark-sequence.visual-check.json",
+          "language": "json",
+          "sizeLines": 547,
+          "fileCategory": "config"
+        },
+        {
+          "path": "docs/diagrams/groundmark-workflow.html",
+          "language": "html",
+          "sizeLines": 14797,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "docs/diagrams/groundmark-workflow.json",
+          "language": "json",
+          "sizeLines": 74,
+          "fileCategory": "config"
+        },
+        {
+          "path": "docs/diagrams/groundmark-workflow.visual-check.html",
+          "language": "html",
+          "sizeLines": 32,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "docs/diagrams/groundmark-workflow.visual-check.json",
+          "language": "json",
+          "sizeLines": 547,
+          "fileCategory": "config"
+        }
+      ],
+      "batchImportData": {
+        "docs/diagrams/groundmark-architecture.html": [],
+        "docs/diagrams/groundmark-architecture.json": [],
+        "docs/diagrams/groundmark-architecture.visual-check.html": [],
+        "docs/diagrams/groundmark-architecture.visual-check.json": [],
+        "docs/diagrams/groundmark-dataflow.html": [],
+        "docs/diagrams/groundmark-dataflow.json": [],
+        "docs/diagrams/groundmark-dataflow.visual-check.html": [],
+        "docs/diagrams/groundmark-dataflow.visual-check.json": [],
+        "docs/diagrams/groundmark-lifecycle.html": [],
+        "docs/diagrams/groundmark-lifecycle.json": [],
+        "docs/diagrams/groundmark-lifecycle.visual-check.html": [],
+        "docs/diagrams/groundmark-lifecycle.visual-check.json": [],
+        "docs/diagrams/groundmark-sequence.html": [],
+        "docs/diagrams/groundmark-sequence.json": [],
+        "docs/diagrams/groundmark-sequence.visual-check.html": [],
+        "docs/diagrams/groundmark-sequence.visual-check.json": [],
+        "docs/diagrams/groundmark-workflow.html": [],
+        "docs/diagrams/groundmark-workflow.json": [],
+        "docs/diagrams/groundmark-workflow.visual-check.html": [],
+        "docs/diagrams/groundmark-workflow.visual-check.json": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 10,
+      "files": [
+        {
+          "path": "openwiki/.last-update.json",
+          "language": "json",
+          "sizeLines": 8,
+          "fileCategory": "config"
+        },
+        {
+          "path": "openwiki/.page-manifest.json",
+          "language": "json",
+          "sizeLines": 47,
+          "fileCategory": "config"
+        },
+        {
+          "path": "openwiki/index.md",
+          "language": "markdown",
+          "sizeLines": 15,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "openwiki/quickstart.md",
+          "language": "markdown",
+          "sizeLines": 81,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        "openwiki/.last-update.json": [],
+        "openwiki/.page-manifest.json": [],
+        "openwiki/index.md": [],
+        "openwiki/quickstart.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 12,
+      "files": [
+        {
+          "path": "knowledge/index.md",
+          "language": "markdown",
+          "sizeLines": 11,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "openwiki/.claims/architecture/parsing-pipeline.json",
+          "language": "json",
+          "sizeLines": 98,
+          "fileCategory": "config"
+        },
+        {
+          "path": "openwiki/.claims/concepts/layout-and-rendering.json",
+          "language": "json",
+          "sizeLines": 108,
+          "fileCategory": "config"
+        },
+        {
+          "path": "openwiki/.claims/features/document-chat.json",
+          "language": "json",
+          "sizeLines": 118,
+          "fileCategory": "config"
+        },
+        {
+          "path": "openwiki/.claims/operations/development-and-testing.json",
+          "language": "json",
+          "sizeLines": 98,
+          "fileCategory": "config"
+        },
+        {
+          "path": "openwiki/.claims/quickstart.json",
+          "language": "json",
+          "sizeLines": 92,
+          "fileCategory": "config"
+        }
+      ],
+      "batchImportData": {
+        "knowledge/index.md": [],
+        "openwiki/.claims/architecture/parsing-pipeline.json": [],
+        "openwiki/.claims/concepts/layout-and-rendering.json": [],
+        "openwiki/.claims/features/document-chat.json": [],
+        "openwiki/.claims/operations/development-and-testing.json": [],
+        "openwiki/.claims/quickstart.json": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 13,
+      "files": [
+        {
+          "path": "openwiki/.claims/workflows/artifacts-and-exports.json",
+          "language": "json",
+          "sizeLines": 78,
+          "fileCategory": "config"
+        },
+        {
+          "path": "openwiki/architecture/index.md",
+          "language": "markdown",
+          "sizeLines": 3,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "openwiki/architecture/parsing-pipeline.md",
+          "language": "markdown",
+          "sizeLines": 61,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "openwiki/concepts/index.md",
+          "language": "markdown",
+          "sizeLines": 3,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "openwiki/concepts/layout-and-rendering.md",
+          "language": "markdown",
+          "sizeLines": 62,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "openwiki/features/document-chat.md",
+          "language": "markdown",
+          "sizeLines": 57,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "openwiki/features/index.md",
+          "language": "markdown",
+          "sizeLines": 3,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "openwiki/operations/development-and-testing.md",
+          "language": "markdown",
+          "sizeLines": 64,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "openwiki/operations/index.md",
+          "language": "markdown",
+          "sizeLines": 3,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "openwiki/workflows/artifacts-and-exports.md",
+          "language": "markdown",
+          "sizeLines": 68,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "openwiki/workflows/index.md",
+          "language": "markdown",
+          "sizeLines": 3,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "src/annotate.py",
+          "language": "python",
+          "sizeLines": 129,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/export.py",
+          "language": "python",
+          "sizeLines": 88,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/figures.py",
+          "language": "python",
+          "sizeLines": 70,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/graph.py",
+          "language": "python",
+          "sizeLines": 208,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "openwiki/.claims/workflows/artifacts-and-exports.json": [],
+        "openwiki/architecture/index.md": [],
+        "openwiki/architecture/parsing-pipeline.md": [],
+        "openwiki/concepts/index.md": [],
+        "openwiki/concepts/layout-and-rendering.md": [],
+        "openwiki/features/document-chat.md": [],
+        "openwiki/features/index.md": [],
+        "openwiki/operations/development-and-testing.md": [],
+        "openwiki/operations/index.md": [],
+        "openwiki/workflows/artifacts-and-exports.md": [],
+        "openwiki/workflows/index.md": [],
+        "src/annotate.py": [],
+        "src/export.py": [],
+        "src/figures.py": [],
+        "src/graph.py": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 14,
+      "files": [
+        {
+          "path": "src/markdown.py",
+          "language": "python",
+          "sizeLines": 295,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/output_names.py",
+          "language": "python",
+          "sizeLines": 66,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/ui/app.py",
+          "language": "python",
+          "sizeLines": 281,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_cli_extraction.py",
+          "language": "python",
+          "sizeLines": 196,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_graph.py",
+          "language": "python",
+          "sizeLines": 171,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_output_names.py",
+          "language": "python",
+          "sizeLines": 69,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/markdown.py": [],
+        "src/output_names.py": [],
+        "src/ui/app.py": [],
+        "tests/test_cli_extraction.py": [],
+        "tests/test_graph.py": [],
+        "tests/test_output_names.py": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 15,
+      "files": [
+        {
+          "path": "tests/test_ui_diagnostics.py",
+          "language": "python",
+          "sizeLines": 220,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "tests/test_ui_diagnostics.py": []
+      },
+      "neighborMap": {}
+    }
+  ]
+}

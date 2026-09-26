@@ -2,7 +2,7 @@
   "schema_version": 1,
   "diagram_type": "lifecycle",
   "meta": {
-    "title": "GroundMark Document Execution Lifecycle",
+    "title": "GroundMark document execution lifecycle",
     "viewBox": [1080, 660],
     "quality_profile": "showcase"
   },
@@ -14,10 +14,10 @@
   "states": [
     { "id": "submitted", "type": "start", "label": "Submitted", "sublabel": "document input", "lane": "main", "col": 0, "step": "01", "tag": "entry" },
     { "id": "preprocessing", "type": "active", "label": "Preprocess", "sublabel": "hash & rasterize", "lane": "main", "col": 1, "step": "02", "tag": "pypdfium2" },
-    { "id": "visual_parse", "type": "active", "label": "Visual Parse", "sublabel": "gpt-6-sol loop", "lane": "main", "col": 2, "step": "03", "tag": "12k context" },
-    { "id": "validating", "type": "decision", "label": "Validating", "sublabel": "schema contract", "lane": "main", "col": 3, "step": "04", "tag": "Pydantic" },
+    { "id": "visual_parse", "type": "active", "label": "V3 then Sol", "sublabel": "same page image", "lane": "main", "col": 2, "step": "03", "tag": "12k context" },
+    { "id": "validating", "type": "decision", "label": "Reconcile", "sublabel": "strict Sol response", "lane": "main", "col": 3, "step": "04", "tag": "Pydantic" },
     { "id": "exported", "type": "success", "label": "Exported", "sublabel": "MD, HTML, JSON, PDF", "lane": "main", "col": 4, "step": "05", "tag": "complete" },
-    { "id": "diag_filtered", "type": "waiting", "label": "Page Filtered", "sublabel": "diagnostic recorded", "lane": "waiting", "col": 0, "tag": "filtered" },
+    { "id": "diag_filtered", "type": "neutral", "label": "Page Filtered", "sublabel": "diagnostic recorded", "lane": "waiting", "col": 0, "tag": "filtered" },
     { "id": "page_failed", "type": "failure", "label": "Page Failed", "sublabel": "diagnostic recorded", "lane": "waiting", "col": 1, "tag": "isolated" },
     { "id": "partial_saved", "type": "neutral", "label": "Partial Output", "sublabel": "successful pages kept", "lane": "terminal", "col": 0, "tag": "partial" },
     { "id": "failed_run", "type": "failure", "label": "Parse Failed", "sublabel": "no successful pages", "lane": "terminal", "col": 1, "tag": "failed" }
@@ -25,8 +25,14 @@
   "transitions": [
     { "id": "filter-caught", "from": "visual_parse", "to": "diag_filtered", "variant": "security" },
     { "id": "filter-salvage", "from": "diag_filtered", "to": "partial_saved", "variant": "default" },
+    { "id": "filter-no-pages", "from": "diag_filtered", "to": "failed_run", "variant": "security" },
     { "id": "page-failure", "from": "validating", "to": "page_failed", "variant": "emphasis" },
     { "id": "partial-run", "from": "page_failed", "to": "partial_saved", "variant": "default" },
     { "id": "failed-run", "from": "page_failed", "to": "failed_run", "variant": "security" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "V3 failures", "items": ["Unavailable V3 sends empty hints with the image", "Reconciliation failure retains validated Sol blocks"] },
+    { "dot": "emerald", "title": "Conservative matching", "items": ["Compatible one-to-one matches change boxes/order", "Misses and disagreements keep Sol blocks in place"] },
+    { "dot": "rose", "title": "Run outcomes", "items": ["Later pages continue; usable pages remain available", "No successful pages means a failed run"] }
   ]
 }

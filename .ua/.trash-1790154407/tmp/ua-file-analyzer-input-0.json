@@ -1,0 +1,128 @@
+{
+  "projectRoot": "D:\\AI\\GroundMark",
+  "batchFiles": [
+    {
+      "path": "src/__init__.py",
+      "language": "python",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/chat.py",
+      "language": "python",
+      "sizeLines": 190,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/graph.py",
+      "language": "python",
+      "sizeLines": 211,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/models.py",
+      "language": "python",
+      "sizeLines": 20,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/ui/app.py",
+      "language": "python",
+      "sizeLines": 279,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/ui/clipboard.py",
+      "language": "python",
+      "sizeLines": 81,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/usage.py",
+      "language": "python",
+      "sizeLines": 75,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_chat.py",
+      "language": "python",
+      "sizeLines": 169,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_graph.py",
+      "language": "python",
+      "sizeLines": 175,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_ui_diagnostics.py",
+      "language": "python",
+      "sizeLines": 212,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_usage.py",
+      "language": "python",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/__init__.py": [],
+    "src/chat.py": [
+      "src/__init__.py",
+      "src/diagnostics.py",
+      "src/layout.py",
+      "src/models.py",
+      "src/prompts.py",
+      "src/usage.py"
+    ],
+    "src/graph.py": [
+      "src/__init__.py",
+      "src/annotate.py",
+      "src/figures.py",
+      "src/layout.py",
+      "src/markdown.py",
+      "src/models.py",
+      "src/parse.py",
+      "src/preprocess.py",
+      "src/usage.py"
+    ],
+    "src/models.py": [],
+    "src/ui/app.py": [
+      "src/__init__.py",
+      "src/chat.py",
+      "src/figures.py",
+      "src/graph.py",
+      "src/markdown.py",
+      "src/models.py",
+      "src/preprocess.py",
+      "src/ui/clipboard.py",
+      "src/usage.py"
+    ],
+    "src/ui/clipboard.py": [],
+    "src/usage.py": [
+      "src/models.py"
+    ],
+    "tests/test_chat.py": [
+      "src/__init__.py",
+      "src/chat.py",
+      "src/layout.py"
+    ],
+    "tests/test_graph.py": [
+      "src/__init__.py",
+      "src/layout.py"
+    ],
+    "tests/test_ui_diagnostics.py": [
+      "src/__init__.py",
+      "src/diagnostics.py",
+      "src/graph.py",
+      "src/layout.py"
+    ],
+    "tests/test_usage.py": [
+      "src/__init__.py",
+      "src/usage.py"
+    ]
+  }
+}

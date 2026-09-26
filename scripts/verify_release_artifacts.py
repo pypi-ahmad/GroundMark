@@ -12,7 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MODULES = (
     "__init__ annotate chat cli config diagnostics export figures graph layout llm "
-    "markdown models output_names parse preprocess prompts usage ui/__init__ ui/app ui/clipboard"
+    "markdown models output_names parse preprocess prompts usage layout_detector layout_reconcile ui/__init__ ui/app ui/clipboard"
 ).split()
 PROMPTS = ("chat-answer", "chat-verify", "parse-page-structured", "parse-page")
 
@@ -48,6 +48,11 @@ def _check_bytes(name: str, data: bytes, source: Path | None) -> None:
 
 
 def main(directory: str = "dist") -> None:
+    """Verify one wheel and sdist in directory against checkout bytes and manifest.
+
+    Raise SystemExit for missing/extra/duplicate files or byte mismatches.
+    Archive and filesystem errors may propagate; no dependencies are installed.
+    """
     dist = Path(directory)
     wheels = list(dist.glob("*.whl"))
     sdists = list(dist.glob("*.tar.gz"))

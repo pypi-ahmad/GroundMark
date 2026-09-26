@@ -1,0 +1,1756 @@
+{
+  "batchIndex": 3,
+  "totalBatches": 9,
+  "nodes": [
+    {
+      "id": "file:scripts/evaluate_chat.py",
+      "type": "file",
+      "name": "evaluate_chat.py",
+      "filePath": "scripts/evaluate_chat.py",
+      "summary": "CLI evaluation script running automated document question answering benchmarks against ground truth.",
+      "tags": [
+        "evaluation",
+        "benchmark",
+        "chat-eval",
+        "cli"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/evaluate_chat.py:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "scripts/evaluate_chat.py",
+      "lineRange": [
+        9,
+        32
+      ],
+      "summary": "Main function in evaluate_chat.py supporting evaluate_chat operations.",
+      "tags": [
+        "function",
+        "evaluate-chat",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/chat.py",
+      "type": "file",
+      "name": "chat.py",
+      "filePath": "src/chat.py",
+      "summary": "Multi-turn document conversational question answering with citation verification and structured reasoning.",
+      "tags": [
+        "chat",
+        "llm",
+        "qa",
+        "verification",
+        "citations"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/chat.py:document_pages",
+      "type": "function",
+      "name": "document_pages",
+      "filePath": "src/chat.py",
+      "lineRange": [
+        58,
+        73
+      ],
+      "summary": "Document Pages function in chat.py supporting chat operations.",
+      "tags": [
+        "function",
+        "chat",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/chat.py:_payload",
+      "type": "function",
+      "name": "_payload",
+      "filePath": "src/chat.py",
+      "lineRange": [
+        76,
+        83
+      ],
+      "summary": " Payload function in chat.py supporting chat operations.",
+      "tags": [
+        "function",
+        "chat",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/chat.py:_call",
+      "type": "function",
+      "name": "_call",
+      "filePath": "src/chat.py",
+      "lineRange": [
+        86,
+        118
+      ],
+      "summary": " Call function in chat.py supporting chat operations.",
+      "tags": [
+        "function",
+        "chat",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/chat.py:_normalize",
+      "type": "function",
+      "name": "_normalize",
+      "filePath": "src/chat.py",
+      "lineRange": [
+        121,
+        122
+      ],
+      "summary": " Normalize function in chat.py supporting chat operations.",
+      "tags": [
+        "function",
+        "chat",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/chat.py:_validated_text",
+      "type": "function",
+      "name": "_validated_text",
+      "filePath": "src/chat.py",
+      "lineRange": [
+        125,
+        144
+      ],
+      "summary": " Validated Text function in chat.py supporting chat operations.",
+      "tags": [
+        "function",
+        "chat",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/chat.py:answer_document_question",
+      "type": "function",
+      "name": "answer_document_question",
+      "filePath": "src/chat.py",
+      "lineRange": [
+        147,
+        190
+      ],
+      "summary": "Answer Document Question function in chat.py supporting chat operations.",
+      "tags": [
+        "function",
+        "chat",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/chat.py:Evidence",
+      "type": "class",
+      "name": "Evidence",
+      "filePath": "src/chat.py",
+      "lineRange": [
+        27,
+        30
+      ],
+      "summary": "Evidence class in chat.py supporting chat operations.",
+      "tags": [
+        "class",
+        "chat",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/chat.py:Statement",
+      "type": "class",
+      "name": "Statement",
+      "filePath": "src/chat.py",
+      "lineRange": [
+        33,
+        36
+      ],
+      "summary": "Statement class in chat.py supporting chat operations.",
+      "tags": [
+        "class",
+        "chat",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/chat.py:Draft",
+      "type": "class",
+      "name": "Draft",
+      "filePath": "src/chat.py",
+      "lineRange": [
+        39,
+        42
+      ],
+      "summary": "Draft class in chat.py supporting chat operations.",
+      "tags": [
+        "class",
+        "chat",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/chat.py:Verification",
+      "type": "class",
+      "name": "Verification",
+      "filePath": "src/chat.py",
+      "lineRange": [
+        45,
+        47
+      ],
+      "summary": "Verification class in chat.py supporting chat operations.",
+      "tags": [
+        "class",
+        "chat",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/chat.py:ChatResult",
+      "type": "class",
+      "name": "ChatResult",
+      "filePath": "src/chat.py",
+      "lineRange": [
+        51,
+        55
+      ],
+      "summary": "Chatresult class in chat.py supporting chat operations.",
+      "tags": [
+        "class",
+        "chat",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/prompts.py",
+      "type": "file",
+      "name": "prompts.py",
+      "filePath": "src/prompts.py",
+      "summary": "Prompt template loader resolving system instructions and user templates from the prompts directory.",
+      "tags": [
+        "prompt-engineering",
+        "template-loader",
+        "configuration"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/prompts.py:render_prompt",
+      "type": "function",
+      "name": "render_prompt",
+      "filePath": "src/prompts.py",
+      "lineRange": [
+        20,
+        24
+      ],
+      "summary": "Render Prompt function in prompts.py supporting prompts operations.",
+      "tags": [
+        "function",
+        "prompts",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_chat.py",
+      "type": "file",
+      "name": "test_chat.py",
+      "filePath": "tests/test_chat.py",
+      "summary": "Tests for document chat pipeline, conversational context handling, and citation verification.",
+      "tags": [
+        "test",
+        "chat",
+        "citation-verification"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_chat.py:document",
+      "type": "function",
+      "name": "document",
+      "filePath": "tests/test_chat.py",
+      "lineRange": [
+        11,
+        14
+      ],
+      "summary": "Document function in test_chat.py supporting test_chat operations.",
+      "tags": [
+        "function",
+        "test-chat",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_chat.py:draft",
+      "type": "function",
+      "name": "draft",
+      "filePath": "tests/test_chat.py",
+      "lineRange": [
+        17,
+        19
+      ],
+      "summary": "Draft function in test_chat.py supporting test_chat operations.",
+      "tags": [
+        "function",
+        "test-chat",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_chat.py:client_for",
+      "type": "function",
+      "name": "client_for",
+      "filePath": "tests/test_chat.py",
+      "lineRange": [
+        22,
+        38
+      ],
+      "summary": "Client For function in test_chat.py supporting test_chat operations.",
+      "tags": [
+        "function",
+        "test-chat",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_chat.py:test_grounded_answer_and_fixed_wire_contract",
+      "type": "function",
+      "name": "test_grounded_answer_and_fixed_wire_contract",
+      "filePath": "tests/test_chat.py",
+      "lineRange": [
+        41,
+        53
+      ],
+      "summary": "Test Grounded Answer And Fixed Wire Contract function in test_chat.py supporting test_chat operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-chat"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_chat.py:test_invalid_evidence_or_style_never_reaches_verifier",
+      "type": "function",
+      "name": "test_invalid_evidence_or_style_never_reaches_verifier",
+      "filePath": "tests/test_chat.py",
+      "lineRange": [
+        59,
+        63
+      ],
+      "summary": "Test Invalid Evidence Or Style Never Reaches Verifier function in test_chat.py supporting test_chat operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-chat"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_chat.py:test_rejections_are_fixed_and_not_verified",
+      "type": "function",
+      "name": "test_rejections_are_fixed_and_not_verified",
+      "filePath": "tests/test_chat.py",
+      "lineRange": [
+        68,
+        71
+      ],
+      "summary": "Test Rejections Are Fixed And Not Verified function in test_chat.py supporting test_chat operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-chat"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_chat.py:test_verifier_blocks_unsupported_claim_with_real_quote",
+      "type": "function",
+      "name": "test_verifier_blocks_unsupported_claim_with_real_quote",
+      "filePath": "tests/test_chat.py",
+      "lineRange": [
+        74,
+        78
+      ],
+      "summary": "Test Verifier Blocks Unsupported Claim With Real Quote function in test_chat.py supporting test_chat operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-chat"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_chat.py:test_provider_or_schema_failure_is_sanitized_and_accounted",
+      "type": "function",
+      "name": "test_provider_or_schema_failure_is_sanitized_and_accounted",
+      "filePath": "tests/test_chat.py",
+      "lineRange": [
+        82,
+        87
+      ],
+      "summary": "Test Provider Or Schema Failure Is Sanitized And Accounted function in test_chat.py supporting test_chat operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-chat"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_chat.py:test_local_limits_and_failed_pages_make_no_calls",
+      "type": "function",
+      "name": "test_local_limits_and_failed_pages_make_no_calls",
+      "filePath": "tests/test_chat.py",
+      "lineRange": [
+        90,
+        98
+      ],
+      "summary": "Test Local Limits And Failed Pages Make No Calls function in test_chat.py supporting test_chat operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-chat"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_chat.py:test_only_recent_accepted_history_is_data",
+      "type": "function",
+      "name": "test_only_recent_accepted_history_is_data",
+      "filePath": "tests/test_chat.py",
+      "lineRange": [
+        101,
+        107
+      ],
+      "summary": "Test Only Recent Accepted History Is Data function in test_chat.py supporting test_chat operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-chat"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_chat.py:test_luna_remains_invalid_for_parser",
+      "type": "function",
+      "name": "test_luna_remains_invalid_for_parser",
+      "filePath": "tests/test_chat.py",
+      "lineRange": [
+        110,
+        116
+      ],
+      "summary": "Test Luna Remains Invalid For Parser function in test_chat.py supporting test_chat operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-chat"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_chat.py:test_tables_and_missing_pages",
+      "type": "function",
+      "name": "test_tables_and_missing_pages",
+      "filePath": "tests/test_chat.py",
+      "lineRange": [
+        119,
+        125
+      ],
+      "summary": "Test Tables And Missing Pages function in test_chat.py supporting test_chat operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-chat"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_chat.py:test_incomplete_response_never_exposes_text",
+      "type": "function",
+      "name": "test_incomplete_response_never_exposes_text",
+      "filePath": "tests/test_chat.py",
+      "lineRange": [
+        129,
+        142
+      ],
+      "summary": "Test Incomplete Response Never Exposes Text function in test_chat.py supporting test_chat operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-chat"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_chat.py:test_luna_cost_is_not_sol_cost",
+      "type": "function",
+      "name": "test_luna_cost_is_not_sol_cost",
+      "filePath": "tests/test_chat.py",
+      "lineRange": [
+        145,
+        149
+      ],
+      "summary": "Test Luna Cost Is Not Sol Cost function in test_chat.py supporting test_chat operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-chat"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_chat.py:test_empty_layout_markers_do_not_enable_chat",
+      "type": "function",
+      "name": "test_empty_layout_markers_do_not_enable_chat",
+      "filePath": "tests/test_chat.py",
+      "lineRange": [
+        152,
+        155
+      ],
+      "summary": "Test Empty Layout Markers Do Not Enable Chat function in test_chat.py supporting test_chat operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-chat"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_chat.py:test_provider_refusal_never_exposes_raw_text",
+      "type": "function",
+      "name": "test_provider_refusal_never_exposes_raw_text",
+      "filePath": "tests/test_chat.py",
+      "lineRange": [
+        158,
+        169
+      ],
+      "summary": "Test Provider Refusal Never Exposes Raw Text function in test_chat.py supporting test_chat operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-chat"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_prompts.py",
+      "type": "file",
+      "name": "test_prompts.py",
+      "filePath": "tests/test_prompts.py",
+      "summary": "Verifies prompt template loading, variable substitution, and schema validation.",
+      "tags": [
+        "test",
+        "prompt-template",
+        "validation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_prompts.py:test_prompts_resolve_outside_project_and_preserve_substituted_text",
+      "type": "function",
+      "name": "test_prompts_resolve_outside_project_and_preserve_substituted_text",
+      "filePath": "tests/test_prompts.py",
+      "lineRange": [
+        15,
+        24
+      ],
+      "summary": "Test Prompts Resolve Outside Project And Preserve Substituted Text function in test_prompts.py supporting test_prompts operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-prompts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_prompts.py:test_prompt_missing_placeholder_fails",
+      "type": "function",
+      "name": "test_prompt_missing_placeholder_fails",
+      "filePath": "tests/test_prompts.py",
+      "lineRange": [
+        27,
+        29
+      ],
+      "summary": "Test Prompt Missing Placeholder Fails function in test_prompts.py supporting test_prompts operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-prompts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_prompts.py:test_chat_policies_load_outside_project",
+      "type": "function",
+      "name": "test_chat_policies_load_outside_project",
+      "filePath": "tests/test_prompts.py",
+      "lineRange": [
+        33,
+        36
+      ],
+      "summary": "Test Chat Policies Load Outside Project function in test_prompts.py supporting test_prompts operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-prompts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_prompts.py:test_all_runtime_templates_render_without_reformatting_data",
+      "type": "function",
+      "name": "test_all_runtime_templates_render_without_reformatting_data",
+      "filePath": "tests/test_prompts.py",
+      "lineRange": [
+        43,
+        47
+      ],
+      "summary": "Test All Runtime Templates Render Without Reformatting Data function in test_prompts.py supporting test_prompts operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-prompts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_prompts.py:test_runtime_prompt_contains_fidelity_and_injection_boundaries",
+      "type": "function",
+      "name": "test_runtime_prompt_contains_fidelity_and_injection_boundaries",
+      "filePath": "tests/test_prompts.py",
+      "lineRange": [
+        50,
+        61
+      ],
+      "summary": "Test Runtime Prompt Contains Fidelity And Injection Boundaries function in test_prompts.py supporting test_prompts operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-prompts"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_prompts.py:test_detailed_prompt_stays_in_markdown_and_preserves_contract",
+      "type": "function",
+      "name": "test_detailed_prompt_stays_in_markdown_and_preserves_contract",
+      "filePath": "tests/test_prompts.py",
+      "lineRange": [
+        64,
+        70
+      ],
+      "summary": "Test Detailed Prompt Stays In Markdown And Preserves Contract function in test_prompts.py supporting test_prompts operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-prompts"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:scripts/evaluate_chat.py",
+      "target": "function:scripts/evaluate_chat.py:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/evaluate_chat.py",
+      "target": "function:scripts/evaluate_chat.py:main",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_chat.py",
+      "target": "file:src/chat.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_chat.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:scripts/evaluate_chat.py:main",
+      "target": "class:src/layout.py:ParseResult",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_chat.py:main",
+      "target": "class:src/layout.py:ParseResult",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_chat.py:main",
+      "target": "class:src/layout.py:ParseResult",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_chat.py:main",
+      "target": "class:src/layout.py:ParsePage",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_chat.py:main",
+      "target": "class:src/layout.py:ParsePage",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_chat.py:main",
+      "target": "class:src/layout.py:ParsePage",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_chat.py:main",
+      "target": "class:src/layout.py:ParseBlock",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_chat.py:main",
+      "target": "class:src/layout.py:ParseBlock",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_chat.py:main",
+      "target": "class:src/layout.py:ParseBlock",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "function:src/chat.py:document_pages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "function:src/chat.py:document_pages",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "function:src/chat.py:_payload",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "function:src/chat.py:_payload",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "function:src/chat.py:_call",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "function:src/chat.py:_call",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "function:src/chat.py:_normalize",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "function:src/chat.py:_normalize",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "function:src/chat.py:_validated_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "function:src/chat.py:_validated_text",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "function:src/chat.py:answer_document_question",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "function:src/chat.py:answer_document_question",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "class:src/chat.py:Evidence",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "class:src/chat.py:Evidence",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "class:src/chat.py:Statement",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "class:src/chat.py:Statement",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "class:src/chat.py:Draft",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "class:src/chat.py:Draft",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "class:src/chat.py:Verification",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "class:src/chat.py:Verification",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "class:src/chat.py:ChatResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "class:src/chat.py:ChatResult",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "file:src/diagnostics.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "file:src/prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:src/chat.py:_call",
+      "target": "function:src/chat.py:_payload",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/chat.py:_call",
+      "target": "function:src/diagnostics.py:safe_identifier",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/chat.py:_call",
+      "target": "function:src/diagnostics.py:safe_identifier",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/chat.py:_call",
+      "target": "function:src/diagnostics.py:token_count",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/chat.py:_call",
+      "target": "function:src/diagnostics.py:token_count",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/chat.py:_call",
+      "target": "function:src/diagnostics.py:token_count",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/chat.py:_call",
+      "target": "function:src/diagnostics.py:token_count",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/chat.py:_validated_text",
+      "target": "function:src/chat.py:_normalize",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/chat.py:_validated_text",
+      "target": "function:src/chat.py:_normalize",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/chat.py:answer_document_question",
+      "target": "function:src/chat.py:document_pages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/chat.py:answer_document_question",
+      "target": "function:src/chat.py:_call",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/chat.py:answer_document_question",
+      "target": "function:src/chat.py:_validated_text",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/chat.py:answer_document_question",
+      "target": "function:src/chat.py:_call",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/prompts.py",
+      "target": "function:src/prompts.py:render_prompt",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/prompts.py",
+      "target": "function:src/prompts.py:render_prompt",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:document",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:document",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:draft",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:draft",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:client_for",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:client_for",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_grounded_answer_and_fixed_wire_contract",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_grounded_answer_and_fixed_wire_contract",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_invalid_evidence_or_style_never_reaches_verifier",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_invalid_evidence_or_style_never_reaches_verifier",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_rejections_are_fixed_and_not_verified",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_rejections_are_fixed_and_not_verified",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_verifier_blocks_unsupported_claim_with_real_quote",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_verifier_blocks_unsupported_claim_with_real_quote",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_provider_or_schema_failure_is_sanitized_and_accounted",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_provider_or_schema_failure_is_sanitized_and_accounted",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_local_limits_and_failed_pages_make_no_calls",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_local_limits_and_failed_pages_make_no_calls",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_only_recent_accepted_history_is_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_only_recent_accepted_history_is_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_luna_remains_invalid_for_parser",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_luna_remains_invalid_for_parser",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_tables_and_missing_pages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_tables_and_missing_pages",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_incomplete_response_never_exposes_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_incomplete_response_never_exposes_text",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_luna_cost_is_not_sol_cost",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_luna_cost_is_not_sol_cost",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_empty_layout_markers_do_not_enable_chat",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_empty_layout_markers_do_not_enable_chat",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_provider_refusal_never_exposes_raw_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "function:tests/test_chat.py:test_provider_refusal_never_exposes_raw_text",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "file:src/chat.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:tests/test_chat.py:document",
+      "target": "class:src/layout.py:ParseResult",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:document",
+      "target": "class:src/layout.py:ParseResult",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:document",
+      "target": "class:src/layout.py:ParseResult",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:document",
+      "target": "class:src/layout.py:ParsePage",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:document",
+      "target": "class:src/layout.py:ParsePage",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:document",
+      "target": "class:src/layout.py:ParsePage",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:document",
+      "target": "class:src/layout.py:ParseBlock",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:document",
+      "target": "class:src/layout.py:ParseBlock",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:document",
+      "target": "class:src/layout.py:ParseBlock",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_grounded_answer_and_fixed_wire_contract",
+      "target": "function:tests/test_chat.py:client_for",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_grounded_answer_and_fixed_wire_contract",
+      "target": "function:tests/test_chat.py:draft",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_grounded_answer_and_fixed_wire_contract",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_grounded_answer_and_fixed_wire_contract",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_invalid_evidence_or_style_never_reaches_verifier",
+      "target": "function:tests/test_chat.py:client_for",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_invalid_evidence_or_style_never_reaches_verifier",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_invalid_evidence_or_style_never_reaches_verifier",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_rejections_are_fixed_and_not_verified",
+      "target": "function:tests/test_chat.py:client_for",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_rejections_are_fixed_and_not_verified",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_rejections_are_fixed_and_not_verified",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_verifier_blocks_unsupported_claim_with_real_quote",
+      "target": "function:tests/test_chat.py:client_for",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_verifier_blocks_unsupported_claim_with_real_quote",
+      "target": "function:tests/test_chat.py:draft",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_verifier_blocks_unsupported_claim_with_real_quote",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_verifier_blocks_unsupported_claim_with_real_quote",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_provider_or_schema_failure_is_sanitized_and_accounted",
+      "target": "function:tests/test_chat.py:client_for",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_provider_or_schema_failure_is_sanitized_and_accounted",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_provider_or_schema_failure_is_sanitized_and_accounted",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_local_limits_and_failed_pages_make_no_calls",
+      "target": "function:tests/test_chat.py:client_for",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_local_limits_and_failed_pages_make_no_calls",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_local_limits_and_failed_pages_make_no_calls",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_local_limits_and_failed_pages_make_no_calls",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_local_limits_and_failed_pages_make_no_calls",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_local_limits_and_failed_pages_make_no_calls",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_local_limits_and_failed_pages_make_no_calls",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_local_limits_and_failed_pages_make_no_calls",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_local_limits_and_failed_pages_make_no_calls",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_only_recent_accepted_history_is_data",
+      "target": "function:tests/test_chat.py:client_for",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_only_recent_accepted_history_is_data",
+      "target": "function:tests/test_chat.py:draft",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_only_recent_accepted_history_is_data",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_only_recent_accepted_history_is_data",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_tables_and_missing_pages",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_tables_and_missing_pages",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_incomplete_response_never_exposes_text",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_incomplete_response_never_exposes_text",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_empty_layout_markers_do_not_enable_chat",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_empty_layout_markers_do_not_enable_chat",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_provider_refusal_never_exposes_raw_text",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_chat.py:test_provider_refusal_never_exposes_raw_text",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "file:tests/test_chat.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:scripts/evaluate_chat.py",
+      "target": "file:tests/test_chat.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_prompts_resolve_outside_project_and_preserve_substituted_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_prompts_resolve_outside_project_and_preserve_substituted_text",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_prompt_missing_placeholder_fails",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_prompt_missing_placeholder_fails",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_chat_policies_load_outside_project",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_chat_policies_load_outside_project",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_all_runtime_templates_render_without_reformatting_data",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_all_runtime_templates_render_without_reformatting_data",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_runtime_prompt_contains_fidelity_and_injection_boundaries",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_runtime_prompt_contains_fidelity_and_injection_boundaries",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_detailed_prompt_stays_in_markdown_and_preserves_contract",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "function:tests/test_prompts.py:test_detailed_prompt_stays_in_markdown_and_preserves_contract",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "file:src/prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/prompts.py",
+      "target": "file:tests/test_prompts.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "file:tests/test_prompts.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

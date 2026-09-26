@@ -19,6 +19,8 @@ FIXTURE_PATH = (Path(__file__).parent / "fixtures" / "invoice.png").resolve()
 
 from tests.fake_llm import FakeLLM as _FakeLLM
 
+pytestmark = pytest.mark.usefixtures("fake_layout_runtime")
+
 
 def test_parse_document_writes_json(tmp_path, monkeypatch):
     monkeypatch.chdir(tmp_path)
@@ -158,5 +160,6 @@ def test_progress_reports_completion_in_source_order(tmp_path, monkeypatch):
     monkeypatch.setattr(parse_module, "parse_page", parse)
     result = parse_module.parse_document("unused", on_progress=progress)
     assert [p.page for p in result.pages] == [1, 2]
-    assert [e["completed"] for e in events] == [1, 2]
-    assert events[-1] == dict(completed=2, total=2, successful=2, failed=0)
+    assert [e["phase"] for e in events] == ["layout_preparing", "layout_ready", "page_complete", "page_complete"]
+    assert [e["completed"] for e in events if e["phase"] == "page_complete"] == [1, 2]
+    assert {k: events[-1][k] for k in ("completed", "total", "successful", "failed")} == dict(completed=2, total=2, successful=2, failed=0)

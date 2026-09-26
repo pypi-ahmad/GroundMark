@@ -1,0 +1,86 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:28c3a084959eac00f2cef8977deaa6e457df947adbac7cff338dd17674bccc07",
+  "claims": [
+    {
+      "id": "claim_69c7fe38250a4f53b8b2673c102c20fd",
+      "statement": "GroundMark loads the pinned official V3 safetensors snapshot with hash verification, cache-first resolution, and a verified local override.",
+      "evidence": [
+        {
+          "resource": "repo://src/layout_detector.py#L106-L140",
+          "version": "repo-lines-v1:sha256:33f121c261bde7857292738a1f5033bc02c69792ae413b10a937c466cd9d0390:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExYmRmZGNhMTY4ZDQzNjQ5ODNjZTM1YTQ0NGVkNTA1ODRjNzY5ZWIzN2FiZTNkYzU5ZmZhNzEzYTNkMGM1MmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmNTk3ZjQwZDA1YjUzZDBhYjZlYmJlZTQ1NTg3NjY1YjcxYmM0NDQxMDU4OGVhMThlMGI4ZjFhM2M5ZThkODkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjEwYzQ1YTU3OWJiMTJhZDA2MWJlNGM0NmU3MmU3ZWMzOGZmZTIxNjlkMDQxZjU0OTE0YTk5MTEwOWRmYTgzNDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI1ZDM3YmY2Zjk0MDlhOTFmOWU5OTU0NjE0YzFmMDYyNzg3NjY1MTE0NDhjN2U0ZjdmMWJjNDEwOGQ0YWIzOTMifQ"
+        },
+        {
+          "resource": "repo://src/layout_detector.py#L21-L35",
+          "version": "repo-lines-v1:sha256:fc91afaee7bb4dcfed61dc1185a8c62615a1fd96a9b2afac8318f13878d690be:eyJzZWxlY3RlZExpbmVDb3VudCI6MTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5NjAyMjJkZDVmZDg5ZmY0YjJiODU1NjE1ZDQwNDIwYzU2ZmI2ZmU1ODljNjc5ODZlODM3YTA2Mjg4MzI2YzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwYTdkYTc0ZDIwZjgzN2Y5MjIxNWUwNGFhZDQ2Zjc5NjQyYTY1ZjE4NTkyMjE3YWM4Y2M1ZWE1ZjRjMzg0YTkiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBkMjY3NjBkOTlkODFhYWNiOGNjZjNiYWRmMmEzYTAxMmQ3NGQzZGE3YzM0YzNjZmU5MjQ0MTgxYmMwZGNiNjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg0Y2VhODgyNzEyOTc3ZTU1NWUzNGU5OTA5ZjE1MDdkNzk5NzBlZWE5YmNjNjhlNDc3YmE0ODgxY2VkMDU2ZWIifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_c8c58dcabb954c5594415c3fd9c7e54c",
+      "statement": "The Transformers backend verifies model and tensor device placement, runs a CUDA probe in auto mode, and falls back to a verified CPU probe.",
+      "evidence": [
+        {
+          "resource": "repo://src/layout_detector.py#L175-L219",
+          "version": "repo-lines-v1:sha256:e8c235b4230548a9e9d159eca43fe0c22826d9e9eedff8374b495a32dc510b8d:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjliN2RiMDZjMzY5NmYzZGViMmU3OWU4NTBiMDU5MzViMDc5NzI2MDA3MWI0YTkxNDk3NjUwMjEwYjYwZDFhMWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFjY2YxNzY4NzA2Y2E0MzBjYTNiODI3MmZiNDM5NWYyNDk5Mzg2MThkMjM0NmRmYmRiOGNmMGU2NDRiY2Y0ZmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjdlZmQ4NGJjYmNhMmVlMDNhNmE4MDJlMjRmMzE2YTQwNzZhNmU1MmFjMWUwYjVkNGQxNWIxZDU5NzNlZTdmZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImViZTJmYjJiNzdlNDBiYTZiMjZlY2JjYzFjYTMwYjAzM2QzMzFlNzQxODUwMTc3ZjIwN2NkNmFlYjU5NTk1ZTEifQ"
+        },
+        {
+          "resource": "repo://src/layout_detector.py#L234-L285",
+          "version": "repo-lines-v1:sha256:20ba3a65a49fe46fe4e84b5f5b2bd2dfddacec55d41a5b3b569108421429b9e0:eyJzZWxlY3RlZExpbmVDb3VudCI6NTIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU2ZTZhNzU1NTYxOTFhOTE1ZDdjOWUwMGM0MTM3MjI3OTc0NTM0NWQ3MjlkNmU4ZDk3ZGYzMDk3Mzc4YWJhZGQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE0ZGQ1MmU1M2E1Y2QwOGMyNGM5YzgwODZjZGY1MWIyZDAzN2M2MGJlOTljZTBmYmM1MjQyZGQ2ZTAzOTY3Y2UiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQzNTM5NWM5OGE4NzI1ZWZmN2JkNmYwNDUzZTE5YzEwMjRjMDIxMTNkZTA5MmMzMTgwZmY2MWY0ZGJhYjRhMjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU3ZjRjNTE4NzcxMjhkOGUzZTE4ZDNkMzY1MDE5ZTA0YzYxMGIxNThhMDI2YWRkOGI4Nzc1MTI4ZjdmNTRhMTMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc91b20e2f644466a83fdc0a02ea406d",
+      "statement": "A process-wide runtime singleton predicts one image at a time and raises a typed error for page inference failure without automatic per-page device retry.",
+      "evidence": [
+        {
+          "resource": "repo://src/layout_detector.py#L287-L321",
+          "version": "repo-lines-v1:sha256:5211f547b59b7bd24234fef58dacf729b82f489ddc88d831b5f79d8ef956510b:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMxN2IwYTVmYjI0ZjE5NGNhNGJiMjEzN2ZjMDgzMjkyYWM4YzJmYzdmMjhhZjQwODFlMzliOGYxMmNjOGU4ZDIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJlNDQ2ZWJiY2RhZTVmNTViMjAwM2UwMGJkNDFiMGU3ODU4MTRjNGYyYmQ3OGFiMGRkMmYxZWI5NDgzMDg0YjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjM2MWQxZWQzZWM4YjMyNTlhYjY3NDQ2MGUyMGM3Y2VhMWFmOTdmNzE2MGU1M2IzN2EyYzlmZDEzNDQ0OTM3MGMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3ZTk3ZWIzMjZjNmU0NDlkNGEwMTE5YjlhZmZkNWNkOTFjYzJmYmY5MGQwNmUwYzRiMmQ3ODcwZDdmMTk4MDgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_dd6f47cf4add44578e22faea6555270c",
+      "statement": "V3 region output includes class, score, pixel box, polygon points and native reading order, then conversion validates and normalizes geometry to the page dimensions.",
+      "evidence": [
+        {
+          "resource": "repo://src/layout_detector.py#L143-L169",
+          "version": "repo-lines-v1:sha256:0daf47294b5f626e312031cfde091165a83a6b38ffb1b8c7e037d9a9e57f78ce:eyJzZWxlY3RlZExpbmVDb3VudCI6MjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1MmZhOTE4YjhjYzhjNzM2ZjViZDQ1NTVmMGU2YmE5N2M2MTgyNDM4YzBkYzg0Y2RkNTVmZjFkZjE0MDAxN2QiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQxMjE2YWFlMjlmODU1NWE4OTBjNzA5Y2VhNTI4NjBmYTY3NGNjMGM4YzMyNzYzN2Q4MTYyY2YzZmQxZGE4MzIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjNmMTkwMWFlODk3ODM1YTY2MjA2ZTBkNzBkZTE2ODJkOWU1M2EwNjIxNDE2NWI4NzAyMzMyY2Y4ZmUwMGRhZjciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjNzMzMzdmMTAwMjhhMGQ2NGRkMzUyZDUyNmVhOGEwY2IxYzYzY2FkNDdjNzY3ZDg1MGMyMzc0NmM4NmJkYmMifQ"
+        },
+        {
+          "resource": "repo://src/layout_reconcile.py#L156-L209",
+          "version": "repo-lines-v1:sha256:2cc912b31e3caac86310d343a499adefc30f819da004594e9a0fbf4660a64664:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiOWI0YTkyMTMzMWFlZTUyMzRmOGRkOWUyYzNhYzdjYjEwMWY3MTRkYTBlYjg3N2Q4NmNkYTMyN2U3ZjQ0MWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyYjQwMWIxYjA0ZjY3ZmY1N2U0YzA5YjhhNjFjMTUxMDNmNjRiYWMwYTIyMTVhYzliNWEyNjI5ZDJhMDA5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhhZDMzMzQ5NDc1MmY5MWVkZDBlYmY5NzYyYWMwOWU2MDNjNzdkMDdiMWM0OWNhNTVmMTA4NmY2N2I0NjYxNjMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_72e7bf20fb854dca9573a13a741184ac",
+      "statement": "Reconciliation accepts only conservative one-to-one matches and preserves Sol blocks for ambiguous, weak, split/merge, or role-disagreeing cases.",
+      "evidence": [
+        {
+          "resource": "repo://src/layout.py#L263-L299",
+          "version": "repo-lines-v1:sha256:b5732ec65c76d35fd06a76e272bd9955e03771a1872542cf82bf901cd0a1405a:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQwNzk4NDk5NzJjMzU4MmEzNzkzYmViMjJkOWUyZGM2MThlMjIxNTU1OTAzMTY1MTc4ZWMwNmJiNTJkZjcxZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYxOTNhN2ZkN2M0YzBiMjYyYzE2NDg2YzhmZWIzOWYyMmQyMzQ5Y2Q2ZTQ4MDk3NjIyMmQ2ZWZiMDBkMjJlYTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiNTMwZWRlNGYzZTg4MmQ2ZTg1ZTllNmE3N2JiYTI5NTk5OTk3MWU2NTk5NGU0ZTA0MWJjMDAzYjE1NzhkMmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc0MDE4MzBlMzhkZGE3NTQwNGUzMzNkMTc2MzBlNTYyMWI5ZGUyMTE0YjhkNThjNTJjODc3OGZiYmE0OTdlZmEifQ"
+        },
+        {
+          "resource": "repo://src/layout_reconcile.py#L261-L345",
+          "version": "repo-lines-v1:sha256:4e485d6030cace5442ee2a31ac8e6763169bc7e017082fdb27e26b1246b391ea:eyJzZWxlY3RlZExpbmVDb3VudCI6ODUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxODdmYmJjN2FhMWMyZTBjZmYzNzZlZmNkMGUwNjE2OGZlZTc4NTBmNzVhNDVhMmZmMzIwNTMwNmRmZWJmZDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4MzEyMzNkMjhkOTUzNWQ3YjM3NjFkMjFhM2U5YWU0M2Q4MTYwZmQ1MTAzNWExNTM3ZDAxODJlODY4OGY4OWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlZWM4ZDU1ZmQ3NGRhZTE2NDhlY2NkOGY3OGQ0MDg3YWYwMjNjMGEwYTQyYjVlMGJlMmQ0NWM0YTU4Njc0OTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_bc00f01feba749d487b6d0c30862e790",
+      "statement": "When V3 fails, parse_page retains validated Sol content and records layout fallback instead of making an additional Sol request.",
+      "evidence": [
+        {
+          "resource": "repo://src/parse.py#L145-L198",
+          "version": "repo-lines-v1:sha256:64198e45a2aed7092de37419c485469e330e1846f6ec624bae9f8cc25930afa1:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjUxYWQ4MmVhZThmMDk4M2FhYjc4MzIxMTEwNTUwYzUyYWI0ZDk2MDljZWMxMDI4MzA3NjBiYzNhMzhhMWVhMjIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjFlMWYzMzBlMzg3MzRlYzNhYjkxOWY5ZTI1OTYwM2NhMWNiODBiYzRiZWYyYTJmNTEyNGJiNGI4OThjN2EyMTQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjU1NTgzYzA0YTg5YjhhZmVmNDg3M2M3YzIwZTAzNzU2Yzc3MDc4NTRlYzU0OTQxMDhkZjU4YzEwN2JjZjE5OTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjM0NmQwNGQ2NzgwYzg1NmY3N2ZjNTQyMGI4MmQzNDQ2ODIyZDRmZmM2MGM0NWRjNjQyOWNjNzQyMDdlYzlmN2QifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-26T10:39:39.522Z"
+  }
+}

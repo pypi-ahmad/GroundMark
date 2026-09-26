@@ -24,12 +24,15 @@ from src.export import DEFAULT_FORMATS, FORMATS, export_result
 from src.parse import parse_document
 from src.preprocess import inspect_source as preprocess
 from src.layout import ParseResult
+from src.diagnostics import PageDiagnostic, layout_failure_summary
 from src.output_names import reserve_basename
 
 # This graph only parses source pages into grounded layout data and Markdown.
 
 
 class GraphState(TypedDict, total=False):
+    """Run inputs, parser diagnostics, usage ledger, and selected artifact paths."""
+    layout_initialization_failure: PageDiagnostic | None
     image_path: str
     start_page: int
     end_page: int | None
@@ -61,8 +64,13 @@ class GraphState(TypedDict, total=False):
 
 
 def node_preprocess(state: GraphState) -> dict:
+    """Validate/hash the input and establish run identity and export ownership.
+
+    Accept GraphState and return its initial metadata updates. Source validation
+    and filesystem errors propagate to the graph caller.
+    """
     started_at = state.get("started_at") or datetime.now(UTC).isoformat()
-    print(f"[ADE] preprocess: {state['image_path']}")
+    print("[ADE] preprocess: validating document")
     result = preprocess(state["image_path"])
     # Preserve direct build_graph().invoke(...) callers as well as run_graph.
     run_id = state.get("run_id") or uuid4().hex
@@ -80,6 +88,11 @@ def node_preprocess(state: GraphState) -> dict:
 def node_parse(state: GraphState) -> dict:
     # Best-effort: a parse failure is reported, not raised -- the caller can
     # still see doc_sha/status even if layout parsing didn't work.
+    """Parse selected pages and export them into GraphState updates.
+
+    Preserve usable partial pages and paid-call usage. Unexpected exceptions
+    become a fixed parse_failed message without raw document/provider text.
+    """
     try:
         result = parse_document(
             state["image_path"],
@@ -91,6 +104,7 @@ def node_parse(state: GraphState) -> dict:
             output_dir=state["output_dir"],
             detailed_layout=state.get("detailed_layout", False),
             save_json=False,
+            layout_initialization_failure=state.get("layout_initialization_failure"),
         )
         filtered_pages = ", ".join(str(page) for page in result.content_filtered_pages)
         parse_error = (
@@ -100,7 +114,8 @@ def node_parse(state: GraphState) -> dict:
         )
         other_failures = [d for d in result.page_diagnostics if d.outcome not in ("parsed", "content_filtered")]
         if other_failures:
-            summary = "; ".join(f"Page {d.page}: {d.outcome}" for d in other_failures)
+            summary = "; ".join(layout_failure_summary(d) if d.layout_stage else f"Page {d.page}: {d.outcome}"
+                                for d in other_failures)
             parse_error = f"{parse_error}; {summary}" if parse_error else summary
         with reserve_basename(state["original_filename"], datetime.fromisoformat(state["started_at"]),
                               state["output_dir"]) as basename:
@@ -119,18 +134,20 @@ def node_parse(state: GraphState) -> dict:
             "status": ("parse_failed" if not result.pages else
                        "parsed_partial" if parse_error else "parsed"),
         }
-    except Exception as exc:
-        print(f"[ADE] parse: skipped ({exc})")
+    except Exception:
+        message = "Unable to complete document parsing or exports. Check the input and output access."
+        print(f"[ADE] parse: {message}")
         return {
             "parse_result": None,
             "markdown": None,
-            "parse_error": str(exc),
+            "parse_error": message,
             "annotated_pdf_path": None,
             "status": "parse_failed",
         }
 
 
 def build_graph():
+    """Return the compiled preprocess-to-parse graph; construction makes no calls."""
     graph = StateGraph(GraphState)
     graph.add_node("preprocess", node_preprocess)
     graph.add_node("parse", node_parse)
@@ -148,7 +165,16 @@ def run_graph(image_path: str, *, start_page: int = 1, end_page: int | None = No
               on_progress: Callable[[dict], None] | None = None,
               output_dir: str | Path | None = None,
               formats: set[str] | None = None, view: str = "full",
-              original_filename: str | None = None) -> dict:
+              original_filename: str | None = None,
+              layout_initialization_failure: PageDiagnostic | None = None) -> dict:
+    """Run extraction and return final state with diagnostics and artifact paths.
+
+    Page bounds are 1-based/inclusive. formats=None selects the UI artifact set;
+    view controls presentation only. on_progress receives safe local events.
+    An optional initialization diagnostic carries a UI preflight failure without
+    retrying V3. Unsupported model, format, or view raises ValueError; source
+    preprocessing errors may propagate. This function may make paid Sol calls.
+    """
     if model != DEFAULT_MODEL:
         raise ValueError("Unsupported model")
     if formats is not None and (not formats or not formats <= FORMATS):
@@ -159,6 +185,7 @@ def run_graph(image_path: str, *, start_page: int = 1, end_page: int | None = No
     run_id = uuid4().hex
     app = build_graph()
     initial_state: GraphState = {
+        "layout_initialization_failure": layout_initialization_failure,
         "image_path": image_path,
         "original_filename": original_filename or Path(image_path).name,
         "started_at": datetime.now(UTC).isoformat(),

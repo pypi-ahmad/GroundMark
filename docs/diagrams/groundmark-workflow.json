@@ -2,18 +2,18 @@
   "schema_version": 1,
   "diagram_type": "workflow",
   "meta": {
-    "title": "GroundMark Document Parsing Workflow",
-    "viewBox": [1200, 600],
+    "title": "GroundMark document parsing workflow",
+    "viewBox": [1080, 500],
     "quality_profile": "showcase"
   },
   "lanes": [
-    { "id": "client", "label": "Client Interface" },
+    { "id": "client", "label": "Local orchestration" },
     { "id": "pipeline", "label": "Extraction Pipeline" },
     { "id": "exceptions", "label": "Diagnostics & Errors", "variant": "exception" }
   ],
   "phases": [
-    { "id": "ingest", "label": "Ingest & Hash", "fromCol": 0, "toCol": 1 },
-    { "id": "parse", "label": "Render & Parse", "fromCol": 2, "toCol": 3, "variant": "emphasis" },
+    { "id": "ingest", "label": "Input & Layout", "fromCol": 0, "toCol": 1 },
+    { "id": "parse", "label": "Sol & Reconcile", "fromCol": 2, "toCol": 3, "variant": "emphasis" },
     { "id": "artifacts", "label": "Export & Output", "fromCol": 4, "toCol": 5, "variant": "dashed" }
   ],
   "groups": [
@@ -22,22 +22,28 @@
   "mainPath": [
     "submit_input",
     "raster_pages",
+    "local_layout",
     "visual_parse",
+    "reconcile",
     "write_exports",
     "present_output"
   ],
   "nodes": [
     { "id": "submit_input", "lane": "client", "col": 0, "type": "frontend", "label": "Submit", "sublabel": "PDF / image" },
-    { "id": "raster_pages", "lane": "pipeline", "col": 1, "type": "backend", "label": "Preprocess", "sublabel": "hash & rasterize" },
-    { "id": "visual_parse", "lane": "pipeline", "col": 3, "type": "cloud", "label": "Sol Parse", "sublabel": "gpt-6-sol visual", "tag": "Sequential" },
-    { "id": "write_exports", "lane": "pipeline", "col": 5, "type": "backend", "label": "Export", "sublabel": "save files" },
+    { "id": "raster_pages", "lane": "pipeline", "col": 0, "type": "backend", "label": "Render page", "sublabel": "200 DPI / 1,600 px" },
+    { "id": "local_layout", "lane": "pipeline", "col": 1, "type": "backend", "label": "V3 layout", "sublabel": "local regions/order" },
+    { "id": "visual_parse", "lane": "pipeline", "col": 3, "type": "cloud", "label": "Sol", "sublabel": "full image + hints" },
+    { "id": "reconcile", "lane": "client", "col": 3, "type": "backend", "label": "Reconcile", "sublabel": "validated blocks" },
+    { "id": "write_exports", "lane": "pipeline", "col": 5, "type": "backend", "label": "Export", "sublabel": "save files", "width": 70 },
     { "id": "present_output", "lane": "client", "col": 5, "type": "frontend", "label": "Present", "sublabel": "UI & download" },
-    { "id": "filter_diag", "lane": "exceptions", "col": 3, "type": "security", "label": "Filtered", "sublabel": "HTTP 200 log" }
+    { "id": "filter_diag", "lane": "exceptions", "col": 3, "type": "security", "label": "Sol failed", "sublabel": "diagnostics retained" }
   ],
   "edges": [
     { "from": "submit_input", "to": "raster_pages" },
-    { "from": "raster_pages", "to": "visual_parse" },
-    { "from": "visual_parse", "to": "write_exports" },
+    { "from": "raster_pages", "to": "local_layout" },
+    { "from": "local_layout", "to": "visual_parse" },
+    { "from": "visual_parse", "to": "reconcile" },
+    { "from": "reconcile", "to": "write_exports", "fromSide": "right", "toSide": "left", "via": [[540, 119], [540, 243]] },
     { "from": "write_exports", "to": "present_output" },
     { "from": "visual_parse", "to": "filter_diag", "variant": "security", "role": "error" },
     { "from": "filter_diag", "to": "write_exports", "variant": "dashed" }
@@ -45,29 +51,29 @@
   "cards": [
     {
       "dot": "emerald",
-      "title": "Deterministic Pipeline",
+      "title": "Same page image",
       "items": [
-        "LangGraph coordinates preprocess -> parse -> END workflow",
-        "SHA-256 during preprocess; UTC basename during export",
-        "Source order preserved with up to 12k preceding characters"
+        "V3 sees the same raster image sent to Sol",
+        "V3 failure supplies empty region hints to Sol",
+        "Pages run in source order with bounded preceding context"
       ]
     },
     {
       "dot": "cyan",
-      "title": "Multi-Format Artifacts",
+      "title": "Sol fallback",
       "items": [
-        "Markdown, self-contained HTML, and schema_version: 2 JSON",
-        "Annotated PDF with grounded bounding box overlays",
-        "Clean vs Full views derived without re-calling models"
+        "Misses and mismatches retain Sol boxes and positions",
+        "Compatible one-to-one matches use V3 geometry/order",
+        "Reconciliation failure retains Sol without another call"
       ]
     },
     {
       "dot": "rose",
-      "title": "Failure Isolation",
+      "title": "Outputs and diagnostics",
       "items": [
-        "Content filter diagnostics record HTTP 200 finish reasons",
-        "Successful pages persist even if later pages fail",
-        "No silent extraction correction or ungrounded rewriting"
+        "All consumers use the same final parsed blocks",
+        "Sol failures do not discard other successful pages",
+        "JSON retains V3 evidence and explicit fallback status"
       ]
     }
   ]

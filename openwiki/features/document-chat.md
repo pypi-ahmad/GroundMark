@@ -3,9 +3,6 @@ type: feature
 title: Grounded Document Chat
 description: How GroundMark answers document-only questions through structured drafting, deterministic evidence checks, and an independent verification call.
 tags: [chat, grounding, verification, security]
-verified:
-  - by: openwiki/0.5.2
-    at: 2026-09-23T13:34:05.703Z
 sources:
   - id: openwiki-source-184127c1c45288fad066a874
     resource: repo://prompts/runtime/chat-answer.md
@@ -17,9 +14,10 @@ sources:
     resource: repo://src/ui/app.py
   - id: openwiki-source-6265b0ac565c1d474e82b6ec
     resource: repo://tests/test_chat.py
-  - id: openwiki-source-880db0e148cafbaf6161b604
-    resource: repo://tests/test_ui_diagnostics.py
-generated: { by: "codex", at: "2026-09-23T13:34:05.703Z" }
+generated: { by: "codex", at: "2026-09-26T10:39:39.522Z" }
+verified:
+  - by: openwiki/0.6.0
+    at: 2026-09-26T10:39:39.522Z
 ---
 
 # Grounded Document Chat
@@ -28,7 +26,7 @@ Document chat is a separate workflow from the extraction graph. It consumes only
 
 ## Evidence preparation
 
-`document_pages` builds a page-numbered text map from successful `ParseResult.pages`. It excludes content-filtered pages and any page whose diagnostic outcome is not `parsed`, skips pages without usable text, preserves all block text including classified headers and footers, and flattens table rows into text. Consequently, the evidence is the parser's output rather than the original image or PDF.
+`document_pages` builds a page-numbered text map from successful `ParseResult.pages`. It excludes content-filtered pages and any page whose diagnostic outcome is not `parsed`, skips pages without usable text, preserves all block text including classified headers and footers, and flattens table rows into text. A page that fell back to Sol because V3 missed or failed remains eligible when its Sol parse succeeded. Consequently, the evidence is the parser's output rather than the original image or PDF. An exact quote check establishes agreement with that parsed text, not independent fidelity to the source image.
 
 Questions must contain 1 to 2,000 characters. Before any paid request, the application also enforces a 200 KB serialized-context ceiling while reserving space for verification. At most the six most recent `answered` turns are included, and history may resolve references but is not factual evidence.
 

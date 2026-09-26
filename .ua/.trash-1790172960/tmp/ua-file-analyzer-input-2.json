@@ -1,0 +1,13 @@
+{
+  "projectRoot": "D:\\AI\\GroundMark",
+  "batchFiles": [
+    {"path": "AGENTS.md", "language": "markdown", "sizeLines": 12, "fileCategory": "docs"},
+    {"path": "CLAUDE.md", "language": "markdown", "sizeLines": 7, "fileCategory": "docs"},
+    {"path": "README.md", "language": "markdown", "sizeLines": 189, "fileCategory": "docs"}
+  ],
+  "batchImportData": {
+    "AGENTS.md": [],
+    "CLAUDE.md": [],
+    "README.md": []
+  }
+}

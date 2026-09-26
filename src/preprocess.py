@@ -32,6 +32,7 @@ _RASTER_EXTS = {".png", ".jpg", ".jpeg", ".webp", ".tif", ".tiff"}
 
 
 class PreprocessError(Exception):
+    """Unsupported source, invalid page range, or preprocessing resource limit."""
     pass
 
 
@@ -61,7 +62,11 @@ def count_pages(path: str | Path) -> int:
 
 
 def inspect_source(path: str | Path) -> dict:
-    """Validate a source without loading it and return stable metadata."""
+    """Hash a source and inspect its page count without rasterizing PDF pages.
+
+    Return path, suffix, pages, and doc_sha256. Source validation, decoder, and
+    filesystem errors propagate. Raster inputs are verified with Pillow.
+    """
     p, suffix = _validate_source(path)
     digest = hashlib.sha256()
     with p.open("rb") as source:
@@ -71,7 +76,7 @@ def inspect_source(path: str | Path) -> dict:
 
 
 def preprocess(path: str | Path) -> dict:
-    """Load an invoice file and return a model-ready payload.
+    """Render the first page of a supported document into a model-ready payload.
 
     Always emits a PNG-encoded image (re-encoding is unavoidable once the
     long edge is capped, and PDF pages are rasterized) so downstream code
@@ -109,6 +114,13 @@ def iter_preprocessed_pages(
     path: str | Path, *, start_page: int = 1, end_page: int | None = None,
     max_long_edge: int = MAX_LONG_EDGE, pdf_dpi: int = PDF_DPI,
 ) -> Iterator[dict]:
+    """Yield PNG payload dictionaries for a 1-based inclusive page range.
+
+    Each payload has page, doc_sha256, mime, base64, width, and height. Defaults
+    render PDF pages at 200 DPI and cap the long edge at 1,600 pixels. Raster
+    inputs use one page. Validation, decoder, and I/O errors propagate during
+    iteration; images are closed as the generator advances or closes.
+    """
     info = inspect_source(path)
     p, suffix, doc_sha256, total = info["path"], info["suffix"], info["doc_sha256"], info["pages"]
     if max_long_edge < 1 or pdf_dpi < 1:

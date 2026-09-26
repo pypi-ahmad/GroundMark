@@ -1,0 +1,97 @@
+{
+  "batchIndex": 8,
+  "totalBatches": 9,
+  "nodes": [
+    {
+      "id": "file:src/ui/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "src/ui/__init__.py",
+      "summary": "UI package initialization exposing UI components and helpers.",
+      "tags": [
+        "ui",
+        "barrel",
+        "package-init"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "tests/__init__.py",
+      "summary": "Test package root initialization.",
+      "tags": [
+        "test",
+        "package-init"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:tests/fixtures/chat-evaluation.md",
+      "type": "document",
+      "name": "chat-evaluation.md",
+      "filePath": "tests/fixtures/chat-evaluation.md",
+      "summary": "Golden evaluation dataset containing QA pairs and expected citations for chat benchmark tests.",
+      "tags": [
+        "test-data",
+        "benchmark",
+        "golden-set"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_launcher.py",
+      "type": "file",
+      "name": "test_launcher.py",
+      "filePath": "tests/test_launcher.py",
+      "summary": "Tests launcher script behavior, environment validation, and dependency installation checks.",
+      "tags": [
+        "test",
+        "launcher",
+        "bootstrap"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_launcher.py:test_launcher_forwards_arguments_and_exit_status",
+      "type": "function",
+      "name": "test_launcher_forwards_arguments_and_exit_status",
+      "filePath": "tests/test_launcher.py",
+      "lineRange": [
+        12,
+        24
+      ],
+      "summary": "Test Launcher Forwards Arguments And Exit Status function in test_launcher.py supporting test_launcher operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-launcher"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:tests/test_launcher.py",
+      "target": "function:tests/test_launcher.py:test_launcher_forwards_arguments_and_exit_status",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_launcher.py",
+      "target": "function:tests/test_launcher.py:test_launcher_forwards_arguments_and_exit_status",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:run.cmd",
+      "target": "file:tests/test_launcher.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

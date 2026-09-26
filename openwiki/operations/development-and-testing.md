@@ -3,12 +3,7 @@ type: operations
 title: Development, Testing, and Evaluation
 description: Local setup, packaging, deterministic verification, and the separately authorized live-evaluation harnesses used to maintain GroundMark.
 tags: [development, testing, evaluation, packaging]
-verified:
-  - by: openwiki/0.5.2
-    at: 2026-09-23T13:34:05.703Z
 sources:
-  - id: openwiki-source-000a7add03cfbd0ac1794f3a
-    resource: repo://docs/CONTRIBUTING.md
   - id: openwiki-source-51639ec4f9dc3fb84f820c05
     resource: repo://docs/RUNBOOK.md
   - id: openwiki-source-05ccef8d4cf1698187f20464
@@ -21,7 +16,14 @@ sources:
     resource: repo://scripts/evaluate_prompts.py
   - id: openwiki-source-74a5e39a1c60ae438602c309
     resource: repo://scripts/evaluate_resolution.py
-generated: { by: "codex", at: "2026-09-23T13:34:05.703Z" }
+  - id: openwiki-source-efa8067f082e9586439b86d3
+    resource: repo://src/parse.py
+  - id: openwiki-source-f37e7222de1085ae56ad8a6f
+    resource: repo://tests/test_layout_detector.py
+generated: { by: "codex", at: "2026-09-26T10:39:39.522Z" }
+verified:
+  - by: openwiki/0.6.0
+    at: 2026-09-26T10:39:39.522Z
 ---
 
 # Development, Testing, and Evaluation
@@ -34,7 +36,7 @@ uv run python -m pytest tests
 git diff --check
 ```
 
-The explicit `tests` path prevents archived artifacts under local data directories from being collected. Unit and integration tests replace model calls with fakes, so the normal suite requires no paid API access. Focused suites cover preprocessing, strict schemas, sequential parsing, diagnostics, renderers, annotations, exports, CLI validation, Streamlit state, chat guardrails, usage, and evaluation-harness limits.
+The explicit `tests` path prevents archived artifacts under local data directories from being collected. To exercise the local V3 engine in a checkout, use `uv sync --extra layout` and `uv run --extra layout ...`; its native dependencies are not required for base imports. Unit and integration tests replace model calls with fakes, so the normal suite requires no paid API access. Focused suites cover preprocessing, strict schemas, V3 cache/device/fallback/reconciliation, sequential parsing, diagnostics, renderers, annotations, exports, CLI validation, Streamlit state, chat guardrails, usage, and evaluation-harness limits. A real CPU or CUDA smoke test is separate evidence and is not implied by a fake-runtime test.
 
 ## Runtime prompts and packaging
 
@@ -44,7 +46,7 @@ Build release artifacts with `uv build`. The wheel contains runtime code, prompt
 
 ## Offline verification versus live evaluation
 
-The test suite is deterministic and safe to run routinely. The scripts under `scripts/evaluate_*.py` are different: they send real requests, write manifests, and require configured credentials and explicit invocation. A recorded evaluation document is historical evidence, not proof that the current checkout was rerun.
+The test suite is deterministic and safe to run routinely. The scripts under `scripts/evaluate_*.py` are different: their default runners send real requests and require configured credentials and separate authorization. Prompt, resolution, and layout CLIs require `--live`; `evaluate_chat.py` can make paid requests without that flag, so do not run it as an offline check. Current prompt templates with `given_layout` require successful V3 analysis in the evaluation runner, unlike the production parser's Sol fallback. Archived templates keep their earlier path. A recorded evaluation document is historical evidence, not proof that the current checkout was rerun.
 
 The live harnesses impose mechanical bounds:
 
@@ -59,6 +61,6 @@ Resolution promotion requires every candidate page to match or exceed its baseli
 
 Keep model calls centralized, source pages sequential, older JSON loadable, and presentation filters separate from stored extraction and chat evidence. Add or update focused tests for behavior changes, then run the complete deterministic suite. Never commit API credentials, uploaded documents, local indexes, or generated run artifacts.
 
-For runtime troubleshooting, confirm the API key is present without printing it, remember that the endpoint must support Sol parsing and Luna chat, inspect per-page diagnostics after partial runs, and select a smaller page range when sequential processing or chat context is too large.
+For runtime troubleshooting, confirm the API key is present without printing it, remember that the endpoint must support Sol parsing and Luna chat, and inspect the V3 readiness device, `layout_fallback`, stage/code, and match counts before interpreting partial results. An unavailable V3 engine allows Sol-only extraction with a safe diagnostic; a rejected match keeps the Sol box without a runtime-failure flag. Select a smaller page range when sequential processing or chat context is too large. See the [V3 runtime](../concepts/v3-layout-runtime.md) for cache and geometry limits.
 
 See [GroundMark Quickstart](../quickstart.md) for use, [Parsing Pipeline Architecture](../architecture/parsing-pipeline.md) for the runtime graph, and [Grounded Document Chat](../features/document-chat.md) for its verification contract.

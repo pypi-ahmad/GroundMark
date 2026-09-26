@@ -1,0 +1,131 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 3,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 3,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 3
+    }
+  },
+  "results": [
+    {
+      "path": "AGENTS.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 12,
+      "nonEmptyLines": 7,
+      "sections": [
+        {
+          "heading": "OpenWiki",
+          "level": 2,
+          "line": 3
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "CLAUDE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 7,
+      "nonEmptyLines": 4,
+      "sections": [
+        {
+          "heading": "OpenWiki",
+          "level": 2,
+          "line": 3
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 189,
+      "nonEmptyLines": 125,
+      "sections": [
+        {
+          "heading": "GroundMark",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Install",
+          "level": 2,
+          "line": 13
+        },
+        {
+          "heading": "Configure your endpoint",
+          "level": 3,
+          "line": 38
+        },
+        {
+          "heading": "Web UI",
+          "level": 3,
+          "line": 54
+        },
+        {
+          "heading": "Extract from the terminal",
+          "level": 3,
+          "line": 64
+        },
+        {
+          "heading": "Clone and run locally",
+          "level": 3,
+          "line": 95
+        },
+        {
+          "heading": "Outputs",
+          "level": 2,
+          "line": 108
+        },
+        {
+          "heading": "How it works",
+          "level": 2,
+          "line": 123
+        },
+        {
+          "heading": "Diagrams",
+          "level": 2,
+          "line": 144
+        },
+        {
+          "heading": "Documentation",
+          "level": 2,
+          "line": 182
+        },
+        {
+          "heading": "License",
+          "level": 2,
+          "line": 187
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 11
+      }
+    }
+  ]
+}

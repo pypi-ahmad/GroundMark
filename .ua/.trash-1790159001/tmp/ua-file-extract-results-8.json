@@ -1,0 +1,126 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 4,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 3,
+      "failed": 0,
+      "skipped": 1
+    }
+  },
+  "results": [
+    {
+      "path": "src/ui/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 7,
+      "nonEmptyLines": 6,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/__init__.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 6,
+      "nonEmptyLines": 5,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "tests/fixtures/chat-evaluation.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 16,
+      "nonEmptyLines": 16,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": "tests/test_launcher.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 24,
+      "nonEmptyLines": 20,
+      "functions": [
+        {
+          "name": "test_launcher_forwards_arguments_and_exit_status",
+          "startLine": 12,
+          "endLine": 24,
+          "params": [
+            "tmp_path",
+            "exit_code"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "test_launcher_forwards_arguments_and_exit_status",
+          "line": 10,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "test_launcher_forwards_arguments_and_exit_status",
+          "callee": "Path",
+          "lineNumber": 13
+        },
+        {
+          "caller": "test_launcher_forwards_arguments_and_exit_status",
+          "callee": "(tmp_path / \"run.cmd\").write_bytes",
+          "lineNumber": 14
+        },
+        {
+          "caller": "test_launcher_forwards_arguments_and_exit_status",
+          "callee": "launcher.read_bytes",
+          "lineNumber": 14
+        },
+        {
+          "caller": "test_launcher_forwards_arguments_and_exit_status",
+          "callee": "(tmp_path / \"uv.cmd\").write_text",
+          "lineNumber": 15
+        },
+        {
+          "caller": "test_launcher_forwards_arguments_and_exit_status",
+          "callee": "subprocess.run",
+          "lineNumber": 19
+        },
+        {
+          "caller": "test_launcher_forwards_arguments_and_exit_status",
+          "callee": "(tmp_path / \"calls.txt\").read_text().strip",
+          "lineNumber": 24
+        },
+        {
+          "caller": "test_launcher_forwards_arguments_and_exit_status",
+          "callee": "(tmp_path / \"calls.txt\").read_text",
+          "lineNumber": 24
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    }
+  ]
+}

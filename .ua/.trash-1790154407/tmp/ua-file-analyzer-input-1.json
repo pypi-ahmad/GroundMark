@@ -1,0 +1,106 @@
+{
+  "projectRoot": "D:\\AI\\GroundMark",
+  "batchFiles": [
+    {
+      "path": "scripts/evaluate_chat.py",
+      "language": "python",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/annotate.py",
+      "language": "python",
+      "sizeLines": 119,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/figures.py",
+      "language": "python",
+      "sizeLines": 65,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/layout.py",
+      "language": "python",
+      "sizeLines": 175,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/markdown.py",
+      "language": "python",
+      "sizeLines": 291,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_annotate.py",
+      "language": "python",
+      "sizeLines": 121,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_layout_evaluation.py",
+      "language": "python",
+      "sizeLines": 77,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_layout_structure.py",
+      "language": "python",
+      "sizeLines": 181,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_markdown.py",
+      "language": "python",
+      "sizeLines": 197,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_resolution_evaluation.py",
+      "language": "python",
+      "sizeLines": 96,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "scripts/evaluate_chat.py": [
+      "src/chat.py",
+      "src/layout.py"
+    ],
+    "src/annotate.py": [
+      "src/layout.py",
+      "src/preprocess.py"
+    ],
+    "src/figures.py": [
+      "src/annotate.py",
+      "src/layout.py",
+      "src/preprocess.py"
+    ],
+    "src/layout.py": [
+      "src/diagnostics.py"
+    ],
+    "src/markdown.py": [
+      "src/layout.py"
+    ],
+    "tests/test_annotate.py": [
+      "src/annotate.py",
+      "src/layout.py"
+    ],
+    "tests/test_layout_evaluation.py": [
+      "src/layout.py"
+    ],
+    "tests/test_layout_structure.py": [
+      "src/chat.py",
+      "src/figures.py",
+      "src/layout.py",
+      "src/markdown.py"
+    ],
+    "tests/test_markdown.py": [
+      "src/layout.py",
+      "src/markdown.py"
+    ],
+    "tests/test_resolution_evaluation.py": [
+      "src/layout.py"
+    ]
+  }
+}

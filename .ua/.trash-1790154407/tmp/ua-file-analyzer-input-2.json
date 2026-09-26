@@ -1,0 +1,80 @@
+{
+  "projectRoot": "D:\\AI\\GroundMark",
+  "batchFiles": [
+    {
+      "path": "scripts/evaluate_layout.py",
+      "language": "python",
+      "sizeLines": 115,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/evaluate_prompts.py",
+      "language": "python",
+      "sizeLines": 165,
+      "fileCategory": "code"
+    },
+    {
+      "path": "scripts/evaluate_resolution.py",
+      "language": "python",
+      "sizeLines": 125,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/preprocess.py",
+      "language": "python",
+      "sizeLines": 211,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/fixtures/make_invoice_png.py",
+      "language": "python",
+      "sizeLines": 52,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_preprocess.py",
+      "language": "python",
+      "sizeLines": 117,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_prompt_evaluation.py",
+      "language": "python",
+      "sizeLines": 82,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "scripts/evaluate_layout.py": [
+      "scripts/evaluate_prompts.py",
+      "scripts/evaluate_resolution.py",
+      "src/layout.py",
+      "src/preprocess.py",
+      "src/usage.py"
+    ],
+    "scripts/evaluate_prompts.py": [
+      "src/diagnostics.py",
+      "src/layout.py",
+      "src/llm.py",
+      "src/parse.py",
+      "src/preprocess.py"
+    ],
+    "scripts/evaluate_resolution.py": [
+      "scripts/evaluate_prompts.py",
+      "src/layout.py",
+      "src/models.py",
+      "src/preprocess.py",
+      "src/usage.py"
+    ],
+    "src/preprocess.py": [],
+    "tests/fixtures/make_invoice_png.py": [],
+    "tests/test_preprocess.py": [
+      "src/preprocess.py",
+      "tests/fixtures/make_invoice_png.py"
+    ],
+    "tests/test_prompt_evaluation.py": [
+      "scripts/evaluate_prompts.py",
+      "src/layout.py"
+    ]
+  }
+}

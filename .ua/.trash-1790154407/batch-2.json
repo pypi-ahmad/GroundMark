@@ -1,0 +1,1563 @@
+{
+  "batchIndex": 2,
+  "totalBatches": 9,
+  "nodes": [
+    {
+      "id": "file:scripts/evaluate_layout.py",
+      "type": "file",
+      "name": "evaluate_layout.py",
+      "filePath": "scripts/evaluate_layout.py",
+      "summary": "Evaluates layout detection accuracy against annotated ground truth across multiple document types.",
+      "tags": [
+        "evaluation",
+        "layout-eval",
+        "metrics",
+        "cli"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/evaluate_layout.py:metric_gate",
+      "type": "function",
+      "name": "metric_gate",
+      "filePath": "scripts/evaluate_layout.py",
+      "lineRange": [
+        16,
+        23
+      ],
+      "summary": "Metric Gate function in evaluate_layout.py supporting evaluate_layout operations.",
+      "tags": [
+        "function",
+        "evaluate-layout",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/evaluate_layout.py:compare",
+      "type": "function",
+      "name": "compare",
+      "filePath": "scripts/evaluate_layout.py",
+      "lineRange": [
+        26,
+        104
+      ],
+      "summary": "Compare function in evaluate_layout.py supporting evaluate_layout operations.",
+      "tags": [
+        "function",
+        "evaluate-layout",
+        "groundmark"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:scripts/evaluate_prompts.py",
+      "type": "file",
+      "name": "evaluate_prompts.py",
+      "filePath": "scripts/evaluate_prompts.py",
+      "summary": "Compares layout extraction quality and token efficiency across different prompt template variations.",
+      "tags": [
+        "evaluation",
+        "prompt-comparison",
+        "ab-testing",
+        "cli"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/evaluate_prompts.py:plain_text",
+      "type": "function",
+      "name": "plain_text",
+      "filePath": "scripts/evaluate_prompts.py",
+      "lineRange": [
+        43,
+        46
+      ],
+      "summary": "Plain Text function in evaluate_prompts.py supporting evaluate_prompts operations.",
+      "tags": [
+        "function",
+        "evaluate-prompts",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/evaluate_prompts.py:tokens",
+      "type": "function",
+      "name": "tokens",
+      "filePath": "scripts/evaluate_prompts.py",
+      "lineRange": [
+        49,
+        50
+      ],
+      "summary": "Tokens function in evaluate_prompts.py supporting evaluate_prompts operations.",
+      "tags": [
+        "function",
+        "evaluate-prompts",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/evaluate_prompts.py:score_page",
+      "type": "function",
+      "name": "score_page",
+      "filePath": "scripts/evaluate_prompts.py",
+      "lineRange": [
+        53,
+        76
+      ],
+      "summary": "Score Page function in evaluate_prompts.py supporting evaluate_prompts operations.",
+      "tags": [
+        "function",
+        "evaluate-prompts",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/evaluate_prompts.py:run_page",
+      "type": "function",
+      "name": "run_page",
+      "filePath": "scripts/evaluate_prompts.py",
+      "lineRange": [
+        79,
+        114
+      ],
+      "summary": "Run Page function in evaluate_prompts.py supporting evaluate_prompts operations.",
+      "tags": [
+        "function",
+        "evaluate-prompts",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/evaluate_prompts.py:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "scripts/evaluate_prompts.py",
+      "lineRange": [
+        117,
+        161
+      ],
+      "summary": "Main function in evaluate_prompts.py supporting evaluate_prompts operations.",
+      "tags": [
+        "function",
+        "evaluate-prompts",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:scripts/evaluate_prompts.py:_PlainText",
+      "type": "class",
+      "name": "_PlainText",
+      "filePath": "scripts/evaluate_prompts.py",
+      "lineRange": [
+        34,
+        40
+      ],
+      "summary": " Plaintext class in evaluate_prompts.py supporting evaluate_prompts operations.",
+      "tags": [
+        "class",
+        "evaluate-prompts",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:scripts/evaluate_resolution.py",
+      "type": "file",
+      "name": "evaluate_resolution.py",
+      "filePath": "scripts/evaluate_resolution.py",
+      "summary": "Benchmarks layout parsing precision and latency across different image resolution settings.",
+      "tags": [
+        "evaluation",
+        "resolution-benchmark",
+        "latency",
+        "cli"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/evaluate_resolution.py:metric_gate",
+      "type": "function",
+      "name": "metric_gate",
+      "filePath": "scripts/evaluate_resolution.py",
+      "lineRange": [
+        25,
+        34
+      ],
+      "summary": "Metric Gate function in evaluate_resolution.py supporting evaluate_resolution operations.",
+      "tags": [
+        "function",
+        "evaluate-resolution",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:scripts/evaluate_resolution.py:compare",
+      "type": "function",
+      "name": "compare",
+      "filePath": "scripts/evaluate_resolution.py",
+      "lineRange": [
+        37,
+        111
+      ],
+      "summary": "Compare function in evaluate_resolution.py supporting evaluate_resolution operations.",
+      "tags": [
+        "function",
+        "evaluate-resolution",
+        "groundmark"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:scripts/evaluate_resolution.py:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "scripts/evaluate_resolution.py",
+      "lineRange": [
+        114,
+        121
+      ],
+      "summary": "Main function in evaluate_resolution.py supporting evaluate_resolution operations.",
+      "tags": [
+        "function",
+        "evaluate-resolution",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/preprocess.py",
+      "type": "file",
+      "name": "preprocess.py",
+      "filePath": "src/preprocess.py",
+      "summary": "Prepares and normalizes input documents, handling PDF rasterization, image resizing, and base64 encoding.",
+      "tags": [
+        "preprocessing",
+        "pdf-rasterization",
+        "image-resizing",
+        "normalization"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/preprocess.py:count_pages",
+      "type": "function",
+      "name": "count_pages",
+      "filePath": "src/preprocess.py",
+      "lineRange": [
+        35,
+        60
+      ],
+      "summary": "Count Pages function in preprocess.py supporting preprocess operations.",
+      "tags": [
+        "function",
+        "preprocess",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/preprocess.py:preprocess",
+      "type": "function",
+      "name": "preprocess",
+      "filePath": "src/preprocess.py",
+      "lineRange": [
+        63,
+        103
+      ],
+      "summary": "Preprocess function in preprocess.py supporting preprocess operations.",
+      "tags": [
+        "function",
+        "preprocess",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/preprocess.py:preprocess_pages",
+      "type": "function",
+      "name": "preprocess_pages",
+      "filePath": "src/preprocess.py",
+      "lineRange": [
+        106,
+        166
+      ],
+      "summary": "Preprocess Pages function in preprocess.py supporting preprocess operations.",
+      "tags": [
+        "function",
+        "preprocess",
+        "groundmark"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/preprocess.py:_cap_long_edge",
+      "type": "function",
+      "name": "_cap_long_edge",
+      "filePath": "src/preprocess.py",
+      "lineRange": [
+        169,
+        175
+      ],
+      "summary": " Cap Long Edge function in preprocess.py supporting preprocess operations.",
+      "tags": [
+        "function",
+        "preprocess",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/preprocess.py:_render_pdf_page_range",
+      "type": "function",
+      "name": "_render_pdf_page_range",
+      "filePath": "src/preprocess.py",
+      "lineRange": [
+        178,
+        211
+      ],
+      "summary": " Render Pdf Page Range function in preprocess.py supporting preprocess operations.",
+      "tags": [
+        "function",
+        "preprocess",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/preprocess.py:PreprocessError",
+      "type": "class",
+      "name": "PreprocessError",
+      "filePath": "src/preprocess.py",
+      "lineRange": [
+        31,
+        32
+      ],
+      "summary": "Preprocesserror class in preprocess.py supporting preprocess operations.",
+      "tags": [
+        "class",
+        "preprocess",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/fixtures/make_invoice_png.py",
+      "type": "file",
+      "name": "make_invoice_png.py",
+      "filePath": "tests/fixtures/make_invoice_png.py",
+      "summary": "Fixture script dynamically generating synthetic invoice images with predictable layout elements.",
+      "tags": [
+        "test-fixture",
+        "synthetic-data",
+        "image-generation"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/fixtures/make_invoice_png.py:make_invoice_image",
+      "type": "function",
+      "name": "make_invoice_image",
+      "filePath": "tests/fixtures/make_invoice_png.py",
+      "lineRange": [
+        35,
+        43
+      ],
+      "summary": "Make Invoice Image function in make_invoice_png.py supporting make_invoice_png operations.",
+      "tags": [
+        "function",
+        "make-invoice-png",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/fixtures/make_invoice_png.py:main",
+      "type": "function",
+      "name": "main",
+      "filePath": "tests/fixtures/make_invoice_png.py",
+      "lineRange": [
+        46,
+        48
+      ],
+      "summary": "Main function in make_invoice_png.py supporting make_invoice_png operations.",
+      "tags": [
+        "function",
+        "make-invoice-png",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_preprocess.py",
+      "type": "file",
+      "name": "test_preprocess.py",
+      "filePath": "tests/test_preprocess.py",
+      "summary": "Tests image deskewing, resizing, base64 encoding, and PDF page rasterization.",
+      "tags": [
+        "test",
+        "preprocessing",
+        "image-processing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:_ensure_fixtures",
+      "type": "function",
+      "name": "_ensure_fixtures",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        22,
+        24
+      ],
+      "summary": " Ensure Fixtures function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "function",
+        "test-preprocess",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:test_missing_file_raises",
+      "type": "function",
+      "name": "test_missing_file_raises",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        27,
+        29
+      ],
+      "summary": "Test Missing File Raises function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-preprocess"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:test_png_returns_base64",
+      "type": "function",
+      "name": "test_png_returns_base64",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        32,
+        37
+      ],
+      "summary": "Test Png Returns Base64 function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-preprocess"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:test_sha_stable",
+      "type": "function",
+      "name": "test_sha_stable",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        40,
+        44
+      ],
+      "summary": "Test Sha Stable function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-preprocess"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:test_pdf_first_page",
+      "type": "function",
+      "name": "test_pdf_first_page",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        47,
+        55
+      ],
+      "summary": "Test Pdf First Page function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-preprocess"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:_make_multi_page_pdf",
+      "type": "function",
+      "name": "_make_multi_page_pdf",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        58,
+        60
+      ],
+      "summary": " Make Multi Page Pdf function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "function",
+        "test-preprocess",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:test_preprocess_pages_defaults_to_whole_document",
+      "type": "function",
+      "name": "test_preprocess_pages_defaults_to_whole_document",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        63,
+        70
+      ],
+      "summary": "Test Preprocess Pages Defaults To Whole Document function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-preprocess"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:test_preprocess_pages_explicit_range",
+      "type": "function",
+      "name": "test_preprocess_pages_explicit_range",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        73,
+        79
+      ],
+      "summary": "Test Preprocess Pages Explicit Range function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-preprocess"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:test_preprocess_pages_end_page_none_goes_to_last_page",
+      "type": "function",
+      "name": "test_preprocess_pages_end_page_none_goes_to_last_page",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        82,
+        88
+      ],
+      "summary": "Test Preprocess Pages End Page None Goes To Last Page function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-preprocess"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:test_preprocess_pages_single_image_is_one_page",
+      "type": "function",
+      "name": "test_preprocess_pages_single_image_is_one_page",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        91,
+        94
+      ],
+      "summary": "Test Preprocess Pages Single Image Is One Page function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-preprocess"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:test_invalid_pdf_ranges_fail",
+      "type": "function",
+      "name": "test_invalid_pdf_ranges_fail",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        98,
+        102
+      ],
+      "summary": "Test Invalid Pdf Ranges Fail function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-preprocess"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_preprocess.py:test_resolution_profiles_and_no_raster_upscaling",
+      "type": "function",
+      "name": "test_resolution_profiles_and_no_raster_upscaling",
+      "filePath": "tests/test_preprocess.py",
+      "lineRange": [
+        105,
+        117
+      ],
+      "summary": "Test Resolution Profiles And No Raster Upscaling function in test_preprocess.py supporting test_preprocess operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-preprocess"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_prompt_evaluation.py",
+      "type": "file",
+      "name": "test_prompt_evaluation.py",
+      "filePath": "tests/test_prompt_evaluation.py",
+      "summary": "Tests prompt evaluation scoring algorithms and token comparison logic.",
+      "tags": [
+        "test",
+        "prompt-evaluation",
+        "metrics"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_prompt_evaluation.py:test_live_manifest_is_limited_to_approved_six_pages",
+      "type": "function",
+      "name": "test_live_manifest_is_limited_to_approved_six_pages",
+      "filePath": "tests/test_prompt_evaluation.py",
+      "lineRange": [
+        23,
+        30
+      ],
+      "summary": "Test Live Manifest Is Limited To Approved Six Pages function in test_prompt_evaluation.py supporting test_prompt_evaluation operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-prompt-evaluation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "type": "function",
+      "name": "test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "filePath": "tests/test_prompt_evaluation.py",
+      "lineRange": [
+        33,
+        49
+      ],
+      "summary": "Test Reference Scoring Uses Page Ranges And Does Not Double Count Table Text function in test_prompt_evaluation.py supporting test_prompt_evaluation operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-prompt-evaluation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_prompt_evaluation.py:test_corrective_run_skips_filtered_pages_before_rendering",
+      "type": "function",
+      "name": "test_corrective_run_skips_filtered_pages_before_rendering",
+      "filePath": "tests/test_prompt_evaluation.py",
+      "lineRange": [
+        53,
+        82
+      ],
+      "summary": "Test Corrective Run Skips Filtered Pages Before Rendering function in test_prompt_evaluation.py supporting test_prompt_evaluation operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-prompt-evaluation"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "function:scripts/evaluate_layout.py:metric_gate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "function:scripts/evaluate_layout.py:metric_gate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "function:scripts/evaluate_layout.py:compare",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "function:scripts/evaluate_layout.py:compare",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:scripts/evaluate_prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:scripts/evaluate_resolution.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:scripts/evaluate_layout.py:compare",
+      "target": "function:src/usage.py:cost_usd",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_layout.py:compare",
+      "target": "function:src/usage.py:cost_usd",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_layout.py:compare",
+      "target": "function:scripts/evaluate_layout.py:metric_gate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "function:scripts/evaluate_prompts.py:plain_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "function:scripts/evaluate_prompts.py:plain_text",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "function:scripts/evaluate_prompts.py:tokens",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "function:scripts/evaluate_prompts.py:tokens",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "function:scripts/evaluate_prompts.py:score_page",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "function:scripts/evaluate_prompts.py:score_page",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "function:scripts/evaluate_prompts.py:run_page",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "function:scripts/evaluate_prompts.py:run_page",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "function:scripts/evaluate_prompts.py:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "function:scripts/evaluate_prompts.py:main",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "class:scripts/evaluate_prompts.py:_PlainText",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "class:scripts/evaluate_prompts.py:_PlainText",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "file:src/diagnostics.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "file:src/llm.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "file:src/parse.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:scripts/evaluate_prompts.py:score_page",
+      "target": "function:scripts/evaluate_prompts.py:tokens",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_prompts.py:score_page",
+      "target": "function:scripts/evaluate_prompts.py:plain_text",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_prompts.py:score_page",
+      "target": "function:scripts/evaluate_prompts.py:tokens",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_prompts.py:run_page",
+      "target": "function:src/llm.py:_build_llm",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_prompts.py:run_page",
+      "target": "function:src/llm.py:_invoke_structured",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_prompts.py:run_page",
+      "target": "function:src/llm.py:_image_message",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_prompts.py:main",
+      "target": "function:src/llm.py:_build_llm",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_prompts.py:main",
+      "target": "function:scripts/evaluate_prompts.py:run_page",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_prompts.py:main",
+      "target": "function:scripts/evaluate_prompts.py:score_page",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "function:scripts/evaluate_resolution.py:metric_gate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "function:scripts/evaluate_resolution.py:metric_gate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "function:scripts/evaluate_resolution.py:compare",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "function:scripts/evaluate_resolution.py:compare",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "function:scripts/evaluate_resolution.py:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "function:scripts/evaluate_resolution.py:main",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:scripts/evaluate_prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:scripts/evaluate_resolution.py:compare",
+      "target": "function:src/usage.py:cost_usd",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_resolution.py:compare",
+      "target": "function:src/usage.py:cost_usd",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_resolution.py:compare",
+      "target": "function:scripts/evaluate_resolution.py:metric_gate",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:scripts/evaluate_resolution.py:main",
+      "target": "function:scripts/evaluate_resolution.py:compare",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "function:src/preprocess.py:count_pages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "function:src/preprocess.py:count_pages",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "function:src/preprocess.py:preprocess",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "function:src/preprocess.py:preprocess",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "function:src/preprocess.py:preprocess_pages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "function:src/preprocess.py:preprocess_pages",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "function:src/preprocess.py:_cap_long_edge",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "function:src/preprocess.py:_cap_long_edge",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "function:src/preprocess.py:_render_pdf_page_range",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "function:src/preprocess.py:_render_pdf_page_range",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "class:src/preprocess.py:PreprocessError",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "class:src/preprocess.py:PreprocessError",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/preprocess.py:preprocess",
+      "target": "function:src/preprocess.py:_render_pdf_page_range",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/preprocess.py:preprocess",
+      "target": "function:src/preprocess.py:_cap_long_edge",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/preprocess.py:preprocess_pages",
+      "target": "function:src/preprocess.py:_render_pdf_page_range",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/preprocess.py:preprocess_pages",
+      "target": "function:src/preprocess.py:_cap_long_edge",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/fixtures/make_invoice_png.py",
+      "target": "function:tests/fixtures/make_invoice_png.py:make_invoice_image",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/fixtures/make_invoice_png.py",
+      "target": "function:tests/fixtures/make_invoice_png.py:make_invoice_image",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/fixtures/make_invoice_png.py",
+      "target": "function:tests/fixtures/make_invoice_png.py:main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/fixtures/make_invoice_png.py",
+      "target": "function:tests/fixtures/make_invoice_png.py:main",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/fixtures/make_invoice_png.py:main",
+      "target": "function:tests/fixtures/make_invoice_png.py:make_invoice_image",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:_ensure_fixtures",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:_ensure_fixtures",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_missing_file_raises",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_missing_file_raises",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_png_returns_base64",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_png_returns_base64",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_sha_stable",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_sha_stable",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_pdf_first_page",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_pdf_first_page",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:_make_multi_page_pdf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:_make_multi_page_pdf",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_preprocess_pages_defaults_to_whole_document",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_preprocess_pages_defaults_to_whole_document",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_preprocess_pages_explicit_range",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_preprocess_pages_explicit_range",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_preprocess_pages_end_page_none_goes_to_last_page",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_preprocess_pages_end_page_none_goes_to_last_page",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_preprocess_pages_single_image_is_one_page",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_preprocess_pages_single_image_is_one_page",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_invalid_pdf_ranges_fail",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_invalid_pdf_ranges_fail",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_resolution_profiles_and_no_raster_upscaling",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "function:tests/test_preprocess.py:test_resolution_profiles_and_no_raster_upscaling",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "file:tests/fixtures/make_invoice_png.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:tests/test_preprocess.py:test_preprocess_pages_defaults_to_whole_document",
+      "target": "function:tests/test_preprocess.py:_make_multi_page_pdf",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_preprocess.py:test_preprocess_pages_explicit_range",
+      "target": "function:tests/test_preprocess.py:_make_multi_page_pdf",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_preprocess.py:test_preprocess_pages_end_page_none_goes_to_last_page",
+      "target": "function:tests/test_preprocess.py:_make_multi_page_pdf",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_preprocess.py:test_invalid_pdf_ranges_fail",
+      "target": "function:tests/test_preprocess.py:_make_multi_page_pdf",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "file:tests/test_preprocess.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:tests/test_prompt_evaluation.py",
+      "target": "function:tests/test_prompt_evaluation.py:test_live_manifest_is_limited_to_approved_six_pages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_prompt_evaluation.py",
+      "target": "function:tests/test_prompt_evaluation.py:test_live_manifest_is_limited_to_approved_six_pages",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_prompt_evaluation.py",
+      "target": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_prompt_evaluation.py",
+      "target": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_prompt_evaluation.py",
+      "target": "function:tests/test_prompt_evaluation.py:test_corrective_run_skips_filtered_pages_before_rendering",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_prompt_evaluation.py",
+      "target": "function:tests/test_prompt_evaluation.py:test_corrective_run_skips_filtered_pages_before_rendering",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_prompt_evaluation.py",
+      "target": "file:scripts/evaluate_prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_prompt_evaluation.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "target": "class:src/layout.py:ParsePage",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "target": "class:src/layout.py:ParsePage",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "target": "class:src/layout.py:ParsePage",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "target": "class:src/layout.py:ParsePage",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "target": "class:src/layout.py:ParseBlock",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "target": "class:src/layout.py:ParseBlock",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "target": "class:src/layout.py:ParseBlock",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "target": "class:src/layout.py:ParseBlock",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "target": "class:src/layout.py:BBox",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "target": "class:src/layout.py:BBox",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "target": "class:src/layout.py:BBox",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "target": "class:src/layout.py:BBox",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "file:tests/test_prompt_evaluation.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

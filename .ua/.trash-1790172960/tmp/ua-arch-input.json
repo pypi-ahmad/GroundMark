@@ -1,0 +1,4037 @@
+{
+  "fileNodes": [
+    {
+      "id": "file:src/layout.py",
+      "type": "file",
+      "name": "layout.py",
+      "filePath": "src/layout.py",
+      "summary": "Core layout analysis engine detecting reading order, columns, headers, tables, and bounding boxes.",
+      "tags": [
+        "layout-analysis",
+        "document-parser",
+        "reading-order",
+        "ocr",
+        "tested"
+      ]
+    },
+    {
+      "id": "file:tests/test_annotate.py",
+      "type": "file",
+      "name": "test_annotate.py",
+      "filePath": "tests/test_annotate.py",
+      "summary": "Unit tests verifying PDF and image bounding box rendering, clipping, and color assignment.",
+      "tags": [
+        "test",
+        "annotation",
+        "unit-test"
+      ]
+    },
+    {
+      "id": "file:tests/test_layout_evaluation.py",
+      "type": "file",
+      "name": "test_layout_evaluation.py",
+      "filePath": "tests/test_layout_evaluation.py",
+      "summary": "Tests for layout evaluation runner, IoU computation, and scoring thresholds.",
+      "tags": [
+        "test",
+        "layout-eval",
+        "metrics"
+      ]
+    },
+    {
+      "id": "file:tests/test_layout_structure.py",
+      "type": "file",
+      "name": "test_layout_structure.py",
+      "filePath": "tests/test_layout_structure.py",
+      "summary": "Verifies layout block hierarchy, reading order sorting, and column boundary detection.",
+      "tags": [
+        "test",
+        "layout-structure",
+        "reading-order"
+      ]
+    },
+    {
+      "id": "file:tests/test_markdown.py",
+      "type": "file",
+      "name": "test_markdown.py",
+      "filePath": "tests/test_markdown.py",
+      "summary": "Tests markdown generation from layout blocks, table serialization, and heading levels.",
+      "tags": [
+        "test",
+        "markdown",
+        "serialization"
+      ]
+    },
+    {
+      "id": "file:tests/test_prompt_evaluation.py",
+      "type": "file",
+      "name": "test_prompt_evaluation.py",
+      "filePath": "tests/test_prompt_evaluation.py",
+      "summary": "Tests prompt evaluation scoring algorithms and token comparison logic.",
+      "tags": [
+        "test",
+        "prompt-evaluation",
+        "metrics"
+      ]
+    },
+    {
+      "id": "file:tests/test_resolution_evaluation.py",
+      "type": "file",
+      "name": "test_resolution_evaluation.py",
+      "filePath": "tests/test_resolution_evaluation.py",
+      "summary": "Tests resolution benchmark metrics, execution limits, and scoring formulas.",
+      "tags": [
+        "test",
+        "resolution-benchmark",
+        "metrics"
+      ]
+    },
+    {
+      "id": "file:scripts/evaluate_layout.py",
+      "type": "file",
+      "name": "evaluate_layout.py",
+      "filePath": "scripts/evaluate_layout.py",
+      "summary": "Evaluates layout detection accuracy against annotated ground truth across multiple document types.",
+      "tags": [
+        "evaluation",
+        "layout-eval",
+        "metrics",
+        "cli",
+        "tested"
+      ]
+    },
+    {
+      "id": "file:scripts/evaluate_resolution.py",
+      "type": "file",
+      "name": "evaluate_resolution.py",
+      "filePath": "scripts/evaluate_resolution.py",
+      "summary": "Benchmarks layout parsing precision and latency across different image resolution settings.",
+      "tags": [
+        "evaluation",
+        "resolution-benchmark",
+        "latency",
+        "cli",
+        "tested"
+      ]
+    },
+    {
+      "id": "file:src/models.py",
+      "type": "file",
+      "name": "models.py",
+      "filePath": "src/models.py",
+      "summary": "Pydantic data models for bounding boxes, layout blocks, parsed document pages, and chat messages.",
+      "tags": [
+        "data-model",
+        "pydantic",
+        "schema",
+        "validation"
+      ]
+    },
+    {
+      "id": "file:src/preprocess.py",
+      "type": "file",
+      "name": "preprocess.py",
+      "filePath": "src/preprocess.py",
+      "summary": "Prepares and normalizes input documents, handling PDF rasterization, image resizing, and base64 encoding.",
+      "tags": [
+        "preprocessing",
+        "pdf-rasterization",
+        "image-resizing",
+        "normalization",
+        "tested"
+      ]
+    },
+    {
+      "id": "file:src/ui/clipboard.py",
+      "type": "file",
+      "name": "clipboard.py",
+      "filePath": "src/ui/clipboard.py",
+      "summary": "Clipboard helper module for copying markdown and chat answers directly to system clipboard.",
+      "tags": [
+        "utility",
+        "clipboard",
+        "ui-helper",
+        "tested"
+      ]
+    },
+    {
+      "id": "file:src/usage.py",
+      "type": "file",
+      "name": "usage.py",
+      "filePath": "src/usage.py",
+      "summary": "Token usage ledger tracking prompt and completion tokens with USD cost computation.",
+      "tags": [
+        "usage",
+        "telemetry",
+        "cost-tracking",
+        "metrics",
+        "tested"
+      ]
+    },
+    {
+      "id": "file:tests/fixtures/make_invoice_png.py",
+      "type": "file",
+      "name": "make_invoice_png.py",
+      "filePath": "tests/fixtures/make_invoice_png.py",
+      "summary": "Fixture script dynamically generating synthetic invoice images with predictable layout elements.",
+      "tags": [
+        "test-fixture",
+        "synthetic-data",
+        "image-generation"
+      ]
+    },
+    {
+      "id": "file:tests/test_preprocess.py",
+      "type": "file",
+      "name": "test_preprocess.py",
+      "filePath": "tests/test_preprocess.py",
+      "summary": "Tests image deskewing, resizing, base64 encoding, and PDF page rasterization.",
+      "tags": [
+        "test",
+        "preprocessing",
+        "image-processing"
+      ]
+    },
+    {
+      "id": "file:src/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "src/__init__.py",
+      "summary": "Root package initialization file for GroundMark document layout and chat analysis.",
+      "tags": [
+        "entry-point",
+        "barrel",
+        "package-root"
+      ]
+    },
+    {
+      "id": "file:src/cli.py",
+      "type": "file",
+      "name": "cli.py",
+      "filePath": "src/cli.py",
+      "summary": "Command-line interface providing subcommands for document parsing, layout extraction, and pipeline runs.",
+      "tags": [
+        "cli",
+        "entry-point",
+        "command-line",
+        "runner",
+        "tested"
+      ]
+    },
+    {
+      "id": "file:tests/fake_llm.py",
+      "type": "file",
+      "name": "fake_llm.py",
+      "filePath": "tests/fake_llm.py",
+      "summary": "Mock LLM client fixture providing deterministic responses for unit and integration testing.",
+      "tags": [
+        "test-fixture",
+        "mock",
+        "llm-mock"
+      ]
+    },
+    {
+      "id": "file:tests/test_cli.py",
+      "type": "file",
+      "name": "test_cli.py",
+      "filePath": "tests/test_cli.py",
+      "summary": "Tests CLI option parsing, help text, flag validations, and error exit codes.",
+      "tags": [
+        "test",
+        "cli",
+        "unit-test"
+      ]
+    },
+    {
+      "id": "file:tests/test_parse.py",
+      "type": "file",
+      "name": "test_parse.py",
+      "filePath": "tests/test_parse.py",
+      "summary": "Tests high-level document parser orchestration, multi-page parsing, and fallback behaviors.",
+      "tags": [
+        "test",
+        "document-parser",
+        "integration-test"
+      ]
+    },
+    {
+      "id": "file:tests/test_usage.py",
+      "type": "file",
+      "name": "test_usage.py",
+      "filePath": "tests/test_usage.py",
+      "summary": "Tests token usage accumulation, ledger calculations, and cost estimation formulas.",
+      "tags": [
+        "test",
+        "usage-tracking",
+        "cost-accounting"
+      ]
+    },
+    {
+      "id": "file:scripts/evaluate_chat.py",
+      "type": "file",
+      "name": "evaluate_chat.py",
+      "filePath": "scripts/evaluate_chat.py",
+      "summary": "CLI evaluation script running automated document question answering benchmarks against ground truth.",
+      "tags": [
+        "evaluation",
+        "benchmark",
+        "chat-eval",
+        "cli",
+        "tested"
+      ]
+    },
+    {
+      "id": "file:src/chat.py",
+      "type": "file",
+      "name": "chat.py",
+      "filePath": "src/chat.py",
+      "summary": "Multi-turn document conversational question answering with citation verification and structured reasoning.",
+      "tags": [
+        "chat",
+        "llm",
+        "qa",
+        "verification",
+        "citations",
+        "tested"
+      ]
+    },
+    {
+      "id": "file:src/prompts.py",
+      "type": "file",
+      "name": "prompts.py",
+      "filePath": "src/prompts.py",
+      "summary": "Prompt template loader resolving system instructions and user templates from the prompts directory.",
+      "tags": [
+        "prompt-engineering",
+        "template-loader",
+        "configuration",
+        "tested"
+      ]
+    },
+    {
+      "id": "file:tests/test_chat.py",
+      "type": "file",
+      "name": "test_chat.py",
+      "filePath": "tests/test_chat.py",
+      "summary": "Tests for document chat pipeline, conversational context handling, and citation verification.",
+      "tags": [
+        "test",
+        "chat",
+        "citation-verification"
+      ]
+    },
+    {
+      "id": "file:tests/test_prompts.py",
+      "type": "file",
+      "name": "test_prompts.py",
+      "filePath": "tests/test_prompts.py",
+      "summary": "Verifies prompt template loading, variable substitution, and schema validation.",
+      "tags": [
+        "test",
+        "prompt-template",
+        "validation"
+      ]
+    },
+    {
+      "id": "file:scripts/evaluate_prompts.py",
+      "type": "file",
+      "name": "evaluate_prompts.py",
+      "filePath": "scripts/evaluate_prompts.py",
+      "summary": "Compares layout extraction quality and token efficiency across different prompt template variations.",
+      "tags": [
+        "evaluation",
+        "prompt-comparison",
+        "ab-testing",
+        "cli",
+        "tested"
+      ]
+    },
+    {
+      "id": "file:src/diagnostics.py",
+      "type": "file",
+      "name": "diagnostics.py",
+      "filePath": "src/diagnostics.py",
+      "summary": "Tracks API response health, token usage per call, error classification, and content filter violations.",
+      "tags": [
+        "diagnostics",
+        "telemetry",
+        "safety-filters",
+        "monitoring",
+        "tested"
+      ]
+    },
+    {
+      "id": "file:src/llm.py",
+      "type": "file",
+      "name": "llm.py",
+      "filePath": "src/llm.py",
+      "summary": "Low-level LLM client wrapper configuring OpenAI/vLLM clients with structured outputs and retry policies.",
+      "tags": [
+        "llm-client",
+        "openai-api",
+        "structured-outputs",
+        "retry-logic"
+      ]
+    },
+    {
+      "id": "file:src/parse.py",
+      "type": "file",
+      "name": "parse.py",
+      "filePath": "src/parse.py",
+      "summary": "High-level parsing facade coordinating document preparation, model inference, and output formatting.",
+      "tags": [
+        "parser-facade",
+        "inference",
+        "document-processing",
+        "tested"
+      ]
+    },
+    {
+      "id": "file:tests/test_diagnostics.py",
+      "type": "file",
+      "name": "test_diagnostics.py",
+      "filePath": "tests/test_diagnostics.py",
+      "summary": "Tests for content filter detection, error formatting, and diagnostic telemetry capture.",
+      "tags": [
+        "test",
+        "diagnostics",
+        "safety-filters"
+      ]
+    },
+    {
+      "id": "config:.env.example",
+      "type": "config",
+      "name": ".env.example",
+      "filePath": ".env.example",
+      "summary": "Example environment file detailing API keys and runtime configuration parameters.",
+      "tags": [
+        "configuration",
+        "environment",
+        "secrets-template"
+      ]
+    },
+    {
+      "id": "file:groundmark-architecture.html",
+      "type": "file",
+      "name": "groundmark-architecture.html",
+      "filePath": "groundmark-architecture.html",
+      "summary": "Standalone interactive architectural visualization and component dependency diagram.",
+      "tags": [
+        "architecture",
+        "visualization",
+        "interactive-diagram"
+      ]
+    },
+    {
+      "id": "config:groundmark-architecture.json",
+      "type": "config",
+      "name": "groundmark-architecture.json",
+      "filePath": "groundmark-architecture.json",
+      "summary": "Structured architecture model specification describing GroundMark subsystems and flows.",
+      "tags": [
+        "architecture",
+        "specification",
+        "configuration"
+      ]
+    },
+    {
+      "id": "file:groundmark-architecture.visual-check.html",
+      "type": "file",
+      "name": "groundmark-architecture.visual-check.html",
+      "filePath": "groundmark-architecture.visual-check.html",
+      "summary": "Multi-viewport responsive preview contact sheet for architecture diagram verification.",
+      "tags": [
+        "visualization",
+        "responsive-testing",
+        "qa"
+      ]
+    },
+    {
+      "id": "config:groundmark-architecture.visual-check.json",
+      "type": "config",
+      "name": "groundmark-architecture.visual-check.json",
+      "filePath": "groundmark-architecture.visual-check.json",
+      "summary": "Test run configuration and viewport dimensions for architecture visual verification.",
+      "tags": [
+        "configuration",
+        "test-metadata",
+        "viewport-specs"
+      ]
+    },
+    {
+      "id": "config:pyproject.toml",
+      "type": "config",
+      "name": "pyproject.toml",
+      "filePath": "pyproject.toml",
+      "summary": "Modern Python project manifest configuring build metadata, dependencies, scripts, and tool settings.",
+      "tags": [
+        "configuration",
+        "packaging",
+        "build-system",
+        "uv"
+      ]
+    },
+    {
+      "id": "document:requirements-dev.txt",
+      "type": "document",
+      "name": "requirements-dev.txt",
+      "filePath": "requirements-dev.txt",
+      "summary": "Development and testing dependencies including pytest, coverage, and linting tools.",
+      "tags": [
+        "configuration",
+        "dev-dependencies",
+        "testing",
+        "linting"
+      ]
+    },
+    {
+      "id": "document:requirements.txt",
+      "type": "document",
+      "name": "requirements.txt",
+      "filePath": "requirements.txt",
+      "summary": "Production Python dependencies defining packages required for running GroundMark core and UI.",
+      "tags": [
+        "configuration",
+        "dependencies",
+        "python",
+        "packaging"
+      ]
+    },
+    {
+      "id": "file:run.cmd",
+      "type": "file",
+      "name": "run.cmd",
+      "filePath": "run.cmd",
+      "summary": "Windows batch launcher script setting up virtual environment and launching the Streamlit UI.",
+      "tags": [
+        "script",
+        "launcher",
+        "windows-cli",
+        "tested"
+      ]
+    },
+    {
+      "id": "document:prompts/runtime/chat-answer.md",
+      "type": "document",
+      "name": "chat-answer.md",
+      "filePath": "prompts/runtime/chat-answer.md",
+      "summary": "Runtime prompt instructing the model to generate grounded document answers with page-level citations.",
+      "tags": [
+        "prompt-template",
+        "chat",
+        "qa-prompt"
+      ]
+    },
+    {
+      "id": "document:prompts/runtime/chat-verify.md",
+      "type": "document",
+      "name": "chat-verify.md",
+      "filePath": "prompts/runtime/chat-verify.md",
+      "summary": "Verification prompt validating answer statements against document evidence and citations.",
+      "tags": [
+        "prompt-template",
+        "verification",
+        "fact-checking"
+      ]
+    },
+    {
+      "id": "document:prompts/runtime/parse-page-structured.md",
+      "type": "document",
+      "name": "parse-page-structured.md",
+      "filePath": "prompts/runtime/parse-page-structured.md",
+      "summary": "Structured JSON output prompt requesting strict bounding box coordinates and block types.",
+      "tags": [
+        "prompt-template",
+        "layout-parsing",
+        "structured-output"
+      ]
+    },
+    {
+      "id": "document:prompts/runtime/parse-page.md",
+      "type": "document",
+      "name": "parse-page.md",
+      "filePath": "prompts/runtime/parse-page.md",
+      "summary": "Standard vision layout analysis prompt instructing model to identify blocks, reading order, and text.",
+      "tags": [
+        "prompt-template",
+        "layout-parsing",
+        "vision-prompt"
+      ]
+    },
+    {
+      "id": "file:src/ui/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "src/ui/__init__.py",
+      "summary": "UI package initialization exposing UI components and helpers.",
+      "tags": [
+        "ui",
+        "barrel",
+        "package-init"
+      ]
+    },
+    {
+      "id": "file:tests/__init__.py",
+      "type": "file",
+      "name": "__init__.py",
+      "filePath": "tests/__init__.py",
+      "summary": "Test package root initialization.",
+      "tags": [
+        "test",
+        "package-init"
+      ]
+    },
+    {
+      "id": "document:tests/fixtures/chat-evaluation.md",
+      "type": "document",
+      "name": "chat-evaluation.md",
+      "filePath": "tests/fixtures/chat-evaluation.md",
+      "summary": "Golden evaluation dataset containing QA pairs and expected citations for chat benchmark tests.",
+      "tags": [
+        "test-data",
+        "benchmark",
+        "golden-set"
+      ]
+    },
+    {
+      "id": "file:tests/test_launcher.py",
+      "type": "file",
+      "name": "test_launcher.py",
+      "filePath": "tests/test_launcher.py",
+      "summary": "Tests launcher script behavior, environment validation, and dependency installation checks.",
+      "tags": [
+        "test",
+        "launcher",
+        "bootstrap"
+      ]
+    },
+    {
+      "id": "pipeline:.github/workflows/openwiki-update.yml",
+      "type": "pipeline",
+      "name": "openwiki-update.yml",
+      "filePath": ".github/workflows/openwiki-update.yml",
+      "summary": "Runs OpenWiki on a schedule or manual dispatch, then opens a pull request with generated documentation updates. The workflow also removes transient run state and reports an OpenWiki failure after preserving any completed progress.",
+      "tags": [
+        "ci-cd",
+        "documentation",
+        "automation",
+        "pull-request"
+      ]
+    },
+    {
+      "id": "document:AGENTS.md",
+      "type": "document",
+      "name": "AGENTS.md",
+      "filePath": "AGENTS.md",
+      "summary": "Repository guidance describing how to treat the generated OpenWiki index and where authoritative project information comes from.",
+      "tags": [
+        "documentation",
+        "repository-guidance",
+        "openwiki"
+      ]
+    },
+    {
+      "id": "document:CLAUDE.md",
+      "type": "document",
+      "name": "CLAUDE.md",
+      "filePath": "CLAUDE.md",
+      "summary": "Claude-facing repository guidance that delegates its OpenWiki instructions to AGENTS.md.",
+      "tags": [
+        "documentation",
+        "repository-guidance",
+        "claude"
+      ]
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Project overview and user guide covering installation, endpoint configuration, web and terminal workflows, generated outputs, parsing behavior, document chat, diagrams, and licensing.",
+      "tags": [
+        "documentation",
+        "entry-point",
+        "installation",
+        "cli",
+        "document-chat"
+      ]
+    },
+    {
+      "id": "document:docs/ARCHITECTURE.md",
+      "type": "document",
+      "name": "ARCHITECTURE.md",
+      "filePath": "docs/ARCHITECTURE.md",
+      "summary": "Describes GroundMark’s parse workflow, document structures, UI and CLI paths, rendering and export behavior, and document chat boundaries.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "data-flow"
+      ]
+    },
+    {
+      "id": "document:docs/COMPLIANCE.md",
+      "type": "document",
+      "name": "COMPLIANCE.md",
+      "filePath": "docs/COMPLIANCE.md",
+      "summary": "Explains what the application sends to its configured model endpoint, how it handles untrusted responses, and where uploaded files and generated artifacts remain.",
+      "tags": [
+        "documentation",
+        "privacy",
+        "security"
+      ]
+    },
+    {
+      "id": "document:docs/CONTENT-FILTER-DIAGNOSTICS.md",
+      "type": "document",
+      "name": "CONTENT-FILTER-DIAGNOSTICS.md",
+      "filePath": "docs/CONTENT-FILTER-DIAGNOSTICS.md",
+      "summary": "Records a September 2026 live parsing run in which one page returned a content-filter result, with request evidence, offline validation, and accuracy limits.",
+      "tags": [
+        "documentation",
+        "evaluation",
+        "diagnostics"
+      ]
+    },
+    {
+      "id": "document:docs/CONTRIBUTING.md",
+      "type": "document",
+      "name": "CONTRIBUTING.md",
+      "filePath": "docs/CONTRIBUTING.md",
+      "summary": "Sets project boundaries and implementation guidance for parsing, chat, layout compatibility, focused testing, packaging, and release hygiene.",
+      "tags": [
+        "documentation",
+        "development",
+        "contribution-guide"
+      ]
+    },
+    {
+      "id": "document:docs/LAYOUT-EVALUATION.md",
+      "type": "document",
+      "name": "LAYOUT-EVALUATION.md",
+      "filePath": "docs/LAYOUT-EVALUATION.md",
+      "summary": "Reports a bounded comparison of the default and detailed layout contracts, including token scores, source-reviewed transcription errors, replay checks, and reasons the experimental mode remains optional.",
+      "tags": [
+        "documentation",
+        "evaluation",
+        "layout"
+      ]
+    },
+    {
+      "id": "document:docs/MODEL.md",
+      "type": "document",
+      "name": "MODEL.md",
+      "filePath": "docs/MODEL.md",
+      "summary": "Documents the parsing and chat model contracts, response validation, page context, local cost estimates, and the limits of offline versus live evaluation.",
+      "tags": [
+        "documentation",
+        "model-configuration",
+        "extraction"
+      ]
+    },
+    {
+      "id": "document:docs/PROMPT-EVALUATION.md",
+      "type": "document",
+      "name": "PROMPT-EVALUATION.md",
+      "filePath": "docs/PROMPT-EVALUATION.md",
+      "summary": "Summarizes a dated prompt comparison with its live-call scope, transcription measurements, source-review findings, artifacts, and limits on interpreting token overlap.",
+      "tags": [
+        "documentation",
+        "evaluation",
+        "prompting"
+      ]
+    },
+    {
+      "id": "document:docs/PROMPTS.md",
+      "type": "document",
+      "name": "PROMPTS.md",
+      "filePath": "docs/PROMPTS.md",
+      "summary": "Describes the default and experimental parsing prompt contracts, their grounding and structure requirements, and the separate document-chat answer and verification policies.",
+      "tags": [
+        "documentation",
+        "prompting",
+        "extraction"
+      ]
+    },
+    {
+      "id": "document:docs/RUNBOOK.md",
+      "type": "document",
+      "name": "RUNBOOK.md",
+      "filePath": "docs/RUNBOOK.md",
+      "summary": "Provides installation, configuration, UI and CLI usage, artifact locations, troubleshooting, development checks, and release procedures.",
+      "tags": [
+        "documentation",
+        "operations",
+        "installation"
+      ]
+    },
+    {
+      "id": "document:docs/SOL-RESOLUTION-EVALUATION.md",
+      "type": "document",
+      "name": "SOL-RESOLUTION-EVALUATION.md",
+      "filePath": "docs/SOL-RESOLUTION-EVALUATION.md",
+      "summary": "Records a five-page comparison of two image-resolution profiles, including token scores, request and cost limits, verification findings, and the decision to retain the existing rendering settings.",
+      "tags": [
+        "documentation",
+        "evaluation",
+        "image-resolution"
+      ]
+    },
+    {
+      "id": "file:docs/diagrams/groundmark-architecture.html",
+      "type": "file",
+      "name": "groundmark-architecture.html",
+      "filePath": "docs/diagrams/groundmark-architecture.html",
+      "summary": "Self-contained Archify-rendered interactive architecture diagram showing GroundMark components, service boundaries, and connections.",
+      "tags": [
+        "architecture-diagram",
+        "groundmark",
+        "interactive-html",
+        "rendered-artifact"
+      ]
+    },
+    {
+      "id": "config:docs/diagrams/groundmark-architecture.json",
+      "type": "config",
+      "name": "groundmark-architecture.json",
+      "filePath": "docs/diagrams/groundmark-architecture.json",
+      "summary": "Declarative architecture-diagram specification with 12 components, two boundaries, 12 connections, and three explanatory cards.",
+      "tags": [
+        "diagram-data",
+        "architecture",
+        "groundmark",
+        "configuration"
+      ]
+    },
+    {
+      "id": "file:docs/diagrams/groundmark-architecture.visual-check.html",
+      "type": "file",
+      "name": "groundmark-architecture.visual-check.html",
+      "filePath": "docs/diagrams/groundmark-architecture.visual-check.html",
+      "summary": "Contact sheet presenting light- and dark-theme screenshots of the architecture diagram at multiple viewport sizes; it records an automated containment pass with visual review pending.",
+      "tags": [
+        "visual-check",
+        "contact-sheet",
+        "architecture",
+        "html"
+      ]
+    },
+    {
+      "id": "config:docs/diagrams/groundmark-architecture.visual-check.json",
+      "type": "config",
+      "name": "groundmark-architecture.visual-check.json",
+      "filePath": "docs/diagrams/groundmark-architecture.visual-check.json",
+      "summary": "Visual-check receipt for the architecture HTML artifact, recording a passing status, artifact hash and size, screenshot captures, and diagnostics.",
+      "tags": [
+        "visual-check",
+        "validation-receipt",
+        "architecture",
+        "diagnostics"
+      ]
+    },
+    {
+      "id": "file:docs/diagrams/groundmark-dataflow.html",
+      "type": "file",
+      "name": "groundmark-dataflow.html",
+      "filePath": "docs/diagrams/groundmark-dataflow.html",
+      "summary": "Self-contained Archify-rendered interactive diagram illustrating GroundMark's document-extraction data stages, processing nodes, and flows.",
+      "tags": [
+        "dataflow-diagram",
+        "document-extraction",
+        "interactive-html",
+        "rendered-artifact"
+      ]
+    },
+    {
+      "id": "config:docs/diagrams/groundmark-dataflow.json",
+      "type": "config",
+      "name": "groundmark-dataflow.json",
+      "filePath": "docs/diagrams/groundmark-dataflow.json",
+      "summary": "Declarative data-flow diagram specification defining five stages, nine nodes, eight flows, and three explanatory cards for document extraction.",
+      "tags": [
+        "diagram-data",
+        "dataflow",
+        "document-extraction",
+        "configuration"
+      ]
+    },
+    {
+      "id": "file:docs/diagrams/groundmark-dataflow.visual-check.html",
+      "type": "file",
+      "name": "groundmark-dataflow.visual-check.html",
+      "filePath": "docs/diagrams/groundmark-dataflow.visual-check.html",
+      "summary": "Contact sheet presenting light- and dark-theme screenshots of the data-flow diagram at multiple viewport sizes; it records an automated containment pass with visual review pending.",
+      "tags": [
+        "visual-check",
+        "contact-sheet",
+        "dataflow",
+        "html"
+      ]
+    },
+    {
+      "id": "config:docs/diagrams/groundmark-dataflow.visual-check.json",
+      "type": "config",
+      "name": "groundmark-dataflow.visual-check.json",
+      "filePath": "docs/diagrams/groundmark-dataflow.visual-check.json",
+      "summary": "Visual-check receipt for the data-flow HTML artifact, recording a passing status, artifact hash and size, screenshot captures, and diagnostics.",
+      "tags": [
+        "visual-check",
+        "validation-receipt",
+        "dataflow",
+        "diagnostics"
+      ]
+    },
+    {
+      "id": "file:docs/diagrams/groundmark-lifecycle.html",
+      "type": "file",
+      "name": "groundmark-lifecycle.html",
+      "filePath": "docs/diagrams/groundmark-lifecycle.html",
+      "summary": "Self-contained Archify-rendered interactive lifecycle diagram showing GroundMark document-processing states, phases, and transitions.",
+      "tags": [
+        "lifecycle-diagram",
+        "document-processing",
+        "interactive-html",
+        "rendered-artifact"
+      ]
+    },
+    {
+      "id": "config:docs/diagrams/groundmark-lifecycle.json",
+      "type": "config",
+      "name": "groundmark-lifecycle.json",
+      "filePath": "docs/diagrams/groundmark-lifecycle.json",
+      "summary": "Declarative lifecycle diagram specification describing three lanes, nine document-execution states, and five transitions.",
+      "tags": [
+        "diagram-data",
+        "lifecycle",
+        "document-processing",
+        "configuration"
+      ]
+    },
+    {
+      "id": "file:docs/diagrams/groundmark-lifecycle.visual-check.html",
+      "type": "file",
+      "name": "groundmark-lifecycle.visual-check.html",
+      "filePath": "docs/diagrams/groundmark-lifecycle.visual-check.html",
+      "summary": "Contact sheet presenting light- and dark-theme screenshots of the lifecycle diagram at multiple viewport sizes; it records an automated containment pass with visual review pending.",
+      "tags": [
+        "visual-check",
+        "contact-sheet",
+        "lifecycle",
+        "html"
+      ]
+    },
+    {
+      "id": "config:docs/diagrams/groundmark-lifecycle.visual-check.json",
+      "type": "config",
+      "name": "groundmark-lifecycle.visual-check.json",
+      "filePath": "docs/diagrams/groundmark-lifecycle.visual-check.json",
+      "summary": "Visual-check receipt for the lifecycle HTML artifact, recording a passing status, artifact hash and size, screenshot captures, and diagnostics.",
+      "tags": [
+        "visual-check",
+        "validation-receipt",
+        "lifecycle",
+        "diagnostics"
+      ]
+    },
+    {
+      "id": "file:docs/diagrams/groundmark-sequence.html",
+      "type": "file",
+      "name": "groundmark-sequence.html",
+      "filePath": "docs/diagrams/groundmark-sequence.html",
+      "summary": "Self-contained Archify-rendered interactive sequence diagram depicting GroundMark parse and chat interactions among six participants.",
+      "tags": [
+        "sequence-diagram",
+        "document-chat",
+        "interactive-html",
+        "rendered-artifact"
+      ]
+    },
+    {
+      "id": "config:docs/diagrams/groundmark-sequence.json",
+      "type": "config",
+      "name": "groundmark-sequence.json",
+      "filePath": "docs/diagrams/groundmark-sequence.json",
+      "summary": "Declarative sequence diagram specification defining six participants, 13 messages, six activations, and three explanatory cards for parsing and chat.",
+      "tags": [
+        "diagram-data",
+        "sequence",
+        "document-chat",
+        "configuration"
+      ]
+    },
+    {
+      "id": "file:docs/diagrams/groundmark-sequence.visual-check.html",
+      "type": "file",
+      "name": "groundmark-sequence.visual-check.html",
+      "filePath": "docs/diagrams/groundmark-sequence.visual-check.html",
+      "summary": "Contact sheet presenting light- and dark-theme screenshots of the sequence diagram at multiple viewport sizes; it records an automated containment pass with visual review pending.",
+      "tags": [
+        "visual-check",
+        "contact-sheet",
+        "sequence",
+        "html"
+      ]
+    },
+    {
+      "id": "config:docs/diagrams/groundmark-sequence.visual-check.json",
+      "type": "config",
+      "name": "groundmark-sequence.visual-check.json",
+      "filePath": "docs/diagrams/groundmark-sequence.visual-check.json",
+      "summary": "Visual-check receipt for the sequence HTML artifact, recording a passing status, artifact hash and size, screenshot captures, and diagnostics.",
+      "tags": [
+        "visual-check",
+        "validation-receipt",
+        "sequence",
+        "diagnostics"
+      ]
+    },
+    {
+      "id": "file:docs/diagrams/groundmark-workflow.html",
+      "type": "file",
+      "name": "groundmark-workflow.html",
+      "filePath": "docs/diagrams/groundmark-workflow.html",
+      "summary": "Self-contained Archify-rendered interactive workflow diagram showing GroundMark document parsing phases, grouped steps, and the main processing path.",
+      "tags": [
+        "workflow-diagram",
+        "document-parsing",
+        "interactive-html",
+        "rendered-artifact"
+      ]
+    },
+    {
+      "id": "config:docs/diagrams/groundmark-workflow.json",
+      "type": "config",
+      "name": "groundmark-workflow.json",
+      "filePath": "docs/diagrams/groundmark-workflow.json",
+      "summary": "Declarative workflow diagram specification with three lanes and phases, one group, a five-node main path, six nodes, six edges, and three explanatory cards.",
+      "tags": [
+        "diagram-data",
+        "workflow",
+        "document-parsing",
+        "configuration"
+      ]
+    },
+    {
+      "id": "file:docs/diagrams/groundmark-workflow.visual-check.html",
+      "type": "file",
+      "name": "groundmark-workflow.visual-check.html",
+      "filePath": "docs/diagrams/groundmark-workflow.visual-check.html",
+      "summary": "Contact sheet presenting light- and dark-theme screenshots of the workflow diagram at multiple viewport sizes; it records an automated containment pass with visual review pending.",
+      "tags": [
+        "visual-check",
+        "contact-sheet",
+        "workflow",
+        "html"
+      ]
+    },
+    {
+      "id": "config:docs/diagrams/groundmark-workflow.visual-check.json",
+      "type": "config",
+      "name": "groundmark-workflow.visual-check.json",
+      "filePath": "docs/diagrams/groundmark-workflow.visual-check.json",
+      "summary": "Visual-check receipt for the workflow HTML artifact, recording a passing status, artifact hash and size, screenshot captures, and diagnostics.",
+      "tags": [
+        "visual-check",
+        "validation-receipt",
+        "workflow",
+        "diagnostics"
+      ]
+    },
+    {
+      "id": "config:openwiki/.last-update.json",
+      "type": "config",
+      "name": ".last-update.json",
+      "filePath": "openwiki/.last-update.json",
+      "summary": "Records the latest OpenWiki update timestamp, command, source revision, model, completion status, and output language.",
+      "tags": [
+        "generation-metadata",
+        "run-status",
+        "provenance"
+      ]
+    },
+    {
+      "id": "config:openwiki/.page-manifest.json",
+      "type": "config",
+      "name": ".page-manifest.json",
+      "filePath": "openwiki/.page-manifest.json",
+      "summary": "Tracks generated OpenWiki pages with their source fingerprints, page versions, Git revision, and completion-run metadata.",
+      "tags": [
+        "page-manifest",
+        "generation-metadata",
+        "provenance"
+      ]
+    },
+    {
+      "id": "document:openwiki/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "openwiki/index.md",
+      "summary": "Provides the OpenWiki landing page, linking to the GroundMark quickstart and the architecture, concepts, features, operations, and workflows sections.",
+      "tags": [
+        "documentation",
+        "navigation",
+        "knowledge-index"
+      ]
+    },
+    {
+      "id": "document:openwiki/quickstart.md",
+      "type": "document",
+      "name": "quickstart.md",
+      "filePath": "openwiki/quickstart.md",
+      "summary": "Explains GroundMark installation and configuration, Streamlit and CLI usage, output behavior, rendering choices, and the evidence limits of document chat.",
+      "tags": [
+        "documentation",
+        "quickstart",
+        "installation",
+        "cli",
+        "streamlit-ui"
+      ]
+    },
+    {
+      "id": "document:knowledge/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "knowledge/index.md",
+      "summary": "Indexes governed project knowledge stored in Open Knowledge Format v0.2 and leaves a placeholder for concept links.",
+      "tags": [
+        "documentation",
+        "knowledge-base",
+        "okf",
+        "index"
+      ]
+    },
+    {
+      "id": "config:openwiki/.claims/architecture/parsing-pipeline.json",
+      "type": "config",
+      "name": "parsing-pipeline.json",
+      "filePath": "openwiki/.claims/architecture/parsing-pipeline.json",
+      "summary": "OpenWiki evidence claims describe the extraction graph, parser and layout modes, page sequencing, diagnostics, partial failures, and usage sanitization.",
+      "tags": [
+        "configuration",
+        "openwiki",
+        "evidence",
+        "parsing"
+      ]
+    },
+    {
+      "id": "config:openwiki/.claims/concepts/layout-and-rendering.json",
+      "type": "config",
+      "name": "layout-and-rendering.json",
+      "filePath": "openwiki/.claims/concepts/layout-and-rendering.json",
+      "summary": "OpenWiki evidence claims document ParseResult compatibility, structure validation, rendering behavior, markup safety, tables, lists, and figure extraction.",
+      "tags": [
+        "configuration",
+        "openwiki",
+        "evidence",
+        "rendering"
+      ]
+    },
+    {
+      "id": "config:openwiki/.claims/features/document-chat.json",
+      "type": "config",
+      "name": "document-chat.json",
+      "filePath": "openwiki/.claims/features/document-chat.json",
+      "summary": "OpenWiki evidence claims describe document-only chat evidence, request limits, draft and verification checks, fail-closed behavior, and session reset rules.",
+      "tags": [
+        "configuration",
+        "openwiki",
+        "evidence",
+        "document-chat"
+      ]
+    },
+    {
+      "id": "config:openwiki/.claims/operations/development-and-testing.json",
+      "type": "config",
+      "name": "development-and-testing.json",
+      "filePath": "openwiki/.claims/operations/development-and-testing.json",
+      "summary": "OpenWiki evidence claims record Python and packaging conventions plus bounded evaluation workflows and their safety requirements.",
+      "tags": [
+        "configuration",
+        "openwiki",
+        "evidence",
+        "testing"
+      ]
+    },
+    {
+      "id": "config:openwiki/.claims/quickstart.json",
+      "type": "config",
+      "name": "quickstart.json",
+      "filePath": "openwiki/.claims/quickstart.json",
+      "summary": "OpenWiki evidence claims summarize Python distribution, environment setup, UI launch, and command-line extraction behavior.",
+      "tags": [
+        "configuration",
+        "openwiki",
+        "evidence",
+        "quickstart"
+      ]
+    },
+    {
+      "id": "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "type": "config",
+      "name": "artifacts-and-exports.json",
+      "filePath": "openwiki/.claims/workflows/artifacts-and-exports.json",
+      "summary": "Machine-readable, source-linked claims for the artifact and export workflow, including run isolation, collision-safe names, partial output, figure crops, annotations, and CLI outcomes.",
+      "tags": [
+        "configuration",
+        "claims",
+        "evidence",
+        "exports"
+      ]
+    },
+    {
+      "id": "document:openwiki/architecture/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "openwiki/architecture/index.md",
+      "summary": "Navigation index linking to the repository’s parsing-pipeline architecture page.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "index"
+      ]
+    },
+    {
+      "id": "document:openwiki/architecture/parsing-pipeline.md",
+      "type": "document",
+      "name": "parsing-pipeline.md",
+      "filePath": "openwiki/architecture/parsing-pipeline.md",
+      "summary": "Describes the fixed preprocess-to-parse graph, run-local state, sequential page requests, diagnostic outcomes, and preservation of partial extraction results.",
+      "tags": [
+        "documentation",
+        "architecture",
+        "parsing",
+        "diagnostics"
+      ]
+    },
+    {
+      "id": "document:openwiki/concepts/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "openwiki/concepts/index.md",
+      "summary": "Navigation index linking to the layout and rendering concept page.",
+      "tags": [
+        "documentation",
+        "concepts",
+        "index"
+      ]
+    },
+    {
+      "id": "document:openwiki/concepts/layout-and-rendering.md",
+      "type": "document",
+      "name": "layout-and-rendering.md",
+      "filePath": "openwiki/concepts/layout-and-rendering.md",
+      "summary": "Documents the stable ParseResult layout contract, structural validation, ordering and escaping rules, table/list fallbacks, and safe figure rendering.",
+      "tags": [
+        "documentation",
+        "layout",
+        "rendering",
+        "markdown"
+      ]
+    },
+    {
+      "id": "document:openwiki/features/document-chat.md",
+      "type": "document",
+      "name": "document-chat.md",
+      "filePath": "openwiki/features/document-chat.md",
+      "summary": "Explains document-only chat over successful parsed pages, exact-quote evidence checks, independent answer verification, and fail-closed UI behavior.",
+      "tags": [
+        "documentation",
+        "chat",
+        "grounding",
+        "verification"
+      ]
+    },
+    {
+      "id": "document:openwiki/features/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "openwiki/features/index.md",
+      "summary": "Navigation index linking to the grounded document chat feature page.",
+      "tags": [
+        "documentation",
+        "features",
+        "index"
+      ]
+    },
+    {
+      "id": "document:openwiki/operations/development-and-testing.md",
+      "type": "document",
+      "name": "development-and-testing.md",
+      "filePath": "openwiki/operations/development-and-testing.md",
+      "summary": "Summarizes uv-based setup, deterministic tests and packaging, plus separately authorized live evaluation harnesses and their bounds.",
+      "tags": [
+        "documentation",
+        "development",
+        "testing",
+        "evaluation"
+      ]
+    },
+    {
+      "id": "document:openwiki/operations/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "openwiki/operations/index.md",
+      "summary": "Navigation index linking to the development, testing, and evaluation guidance.",
+      "tags": [
+        "documentation",
+        "operations",
+        "index"
+      ]
+    },
+    {
+      "id": "document:openwiki/workflows/artifacts-and-exports.md",
+      "type": "document",
+      "name": "artifacts-and-exports.md",
+      "filePath": "openwiki/workflows/artifacts-and-exports.md",
+      "summary": "Describes one-parse selective exports, run and destination ownership, collision-safe artifact naming, figure and annotation handling, and partial-result status.",
+      "tags": [
+        "documentation",
+        "exports",
+        "artifacts",
+        "workflow"
+      ]
+    },
+    {
+      "id": "document:openwiki/workflows/index.md",
+      "type": "document",
+      "name": "index.md",
+      "filePath": "openwiki/workflows/index.md",
+      "summary": "Navigation index linking to the artifacts and exports workflow page.",
+      "tags": [
+        "documentation",
+        "workflows",
+        "index"
+      ]
+    },
+    {
+      "id": "file:src/annotate.py",
+      "type": "file",
+      "name": "annotate.py",
+      "filePath": "src/annotate.py",
+      "summary": "Rerasterizes the parsed page interval and overlays labels for valid normalized block boxes, optionally saving a multi-page PDF, per-page PNGs, and count metadata.",
+      "tags": [
+        "annotation",
+        "pdf",
+        "image-processing",
+        "validation",
+        "tested"
+      ]
+    },
+    {
+      "id": "file:src/export.py",
+      "type": "file",
+      "name": "export.py",
+      "filePath": "src/export.py",
+      "summary": "Writes independently selected JSON, Markdown, HTML, ZIP, figure, and annotation outputs from one ParseResult while retaining successful artifacts when another export fails.",
+      "tags": [
+        "exports",
+        "artifacts",
+        "serialization",
+        "partial-results"
+      ]
+    },
+    {
+      "id": "file:src/figures.py",
+      "type": "file",
+      "name": "figures.py",
+      "filePath": "src/figures.py",
+      "summary": "Extracts source-matched figure crops using page-position names and reloads only verified PNG crops; unavailable crops become warnings rather than extraction failures.",
+      "tags": [
+        "figures",
+        "image-processing",
+        "validation",
+        "artifacts"
+      ]
+    },
+    {
+      "id": "file:src/graph.py",
+      "type": "file",
+      "name": "graph.py",
+      "filePath": "src/graph.py",
+      "summary": "Defines the two-node preprocess-to-parse LangGraph and its run entry point, which initializes isolated state, validates options, streams progress, and returns extraction status and artifacts.",
+      "tags": [
+        "entry-point",
+        "langgraph",
+        "pipeline",
+        "run-isolation",
+        "tested"
+      ]
+    },
+    {
+      "id": "file:src/markdown.py",
+      "type": "file",
+      "name": "markdown.py",
+      "filePath": "src/markdown.py",
+      "summary": "Converts structured parse results into escaped Markdown and HTML, including tables, lists, headings, and figure links. It also writes standalone exports and bundles Markdown with its figures.",
+      "tags": [
+        "document-rendering",
+        "markdown",
+        "html-export",
+        "figures",
+        "tested"
+      ]
+    },
+    {
+      "id": "file:src/output_names.py",
+      "type": "file",
+      "name": "output_names.py",
+      "filePath": "src/output_names.py",
+      "summary": "Builds safe, source-derived output basenames and deterministic figure names. It reserves timestamped artifact families while avoiding collisions across output folders and concurrent runs.",
+      "tags": [
+        "artifact-naming",
+        "filenames",
+        "collision-handling",
+        "utc-timestamps",
+        "tested"
+      ]
+    },
+    {
+      "id": "file:src/ui/app.py",
+      "type": "file",
+      "name": "app.py",
+      "filePath": "src/ui/app.py",
+      "summary": "Defines the Streamlit document-parsing interface, grounded chat state, upload preview, token-usage display, and figure-asset helpers. The UI delegates parsing and rendering to the application modules.",
+      "tags": [
+        "streamlit-ui",
+        "document-parsing",
+        "grounded-chat",
+        "usage-metrics",
+        "tested"
+      ]
+    },
+    {
+      "id": "file:tests/test_cli_extraction.py",
+      "type": "file",
+      "name": "test_cli_extraction.py",
+      "filePath": "tests/test_cli_extraction.py",
+      "summary": "Exercises CLI extraction and export behavior with local fixtures and model calls stubbed out. Coverage includes format selection, validation failures, partial parsing, diagnostics, and output naming.",
+      "tags": [
+        "test",
+        "cli-extraction",
+        "exports",
+        "regression"
+      ]
+    },
+    {
+      "id": "file:tests/test_graph.py",
+      "type": "file",
+      "name": "test_graph.py",
+      "filePath": "tests/test_graph.py",
+      "summary": "Checks the parse graph lifecycle using a fake document parser, including status and error reporting, artifact persistence, concurrent-run isolation, usage accounting, and filtered pages.",
+      "tags": [
+        "test",
+        "graph-lifecycle",
+        "artifacts",
+        "regression"
+      ]
+    },
+    {
+      "id": "file:tests/test_output_names.py",
+      "type": "file",
+      "name": "test_output_names.py",
+      "filePath": "tests/test_output_names.py",
+      "summary": "Verifies safe source stems, UTC timestamp reservations, collision detection, lock cleanup, and figure-link resolution when rendering legacy and current parse artifacts.",
+      "tags": [
+        "test",
+        "artifact-naming",
+        "collision-handling",
+        "rendering"
+      ]
+    },
+    {
+      "id": "file:tests/test_ui_diagnostics.py",
+      "type": "file",
+      "name": "test_ui_diagnostics.py",
+      "filePath": "tests/test_ui_diagnostics.py",
+      "summary": "Streamlit AppTest regressions for current parse diagnostics, stale-artifact exclusion, rerun-safe usage and previews, chat isolation, upload identity, and opt-in detailed layout.",
+      "tags": [
+        "test",
+        "ui",
+        "diagnostics",
+        "streamlit",
+        "regression"
+      ]
+    }
+  ],
+  "importEdges": [
+    {
+      "source": "file:src/layout.py",
+      "target": "file:src/diagnostics.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_annotate.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_layout_evaluation.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "file:src/chat.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_prompt_evaluation.py",
+      "target": "file:scripts/evaluate_prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_prompt_evaluation.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:scripts/evaluate_prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:scripts/evaluate_resolution.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:scripts/evaluate_prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/usage.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "file:tests/fixtures/make_invoice_png.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_cli.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_cli.py",
+      "target": "file:src/cli.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_parse.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_parse.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_parse.py",
+      "target": "file:tests/fake_llm.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_usage.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_usage.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_chat.py",
+      "target": "file:src/chat.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_chat.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "file:src/diagnostics.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "file:src/prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "file:src/chat.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "file:src/prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "file:src/diagnostics.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "file:src/llm.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "file:src/parse.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/llm.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/llm.py",
+      "target": "file:src/diagnostics.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/llm.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "file:src/diagnostics.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "file:src/llm.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "file:src/prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "file:src/diagnostics.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "file:src/llm.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/annotate.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/annotate.py",
+      "target": "file:src/output_names.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/annotate.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/export.py",
+      "target": "file:src/annotate.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/export.py",
+      "target": "file:src/figures.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/export.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/export.py",
+      "target": "file:src/markdown.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/export.py",
+      "target": "file:src/output_names.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/figures.py",
+      "target": "file:src/annotate.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/figures.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/figures.py",
+      "target": "file:src/output_names.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/figures.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/export.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/output_names.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/parse.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "file:src/output_names.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/chat.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/figures.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/graph.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/markdown.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/ui/clipboard.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_annotate.py",
+      "target": "file:src/annotate.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "file:src/cli.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "file:src/parse.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_graph.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_graph.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "file:src/figures.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "file:src/markdown.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "file:src/markdown.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_output_names.py",
+      "target": "file:src/markdown.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_output_names.py",
+      "target": "file:src/output_names.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_output_names.py",
+      "target": "file:tests/test_layout_structure.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_ui_diagnostics.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_ui_diagnostics.py",
+      "target": "file:src/diagnostics.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_ui_diagnostics.py",
+      "target": "file:src/graph.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_ui_diagnostics.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    }
+  ],
+  "allEdges": [
+    {
+      "source": "file:src/layout.py",
+      "target": "file:src/diagnostics.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_annotate.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_layout_evaluation.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "file:tests/test_layout_evaluation.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:tests/test_layout_evaluation.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "file:src/chat.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "file:tests/test_layout_structure.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:tests/test_layout_structure.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_prompt_evaluation.py",
+      "target": "file:scripts/evaluate_prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_prompt_evaluation.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "file:tests/test_prompt_evaluation.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:tests/test_resolution_evaluation.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:scripts/evaluate_prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:scripts/evaluate_resolution.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:scripts/evaluate_prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/usage.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_preprocess.py",
+      "target": "file:tests/fixtures/make_invoice_png.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/preprocess.py",
+      "target": "file:tests/test_preprocess.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:tests/test_cli.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_cli.py",
+      "target": "file:src/cli.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/cli.py",
+      "target": "file:tests/test_cli.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:tests/test_parse.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_parse.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_parse.py",
+      "target": "file:tests/fake_llm.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "file:tests/test_parse.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:tests/test_usage.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_usage.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/usage.py",
+      "target": "file:tests/test_usage.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:scripts/evaluate_chat.py",
+      "target": "file:src/chat.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_chat.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "file:src/diagnostics.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "file:src/prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "file:src/chat.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_chat.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "file:tests/test_chat.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:scripts/evaluate_chat.py",
+      "target": "file:tests/test_chat.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:tests/test_prompts.py",
+      "target": "file:src/prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/prompts.py",
+      "target": "file:tests/test_prompts.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "file:tests/test_prompts.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "file:src/diagnostics.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "file:src/llm.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "file:src/parse.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/llm.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/llm.py",
+      "target": "file:src/diagnostics.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/llm.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "file:src/diagnostics.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "file:src/llm.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/parse.py",
+      "target": "file:src/prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "file:src/diagnostics.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "file:src/llm.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_diagnostics.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/diagnostics.py",
+      "target": "file:tests/test_diagnostics.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:.env.example",
+      "target": "file:src/chat.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:pyproject.toml",
+      "target": "file:src/__init__.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "document:requirements-dev.txt",
+      "target": "file:tests/__init__.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "document:requirements.txt",
+      "target": "file:src/__init__.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "document:prompts/runtime/chat-answer.md",
+      "target": "file:src/prompts.py",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "document:prompts/runtime/chat-verify.md",
+      "target": "file:src/prompts.py",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "document:prompts/runtime/parse-page-structured.md",
+      "target": "file:src/prompts.py",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "document:prompts/runtime/parse-page.md",
+      "target": "file:src/prompts.py",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:run.cmd",
+      "target": "file:tests/test_launcher.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:CLAUDE.md",
+      "target": "document:AGENTS.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/annotate.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/chat.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/cli.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/export.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/figures.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/graph.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/layout.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/llm.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/markdown.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/output_names.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/parse.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/preprocess.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/ui/app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/COMPLIANCE.md",
+      "target": "file:src/chat.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/COMPLIANCE.md",
+      "target": "file:src/llm.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/CONTENT-FILTER-DIAGNOSTICS.md",
+      "target": "document:docs/LAYOUT-EVALUATION.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/CONTRIBUTING.md",
+      "target": "file:src/chat.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/CONTRIBUTING.md",
+      "target": "file:src/llm.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/CONTRIBUTING.md",
+      "target": "document:docs/LAYOUT-EVALUATION.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/LAYOUT-EVALUATION.md",
+      "target": "document:docs/SOL-RESOLUTION-EVALUATION.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/MODEL.md",
+      "target": "file:src/models.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/MODEL.md",
+      "target": "file:src/chat.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/MODEL.md",
+      "target": "document:docs/LAYOUT-EVALUATION.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/PROMPT-EVALUATION.md",
+      "target": "document:docs/LAYOUT-EVALUATION.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/PROMPTS.md",
+      "target": "document:docs/LAYOUT-EVALUATION.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/PROMPTS.md",
+      "target": "file:tests/test_prompts.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/RUNBOOK.md",
+      "target": "document:README.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/SOL-RESOLUTION-EVALUATION.md",
+      "target": "document:docs/LAYOUT-EVALUATION.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:docs/SOL-RESOLUTION-EVALUATION.md",
+      "target": "file:scripts/evaluate_prompts.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/diagrams/groundmark-architecture.json",
+      "target": "file:docs/diagrams/groundmark-architecture.html",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:docs/diagrams/groundmark-architecture.visual-check.json",
+      "target": "file:docs/diagrams/groundmark-architecture.html",
+      "type": "validates",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:docs/diagrams/groundmark-architecture.visual-check.html",
+      "target": "file:docs/diagrams/groundmark-architecture.html",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/diagrams/groundmark-dataflow.json",
+      "target": "file:docs/diagrams/groundmark-dataflow.html",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:docs/diagrams/groundmark-dataflow.visual-check.json",
+      "target": "file:docs/diagrams/groundmark-dataflow.html",
+      "type": "validates",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:docs/diagrams/groundmark-dataflow.visual-check.html",
+      "target": "file:docs/diagrams/groundmark-dataflow.html",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/diagrams/groundmark-lifecycle.json",
+      "target": "file:docs/diagrams/groundmark-lifecycle.html",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:docs/diagrams/groundmark-lifecycle.visual-check.json",
+      "target": "file:docs/diagrams/groundmark-lifecycle.html",
+      "type": "validates",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:docs/diagrams/groundmark-lifecycle.visual-check.html",
+      "target": "file:docs/diagrams/groundmark-lifecycle.html",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/diagrams/groundmark-sequence.json",
+      "target": "file:docs/diagrams/groundmark-sequence.html",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:docs/diagrams/groundmark-sequence.visual-check.json",
+      "target": "file:docs/diagrams/groundmark-sequence.html",
+      "type": "validates",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:docs/diagrams/groundmark-sequence.visual-check.html",
+      "target": "file:docs/diagrams/groundmark-sequence.html",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:docs/diagrams/groundmark-workflow.json",
+      "target": "file:docs/diagrams/groundmark-workflow.html",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "config:docs/diagrams/groundmark-workflow.visual-check.json",
+      "target": "file:docs/diagrams/groundmark-workflow.html",
+      "type": "validates",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:docs/diagrams/groundmark-workflow.visual-check.html",
+      "target": "file:docs/diagrams/groundmark-workflow.html",
+      "type": "related",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/index.md",
+      "target": "document:openwiki/quickstart.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/architecture/parsing-pipeline.json",
+      "target": "file:src/diagnostics.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/architecture/parsing-pipeline.json",
+      "target": "file:src/graph.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/architecture/parsing-pipeline.json",
+      "target": "file:src/parse.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/architecture/parsing-pipeline.json",
+      "target": "file:tests/test_graph.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/architecture/parsing-pipeline.json",
+      "target": "file:tests/test_parse.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/concepts/layout-and-rendering.json",
+      "target": "file:src/figures.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/concepts/layout-and-rendering.json",
+      "target": "file:src/layout.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/concepts/layout-and-rendering.json",
+      "target": "file:src/markdown.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/concepts/layout-and-rendering.json",
+      "target": "file:tests/test_layout_structure.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/features/document-chat.json",
+      "target": "document:prompts/runtime/chat-answer.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/features/document-chat.json",
+      "target": "document:prompts/runtime/chat-verify.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/features/document-chat.json",
+      "target": "file:src/chat.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/features/document-chat.json",
+      "target": "file:src/ui/app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/features/document-chat.json",
+      "target": "file:tests/test_chat.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/features/document-chat.json",
+      "target": "file:tests/test_ui_diagnostics.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/operations/development-and-testing.json",
+      "target": "document:docs/CONTRIBUTING.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/operations/development-and-testing.json",
+      "target": "document:docs/RUNBOOK.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/operations/development-and-testing.json",
+      "target": "config:pyproject.toml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/operations/development-and-testing.json",
+      "target": "file:scripts/evaluate_chat.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/operations/development-and-testing.json",
+      "target": "file:scripts/evaluate_layout.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/operations/development-and-testing.json",
+      "target": "file:scripts/evaluate_prompts.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/operations/development-and-testing.json",
+      "target": "file:scripts/evaluate_resolution.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/quickstart.json",
+      "target": "document:docs/RUNBOOK.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/quickstart.json",
+      "target": "config:pyproject.toml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/quickstart.json",
+      "target": "document:README.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/quickstart.json",
+      "target": "file:src/cli.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/quickstart.json",
+      "target": "file:src/graph.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/architecture/index.md",
+      "target": "document:openwiki/architecture/parsing-pipeline.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/architecture/parsing-pipeline.md",
+      "target": "file:src/graph.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/architecture/parsing-pipeline.md",
+      "target": "file:src/preprocess.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/architecture/parsing-pipeline.md",
+      "target": "file:src/parse.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/architecture/parsing-pipeline.md",
+      "target": "file:src/diagnostics.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/concepts/index.md",
+      "target": "document:openwiki/concepts/layout-and-rendering.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/concepts/layout-and-rendering.md",
+      "target": "file:src/figures.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/concepts/layout-and-rendering.md",
+      "target": "file:src/layout.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/concepts/layout-and-rendering.md",
+      "target": "file:src/markdown.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/features/index.md",
+      "target": "document:openwiki/features/document-chat.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/features/document-chat.md",
+      "target": "file:src/chat.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/features/document-chat.md",
+      "target": "file:src/ui/app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/features/document-chat.md",
+      "target": "document:prompts/runtime/chat-answer.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/features/document-chat.md",
+      "target": "document:prompts/runtime/chat-verify.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/operations/index.md",
+      "target": "document:openwiki/operations/development-and-testing.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/operations/development-and-testing.md",
+      "target": "document:docs/CONTRIBUTING.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/operations/development-and-testing.md",
+      "target": "document:docs/RUNBOOK.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/operations/development-and-testing.md",
+      "target": "config:pyproject.toml",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/workflows/artifacts-and-exports.md",
+      "target": "file:src/annotate.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/workflows/artifacts-and-exports.md",
+      "target": "file:src/export.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/workflows/artifacts-and-exports.md",
+      "target": "file:src/figures.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/workflows/artifacts-and-exports.md",
+      "target": "file:src/graph.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/workflows/artifacts-and-exports.md",
+      "target": "file:src/cli.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/workflows/artifacts-and-exports.md",
+      "target": "file:src/output_names.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:openwiki/workflows/index.md",
+      "target": "document:openwiki/workflows/artifacts-and-exports.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "target": "file:src/annotate.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "target": "file:src/export.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "target": "file:src/figures.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "target": "file:src/graph.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "target": "file:src/cli.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "target": "file:src/output_names.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:tests/test_ui_diagnostics.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/diagnostics.py",
+      "target": "file:tests/test_ui_diagnostics.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "file:tests/test_ui_diagnostics.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:tests/test_ui_diagnostics.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/chat.py",
+      "target": "file:tests/test_ui_diagnostics.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/ui/clipboard.py",
+      "target": "file:tests/test_ui_diagnostics.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/annotate.py",
+      "target": "file:tests/test_annotate.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "Path-based pairing (deterministic)"
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "file:tests/test_markdown.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "Path-based pairing (deterministic)"
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:tests/test_graph.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "Path-based pairing (deterministic)"
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "file:tests/test_output_names.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5,
+      "description": "Path-based pairing (deterministic)"
+    },
+    {
+      "source": "file:src/annotate.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/annotate.py",
+      "target": "file:src/output_names.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/annotate.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/export.py",
+      "target": "file:src/annotate.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/export.py",
+      "target": "file:src/figures.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/export.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/export.py",
+      "target": "file:src/markdown.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/export.py",
+      "target": "file:src/output_names.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/figures.py",
+      "target": "file:src/annotate.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/figures.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/figures.py",
+      "target": "file:src/output_names.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/figures.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/export.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/output_names.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/parse.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/graph.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "file:src/output_names.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/chat.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/figures.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/graph.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/markdown.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/models.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/ui/clipboard.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:src/ui/app.py",
+      "target": "file:src/usage.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_annotate.py",
+      "target": "file:src/annotate.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "file:src/cli.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_cli_extraction.py",
+      "target": "file:src/parse.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_graph.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_graph.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "file:src/figures.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "file:src/markdown.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "file:src/markdown.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_output_names.py",
+      "target": "file:src/markdown.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_output_names.py",
+      "target": "file:src/output_names.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_output_names.py",
+      "target": "file:tests/test_layout_structure.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_ui_diagnostics.py",
+      "target": "file:src/__init__.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_ui_diagnostics.py",
+      "target": "file:src/diagnostics.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_ui_diagnostics.py",
+      "target": "file:src/graph.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    },
+    {
+      "source": "file:tests/test_ui_diagnostics.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7,
+      "recoveredFromImportMap": true
+    }
+  ]
+}
