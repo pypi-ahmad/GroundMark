@@ -23,7 +23,7 @@ def upload(color="white", pages=1):
 
 
 @pytest.fixture
-def uploaded(tmp_path, monkeypatch):
+def uploaded(tmp_path, monkeypatch, fake_layout_runtime):
     monkeypatch.chdir(tmp_path)
     holder = [upload()]
     monkeypatch.setattr(st, "file_uploader", lambda *a, **k: holder[0])
@@ -223,3 +223,82 @@ def test_detailed_layout_requires_opt_in_and_resets_old_results(uploaded, monkey
     assert calls == [False]
     app.button[0].click().run()
     assert calls == [False, True]
+
+
+@pytest.mark.parametrize("device,fallback,label", [("cuda", None, "GPU (CUDA)"),
+                                                   ("cpu", "cuda_probe_failed", "CPU")])
+def test_layout_preparation_is_click_only_and_device_survives_reruns(uploaded, monkeypatch, fake_layout_runtime,
+                                                                  device, fallback, label):
+    from src.layout_detector import LayoutReadiness
+    calls, spinners = [], []
+    original_prepare = fake_layout_runtime.prepare
+    def prepare():
+        info = original_prepare()
+        return LayoutReadiness(device, fallback, .125, info.reused)
+    monkeypatch.setattr(fake_layout_runtime, "prepare", prepare)
+    spinner = st.spinner
+    def record_spinner(text, **kwargs):
+        spinners.append(text)
+        return spinner(text, **kwargs)
+    monkeypatch.setattr(st, "spinner", record_spinner)
+    def run(*a, **kw):
+        assert fake_layout_runtime.ready
+        calls.append(True)
+        return dict(status="parsed", token_usage=[])
+    monkeypatch.setattr(graph, "run_graph", run)
+    app = AppTest.from_file(str(APP)).run()
+    assert not fake_layout_runtime.events
+    app.button[0].click().run()
+    assert not app.exception and "Preparing PP-DocLayoutV3…" in spinners
+    assert any(label in c.value for c in app.caption)
+    if fallback:
+        assert any("verified CPU fallback" in c.value for c in app.caption)
+    for tab in ("JSON", "Markdown", "Input preview"):
+        app.session_state["preview_tab"] = tab
+        app.run()
+        assert not app.exception and any(label in c.value for c in app.caption)
+    uploaded[0] = upload("red")
+    app.run()
+    assert fake_layout_runtime.events == [("prepare",)] and len(calls) == 1
+    app.button[0].click().run()
+    assert len(calls) == 2 and any("reused" in c.value for c in app.caption)
+
+
+def test_preparation_failure_warns_continues_and_retries_only_on_click(uploaded, monkeypatch, fake_layout_runtime):
+    from src.layout_detector import LayoutModelUnavailable
+    fake_layout_runtime.initialization_error = LayoutModelUnavailable("devices_failed")
+    calls = []
+    monkeypatch.setattr(graph, "run_graph", lambda *a, **k: calls.append(k["layout_initialization_failure"]) or dict(status="parsed", token_usage=[]))
+    app = AppTest.from_file(str(APP)).run()
+    app.session_state["last_parse_result"] = dict(status="stale")
+    app.session_state["document_chat"] = [dict(question="old", answer="old")]
+    app.button[0].click().run()
+    assert not app.exception and not app.error and "Continuing with Sol blocks" in app.warning[0].value
+    assert len(calls) == 1 and calls[0].layout_code == "devices_failed"
+    assert not app.session_state["document_chat"]
+    assert app.session_state["last_parse_result"]["status"] == "parsed"
+    app.run()
+    assert fake_layout_runtime.events == [("prepare",)] and app.warning and len(calls) == 1
+    fake_layout_runtime.initialization_error = None
+    app.button[0].click().run()
+    assert not app.exception and not app.error and len(calls) == 2 and calls[1] is None
+
+
+def test_layout_summary_uses_saved_counts_and_does_not_blame_provider_for_v3_failure(uploaded, monkeypatch):
+    from src.parse import reconcile_parsed_page
+    from src.layout_reconcile import convert_layout
+    from tests.test_layout_integration import sol_page, regions
+    from tests.test_layout_reconcile import runtime
+    page, artifact = reconcile_parsed_page(sol_page(), convert_layout(runtime(*regions())))
+    parsed = ParseResult(doc_sha="test", pages=[page], layout_metadata=[artifact], page_diagnostics=[
+        PageDiagnostic(page=1, outcome="parsed"),
+        PageDiagnostic(page=2, outcome="layout_failed", layout_stage="inference", layout_code="inference_failed")])
+    monkeypatch.setattr(graph, "run_graph", lambda *a, **k: dict(
+        status="parsed_partial", parse_result=parsed, token_usage=[], parse_error="Page 2: layout_failed"))
+    app = AppTest.from_file(str(APP)).run()
+    app.button[0].click().run()
+    assert not app.exception
+    summary = next(e for e in app.expander if e.label == "Layout summary")
+    import json
+    assert json.loads(summary.json[0].value)[0]["matches"] == 3
+    assert not any("provider did not supply" in c.value for c in app.caption)

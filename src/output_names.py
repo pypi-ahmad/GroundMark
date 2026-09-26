@@ -7,6 +7,7 @@ import re
 
 
 def source_stem(filename: str) -> str:
+    """Return a Windows-safe source stem, bounded to 120 characters."""
     name = filename.replace("\\", "/").rsplit("/", 1)[-1]
     stem = Path(name).stem
     stem = re.sub(r'[<>:"/\\|?*\x00-\x1f\x7f]', "_", stem).strip().rstrip(". ")
@@ -17,12 +18,17 @@ def source_stem(filename: str) -> str:
 
 
 def artifact_name(basename: str, suffix: str) -> str:
+    """Append suffix to a safe basename; raise ValueError for invalid names."""
     if not basename or basename in {".", ".."} or re.search(r'[<>:"/\\|?*\x00-\x1f\x7f]', basename):
         raise ValueError("Invalid output basename")
     return basename + suffix
 
 
 def figure_name(page: int, index: int, basename: str | None = None) -> str:
+    """Name a PNG using the 1-based page and zero-based output block index.
+
+    Prefix with basename when supplied; otherwise use the legacy filename.
+    """
     suffix = f"page_{page:03d}_figure_{index:03d}.png"
     return artifact_name(basename, "_" + suffix) if basename else suffix
 

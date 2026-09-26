@@ -14,6 +14,7 @@ from src.usage import cost_usd
 
 
 def metric_gate(pages: list[dict]) -> bool:
+    """Require five paired parsed pages with no per-page candidate F1 regression."""
     if len(pages) != 10 or any(p["status"] != "parsed" for p in pages):
         return False
     scores = {}
@@ -24,6 +25,12 @@ def metric_gate(pages: list[dict]) -> bool:
 
 
 def compare(output: Path, phase: str, *, runner=None) -> dict:
+    """Run one authorized baseline/candidate phase and persist its manifest.
+
+    output is the evidence directory; phase selects the prompt and schema.
+    runner can inject offline responses. Invalid phase/source progression raises
+    ValueError; input/I/O errors propagate. The default runner makes paid calls.
+    """
     if phase not in {"baseline", "candidate"}:
         raise ValueError("Unknown comparison phase")
     runner = runner or run_page

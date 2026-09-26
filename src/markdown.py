@@ -212,6 +212,13 @@ def _render_block(block: ParseBlock) -> str:
 
 def parse_to_markdown(result: ParseResult, *, view: View = "full", figures: Figures | None = None,
                       inline_images: bool = False, output_basename: str | None = None) -> str:
+    """Return Markdown for result in full or clean presentation view.
+
+    figures maps filenames to PNG bytes; inline_images embeds data URLs instead
+    of relative links. output_basename controls figure filenames. Source content
+    is escaped, not retranscribed. Invalid view, table budget, or names may raise
+    ValueError. The input result is not modified and no files are written.
+    """
     parts = []
     for name, block in _blocks(result, view, output_basename, figures):
         if block.type == "figure" and figures and name in figures:
@@ -240,6 +247,12 @@ _HTML_STYLE = """<style>
 
 def parse_to_html(result: ParseResult, *, view: View = "full", figures: Figures | None = None,
                   output_basename: str | None = None) -> str:
+    """Return self-contained escaped HTML, embedding any supplied figure bytes.
+
+    view and output_basename follow parse_to_markdown. The page includes a
+    restrictive CSP. No filesystem or model calls occur; validation errors
+    from view, budgets, or names propagate.
+    """
     parts = []
     for name, block in _blocks(result, view, output_basename, figures):
         if block.type == "figure" and figures and name in figures:
@@ -254,6 +267,11 @@ def parse_to_html(result: ParseResult, *, view: View = "full", figures: Figures 
 
 def markdown_bundle(result: ParseResult, *, view: View = "full", figures: Figures | None = None,
                     output_basename: str | None = None) -> bytes:
+    """Return ZIP bytes containing Markdown and referenced figure PNGs.
+
+    Use view and output_basename for the same presentation/names as the text
+    renderer. Input data is not changed and no files are written.
+    """
     buffer = io.BytesIO()
     with zipfile.ZipFile(buffer, "w", compression=zipfile.ZIP_DEFLATED) as archive:
         archive.writestr(artifact_name(output_basename, ".md") if output_basename else "document.md",
@@ -265,6 +283,11 @@ def markdown_bundle(result: ParseResult, *, view: View = "full", figures: Figure
 
 
 def render_and_save(parse_json_path: str | Path) -> Path:
+    """Validate saved JSON and write adjacent full-view Markdown; return its Path.
+
+    Load matching saved figures without inference. Byte-budget, JSON/schema,
+    figure-budget, and filesystem errors propagate.
+    """
     path = Path(parse_json_path)
     limit = max_source_bytes()
     if path.stat().st_size > limit:
@@ -283,6 +306,11 @@ def render_and_save(parse_json_path: str | Path) -> Path:
 
 def save_markdown_for_doc(result: ParseResult, *, output_dir: str | Path = "data/parse",
                           figures: Figures | None = None, output_basename: str | None = None) -> Path:
+    """Write full-view Markdown under output_dir and return its Path.
+
+    Use output_basename or doc_sha; figures supplies already-loaded PNG bytes.
+    Create the directory if needed. Rendering and filesystem errors propagate.
+    """
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     path = out / artifact_name(output_basename or result.doc_sha, ".md")
@@ -292,6 +320,11 @@ def save_markdown_for_doc(result: ParseResult, *, output_dir: str | Path = "data
 
 def save_html_for_doc(result: ParseResult, *, output_dir: str | Path = "data/parse",
                      figures: Figures | None = None, output_basename: str | None = None) -> Path:
+    """Write full-view embedded-image HTML under output_dir; return its Path.
+
+    Use output_basename or doc_sha and optional PNG bytes in figures. Rendering
+    and filesystem errors propagate.
+    """
     out = Path(output_dir)
     out.mkdir(parents=True, exist_ok=True)
     path = out / artifact_name(output_basename or result.doc_sha, ".html")

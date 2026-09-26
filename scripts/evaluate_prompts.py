@@ -11,13 +11,14 @@ from html.parser import HTMLParser
 import json
 from pathlib import Path
 import re
+from string import Formatter
 import time
 
 from openai import ContentFilterFinishReasonError
 
 from src.llm import MODEL_NAME, _build_llm, _image_message, _invoke_structured
 from src.diagnostics import ExtractionCallError
-from src.parse import MAX_PARALLEL_PAGES
+from src.parse import MAX_PARALLEL_PAGES, analyze_page_layout, reconcile_parsed_page
 from src.preprocess import preprocess_pages
 from src.layout import ParsePage, LegacyParsePage
 
@@ -41,16 +42,23 @@ class _PlainText(HTMLParser):
 
 
 def plain_text(value: str) -> str:
+    """Extract joined HTML text for evaluation; this is not an HTML sanitizer."""
     parser = _PlainText()
     parser.feed(value)
     return " ".join(parser.parts)
 
 
 def tokens(value: str) -> Counter:
+    """Return case-folded word-token frequencies for reference overlap scoring."""
     return Counter(re.findall(r"\w+", value.casefold()))
 
 
 def score_page(page: ParsePage, reference: dict) -> dict:
+    """Compare one parsed page with its reference span and count structural issues.
+
+    Return token precision/recall/F1 plus box/table/ID counts. These metrics do
+    not establish transcription correctness or reading-order accuracy.
+    """
     source = reference["markdown"]
     ref_page = next(p for p in reference["structure"]["children"] if p["grounding"]["page"] == page.page)
     span = ref_page["grounding"]["range"]
@@ -78,17 +86,34 @@ def score_page(page: ParsePage, reference: dict) -> dict:
 
 def run_page(payload: dict, prompt: str, *, max_completion_tokens: int | None = None,
              reasoning_effort: str | None = None, schema=LegacyParsePage) -> dict:
+    """Evaluate one image/prompt pair and return status, timing, and evidence.
+
+    Current templates containing given_layout require V3 analysis/reconciliation;
+    unlike production parsing, layout failure does not use Sol-only fallback.
+    Archived templates keep their prior path. Default calls are paid; callers
+    must authorize them separately or inject the model plumbing for tests.
+    """
     started = time.perf_counter()
     outcome = {"page": payload["page"], "document_sha256": payload["doc_sha256"]}
     diagnostics = []
+    layout_metadata = []
     try:
+        # Archived templates keep their historical baseline. Current templates
+        # cannot make a Sol-only call by omitting the new required placeholder.
+        layout = None
+        given_layout = ""
+        if any(field == "given_layout" for _, field, _, _ in Formatter().parse(prompt)):
+            layout, given_layout = analyze_page_layout(
+                payload["base64"], payload["mime"], payload["page"], payload["width"], payload["height"],
+                diagnostics=diagnostics, layout_metadata=layout_metadata,
+            )
         llm = _build_llm()
         if reasoning_effort is not None:
             llm.reasoning_effort = reasoning_effort
         llm.root_client = llm.root_client.with_options(max_retries=0, timeout=180)
         text = prompt.format(page_number=payload["page"], total_pages=1,
                              width_px=payload["width"], height_px=payload["height"],
-                             document_context="")
+                             document_context="", given_layout=given_layout)
         page = _invoke_structured(
             llm, schema, [_image_message(text, payload["base64"], payload["mime"])],
             call_name="parse_page", diagnostics=diagnostics,
@@ -97,6 +122,10 @@ def run_page(payload: dict, prompt: str, *, max_completion_tokens: int | None = 
         if isinstance(page, LegacyParsePage):
             page = page.to_page()
         page = page.model_copy(update={"page": payload["page"], "width_px": payload["width"], "height_px": payload["height"]})
+        if layout is not None:
+            page, artifact = reconcile_parsed_page(page, layout, diagnostics=diagnostics,
+                                                   previous=diagnostics[-1] if diagnostics else None)
+            layout_metadata[-1] = artifact
         outcome.update(status="parsed", result=page.model_dump())
     except ExtractionCallError as exc:
         outcome["status"] = exc.diagnostic.outcome
@@ -105,6 +134,8 @@ def run_page(payload: dict, prompt: str, *, max_completion_tokens: int | None = 
     except Exception as exc:
         outcome.update(status="error", error_type=type(exc).__name__)
     outcome["seconds"] = time.perf_counter() - started
+    if layout_metadata:
+        outcome["layout_metadata"] = [entry.model_dump(mode="json") for entry in layout_metadata]
     if diagnostics:
         diagnostic = diagnostics[-1].model_copy(update={"page": payload["page"]})
         outcome["diagnostics"] = diagnostic.model_dump()
@@ -115,6 +146,11 @@ def run_page(payload: dict, prompt: str, *, max_completion_tokens: int | None = 
 
 
 def main() -> None:
+    """Parse evaluation arguments and run approved pages only with --live.
+
+    Create a fresh output directory with prompt snapshots and page evidence.
+    This command makes paid calls; missing references and I/O errors propagate.
+    """
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--prompts", type=Path, required=True)
     parser.add_argument("--output", type=Path, required=True)

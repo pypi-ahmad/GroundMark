@@ -14,6 +14,11 @@ from src.models import DEFAULT_MODEL, MODEL_RATES
 
 def record(call: str, model: str, usage_metadata: dict | None, *,
            usage_known: bool | None = None, entries: list[dict] | None = None) -> dict:
+    """Return a normalized usage entry and append it to entries when supplied.
+
+    usage_known distinguishes absent usage from reported zero tokens. call and
+    model identify the request; usage_metadata follows the local token shape.
+    """
     known = usage_metadata is not None if usage_known is None else usage_known
     usage_metadata = usage_metadata or {}
     input_tokens = usage_metadata.get("input_tokens", 0) or 0
@@ -36,6 +41,7 @@ def record(call: str, model: str, usage_metadata: dict | None, *,
 
 
 def totals(entries: list[dict]) -> dict:
+    """Sum token categories from a run/session ledger; unknown usage stays flagged on entries."""
     return {
         "input_tokens": sum(e["input_tokens"] for e in entries),
         "output_tokens": sum(e["output_tokens"] for e in entries),
@@ -63,4 +69,5 @@ def cost_usd(totals_dict: dict, model: str = DEFAULT_MODEL) -> float:
 
 
 def session_cost_usd(entries: list[dict]) -> float:
+    """Sum per-model local USD estimates; missing usage contributes no known cost."""
     return sum(cost_usd(entry, entry.get("model", DEFAULT_MODEL)) for entry in entries)

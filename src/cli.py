@@ -12,6 +12,12 @@ from dotenv import load_dotenv
 
 
 def main(argv: list[str] | None = None) -> int:
+    """Launch the UI or extract a document using parsed CLI arguments.
+
+    argv defaults to the process arguments. Return the process-style exit code;
+    argparse raises SystemExit for help and invalid arguments. Extraction may
+    make paid calls; UI startup binds only to a validated loopback host.
+    """
     parser = argparse.ArgumentParser(description="Extract a file, or launch the web UI when no file is given.", prog="groundmark")
     parser.add_argument("file", nargs="?", type=Path, help="Source PDF or image")
     parser.add_argument("output_dir", nargs="?", type=Path, help="Destination for selected outputs")
@@ -76,6 +82,32 @@ def main(argv: list[str] | None = None) -> int:
         return 130
 
 
+def _print_progress(event: dict) -> None:
+    """Only local status values and counts enter stderr, never page content."""
+    phase = event.get("phase", "page_complete")
+    if phase == "layout_preparing":
+        print("Preparing PP-DocLayoutV3...", file=sys.stderr)
+    elif phase == "layout_ready":
+        from src.diagnostics import layout_ready_summary
+        print(layout_ready_summary(event), file=sys.stderr)
+    else:
+        text = f"Pages: {event['completed']}/{event['total']}"
+        if "page" in event:
+            text += f"; page {event['page']}: {event['outcome']}"
+            if event.get("layout_fallback"):
+                text += "; V3 unavailable for this page; using Sol blocks"
+            if event.get("device") in {"cpu", "cuda"}:
+                text += f"; device={event['device']}"
+            for field in ("layout_seconds", "page_seconds"):
+                if event.get(field) is not None:
+                    text += f"; {field}={event[field]:.3f}"
+            if event.get("matches") is not None:
+                text += f"; matches={event['matches']}; review_blocks={event['review_blocks']}"
+            else:
+                text += "; reconciliation=unavailable"
+        print(text, file=sys.stderr)
+
+
 def _extract(args, parser, formats: set[str]) -> int:
     from src.config import max_pages
     from src.preprocess import count_pages
@@ -107,8 +139,7 @@ def _extract(args, parser, formats: set[str]) -> int:
             result = run_graph(str(source), start_page=start, end_page=end,
                                output_dir=destination, formats=formats, view=args.view or "full",
                                detailed_layout=args.detailed_layout,
-                               on_progress=lambda event: print(
-                                   f"Pages: {event['completed']}/{event['total']}", file=sys.stderr))
+                               on_progress=_print_progress)
         for path in result.get("output_paths", []):
             print(path)
         for message in [result.get("parse_error"), *result.get("export_errors", []),

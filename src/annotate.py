@@ -1,7 +1,8 @@
-"""Draws every parsed block's bbox onto a rasterized copy of each page and
-saves the result as a multi-page annotated PDF (plus per-page PNGs and a
-sidecar .meta.json) under data/annotated/ -- a human-readable check of what
-the layout parser found, not a data source anything else reads back.
+"""Draw valid final block rectangles on rasterized source pages.
+
+PDF, page PNGs, and metadata are independently selectable under output_dir
+(data/annotated/ by default). These are inspection artifacts, not parser
+inputs. Retained V3 polygons are not drawn.
 
 Must not guess a box for a block with a missing/out-of-range bbox -- skip and count
 it instead (see `_bbox_is_valid`).
@@ -30,7 +31,7 @@ LABEL_FONT_SIZE = 16
 
 
 def _bbox_is_valid(xyxy: tuple[float, float, float, float]) -> bool:
-    # Coordinates are normalized 0-1 (see BBox.xyxy in src/schema.py);
+    # Coordinates are normalized 0-1 (see BBox.xyxy in src/layout.py);
     # reject anything outside that range or degenerate (zero/negative width
     # or height) instead of drawing a nonsensical box.
     x0, y0, x1, y1 = xyxy
@@ -49,14 +50,15 @@ def annotate_document(
     save_metadata: bool = True,
     output_basename: str | None = None,
 ) -> tuple[Path | None, Path | None]:
-    """Draw every block's bbox onto a rasterized copy of each page and save a
-    multi-page PDF, plus a sidecar .meta.json.
+    """Draw valid block boxes and return optional PDF and metadata Paths.
 
     Pillow encodes each rasterized page separately. PDFium assembles those
     encoded pages without retaining every page's decoded pixels at once.
 
-    Blocks with a missing or out-of-range bbox are skipped and counted in the
-    sidecar file.
+    save_pdf, save_images, and save_metadata select independent artifacts.
+    Missing, out-of-range, and degenerate boxes are skipped and counted when
+    metadata is saved. Source/decoder, naming, and filesystem errors propagate.
+    No model calls occur; polygons are not used for drawing.
     """
     # Annotate exactly the pages parse_result actually covers (whatever page
     # range was parsed) -- no separate range/cap needed here.

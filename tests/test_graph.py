@@ -58,7 +58,8 @@ def test_parse_failure_sets_status_and_error(tmp_path, monkeypatch):
     result = graph_module.run_graph(str(FIXTURE_PATH))
 
     assert result["status"] == "parse_failed"
-    assert "content filter" in result["parse_error"]
+    assert "Unable to complete" in result["parse_error"]
+    assert "content filter" not in result["parse_error"]
     assert result["markdown"] is None
     assert result["annotated_pdf_path"] is None
 

@@ -17,6 +17,13 @@ from src.preprocess import preprocess_pages
 
 def extract_figures(source: str | Path, result: ParseResult, output_dir: str | Path,
                     *, save_images: bool = True, output_basename: str | None = None) -> tuple[dict[str, bytes], list[str]]:
+    """Return PNG bytes by figure filename and safe crop warnings.
+
+    Use rectangular boxes from result only when the source hash matches. Save
+    under output_dir/images when save_images is true; otherwise retain bytes
+    only. Invalid boxes, page crop errors, and count/byte limits omit crops
+    without changing transcription. Configuration errors may propagate.
+    """
     figures = {}
     warnings = []
     byte_limit, count_limit = max_figure_bytes(), max_figures()
@@ -60,6 +67,13 @@ def extract_figures(source: str | Path, result: ParseResult, output_dir: str | P
 
 
 def load_figures(result: ParseResult, output_dir: str | Path, *, output_basename: str | None = None) -> dict[str, bytes]:
+    """Load validated saved PNG crops for result, accepting legacy filenames.
+
+    Search output_dir/images using the run basename and page/block positions.
+    Skip missing or unreadable images. Raise ValueError when saved collections
+    exceed configured count/byte limits; filesystem/configuration errors may
+    propagate. No source document or model is read.
+    """
     figures = {}
     byte_limit, count_limit = max_figure_bytes(), max_figures()
     retained_bytes = 0

@@ -74,7 +74,7 @@ def test_figure_bytes_are_bounded_for_extraction_and_saved_files(tmp_path, monke
         figures.load_figures(result, output)
 
 
-def test_parser_keeps_successful_pages_within_document_table_budget(monkeypatch):
+def test_parser_keeps_successful_pages_within_document_table_budget(monkeypatch, fake_layout_runtime):
     page = document(block("table", table=[["A", "B"]])).pages[0]
     monkeypatch.setenv("GROUNDMARK_MAX_TABLE_CELLS", "3")
     monkeypatch.setattr(parse, "preprocess_pages", lambda *a, **kw: [

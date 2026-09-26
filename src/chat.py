@@ -50,6 +50,7 @@ class Verification(BaseModel):
 
 @dataclass
 class ChatResult:
+    """User-facing answer/status with per-call usage and safe diagnostics."""
     answer: str
     status: str
     usage: list[dict] = field(default_factory=list)
@@ -57,6 +58,11 @@ class ChatResult:
 
 
 def document_pages(result: ParseResult | None) -> dict[int, str]:
+    """Return nonempty text/table evidence keyed by successful source page.
+
+    Accept a ParseResult or None. Filtered and failed pages are excluded; valid
+    Sol-fallback pages remain available. Presentation filters do not apply.
+    """
     if result is None:
         return {}
     failed = set(result.content_filtered_pages)
@@ -146,6 +152,13 @@ def _validated_text(draft: Draft, pages: dict[int, str]) -> str:
 
 
 def answer_document_question(parse_result, question, history=(), *, client=None) -> ChatResult:
+    """Answer from parsed evidence, with local quote checks and Luna verification.
+
+    Accept a ParseResult, question string, and accepted history dictionaries.
+    An optional client supports offline injection and remains caller-owned.
+    Return ChatResult, including safe rejection/error status and paid-call usage;
+    provider errors and unverified draft text are not exposed.
+    """
     result = ChatResult(UNVERIFIED, "blocked")
     pages = document_pages(parse_result)
     if not pages:

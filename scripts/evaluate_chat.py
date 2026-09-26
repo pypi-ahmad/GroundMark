@@ -7,6 +7,11 @@ from src.layout import ParseBlock, ParsePage, ParseResult
 
 
 def main():
+    """Run the synthetic live chat cases and save results; return 0 only if all pass.
+
+    This entry point can make paid calls without a --live flag. It requires
+    separate authorization; do not use it as an offline documentation check.
+    """
     root = Path(__file__).resolve().parents[1]
     fixture = json.loads((root / "tests/fixtures/chat-evaluation.md").read_text(encoding="utf-8"))
     results = []

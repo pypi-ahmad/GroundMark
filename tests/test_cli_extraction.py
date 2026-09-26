@@ -13,7 +13,7 @@ from src.layout import BBox, ParseBlock, ParsePage
 
 
 @pytest.fixture
-def extraction(tmp_path, monkeypatch):
+def extraction(tmp_path, monkeypatch, fake_layout_runtime):
     from PIL import Image
     monkeypatch.chdir(tmp_path)
     monkeypatch.setenv("OPENAI_API_KEY", "test-only")

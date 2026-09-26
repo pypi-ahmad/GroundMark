@@ -5,6 +5,7 @@ import base64
 import hashlib
 from pathlib import Path
 import tempfile
+from dataclasses import asdict
 
 import streamlit as st
 
@@ -17,6 +18,9 @@ from src.figures import load_figures
 from src.config import max_pages, max_source_bytes
 from src.preprocess import count_pages, preprocess_pages
 from src.ui.clipboard import copy_buttons
+from src.layout_detector import get_layout_runtime
+from src.layout_reconcile import layout_match_counts
+from src.diagnostics import layout_failure_diagnostic, layout_failure_summary, layout_ready_summary
 
 st.set_page_config(page_title="ADE - Document Parsing", layout="wide")
 st.title("ADE - Agentic Document Extraction")
@@ -32,6 +36,7 @@ _usage_display = st.empty()
 
 
 def clear_chat():
+    """Clear accepted chat history for the current Streamlit session."""
     st.session_state["document_chat"] = []
 
 
@@ -45,11 +50,13 @@ def _clear_session_files():
 
 
 def load_input_preview(path: str, page_number: int) -> bytes:
+    """Render one source page as PNG bytes without loading V3 or calling Sol."""
     page = preprocess_pages(path, start_page=page_number, end_page=page_number)[0]
     return base64.b64decode(page["base64"])
 
 
 def show_usage():
+    """Display session token totals and estimates, marking unreported usage."""
     entries = st.session_state.session_token_usage
     totals = usage.totals(entries)
     incomplete = any(not entry.get("usage_known", True) for entry in entries)
@@ -128,11 +135,29 @@ if st.session_state.get("document_scope") != scope:
 if not valid_range:
     st.error(f"Page range must be within 1..{total} and select no more than {max_pages()} pages.")
 
-if st.button("Parse", disabled=not valid_range):
+if st.button("Parse", disabled=not valid_range) and valid_range:
     clear_chat()
+    st.session_state.pop("last_parse_result", None)
+    st.session_state.pop("layout_preparation_error", None)
+    layout_initialization_failure = None
+    try:
+        with st.spinner("Preparing PP-DocLayoutV3…"):
+            readiness = get_layout_runtime().prepare()
+        st.session_state["layout_readiness"] = asdict(readiness)
+    except Exception as exc:
+        st.session_state.pop("layout_readiness", None)
+        diagnostic = layout_failure_diagnostic(exc, page=int(start_page), stage="initialization",
+                                               requested_model=DEFAULT_MODEL)
+        layout_initialization_failure = diagnostic
+        st.session_state["layout_preparation_error"] = layout_failure_summary(diagnostic) + " Continuing with Sol blocks."
+        st.warning(st.session_state["layout_preparation_error"])
+    if st.session_state.get("layout_readiness"):
+        st.caption(layout_ready_summary(st.session_state["layout_readiness"]))
     progress = st.progress(0, text="Preparing pages...")
 
     def update_progress(event):
+        if event.get("phase", "page_complete") != "page_complete":
+            return
         progress.progress(event["completed"] / event["total"], text=(
             f"Pages: {event['completed']}/{event['total']} completed; "
             f"{event['successful']} successful; {event['failed']} failed"
@@ -143,6 +168,7 @@ if st.button("Parse", disabled=not valid_range):
             result = run_graph(str(dest), start_page=int(start_page), end_page=end_page,
                                model=DEFAULT_MODEL, detailed_layout=detailed_layout, on_progress=update_progress,
                                original_filename=uploaded.name,
+                               layout_initialization_failure=layout_initialization_failure,
                                output_dir=Path(st.session_state["session_files"].name) / "outputs")
         except Exception:
             st.error("Unable to prepare this document. Check the file and page range.")
@@ -151,6 +177,11 @@ if st.button("Parse", disabled=not valid_range):
     if result:
         st.session_state.session_token_usage.extend(result.get("token_usage", []))
         show_usage()
+else:
+    if st.session_state.get("layout_preparation_error"):
+        st.warning(st.session_state["layout_preparation_error"])
+    elif st.session_state.get("layout_readiness"):
+        st.caption(layout_ready_summary(st.session_state["layout_readiness"]))
 
 result = st.session_state.get("last_parse_result")
 if result:
@@ -164,10 +195,18 @@ if result:
     for warning in result.get("figure_warnings", []):
         st.caption(warning)
     if current_parse and current_parse.page_diagnostics:
+        fallback_pages = [str(d.page) for d in current_parse.page_diagnostics if d.layout_fallback]
+        if fallback_pages:
+            st.warning("V3 unavailable; Sol-only layout used/attempted on pages: " + ", ".join(fallback_pages))
         with st.expander("API diagnostics", expanded=False):
             st.json([d.model_dump(exclude_none=True) for d in current_parse.page_diagnostics])
-            if any(d.outcome != "parsed" and not d.filters for d in current_parse.page_diagnostics):
+            if any(d.outcome not in {"parsed", "layout_failed", "layout_unavailable"} and not d.filters for d in current_parse.page_diagnostics):
                 st.caption("Filter details are unavailable for one or more failed pages. The provider did not supply recognized annotations.")
+    if current_parse and current_parse.layout_metadata:
+        with st.expander("Layout summary", expanded=False):
+            st.json([dict(page=entry.layout.page, device=entry.layout.device, **layout_match_counts(entry))
+                     for entry in current_parse.layout_metadata])
+            st.caption("Review counts can include matched blocks. Null counts mean reconciliation was unavailable. Full evidence is in JSON layout_metadata; polygons are metadata only.")
 else:
     current_parse = None
 
@@ -183,6 +222,7 @@ if current_parse:
 
 
 def figure_assets(output_dir: str, parse_json: str, output_basename: str):
+    """Validate serialized ParseResult data and load its bounded saved figure crops."""
     from src.layout import ParseResult
     return load_figures(ParseResult.model_validate_json(parse_json), output_dir, output_basename=output_basename)
 
