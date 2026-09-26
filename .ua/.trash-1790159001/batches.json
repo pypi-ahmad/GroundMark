@@ -1,0 +1,2246 @@
+{
+  "schemaVersion": 1,
+  "algorithm": "louvain",
+  "totalFiles": 70,
+  "totalBatches": 9,
+  "exportsByPath": {
+    "scripts/evaluate_chat.py": [
+      "main"
+    ],
+    "scripts/evaluate_layout.py": [
+      "metric_gate",
+      "compare"
+    ],
+    "scripts/evaluate_prompts.py": [
+      "_PlainText",
+      "plain_text",
+      "tokens",
+      "score_page",
+      "run_page",
+      "main"
+    ],
+    "scripts/evaluate_resolution.py": [
+      "metric_gate",
+      "compare",
+      "main"
+    ],
+    "src/__init__.py": [],
+    "src/annotate.py": [
+      "_bbox_is_valid",
+      "annotate_document"
+    ],
+    "src/chat.py": [
+      "Evidence",
+      "Statement",
+      "Draft",
+      "Verification",
+      "ChatResult",
+      "document_pages",
+      "_payload",
+      "_call",
+      "_normalize",
+      "_validated_text",
+      "answer_document_question"
+    ],
+    "src/cli.py": [
+      "main",
+      "_extract"
+    ],
+    "src/diagnostics.py": [
+      "FilterAnnotation",
+      "PageDiagnostic",
+      "ExtractionCallError",
+      "safe_identifier",
+      "token_count",
+      "filter_annotations"
+    ],
+    "src/export.py": [
+      "export_result"
+    ],
+    "src/figures.py": [
+      "extract_figures",
+      "load_figures"
+    ],
+    "src/graph.py": [
+      "GraphState",
+      "node_preprocess",
+      "node_parse",
+      "build_graph",
+      "run_graph",
+      "_main"
+    ],
+    "src/layout.py": [
+      "_require_xyxy_len",
+      "BBox",
+      "ListItem",
+      "TableCell",
+      "BlockStructure",
+      "LegacyBlock",
+      "ParseBlock",
+      "ParsePage",
+      "LegacyParsePage",
+      "ParseResult"
+    ],
+    "src/llm.py": [
+      "ExtractConfigError",
+      "_reasoning_kwargs",
+      "_build_llm",
+      "_image_message",
+      "_invoke_structured"
+    ],
+    "src/markdown.py": [
+      "_blocks",
+      "_cell_html",
+      "_md_text",
+      "_table_rows",
+      "_cells",
+      "_render_table_html",
+      "_render_table",
+      "_simple_table",
+      "_list_context",
+      "_list_html",
+      "_list_markdown",
+      "_heading_level",
+      "_render_block_html",
+      "_render_block",
+      "parse_to_markdown",
+      "parse_to_html",
+      "markdown_bundle",
+      "render_and_save",
+      "save_markdown_for_doc",
+      "save_html_for_doc",
+      "_main"
+    ],
+    "src/models.py": [],
+    "src/output_names.py": [
+      "source_stem",
+      "artifact_name",
+      "figure_name",
+      "_occupied",
+      "reserve_basename"
+    ],
+    "src/parse.py": [
+      "_page_context",
+      "parse_page",
+      "parse_document",
+      "_main"
+    ],
+    "src/preprocess.py": [
+      "PreprocessError",
+      "count_pages",
+      "preprocess",
+      "preprocess_pages",
+      "_cap_long_edge",
+      "_render_pdf_page_range"
+    ],
+    "src/prompts.py": [
+      "render_prompt"
+    ],
+    "src/ui/__init__.py": [],
+    "src/ui/app.py": [
+      "clear_chat",
+      "load_input_preview",
+      "show_usage",
+      "figure_assets"
+    ],
+    "src/ui/clipboard.py": [],
+    "src/usage.py": [
+      "record",
+      "totals",
+      "cost_usd",
+      "session_cost_usd"
+    ],
+    "tests/__init__.py": [],
+    "tests/fake_llm.py": [
+      "FakeLLM"
+    ],
+    "tests/fixtures/make_invoice_png.py": [
+      "make_invoice_image",
+      "main"
+    ],
+    "tests/test_annotate.py": [
+      "test_annotated_pdf_is_created",
+      "test_missing_or_out_of_range_bbox_is_skipped_not_crashed",
+      "test_block_type_label_is_drawn",
+      "test_content_filtered_pages_remain_in_annotated_pdf"
+    ],
+    "tests/test_chat.py": [
+      "document",
+      "draft",
+      "client_for",
+      "test_grounded_answer_and_fixed_wire_contract",
+      "test_invalid_evidence_or_style_never_reaches_verifier",
+      "test_rejections_are_fixed_and_not_verified",
+      "test_verifier_blocks_unsupported_claim_with_real_quote",
+      "test_provider_or_schema_failure_is_sanitized_and_accounted",
+      "test_local_limits_and_failed_pages_make_no_calls",
+      "test_only_recent_accepted_history_is_data",
+      "test_luna_remains_invalid_for_parser",
+      "test_tables_and_missing_pages",
+      "test_incomplete_response_never_exposes_text",
+      "test_luna_cost_is_not_sol_cost",
+      "test_empty_layout_markers_do_not_enable_chat",
+      "test_provider_refusal_never_exposes_raw_text"
+    ],
+    "tests/test_cli.py": [
+      "test_launcher_uses_workspace_and_installed_app",
+      "test_invalid_port_does_not_create_workspace"
+    ],
+    "tests/test_cli_extraction.py": [
+      "extraction",
+      "test_selected_formats_only",
+      "test_json_skips_presentation",
+      "test_invalid_options_fail_before_extraction",
+      "test_overwrite_preserves_unrelated_files",
+      "test_input_inside_output_is_rejected",
+      "test_missing_key_fails_before_extraction",
+      "test_env_file_and_environment_precedence",
+      "test_missing_explicit_env_file",
+      "test_requested_export_failure_keeps_other_outputs",
+      "test_parse_failure_writes_only_requested_diagnostics",
+      "test_partial_parse_and_page_range",
+      "test_rendering_view_does_not_filter_json",
+      "test_graph_uses_upload_name_and_start_time_for_every_format"
+    ],
+    "tests/test_diagnostics.py": [
+      "call_response",
+      "completion",
+      "invoke",
+      "test_live_evaluator_disables_retries_on_actual_client",
+      "test_sol_pricing_keeps_requested_model_when_provider_returns_alias",
+      "test_create_retains_strict_schema_messages_settings_and_usage",
+      "test_unsuccessful_output_never_becomes_valid_extraction",
+      "test_http_errors_are_safe_and_not_retried",
+      "test_metadata_allowlist_removes_secret_values_snippets_and_arbitrary_headers",
+      "test_timeout_is_safe_and_missing_usage_stays_unknown",
+      "test_missing_annotations_and_usage_and_old_result_compatibility",
+      "test_resolution_evaluator_sends_actual_output_cap_and_medium_reasoning",
+      "test_raw_client_cannot_bypass_single_model_guard"
+    ],
+    "tests/test_graph.py": [
+      "test_parse_success_sets_status_and_artifacts",
+      "test_parse_failure_sets_status_and_error",
+      "test_overlapping_runs_isolate_usage_and_artifacts",
+      "test_usage_survives_post_request_failure",
+      "test_graph_rejects_other_models_before_preprocessing",
+      "test_direct_compiled_graph_initializes_run_state",
+      "test_partial_parse_keeps_artifacts_and_reports_filtered_pages",
+      "test_all_filtered_pages_fail_without_markdown_or_annotation"
+    ],
+    "tests/test_launcher.py": [
+      "test_launcher_forwards_arguments_and_exit_status"
+    ],
+    "tests/test_layout_evaluation.py": [
+      "corpus",
+      "runner",
+      "test_two_stages_share_ten_request_allowance",
+      "test_failure_stops_and_prevents_candidate",
+      "test_candidate_stops_before_exceeding_allowance",
+      "test_metric_gate_rejects_regression"
+    ],
+    "tests/test_layout_structure.py": [
+      "block",
+      "document",
+      "structure",
+      "test_live_schema_requires_all_fields_and_legacy_load_does_not_change_input",
+      "test_headings_lists_and_lines_preserve_structure_and_source",
+      "test_merged_header_and_headerless_tables",
+      "test_invalid_table_metadata_is_rejected",
+      "test_invalid_nesting_and_heading_level_are_rejected",
+      "test_clean_only_hides_running_furniture_and_chat_keeps_all_text",
+      "test_literal_markup_never_becomes_executable_or_formatting",
+      "test_list_labels_tail_and_unrepresented_text_are_not_lost",
+      "test_plain_bullets_numbering_and_missing_item_source",
+      "test_default_extraction_uses_original_contract_and_detailed_is_opt_in",
+      "test_figure_crop_bundle_and_fallback"
+    ],
+    "tests/test_markdown.py": [
+      "table_structure",
+      "test_ragged_model_table_rows_are_padded_without_changing_cells",
+      "_sample_result",
+      "test_parse_to_markdown_snapshot",
+      "test_parse_to_html_renders_document_like_page",
+      "test_parse_to_html_escapes_content",
+      "test_key_value_splits_on_first_colon",
+      "test_no_bbox_blocks_keep_model_order",
+      "test_render_and_save_writes_md_next_to_json",
+      "test_column_order_is_preserved_even_with_missing_bbox",
+      "test_table_escaping_padding_and_line_breaks_preserve_source",
+      "test_table_empty_and_unstructured_fallback",
+      "test_ordinary_checkbox_words_are_not_rewritten"
+    ],
+    "tests/test_output_names.py": [
+      "test_source_stem",
+      "test_utc_reservation_collision_and_cleanup",
+      "test_collision_with_annotation_or_image_only",
+      "test_json_rerender_resolves_figure_paths_with_special_characters"
+    ],
+    "tests/test_parse.py": [
+      "test_parse_document_writes_json",
+      "test_parse_document_respects_page_range",
+      "test_parse_document_keeps_pages_not_rejected_by_content_filter",
+      "test_sequential_outcomes_keep_page_identity_and_context",
+      "test_all_failed_diagnostics_are_saved",
+      "test_progress_reports_completion_in_source_order"
+    ],
+    "tests/test_preprocess.py": [
+      "_ensure_fixtures",
+      "test_missing_file_raises",
+      "test_png_returns_base64",
+      "test_sha_stable",
+      "test_pdf_first_page",
+      "_make_multi_page_pdf",
+      "test_preprocess_pages_defaults_to_whole_document",
+      "test_preprocess_pages_explicit_range",
+      "test_preprocess_pages_end_page_none_goes_to_last_page",
+      "test_preprocess_pages_single_image_is_one_page",
+      "test_invalid_pdf_ranges_fail",
+      "test_resolution_profiles_and_no_raster_upscaling"
+    ],
+    "tests/test_prompt_evaluation.py": [
+      "test_live_manifest_is_limited_to_approved_six_pages",
+      "test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "test_corrective_run_skips_filtered_pages_before_rendering"
+    ],
+    "tests/test_prompts.py": [
+      "test_prompts_resolve_outside_project_and_preserve_substituted_text",
+      "test_prompt_missing_placeholder_fails",
+      "test_chat_policies_load_outside_project",
+      "test_all_runtime_templates_render_without_reformatting_data",
+      "test_runtime_prompt_contains_fidelity_and_injection_boundaries",
+      "test_detailed_prompt_stays_in_markdown_and_preserves_contract"
+    ],
+    "tests/test_resolution_evaluation.py": [
+      "corpus",
+      "outcome",
+      "test_comparison_uses_only_five_pages_and_ten_bounded_requests",
+      "test_request_limit_stops_before_next_call",
+      "test_budget_reserves_next_request",
+      "test_reported_spend_stops_next_request",
+      "test_unknown_usage_stops_immediately",
+      "test_rejected_pages_are_not_resubmitted_at_other_resolution",
+      "test_limits_cannot_be_increased",
+      "test_any_page_regression_blocks_promotion"
+    ],
+    "tests/test_ui_diagnostics.py": [
+      "upload",
+      "uploaded",
+      "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+      "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+      "test_same_name_new_bytes_reset_count_and_result",
+      "test_bad_upload_and_invalid_range_make_no_calls",
+      "test_migration_resets_legacy_ledger_without_repricing",
+      "test_chat_submission_reruns_and_reset",
+      "test_chat_sessions_do_not_share_history",
+      "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+      "test_detailed_layout_requires_opt_in_and_resets_old_results"
+    ],
+    "tests/test_usage.py": [
+      "test_record_and_totals",
+      "test_missing_usage_is_unknown",
+      "test_ledgers_do_not_share_entries",
+      "test_cost_usd_uses_all_input_rates",
+      "test_unknown_model_is_not_repriced_as_sol"
+    ]
+  },
+  "batches": [
+    {
+      "batchIndex": 1,
+      "files": [
+        {
+          "path": "src/annotate.py",
+          "language": "python",
+          "sizeLines": 129,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/export.py",
+          "language": "python",
+          "sizeLines": 88,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/figures.py",
+          "language": "python",
+          "sizeLines": 70,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/layout.py",
+          "language": "python",
+          "sizeLines": 175,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/markdown.py",
+          "language": "python",
+          "sizeLines": 295,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/output_names.py",
+          "language": "python",
+          "sizeLines": 66,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_annotate.py",
+          "language": "python",
+          "sizeLines": 121,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_layout_evaluation.py",
+          "language": "python",
+          "sizeLines": 77,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_layout_structure.py",
+          "language": "python",
+          "sizeLines": 181,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_markdown.py",
+          "language": "python",
+          "sizeLines": 197,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_output_names.py",
+          "language": "python",
+          "sizeLines": 69,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_prompt_evaluation.py",
+          "language": "python",
+          "sizeLines": 82,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_resolution_evaluation.py",
+          "language": "python",
+          "sizeLines": 96,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/annotate.py": [
+          "src/layout.py",
+          "src/output_names.py",
+          "src/preprocess.py"
+        ],
+        "src/export.py": [
+          "src/annotate.py",
+          "src/figures.py",
+          "src/layout.py",
+          "src/markdown.py",
+          "src/output_names.py"
+        ],
+        "src/figures.py": [
+          "src/annotate.py",
+          "src/layout.py",
+          "src/output_names.py",
+          "src/preprocess.py"
+        ],
+        "src/layout.py": [
+          "src/diagnostics.py"
+        ],
+        "src/markdown.py": [
+          "src/layout.py",
+          "src/output_names.py"
+        ],
+        "src/output_names.py": [],
+        "tests/test_annotate.py": [
+          "src/annotate.py",
+          "src/layout.py"
+        ],
+        "tests/test_layout_evaluation.py": [
+          "src/layout.py"
+        ],
+        "tests/test_layout_structure.py": [
+          "src/chat.py",
+          "src/figures.py",
+          "src/layout.py",
+          "src/markdown.py"
+        ],
+        "tests/test_markdown.py": [
+          "src/layout.py",
+          "src/markdown.py"
+        ],
+        "tests/test_output_names.py": [
+          "src/markdown.py",
+          "src/output_names.py",
+          "tests/test_layout_structure.py"
+        ],
+        "tests/test_prompt_evaluation.py": [
+          "scripts/evaluate_prompts.py",
+          "src/layout.py"
+        ],
+        "tests/test_resolution_evaluation.py": [
+          "src/layout.py"
+        ]
+      },
+      "neighborMap": {
+        "src/annotate.py": [
+          {
+            "path": "src/preprocess.py",
+            "batchIndex": 2,
+            "symbols": [
+              "PreprocessError",
+              "count_pages",
+              "preprocess",
+              "preprocess_pages",
+              "_cap_long_edge",
+              "_render_pdf_page_range"
+            ]
+          }
+        ],
+        "src/export.py": [
+          {
+            "path": "src/graph.py",
+            "batchIndex": 2,
+            "symbols": [
+              "GraphState",
+              "node_preprocess",
+              "node_parse",
+              "build_graph",
+              "run_graph",
+              "_main"
+            ]
+          }
+        ],
+        "src/figures.py": [
+          {
+            "path": "src/preprocess.py",
+            "batchIndex": 2,
+            "symbols": [
+              "PreprocessError",
+              "count_pages",
+              "preprocess",
+              "preprocess_pages",
+              "_cap_long_edge",
+              "_render_pdf_page_range"
+            ]
+          },
+          {
+            "path": "src/ui/app.py",
+            "batchIndex": 2,
+            "symbols": [
+              "clear_chat",
+              "load_input_preview",
+              "show_usage",
+              "figure_assets"
+            ]
+          }
+        ],
+        "src/layout.py": [
+          {
+            "path": "src/diagnostics.py",
+            "batchIndex": 5,
+            "symbols": [
+              "FilterAnnotation",
+              "PageDiagnostic",
+              "ExtractionCallError",
+              "safe_identifier",
+              "token_count",
+              "filter_annotations"
+            ]
+          },
+          {
+            "path": "scripts/evaluate_chat.py",
+            "batchIndex": 4,
+            "symbols": [
+              "main"
+            ]
+          },
+          {
+            "path": "scripts/evaluate_layout.py",
+            "batchIndex": 2,
+            "symbols": [
+              "metric_gate",
+              "compare"
+            ]
+          },
+          {
+            "path": "scripts/evaluate_prompts.py",
+            "batchIndex": 5,
+            "symbols": [
+              "_PlainText",
+              "plain_text",
+              "tokens",
+              "score_page",
+              "run_page",
+              "main"
+            ]
+          },
+          {
+            "path": "scripts/evaluate_resolution.py",
+            "batchIndex": 2,
+            "symbols": [
+              "metric_gate",
+              "compare",
+              "main"
+            ]
+          },
+          {
+            "path": "src/chat.py",
+            "batchIndex": 4,
+            "symbols": [
+              "Evidence",
+              "Statement",
+              "Draft",
+              "Verification",
+              "ChatResult",
+              "document_pages",
+              "_payload",
+              "_call",
+              "_normalize",
+              "_validated_text",
+              "answer_document_question"
+            ]
+          },
+          {
+            "path": "src/graph.py",
+            "batchIndex": 2,
+            "symbols": [
+              "GraphState",
+              "node_preprocess",
+              "node_parse",
+              "build_graph",
+              "run_graph",
+              "_main"
+            ]
+          },
+          {
+            "path": "src/parse.py",
+            "batchIndex": 5,
+            "symbols": [
+              "_page_context",
+              "parse_page",
+              "parse_document",
+              "_main"
+            ]
+          },
+          {
+            "path": "tests/test_chat.py",
+            "batchIndex": 4,
+            "symbols": [
+              "document",
+              "draft",
+              "client_for",
+              "test_grounded_answer_and_fixed_wire_contract",
+              "test_invalid_evidence_or_style_never_reaches_verifier",
+              "test_rejections_are_fixed_and_not_verified",
+              "test_verifier_blocks_unsupported_claim_with_real_quote",
+              "test_provider_or_schema_failure_is_sanitized_and_accounted",
+              "test_local_limits_and_failed_pages_make_no_calls",
+              "test_only_recent_accepted_history_is_data",
+              "test_luna_remains_invalid_for_parser",
+              "test_tables_and_missing_pages",
+              "test_incomplete_response_never_exposes_text",
+              "test_luna_cost_is_not_sol_cost",
+              "test_empty_layout_markers_do_not_enable_chat",
+              "test_provider_refusal_never_exposes_raw_text"
+            ]
+          },
+          {
+            "path": "tests/test_cli_extraction.py",
+            "batchIndex": 3,
+            "symbols": [
+              "extraction",
+              "test_selected_formats_only",
+              "test_json_skips_presentation",
+              "test_invalid_options_fail_before_extraction",
+              "test_overwrite_preserves_unrelated_files",
+              "test_input_inside_output_is_rejected",
+              "test_missing_key_fails_before_extraction",
+              "test_env_file_and_environment_precedence",
+              "test_missing_explicit_env_file",
+              "test_requested_export_failure_keeps_other_outputs",
+              "test_parse_failure_writes_only_requested_diagnostics",
+              "test_partial_parse_and_page_range",
+              "test_rendering_view_does_not_filter_json",
+              "test_graph_uses_upload_name_and_start_time_for_every_format"
+            ]
+          },
+          {
+            "path": "tests/test_diagnostics.py",
+            "batchIndex": 5,
+            "symbols": [
+              "call_response",
+              "completion",
+              "invoke",
+              "test_live_evaluator_disables_retries_on_actual_client",
+              "test_sol_pricing_keeps_requested_model_when_provider_returns_alias",
+              "test_create_retains_strict_schema_messages_settings_and_usage",
+              "test_unsuccessful_output_never_becomes_valid_extraction",
+              "test_http_errors_are_safe_and_not_retried",
+              "test_metadata_allowlist_removes_secret_values_snippets_and_arbitrary_headers",
+              "test_timeout_is_safe_and_missing_usage_stays_unknown",
+              "test_missing_annotations_and_usage_and_old_result_compatibility",
+              "test_resolution_evaluator_sends_actual_output_cap_and_medium_reasoning",
+              "test_raw_client_cannot_bypass_single_model_guard"
+            ]
+          },
+          {
+            "path": "tests/test_graph.py",
+            "batchIndex": 3,
+            "symbols": [
+              "test_parse_success_sets_status_and_artifacts",
+              "test_parse_failure_sets_status_and_error",
+              "test_overlapping_runs_isolate_usage_and_artifacts",
+              "test_usage_survives_post_request_failure",
+              "test_graph_rejects_other_models_before_preprocessing",
+              "test_direct_compiled_graph_initializes_run_state",
+              "test_partial_parse_keeps_artifacts_and_reports_filtered_pages",
+              "test_all_filtered_pages_fail_without_markdown_or_annotation"
+            ]
+          },
+          {
+            "path": "tests/test_parse.py",
+            "batchIndex": 3,
+            "symbols": [
+              "test_parse_document_writes_json",
+              "test_parse_document_respects_page_range",
+              "test_parse_document_keeps_pages_not_rejected_by_content_filter",
+              "test_sequential_outcomes_keep_page_identity_and_context",
+              "test_all_failed_diagnostics_are_saved",
+              "test_progress_reports_completion_in_source_order"
+            ]
+          },
+          {
+            "path": "tests/test_ui_diagnostics.py",
+            "batchIndex": 3,
+            "symbols": [
+              "upload",
+              "uploaded",
+              "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+              "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+              "test_same_name_new_bytes_reset_count_and_result",
+              "test_bad_upload_and_invalid_range_make_no_calls",
+              "test_migration_resets_legacy_ledger_without_repricing",
+              "test_chat_submission_reruns_and_reset",
+              "test_chat_sessions_do_not_share_history",
+              "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+              "test_detailed_layout_requires_opt_in_and_resets_old_results"
+            ]
+          }
+        ],
+        "src/markdown.py": [
+          {
+            "path": "src/ui/app.py",
+            "batchIndex": 2,
+            "symbols": [
+              "clear_chat",
+              "load_input_preview",
+              "show_usage",
+              "figure_assets"
+            ]
+          }
+        ],
+        "src/output_names.py": [
+          {
+            "path": "src/graph.py",
+            "batchIndex": 2,
+            "symbols": [
+              "GraphState",
+              "node_preprocess",
+              "node_parse",
+              "build_graph",
+              "run_graph",
+              "_main"
+            ]
+          }
+        ],
+        "tests/test_layout_structure.py": [
+          {
+            "path": "src/chat.py",
+            "batchIndex": 4,
+            "symbols": [
+              "Evidence",
+              "Statement",
+              "Draft",
+              "Verification",
+              "ChatResult",
+              "document_pages",
+              "_payload",
+              "_call",
+              "_normalize",
+              "_validated_text",
+              "answer_document_question"
+            ]
+          }
+        ],
+        "tests/test_prompt_evaluation.py": [
+          {
+            "path": "scripts/evaluate_prompts.py",
+            "batchIndex": 5,
+            "symbols": [
+              "_PlainText",
+              "plain_text",
+              "tokens",
+              "score_page",
+              "run_page",
+              "main"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 2,
+      "files": [
+        {
+          "path": "scripts/evaluate_layout.py",
+          "language": "python",
+          "sizeLines": 115,
+          "fileCategory": "code"
+        },
+        {
+          "path": "scripts/evaluate_resolution.py",
+          "language": "python",
+          "sizeLines": 125,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/graph.py",
+          "language": "python",
+          "sizeLines": 208,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/models.py",
+          "language": "python",
+          "sizeLines": 20,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/preprocess.py",
+          "language": "python",
+          "sizeLines": 205,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/ui/app.py",
+          "language": "python",
+          "sizeLines": 281,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/ui/clipboard.py",
+          "language": "python",
+          "sizeLines": 81,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/usage.py",
+          "language": "python",
+          "sizeLines": 66,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/fixtures/make_invoice_png.py",
+          "language": "python",
+          "sizeLines": 52,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_preprocess.py",
+          "language": "python",
+          "sizeLines": 117,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "scripts/evaluate_layout.py": [
+          "scripts/evaluate_prompts.py",
+          "scripts/evaluate_resolution.py",
+          "src/layout.py",
+          "src/preprocess.py",
+          "src/usage.py"
+        ],
+        "scripts/evaluate_resolution.py": [
+          "scripts/evaluate_prompts.py",
+          "src/layout.py",
+          "src/models.py",
+          "src/preprocess.py",
+          "src/usage.py"
+        ],
+        "src/graph.py": [
+          "src/__init__.py",
+          "src/export.py",
+          "src/layout.py",
+          "src/models.py",
+          "src/output_names.py",
+          "src/parse.py",
+          "src/preprocess.py",
+          "src/usage.py"
+        ],
+        "src/models.py": [],
+        "src/preprocess.py": [],
+        "src/ui/app.py": [
+          "src/__init__.py",
+          "src/chat.py",
+          "src/figures.py",
+          "src/graph.py",
+          "src/markdown.py",
+          "src/models.py",
+          "src/preprocess.py",
+          "src/ui/clipboard.py",
+          "src/usage.py"
+        ],
+        "src/ui/clipboard.py": [],
+        "src/usage.py": [
+          "src/models.py"
+        ],
+        "tests/fixtures/make_invoice_png.py": [],
+        "tests/test_preprocess.py": [
+          "src/preprocess.py",
+          "tests/fixtures/make_invoice_png.py"
+        ]
+      },
+      "neighborMap": {
+        "scripts/evaluate_layout.py": [
+          {
+            "path": "scripts/evaluate_prompts.py",
+            "batchIndex": 5,
+            "symbols": [
+              "_PlainText",
+              "plain_text",
+              "tokens",
+              "score_page",
+              "run_page",
+              "main"
+            ]
+          },
+          {
+            "path": "src/layout.py",
+            "batchIndex": 1,
+            "symbols": [
+              "_require_xyxy_len",
+              "BBox",
+              "ListItem",
+              "TableCell",
+              "BlockStructure",
+              "LegacyBlock",
+              "ParseBlock",
+              "ParsePage",
+              "LegacyParsePage",
+              "ParseResult"
+            ]
+          }
+        ],
+        "scripts/evaluate_resolution.py": [
+          {
+            "path": "scripts/evaluate_prompts.py",
+            "batchIndex": 5,
+            "symbols": [
+              "_PlainText",
+              "plain_text",
+              "tokens",
+              "score_page",
+              "run_page",
+              "main"
+            ]
+          },
+          {
+            "path": "src/layout.py",
+            "batchIndex": 1,
+            "symbols": [
+              "_require_xyxy_len",
+              "BBox",
+              "ListItem",
+              "TableCell",
+              "BlockStructure",
+              "LegacyBlock",
+              "ParseBlock",
+              "ParsePage",
+              "LegacyParsePage",
+              "ParseResult"
+            ]
+          }
+        ],
+        "src/graph.py": [
+          {
+            "path": "src/__init__.py",
+            "batchIndex": 3,
+            "symbols": []
+          },
+          {
+            "path": "src/export.py",
+            "batchIndex": 1,
+            "symbols": [
+              "export_result"
+            ]
+          },
+          {
+            "path": "src/layout.py",
+            "batchIndex": 1,
+            "symbols": [
+              "_require_xyxy_len",
+              "BBox",
+              "ListItem",
+              "TableCell",
+              "BlockStructure",
+              "LegacyBlock",
+              "ParseBlock",
+              "ParsePage",
+              "LegacyParsePage",
+              "ParseResult"
+            ]
+          },
+          {
+            "path": "src/output_names.py",
+            "batchIndex": 1,
+            "symbols": [
+              "source_stem",
+              "artifact_name",
+              "figure_name",
+              "_occupied",
+              "reserve_basename"
+            ]
+          },
+          {
+            "path": "src/parse.py",
+            "batchIndex": 5,
+            "symbols": [
+              "_page_context",
+              "parse_page",
+              "parse_document",
+              "_main"
+            ]
+          },
+          {
+            "path": "tests/test_ui_diagnostics.py",
+            "batchIndex": 3,
+            "symbols": [
+              "upload",
+              "uploaded",
+              "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+              "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+              "test_same_name_new_bytes_reset_count_and_result",
+              "test_bad_upload_and_invalid_range_make_no_calls",
+              "test_migration_resets_legacy_ledger_without_repricing",
+              "test_chat_submission_reruns_and_reset",
+              "test_chat_sessions_do_not_share_history",
+              "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+              "test_detailed_layout_requires_opt_in_and_resets_old_results"
+            ]
+          }
+        ],
+        "src/models.py": [
+          {
+            "path": "src/chat.py",
+            "batchIndex": 4,
+            "symbols": [
+              "Evidence",
+              "Statement",
+              "Draft",
+              "Verification",
+              "ChatResult",
+              "document_pages",
+              "_payload",
+              "_call",
+              "_normalize",
+              "_validated_text",
+              "answer_document_question"
+            ]
+          },
+          {
+            "path": "src/llm.py",
+            "batchIndex": 5,
+            "symbols": [
+              "ExtractConfigError",
+              "_reasoning_kwargs",
+              "_build_llm",
+              "_image_message",
+              "_invoke_structured"
+            ]
+          },
+          {
+            "path": "src/parse.py",
+            "batchIndex": 5,
+            "symbols": [
+              "_page_context",
+              "parse_page",
+              "parse_document",
+              "_main"
+            ]
+          }
+        ],
+        "src/preprocess.py": [
+          {
+            "path": "scripts/evaluate_prompts.py",
+            "batchIndex": 5,
+            "symbols": [
+              "_PlainText",
+              "plain_text",
+              "tokens",
+              "score_page",
+              "run_page",
+              "main"
+            ]
+          },
+          {
+            "path": "src/annotate.py",
+            "batchIndex": 1,
+            "symbols": [
+              "_bbox_is_valid",
+              "annotate_document"
+            ]
+          },
+          {
+            "path": "src/figures.py",
+            "batchIndex": 1,
+            "symbols": [
+              "extract_figures",
+              "load_figures"
+            ]
+          },
+          {
+            "path": "src/parse.py",
+            "batchIndex": 5,
+            "symbols": [
+              "_page_context",
+              "parse_page",
+              "parse_document",
+              "_main"
+            ]
+          }
+        ],
+        "src/ui/app.py": [
+          {
+            "path": "src/__init__.py",
+            "batchIndex": 3,
+            "symbols": []
+          },
+          {
+            "path": "src/chat.py",
+            "batchIndex": 4,
+            "symbols": [
+              "Evidence",
+              "Statement",
+              "Draft",
+              "Verification",
+              "ChatResult",
+              "document_pages",
+              "_payload",
+              "_call",
+              "_normalize",
+              "_validated_text",
+              "answer_document_question"
+            ]
+          },
+          {
+            "path": "src/figures.py",
+            "batchIndex": 1,
+            "symbols": [
+              "extract_figures",
+              "load_figures"
+            ]
+          },
+          {
+            "path": "src/markdown.py",
+            "batchIndex": 1,
+            "symbols": [
+              "_blocks",
+              "_cell_html",
+              "_md_text",
+              "_table_rows",
+              "_cells",
+              "_render_table_html",
+              "_render_table",
+              "_simple_table",
+              "_list_context",
+              "_list_html",
+              "_list_markdown",
+              "_heading_level",
+              "_render_block_html",
+              "_render_block",
+              "parse_to_markdown",
+              "parse_to_html",
+              "markdown_bundle",
+              "render_and_save",
+              "save_markdown_for_doc",
+              "save_html_for_doc",
+              "_main"
+            ]
+          }
+        ],
+        "src/usage.py": [
+          {
+            "path": "src/chat.py",
+            "batchIndex": 4,
+            "symbols": [
+              "Evidence",
+              "Statement",
+              "Draft",
+              "Verification",
+              "ChatResult",
+              "document_pages",
+              "_payload",
+              "_call",
+              "_normalize",
+              "_validated_text",
+              "answer_document_question"
+            ]
+          },
+          {
+            "path": "tests/test_diagnostics.py",
+            "batchIndex": 5,
+            "symbols": [
+              "call_response",
+              "completion",
+              "invoke",
+              "test_live_evaluator_disables_retries_on_actual_client",
+              "test_sol_pricing_keeps_requested_model_when_provider_returns_alias",
+              "test_create_retains_strict_schema_messages_settings_and_usage",
+              "test_unsuccessful_output_never_becomes_valid_extraction",
+              "test_http_errors_are_safe_and_not_retried",
+              "test_metadata_allowlist_removes_secret_values_snippets_and_arbitrary_headers",
+              "test_timeout_is_safe_and_missing_usage_stays_unknown",
+              "test_missing_annotations_and_usage_and_old_result_compatibility",
+              "test_resolution_evaluator_sends_actual_output_cap_and_medium_reasoning",
+              "test_raw_client_cannot_bypass_single_model_guard"
+            ]
+          },
+          {
+            "path": "tests/test_usage.py",
+            "batchIndex": 3,
+            "symbols": [
+              "test_record_and_totals",
+              "test_missing_usage_is_unknown",
+              "test_ledgers_do_not_share_entries",
+              "test_cost_usd_uses_all_input_rates",
+              "test_unknown_model_is_not_repriced_as_sol"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 3,
+      "files": [
+        {
+          "path": "src/__init__.py",
+          "language": "python",
+          "sizeLines": 9,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/cli.py",
+          "language": "python",
+          "sizeLines": 118,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/fake_llm.py",
+          "language": "python",
+          "sizeLines": 33,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_cli.py",
+          "language": "python",
+          "sizeLines": 36,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_cli_extraction.py",
+          "language": "python",
+          "sizeLines": 196,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_graph.py",
+          "language": "python",
+          "sizeLines": 171,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_parse.py",
+          "language": "python",
+          "sizeLines": 162,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_ui_diagnostics.py",
+          "language": "python",
+          "sizeLines": 220,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_usage.py",
+          "language": "python",
+          "sizeLines": 44,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/__init__.py": [],
+        "src/cli.py": [],
+        "tests/fake_llm.py": [],
+        "tests/test_cli.py": [
+          "src/__init__.py",
+          "src/cli.py"
+        ],
+        "tests/test_cli_extraction.py": [
+          "src/__init__.py",
+          "src/cli.py",
+          "src/layout.py",
+          "src/parse.py"
+        ],
+        "tests/test_graph.py": [
+          "src/__init__.py",
+          "src/layout.py"
+        ],
+        "tests/test_parse.py": [
+          "src/__init__.py",
+          "src/layout.py",
+          "tests/fake_llm.py"
+        ],
+        "tests/test_ui_diagnostics.py": [
+          "src/__init__.py",
+          "src/diagnostics.py",
+          "src/graph.py",
+          "src/layout.py"
+        ],
+        "tests/test_usage.py": [
+          "src/__init__.py",
+          "src/usage.py"
+        ]
+      },
+      "neighborMap": {
+        "src/__init__.py": [
+          {
+            "path": "src/chat.py",
+            "batchIndex": 4,
+            "symbols": [
+              "Evidence",
+              "Statement",
+              "Draft",
+              "Verification",
+              "ChatResult",
+              "document_pages",
+              "_payload",
+              "_call",
+              "_normalize",
+              "_validated_text",
+              "answer_document_question"
+            ]
+          },
+          {
+            "path": "src/graph.py",
+            "batchIndex": 2,
+            "symbols": [
+              "GraphState",
+              "node_preprocess",
+              "node_parse",
+              "build_graph",
+              "run_graph",
+              "_main"
+            ]
+          },
+          {
+            "path": "src/llm.py",
+            "batchIndex": 5,
+            "symbols": [
+              "ExtractConfigError",
+              "_reasoning_kwargs",
+              "_build_llm",
+              "_image_message",
+              "_invoke_structured"
+            ]
+          },
+          {
+            "path": "src/ui/app.py",
+            "batchIndex": 2,
+            "symbols": [
+              "clear_chat",
+              "load_input_preview",
+              "show_usage",
+              "figure_assets"
+            ]
+          },
+          {
+            "path": "tests/test_chat.py",
+            "batchIndex": 4,
+            "symbols": [
+              "document",
+              "draft",
+              "client_for",
+              "test_grounded_answer_and_fixed_wire_contract",
+              "test_invalid_evidence_or_style_never_reaches_verifier",
+              "test_rejections_are_fixed_and_not_verified",
+              "test_verifier_blocks_unsupported_claim_with_real_quote",
+              "test_provider_or_schema_failure_is_sanitized_and_accounted",
+              "test_local_limits_and_failed_pages_make_no_calls",
+              "test_only_recent_accepted_history_is_data",
+              "test_luna_remains_invalid_for_parser",
+              "test_tables_and_missing_pages",
+              "test_incomplete_response_never_exposes_text",
+              "test_luna_cost_is_not_sol_cost",
+              "test_empty_layout_markers_do_not_enable_chat",
+              "test_provider_refusal_never_exposes_raw_text"
+            ]
+          },
+          {
+            "path": "tests/test_diagnostics.py",
+            "batchIndex": 5,
+            "symbols": [
+              "call_response",
+              "completion",
+              "invoke",
+              "test_live_evaluator_disables_retries_on_actual_client",
+              "test_sol_pricing_keeps_requested_model_when_provider_returns_alias",
+              "test_create_retains_strict_schema_messages_settings_and_usage",
+              "test_unsuccessful_output_never_becomes_valid_extraction",
+              "test_http_errors_are_safe_and_not_retried",
+              "test_metadata_allowlist_removes_secret_values_snippets_and_arbitrary_headers",
+              "test_timeout_is_safe_and_missing_usage_stays_unknown",
+              "test_missing_annotations_and_usage_and_old_result_compatibility",
+              "test_resolution_evaluator_sends_actual_output_cap_and_medium_reasoning",
+              "test_raw_client_cannot_bypass_single_model_guard"
+            ]
+          }
+        ],
+        "tests/test_cli_extraction.py": [
+          {
+            "path": "src/layout.py",
+            "batchIndex": 1,
+            "symbols": [
+              "_require_xyxy_len",
+              "BBox",
+              "ListItem",
+              "TableCell",
+              "BlockStructure",
+              "LegacyBlock",
+              "ParseBlock",
+              "ParsePage",
+              "LegacyParsePage",
+              "ParseResult"
+            ]
+          },
+          {
+            "path": "src/parse.py",
+            "batchIndex": 5,
+            "symbols": [
+              "_page_context",
+              "parse_page",
+              "parse_document",
+              "_main"
+            ]
+          }
+        ],
+        "tests/test_graph.py": [
+          {
+            "path": "src/layout.py",
+            "batchIndex": 1,
+            "symbols": [
+              "_require_xyxy_len",
+              "BBox",
+              "ListItem",
+              "TableCell",
+              "BlockStructure",
+              "LegacyBlock",
+              "ParseBlock",
+              "ParsePage",
+              "LegacyParsePage",
+              "ParseResult"
+            ]
+          }
+        ],
+        "tests/test_parse.py": [
+          {
+            "path": "src/layout.py",
+            "batchIndex": 1,
+            "symbols": [
+              "_require_xyxy_len",
+              "BBox",
+              "ListItem",
+              "TableCell",
+              "BlockStructure",
+              "LegacyBlock",
+              "ParseBlock",
+              "ParsePage",
+              "LegacyParsePage",
+              "ParseResult"
+            ]
+          }
+        ],
+        "tests/test_ui_diagnostics.py": [
+          {
+            "path": "src/diagnostics.py",
+            "batchIndex": 5,
+            "symbols": [
+              "FilterAnnotation",
+              "PageDiagnostic",
+              "ExtractionCallError",
+              "safe_identifier",
+              "token_count",
+              "filter_annotations"
+            ]
+          },
+          {
+            "path": "src/graph.py",
+            "batchIndex": 2,
+            "symbols": [
+              "GraphState",
+              "node_preprocess",
+              "node_parse",
+              "build_graph",
+              "run_graph",
+              "_main"
+            ]
+          },
+          {
+            "path": "src/layout.py",
+            "batchIndex": 1,
+            "symbols": [
+              "_require_xyxy_len",
+              "BBox",
+              "ListItem",
+              "TableCell",
+              "BlockStructure",
+              "LegacyBlock",
+              "ParseBlock",
+              "ParsePage",
+              "LegacyParsePage",
+              "ParseResult"
+            ]
+          }
+        ],
+        "tests/test_usage.py": [
+          {
+            "path": "src/usage.py",
+            "batchIndex": 2,
+            "symbols": [
+              "record",
+              "totals",
+              "cost_usd",
+              "session_cost_usd"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 4,
+      "files": [
+        {
+          "path": "scripts/evaluate_chat.py",
+          "language": "python",
+          "sizeLines": 36,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/chat.py",
+          "language": "python",
+          "sizeLines": 190,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/prompts.py",
+          "language": "python",
+          "sizeLines": 24,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_chat.py",
+          "language": "python",
+          "sizeLines": 169,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_prompts.py",
+          "language": "python",
+          "sizeLines": 70,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "scripts/evaluate_chat.py": [
+          "src/chat.py",
+          "src/layout.py"
+        ],
+        "src/chat.py": [
+          "src/__init__.py",
+          "src/diagnostics.py",
+          "src/layout.py",
+          "src/models.py",
+          "src/prompts.py",
+          "src/usage.py"
+        ],
+        "src/prompts.py": [],
+        "tests/test_chat.py": [
+          "src/__init__.py",
+          "src/chat.py",
+          "src/layout.py"
+        ],
+        "tests/test_prompts.py": [
+          "src/prompts.py"
+        ]
+      },
+      "neighborMap": {
+        "scripts/evaluate_chat.py": [
+          {
+            "path": "src/layout.py",
+            "batchIndex": 1,
+            "symbols": [
+              "_require_xyxy_len",
+              "BBox",
+              "ListItem",
+              "TableCell",
+              "BlockStructure",
+              "LegacyBlock",
+              "ParseBlock",
+              "ParsePage",
+              "LegacyParsePage",
+              "ParseResult"
+            ]
+          }
+        ],
+        "src/chat.py": [
+          {
+            "path": "src/__init__.py",
+            "batchIndex": 3,
+            "symbols": []
+          },
+          {
+            "path": "src/diagnostics.py",
+            "batchIndex": 5,
+            "symbols": [
+              "FilterAnnotation",
+              "PageDiagnostic",
+              "ExtractionCallError",
+              "safe_identifier",
+              "token_count",
+              "filter_annotations"
+            ]
+          },
+          {
+            "path": "src/layout.py",
+            "batchIndex": 1,
+            "symbols": [
+              "_require_xyxy_len",
+              "BBox",
+              "ListItem",
+              "TableCell",
+              "BlockStructure",
+              "LegacyBlock",
+              "ParseBlock",
+              "ParsePage",
+              "LegacyParsePage",
+              "ParseResult"
+            ]
+          },
+          {
+            "path": "src/models.py",
+            "batchIndex": 2,
+            "symbols": []
+          },
+          {
+            "path": "src/usage.py",
+            "batchIndex": 2,
+            "symbols": [
+              "record",
+              "totals",
+              "cost_usd",
+              "session_cost_usd"
+            ]
+          },
+          {
+            "path": "src/ui/app.py",
+            "batchIndex": 2,
+            "symbols": [
+              "clear_chat",
+              "load_input_preview",
+              "show_usage",
+              "figure_assets"
+            ]
+          },
+          {
+            "path": "tests/test_layout_structure.py",
+            "batchIndex": 1,
+            "symbols": [
+              "block",
+              "document",
+              "structure",
+              "test_live_schema_requires_all_fields_and_legacy_load_does_not_change_input",
+              "test_headings_lists_and_lines_preserve_structure_and_source",
+              "test_merged_header_and_headerless_tables",
+              "test_invalid_table_metadata_is_rejected",
+              "test_invalid_nesting_and_heading_level_are_rejected",
+              "test_clean_only_hides_running_furniture_and_chat_keeps_all_text",
+              "test_literal_markup_never_becomes_executable_or_formatting",
+              "test_list_labels_tail_and_unrepresented_text_are_not_lost",
+              "test_plain_bullets_numbering_and_missing_item_source",
+              "test_default_extraction_uses_original_contract_and_detailed_is_opt_in",
+              "test_figure_crop_bundle_and_fallback"
+            ]
+          }
+        ],
+        "src/prompts.py": [
+          {
+            "path": "src/parse.py",
+            "batchIndex": 5,
+            "symbols": [
+              "_page_context",
+              "parse_page",
+              "parse_document",
+              "_main"
+            ]
+          }
+        ],
+        "tests/test_chat.py": [
+          {
+            "path": "src/__init__.py",
+            "batchIndex": 3,
+            "symbols": []
+          },
+          {
+            "path": "src/layout.py",
+            "batchIndex": 1,
+            "symbols": [
+              "_require_xyxy_len",
+              "BBox",
+              "ListItem",
+              "TableCell",
+              "BlockStructure",
+              "LegacyBlock",
+              "ParseBlock",
+              "ParsePage",
+              "LegacyParsePage",
+              "ParseResult"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 5,
+      "files": [
+        {
+          "path": "scripts/evaluate_prompts.py",
+          "language": "python",
+          "sizeLines": 165,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/diagnostics.py",
+          "language": "python",
+          "sizeLines": 87,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/llm.py",
+          "language": "python",
+          "sizeLines": 170,
+          "fileCategory": "code"
+        },
+        {
+          "path": "src/parse.py",
+          "language": "python",
+          "sizeLines": 166,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/test_diagnostics.py",
+          "language": "python",
+          "sizeLines": 225,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "scripts/evaluate_prompts.py": [
+          "src/diagnostics.py",
+          "src/layout.py",
+          "src/llm.py",
+          "src/parse.py",
+          "src/preprocess.py"
+        ],
+        "src/diagnostics.py": [],
+        "src/llm.py": [
+          "src/__init__.py",
+          "src/diagnostics.py",
+          "src/models.py"
+        ],
+        "src/parse.py": [
+          "src/diagnostics.py",
+          "src/layout.py",
+          "src/llm.py",
+          "src/models.py",
+          "src/preprocess.py",
+          "src/prompts.py"
+        ],
+        "tests/test_diagnostics.py": [
+          "src/__init__.py",
+          "src/diagnostics.py",
+          "src/layout.py",
+          "src/llm.py",
+          "src/usage.py"
+        ]
+      },
+      "neighborMap": {
+        "scripts/evaluate_prompts.py": [
+          {
+            "path": "src/layout.py",
+            "batchIndex": 1,
+            "symbols": [
+              "_require_xyxy_len",
+              "BBox",
+              "ListItem",
+              "TableCell",
+              "BlockStructure",
+              "LegacyBlock",
+              "ParseBlock",
+              "ParsePage",
+              "LegacyParsePage",
+              "ParseResult"
+            ]
+          },
+          {
+            "path": "src/preprocess.py",
+            "batchIndex": 2,
+            "symbols": [
+              "PreprocessError",
+              "count_pages",
+              "preprocess",
+              "preprocess_pages",
+              "_cap_long_edge",
+              "_render_pdf_page_range"
+            ]
+          },
+          {
+            "path": "scripts/evaluate_layout.py",
+            "batchIndex": 2,
+            "symbols": [
+              "metric_gate",
+              "compare"
+            ]
+          },
+          {
+            "path": "scripts/evaluate_resolution.py",
+            "batchIndex": 2,
+            "symbols": [
+              "metric_gate",
+              "compare",
+              "main"
+            ]
+          },
+          {
+            "path": "tests/test_prompt_evaluation.py",
+            "batchIndex": 1,
+            "symbols": [
+              "test_live_manifest_is_limited_to_approved_six_pages",
+              "test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+              "test_corrective_run_skips_filtered_pages_before_rendering"
+            ]
+          }
+        ],
+        "src/diagnostics.py": [
+          {
+            "path": "src/chat.py",
+            "batchIndex": 4,
+            "symbols": [
+              "Evidence",
+              "Statement",
+              "Draft",
+              "Verification",
+              "ChatResult",
+              "document_pages",
+              "_payload",
+              "_call",
+              "_normalize",
+              "_validated_text",
+              "answer_document_question"
+            ]
+          },
+          {
+            "path": "src/layout.py",
+            "batchIndex": 1,
+            "symbols": [
+              "_require_xyxy_len",
+              "BBox",
+              "ListItem",
+              "TableCell",
+              "BlockStructure",
+              "LegacyBlock",
+              "ParseBlock",
+              "ParsePage",
+              "LegacyParsePage",
+              "ParseResult"
+            ]
+          },
+          {
+            "path": "tests/test_ui_diagnostics.py",
+            "batchIndex": 3,
+            "symbols": [
+              "upload",
+              "uploaded",
+              "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+              "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+              "test_same_name_new_bytes_reset_count_and_result",
+              "test_bad_upload_and_invalid_range_make_no_calls",
+              "test_migration_resets_legacy_ledger_without_repricing",
+              "test_chat_submission_reruns_and_reset",
+              "test_chat_sessions_do_not_share_history",
+              "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+              "test_detailed_layout_requires_opt_in_and_resets_old_results"
+            ]
+          }
+        ],
+        "src/llm.py": [
+          {
+            "path": "src/__init__.py",
+            "batchIndex": 3,
+            "symbols": []
+          },
+          {
+            "path": "src/models.py",
+            "batchIndex": 2,
+            "symbols": []
+          }
+        ],
+        "src/parse.py": [
+          {
+            "path": "src/layout.py",
+            "batchIndex": 1,
+            "symbols": [
+              "_require_xyxy_len",
+              "BBox",
+              "ListItem",
+              "TableCell",
+              "BlockStructure",
+              "LegacyBlock",
+              "ParseBlock",
+              "ParsePage",
+              "LegacyParsePage",
+              "ParseResult"
+            ]
+          },
+          {
+            "path": "src/models.py",
+            "batchIndex": 2,
+            "symbols": []
+          },
+          {
+            "path": "src/preprocess.py",
+            "batchIndex": 2,
+            "symbols": [
+              "PreprocessError",
+              "count_pages",
+              "preprocess",
+              "preprocess_pages",
+              "_cap_long_edge",
+              "_render_pdf_page_range"
+            ]
+          },
+          {
+            "path": "src/prompts.py",
+            "batchIndex": 4,
+            "symbols": [
+              "render_prompt"
+            ]
+          },
+          {
+            "path": "src/graph.py",
+            "batchIndex": 2,
+            "symbols": [
+              "GraphState",
+              "node_preprocess",
+              "node_parse",
+              "build_graph",
+              "run_graph",
+              "_main"
+            ]
+          },
+          {
+            "path": "tests/test_cli_extraction.py",
+            "batchIndex": 3,
+            "symbols": [
+              "extraction",
+              "test_selected_formats_only",
+              "test_json_skips_presentation",
+              "test_invalid_options_fail_before_extraction",
+              "test_overwrite_preserves_unrelated_files",
+              "test_input_inside_output_is_rejected",
+              "test_missing_key_fails_before_extraction",
+              "test_env_file_and_environment_precedence",
+              "test_missing_explicit_env_file",
+              "test_requested_export_failure_keeps_other_outputs",
+              "test_parse_failure_writes_only_requested_diagnostics",
+              "test_partial_parse_and_page_range",
+              "test_rendering_view_does_not_filter_json",
+              "test_graph_uses_upload_name_and_start_time_for_every_format"
+            ]
+          }
+        ],
+        "tests/test_diagnostics.py": [
+          {
+            "path": "src/__init__.py",
+            "batchIndex": 3,
+            "symbols": []
+          },
+          {
+            "path": "src/layout.py",
+            "batchIndex": 1,
+            "symbols": [
+              "_require_xyxy_len",
+              "BBox",
+              "ListItem",
+              "TableCell",
+              "BlockStructure",
+              "LegacyBlock",
+              "ParseBlock",
+              "ParsePage",
+              "LegacyParsePage",
+              "ParseResult"
+            ]
+          },
+          {
+            "path": "src/usage.py",
+            "batchIndex": 2,
+            "symbols": [
+              "record",
+              "totals",
+              "cost_usd",
+              "session_cost_usd"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "batchIndex": 6,
+      "files": [
+        {
+          "path": ".env.example",
+          "language": "config",
+          "sizeLines": 13,
+          "fileCategory": "config"
+        },
+        {
+          "path": "README.md",
+          "language": "markdown",
+          "sizeLines": 145,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "groundmark-architecture.html",
+          "language": "html",
+          "sizeLines": 14884,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "groundmark-architecture.json",
+          "language": "json",
+          "sizeLines": 69,
+          "fileCategory": "config"
+        },
+        {
+          "path": "groundmark-architecture.visual-check.html",
+          "language": "html",
+          "sizeLines": 32,
+          "fileCategory": "markup"
+        },
+        {
+          "path": "groundmark-architecture.visual-check.json",
+          "language": "json",
+          "sizeLines": 547,
+          "fileCategory": "config"
+        },
+        {
+          "path": "pyproject.toml",
+          "language": "toml",
+          "sizeLines": 43,
+          "fileCategory": "config"
+        },
+        {
+          "path": "requirements-dev.txt",
+          "language": "txt",
+          "sizeLines": 2,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "requirements.txt",
+          "language": "txt",
+          "sizeLines": 2,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "run.cmd",
+          "language": "batch",
+          "sizeLines": 10,
+          "fileCategory": "script"
+        }
+      ],
+      "batchImportData": {
+        ".env.example": [],
+        "README.md": [],
+        "groundmark-architecture.html": [],
+        "groundmark-architecture.json": [],
+        "groundmark-architecture.visual-check.html": [],
+        "groundmark-architecture.visual-check.json": [],
+        "pyproject.toml": [],
+        "requirements-dev.txt": [],
+        "requirements.txt": [],
+        "run.cmd": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 7,
+      "files": [
+        {
+          "path": "docs/ARCHITECTURE.md",
+          "language": "markdown",
+          "sizeLines": 46,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/COMPLIANCE.md",
+          "language": "markdown",
+          "sizeLines": 11,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/CONTENT-FILTER-DIAGNOSTICS.md",
+          "language": "markdown",
+          "sizeLines": 68,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/CONTRIBUTING.md",
+          "language": "markdown",
+          "sizeLines": 22,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/LAYOUT-EVALUATION.md",
+          "language": "markdown",
+          "sizeLines": 44,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/MODEL.md",
+          "language": "markdown",
+          "sizeLines": 24,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/PROMPT-EVALUATION.md",
+          "language": "markdown",
+          "sizeLines": 113,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/PROMPTS.md",
+          "language": "markdown",
+          "sizeLines": 15,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/RUNBOOK.md",
+          "language": "markdown",
+          "sizeLines": 60,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "docs/SOL-RESOLUTION-EVALUATION.md",
+          "language": "markdown",
+          "sizeLines": 89,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        "docs/ARCHITECTURE.md": [],
+        "docs/COMPLIANCE.md": [],
+        "docs/CONTENT-FILTER-DIAGNOSTICS.md": [],
+        "docs/CONTRIBUTING.md": [],
+        "docs/LAYOUT-EVALUATION.md": [],
+        "docs/MODEL.md": [],
+        "docs/PROMPT-EVALUATION.md": [],
+        "docs/PROMPTS.md": [],
+        "docs/RUNBOOK.md": [],
+        "docs/SOL-RESOLUTION-EVALUATION.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 8,
+      "files": [
+        {
+          "path": "prompts/runtime/chat-answer.md",
+          "language": "markdown",
+          "sizeLines": 9,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "prompts/runtime/chat-verify.md",
+          "language": "markdown",
+          "sizeLines": 7,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "prompts/runtime/parse-page-structured.md",
+          "language": "markdown",
+          "sizeLines": 66,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "prompts/runtime/parse-page.md",
+          "language": "markdown",
+          "sizeLines": 60,
+          "fileCategory": "docs"
+        }
+      ],
+      "batchImportData": {
+        "prompts/runtime/chat-answer.md": [],
+        "prompts/runtime/chat-verify.md": [],
+        "prompts/runtime/parse-page-structured.md": [],
+        "prompts/runtime/parse-page.md": []
+      },
+      "neighborMap": {}
+    },
+    {
+      "batchIndex": 9,
+      "files": [
+        {
+          "path": "src/ui/__init__.py",
+          "language": "python",
+          "sizeLines": 7,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/__init__.py",
+          "language": "python",
+          "sizeLines": 6,
+          "fileCategory": "code"
+        },
+        {
+          "path": "tests/fixtures/chat-evaluation.md",
+          "language": "markdown",
+          "sizeLines": 16,
+          "fileCategory": "docs"
+        },
+        {
+          "path": "tests/test_launcher.py",
+          "language": "python",
+          "sizeLines": 24,
+          "fileCategory": "code"
+        }
+      ],
+      "batchImportData": {
+        "src/ui/__init__.py": [],
+        "tests/__init__.py": [],
+        "tests/fixtures/chat-evaluation.md": [],
+        "tests/test_launcher.py": []
+      },
+      "neighborMap": {}
+    }
+  ]
+}

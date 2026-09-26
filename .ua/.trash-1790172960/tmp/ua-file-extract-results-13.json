@@ -1,0 +1,1446 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 15,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 15,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 4,
+      "failed": 0,
+      "skipped": 11
+    }
+  },
+  "results": [
+    {
+      "path": "openwiki/.claims/workflows/artifacts-and-exports.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 78,
+      "nonEmptyLines": 78,
+      "sections": [
+        {
+          "heading": "schemaVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "pageVersion",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "claims",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "verification",
+          "level": 1,
+          "line": 74
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "openwiki/architecture/index.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 3,
+      "nonEmptyLines": 2,
+      "sections": [
+        {
+          "heading": "Files",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "openwiki/architecture/parsing-pipeline.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 61,
+      "nonEmptyLines": 42,
+      "sections": [
+        {
+          "heading": "Parsing Pipeline Architecture",
+          "level": 1,
+          "line": 23
+        },
+        {
+          "heading": "Control flow and state ownership",
+          "level": 2,
+          "line": 27
+        },
+        {
+          "heading": "Preprocessing and page selection",
+          "level": 2,
+          "line": 33
+        },
+        {
+          "heading": "Sequential model calls",
+          "level": 2,
+          "line": 39
+        },
+        {
+          "heading": "Diagnostics and outcomes",
+          "level": 2,
+          "line": 45
+        },
+        {
+          "heading": "Verified boundaries",
+          "level": 2,
+          "line": 57
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "openwiki/concepts/index.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 3,
+      "nonEmptyLines": 2,
+      "sections": [
+        {
+          "heading": "Files",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "openwiki/concepts/layout-and-rendering.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 62,
+      "nonEmptyLines": 42,
+      "sections": [
+        {
+          "heading": "Layout Model and Rendering",
+          "level": 1,
+          "line": 21
+        },
+        {
+          "heading": "Stable internal contract",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "Structural invariants",
+          "level": 2,
+          "line": 31
+        },
+        {
+          "heading": "Rendering views and order",
+          "level": 2,
+          "line": 44
+        },
+        {
+          "heading": "Tables and lists",
+          "level": 2,
+          "line": 50
+        },
+        {
+          "heading": "Figures",
+          "level": 2,
+          "line": 56
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "openwiki/features/document-chat.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 57,
+      "nonEmptyLines": 41,
+      "sections": [
+        {
+          "heading": "Grounded Document Chat",
+          "level": 1,
+          "line": 25
+        },
+        {
+          "heading": "Evidence preparation",
+          "level": 2,
+          "line": 29
+        },
+        {
+          "heading": "Draft, check, verify",
+          "level": 2,
+          "line": 35
+        },
+        {
+          "heading": "Request and failure boundaries",
+          "level": 2,
+          "line": 45
+        },
+        {
+          "heading": "UI lifecycle",
+          "level": 2,
+          "line": 51
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "openwiki/features/index.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 3,
+      "nonEmptyLines": 2,
+      "sections": [
+        {
+          "heading": "Files",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "openwiki/operations/development-and-testing.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 64,
+      "nonEmptyLines": 48,
+      "sections": [
+        {
+          "heading": "Development, Testing, and Evaluation",
+          "level": 1,
+          "line": 27
+        },
+        {
+          "heading": "Runtime prompts and packaging",
+          "level": 2,
+          "line": 39
+        },
+        {
+          "heading": "Offline verification versus live evaluation",
+          "level": 2,
+          "line": 45
+        },
+        {
+          "heading": "Operational discipline",
+          "level": 2,
+          "line": 58
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "openwiki/operations/index.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 3,
+      "nonEmptyLines": 2,
+      "sections": [
+        {
+          "heading": "Files",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "openwiki/workflows/artifacts-and-exports.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 68,
+      "nonEmptyLines": 48,
+      "sections": [
+        {
+          "heading": "Artifacts and Export Lifecycle",
+          "level": 1,
+          "line": 25
+        },
+        {
+          "heading": "Run and destination ownership",
+          "level": 2,
+          "line": 29
+        },
+        {
+          "heading": "One collision-safe basename",
+          "level": 2,
+          "line": 35
+        },
+        {
+          "heading": "Selected exports",
+          "level": 2,
+          "line": 41
+        },
+        {
+          "heading": "Figures and annotations",
+          "level": 2,
+          "line": 54
+        },
+        {
+          "heading": "Partial completion and CLI status",
+          "level": 2,
+          "line": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "openwiki/workflows/index.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 3,
+      "nonEmptyLines": 2,
+      "sections": [
+        {
+          "heading": "Files",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "src/annotate.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 129,
+      "nonEmptyLines": 107,
+      "functions": [
+        {
+          "name": "_bbox_is_valid",
+          "startLine": 30,
+          "endLine": 37,
+          "params": [
+            "xyxy"
+          ]
+        },
+        {
+          "name": "annotate_document",
+          "startLine": 40,
+          "endLine": 129,
+          "params": [
+            "source_path",
+            "parse_result",
+            "output_dir",
+            "save_pdf",
+            "save_images",
+            "save_metadata",
+            "output_basename"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "_bbox_is_valid",
+          "line": 30,
+          "isDefault": false
+        },
+        {
+          "name": "annotate_document",
+          "line": 40,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "_bbox_is_valid",
+          "callee": "all",
+          "lineNumber": 35
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "sorted",
+          "lineNumber": 64
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "preprocess_pages",
+          "lineNumber": 71
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "ImageFont.load_default",
+          "lineNumber": 76
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "Image.open(io.BytesIO(base64.b64decode(payload[\"base64\"]))).convert",
+          "lineNumber": 82
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "Image.open",
+          "lineNumber": 82
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "io.BytesIO",
+          "lineNumber": 82
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "base64.b64decode",
+          "lineNumber": 82
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "ImageDraw.Draw",
+          "lineNumber": 83
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "blocks_by_page.get",
+          "lineNumber": 85
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "_bbox_is_valid",
+          "lineNumber": 86
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "draw.rectangle",
+          "lineNumber": 92
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "draw.text",
+          "lineNumber": 93
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "max",
+          "lineNumber": 93
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "annotated_images.append",
+          "lineNumber": 96
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "Path",
+          "lineNumber": 98
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "out_dir.mkdir",
+          "lineNumber": 99
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "artifact_name",
+          "lineNumber": 100
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "first.save",
+          "lineNumber": 103
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "pages_dir.mkdir",
+          "lineNumber": 109
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "zip",
+          "lineNumber": 110
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "image.save",
+          "lineNumber": 112
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "artifact_name",
+          "lineNumber": 112
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "artifact_name",
+          "lineNumber": 114
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "meta_path.write_text",
+          "lineNumber": 116
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "json.dumps",
+          "lineNumber": 117
+        },
+        {
+          "caller": "annotate_document",
+          "callee": "len",
+          "lineNumber": 120
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/export.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 88,
+      "nonEmptyLines": 78,
+      "functions": [
+        {
+          "name": "export_result",
+          "startLine": 15,
+          "endLine": 88,
+          "params": [
+            "source",
+            "result",
+            "output_dir",
+            "formats",
+            "view",
+            "annotation_metadata",
+            "output_basename"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "export_result",
+          "line": 15,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "export_result",
+          "callee": "Path",
+          "lineNumber": 18
+        },
+        {
+          "caller": "export_result",
+          "callee": "directory.mkdir",
+          "lineNumber": 19
+        },
+        {
+          "caller": "write",
+          "callee": "artifact_name",
+          "lineNumber": 29
+        },
+        {
+          "caller": "write",
+          "callee": "isinstance",
+          "lineNumber": 30
+        },
+        {
+          "caller": "write",
+          "callee": "path.write_bytes",
+          "lineNumber": 31
+        },
+        {
+          "caller": "write",
+          "callee": "path.write_text",
+          "lineNumber": 33
+        },
+        {
+          "caller": "write",
+          "callee": "str",
+          "lineNumber": 34
+        },
+        {
+          "caller": "write",
+          "callee": "artifacts[\"output_paths\"].append",
+          "lineNumber": 35
+        },
+        {
+          "caller": "write",
+          "callee": "str",
+          "lineNumber": 35
+        },
+        {
+          "caller": "export_result",
+          "callee": "write",
+          "lineNumber": 39
+        },
+        {
+          "caller": "export_result",
+          "callee": "result.model_dump_json",
+          "lineNumber": 39
+        },
+        {
+          "caller": "export_result",
+          "callee": "artifacts[\"export_errors\"].append",
+          "lineNumber": 41
+        },
+        {
+          "caller": "export_result",
+          "callee": "type",
+          "lineNumber": 41
+        },
+        {
+          "caller": "export_result",
+          "callee": "extract_figures",
+          "lineNumber": 47
+        },
+        {
+          "caller": "export_result",
+          "callee": "artifacts[\"output_paths\"].extend",
+          "lineNumber": 50
+        },
+        {
+          "caller": "export_result",
+          "callee": "str",
+          "lineNumber": 50
+        },
+        {
+          "caller": "export_result",
+          "callee": "render",
+          "lineNumber": 59
+        },
+        {
+          "caller": "export_result",
+          "callee": "write",
+          "lineNumber": 60
+        },
+        {
+          "caller": "export_result",
+          "callee": "artifacts[\"export_errors\"].append",
+          "lineNumber": 64
+        },
+        {
+          "caller": "export_result",
+          "callee": "type",
+          "lineNumber": 64
+        },
+        {
+          "caller": "export_result",
+          "callee": "annotate_document",
+          "lineNumber": 68
+        },
+        {
+          "caller": "export_result",
+          "callee": "str",
+          "lineNumber": 76
+        },
+        {
+          "caller": "export_result",
+          "callee": "artifacts[\"output_paths\"].append",
+          "lineNumber": 77
+        },
+        {
+          "caller": "export_result",
+          "callee": "str",
+          "lineNumber": 77
+        },
+        {
+          "caller": "export_result",
+          "callee": "artifacts[\"output_paths\"].append",
+          "lineNumber": 79
+        },
+        {
+          "caller": "export_result",
+          "callee": "str",
+          "lineNumber": 79
+        },
+        {
+          "caller": "export_result",
+          "callee": "sorted",
+          "lineNumber": 82
+        },
+        {
+          "caller": "export_result",
+          "callee": "(directory / \"annotated\" / basename).iterdir",
+          "lineNumber": 82
+        },
+        {
+          "caller": "export_result",
+          "callee": "p.name.startswith",
+          "lineNumber": 83
+        },
+        {
+          "caller": "export_result",
+          "callee": "str",
+          "lineNumber": 84
+        },
+        {
+          "caller": "export_result",
+          "callee": "artifacts[\"output_paths\"].extend",
+          "lineNumber": 85
+        },
+        {
+          "caller": "export_result",
+          "callee": "str",
+          "lineNumber": 85
+        },
+        {
+          "caller": "export_result",
+          "callee": "artifacts[\"export_errors\"].append",
+          "lineNumber": 87
+        },
+        {
+          "caller": "export_result",
+          "callee": "type",
+          "lineNumber": 87
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 1,
+        "functionCount": 1,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/figures.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 70,
+      "nonEmptyLines": 63,
+      "functions": [
+        {
+          "name": "extract_figures",
+          "startLine": 17,
+          "endLine": 49,
+          "params": [
+            "source",
+            "result",
+            "output_dir",
+            "save_images",
+            "output_basename"
+          ]
+        },
+        {
+          "name": "load_figures",
+          "startLine": 52,
+          "endLine": 70,
+          "params": [
+            "result",
+            "output_dir",
+            "output_basename"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "extract_figures",
+          "line": 17,
+          "isDefault": false
+        },
+        {
+          "name": "load_figures",
+          "line": 52,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "extract_figures",
+          "callee": "enumerate",
+          "lineNumber": 22
+        },
+        {
+          "caller": "extract_figures",
+          "callee": "preprocess_pages",
+          "lineNumber": 26
+        },
+        {
+          "caller": "extract_figures",
+          "callee": "ValueError",
+          "lineNumber": 28
+        },
+        {
+          "caller": "extract_figures",
+          "callee": "Image.open",
+          "lineNumber": 29
+        },
+        {
+          "caller": "extract_figures",
+          "callee": "io.BytesIO",
+          "lineNumber": 29
+        },
+        {
+          "caller": "extract_figures",
+          "callee": "base64.b64decode",
+          "lineNumber": 29
+        },
+        {
+          "caller": "extract_figures",
+          "callee": "_bbox_is_valid",
+          "lineNumber": 31
+        },
+        {
+          "caller": "extract_figures",
+          "callee": "warnings.append",
+          "lineNumber": 32
+        },
+        {
+          "caller": "extract_figures",
+          "callee": "image.crop",
+          "lineNumber": 35
+        },
+        {
+          "caller": "extract_figures",
+          "callee": "math.floor",
+          "lineNumber": 35
+        },
+        {
+          "caller": "extract_figures",
+          "callee": "math.floor",
+          "lineNumber": 35
+        },
+        {
+          "caller": "extract_figures",
+          "callee": "math.ceil",
+          "lineNumber": 36
+        },
+        {
+          "caller": "extract_figures",
+          "callee": "math.ceil",
+          "lineNumber": 36
+        },
+        {
+          "caller": "extract_figures",
+          "callee": "io.BytesIO",
+          "lineNumber": 37
+        },
+        {
+          "caller": "extract_figures",
+          "callee": "crop.save",
+          "lineNumber": 38
+        },
+        {
+          "caller": "extract_figures",
+          "callee": "figure_name",
+          "lineNumber": 39
+        },
+        {
+          "caller": "extract_figures",
+          "callee": "Path",
+          "lineNumber": 40
+        },
+        {
+          "caller": "extract_figures",
+          "callee": "buffer.getvalue",
+          "lineNumber": 41
+        },
+        {
+          "caller": "extract_figures",
+          "callee": "directory.mkdir",
+          "lineNumber": 43
+        },
+        {
+          "caller": "extract_figures",
+          "callee": "(directory / name).write_bytes",
+          "lineNumber": 44
+        },
+        {
+          "caller": "extract_figures",
+          "callee": "warnings.append",
+          "lineNumber": 48
+        },
+        {
+          "caller": "load_figures",
+          "callee": "enumerate",
+          "lineNumber": 55
+        },
+        {
+          "caller": "load_figures",
+          "callee": "dict.fromkeys",
+          "lineNumber": 58
+        },
+        {
+          "caller": "load_figures",
+          "callee": "figure_name",
+          "lineNumber": 58
+        },
+        {
+          "caller": "load_figures",
+          "callee": "figure_name",
+          "lineNumber": 58
+        },
+        {
+          "caller": "load_figures",
+          "callee": "(Path(output_dir) / \"images\" / name).read_bytes",
+          "lineNumber": 61
+        },
+        {
+          "caller": "load_figures",
+          "callee": "Path",
+          "lineNumber": 61
+        },
+        {
+          "caller": "load_figures",
+          "callee": "Image.open",
+          "lineNumber": 62
+        },
+        {
+          "caller": "load_figures",
+          "callee": "io.BytesIO",
+          "lineNumber": 62
+        },
+        {
+          "caller": "load_figures",
+          "callee": "image.verify",
+          "lineNumber": 65
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 2,
+        "functionCount": 2,
+        "classCount": 0
+      }
+    },
+    {
+      "path": "src/graph.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 208,
+      "nonEmptyLines": 184,
+      "functions": [
+        {
+          "name": "node_preprocess",
+          "startLine": 63,
+          "endLine": 77,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "node_parse",
+          "startLine": 80,
+          "endLine": 130,
+          "params": [
+            "state"
+          ]
+        },
+        {
+          "name": "build_graph",
+          "startLine": 133,
+          "endLine": 142,
+          "params": []
+        },
+        {
+          "name": "run_graph",
+          "startLine": 145,
+          "endLine": 183,
+          "params": [
+            "image_path",
+            "start_page",
+            "end_page",
+            "model",
+            "detailed_layout",
+            "on_progress",
+            "output_dir",
+            "formats",
+            "view",
+            "original_filename"
+          ]
+        },
+        {
+          "name": "_main",
+          "startLine": 186,
+          "endLine": 204,
+          "params": []
+        }
+      ],
+      "classes": [
+        {
+          "name": "GraphState",
+          "startLine": 32,
+          "endLine": 60,
+          "methods": [],
+          "properties": [
+            "image_path",
+            "start_page",
+            "end_page",
+            "model",
+            "doc_sha",
+            "parse_result",
+            "markdown",
+            "parse_error",
+            "annotated_pdf_path",
+            "status",
+            "run_id",
+            "output_dir",
+            "token_usage",
+            "parse_json_path",
+            "markdown_path",
+            "html_path",
+            "annotated_page_paths",
+            "figure_warnings",
+            "detailed_layout",
+            "formats",
+            "view",
+            "annotation_metadata",
+            "export_errors",
+            "output_paths",
+            "markdown_zip_path",
+            "original_filename",
+            "started_at",
+            "output_basename"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "GraphState",
+          "line": 32,
+          "isDefault": false
+        },
+        {
+          "name": "node_preprocess",
+          "line": 63,
+          "isDefault": false
+        },
+        {
+          "name": "node_parse",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "build_graph",
+          "line": 133,
+          "isDefault": false
+        },
+        {
+          "name": "run_graph",
+          "line": 145,
+          "isDefault": false
+        },
+        {
+          "name": "_main",
+          "line": 186,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "node_preprocess",
+          "callee": "state.get",
+          "lineNumber": 64
+        },
+        {
+          "caller": "node_preprocess",
+          "callee": "datetime.now(UTC).isoformat",
+          "lineNumber": 64
+        },
+        {
+          "caller": "node_preprocess",
+          "callee": "datetime.now",
+          "lineNumber": 64
+        },
+        {
+          "caller": "node_preprocess",
+          "callee": "print",
+          "lineNumber": 65
+        },
+        {
+          "caller": "node_preprocess",
+          "callee": "preprocess",
+          "lineNumber": 66
+        },
+        {
+          "caller": "node_preprocess",
+          "callee": "state.get",
+          "lineNumber": 68
+        },
+        {
+          "caller": "node_preprocess",
+          "callee": "uuid4",
+          "lineNumber": 68
+        },
+        {
+          "caller": "node_preprocess",
+          "callee": "state.get",
+          "lineNumber": 72
+        },
+        {
+          "caller": "node_preprocess",
+          "callee": "str",
+          "lineNumber": 72
+        },
+        {
+          "caller": "node_preprocess",
+          "callee": "Path",
+          "lineNumber": 72
+        },
+        {
+          "caller": "node_preprocess",
+          "callee": "state.get",
+          "lineNumber": 73
+        },
+        {
+          "caller": "node_preprocess",
+          "callee": "state.get",
+          "lineNumber": 74
+        },
+        {
+          "caller": "node_preprocess",
+          "callee": "state.get",
+          "lineNumber": 75
+        },
+        {
+          "caller": "node_preprocess",
+          "callee": "Path",
+          "lineNumber": 75
+        },
+        {
+          "caller": "node_parse",
+          "callee": "parse_document",
+          "lineNumber": 84
+        },
+        {
+          "caller": "node_parse",
+          "callee": "state.get",
+          "lineNumber": 86
+        },
+        {
+          "caller": "node_parse",
+          "callee": "state.get",
+          "lineNumber": 87
+        },
+        {
+          "caller": "node_parse",
+          "callee": "state.get",
+          "lineNumber": 88
+        },
+        {
+          "caller": "node_parse",
+          "callee": "get_stream_writer",
+          "lineNumber": 90
+        },
+        {
+          "caller": "node_parse",
+          "callee": "state.get",
+          "lineNumber": 92
+        },
+        {
+          "caller": "node_parse",
+          "callee": "\", \".join",
+          "lineNumber": 95
+        },
+        {
+          "caller": "node_parse",
+          "callee": "str",
+          "lineNumber": 95
+        },
+        {
+          "caller": "node_parse",
+          "callee": "\"; \".join",
+          "lineNumber": 103
+        },
+        {
+          "caller": "node_parse",
+          "callee": "reserve_basename",
+          "lineNumber": 105
+        },
+        {
+          "caller": "node_parse",
+          "callee": "datetime.fromisoformat",
+          "lineNumber": 105
+        },
+        {
+          "caller": "node_parse",
+          "callee": "export_result",
+          "lineNumber": 107
+        },
+        {
+          "caller": "node_parse",
+          "callee": "set",
+          "lineNumber": 109
+        },
+        {
+          "caller": "node_parse",
+          "callee": "state.get",
+          "lineNumber": 109
+        },
+        {
+          "caller": "node_parse",
+          "callee": "state.get",
+          "lineNumber": 110
+        },
+        {
+          "caller": "node_parse",
+          "callee": "state.get",
+          "lineNumber": 111
+        },
+        {
+          "caller": "node_parse",
+          "callee": "print",
+          "lineNumber": 123
+        },
+        {
+          "caller": "node_parse",
+          "callee": "str",
+          "lineNumber": 127
+        },
+        {
+          "caller": "build_graph",
+          "callee": "StateGraph",
+          "lineNumber": 134
+        },
+        {
+          "caller": "build_graph",
+          "callee": "graph.add_node",
+          "lineNumber": 135
+        },
+        {
+          "caller": "build_graph",
+          "callee": "graph.add_node",
+          "lineNumber": 136
+        },
+        {
+          "caller": "build_graph",
+          "callee": "graph.add_edge",
+          "lineNumber": 138
+        },
+        {
+          "caller": "build_graph",
+          "callee": "graph.add_edge",
+          "lineNumber": 139
+        },
+        {
+          "caller": "build_graph",
+          "callee": "graph.add_edge",
+          "lineNumber": 140
+        },
+        {
+          "caller": "build_graph",
+          "callee": "graph.compile",
+          "lineNumber": 142
+        },
+        {
+          "caller": "run_graph",
+          "callee": "ValueError",
+          "lineNumber": 153
+        },
+        {
+          "caller": "run_graph",
+          "callee": "ValueError",
+          "lineNumber": 155
+        },
+        {
+          "caller": "run_graph",
+          "callee": "ValueError",
+          "lineNumber": 157
+        },
+        {
+          "caller": "run_graph",
+          "callee": "uuid4",
+          "lineNumber": 159
+        },
+        {
+          "caller": "run_graph",
+          "callee": "build_graph",
+          "lineNumber": 160
+        },
+        {
+          "caller": "run_graph",
+          "callee": "Path",
+          "lineNumber": 163
+        },
+        {
+          "caller": "run_graph",
+          "callee": "datetime.now(UTC).isoformat",
+          "lineNumber": 164
+        },
+        {
+          "caller": "run_graph",
+          "callee": "datetime.now",
+          "lineNumber": 164
+        },
+        {
+          "caller": "run_graph",
+          "callee": "str",
+          "lineNumber": 170
+        },
+        {
+          "caller": "run_graph",
+          "callee": "Path",
+          "lineNumber": 170
+        },
+        {
+          "caller": "run_graph",
+          "callee": "set",
+          "lineNumber": 171
+        },
+        {
+          "caller": "run_graph",
+          "callee": "dict",
+          "lineNumber": 176
+        },
+        {
+          "caller": "run_graph",
+          "callee": "app.stream",
+          "lineNumber": 177
+        },
+        {
+          "caller": "run_graph",
+          "callee": "on_progress",
+          "lineNumber": 181
+        },
+        {
+          "caller": "_main",
+          "callee": "argparse.ArgumentParser",
+          "lineNumber": 187
+        },
+        {
+          "caller": "_main",
+          "callee": "parser.add_argument",
+          "lineNumber": 188
+        },
+        {
+          "caller": "_main",
+          "callee": "parser.add_argument",
+          "lineNumber": 189
+        },
+        {
+          "caller": "_main",
+          "callee": "parser.add_argument",
+          "lineNumber": 190
+        },
+        {
+          "caller": "_main",
+          "callee": "parser.add_argument",
+          "lineNumber": 191
+        },
+        {
+          "caller": "_main",
+          "callee": "parser.parse_args",
+          "lineNumber": 192
+        },
+        {
+          "caller": "_main",
+          "callee": "run_graph",
+          "lineNumber": 194
+        },
+        {
+          "caller": "_main",
+          "callee": "print",
+          "lineNumber": 196
+        },
+        {
+          "caller": "_main",
+          "callee": "result.get",
+          "lineNumber": 196
+        },
+        {
+          "caller": "_main",
+          "callee": "print",
+          "lineNumber": 197
+        },
+        {
+          "caller": "_main",
+          "callee": "result.get",
+          "lineNumber": 197
+        },
+        {
+          "caller": "_main",
+          "callee": "result.get",
+          "lineNumber": 198
+        },
+        {
+          "caller": "_main",
+          "callee": "print",
+          "lineNumber": 199
+        },
+        {
+          "caller": "_main",
+          "callee": "usage.totals",
+          "lineNumber": 200
+        },
+        {
+          "caller": "_main",
+          "callee": "result.get",
+          "lineNumber": 200
+        },
+        {
+          "caller": "_main",
+          "callee": "print",
+          "lineNumber": 201
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 6,
+        "functionCount": 5,
+        "classCount": 1
+      }
+    }
+  ]
+}

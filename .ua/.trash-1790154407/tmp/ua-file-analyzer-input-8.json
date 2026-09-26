@@ -1,0 +1,81 @@
+{
+  "projectRoot": "D:\\AI\\GroundMark",
+  "batchFiles": [
+    {
+      "path": ".ua/.understandignore",
+      "language": "unknown",
+      "sizeLines": 80,
+      "fileCategory": "code"
+    },
+    {
+      "path": ".ua/intermediate/batches.json",
+      "language": "json",
+      "sizeLines": 2550,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/intermediate/scan-result.json",
+      "language": "json",
+      "sizeLines": 1083,
+      "fileCategory": "config"
+    },
+    {
+      "path": "src/ui/__init__.py",
+      "language": "python",
+      "sizeLines": 7,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/__init__.py",
+      "language": "python",
+      "sizeLines": 6,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/fake_llm.py",
+      "language": "python",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/fixtures/.gitkeep",
+      "language": "unknown",
+      "sizeLines": 0,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/fixtures/chat-evaluation.md",
+      "language": "markdown",
+      "sizeLines": 16,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "tests/test_launcher.py",
+      "language": "python",
+      "sizeLines": 58,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_parse.py",
+      "language": "python",
+      "sizeLines": 162,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    ".ua/.understandignore": [],
+    ".ua/intermediate/batches.json": [],
+    ".ua/intermediate/scan-result.json": [],
+    "src/ui/__init__.py": [],
+    "tests/__init__.py": [],
+    "tests/fake_llm.py": [],
+    "tests/fixtures/.gitkeep": [],
+    "tests/fixtures/chat-evaluation.md": [],
+    "tests/test_launcher.py": [],
+    "tests/test_parse.py": [
+      "src/__init__.py",
+      "src/layout.py",
+      "tests/fake_llm.py"
+    ]
+  }
+}

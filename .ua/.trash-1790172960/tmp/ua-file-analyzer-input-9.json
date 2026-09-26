@@ -1,0 +1,147 @@
+{
+  "projectRoot": "D:\\AI\\GroundMark",
+  "batchFiles": [
+    {
+      "path": "docs/diagrams/groundmark-architecture.html",
+      "language": "html",
+      "sizeLines": 14879,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/diagrams/groundmark-architecture.json",
+      "language": "json",
+      "sizeLines": 69,
+      "fileCategory": "config"
+    },
+    {
+      "path": "docs/diagrams/groundmark-architecture.visual-check.html",
+      "language": "html",
+      "sizeLines": 32,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/diagrams/groundmark-architecture.visual-check.json",
+      "language": "json",
+      "sizeLines": 547,
+      "fileCategory": "config"
+    },
+    {
+      "path": "docs/diagrams/groundmark-dataflow.html",
+      "language": "html",
+      "sizeLines": 14842,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/diagrams/groundmark-dataflow.json",
+      "language": "json",
+      "sizeLines": 66,
+      "fileCategory": "config"
+    },
+    {
+      "path": "docs/diagrams/groundmark-dataflow.visual-check.html",
+      "language": "html",
+      "sizeLines": 32,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/diagrams/groundmark-dataflow.visual-check.json",
+      "language": "json",
+      "sizeLines": 547,
+      "fileCategory": "config"
+    },
+    {
+      "path": "docs/diagrams/groundmark-lifecycle.html",
+      "language": "html",
+      "sizeLines": 14803,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/diagrams/groundmark-lifecycle.json",
+      "language": "json",
+      "sizeLines": 32,
+      "fileCategory": "config"
+    },
+    {
+      "path": "docs/diagrams/groundmark-lifecycle.visual-check.html",
+      "language": "html",
+      "sizeLines": 32,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/diagrams/groundmark-lifecycle.visual-check.json",
+      "language": "json",
+      "sizeLines": 547,
+      "fileCategory": "config"
+    },
+    {
+      "path": "docs/diagrams/groundmark-sequence.html",
+      "language": "html",
+      "sizeLines": 14884,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/diagrams/groundmark-sequence.json",
+      "language": "json",
+      "sizeLines": 70,
+      "fileCategory": "config"
+    },
+    {
+      "path": "docs/diagrams/groundmark-sequence.visual-check.html",
+      "language": "html",
+      "sizeLines": 32,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/diagrams/groundmark-sequence.visual-check.json",
+      "language": "json",
+      "sizeLines": 547,
+      "fileCategory": "config"
+    },
+    {
+      "path": "docs/diagrams/groundmark-workflow.html",
+      "language": "html",
+      "sizeLines": 14797,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/diagrams/groundmark-workflow.json",
+      "language": "json",
+      "sizeLines": 74,
+      "fileCategory": "config"
+    },
+    {
+      "path": "docs/diagrams/groundmark-workflow.visual-check.html",
+      "language": "html",
+      "sizeLines": 32,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "docs/diagrams/groundmark-workflow.visual-check.json",
+      "language": "json",
+      "sizeLines": 547,
+      "fileCategory": "config"
+    }
+  ],
+  "batchImportData": {
+    "docs/diagrams/groundmark-architecture.html": [],
+    "docs/diagrams/groundmark-architecture.json": [],
+    "docs/diagrams/groundmark-architecture.visual-check.html": [],
+    "docs/diagrams/groundmark-architecture.visual-check.json": [],
+    "docs/diagrams/groundmark-dataflow.html": [],
+    "docs/diagrams/groundmark-dataflow.json": [],
+    "docs/diagrams/groundmark-dataflow.visual-check.html": [],
+    "docs/diagrams/groundmark-dataflow.visual-check.json": [],
+    "docs/diagrams/groundmark-lifecycle.html": [],
+    "docs/diagrams/groundmark-lifecycle.json": [],
+    "docs/diagrams/groundmark-lifecycle.visual-check.html": [],
+    "docs/diagrams/groundmark-lifecycle.visual-check.json": [],
+    "docs/diagrams/groundmark-sequence.html": [],
+    "docs/diagrams/groundmark-sequence.json": [],
+    "docs/diagrams/groundmark-sequence.visual-check.html": [],
+    "docs/diagrams/groundmark-sequence.visual-check.json": [],
+    "docs/diagrams/groundmark-workflow.html": [],
+    "docs/diagrams/groundmark-workflow.json": [],
+    "docs/diagrams/groundmark-workflow.visual-check.html": [],
+    "docs/diagrams/groundmark-workflow.visual-check.json": []
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "nodes": [
+    {
+      "id": "document:docs/ARCHITECTURE.md",
+      "type": "document",
+      "name": "ARCHITECTURE.md",
+      "filePath": "docs/ARCHITECTURE.md",
+      "summary": "Describes GroundMark’s parse workflow, document structures, UI and CLI paths, rendering and export behavior, and document chat boundaries.",
+      "tags": ["documentation", "architecture", "data-flow"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/COMPLIANCE.md",
+      "type": "document",
+      "name": "COMPLIANCE.md",
+      "filePath": "docs/COMPLIANCE.md",
+      "summary": "Explains what the application sends to its configured model endpoint, how it handles untrusted responses, and where uploaded files and generated artifacts remain.",
+      "tags": ["documentation", "privacy", "security"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/CONTENT-FILTER-DIAGNOSTICS.md",
+      "type": "document",
+      "name": "CONTENT-FILTER-DIAGNOSTICS.md",
+      "filePath": "docs/CONTENT-FILTER-DIAGNOSTICS.md",
+      "summary": "Records a September 2026 live parsing run in which one page returned a content-filter result, with request evidence, offline validation, and accuracy limits.",
+      "tags": ["documentation", "evaluation", "diagnostics"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/CONTRIBUTING.md",
+      "type": "document",
+      "name": "CONTRIBUTING.md",
+      "filePath": "docs/CONTRIBUTING.md",
+      "summary": "Sets project boundaries and implementation guidance for parsing, chat, layout compatibility, focused testing, packaging, and release hygiene.",
+      "tags": ["documentation", "development", "contribution-guide"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/LAYOUT-EVALUATION.md",
+      "type": "document",
+      "name": "LAYOUT-EVALUATION.md",
+      "filePath": "docs/LAYOUT-EVALUATION.md",
+      "summary": "Reports a bounded comparison of the default and detailed layout contracts, including token scores, source-reviewed transcription errors, replay checks, and reasons the experimental mode remains optional.",
+      "tags": ["documentation", "evaluation", "layout"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/MODEL.md",
+      "type": "document",
+      "name": "MODEL.md",
+      "filePath": "docs/MODEL.md",
+      "summary": "Documents the parsing and chat model contracts, response validation, page context, local cost estimates, and the limits of offline versus live evaluation.",
+      "tags": ["documentation", "model-configuration", "extraction"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/PROMPT-EVALUATION.md",
+      "type": "document",
+      "name": "PROMPT-EVALUATION.md",
+      "filePath": "docs/PROMPT-EVALUATION.md",
+      "summary": "Summarizes a dated prompt comparison with its live-call scope, transcription measurements, source-review findings, artifacts, and limits on interpreting token overlap.",
+      "tags": ["documentation", "evaluation", "prompting"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:docs/PROMPTS.md",
+      "type": "document",
+      "name": "PROMPTS.md",
+      "filePath": "docs/PROMPTS.md",
+      "summary": "Describes the default and experimental parsing prompt contracts, their grounding and structure requirements, and the separate document-chat answer and verification policies.",
+      "tags": ["documentation", "prompting", "extraction"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/RUNBOOK.md",
+      "type": "document",
+      "name": "RUNBOOK.md",
+      "filePath": "docs/RUNBOOK.md",
+      "summary": "Provides installation, configuration, UI and CLI usage, artifact locations, troubleshooting, development checks, and release procedures.",
+      "tags": ["documentation", "operations", "installation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:docs/SOL-RESOLUTION-EVALUATION.md",
+      "type": "document",
+      "name": "SOL-RESOLUTION-EVALUATION.md",
+      "filePath": "docs/SOL-RESOLUTION-EVALUATION.md",
+      "summary": "Records a five-page comparison of two image-resolution profiles, including token scores, request and cost limits, verification findings, and the decision to retain the existing rendering settings.",
+      "tags": ["documentation", "evaluation", "image-resolution"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {"source": "document:docs/ARCHITECTURE.md", "target": "file:src/annotate.py", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/ARCHITECTURE.md", "target": "file:src/chat.py", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/ARCHITECTURE.md", "target": "file:src/cli.py", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/ARCHITECTURE.md", "target": "file:src/export.py", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/ARCHITECTURE.md", "target": "file:src/figures.py", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/ARCHITECTURE.md", "target": "file:src/graph.py", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/ARCHITECTURE.md", "target": "file:src/layout.py", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/ARCHITECTURE.md", "target": "file:src/llm.py", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/ARCHITECTURE.md", "target": "file:src/markdown.py", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/ARCHITECTURE.md", "target": "file:src/output_names.py", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/ARCHITECTURE.md", "target": "file:src/parse.py", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/ARCHITECTURE.md", "target": "file:src/preprocess.py", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/ARCHITECTURE.md", "target": "file:src/ui/app.py", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/COMPLIANCE.md", "target": "file:src/chat.py", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/COMPLIANCE.md", "target": "file:src/llm.py", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/CONTENT-FILTER-DIAGNOSTICS.md", "target": "document:docs/LAYOUT-EVALUATION.md", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/CONTRIBUTING.md", "target": "file:src/chat.py", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/CONTRIBUTING.md", "target": "file:src/llm.py", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/CONTRIBUTING.md", "target": "document:docs/LAYOUT-EVALUATION.md", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/LAYOUT-EVALUATION.md", "target": "document:docs/SOL-RESOLUTION-EVALUATION.md", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/MODEL.md", "target": "file:src/models.py", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/MODEL.md", "target": "file:src/chat.py", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/MODEL.md", "target": "document:docs/LAYOUT-EVALUATION.md", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/PROMPT-EVALUATION.md", "target": "document:docs/LAYOUT-EVALUATION.md", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/PROMPTS.md", "target": "document:docs/LAYOUT-EVALUATION.md", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/PROMPTS.md", "target": "file:tests/test_prompts.py", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/RUNBOOK.md", "target": "document:README.md", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/SOL-RESOLUTION-EVALUATION.md", "target": "document:docs/LAYOUT-EVALUATION.md", "type": "documents", "direction": "forward", "weight": 0.5},
+    {"source": "document:docs/SOL-RESOLUTION-EVALUATION.md", "target": "file:scripts/evaluate_prompts.py", "type": "documents", "direction": "forward", "weight": 0.5}
+  ]
+}

@@ -1,0 +1,313 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 5,
+  "filesSkipped": [
+    "groundmark-architecture.html",
+    "groundmark-architecture.visual-check.html",
+    "requirements-dev.txt",
+    "requirements.txt",
+    "run.cmd"
+  ],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 5,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 5
+    }
+  },
+  "results": [
+    {
+      "path": ".env.example",
+      "language": "config",
+      "fileCategory": "config",
+      "totalLines": 13,
+      "nonEmptyLines": 12,
+      "definitions": [
+        {
+          "name": "OPENAI_API_KEY",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 10,
+          "endLine": 10
+        },
+        {
+          "name": "OPENAI_BASE_URL",
+          "kind": "variable",
+          "fields": [],
+          "startLine": 11,
+          "endLine": 11
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "definitionCount": 2
+      }
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 147,
+      "nonEmptyLines": 100,
+      "sections": [
+        {
+          "heading": "GroundMark",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Install",
+          "level": 2,
+          "line": 9
+        },
+        {
+          "heading": "Configure your endpoint",
+          "level": 3,
+          "line": 34
+        },
+        {
+          "heading": "Web UI",
+          "level": 3,
+          "line": 50
+        },
+        {
+          "heading": "Extract from the terminal",
+          "level": 3,
+          "line": 60
+        },
+        {
+          "heading": "Clone and run locally",
+          "level": 3,
+          "line": 91
+        },
+        {
+          "heading": "Outputs",
+          "level": 2,
+          "line": 104
+        },
+        {
+          "heading": "How it works",
+          "level": 2,
+          "line": 119
+        },
+        {
+          "heading": "Documentation",
+          "level": 2,
+          "line": 140
+        },
+        {
+          "heading": "License",
+          "level": 2,
+          "line": 145
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 10
+      }
+    },
+    {
+      "path": "groundmark-architecture.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 69,
+      "nonEmptyLines": 69,
+      "sections": [
+        {
+          "heading": "schema_version",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "diagram_type",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "meta",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "components",
+          "level": 1,
+          "line": 8
+        },
+        {
+          "heading": "boundaries",
+          "level": 1,
+          "line": 22
+        },
+        {
+          "heading": "connections",
+          "level": 1,
+          "line": 26
+        },
+        {
+          "heading": "cards",
+          "level": 1,
+          "line": 40
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 7
+      }
+    },
+    {
+      "path": "groundmark-architecture.visual-check.json",
+      "language": "json",
+      "fileCategory": "config",
+      "totalLines": 547,
+      "nonEmptyLines": 547,
+      "sections": [
+        {
+          "heading": "schemaVersion",
+          "level": 1,
+          "line": 2
+        },
+        {
+          "heading": "ok",
+          "level": 1,
+          "line": 3
+        },
+        {
+          "heading": "command",
+          "level": 1,
+          "line": 4
+        },
+        {
+          "heading": "status",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "visualReview",
+          "level": 1,
+          "line": 6
+        },
+        {
+          "heading": "artifact",
+          "level": 1,
+          "line": 7
+        },
+        {
+          "heading": "state",
+          "level": 1,
+          "line": 12
+        },
+        {
+          "heading": "chrome",
+          "level": 1,
+          "line": 16
+        },
+        {
+          "heading": "diagnostics",
+          "level": 1,
+          "line": 20
+        },
+        {
+          "heading": "containment",
+          "level": 1,
+          "line": 21
+        },
+        {
+          "heading": "readability",
+          "level": 1,
+          "line": 150
+        },
+        {
+          "heading": "viewerChrome",
+          "level": 1,
+          "line": 280
+        },
+        {
+          "heading": "captures",
+          "level": 1,
+          "line": 409
+        },
+        {
+          "heading": "sidecars",
+          "level": 1,
+          "line": 543
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 14
+      }
+    },
+    {
+      "path": "pyproject.toml",
+      "language": "toml",
+      "fileCategory": "config",
+      "totalLines": 43,
+      "nonEmptyLines": 36,
+      "sections": [
+        {
+          "heading": "build-system",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "project",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "project.scripts",
+          "level": 2,
+          "line": 25
+        },
+        {
+          "heading": "project.urls",
+          "level": 2,
+          "line": 28
+        },
+        {
+          "heading": "dependency-groups",
+          "level": 1,
+          "line": 33
+        },
+        {
+          "heading": "tool.hatch.build.targets.wheel",
+          "level": 5,
+          "line": 36
+        },
+        {
+          "heading": "tool.hatch.build.targets.wheel.force-include",
+          "level": 6,
+          "line": 39
+        },
+        {
+          "heading": "tool.hatch.build.targets.sdist",
+          "level": 5,
+          "line": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 8
+      }
+    }
+  ]
+}

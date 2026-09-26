@@ -1,0 +1,77 @@
+{
+  "projectRoot": "D:\\AI\\GroundMark",
+  "batchFiles": [
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "language": "markdown",
+      "sizeLines": 46,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/COMPLIANCE.md",
+      "language": "markdown",
+      "sizeLines": 11,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/CONTENT-FILTER-DIAGNOSTICS.md",
+      "language": "markdown",
+      "sizeLines": 68,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/CONTRIBUTING.md",
+      "language": "markdown",
+      "sizeLines": 22,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/LAYOUT-EVALUATION.md",
+      "language": "markdown",
+      "sizeLines": 44,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/MODEL.md",
+      "language": "markdown",
+      "sizeLines": 24,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/PROMPT-EVALUATION.md",
+      "language": "markdown",
+      "sizeLines": 113,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/PROMPTS.md",
+      "language": "markdown",
+      "sizeLines": 15,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/RUNBOOK.md",
+      "language": "markdown",
+      "sizeLines": 60,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "docs/SOL-RESOLUTION-EVALUATION.md",
+      "language": "markdown",
+      "sizeLines": 89,
+      "fileCategory": "docs"
+    }
+  ],
+  "batchImportData": {
+    "docs/ARCHITECTURE.md": [],
+    "docs/COMPLIANCE.md": [],
+    "docs/CONTENT-FILTER-DIAGNOSTICS.md": [],
+    "docs/CONTRIBUTING.md": [],
+    "docs/LAYOUT-EVALUATION.md": [],
+    "docs/MODEL.md": [],
+    "docs/PROMPT-EVALUATION.md": [],
+    "docs/PROMPTS.md": [],
+    "docs/RUNBOOK.md": [],
+    "docs/SOL-RESOLUTION-EVALUATION.md": []
+  }
+}

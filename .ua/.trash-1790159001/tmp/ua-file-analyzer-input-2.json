@@ -1,0 +1,93 @@
+{
+  "projectRoot": "D:\\AI\\GroundMark",
+  "batchFiles": [
+    {
+      "path": "src/__init__.py",
+      "language": "python",
+      "sizeLines": 9,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/cli.py",
+      "language": "python",
+      "sizeLines": 118,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/fake_llm.py",
+      "language": "python",
+      "sizeLines": 33,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_cli.py",
+      "language": "python",
+      "sizeLines": 36,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_cli_extraction.py",
+      "language": "python",
+      "sizeLines": 196,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_graph.py",
+      "language": "python",
+      "sizeLines": 171,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_parse.py",
+      "language": "python",
+      "sizeLines": 162,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_ui_diagnostics.py",
+      "language": "python",
+      "sizeLines": 220,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_usage.py",
+      "language": "python",
+      "sizeLines": 44,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/__init__.py": [],
+    "src/cli.py": [],
+    "tests/fake_llm.py": [],
+    "tests/test_cli.py": [
+      "src/__init__.py",
+      "src/cli.py"
+    ],
+    "tests/test_cli_extraction.py": [
+      "src/__init__.py",
+      "src/cli.py",
+      "src/layout.py",
+      "src/parse.py"
+    ],
+    "tests/test_graph.py": [
+      "src/__init__.py",
+      "src/layout.py"
+    ],
+    "tests/test_parse.py": [
+      "src/__init__.py",
+      "src/layout.py",
+      "tests/fake_llm.py"
+    ],
+    "tests/test_ui_diagnostics.py": [
+      "src/__init__.py",
+      "src/diagnostics.py",
+      "src/graph.py",
+      "src/layout.py"
+    ],
+    "tests/test_usage.py": [
+      "src/__init__.py",
+      "src/usage.py"
+    ]
+  }
+}

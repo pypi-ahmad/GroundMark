@@ -1,0 +1,45 @@
+{
+  "issues": [],
+  "warnings": [
+    "Node 'file:groundmark-architecture.html' has no edges (orphan)",
+    "Node 'config:groundmark-architecture.json' has no edges (orphan)",
+    "Node 'file:groundmark-architecture.visual-check.html' has no edges (orphan)",
+    "Node 'config:groundmark-architecture.visual-check.json' has no edges (orphan)",
+    "Node 'config:.ua/tmp/ua-import-map-input.json' has no edges (orphan)",
+    "Node 'config:.ua/tmp/ua-import-map-output.json' has no edges (orphan)",
+    "Node 'config:.ua/tmp/ua-scan-files.json' has no edges (orphan)",
+    "Node 'document:docs/COMPLIANCE.md' has no edges (orphan)",
+    "Node 'document:docs/CONTRIBUTING.md' has no edges (orphan)",
+    "Node 'document:docs/RUNBOOK.md' has no edges (orphan)",
+    "Node 'file:.ua/.understandignore' has no edges (orphan)",
+    "Node 'config:.ua/intermediate/batches.json' has no edges (orphan)",
+    "Node 'config:.ua/intermediate/scan-result.json' has no edges (orphan)",
+    "Node 'file:src/ui/__init__.py' has no edges (orphan)",
+    "Node 'file:tests/fixtures/.gitkeep' has no edges (orphan)",
+    "Node 'document:tests/fixtures/chat-evaluation.md' has no edges (orphan)"
+  ],
+  "stats": {
+    "totalNodes": 296,
+    "totalEdges": 798,
+    "totalLayers": 9,
+    "tourSteps": 10,
+    "nodeTypes": {
+      "file": 44,
+      "function": 204,
+      "class": 22,
+      "config": 8,
+      "document": 18
+    },
+    "edgeTypes": {
+      "contains": 226,
+      "exports": 226,
+      "imports": 92,
+      "calls": 209,
+      "tested_by": 20,
+      "configures": 3,
+      "documents": 17,
+      "triggers": 1,
+      "defines_schema": 4
+    }
+  }
+}

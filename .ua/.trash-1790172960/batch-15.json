@@ -1,0 +1,153 @@
+{
+  "nodes": [
+    {
+      "id": "file:tests/test_ui_diagnostics.py",
+      "type": "file",
+      "name": "test_ui_diagnostics.py",
+      "filePath": "tests/test_ui_diagnostics.py",
+      "summary": "Streamlit AppTest regressions for current parse diagnostics, stale-artifact exclusion, rerun-safe usage and previews, chat isolation, upload identity, and opt-in detailed layout.",
+      "tags": ["test", "ui", "diagnostics", "streamlit", "regression"],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:tests/test_ui_diagnostics.py:upload",
+      "type": "function",
+      "name": "upload",
+      "filePath": "tests/test_ui_diagnostics.py",
+      "lineRange": [18, 22],
+      "summary": "Builds an in-memory PDF upload object with a configurable page count and color for UI tests.",
+      "tags": ["test", "fixture-helper", "pdf", "upload"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_ui_diagnostics.py:uploaded",
+      "type": "function",
+      "name": "uploaded",
+      "filePath": "tests/test_ui_diagnostics.py",
+      "lineRange": [26, 30],
+      "summary": "Provides a pytest fixture that changes to an isolated temporary directory and stubs Streamlit's uploader with a controllable upload object.",
+      "tags": ["test", "pytest-fixture", "streamlit", "isolation"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_ui_diagnostics.py:test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+      "type": "function",
+      "name": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+      "filePath": "tests/test_ui_diagnostics.py",
+      "lineRange": [34, 50],
+      "summary": "Checks that a failed parse presents current diagnostics and reported usage without exposing stale Markdown, with diagnostic details conditional on their availability.",
+      "tags": ["test", "diagnostics", "failure-path", "stale-artifacts"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_ui_diagnostics.py:test_sol_only_and_tab_reruns_do_not_repeat_calls",
+      "type": "function",
+      "name": "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+      "filePath": "tests/test_ui_diagnostics.py",
+      "lineRange": [53, 77],
+      "summary": "Verifies the UI uses the Sol model path and that tab reruns preserve one parse call and one usage entry.",
+      "tags": ["test", "rerun-safety", "model-selection", "usage-tracking"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_ui_diagnostics.py:test_same_name_new_bytes_reset_count_and_result",
+      "type": "function",
+      "name": "test_same_name_new_bytes_reset_count_and_result",
+      "filePath": "tests/test_ui_diagnostics.py",
+      "lineRange": [80, 93],
+      "summary": "Checks that replacing an upload with different bytes under the same filename resets the displayed count and result.",
+      "tags": ["test", "upload-identity", "state-reset", "regression"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_ui_diagnostics.py:test_bad_upload_and_invalid_range_make_no_calls",
+      "type": "function",
+      "name": "test_bad_upload_and_invalid_range_make_no_calls",
+      "filePath": "tests/test_ui_diagnostics.py",
+      "lineRange": [96, 103],
+      "summary": "Ensures malformed uploads and invalid page ranges are rejected before invoking the parsing graph.",
+      "tags": ["test", "validation", "upload", "guardrail"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_ui_diagnostics.py:test_migration_resets_legacy_ledger_without_repricing",
+      "type": "function",
+      "name": "test_migration_resets_legacy_ledger_without_repricing",
+      "filePath": "tests/test_ui_diagnostics.py",
+      "lineRange": [106, 113],
+      "summary": "Verifies migration clears the legacy usage ledger without repricing prior work.",
+      "tags": ["test", "migration", "usage-ledger", "pricing"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_ui_diagnostics.py:test_chat_submission_reruns_and_reset",
+      "type": "function",
+      "name": "test_chat_submission_reruns_and_reset",
+      "filePath": "tests/test_ui_diagnostics.py",
+      "lineRange": [116, 151],
+      "summary": "Exercises chat submission and reset behavior across Streamlit reruns using a stubbed chat implementation and checks usage/history state.",
+      "tags": ["test", "chat", "session-state", "rerun-safety"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_ui_diagnostics.py:test_chat_sessions_do_not_share_history",
+      "type": "function",
+      "name": "test_chat_sessions_do_not_share_history",
+      "filePath": "tests/test_ui_diagnostics.py",
+      "lineRange": [154, 158],
+      "summary": "Confirms separate UI instances do not share chat history.",
+      "tags": ["test", "chat", "session-isolation", "history"],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_ui_diagnostics.py:test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+      "type": "function",
+      "name": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+      "filePath": "tests/test_ui_diagnostics.py",
+      "lineRange": [161, 203],
+      "summary": "Checks rendered and raw document views, copy and download actions, and preview changes without triggering additional parsing calls.",
+      "tags": ["test", "document-preview", "clipboard", "download", "ui"],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_ui_diagnostics.py:test_detailed_layout_requires_opt_in_and_resets_old_results",
+      "type": "function",
+      "name": "test_detailed_layout_requires_opt_in_and_resets_old_results",
+      "filePath": "tests/test_ui_diagnostics.py",
+      "lineRange": [206, 220],
+      "summary": "Verifies detailed layout requires explicit opt-in and that enabling it clears prior results before rerunning.",
+      "tags": ["test", "layout", "opt-in", "state-reset"],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:upload", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:upload", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:uploaded", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:uploaded", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:test_sol_only_and_tab_reruns_do_not_repeat_calls", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:test_sol_only_and_tab_reruns_do_not_repeat_calls", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:test_same_name_new_bytes_reset_count_and_result", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:test_same_name_new_bytes_reset_count_and_result", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:test_bad_upload_and_invalid_range_make_no_calls", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:test_bad_upload_and_invalid_range_make_no_calls", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:test_migration_resets_legacy_ledger_without_repricing", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:test_migration_resets_legacy_ledger_without_repricing", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:test_chat_submission_reruns_and_reset", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:test_chat_submission_reruns_and_reset", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:test_chat_sessions_do_not_share_history", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:test_chat_sessions_do_not_share_history", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:test_document_view_changes_rendered_raw_copy_and_download_without_calls", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:test_document_view_changes_rendered_raw_copy_and_download_without_calls", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:test_detailed_layout_requires_opt_in_and_resets_old_results", "type": "contains", "direction": "forward", "weight": 1.0},
+    {"source": "file:tests/test_ui_diagnostics.py", "target": "function:tests/test_ui_diagnostics.py:test_detailed_layout_requires_opt_in_and_resets_old_results", "type": "exports", "direction": "forward", "weight": 0.8},
+    {"source": "file:src/graph.py", "target": "file:tests/test_ui_diagnostics.py", "type": "tested_by", "direction": "forward", "weight": 0.5},
+    {"source": "file:src/diagnostics.py", "target": "file:tests/test_ui_diagnostics.py", "type": "tested_by", "direction": "forward", "weight": 0.5},
+    {"source": "file:src/layout.py", "target": "file:tests/test_ui_diagnostics.py", "type": "tested_by", "direction": "forward", "weight": 0.5},
+    {"source": "file:src/ui/app.py", "target": "file:tests/test_ui_diagnostics.py", "type": "tested_by", "direction": "forward", "weight": 0.5},
+    {"source": "file:src/chat.py", "target": "file:tests/test_ui_diagnostics.py", "type": "tested_by", "direction": "forward", "weight": 0.5},
+    {"source": "file:src/ui/clipboard.py", "target": "file:tests/test_ui_diagnostics.py", "type": "tested_by", "direction": "forward", "weight": 0.5}
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "projectRoot": "D:\\AI\\GroundMark",
+  "batchFiles": [
+    {
+      "path": "scripts/evaluate_prompts.py",
+      "language": "python",
+      "sizeLines": 165,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/diagnostics.py",
+      "language": "python",
+      "sizeLines": 87,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/llm.py",
+      "language": "python",
+      "sizeLines": 170,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/parse.py",
+      "language": "python",
+      "sizeLines": 166,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_diagnostics.py",
+      "language": "python",
+      "sizeLines": 225,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "scripts/evaluate_prompts.py": [
+      "src/diagnostics.py",
+      "src/layout.py",
+      "src/llm.py",
+      "src/parse.py",
+      "src/preprocess.py"
+    ],
+    "src/diagnostics.py": [],
+    "src/llm.py": [
+      "src/__init__.py",
+      "src/diagnostics.py",
+      "src/models.py"
+    ],
+    "src/parse.py": [
+      "src/diagnostics.py",
+      "src/layout.py",
+      "src/llm.py",
+      "src/models.py",
+      "src/preprocess.py",
+      "src/prompts.py"
+    ],
+    "tests/test_diagnostics.py": [
+      "src/__init__.py",
+      "src/diagnostics.py",
+      "src/layout.py",
+      "src/llm.py",
+      "src/usage.py"
+    ]
+  }
+}

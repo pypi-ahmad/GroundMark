@@ -1,0 +1,14 @@
+{
+  "projectRoot": "D:\\AI\\GroundMark",
+  "batchFiles": [
+    {
+      "path": "tests/test_ui_diagnostics.py",
+      "language": "python",
+      "sizeLines": 220,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "tests/test_ui_diagnostics.py": []
+  }
+}

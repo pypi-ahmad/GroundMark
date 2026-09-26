@@ -1,0 +1,49 @@
+{
+  "projectRoot": "D:\\AI\\GroundMark",
+  "batchFiles": [
+    {
+      "path": "src/markdown.py",
+      "language": "python",
+      "sizeLines": 295,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/output_names.py",
+      "language": "python",
+      "sizeLines": 66,
+      "fileCategory": "code"
+    },
+    {
+      "path": "src/ui/app.py",
+      "language": "python",
+      "sizeLines": 281,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_cli_extraction.py",
+      "language": "python",
+      "sizeLines": 196,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_graph.py",
+      "language": "python",
+      "sizeLines": 171,
+      "fileCategory": "code"
+    },
+    {
+      "path": "tests/test_output_names.py",
+      "language": "python",
+      "sizeLines": 69,
+      "fileCategory": "code"
+    }
+  ],
+  "batchImportData": {
+    "src/markdown.py": [],
+    "src/output_names.py": [],
+    "src/ui/app.py": [],
+    "tests/test_cli_extraction.py": [],
+    "tests/test_graph.py": [],
+    "tests/test_output_names.py": []
+  }
+}

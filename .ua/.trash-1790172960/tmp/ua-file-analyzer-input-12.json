@@ -1,0 +1,49 @@
+{
+  "batchFiles": [
+    {
+      "language": "markdown",
+      "fileCategory": "docs",
+      "sizeLines": 11,
+      "path": "knowledge/index.md"
+    },
+    {
+      "language": "json",
+      "fileCategory": "config",
+      "sizeLines": 98,
+      "path": "openwiki/.claims/architecture/parsing-pipeline.json"
+    },
+    {
+      "language": "json",
+      "fileCategory": "config",
+      "sizeLines": 108,
+      "path": "openwiki/.claims/concepts/layout-and-rendering.json"
+    },
+    {
+      "language": "json",
+      "fileCategory": "config",
+      "sizeLines": 118,
+      "path": "openwiki/.claims/features/document-chat.json"
+    },
+    {
+      "language": "json",
+      "fileCategory": "config",
+      "sizeLines": 98,
+      "path": "openwiki/.claims/operations/development-and-testing.json"
+    },
+    {
+      "language": "json",
+      "fileCategory": "config",
+      "sizeLines": 92,
+      "path": "openwiki/.claims/quickstart.json"
+    }
+  ],
+  "projectRoot": "D:\\AI\\GroundMark",
+  "batchImportData": {
+    "openwiki/.claims/features/document-chat.json": [],
+    "openwiki/.claims/concepts/layout-and-rendering.json": [],
+    "openwiki/.claims/architecture/parsing-pipeline.json": [],
+    "openwiki/.claims/operations/development-and-testing.json": [],
+    "knowledge/index.md": [],
+    "openwiki/.claims/quickstart.json": []
+  }
+}

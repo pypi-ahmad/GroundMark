@@ -1,0 +1,138 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 4,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 4,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 4
+    }
+  },
+  "results": [
+    {
+      "path": "prompts/runtime/chat-answer.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 9,
+      "nonEmptyLines": 5,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": "prompts/runtime/chat-verify.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 7,
+      "nonEmptyLines": 4,
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 0
+      }
+    },
+    {
+      "path": "prompts/runtime/parse-page-structured.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 66,
+      "nonEmptyLines": 48,
+      "sections": [
+        {
+          "heading": "Task",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Source priority",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "Fidelity rules",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "Block contract",
+          "level": 1,
+          "line": 22
+        },
+        {
+          "heading": "Page metadata",
+          "level": 1,
+          "line": 54
+        },
+        {
+          "heading": "Preceding-page context",
+          "level": 1,
+          "line": 60
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    },
+    {
+      "path": "prompts/runtime/parse-page.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 60,
+      "nonEmptyLines": 42,
+      "sections": [
+        {
+          "heading": "Task",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Source priority",
+          "level": 1,
+          "line": 5
+        },
+        {
+          "heading": "Fidelity rules",
+          "level": 1,
+          "line": 11
+        },
+        {
+          "heading": "Block contract",
+          "level": 1,
+          "line": 22
+        },
+        {
+          "heading": "Page metadata",
+          "level": 1,
+          "line": 48
+        },
+        {
+          "heading": "Preceding-page context",
+          "level": 1,
+          "line": 54
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 6
+      }
+    }
+  ]
+}

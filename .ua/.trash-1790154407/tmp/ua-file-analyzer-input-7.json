@@ -1,0 +1,35 @@
+{
+  "projectRoot": "D:\\AI\\GroundMark",
+  "batchFiles": [
+    {
+      "path": "prompts/runtime/chat-answer.md",
+      "language": "markdown",
+      "sizeLines": 9,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "prompts/runtime/chat-verify.md",
+      "language": "markdown",
+      "sizeLines": 7,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "prompts/runtime/parse-page-structured.md",
+      "language": "markdown",
+      "sizeLines": 66,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "prompts/runtime/parse-page.md",
+      "language": "markdown",
+      "sizeLines": 60,
+      "fileCategory": "docs"
+    }
+  ],
+  "batchImportData": {
+    "prompts/runtime/chat-answer.md": [],
+    "prompts/runtime/chat-verify.md": [],
+    "prompts/runtime/parse-page-structured.md": [],
+    "prompts/runtime/parse-page.md": []
+  }
+}

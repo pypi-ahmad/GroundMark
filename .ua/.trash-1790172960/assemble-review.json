@@ -1,0 +1,12 @@
+{
+  "fixedSectionOk": true,
+  "nodesRecovered": 0,
+  "edgesRestored": 0,
+  "crossBatchEdgesAdded": 0,
+  "typesRemapped": 0,
+  "complexityRemapped": 0,
+  "notes": [
+    "The supplied merge report did not include detailed Fixed or Could not fix pattern counts. The assembled graph has 360 nodes with unique IDs, no missing IDs, no unknown node types or complexity values, and no dangling edges.",
+    "All 108 importMap relationships have both file-node endpoints present and matching imports edges; none were missing."
+  ]
+}

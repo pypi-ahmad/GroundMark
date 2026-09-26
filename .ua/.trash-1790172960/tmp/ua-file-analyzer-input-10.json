@@ -1,0 +1,35 @@
+{
+  "projectRoot": "D:\\AI\\GroundMark",
+  "batchFiles": [
+    {
+      "path": "openwiki/.last-update.json",
+      "language": "json",
+      "sizeLines": 8,
+      "fileCategory": "config"
+    },
+    {
+      "path": "openwiki/.page-manifest.json",
+      "language": "json",
+      "sizeLines": 47,
+      "fileCategory": "config"
+    },
+    {
+      "path": "openwiki/index.md",
+      "language": "markdown",
+      "sizeLines": 15,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "openwiki/quickstart.md",
+      "language": "markdown",
+      "sizeLines": 81,
+      "fileCategory": "docs"
+    }
+  ],
+  "batchImportData": {
+    "openwiki/.last-update.json": [],
+    "openwiki/.page-manifest.json": [],
+    "openwiki/index.md": [],
+    "openwiki/quickstart.md": []
+  }
+}

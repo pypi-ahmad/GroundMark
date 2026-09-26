@@ -1,0 +1,220 @@
+{
+  "scriptCompleted": true,
+  "stats": {
+    "filesScanned": 70,
+    "filesWithImports": 32,
+    "totalEdges": 108
+  },
+  "importMap": {
+    ".env.example": [],
+    "README.md": [],
+    "docs/ARCHITECTURE.md": [],
+    "docs/COMPLIANCE.md": [],
+    "docs/CONTENT-FILTER-DIAGNOSTICS.md": [],
+    "docs/CONTRIBUTING.md": [],
+    "docs/LAYOUT-EVALUATION.md": [],
+    "docs/MODEL.md": [],
+    "docs/PROMPT-EVALUATION.md": [],
+    "docs/PROMPTS.md": [],
+    "docs/RUNBOOK.md": [],
+    "docs/SOL-RESOLUTION-EVALUATION.md": [],
+    "groundmark-architecture.html": [],
+    "groundmark-architecture.json": [],
+    "groundmark-architecture.visual-check.html": [],
+    "groundmark-architecture.visual-check.json": [],
+    "prompts/runtime/chat-answer.md": [],
+    "prompts/runtime/chat-verify.md": [],
+    "prompts/runtime/parse-page-structured.md": [],
+    "prompts/runtime/parse-page.md": [],
+    "pyproject.toml": [],
+    "requirements-dev.txt": [],
+    "requirements.txt": [],
+    "run.cmd": [],
+    "scripts/evaluate_chat.py": [
+      "src/chat.py",
+      "src/layout.py"
+    ],
+    "scripts/evaluate_layout.py": [
+      "scripts/evaluate_prompts.py",
+      "scripts/evaluate_resolution.py",
+      "src/layout.py",
+      "src/preprocess.py",
+      "src/usage.py"
+    ],
+    "scripts/evaluate_prompts.py": [
+      "src/diagnostics.py",
+      "src/layout.py",
+      "src/llm.py",
+      "src/parse.py",
+      "src/preprocess.py"
+    ],
+    "scripts/evaluate_resolution.py": [
+      "scripts/evaluate_prompts.py",
+      "src/layout.py",
+      "src/models.py",
+      "src/preprocess.py",
+      "src/usage.py"
+    ],
+    "src/__init__.py": [],
+    "src/annotate.py": [
+      "src/layout.py",
+      "src/output_names.py",
+      "src/preprocess.py"
+    ],
+    "src/chat.py": [
+      "src/__init__.py",
+      "src/diagnostics.py",
+      "src/layout.py",
+      "src/models.py",
+      "src/prompts.py",
+      "src/usage.py"
+    ],
+    "src/cli.py": [],
+    "src/diagnostics.py": [],
+    "src/export.py": [
+      "src/annotate.py",
+      "src/figures.py",
+      "src/layout.py",
+      "src/markdown.py",
+      "src/output_names.py"
+    ],
+    "src/figures.py": [
+      "src/annotate.py",
+      "src/layout.py",
+      "src/output_names.py",
+      "src/preprocess.py"
+    ],
+    "src/graph.py": [
+      "src/__init__.py",
+      "src/export.py",
+      "src/layout.py",
+      "src/models.py",
+      "src/output_names.py",
+      "src/parse.py",
+      "src/preprocess.py",
+      "src/usage.py"
+    ],
+    "src/layout.py": [
+      "src/diagnostics.py"
+    ],
+    "src/llm.py": [
+      "src/__init__.py",
+      "src/diagnostics.py",
+      "src/models.py"
+    ],
+    "src/markdown.py": [
+      "src/layout.py",
+      "src/output_names.py"
+    ],
+    "src/models.py": [],
+    "src/output_names.py": [],
+    "src/parse.py": [
+      "src/diagnostics.py",
+      "src/layout.py",
+      "src/llm.py",
+      "src/models.py",
+      "src/preprocess.py",
+      "src/prompts.py"
+    ],
+    "src/preprocess.py": [],
+    "src/prompts.py": [],
+    "src/ui/__init__.py": [],
+    "src/ui/app.py": [
+      "src/__init__.py",
+      "src/chat.py",
+      "src/figures.py",
+      "src/graph.py",
+      "src/markdown.py",
+      "src/models.py",
+      "src/preprocess.py",
+      "src/ui/clipboard.py",
+      "src/usage.py"
+    ],
+    "src/ui/clipboard.py": [],
+    "src/usage.py": [
+      "src/models.py"
+    ],
+    "tests/__init__.py": [],
+    "tests/fake_llm.py": [],
+    "tests/fixtures/chat-evaluation.md": [],
+    "tests/fixtures/make_invoice_png.py": [],
+    "tests/test_annotate.py": [
+      "src/annotate.py",
+      "src/layout.py"
+    ],
+    "tests/test_chat.py": [
+      "src/__init__.py",
+      "src/chat.py",
+      "src/layout.py"
+    ],
+    "tests/test_cli.py": [
+      "src/__init__.py",
+      "src/cli.py"
+    ],
+    "tests/test_cli_extraction.py": [
+      "src/__init__.py",
+      "src/cli.py",
+      "src/layout.py",
+      "src/parse.py"
+    ],
+    "tests/test_diagnostics.py": [
+      "src/__init__.py",
+      "src/diagnostics.py",
+      "src/layout.py",
+      "src/llm.py",
+      "src/usage.py"
+    ],
+    "tests/test_graph.py": [
+      "src/__init__.py",
+      "src/layout.py"
+    ],
+    "tests/test_launcher.py": [],
+    "tests/test_layout_evaluation.py": [
+      "src/layout.py"
+    ],
+    "tests/test_layout_structure.py": [
+      "src/chat.py",
+      "src/figures.py",
+      "src/layout.py",
+      "src/markdown.py"
+    ],
+    "tests/test_markdown.py": [
+      "src/layout.py",
+      "src/markdown.py"
+    ],
+    "tests/test_output_names.py": [
+      "src/markdown.py",
+      "src/output_names.py",
+      "tests/test_layout_structure.py"
+    ],
+    "tests/test_parse.py": [
+      "src/__init__.py",
+      "src/layout.py",
+      "tests/fake_llm.py"
+    ],
+    "tests/test_preprocess.py": [
+      "src/preprocess.py",
+      "tests/fixtures/make_invoice_png.py"
+    ],
+    "tests/test_prompt_evaluation.py": [
+      "scripts/evaluate_prompts.py",
+      "src/layout.py"
+    ],
+    "tests/test_prompts.py": [
+      "src/prompts.py"
+    ],
+    "tests/test_resolution_evaluation.py": [
+      "src/layout.py"
+    ],
+    "tests/test_ui_diagnostics.py": [
+      "src/__init__.py",
+      "src/diagnostics.py",
+      "src/graph.py",
+      "src/layout.py"
+    ],
+    "tests/test_usage.py": [
+      "src/__init__.py",
+      "src/usage.py"
+    ]
+  }
+}

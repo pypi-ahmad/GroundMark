@@ -1,0 +1,4289 @@
+{
+  "batchIndex": 0,
+  "totalBatches": 9,
+  "nodes": [
+    {
+      "id": "file:src/annotate.py",
+      "type": "file",
+      "name": "annotate.py",
+      "filePath": "src/annotate.py",
+      "summary": "Renders bounding boxes and layout classification overlays on PDF pages and images.",
+      "tags": [
+        "annotation",
+        "visualization",
+        "pdf",
+        "image-processing"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/annotate.py:_bbox_is_valid",
+      "type": "function",
+      "name": "_bbox_is_valid",
+      "filePath": "src/annotate.py",
+      "lineRange": [
+        30,
+        37
+      ],
+      "summary": " Bbox Is Valid function in annotate.py supporting annotate operations.",
+      "tags": [
+        "function",
+        "annotate",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/annotate.py:annotate_document",
+      "type": "function",
+      "name": "annotate_document",
+      "filePath": "src/annotate.py",
+      "lineRange": [
+        40,
+        129
+      ],
+      "summary": "Annotate Document function in annotate.py supporting annotate operations.",
+      "tags": [
+        "function",
+        "annotate",
+        "groundmark"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/export.py",
+      "type": "file",
+      "name": "export.py",
+      "filePath": "src/export.py",
+      "summary": "Export serialization utilities converting extracted document artifacts to JSON, Markdown, and images.",
+      "tags": [
+        "export",
+        "serialization",
+        "utility",
+        "formatting"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/export.py:export_result",
+      "type": "function",
+      "name": "export_result",
+      "filePath": "src/export.py",
+      "lineRange": [
+        15,
+        88
+      ],
+      "summary": "Export Result function in export.py supporting export operations.",
+      "tags": [
+        "function",
+        "export",
+        "groundmark"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:src/figures.py",
+      "type": "file",
+      "name": "figures.py",
+      "filePath": "src/figures.py",
+      "summary": "Extracts, crops, and persists image figures and tables from parsed document regions.",
+      "tags": [
+        "image-processing",
+        "figure-extraction",
+        "cropping",
+        "artifacts"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/figures.py:extract_figures",
+      "type": "function",
+      "name": "extract_figures",
+      "filePath": "src/figures.py",
+      "lineRange": [
+        17,
+        49
+      ],
+      "summary": "Extract Figures function in figures.py supporting figures operations.",
+      "tags": [
+        "function",
+        "figures",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/figures.py:load_figures",
+      "type": "function",
+      "name": "load_figures",
+      "filePath": "src/figures.py",
+      "lineRange": [
+        52,
+        70
+      ],
+      "summary": "Load Figures function in figures.py supporting figures operations.",
+      "tags": [
+        "function",
+        "figures",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/layout.py",
+      "type": "file",
+      "name": "layout.py",
+      "filePath": "src/layout.py",
+      "summary": "Core layout analysis engine detecting reading order, columns, headers, tables, and bounding boxes.",
+      "tags": [
+        "layout-analysis",
+        "document-parser",
+        "reading-order",
+        "ocr"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/layout.py:_require_xyxy_len",
+      "type": "function",
+      "name": "_require_xyxy_len",
+      "filePath": "src/layout.py",
+      "lineRange": [
+        27,
+        30
+      ],
+      "summary": " Require Xyxy Len function in layout.py supporting layout operations.",
+      "tags": [
+        "function",
+        "layout",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/layout.py:BBox",
+      "type": "class",
+      "name": "BBox",
+      "filePath": "src/layout.py",
+      "lineRange": [
+        33,
+        39
+      ],
+      "summary": "Bbox class in layout.py supporting layout operations.",
+      "tags": [
+        "class",
+        "layout",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/layout.py:ListItem",
+      "type": "class",
+      "name": "ListItem",
+      "filePath": "src/layout.py",
+      "lineRange": [
+        42,
+        47
+      ],
+      "summary": "Listitem class in layout.py supporting layout operations.",
+      "tags": [
+        "class",
+        "layout",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/layout.py:TableCell",
+      "type": "class",
+      "name": "TableCell",
+      "filePath": "src/layout.py",
+      "lineRange": [
+        50,
+        56
+      ],
+      "summary": "Tablecell class in layout.py supporting layout operations.",
+      "tags": [
+        "class",
+        "layout",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/layout.py:BlockStructure",
+      "type": "class",
+      "name": "BlockStructure",
+      "filePath": "src/layout.py",
+      "lineRange": [
+        59,
+        63
+      ],
+      "summary": "Blockstructure class in layout.py supporting layout operations.",
+      "tags": [
+        "class",
+        "layout",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/layout.py:LegacyBlock",
+      "type": "class",
+      "name": "LegacyBlock",
+      "filePath": "src/layout.py",
+      "lineRange": [
+        66,
+        85
+      ],
+      "summary": "Legacyblock class in layout.py supporting layout operations.",
+      "tags": [
+        "class",
+        "layout",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/layout.py:ParseBlock",
+      "type": "class",
+      "name": "ParseBlock",
+      "filePath": "src/layout.py",
+      "lineRange": [
+        88,
+        127
+      ],
+      "summary": "Parseblock class in layout.py supporting layout operations.",
+      "tags": [
+        "class",
+        "layout",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/layout.py:ParsePage",
+      "type": "class",
+      "name": "ParsePage",
+      "filePath": "src/layout.py",
+      "lineRange": [
+        130,
+        136
+      ],
+      "summary": "Parsepage class in layout.py supporting layout operations.",
+      "tags": [
+        "class",
+        "layout",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/layout.py:LegacyParsePage",
+      "type": "class",
+      "name": "LegacyParsePage",
+      "filePath": "src/layout.py",
+      "lineRange": [
+        139,
+        150
+      ],
+      "summary": "Legacyparsepage class in layout.py supporting layout operations.",
+      "tags": [
+        "class",
+        "layout",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "class:src/layout.py:ParseResult",
+      "type": "class",
+      "name": "ParseResult",
+      "filePath": "src/layout.py",
+      "lineRange": [
+        153,
+        175
+      ],
+      "summary": "Parseresult class in layout.py supporting layout operations.",
+      "tags": [
+        "class",
+        "layout",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/markdown.py",
+      "type": "file",
+      "name": "markdown.py",
+      "filePath": "src/markdown.py",
+      "summary": "Converts structured layout elements and table grids into clean, human-readable GitHub-flavored markdown.",
+      "tags": [
+        "markdown",
+        "serialization",
+        "table-formatting",
+        "text-generation"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "function:src/markdown.py:_blocks",
+      "type": "function",
+      "name": "_blocks",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        21,
+        31
+      ],
+      "summary": " Blocks function in markdown.py supporting markdown operations.",
+      "tags": [
+        "function",
+        "markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:_cell_html",
+      "type": "function",
+      "name": "_cell_html",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        34,
+        35
+      ],
+      "summary": " Cell Html function in markdown.py supporting markdown operations.",
+      "tags": [
+        "function",
+        "markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:_md_text",
+      "type": "function",
+      "name": "_md_text",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        38,
+        45
+      ],
+      "summary": " Md Text function in markdown.py supporting markdown operations.",
+      "tags": [
+        "function",
+        "markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:_table_rows",
+      "type": "function",
+      "name": "_table_rows",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        48,
+        50
+      ],
+      "summary": " Table Rows function in markdown.py supporting markdown operations.",
+      "tags": [
+        "function",
+        "markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:_cells",
+      "type": "function",
+      "name": "_cells",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        53,
+        58
+      ],
+      "summary": " Cells function in markdown.py supporting markdown operations.",
+      "tags": [
+        "function",
+        "markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:_render_table_html",
+      "type": "function",
+      "name": "_render_table_html",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        61,
+        80
+      ],
+      "summary": " Render Table Html function in markdown.py supporting markdown operations.",
+      "tags": [
+        "function",
+        "markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:_render_table",
+      "type": "function",
+      "name": "_render_table",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        83,
+        92
+      ],
+      "summary": " Render Table function in markdown.py supporting markdown operations.",
+      "tags": [
+        "function",
+        "markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:_simple_table",
+      "type": "function",
+      "name": "_simple_table",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        95,
+        97
+      ],
+      "summary": " Simple Table function in markdown.py supporting markdown operations.",
+      "tags": [
+        "function",
+        "markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:_list_context",
+      "type": "function",
+      "name": "_list_context",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        100,
+        121
+      ],
+      "summary": " List Context function in markdown.py supporting markdown operations.",
+      "tags": [
+        "function",
+        "markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:_list_html",
+      "type": "function",
+      "name": "_list_html",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        124,
+        146
+      ],
+      "summary": " List Html function in markdown.py supporting markdown operations.",
+      "tags": [
+        "function",
+        "markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:_list_markdown",
+      "type": "function",
+      "name": "_list_markdown",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        149,
+        165
+      ],
+      "summary": " List Markdown function in markdown.py supporting markdown operations.",
+      "tags": [
+        "function",
+        "markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:_heading_level",
+      "type": "function",
+      "name": "_heading_level",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        168,
+        169
+      ],
+      "summary": " Heading Level function in markdown.py supporting markdown operations.",
+      "tags": [
+        "function",
+        "markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:_render_block_html",
+      "type": "function",
+      "name": "_render_block_html",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        172,
+        187
+      ],
+      "summary": " Render Block Html function in markdown.py supporting markdown operations.",
+      "tags": [
+        "function",
+        "markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:_render_block",
+      "type": "function",
+      "name": "_render_block",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        190,
+        206
+      ],
+      "summary": " Render Block function in markdown.py supporting markdown operations.",
+      "tags": [
+        "function",
+        "markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:parse_to_markdown",
+      "type": "function",
+      "name": "parse_to_markdown",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        209,
+        222
+      ],
+      "summary": "Parse To Markdown function in markdown.py supporting markdown operations.",
+      "tags": [
+        "function",
+        "markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:parse_to_html",
+      "type": "function",
+      "name": "parse_to_html",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        235,
+        245
+      ],
+      "summary": "Parse To Html function in markdown.py supporting markdown operations.",
+      "tags": [
+        "function",
+        "markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:markdown_bundle",
+      "type": "function",
+      "name": "markdown_bundle",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        248,
+        257
+      ],
+      "summary": "Markdown Bundle function in markdown.py supporting markdown operations.",
+      "tags": [
+        "function",
+        "markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:render_and_save",
+      "type": "function",
+      "name": "render_and_save",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        260,
+        267
+      ],
+      "summary": "Render And Save function in markdown.py supporting markdown operations.",
+      "tags": [
+        "function",
+        "markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:save_markdown_for_doc",
+      "type": "function",
+      "name": "save_markdown_for_doc",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        270,
+        276
+      ],
+      "summary": "Save Markdown For Doc function in markdown.py supporting markdown operations.",
+      "tags": [
+        "function",
+        "markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:save_html_for_doc",
+      "type": "function",
+      "name": "save_html_for_doc",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        279,
+        285
+      ],
+      "summary": "Save Html For Doc function in markdown.py supporting markdown operations.",
+      "tags": [
+        "function",
+        "markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/markdown.py:_main",
+      "type": "function",
+      "name": "_main",
+      "filePath": "src/markdown.py",
+      "lineRange": [
+        288,
+        291
+      ],
+      "summary": " Main function in markdown.py supporting markdown operations.",
+      "tags": [
+        "function",
+        "markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:src/output_names.py",
+      "type": "file",
+      "name": "output_names.py",
+      "filePath": "src/output_names.py",
+      "summary": "Standardizes output artifact naming conventions, page prefixes, and directory structures.",
+      "tags": [
+        "utility",
+        "naming",
+        "path-management"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:src/output_names.py:source_stem",
+      "type": "function",
+      "name": "source_stem",
+      "filePath": "src/output_names.py",
+      "lineRange": [
+        9,
+        16
+      ],
+      "summary": "Source Stem function in output_names.py supporting output_names operations.",
+      "tags": [
+        "function",
+        "output-names",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/output_names.py:artifact_name",
+      "type": "function",
+      "name": "artifact_name",
+      "filePath": "src/output_names.py",
+      "lineRange": [
+        19,
+        22
+      ],
+      "summary": "Artifact Name function in output_names.py supporting output_names operations.",
+      "tags": [
+        "function",
+        "output-names",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/output_names.py:figure_name",
+      "type": "function",
+      "name": "figure_name",
+      "filePath": "src/output_names.py",
+      "lineRange": [
+        25,
+        27
+      ],
+      "summary": "Figure Name function in output_names.py supporting output_names operations.",
+      "tags": [
+        "function",
+        "output-names",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/output_names.py:_occupied",
+      "type": "function",
+      "name": "_occupied",
+      "filePath": "src/output_names.py",
+      "lineRange": [
+        30,
+        39
+      ],
+      "summary": " Occupied function in output_names.py supporting output_names operations.",
+      "tags": [
+        "function",
+        "output-names",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:src/output_names.py:reserve_basename",
+      "type": "function",
+      "name": "reserve_basename",
+      "filePath": "src/output_names.py",
+      "lineRange": [
+        43,
+        66
+      ],
+      "summary": "Reserve Basename function in output_names.py supporting output_names operations.",
+      "tags": [
+        "function",
+        "output-names",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_annotate.py",
+      "type": "file",
+      "name": "test_annotate.py",
+      "filePath": "tests/test_annotate.py",
+      "summary": "Unit tests verifying PDF and image bounding box rendering, clipping, and color assignment.",
+      "tags": [
+        "test",
+        "annotation",
+        "unit-test"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_annotate.py:test_annotated_pdf_is_created",
+      "type": "function",
+      "name": "test_annotated_pdf_is_created",
+      "filePath": "tests/test_annotate.py",
+      "lineRange": [
+        19,
+        45
+      ],
+      "summary": "Test Annotated Pdf Is Created function in test_annotate.py supporting test_annotate operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-annotate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_annotate.py:test_missing_or_out_of_range_bbox_is_skipped_not_crashed",
+      "type": "function",
+      "name": "test_missing_or_out_of_range_bbox_is_skipped_not_crashed",
+      "filePath": "tests/test_annotate.py",
+      "lineRange": [
+        48,
+        77
+      ],
+      "summary": "Test Missing Or Out Of Range Bbox Is Skipped Not Crashed function in test_annotate.py supporting test_annotate operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-annotate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_annotate.py:test_block_type_label_is_drawn",
+      "type": "function",
+      "name": "test_block_type_label_is_drawn",
+      "filePath": "tests/test_annotate.py",
+      "lineRange": [
+        80,
+        102
+      ],
+      "summary": "Test Block Type Label Is Drawn function in test_annotate.py supporting test_annotate operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-annotate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_annotate.py:test_content_filtered_pages_remain_in_annotated_pdf",
+      "type": "function",
+      "name": "test_content_filtered_pages_remain_in_annotated_pdf",
+      "filePath": "tests/test_annotate.py",
+      "lineRange": [
+        105,
+        121
+      ],
+      "summary": "Test Content Filtered Pages Remain In Annotated Pdf function in test_annotate.py supporting test_annotate operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-annotate"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_layout_evaluation.py",
+      "type": "file",
+      "name": "test_layout_evaluation.py",
+      "filePath": "tests/test_layout_evaluation.py",
+      "summary": "Tests for layout evaluation runner, IoU computation, and scoring thresholds.",
+      "tags": [
+        "test",
+        "layout-eval",
+        "metrics"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_layout_evaluation.py:corpus",
+      "type": "function",
+      "name": "corpus",
+      "filePath": "tests/test_layout_evaluation.py",
+      "lineRange": [
+        11,
+        25
+      ],
+      "summary": "Corpus function in test_layout_evaluation.py supporting test_layout_evaluation operations.",
+      "tags": [
+        "function",
+        "test-layout-evaluation",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_layout_evaluation.py:runner",
+      "type": "function",
+      "name": "runner",
+      "filePath": "tests/test_layout_evaluation.py",
+      "lineRange": [
+        28,
+        33
+      ],
+      "summary": "Runner function in test_layout_evaluation.py supporting test_layout_evaluation operations.",
+      "tags": [
+        "function",
+        "test-layout-evaluation",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_layout_evaluation.py:test_two_stages_share_ten_request_allowance",
+      "type": "function",
+      "name": "test_two_stages_share_ten_request_allowance",
+      "filePath": "tests/test_layout_evaluation.py",
+      "lineRange": [
+        36,
+        43
+      ],
+      "summary": "Test Two Stages Share Ten Request Allowance function in test_layout_evaluation.py supporting test_layout_evaluation operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-layout-evaluation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_layout_evaluation.py:test_failure_stops_and_prevents_candidate",
+      "type": "function",
+      "name": "test_failure_stops_and_prevents_candidate",
+      "filePath": "tests/test_layout_evaluation.py",
+      "lineRange": [
+        49,
+        58
+      ],
+      "summary": "Test Failure Stops And Prevents Candidate function in test_layout_evaluation.py supporting test_layout_evaluation operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-layout-evaluation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_layout_evaluation.py:test_candidate_stops_before_exceeding_allowance",
+      "type": "function",
+      "name": "test_candidate_stops_before_exceeding_allowance",
+      "filePath": "tests/test_layout_evaluation.py",
+      "lineRange": [
+        63,
+        70
+      ],
+      "summary": "Test Candidate Stops Before Exceeding Allowance function in test_layout_evaluation.py supporting test_layout_evaluation operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-layout-evaluation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_layout_evaluation.py:test_metric_gate_rejects_regression",
+      "type": "function",
+      "name": "test_metric_gate_rejects_regression",
+      "filePath": "tests/test_layout_evaluation.py",
+      "lineRange": [
+        73,
+        77
+      ],
+      "summary": "Test Metric Gate Rejects Regression function in test_layout_evaluation.py supporting test_layout_evaluation operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-layout-evaluation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_layout_structure.py",
+      "type": "file",
+      "name": "test_layout_structure.py",
+      "filePath": "tests/test_layout_structure.py",
+      "summary": "Verifies layout block hierarchy, reading order sorting, and column boundary detection.",
+      "tags": [
+        "test",
+        "layout-structure",
+        "reading-order"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_layout_structure.py:block",
+      "type": "function",
+      "name": "block",
+      "filePath": "tests/test_layout_structure.py",
+      "lineRange": [
+        16,
+        18
+      ],
+      "summary": "Block function in test_layout_structure.py supporting test_layout_structure operations.",
+      "tags": [
+        "function",
+        "test-layout-structure",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_layout_structure.py:document",
+      "type": "function",
+      "name": "document",
+      "filePath": "tests/test_layout_structure.py",
+      "lineRange": [
+        21,
+        22
+      ],
+      "summary": "Document function in test_layout_structure.py supporting test_layout_structure operations.",
+      "tags": [
+        "function",
+        "test-layout-structure",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_layout_structure.py:structure",
+      "type": "function",
+      "name": "structure",
+      "filePath": "tests/test_layout_structure.py",
+      "lineRange": [
+        25,
+        26
+      ],
+      "summary": "Structure function in test_layout_structure.py supporting test_layout_structure operations.",
+      "tags": [
+        "function",
+        "test-layout-structure",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_layout_structure.py:test_live_schema_requires_all_fields_and_legacy_load_does_not_change_input",
+      "type": "function",
+      "name": "test_live_schema_requires_all_fields_and_legacy_load_does_not_change_input",
+      "filePath": "tests/test_layout_structure.py",
+      "lineRange": [
+        29,
+        46
+      ],
+      "summary": "Test Live Schema Requires All Fields And Legacy Load Does Not Change Input function in test_layout_structure.py supporting test_layout_structure operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-layout-structure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_layout_structure.py:test_headings_lists_and_lines_preserve_structure_and_source",
+      "type": "function",
+      "name": "test_headings_lists_and_lines_preserve_structure_and_source",
+      "filePath": "tests/test_layout_structure.py",
+      "lineRange": [
+        49,
+        64
+      ],
+      "summary": "Test Headings Lists And Lines Preserve Structure And Source function in test_layout_structure.py supporting test_layout_structure operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-layout-structure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_layout_structure.py:test_merged_header_and_headerless_tables",
+      "type": "function",
+      "name": "test_merged_header_and_headerless_tables",
+      "filePath": "tests/test_layout_structure.py",
+      "lineRange": [
+        67,
+        77
+      ],
+      "summary": "Test Merged Header And Headerless Tables function in test_layout_structure.py supporting test_layout_structure operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-layout-structure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_layout_structure.py:test_invalid_table_metadata_is_rejected",
+      "type": "function",
+      "name": "test_invalid_table_metadata_is_rejected",
+      "filePath": "tests/test_layout_structure.py",
+      "lineRange": [
+        86,
+        88
+      ],
+      "summary": "Test Invalid Table Metadata Is Rejected function in test_layout_structure.py supporting test_layout_structure operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-layout-structure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_layout_structure.py:test_invalid_nesting_and_heading_level_are_rejected",
+      "type": "function",
+      "name": "test_invalid_nesting_and_heading_level_are_rejected",
+      "filePath": "tests/test_layout_structure.py",
+      "lineRange": [
+        91,
+        95
+      ],
+      "summary": "Test Invalid Nesting And Heading Level Are Rejected function in test_layout_structure.py supporting test_layout_structure operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-layout-structure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_layout_structure.py:test_clean_only_hides_running_furniture_and_chat_keeps_all_text",
+      "type": "function",
+      "name": "test_clean_only_hides_running_furniture_and_chat_keeps_all_text",
+      "filePath": "tests/test_layout_structure.py",
+      "lineRange": [
+        98,
+        107
+      ],
+      "summary": "Test Clean Only Hides Running Furniture And Chat Keeps All Text function in test_layout_structure.py supporting test_layout_structure operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-layout-structure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_layout_structure.py:test_literal_markup_never_becomes_executable_or_formatting",
+      "type": "function",
+      "name": "test_literal_markup_never_becomes_executable_or_formatting",
+      "filePath": "tests/test_layout_structure.py",
+      "lineRange": [
+        110,
+        118
+      ],
+      "summary": "Test Literal Markup Never Becomes Executable Or Formatting function in test_layout_structure.py supporting test_layout_structure operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-layout-structure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_layout_structure.py:test_list_labels_tail_and_unrepresented_text_are_not_lost",
+      "type": "function",
+      "name": "test_list_labels_tail_and_unrepresented_text_are_not_lost",
+      "filePath": "tests/test_layout_structure.py",
+      "lineRange": [
+        121,
+        132
+      ],
+      "summary": "Test List Labels Tail And Unrepresented Text Are Not Lost function in test_layout_structure.py supporting test_layout_structure operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-layout-structure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_layout_structure.py:test_plain_bullets_numbering_and_missing_item_source",
+      "type": "function",
+      "name": "test_plain_bullets_numbering_and_missing_item_source",
+      "filePath": "tests/test_layout_structure.py",
+      "lineRange": [
+        135,
+        142
+      ],
+      "summary": "Test Plain Bullets Numbering And Missing Item Source function in test_layout_structure.py supporting test_layout_structure operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-layout-structure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_layout_structure.py:test_default_extraction_uses_original_contract_and_detailed_is_opt_in",
+      "type": "function",
+      "name": "test_default_extraction_uses_original_contract_and_detailed_is_opt_in",
+      "filePath": "tests/test_layout_structure.py",
+      "lineRange": [
+        145,
+        157
+      ],
+      "summary": "Test Default Extraction Uses Original Contract And Detailed Is Opt In function in test_layout_structure.py supporting test_layout_structure operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-layout-structure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_layout_structure.py:test_figure_crop_bundle_and_fallback",
+      "type": "function",
+      "name": "test_figure_crop_bundle_and_fallback",
+      "filePath": "tests/test_layout_structure.py",
+      "lineRange": [
+        160,
+        181
+      ],
+      "summary": "Test Figure Crop Bundle And Fallback function in test_layout_structure.py supporting test_layout_structure operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-layout-structure"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_markdown.py",
+      "type": "file",
+      "name": "test_markdown.py",
+      "filePath": "tests/test_markdown.py",
+      "summary": "Tests markdown generation from layout blocks, table serialization, and heading levels.",
+      "tags": [
+        "test",
+        "markdown",
+        "serialization"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_markdown.py:table_structure",
+      "type": "function",
+      "name": "table_structure",
+      "filePath": "tests/test_markdown.py",
+      "lineRange": [
+        17,
+        21
+      ],
+      "summary": "Table Structure function in test_markdown.py supporting test_markdown operations.",
+      "tags": [
+        "function",
+        "test-markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_markdown.py:test_ragged_model_table_rows_are_padded_without_changing_cells",
+      "type": "function",
+      "name": "test_ragged_model_table_rows_are_padded_without_changing_cells",
+      "filePath": "tests/test_markdown.py",
+      "lineRange": [
+        24,
+        29
+      ],
+      "summary": "Test Ragged Model Table Rows Are Padded Without Changing Cells function in test_markdown.py supporting test_markdown operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_markdown.py:_sample_result",
+      "type": "function",
+      "name": "_sample_result",
+      "filePath": "tests/test_markdown.py",
+      "lineRange": [
+        32,
+        57
+      ],
+      "summary": " Sample Result function in test_markdown.py supporting test_markdown operations.",
+      "tags": [
+        "function",
+        "test-markdown",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_markdown.py:test_parse_to_markdown_snapshot",
+      "type": "function",
+      "name": "test_parse_to_markdown_snapshot",
+      "filePath": "tests/test_markdown.py",
+      "lineRange": [
+        60,
+        69
+      ],
+      "summary": "Test Parse To Markdown Snapshot function in test_markdown.py supporting test_markdown operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_markdown.py:test_parse_to_html_renders_document_like_page",
+      "type": "function",
+      "name": "test_parse_to_html_renders_document_like_page",
+      "filePath": "tests/test_markdown.py",
+      "lineRange": [
+        72,
+        81
+      ],
+      "summary": "Test Parse To Html Renders Document Like Page function in test_markdown.py supporting test_markdown operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_markdown.py:test_parse_to_html_escapes_content",
+      "type": "function",
+      "name": "test_parse_to_html_escapes_content",
+      "filePath": "tests/test_markdown.py",
+      "lineRange": [
+        84,
+        101
+      ],
+      "summary": "Test Parse To Html Escapes Content function in test_markdown.py supporting test_markdown operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_markdown.py:test_key_value_splits_on_first_colon",
+      "type": "function",
+      "name": "test_key_value_splits_on_first_colon",
+      "filePath": "tests/test_markdown.py",
+      "lineRange": [
+        104,
+        119
+      ],
+      "summary": "Test Key Value Splits On First Colon function in test_markdown.py supporting test_markdown operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_markdown.py:test_no_bbox_blocks_keep_model_order",
+      "type": "function",
+      "name": "test_no_bbox_blocks_keep_model_order",
+      "filePath": "tests/test_markdown.py",
+      "lineRange": [
+        122,
+        135
+      ],
+      "summary": "Test No Bbox Blocks Keep Model Order function in test_markdown.py supporting test_markdown operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_markdown.py:test_render_and_save_writes_md_next_to_json",
+      "type": "function",
+      "name": "test_render_and_save_writes_md_next_to_json",
+      "filePath": "tests/test_markdown.py",
+      "lineRange": [
+        138,
+        146
+      ],
+      "summary": "Test Render And Save Writes Md Next To Json function in test_markdown.py supporting test_markdown operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_markdown.py:test_column_order_is_preserved_even_with_missing_bbox",
+      "type": "function",
+      "name": "test_column_order_is_preserved_even_with_missing_bbox",
+      "filePath": "tests/test_markdown.py",
+      "lineRange": [
+        149,
+        159
+      ],
+      "summary": "Test Column Order Is Preserved Even With Missing Bbox function in test_markdown.py supporting test_markdown operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_markdown.py:test_table_escaping_padding_and_line_breaks_preserve_source",
+      "type": "function",
+      "name": "test_table_escaping_padding_and_line_breaks_preserve_source",
+      "filePath": "tests/test_markdown.py",
+      "lineRange": [
+        162,
+        174
+      ],
+      "summary": "Test Table Escaping Padding And Line Breaks Preserve Source function in test_markdown.py supporting test_markdown operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_markdown.py:test_table_empty_and_unstructured_fallback",
+      "type": "function",
+      "name": "test_table_empty_and_unstructured_fallback",
+      "filePath": "tests/test_markdown.py",
+      "lineRange": [
+        177,
+        186
+      ],
+      "summary": "Test Table Empty And Unstructured Fallback function in test_markdown.py supporting test_markdown operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_markdown.py:test_ordinary_checkbox_words_are_not_rewritten",
+      "type": "function",
+      "name": "test_ordinary_checkbox_words_are_not_rewritten",
+      "filePath": "tests/test_markdown.py",
+      "lineRange": [
+        189,
+        197
+      ],
+      "summary": "Test Ordinary Checkbox Words Are Not Rewritten function in test_markdown.py supporting test_markdown operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-markdown"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_output_names.py",
+      "type": "file",
+      "name": "test_output_names.py",
+      "filePath": "tests/test_output_names.py",
+      "summary": "Tests output filename generation, prefix sanitization, and path uniqueness rules.",
+      "tags": [
+        "test",
+        "naming",
+        "unit-test"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_output_names.py:test_source_stem",
+      "type": "function",
+      "name": "test_source_stem",
+      "filePath": "tests/test_output_names.py",
+      "lineRange": [
+        25,
+        26
+      ],
+      "summary": "Test Source Stem function in test_output_names.py supporting test_output_names operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-output-names"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_output_names.py:test_utc_reservation_collision_and_cleanup",
+      "type": "function",
+      "name": "test_utc_reservation_collision_and_cleanup",
+      "filePath": "tests/test_output_names.py",
+      "lineRange": [
+        29,
+        43
+      ],
+      "summary": "Test Utc Reservation Collision And Cleanup function in test_output_names.py supporting test_output_names operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-output-names"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_output_names.py:test_collision_with_annotation_or_image_only",
+      "type": "function",
+      "name": "test_collision_with_annotation_or_image_only",
+      "filePath": "tests/test_output_names.py",
+      "lineRange": [
+        48,
+        53
+      ],
+      "summary": "Test Collision With Annotation Or Image Only function in test_output_names.py supporting test_output_names operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-output-names"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_output_names.py:test_json_rerender_resolves_figure_paths_with_special_characters",
+      "type": "function",
+      "name": "test_json_rerender_resolves_figure_paths_with_special_characters",
+      "filePath": "tests/test_output_names.py",
+      "lineRange": [
+        57,
+        69
+      ],
+      "summary": "Test Json Rerender Resolves Figure Paths With Special Characters function in test_output_names.py supporting test_output_names operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-output-names"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_prompt_evaluation.py",
+      "type": "file",
+      "name": "test_prompt_evaluation.py",
+      "filePath": "tests/test_prompt_evaluation.py",
+      "summary": "Tests prompt evaluation scoring algorithms and token comparison logic.",
+      "tags": [
+        "test",
+        "prompt-evaluation",
+        "metrics"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_prompt_evaluation.py:test_live_manifest_is_limited_to_approved_six_pages",
+      "type": "function",
+      "name": "test_live_manifest_is_limited_to_approved_six_pages",
+      "filePath": "tests/test_prompt_evaluation.py",
+      "lineRange": [
+        23,
+        30
+      ],
+      "summary": "Test Live Manifest Is Limited To Approved Six Pages function in test_prompt_evaluation.py supporting test_prompt_evaluation operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-prompt-evaluation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "type": "function",
+      "name": "test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "filePath": "tests/test_prompt_evaluation.py",
+      "lineRange": [
+        33,
+        49
+      ],
+      "summary": "Test Reference Scoring Uses Page Ranges And Does Not Double Count Table Text function in test_prompt_evaluation.py supporting test_prompt_evaluation operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-prompt-evaluation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_prompt_evaluation.py:test_corrective_run_skips_filtered_pages_before_rendering",
+      "type": "function",
+      "name": "test_corrective_run_skips_filtered_pages_before_rendering",
+      "filePath": "tests/test_prompt_evaluation.py",
+      "lineRange": [
+        53,
+        82
+      ],
+      "summary": "Test Corrective Run Skips Filtered Pages Before Rendering function in test_prompt_evaluation.py supporting test_prompt_evaluation operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-prompt-evaluation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:tests/test_resolution_evaluation.py",
+      "type": "file",
+      "name": "test_resolution_evaluation.py",
+      "filePath": "tests/test_resolution_evaluation.py",
+      "summary": "Tests resolution benchmark metrics, execution limits, and scoring formulas.",
+      "tags": [
+        "test",
+        "resolution-benchmark",
+        "metrics"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "function:tests/test_resolution_evaluation.py:corpus",
+      "type": "function",
+      "name": "corpus",
+      "filePath": "tests/test_resolution_evaluation.py",
+      "lineRange": [
+        11,
+        28
+      ],
+      "summary": "Corpus function in test_resolution_evaluation.py supporting test_resolution_evaluation operations.",
+      "tags": [
+        "function",
+        "test-resolution-evaluation",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_resolution_evaluation.py:outcome",
+      "type": "function",
+      "name": "outcome",
+      "filePath": "tests/test_resolution_evaluation.py",
+      "lineRange": [
+        31,
+        34
+      ],
+      "summary": "Outcome function in test_resolution_evaluation.py supporting test_resolution_evaluation operations.",
+      "tags": [
+        "function",
+        "test-resolution-evaluation",
+        "groundmark"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_resolution_evaluation.py:test_comparison_uses_only_five_pages_and_ten_bounded_requests",
+      "type": "function",
+      "name": "test_comparison_uses_only_five_pages_and_ten_bounded_requests",
+      "filePath": "tests/test_resolution_evaluation.py",
+      "lineRange": [
+        37,
+        51
+      ],
+      "summary": "Test Comparison Uses Only Five Pages And Ten Bounded Requests function in test_resolution_evaluation.py supporting test_resolution_evaluation operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-resolution-evaluation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_resolution_evaluation.py:test_request_limit_stops_before_next_call",
+      "type": "function",
+      "name": "test_request_limit_stops_before_next_call",
+      "filePath": "tests/test_resolution_evaluation.py",
+      "lineRange": [
+        55,
+        58
+      ],
+      "summary": "Test Request Limit Stops Before Next Call function in test_resolution_evaluation.py supporting test_resolution_evaluation operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-resolution-evaluation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_resolution_evaluation.py:test_budget_reserves_next_request",
+      "type": "function",
+      "name": "test_budget_reserves_next_request",
+      "filePath": "tests/test_resolution_evaluation.py",
+      "lineRange": [
+        61,
+        63
+      ],
+      "summary": "Test Budget Reserves Next Request function in test_resolution_evaluation.py supporting test_resolution_evaluation operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-resolution-evaluation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_resolution_evaluation.py:test_reported_spend_stops_next_request",
+      "type": "function",
+      "name": "test_reported_spend_stops_next_request",
+      "filePath": "tests/test_resolution_evaluation.py",
+      "lineRange": [
+        66,
+        68
+      ],
+      "summary": "Test Reported Spend Stops Next Request function in test_resolution_evaluation.py supporting test_resolution_evaluation operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-resolution-evaluation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_resolution_evaluation.py:test_unknown_usage_stops_immediately",
+      "type": "function",
+      "name": "test_unknown_usage_stops_immediately",
+      "filePath": "tests/test_resolution_evaluation.py",
+      "lineRange": [
+        71,
+        73
+      ],
+      "summary": "Test Unknown Usage Stops Immediately function in test_resolution_evaluation.py supporting test_resolution_evaluation operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-resolution-evaluation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_resolution_evaluation.py:test_rejected_pages_are_not_resubmitted_at_other_resolution",
+      "type": "function",
+      "name": "test_rejected_pages_are_not_resubmitted_at_other_resolution",
+      "filePath": "tests/test_resolution_evaluation.py",
+      "lineRange": [
+        76,
+        80
+      ],
+      "summary": "Test Rejected Pages Are Not Resubmitted At Other Resolution function in test_resolution_evaluation.py supporting test_resolution_evaluation operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-resolution-evaluation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_resolution_evaluation.py:test_limits_cannot_be_increased",
+      "type": "function",
+      "name": "test_limits_cannot_be_increased",
+      "filePath": "tests/test_resolution_evaluation.py",
+      "lineRange": [
+        83,
+        87
+      ],
+      "summary": "Test Limits Cannot Be Increased function in test_resolution_evaluation.py supporting test_resolution_evaluation operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-resolution-evaluation"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "function:tests/test_resolution_evaluation.py:test_any_page_regression_blocks_promotion",
+      "type": "function",
+      "name": "test_any_page_regression_blocks_promotion",
+      "filePath": "tests/test_resolution_evaluation.py",
+      "lineRange": [
+        90,
+        96
+      ],
+      "summary": "Test Any Page Regression Blocks Promotion function in test_resolution_evaluation.py supporting test_resolution_evaluation operations.",
+      "tags": [
+        "test",
+        "unit-test",
+        "test-resolution-evaluation"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "file:src/annotate.py",
+      "target": "function:src/annotate.py:_bbox_is_valid",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/annotate.py",
+      "target": "function:src/annotate.py:_bbox_is_valid",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/annotate.py",
+      "target": "function:src/annotate.py:annotate_document",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/annotate.py",
+      "target": "function:src/annotate.py:annotate_document",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/annotate.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/annotate.py",
+      "target": "file:src/output_names.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/annotate.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:src/annotate.py:annotate_document",
+      "target": "function:src/preprocess.py:preprocess_pages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/annotate.py:annotate_document",
+      "target": "function:src/preprocess.py:preprocess_pages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/annotate.py:annotate_document",
+      "target": "function:src/annotate.py:_bbox_is_valid",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/export.py",
+      "target": "function:src/export.py:export_result",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/export.py",
+      "target": "function:src/export.py:export_result",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/export.py",
+      "target": "file:src/annotate.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/export.py",
+      "target": "file:src/figures.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/export.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/export.py",
+      "target": "file:src/markdown.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/export.py",
+      "target": "file:src/output_names.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/figures.py",
+      "target": "function:src/figures.py:extract_figures",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/figures.py",
+      "target": "function:src/figures.py:extract_figures",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/figures.py",
+      "target": "function:src/figures.py:load_figures",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/figures.py",
+      "target": "function:src/figures.py:load_figures",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/figures.py",
+      "target": "file:src/annotate.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/figures.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/figures.py",
+      "target": "file:src/output_names.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/figures.py",
+      "target": "file:src/preprocess.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:src/figures.py:extract_figures",
+      "target": "function:src/preprocess.py:preprocess_pages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/figures.py:extract_figures",
+      "target": "function:src/preprocess.py:preprocess_pages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "function:src/layout.py:_require_xyxy_len",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "function:src/layout.py:_require_xyxy_len",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "class:src/layout.py:BBox",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "class:src/layout.py:BBox",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "class:src/layout.py:ListItem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "class:src/layout.py:ListItem",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "class:src/layout.py:TableCell",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "class:src/layout.py:TableCell",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "class:src/layout.py:BlockStructure",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "class:src/layout.py:BlockStructure",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "class:src/layout.py:LegacyBlock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "class:src/layout.py:LegacyBlock",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "class:src/layout.py:ParseBlock",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "class:src/layout.py:ParseBlock",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "class:src/layout.py:ParsePage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "class:src/layout.py:ParsePage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "class:src/layout.py:LegacyParsePage",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "class:src/layout.py:LegacyParsePage",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "class:src/layout.py:ParseResult",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "class:src/layout.py:ParseResult",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "file:src/diagnostics.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_blocks",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_blocks",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_cell_html",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_cell_html",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_md_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_md_text",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_table_rows",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_table_rows",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_cells",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_cells",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_render_table_html",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_render_table_html",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_render_table",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_render_table",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_simple_table",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_simple_table",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_list_context",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_list_context",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_list_html",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_list_html",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_list_markdown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_list_markdown",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_heading_level",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_heading_level",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_render_block_html",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_render_block_html",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_render_block",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_render_block",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:parse_to_markdown",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:parse_to_markdown",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:parse_to_html",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:parse_to_html",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:markdown_bundle",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:markdown_bundle",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:render_and_save",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:render_and_save",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:save_markdown_for_doc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:save_markdown_for_doc",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:save_html_for_doc",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:save_html_for_doc",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_main",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "function:src/markdown.py:_main",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "file:src/output_names.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:src/markdown.py:_cells",
+      "target": "function:src/markdown.py:_table_rows",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_render_table_html",
+      "target": "function:src/markdown.py:_table_rows",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_render_table_html",
+      "target": "function:src/markdown.py:_cell_html",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_render_table",
+      "target": "function:src/markdown.py:_md_text",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_render_table",
+      "target": "function:src/markdown.py:_table_rows",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_simple_table",
+      "target": "function:src/markdown.py:_cells",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_list_html",
+      "target": "function:src/markdown.py:_list_context",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_list_html",
+      "target": "function:src/markdown.py:_cell_html",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_list_html",
+      "target": "function:src/markdown.py:_cell_html",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_list_html",
+      "target": "function:src/markdown.py:_cell_html",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_list_html",
+      "target": "function:src/markdown.py:_cell_html",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_list_markdown",
+      "target": "function:src/markdown.py:_list_context",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_list_markdown",
+      "target": "function:src/markdown.py:_md_text",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_list_markdown",
+      "target": "function:src/markdown.py:_list_html",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_list_markdown",
+      "target": "function:src/markdown.py:_md_text",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_list_markdown",
+      "target": "function:src/markdown.py:_md_text",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_list_markdown",
+      "target": "function:src/markdown.py:_md_text",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_render_block_html",
+      "target": "function:src/markdown.py:_cell_html",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_render_block_html",
+      "target": "function:src/markdown.py:_heading_level",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_render_block_html",
+      "target": "function:src/markdown.py:_list_html",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_render_block_html",
+      "target": "function:src/markdown.py:_cell_html",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_render_block_html",
+      "target": "function:src/markdown.py:_cell_html",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_render_block_html",
+      "target": "function:src/markdown.py:_render_table_html",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_render_block_html",
+      "target": "function:src/markdown.py:_cells",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_render_block",
+      "target": "function:src/markdown.py:_md_text",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_render_block",
+      "target": "function:src/markdown.py:_heading_level",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_render_block",
+      "target": "function:src/markdown.py:_list_markdown",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_render_block",
+      "target": "function:src/markdown.py:_md_text",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_render_block",
+      "target": "function:src/markdown.py:_md_text",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_render_block",
+      "target": "function:src/markdown.py:_simple_table",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_render_block",
+      "target": "function:src/markdown.py:_render_table",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_render_block",
+      "target": "function:src/markdown.py:_render_block_html",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:parse_to_markdown",
+      "target": "function:src/markdown.py:_blocks",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:parse_to_markdown",
+      "target": "function:src/markdown.py:_md_text",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:parse_to_markdown",
+      "target": "function:src/markdown.py:_render_block",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:parse_to_html",
+      "target": "function:src/markdown.py:_blocks",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:parse_to_html",
+      "target": "function:src/markdown.py:_cell_html",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:parse_to_html",
+      "target": "function:src/markdown.py:_render_block_html",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:markdown_bundle",
+      "target": "function:src/markdown.py:parse_to_markdown",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:markdown_bundle",
+      "target": "function:src/markdown.py:_blocks",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:render_and_save",
+      "target": "function:src/markdown.py:parse_to_markdown",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:save_markdown_for_doc",
+      "target": "function:src/markdown.py:parse_to_markdown",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:save_html_for_doc",
+      "target": "function:src/markdown.py:parse_to_html",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/markdown.py:_main",
+      "target": "function:src/markdown.py:render_and_save",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "function:src/output_names.py:source_stem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "function:src/output_names.py:source_stem",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "function:src/output_names.py:artifact_name",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "function:src/output_names.py:artifact_name",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "function:src/output_names.py:figure_name",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "function:src/output_names.py:figure_name",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "function:src/output_names.py:_occupied",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "function:src/output_names.py:_occupied",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "function:src/output_names.py:reserve_basename",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "function:src/output_names.py:reserve_basename",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/output_names.py:figure_name",
+      "target": "function:src/output_names.py:artifact_name",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/output_names.py:reserve_basename",
+      "target": "function:src/output_names.py:source_stem",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:src/output_names.py:reserve_basename",
+      "target": "function:src/output_names.py:_occupied",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_annotate.py",
+      "target": "function:tests/test_annotate.py:test_annotated_pdf_is_created",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_annotate.py",
+      "target": "function:tests/test_annotate.py:test_annotated_pdf_is_created",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_annotate.py",
+      "target": "function:tests/test_annotate.py:test_missing_or_out_of_range_bbox_is_skipped_not_crashed",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_annotate.py",
+      "target": "function:tests/test_annotate.py:test_missing_or_out_of_range_bbox_is_skipped_not_crashed",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_annotate.py",
+      "target": "function:tests/test_annotate.py:test_block_type_label_is_drawn",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_annotate.py",
+      "target": "function:tests/test_annotate.py:test_block_type_label_is_drawn",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_annotate.py",
+      "target": "function:tests/test_annotate.py:test_content_filtered_pages_remain_in_annotated_pdf",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_annotate.py",
+      "target": "function:tests/test_annotate.py:test_content_filtered_pages_remain_in_annotated_pdf",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_annotate.py",
+      "target": "file:src/annotate.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_annotate.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/annotate.py",
+      "target": "file:tests/test_annotate.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:tests/test_layout_evaluation.py",
+      "target": "function:tests/test_layout_evaluation.py:corpus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_layout_evaluation.py",
+      "target": "function:tests/test_layout_evaluation.py:corpus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_layout_evaluation.py",
+      "target": "function:tests/test_layout_evaluation.py:runner",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_layout_evaluation.py",
+      "target": "function:tests/test_layout_evaluation.py:runner",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_layout_evaluation.py",
+      "target": "function:tests/test_layout_evaluation.py:test_two_stages_share_ten_request_allowance",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_layout_evaluation.py",
+      "target": "function:tests/test_layout_evaluation.py:test_two_stages_share_ten_request_allowance",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_layout_evaluation.py",
+      "target": "function:tests/test_layout_evaluation.py:test_failure_stops_and_prevents_candidate",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_layout_evaluation.py",
+      "target": "function:tests/test_layout_evaluation.py:test_failure_stops_and_prevents_candidate",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_layout_evaluation.py",
+      "target": "function:tests/test_layout_evaluation.py:test_candidate_stops_before_exceeding_allowance",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_layout_evaluation.py",
+      "target": "function:tests/test_layout_evaluation.py:test_candidate_stops_before_exceeding_allowance",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_layout_evaluation.py",
+      "target": "function:tests/test_layout_evaluation.py:test_metric_gate_rejects_regression",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_layout_evaluation.py",
+      "target": "function:tests/test_layout_evaluation.py:test_metric_gate_rejects_regression",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_layout_evaluation.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "file:tests/test_layout_evaluation.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:tests/test_layout_evaluation.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:block",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:block",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:structure",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:structure",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_live_schema_requires_all_fields_and_legacy_load_does_not_change_input",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_live_schema_requires_all_fields_and_legacy_load_does_not_change_input",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_headings_lists_and_lines_preserve_structure_and_source",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_headings_lists_and_lines_preserve_structure_and_source",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_merged_header_and_headerless_tables",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_merged_header_and_headerless_tables",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_invalid_table_metadata_is_rejected",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_invalid_table_metadata_is_rejected",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_invalid_nesting_and_heading_level_are_rejected",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_invalid_nesting_and_heading_level_are_rejected",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_clean_only_hides_running_furniture_and_chat_keeps_all_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_clean_only_hides_running_furniture_and_chat_keeps_all_text",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_literal_markup_never_becomes_executable_or_formatting",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_literal_markup_never_becomes_executable_or_formatting",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_list_labels_tail_and_unrepresented_text_are_not_lost",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_list_labels_tail_and_unrepresented_text_are_not_lost",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_plain_bullets_numbering_and_missing_item_source",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_plain_bullets_numbering_and_missing_item_source",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_default_extraction_uses_original_contract_and_detailed_is_opt_in",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_default_extraction_uses_original_contract_and_detailed_is_opt_in",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_figure_crop_bundle_and_fallback",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "function:tests/test_layout_structure.py:test_figure_crop_bundle_and_fallback",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "file:src/chat.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "file:src/figures.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_layout_structure.py",
+      "target": "file:src/markdown.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_live_schema_requires_all_fields_and_legacy_load_does_not_change_input",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_live_schema_requires_all_fields_and_legacy_load_does_not_change_input",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_live_schema_requires_all_fields_and_legacy_load_does_not_change_input",
+      "target": "function:tests/test_layout_structure.py:block",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_headings_lists_and_lines_preserve_structure_and_source",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_headings_lists_and_lines_preserve_structure_and_source",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_headings_lists_and_lines_preserve_structure_and_source",
+      "target": "function:tests/test_layout_structure.py:block",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_headings_lists_and_lines_preserve_structure_and_source",
+      "target": "function:tests/test_layout_structure.py:structure",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_headings_lists_and_lines_preserve_structure_and_source",
+      "target": "function:tests/test_layout_structure.py:block",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_headings_lists_and_lines_preserve_structure_and_source",
+      "target": "function:tests/test_layout_structure.py:structure",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_headings_lists_and_lines_preserve_structure_and_source",
+      "target": "function:tests/test_layout_structure.py:block",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_merged_header_and_headerless_tables",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_merged_header_and_headerless_tables",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_merged_header_and_headerless_tables",
+      "target": "function:tests/test_layout_structure.py:block",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_merged_header_and_headerless_tables",
+      "target": "function:tests/test_layout_structure.py:structure",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_merged_header_and_headerless_tables",
+      "target": "function:tests/test_layout_structure.py:block",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_merged_header_and_headerless_tables",
+      "target": "function:tests/test_layout_structure.py:structure",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_invalid_table_metadata_is_rejected",
+      "target": "function:tests/test_layout_structure.py:block",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_invalid_table_metadata_is_rejected",
+      "target": "function:tests/test_layout_structure.py:structure",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_invalid_nesting_and_heading_level_are_rejected",
+      "target": "function:tests/test_layout_structure.py:block",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_invalid_nesting_and_heading_level_are_rejected",
+      "target": "function:tests/test_layout_structure.py:structure",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_invalid_nesting_and_heading_level_are_rejected",
+      "target": "function:tests/test_layout_structure.py:structure",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_clean_only_hides_running_furniture_and_chat_keeps_all_text",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_clean_only_hides_running_furniture_and_chat_keeps_all_text",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_clean_only_hides_running_furniture_and_chat_keeps_all_text",
+      "target": "function:tests/test_layout_structure.py:block",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_clean_only_hides_running_furniture_and_chat_keeps_all_text",
+      "target": "function:tests/test_layout_structure.py:block",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_clean_only_hides_running_furniture_and_chat_keeps_all_text",
+      "target": "function:tests/test_layout_structure.py:block",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_clean_only_hides_running_furniture_and_chat_keeps_all_text",
+      "target": "function:tests/test_layout_structure.py:block",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_clean_only_hides_running_furniture_and_chat_keeps_all_text",
+      "target": "function:src/chat.py:document_pages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_clean_only_hides_running_furniture_and_chat_keeps_all_text",
+      "target": "function:src/chat.py:document_pages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_clean_only_hides_running_furniture_and_chat_keeps_all_text",
+      "target": "function:src/chat.py:document_pages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_clean_only_hides_running_furniture_and_chat_keeps_all_text",
+      "target": "function:src/chat.py:document_pages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_literal_markup_never_becomes_executable_or_formatting",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_literal_markup_never_becomes_executable_or_formatting",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_literal_markup_never_becomes_executable_or_formatting",
+      "target": "function:tests/test_layout_structure.py:block",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_literal_markup_never_becomes_executable_or_formatting",
+      "target": "function:src/chat.py:document_pages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_literal_markup_never_becomes_executable_or_formatting",
+      "target": "function:src/chat.py:document_pages",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_literal_markup_never_becomes_executable_or_formatting",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_literal_markup_never_becomes_executable_or_formatting",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_literal_markup_never_becomes_executable_or_formatting",
+      "target": "function:tests/test_layout_structure.py:block",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_literal_markup_never_becomes_executable_or_formatting",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_literal_markup_never_becomes_executable_or_formatting",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_literal_markup_never_becomes_executable_or_formatting",
+      "target": "function:tests/test_layout_structure.py:block",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_list_labels_tail_and_unrepresented_text_are_not_lost",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_list_labels_tail_and_unrepresented_text_are_not_lost",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_list_labels_tail_and_unrepresented_text_are_not_lost",
+      "target": "function:tests/test_layout_structure.py:block",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_list_labels_tail_and_unrepresented_text_are_not_lost",
+      "target": "function:tests/test_layout_structure.py:structure",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_plain_bullets_numbering_and_missing_item_source",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_plain_bullets_numbering_and_missing_item_source",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_plain_bullets_numbering_and_missing_item_source",
+      "target": "function:tests/test_layout_structure.py:block",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_plain_bullets_numbering_and_missing_item_source",
+      "target": "function:tests/test_layout_structure.py:structure",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_figure_crop_bundle_and_fallback",
+      "target": "function:tests/test_layout_structure.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_figure_crop_bundle_and_fallback",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_figure_crop_bundle_and_fallback",
+      "target": "function:tests/test_layout_structure.py:block",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_layout_structure.py:test_figure_crop_bundle_and_fallback",
+      "target": "function:tests/test_layout_structure.py:block",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/layout.py",
+      "target": "file:tests/test_layout_structure.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:scripts/evaluate_layout.py",
+      "target": "file:tests/test_layout_structure.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:table_structure",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:table_structure",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_ragged_model_table_rows_are_padded_without_changing_cells",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_ragged_model_table_rows_are_padded_without_changing_cells",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:_sample_result",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:_sample_result",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_parse_to_markdown_snapshot",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_parse_to_markdown_snapshot",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_parse_to_html_renders_document_like_page",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_parse_to_html_renders_document_like_page",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_parse_to_html_escapes_content",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_parse_to_html_escapes_content",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_key_value_splits_on_first_colon",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_key_value_splits_on_first_colon",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_no_bbox_blocks_keep_model_order",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_no_bbox_blocks_keep_model_order",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_render_and_save_writes_md_next_to_json",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_render_and_save_writes_md_next_to_json",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_column_order_is_preserved_even_with_missing_bbox",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_column_order_is_preserved_even_with_missing_bbox",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_table_escaping_padding_and_line_breaks_preserve_source",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_table_escaping_padding_and_line_breaks_preserve_source",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_table_empty_and_unstructured_fallback",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_table_empty_and_unstructured_fallback",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_ordinary_checkbox_words_are_not_rewritten",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "function:tests/test_markdown.py:test_ordinary_checkbox_words_are_not_rewritten",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_markdown.py",
+      "target": "file:src/markdown.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:tests/test_markdown.py:_sample_result",
+      "target": "function:tests/test_markdown.py:table_structure",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_markdown.py:test_parse_to_markdown_snapshot",
+      "target": "function:tests/test_markdown.py:_sample_result",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_markdown.py:test_parse_to_html_renders_document_like_page",
+      "target": "function:tests/test_markdown.py:_sample_result",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_markdown.py:test_render_and_save_writes_md_next_to_json",
+      "target": "function:tests/test_markdown.py:_sample_result",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_markdown.py:test_column_order_is_preserved_even_with_missing_bbox",
+      "target": "function:tests/test_markdown.py:_sample_result",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_markdown.py:test_table_escaping_padding_and_line_breaks_preserve_source",
+      "target": "function:tests/test_markdown.py:_sample_result",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_markdown.py:test_table_escaping_padding_and_line_breaks_preserve_source",
+      "target": "function:tests/test_markdown.py:table_structure",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_markdown.py:test_table_empty_and_unstructured_fallback",
+      "target": "function:tests/test_markdown.py:_sample_result",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_markdown.py:test_ordinary_checkbox_words_are_not_rewritten",
+      "target": "function:tests/test_markdown.py:_sample_result",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/markdown.py",
+      "target": "file:tests/test_markdown.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:tests/test_output_names.py",
+      "target": "function:tests/test_output_names.py:test_source_stem",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_output_names.py",
+      "target": "function:tests/test_output_names.py:test_source_stem",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_output_names.py",
+      "target": "function:tests/test_output_names.py:test_utc_reservation_collision_and_cleanup",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_output_names.py",
+      "target": "function:tests/test_output_names.py:test_utc_reservation_collision_and_cleanup",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_output_names.py",
+      "target": "function:tests/test_output_names.py:test_collision_with_annotation_or_image_only",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_output_names.py",
+      "target": "function:tests/test_output_names.py:test_collision_with_annotation_or_image_only",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_output_names.py",
+      "target": "function:tests/test_output_names.py:test_json_rerender_resolves_figure_paths_with_special_characters",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_output_names.py",
+      "target": "function:tests/test_output_names.py:test_json_rerender_resolves_figure_paths_with_special_characters",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_output_names.py",
+      "target": "file:src/markdown.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_output_names.py",
+      "target": "file:src/output_names.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_output_names.py",
+      "target": "file:tests/test_layout_structure.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:tests/test_output_names.py:test_json_rerender_resolves_figure_paths_with_special_characters",
+      "target": "function:tests/test_chat.py:document",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "file:tests/test_output_names.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:src/output_names.py",
+      "target": "file:tests/test_output_names.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:tests/test_prompt_evaluation.py",
+      "target": "function:tests/test_prompt_evaluation.py:test_live_manifest_is_limited_to_approved_six_pages",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_prompt_evaluation.py",
+      "target": "function:tests/test_prompt_evaluation.py:test_live_manifest_is_limited_to_approved_six_pages",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_prompt_evaluation.py",
+      "target": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_prompt_evaluation.py",
+      "target": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_prompt_evaluation.py",
+      "target": "function:tests/test_prompt_evaluation.py:test_corrective_run_skips_filtered_pages_before_rendering",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_prompt_evaluation.py",
+      "target": "function:tests/test_prompt_evaluation.py:test_corrective_run_skips_filtered_pages_before_rendering",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_prompt_evaluation.py",
+      "target": "file:scripts/evaluate_prompts.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "file:tests/test_prompt_evaluation.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "target": "function:scripts/evaluate_prompts.py:score_page",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "target": "function:scripts/evaluate_prompts.py:score_page",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "target": "function:scripts/evaluate_prompts.py:plain_text",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "target": "function:scripts/evaluate_prompts.py:plain_text",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "target": "function:scripts/evaluate_prompts.py:score_page",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_prompt_evaluation.py:test_reference_scoring_uses_page_ranges_and_does_not_double_count_table_text",
+      "target": "function:scripts/evaluate_prompts.py:score_page",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_prompts.py",
+      "target": "file:tests/test_prompt_evaluation.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "function:tests/test_resolution_evaluation.py:corpus",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "function:tests/test_resolution_evaluation.py:corpus",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "function:tests/test_resolution_evaluation.py:outcome",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "function:tests/test_resolution_evaluation.py:outcome",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "function:tests/test_resolution_evaluation.py:test_comparison_uses_only_five_pages_and_ten_bounded_requests",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "function:tests/test_resolution_evaluation.py:test_comparison_uses_only_five_pages_and_ten_bounded_requests",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "function:tests/test_resolution_evaluation.py:test_request_limit_stops_before_next_call",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "function:tests/test_resolution_evaluation.py:test_request_limit_stops_before_next_call",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "function:tests/test_resolution_evaluation.py:test_budget_reserves_next_request",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "function:tests/test_resolution_evaluation.py:test_budget_reserves_next_request",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "function:tests/test_resolution_evaluation.py:test_reported_spend_stops_next_request",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "function:tests/test_resolution_evaluation.py:test_reported_spend_stops_next_request",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "function:tests/test_resolution_evaluation.py:test_unknown_usage_stops_immediately",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "function:tests/test_resolution_evaluation.py:test_unknown_usage_stops_immediately",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "function:tests/test_resolution_evaluation.py:test_rejected_pages_are_not_resubmitted_at_other_resolution",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "function:tests/test_resolution_evaluation.py:test_rejected_pages_are_not_resubmitted_at_other_resolution",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "function:tests/test_resolution_evaluation.py:test_limits_cannot_be_increased",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "function:tests/test_resolution_evaluation.py:test_limits_cannot_be_increased",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "function:tests/test_resolution_evaluation.py:test_any_page_regression_blocks_promotion",
+      "type": "contains",
+      "direction": "forward",
+      "weight": 1.0
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "function:tests/test_resolution_evaluation.py:test_any_page_regression_blocks_promotion",
+      "type": "exports",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:tests/test_resolution_evaluation.py",
+      "target": "file:src/layout.py",
+      "type": "imports",
+      "direction": "forward",
+      "weight": 0.7
+    },
+    {
+      "source": "function:tests/test_resolution_evaluation.py:test_request_limit_stops_before_next_call",
+      "target": "function:tests/test_resolution_evaluation.py:outcome",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_resolution_evaluation.py:test_reported_spend_stops_next_request",
+      "target": "function:tests/test_resolution_evaluation.py:outcome",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_resolution_evaluation.py:test_unknown_usage_stops_immediately",
+      "target": "function:tests/test_resolution_evaluation.py:outcome",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "function:tests/test_resolution_evaluation.py:test_rejected_pages_are_not_resubmitted_at_other_resolution",
+      "target": "function:tests/test_resolution_evaluation.py:outcome",
+      "type": "calls",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "file:scripts/evaluate_resolution.py",
+      "target": "file:tests/test_resolution_evaluation.py",
+      "type": "tested_by",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

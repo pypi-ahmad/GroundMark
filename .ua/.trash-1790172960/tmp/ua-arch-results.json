@@ -1,0 +1,1340 @@
+{
+  "scriptCompleted": true,
+  "commonPathPrefix": "",
+  "directoryGroups": {
+    "src": [
+      "file:src/layout.py",
+      "file:src/models.py",
+      "file:src/preprocess.py",
+      "file:src/ui/clipboard.py",
+      "file:src/usage.py",
+      "file:src/__init__.py",
+      "file:src/cli.py",
+      "file:src/chat.py",
+      "file:src/prompts.py",
+      "file:src/diagnostics.py",
+      "file:src/llm.py",
+      "file:src/parse.py",
+      "file:src/ui/__init__.py",
+      "file:src/annotate.py",
+      "file:src/export.py",
+      "file:src/figures.py",
+      "file:src/graph.py",
+      "file:src/markdown.py",
+      "file:src/output_names.py",
+      "file:src/ui/app.py"
+    ],
+    "tests": [
+      "file:tests/test_annotate.py",
+      "file:tests/test_layout_evaluation.py",
+      "file:tests/test_layout_structure.py",
+      "file:tests/test_markdown.py",
+      "file:tests/test_prompt_evaluation.py",
+      "file:tests/test_resolution_evaluation.py",
+      "file:tests/fixtures/make_invoice_png.py",
+      "file:tests/test_preprocess.py",
+      "file:tests/fake_llm.py",
+      "file:tests/test_cli.py",
+      "file:tests/test_parse.py",
+      "file:tests/test_usage.py",
+      "file:tests/test_chat.py",
+      "file:tests/test_prompts.py",
+      "file:tests/test_diagnostics.py",
+      "file:tests/__init__.py",
+      "document:tests/fixtures/chat-evaluation.md",
+      "file:tests/test_launcher.py",
+      "file:tests/test_cli_extraction.py",
+      "file:tests/test_graph.py",
+      "file:tests/test_output_names.py",
+      "file:tests/test_ui_diagnostics.py"
+    ],
+    "scripts": [
+      "file:scripts/evaluate_layout.py",
+      "file:scripts/evaluate_resolution.py",
+      "file:scripts/evaluate_chat.py",
+      "file:scripts/evaluate_prompts.py"
+    ],
+    "(root)": [
+      "config:.env.example",
+      "file:groundmark-architecture.html",
+      "config:groundmark-architecture.json",
+      "file:groundmark-architecture.visual-check.html",
+      "config:groundmark-architecture.visual-check.json",
+      "config:pyproject.toml",
+      "document:requirements-dev.txt",
+      "document:requirements.txt",
+      "file:run.cmd",
+      "document:AGENTS.md",
+      "document:CLAUDE.md",
+      "document:README.md"
+    ],
+    "prompts": [
+      "document:prompts/runtime/chat-answer.md",
+      "document:prompts/runtime/chat-verify.md",
+      "document:prompts/runtime/parse-page-structured.md",
+      "document:prompts/runtime/parse-page.md"
+    ],
+    ".github": [
+      "pipeline:.github/workflows/openwiki-update.yml"
+    ],
+    "docs": [
+      "document:docs/ARCHITECTURE.md",
+      "document:docs/COMPLIANCE.md",
+      "document:docs/CONTENT-FILTER-DIAGNOSTICS.md",
+      "document:docs/CONTRIBUTING.md",
+      "document:docs/LAYOUT-EVALUATION.md",
+      "document:docs/MODEL.md",
+      "document:docs/PROMPT-EVALUATION.md",
+      "document:docs/PROMPTS.md",
+      "document:docs/RUNBOOK.md",
+      "document:docs/SOL-RESOLUTION-EVALUATION.md",
+      "file:docs/diagrams/groundmark-architecture.html",
+      "config:docs/diagrams/groundmark-architecture.json",
+      "file:docs/diagrams/groundmark-architecture.visual-check.html",
+      "config:docs/diagrams/groundmark-architecture.visual-check.json",
+      "file:docs/diagrams/groundmark-dataflow.html",
+      "config:docs/diagrams/groundmark-dataflow.json",
+      "file:docs/diagrams/groundmark-dataflow.visual-check.html",
+      "config:docs/diagrams/groundmark-dataflow.visual-check.json",
+      "file:docs/diagrams/groundmark-lifecycle.html",
+      "config:docs/diagrams/groundmark-lifecycle.json",
+      "file:docs/diagrams/groundmark-lifecycle.visual-check.html",
+      "config:docs/diagrams/groundmark-lifecycle.visual-check.json",
+      "file:docs/diagrams/groundmark-sequence.html",
+      "config:docs/diagrams/groundmark-sequence.json",
+      "file:docs/diagrams/groundmark-sequence.visual-check.html",
+      "config:docs/diagrams/groundmark-sequence.visual-check.json",
+      "file:docs/diagrams/groundmark-workflow.html",
+      "config:docs/diagrams/groundmark-workflow.json",
+      "file:docs/diagrams/groundmark-workflow.visual-check.html",
+      "config:docs/diagrams/groundmark-workflow.visual-check.json"
+    ],
+    "openwiki": [
+      "config:openwiki/.last-update.json",
+      "config:openwiki/.page-manifest.json",
+      "document:openwiki/index.md",
+      "document:openwiki/quickstart.md",
+      "config:openwiki/.claims/architecture/parsing-pipeline.json",
+      "config:openwiki/.claims/concepts/layout-and-rendering.json",
+      "config:openwiki/.claims/features/document-chat.json",
+      "config:openwiki/.claims/operations/development-and-testing.json",
+      "config:openwiki/.claims/quickstart.json",
+      "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "document:openwiki/architecture/index.md",
+      "document:openwiki/architecture/parsing-pipeline.md",
+      "document:openwiki/concepts/index.md",
+      "document:openwiki/concepts/layout-and-rendering.md",
+      "document:openwiki/features/document-chat.md",
+      "document:openwiki/features/index.md",
+      "document:openwiki/operations/development-and-testing.md",
+      "document:openwiki/operations/index.md",
+      "document:openwiki/workflows/artifacts-and-exports.md",
+      "document:openwiki/workflows/index.md"
+    ],
+    "knowledge": [
+      "document:knowledge/index.md"
+    ]
+  },
+  "nodeTypeGroups": {
+    "file": [
+      "file:src/layout.py",
+      "file:tests/test_annotate.py",
+      "file:tests/test_layout_evaluation.py",
+      "file:tests/test_layout_structure.py",
+      "file:tests/test_markdown.py",
+      "file:tests/test_prompt_evaluation.py",
+      "file:tests/test_resolution_evaluation.py",
+      "file:scripts/evaluate_layout.py",
+      "file:scripts/evaluate_resolution.py",
+      "file:src/models.py",
+      "file:src/preprocess.py",
+      "file:src/ui/clipboard.py",
+      "file:src/usage.py",
+      "file:tests/fixtures/make_invoice_png.py",
+      "file:tests/test_preprocess.py",
+      "file:src/__init__.py",
+      "file:src/cli.py",
+      "file:tests/fake_llm.py",
+      "file:tests/test_cli.py",
+      "file:tests/test_parse.py",
+      "file:tests/test_usage.py",
+      "file:scripts/evaluate_chat.py",
+      "file:src/chat.py",
+      "file:src/prompts.py",
+      "file:tests/test_chat.py",
+      "file:tests/test_prompts.py",
+      "file:scripts/evaluate_prompts.py",
+      "file:src/diagnostics.py",
+      "file:src/llm.py",
+      "file:src/parse.py",
+      "file:tests/test_diagnostics.py",
+      "file:groundmark-architecture.html",
+      "file:groundmark-architecture.visual-check.html",
+      "file:run.cmd",
+      "file:src/ui/__init__.py",
+      "file:tests/__init__.py",
+      "file:tests/test_launcher.py",
+      "file:docs/diagrams/groundmark-architecture.html",
+      "file:docs/diagrams/groundmark-architecture.visual-check.html",
+      "file:docs/diagrams/groundmark-dataflow.html",
+      "file:docs/diagrams/groundmark-dataflow.visual-check.html",
+      "file:docs/diagrams/groundmark-lifecycle.html",
+      "file:docs/diagrams/groundmark-lifecycle.visual-check.html",
+      "file:docs/diagrams/groundmark-sequence.html",
+      "file:docs/diagrams/groundmark-sequence.visual-check.html",
+      "file:docs/diagrams/groundmark-workflow.html",
+      "file:docs/diagrams/groundmark-workflow.visual-check.html",
+      "file:src/annotate.py",
+      "file:src/export.py",
+      "file:src/figures.py",
+      "file:src/graph.py",
+      "file:src/markdown.py",
+      "file:src/output_names.py",
+      "file:src/ui/app.py",
+      "file:tests/test_cli_extraction.py",
+      "file:tests/test_graph.py",
+      "file:tests/test_output_names.py",
+      "file:tests/test_ui_diagnostics.py"
+    ],
+    "config": [
+      "config:.env.example",
+      "config:groundmark-architecture.json",
+      "config:groundmark-architecture.visual-check.json",
+      "config:pyproject.toml",
+      "config:docs/diagrams/groundmark-architecture.json",
+      "config:docs/diagrams/groundmark-architecture.visual-check.json",
+      "config:docs/diagrams/groundmark-dataflow.json",
+      "config:docs/diagrams/groundmark-dataflow.visual-check.json",
+      "config:docs/diagrams/groundmark-lifecycle.json",
+      "config:docs/diagrams/groundmark-lifecycle.visual-check.json",
+      "config:docs/diagrams/groundmark-sequence.json",
+      "config:docs/diagrams/groundmark-sequence.visual-check.json",
+      "config:docs/diagrams/groundmark-workflow.json",
+      "config:docs/diagrams/groundmark-workflow.visual-check.json",
+      "config:openwiki/.last-update.json",
+      "config:openwiki/.page-manifest.json",
+      "config:openwiki/.claims/architecture/parsing-pipeline.json",
+      "config:openwiki/.claims/concepts/layout-and-rendering.json",
+      "config:openwiki/.claims/features/document-chat.json",
+      "config:openwiki/.claims/operations/development-and-testing.json",
+      "config:openwiki/.claims/quickstart.json",
+      "config:openwiki/.claims/workflows/artifacts-and-exports.json"
+    ],
+    "document": [
+      "document:requirements-dev.txt",
+      "document:requirements.txt",
+      "document:prompts/runtime/chat-answer.md",
+      "document:prompts/runtime/chat-verify.md",
+      "document:prompts/runtime/parse-page-structured.md",
+      "document:prompts/runtime/parse-page.md",
+      "document:tests/fixtures/chat-evaluation.md",
+      "document:AGENTS.md",
+      "document:CLAUDE.md",
+      "document:README.md",
+      "document:docs/ARCHITECTURE.md",
+      "document:docs/COMPLIANCE.md",
+      "document:docs/CONTENT-FILTER-DIAGNOSTICS.md",
+      "document:docs/CONTRIBUTING.md",
+      "document:docs/LAYOUT-EVALUATION.md",
+      "document:docs/MODEL.md",
+      "document:docs/PROMPT-EVALUATION.md",
+      "document:docs/PROMPTS.md",
+      "document:docs/RUNBOOK.md",
+      "document:docs/SOL-RESOLUTION-EVALUATION.md",
+      "document:openwiki/index.md",
+      "document:openwiki/quickstart.md",
+      "document:knowledge/index.md",
+      "document:openwiki/architecture/index.md",
+      "document:openwiki/architecture/parsing-pipeline.md",
+      "document:openwiki/concepts/index.md",
+      "document:openwiki/concepts/layout-and-rendering.md",
+      "document:openwiki/features/document-chat.md",
+      "document:openwiki/features/index.md",
+      "document:openwiki/operations/development-and-testing.md",
+      "document:openwiki/operations/index.md",
+      "document:openwiki/workflows/artifacts-and-exports.md",
+      "document:openwiki/workflows/index.md"
+    ],
+    "pipeline": [
+      "pipeline:.github/workflows/openwiki-update.yml"
+    ]
+  },
+  "crossCategoryEdges": [
+    {
+      "fromType": "file",
+      "toType": "file",
+      "edgeType": "imports",
+      "count": 108
+    },
+    {
+      "fromType": "document",
+      "toType": "file",
+      "edgeType": "documents",
+      "count": 36
+    },
+    {
+      "fromType": "file",
+      "toType": "file",
+      "edgeType": "tested_by",
+      "count": 26
+    },
+    {
+      "fromType": "config",
+      "toType": "file",
+      "edgeType": "documents",
+      "count": 25
+    },
+    {
+      "fromType": "document",
+      "toType": "document",
+      "edgeType": "documents",
+      "count": 19
+    },
+    {
+      "fromType": "config",
+      "toType": "file",
+      "edgeType": "configures",
+      "count": 7
+    },
+    {
+      "fromType": "config",
+      "toType": "document",
+      "edgeType": "documents",
+      "count": 6
+    },
+    {
+      "fromType": "config",
+      "toType": "file",
+      "edgeType": "validates",
+      "count": 5
+    },
+    {
+      "fromType": "file",
+      "toType": "file",
+      "edgeType": "related",
+      "count": 5
+    },
+    {
+      "fromType": "document",
+      "toType": "file",
+      "edgeType": "defines_schema",
+      "count": 4
+    },
+    {
+      "fromType": "config",
+      "toType": "config",
+      "edgeType": "documents",
+      "count": 2
+    },
+    {
+      "fromType": "document",
+      "toType": "file",
+      "edgeType": "configures",
+      "count": 2
+    },
+    {
+      "fromType": "document",
+      "toType": "config",
+      "edgeType": "documents",
+      "count": 1
+    }
+  ],
+  "nonCodeConnections": [
+    {
+      "source": "config:.env.example",
+      "target": "file:src/chat.py",
+      "edgeType": "configures"
+    },
+    {
+      "source": "config:pyproject.toml",
+      "target": "file:src/__init__.py",
+      "edgeType": "configures"
+    },
+    {
+      "source": "document:requirements-dev.txt",
+      "target": "file:tests/__init__.py",
+      "edgeType": "configures"
+    },
+    {
+      "source": "document:requirements.txt",
+      "target": "file:src/__init__.py",
+      "edgeType": "configures"
+    },
+    {
+      "source": "document:prompts/runtime/chat-answer.md",
+      "target": "file:src/prompts.py",
+      "edgeType": "defines_schema"
+    },
+    {
+      "source": "document:prompts/runtime/chat-verify.md",
+      "target": "file:src/prompts.py",
+      "edgeType": "defines_schema"
+    },
+    {
+      "source": "document:prompts/runtime/parse-page-structured.md",
+      "target": "file:src/prompts.py",
+      "edgeType": "defines_schema"
+    },
+    {
+      "source": "document:prompts/runtime/parse-page.md",
+      "target": "file:src/prompts.py",
+      "edgeType": "defines_schema"
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/annotate.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/chat.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/cli.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/export.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/figures.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/graph.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/layout.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/llm.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/markdown.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/output_names.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/parse.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/preprocess.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:docs/ARCHITECTURE.md",
+      "target": "file:src/ui/app.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:docs/COMPLIANCE.md",
+      "target": "file:src/chat.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:docs/COMPLIANCE.md",
+      "target": "file:src/llm.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:docs/CONTRIBUTING.md",
+      "target": "file:src/chat.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:docs/CONTRIBUTING.md",
+      "target": "file:src/llm.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:docs/MODEL.md",
+      "target": "file:src/models.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:docs/MODEL.md",
+      "target": "file:src/chat.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:docs/PROMPTS.md",
+      "target": "file:tests/test_prompts.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:docs/SOL-RESOLUTION-EVALUATION.md",
+      "target": "file:scripts/evaluate_prompts.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:docs/diagrams/groundmark-architecture.json",
+      "target": "file:docs/diagrams/groundmark-architecture.html",
+      "edgeType": "configures"
+    },
+    {
+      "source": "config:docs/diagrams/groundmark-architecture.visual-check.json",
+      "target": "file:docs/diagrams/groundmark-architecture.html",
+      "edgeType": "validates"
+    },
+    {
+      "source": "config:docs/diagrams/groundmark-dataflow.json",
+      "target": "file:docs/diagrams/groundmark-dataflow.html",
+      "edgeType": "configures"
+    },
+    {
+      "source": "config:docs/diagrams/groundmark-dataflow.visual-check.json",
+      "target": "file:docs/diagrams/groundmark-dataflow.html",
+      "edgeType": "validates"
+    },
+    {
+      "source": "config:docs/diagrams/groundmark-lifecycle.json",
+      "target": "file:docs/diagrams/groundmark-lifecycle.html",
+      "edgeType": "configures"
+    },
+    {
+      "source": "config:docs/diagrams/groundmark-lifecycle.visual-check.json",
+      "target": "file:docs/diagrams/groundmark-lifecycle.html",
+      "edgeType": "validates"
+    },
+    {
+      "source": "config:docs/diagrams/groundmark-sequence.json",
+      "target": "file:docs/diagrams/groundmark-sequence.html",
+      "edgeType": "configures"
+    },
+    {
+      "source": "config:docs/diagrams/groundmark-sequence.visual-check.json",
+      "target": "file:docs/diagrams/groundmark-sequence.html",
+      "edgeType": "validates"
+    },
+    {
+      "source": "config:docs/diagrams/groundmark-workflow.json",
+      "target": "file:docs/diagrams/groundmark-workflow.html",
+      "edgeType": "configures"
+    },
+    {
+      "source": "config:docs/diagrams/groundmark-workflow.visual-check.json",
+      "target": "file:docs/diagrams/groundmark-workflow.html",
+      "edgeType": "validates"
+    },
+    {
+      "source": "config:openwiki/.claims/architecture/parsing-pipeline.json",
+      "target": "file:src/diagnostics.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/architecture/parsing-pipeline.json",
+      "target": "file:src/graph.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/architecture/parsing-pipeline.json",
+      "target": "file:src/parse.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/architecture/parsing-pipeline.json",
+      "target": "file:tests/test_graph.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/architecture/parsing-pipeline.json",
+      "target": "file:tests/test_parse.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/concepts/layout-and-rendering.json",
+      "target": "file:src/figures.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/concepts/layout-and-rendering.json",
+      "target": "file:src/layout.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/concepts/layout-and-rendering.json",
+      "target": "file:src/markdown.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/concepts/layout-and-rendering.json",
+      "target": "file:tests/test_layout_structure.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/features/document-chat.json",
+      "target": "file:src/chat.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/features/document-chat.json",
+      "target": "file:src/ui/app.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/features/document-chat.json",
+      "target": "file:tests/test_chat.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/features/document-chat.json",
+      "target": "file:tests/test_ui_diagnostics.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/operations/development-and-testing.json",
+      "target": "file:scripts/evaluate_chat.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/operations/development-and-testing.json",
+      "target": "file:scripts/evaluate_layout.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/operations/development-and-testing.json",
+      "target": "file:scripts/evaluate_prompts.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/operations/development-and-testing.json",
+      "target": "file:scripts/evaluate_resolution.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/quickstart.json",
+      "target": "file:src/cli.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/quickstart.json",
+      "target": "file:src/graph.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:openwiki/architecture/parsing-pipeline.md",
+      "target": "file:src/graph.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:openwiki/architecture/parsing-pipeline.md",
+      "target": "file:src/preprocess.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:openwiki/architecture/parsing-pipeline.md",
+      "target": "file:src/parse.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:openwiki/architecture/parsing-pipeline.md",
+      "target": "file:src/diagnostics.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:openwiki/concepts/layout-and-rendering.md",
+      "target": "file:src/figures.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:openwiki/concepts/layout-and-rendering.md",
+      "target": "file:src/layout.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:openwiki/concepts/layout-and-rendering.md",
+      "target": "file:src/markdown.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:openwiki/features/document-chat.md",
+      "target": "file:src/chat.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:openwiki/features/document-chat.md",
+      "target": "file:src/ui/app.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:openwiki/workflows/artifacts-and-exports.md",
+      "target": "file:src/annotate.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:openwiki/workflows/artifacts-and-exports.md",
+      "target": "file:src/export.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:openwiki/workflows/artifacts-and-exports.md",
+      "target": "file:src/figures.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:openwiki/workflows/artifacts-and-exports.md",
+      "target": "file:src/graph.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:openwiki/workflows/artifacts-and-exports.md",
+      "target": "file:src/cli.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "document:openwiki/workflows/artifacts-and-exports.md",
+      "target": "file:src/output_names.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "target": "file:src/annotate.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "target": "file:src/export.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "target": "file:src/figures.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "target": "file:src/graph.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "target": "file:src/cli.py",
+      "edgeType": "documents"
+    },
+    {
+      "source": "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "target": "file:src/output_names.py",
+      "edgeType": "documents"
+    }
+  ],
+  "interGroupImports": [
+    {
+      "from": "tests",
+      "to": "src",
+      "count": 39
+    },
+    {
+      "from": "scripts",
+      "to": "src",
+      "count": 14
+    },
+    {
+      "from": "tests",
+      "to": "scripts",
+      "count": 1
+    }
+  ],
+  "intraGroupDensity": {
+    "src": {
+      "internalEdges": 48,
+      "totalEdges": 101,
+      "density": 0.4752475247524752
+    },
+    "tests": {
+      "internalEdges": 3,
+      "totalEdges": 43,
+      "density": 0.06976744186046512
+    },
+    "scripts": {
+      "internalEdges": 3,
+      "totalEdges": 18,
+      "density": 0.16666666666666666
+    },
+    "(root)": {
+      "internalEdges": 0,
+      "totalEdges": 0,
+      "density": 0
+    },
+    "prompts": {
+      "internalEdges": 0,
+      "totalEdges": 0,
+      "density": 0
+    },
+    ".github": {
+      "internalEdges": 0,
+      "totalEdges": 0,
+      "density": 0
+    },
+    "docs": {
+      "internalEdges": 0,
+      "totalEdges": 0,
+      "density": 0
+    },
+    "openwiki": {
+      "internalEdges": 0,
+      "totalEdges": 0,
+      "density": 0
+    },
+    "knowledge": {
+      "internalEdges": 0,
+      "totalEdges": 0,
+      "density": 0
+    }
+  },
+  "patternMatches": {
+    "src": "other",
+    "tests": "test",
+    "scripts": "other",
+    "(root)": "other",
+    "prompts": "other",
+    ".github": "ci-cd",
+    "docs": "documentation",
+    "openwiki": "other",
+    "knowledge": "other"
+  },
+  "filePatternMatches": {
+    "tests": [
+      {
+        "id": "file:tests/test_annotate.py",
+        "pattern": "test"
+      },
+      {
+        "id": "file:tests/test_layout_evaluation.py",
+        "pattern": "test"
+      },
+      {
+        "id": "file:tests/test_layout_structure.py",
+        "pattern": "test"
+      },
+      {
+        "id": "file:tests/test_markdown.py",
+        "pattern": "test"
+      },
+      {
+        "id": "file:tests/test_prompt_evaluation.py",
+        "pattern": "test"
+      },
+      {
+        "id": "file:tests/test_resolution_evaluation.py",
+        "pattern": "test"
+      },
+      {
+        "id": "file:tests/test_preprocess.py",
+        "pattern": "test"
+      },
+      {
+        "id": "file:tests/test_cli.py",
+        "pattern": "test"
+      },
+      {
+        "id": "file:tests/test_parse.py",
+        "pattern": "test"
+      },
+      {
+        "id": "file:tests/test_usage.py",
+        "pattern": "test"
+      },
+      {
+        "id": "file:tests/test_chat.py",
+        "pattern": "test"
+      },
+      {
+        "id": "file:tests/test_prompts.py",
+        "pattern": "test"
+      },
+      {
+        "id": "file:tests/test_diagnostics.py",
+        "pattern": "test"
+      },
+      {
+        "id": "file:tests/__init__.py",
+        "pattern": "entry"
+      },
+      {
+        "id": "document:tests/fixtures/chat-evaluation.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "file:tests/test_launcher.py",
+        "pattern": "test"
+      },
+      {
+        "id": "file:tests/test_cli_extraction.py",
+        "pattern": "test"
+      },
+      {
+        "id": "file:tests/test_graph.py",
+        "pattern": "test"
+      },
+      {
+        "id": "file:tests/test_output_names.py",
+        "pattern": "test"
+      },
+      {
+        "id": "file:tests/test_ui_diagnostics.py",
+        "pattern": "test"
+      }
+    ],
+    "src": [
+      {
+        "id": "file:src/__init__.py",
+        "pattern": "entry"
+      },
+      {
+        "id": "file:src/ui/__init__.py",
+        "pattern": "entry"
+      }
+    ],
+    "prompts": [
+      {
+        "id": "document:prompts/runtime/chat-answer.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:prompts/runtime/chat-verify.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:prompts/runtime/parse-page-structured.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:prompts/runtime/parse-page.md",
+        "pattern": "documentation"
+      }
+    ],
+    ".github": [
+      {
+        "id": "pipeline:.github/workflows/openwiki-update.yml",
+        "pattern": "ci-cd"
+      }
+    ],
+    "(root)": [
+      {
+        "id": "document:AGENTS.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:CLAUDE.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:README.md",
+        "pattern": "documentation"
+      }
+    ],
+    "docs": [
+      {
+        "id": "document:docs/ARCHITECTURE.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:docs/COMPLIANCE.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:docs/CONTENT-FILTER-DIAGNOSTICS.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:docs/CONTRIBUTING.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:docs/LAYOUT-EVALUATION.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:docs/MODEL.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:docs/PROMPT-EVALUATION.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:docs/PROMPTS.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:docs/RUNBOOK.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:docs/SOL-RESOLUTION-EVALUATION.md",
+        "pattern": "documentation"
+      }
+    ],
+    "openwiki": [
+      {
+        "id": "document:openwiki/index.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:openwiki/quickstart.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:openwiki/architecture/index.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:openwiki/architecture/parsing-pipeline.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:openwiki/concepts/index.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:openwiki/concepts/layout-and-rendering.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:openwiki/features/document-chat.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:openwiki/features/index.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:openwiki/operations/development-and-testing.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:openwiki/operations/index.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:openwiki/workflows/artifacts-and-exports.md",
+        "pattern": "documentation"
+      },
+      {
+        "id": "document:openwiki/workflows/index.md",
+        "pattern": "documentation"
+      }
+    ],
+    "knowledge": [
+      {
+        "id": "document:knowledge/index.md",
+        "pattern": "documentation"
+      }
+    ]
+  },
+  "deploymentTopology": {
+    "hasDockerfile": false,
+    "hasCompose": false,
+    "hasK8s": false,
+    "hasTerraform": false,
+    "hasCI": true,
+    "infraFiles": [
+      ".github/workflows/openwiki-update.yml"
+    ]
+  },
+  "dataPipeline": {
+    "schemaFiles": [],
+    "migrationFiles": [],
+    "dataModelFiles": [],
+    "apiHandlerFiles": []
+  },
+  "docCoverage": {
+    "groupsWithDocs": 8,
+    "totalGroups": 9,
+    "coverageRatio": 0.8888888888888888,
+    "undocumentedGroups": [
+      ".github"
+    ]
+  },
+  "dependencyDirection": [
+    {
+      "dependent": "tests",
+      "dependsOn": "src",
+      "count": 39,
+      "reverseCount": 0
+    },
+    {
+      "dependent": "scripts",
+      "dependsOn": "src",
+      "count": 14,
+      "reverseCount": 0
+    },
+    {
+      "dependent": "tests",
+      "dependsOn": "scripts",
+      "count": 1,
+      "reverseCount": 0
+    }
+  ],
+  "fileStats": {
+    "totalFileNodes": 114,
+    "filesPerGroup": {
+      "src": 20,
+      "tests": 22,
+      "scripts": 4,
+      "(root)": 12,
+      "prompts": 4,
+      ".github": 1,
+      "docs": 30,
+      "openwiki": 20,
+      "knowledge": 1
+    },
+    "nodeTypeCounts": {
+      "file": 58,
+      "config": 22,
+      "document": 33,
+      "pipeline": 1
+    }
+  },
+  "fileFanIn": {
+    "file:src/layout.py": 23,
+    "file:tests/test_annotate.py": 0,
+    "file:tests/test_layout_evaluation.py": 0,
+    "file:tests/test_layout_structure.py": 1,
+    "file:tests/test_markdown.py": 0,
+    "file:tests/test_prompt_evaluation.py": 0,
+    "file:tests/test_resolution_evaluation.py": 0,
+    "file:scripts/evaluate_layout.py": 0,
+    "file:scripts/evaluate_resolution.py": 1,
+    "file:src/models.py": 7,
+    "file:src/preprocess.py": 9,
+    "file:src/ui/clipboard.py": 1,
+    "file:src/usage.py": 7,
+    "file:tests/fixtures/make_invoice_png.py": 1,
+    "file:tests/test_preprocess.py": 0,
+    "file:src/__init__.py": 12,
+    "file:src/cli.py": 2,
+    "file:tests/fake_llm.py": 1,
+    "file:tests/test_cli.py": 0,
+    "file:tests/test_parse.py": 0,
+    "file:tests/test_usage.py": 0,
+    "file:scripts/evaluate_chat.py": 0,
+    "file:src/chat.py": 4,
+    "file:src/prompts.py": 3,
+    "file:tests/test_chat.py": 0,
+    "file:tests/test_prompts.py": 0,
+    "file:scripts/evaluate_prompts.py": 3,
+    "file:src/diagnostics.py": 7,
+    "file:src/llm.py": 3,
+    "file:src/parse.py": 3,
+    "file:tests/test_diagnostics.py": 0,
+    "config:.env.example": 0,
+    "file:groundmark-architecture.html": 0,
+    "config:groundmark-architecture.json": 0,
+    "file:groundmark-architecture.visual-check.html": 0,
+    "config:groundmark-architecture.visual-check.json": 0,
+    "config:pyproject.toml": 0,
+    "document:requirements-dev.txt": 0,
+    "document:requirements.txt": 0,
+    "file:run.cmd": 0,
+    "document:prompts/runtime/chat-answer.md": 0,
+    "document:prompts/runtime/chat-verify.md": 0,
+    "document:prompts/runtime/parse-page-structured.md": 0,
+    "document:prompts/runtime/parse-page.md": 0,
+    "file:src/ui/__init__.py": 0,
+    "file:tests/__init__.py": 0,
+    "document:tests/fixtures/chat-evaluation.md": 0,
+    "file:tests/test_launcher.py": 0,
+    "pipeline:.github/workflows/openwiki-update.yml": 0,
+    "document:AGENTS.md": 0,
+    "document:CLAUDE.md": 0,
+    "document:README.md": 0,
+    "document:docs/ARCHITECTURE.md": 0,
+    "document:docs/COMPLIANCE.md": 0,
+    "document:docs/CONTENT-FILTER-DIAGNOSTICS.md": 0,
+    "document:docs/CONTRIBUTING.md": 0,
+    "document:docs/LAYOUT-EVALUATION.md": 0,
+    "document:docs/MODEL.md": 0,
+    "document:docs/PROMPT-EVALUATION.md": 0,
+    "document:docs/PROMPTS.md": 0,
+    "document:docs/RUNBOOK.md": 0,
+    "document:docs/SOL-RESOLUTION-EVALUATION.md": 0,
+    "file:docs/diagrams/groundmark-architecture.html": 0,
+    "config:docs/diagrams/groundmark-architecture.json": 0,
+    "file:docs/diagrams/groundmark-architecture.visual-check.html": 0,
+    "config:docs/diagrams/groundmark-architecture.visual-check.json": 0,
+    "file:docs/diagrams/groundmark-dataflow.html": 0,
+    "config:docs/diagrams/groundmark-dataflow.json": 0,
+    "file:docs/diagrams/groundmark-dataflow.visual-check.html": 0,
+    "config:docs/diagrams/groundmark-dataflow.visual-check.json": 0,
+    "file:docs/diagrams/groundmark-lifecycle.html": 0,
+    "config:docs/diagrams/groundmark-lifecycle.json": 0,
+    "file:docs/diagrams/groundmark-lifecycle.visual-check.html": 0,
+    "config:docs/diagrams/groundmark-lifecycle.visual-check.json": 0,
+    "file:docs/diagrams/groundmark-sequence.html": 0,
+    "config:docs/diagrams/groundmark-sequence.json": 0,
+    "file:docs/diagrams/groundmark-sequence.visual-check.html": 0,
+    "config:docs/diagrams/groundmark-sequence.visual-check.json": 0,
+    "file:docs/diagrams/groundmark-workflow.html": 0,
+    "config:docs/diagrams/groundmark-workflow.json": 0,
+    "file:docs/diagrams/groundmark-workflow.visual-check.html": 0,
+    "config:docs/diagrams/groundmark-workflow.visual-check.json": 0,
+    "config:openwiki/.last-update.json": 0,
+    "config:openwiki/.page-manifest.json": 0,
+    "document:openwiki/index.md": 0,
+    "document:openwiki/quickstart.md": 0,
+    "document:knowledge/index.md": 0,
+    "config:openwiki/.claims/architecture/parsing-pipeline.json": 0,
+    "config:openwiki/.claims/concepts/layout-and-rendering.json": 0,
+    "config:openwiki/.claims/features/document-chat.json": 0,
+    "config:openwiki/.claims/operations/development-and-testing.json": 0,
+    "config:openwiki/.claims/quickstart.json": 0,
+    "config:openwiki/.claims/workflows/artifacts-and-exports.json": 0,
+    "document:openwiki/architecture/index.md": 0,
+    "document:openwiki/architecture/parsing-pipeline.md": 0,
+    "document:openwiki/concepts/index.md": 0,
+    "document:openwiki/concepts/layout-and-rendering.md": 0,
+    "document:openwiki/features/document-chat.md": 0,
+    "document:openwiki/features/index.md": 0,
+    "document:openwiki/operations/development-and-testing.md": 0,
+    "document:openwiki/operations/index.md": 0,
+    "document:openwiki/workflows/artifacts-and-exports.md": 0,
+    "document:openwiki/workflows/index.md": 0,
+    "file:src/annotate.py": 3,
+    "file:src/export.py": 1,
+    "file:src/figures.py": 3,
+    "file:src/graph.py": 2,
+    "file:src/markdown.py": 5,
+    "file:src/output_names.py": 6,
+    "file:src/ui/app.py": 0,
+    "file:tests/test_cli_extraction.py": 0,
+    "file:tests/test_graph.py": 0,
+    "file:tests/test_output_names.py": 0,
+    "file:tests/test_ui_diagnostics.py": 0
+  },
+  "fileFanOut": {
+    "file:src/layout.py": 1,
+    "file:tests/test_annotate.py": 2,
+    "file:tests/test_layout_evaluation.py": 1,
+    "file:tests/test_layout_structure.py": 4,
+    "file:tests/test_markdown.py": 2,
+    "file:tests/test_prompt_evaluation.py": 2,
+    "file:tests/test_resolution_evaluation.py": 1,
+    "file:scripts/evaluate_layout.py": 5,
+    "file:scripts/evaluate_resolution.py": 5,
+    "file:src/models.py": 0,
+    "file:src/preprocess.py": 0,
+    "file:src/ui/clipboard.py": 0,
+    "file:src/usage.py": 1,
+    "file:tests/fixtures/make_invoice_png.py": 0,
+    "file:tests/test_preprocess.py": 2,
+    "file:src/__init__.py": 0,
+    "file:src/cli.py": 0,
+    "file:tests/fake_llm.py": 0,
+    "file:tests/test_cli.py": 2,
+    "file:tests/test_parse.py": 3,
+    "file:tests/test_usage.py": 2,
+    "file:scripts/evaluate_chat.py": 2,
+    "file:src/chat.py": 6,
+    "file:src/prompts.py": 0,
+    "file:tests/test_chat.py": 3,
+    "file:tests/test_prompts.py": 1,
+    "file:scripts/evaluate_prompts.py": 5,
+    "file:src/diagnostics.py": 0,
+    "file:src/llm.py": 3,
+    "file:src/parse.py": 6,
+    "file:tests/test_diagnostics.py": 5,
+    "config:.env.example": 0,
+    "file:groundmark-architecture.html": 0,
+    "config:groundmark-architecture.json": 0,
+    "file:groundmark-architecture.visual-check.html": 0,
+    "config:groundmark-architecture.visual-check.json": 0,
+    "config:pyproject.toml": 0,
+    "document:requirements-dev.txt": 0,
+    "document:requirements.txt": 0,
+    "file:run.cmd": 0,
+    "document:prompts/runtime/chat-answer.md": 0,
+    "document:prompts/runtime/chat-verify.md": 0,
+    "document:prompts/runtime/parse-page-structured.md": 0,
+    "document:prompts/runtime/parse-page.md": 0,
+    "file:src/ui/__init__.py": 0,
+    "file:tests/__init__.py": 0,
+    "document:tests/fixtures/chat-evaluation.md": 0,
+    "file:tests/test_launcher.py": 0,
+    "pipeline:.github/workflows/openwiki-update.yml": 0,
+    "document:AGENTS.md": 0,
+    "document:CLAUDE.md": 0,
+    "document:README.md": 0,
+    "document:docs/ARCHITECTURE.md": 0,
+    "document:docs/COMPLIANCE.md": 0,
+    "document:docs/CONTENT-FILTER-DIAGNOSTICS.md": 0,
+    "document:docs/CONTRIBUTING.md": 0,
+    "document:docs/LAYOUT-EVALUATION.md": 0,
+    "document:docs/MODEL.md": 0,
+    "document:docs/PROMPT-EVALUATION.md": 0,
+    "document:docs/PROMPTS.md": 0,
+    "document:docs/RUNBOOK.md": 0,
+    "document:docs/SOL-RESOLUTION-EVALUATION.md": 0,
+    "file:docs/diagrams/groundmark-architecture.html": 0,
+    "config:docs/diagrams/groundmark-architecture.json": 0,
+    "file:docs/diagrams/groundmark-architecture.visual-check.html": 0,
+    "config:docs/diagrams/groundmark-architecture.visual-check.json": 0,
+    "file:docs/diagrams/groundmark-dataflow.html": 0,
+    "config:docs/diagrams/groundmark-dataflow.json": 0,
+    "file:docs/diagrams/groundmark-dataflow.visual-check.html": 0,
+    "config:docs/diagrams/groundmark-dataflow.visual-check.json": 0,
+    "file:docs/diagrams/groundmark-lifecycle.html": 0,
+    "config:docs/diagrams/groundmark-lifecycle.json": 0,
+    "file:docs/diagrams/groundmark-lifecycle.visual-check.html": 0,
+    "config:docs/diagrams/groundmark-lifecycle.visual-check.json": 0,
+    "file:docs/diagrams/groundmark-sequence.html": 0,
+    "config:docs/diagrams/groundmark-sequence.json": 0,
+    "file:docs/diagrams/groundmark-sequence.visual-check.html": 0,
+    "config:docs/diagrams/groundmark-sequence.visual-check.json": 0,
+    "file:docs/diagrams/groundmark-workflow.html": 0,
+    "config:docs/diagrams/groundmark-workflow.json": 0,
+    "file:docs/diagrams/groundmark-workflow.visual-check.html": 0,
+    "config:docs/diagrams/groundmark-workflow.visual-check.json": 0,
+    "config:openwiki/.last-update.json": 0,
+    "config:openwiki/.page-manifest.json": 0,
+    "document:openwiki/index.md": 0,
+    "document:openwiki/quickstart.md": 0,
+    "document:knowledge/index.md": 0,
+    "config:openwiki/.claims/architecture/parsing-pipeline.json": 0,
+    "config:openwiki/.claims/concepts/layout-and-rendering.json": 0,
+    "config:openwiki/.claims/features/document-chat.json": 0,
+    "config:openwiki/.claims/operations/development-and-testing.json": 0,
+    "config:openwiki/.claims/quickstart.json": 0,
+    "config:openwiki/.claims/workflows/artifacts-and-exports.json": 0,
+    "document:openwiki/architecture/index.md": 0,
+    "document:openwiki/architecture/parsing-pipeline.md": 0,
+    "document:openwiki/concepts/index.md": 0,
+    "document:openwiki/concepts/layout-and-rendering.md": 0,
+    "document:openwiki/features/document-chat.md": 0,
+    "document:openwiki/features/index.md": 0,
+    "document:openwiki/operations/development-and-testing.md": 0,
+    "document:openwiki/operations/index.md": 0,
+    "document:openwiki/workflows/artifacts-and-exports.md": 0,
+    "document:openwiki/workflows/index.md": 0,
+    "file:src/annotate.py": 3,
+    "file:src/export.py": 5,
+    "file:src/figures.py": 4,
+    "file:src/graph.py": 8,
+    "file:src/markdown.py": 2,
+    "file:src/output_names.py": 0,
+    "file:src/ui/app.py": 9,
+    "file:tests/test_cli_extraction.py": 4,
+    "file:tests/test_graph.py": 2,
+    "file:tests/test_output_names.py": 3,
+    "file:tests/test_ui_diagnostics.py": 4
+  }
+}

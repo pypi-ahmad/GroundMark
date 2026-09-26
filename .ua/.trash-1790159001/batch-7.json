@@ -1,0 +1,88 @@
+{
+  "batchIndex": 7,
+  "totalBatches": 9,
+  "nodes": [
+    {
+      "id": "document:prompts/runtime/chat-answer.md",
+      "type": "document",
+      "name": "chat-answer.md",
+      "filePath": "prompts/runtime/chat-answer.md",
+      "summary": "Runtime prompt instructing the model to generate grounded document answers with page-level citations.",
+      "tags": [
+        "prompt-template",
+        "chat",
+        "qa-prompt"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:prompts/runtime/chat-verify.md",
+      "type": "document",
+      "name": "chat-verify.md",
+      "filePath": "prompts/runtime/chat-verify.md",
+      "summary": "Verification prompt validating answer statements against document evidence and citations.",
+      "tags": [
+        "prompt-template",
+        "verification",
+        "fact-checking"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:prompts/runtime/parse-page-structured.md",
+      "type": "document",
+      "name": "parse-page-structured.md",
+      "filePath": "prompts/runtime/parse-page-structured.md",
+      "summary": "Structured JSON output prompt requesting strict bounding box coordinates and block types.",
+      "tags": [
+        "prompt-template",
+        "layout-parsing",
+        "structured-output"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "document:prompts/runtime/parse-page.md",
+      "type": "document",
+      "name": "parse-page.md",
+      "filePath": "prompts/runtime/parse-page.md",
+      "summary": "Standard vision layout analysis prompt instructing model to identify blocks, reading order, and text.",
+      "tags": [
+        "prompt-template",
+        "layout-parsing",
+        "vision-prompt"
+      ],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:prompts/runtime/chat-answer.md",
+      "target": "file:src/prompts.py",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "document:prompts/runtime/chat-verify.md",
+      "target": "file:src/prompts.py",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "document:prompts/runtime/parse-page-structured.md",
+      "target": "file:src/prompts.py",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    },
+    {
+      "source": "document:prompts/runtime/parse-page.md",
+      "target": "file:src/prompts.py",
+      "type": "defines_schema",
+      "direction": "forward",
+      "weight": 0.8
+    }
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "projectRoot": "D:\\AI\\GroundMark",
+  "batchFiles": [
+    {
+      "path": ".env.example",
+      "language": "config",
+      "sizeLines": 13,
+      "fileCategory": "config"
+    },
+    {
+      "path": "README.md",
+      "language": "markdown",
+      "sizeLines": 145,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "groundmark-architecture.html",
+      "language": "html",
+      "sizeLines": 14884,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "groundmark-architecture.json",
+      "language": "json",
+      "sizeLines": 69,
+      "fileCategory": "config"
+    },
+    {
+      "path": "groundmark-architecture.visual-check.html",
+      "language": "html",
+      "sizeLines": 32,
+      "fileCategory": "markup"
+    },
+    {
+      "path": "groundmark-architecture.visual-check.json",
+      "language": "json",
+      "sizeLines": 547,
+      "fileCategory": "config"
+    },
+    {
+      "path": "pyproject.toml",
+      "language": "toml",
+      "sizeLines": 43,
+      "fileCategory": "config"
+    },
+    {
+      "path": "requirements-dev.txt",
+      "language": "txt",
+      "sizeLines": 2,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "requirements.txt",
+      "language": "txt",
+      "sizeLines": 2,
+      "fileCategory": "docs"
+    },
+    {
+      "path": "run.cmd",
+      "language": "batch",
+      "sizeLines": 10,
+      "fileCategory": "script"
+    }
+  ],
+  "batchImportData": {
+    ".env.example": [],
+    "README.md": [],
+    "groundmark-architecture.html": [],
+    "groundmark-architecture.json": [],
+    "groundmark-architecture.visual-check.html": [],
+    "groundmark-architecture.visual-check.json": [],
+    "pyproject.toml": [],
+    "requirements-dev.txt": [],
+    "requirements.txt": [],
+    "run.cmd": []
+  }
+}

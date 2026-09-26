@@ -1,0 +1,179 @@
+[
+  {
+    "id": "layer:user-interface",
+    "name": "CLI & User Interface",
+    "description": "Command-line and Streamlit entry points, UI helpers, and the Windows launcher that expose GroundMark workflows.",
+    "nodeIds": [
+      "file:src/ui/clipboard.py",
+      "file:src/cli.py",
+      "file:run.cmd",
+      "file:src/ui/__init__.py",
+      "file:src/ui/app.py"
+    ]
+  },
+  {
+    "id": "layer:document-chat",
+    "name": "Document Chat & Reasoning",
+    "description": "Conversational question answering and citation-grounding logic for parsed document pages.",
+    "nodeIds": [
+      "file:src/chat.py"
+    ]
+  },
+  {
+    "id": "layer:pipeline-orchestration",
+    "name": "Pipeline Orchestration & State Graph",
+    "description": "The parser facade, LangGraph execution graph, export coordination, and run-safe artifact naming.",
+    "nodeIds": [
+      "file:src/__init__.py",
+      "file:src/parse.py",
+      "file:src/export.py",
+      "file:src/graph.py",
+      "file:src/output_names.py"
+    ]
+  },
+  {
+    "id": "layer:layout-and-vision-engine",
+    "name": "Layout Analysis & Document Vision",
+    "description": "Document raster preparation, layout and reading-order analysis, visual annotation, figure handling, and structured rendering.",
+    "nodeIds": [
+      "file:src/layout.py",
+      "file:src/preprocess.py",
+      "file:src/annotate.py",
+      "file:src/figures.py",
+      "file:src/markdown.py"
+    ]
+  },
+  {
+    "id": "layer:model-and-inference",
+    "name": "Model Access & Telemetry Core",
+    "description": "LLM access, prompt-template resolution, typed document models, API diagnostics, and token-cost accounting.",
+    "nodeIds": [
+      "file:src/models.py",
+      "file:src/usage.py",
+      "file:src/prompts.py",
+      "file:src/diagnostics.py",
+      "file:src/llm.py"
+    ]
+  },
+  {
+    "id": "layer:evaluation-and-benchmarks",
+    "name": "Evaluation & Quality Benchmarks",
+    "description": "CLI benchmark runners and recorded evaluation reports for chat, layout, prompts, resolution, and diagnostics.",
+    "nodeIds": [
+      "file:scripts/evaluate_layout.py",
+      "file:scripts/evaluate_resolution.py",
+      "file:scripts/evaluate_chat.py",
+      "file:scripts/evaluate_prompts.py",
+      "document:docs/CONTENT-FILTER-DIAGNOSTICS.md",
+      "document:docs/LAYOUT-EVALUATION.md",
+      "document:docs/PROMPT-EVALUATION.md",
+      "document:docs/SOL-RESOLUTION-EVALUATION.md"
+    ]
+  },
+  {
+    "id": "layer:testing-and-fixtures",
+    "name": "Test Suite & Mocks",
+    "description": "Automated regression tests, deterministic LLM substitutes, and synthetic or golden document fixtures.",
+    "nodeIds": [
+      "file:tests/test_annotate.py",
+      "file:tests/test_layout_evaluation.py",
+      "file:tests/test_layout_structure.py",
+      "file:tests/test_markdown.py",
+      "file:tests/test_prompt_evaluation.py",
+      "file:tests/test_resolution_evaluation.py",
+      "file:tests/fixtures/make_invoice_png.py",
+      "file:tests/test_preprocess.py",
+      "file:tests/fake_llm.py",
+      "file:tests/test_cli.py",
+      "file:tests/test_parse.py",
+      "file:tests/test_usage.py",
+      "file:tests/test_chat.py",
+      "file:tests/test_prompts.py",
+      "file:tests/test_diagnostics.py",
+      "file:tests/__init__.py",
+      "document:tests/fixtures/chat-evaluation.md",
+      "file:tests/test_launcher.py",
+      "file:tests/test_cli_extraction.py",
+      "file:tests/test_graph.py",
+      "file:tests/test_output_names.py",
+      "file:tests/test_ui_diagnostics.py"
+    ]
+  },
+  {
+    "id": "layer:documentation-and-prompts",
+    "name": "Documentation & Runtime Prompts",
+    "description": "User and developer guides, OpenWiki and OKF indexes, architecture diagrams, and runtime instructions for parsing and grounded answers.",
+    "nodeIds": [
+      "file:groundmark-architecture.html",
+      "config:groundmark-architecture.json",
+      "file:groundmark-architecture.visual-check.html",
+      "config:groundmark-architecture.visual-check.json",
+      "document:prompts/runtime/chat-answer.md",
+      "document:prompts/runtime/chat-verify.md",
+      "document:prompts/runtime/parse-page-structured.md",
+      "document:prompts/runtime/parse-page.md",
+      "document:AGENTS.md",
+      "document:CLAUDE.md",
+      "document:README.md",
+      "document:docs/ARCHITECTURE.md",
+      "document:docs/COMPLIANCE.md",
+      "document:docs/CONTRIBUTING.md",
+      "document:docs/MODEL.md",
+      "document:docs/PROMPTS.md",
+      "document:docs/RUNBOOK.md",
+      "file:docs/diagrams/groundmark-architecture.html",
+      "config:docs/diagrams/groundmark-architecture.json",
+      "file:docs/diagrams/groundmark-architecture.visual-check.html",
+      "config:docs/diagrams/groundmark-architecture.visual-check.json",
+      "file:docs/diagrams/groundmark-dataflow.html",
+      "config:docs/diagrams/groundmark-dataflow.json",
+      "file:docs/diagrams/groundmark-dataflow.visual-check.html",
+      "config:docs/diagrams/groundmark-dataflow.visual-check.json",
+      "file:docs/diagrams/groundmark-lifecycle.html",
+      "config:docs/diagrams/groundmark-lifecycle.json",
+      "file:docs/diagrams/groundmark-lifecycle.visual-check.html",
+      "config:docs/diagrams/groundmark-lifecycle.visual-check.json",
+      "file:docs/diagrams/groundmark-sequence.html",
+      "config:docs/diagrams/groundmark-sequence.json",
+      "file:docs/diagrams/groundmark-sequence.visual-check.html",
+      "config:docs/diagrams/groundmark-sequence.visual-check.json",
+      "file:docs/diagrams/groundmark-workflow.html",
+      "config:docs/diagrams/groundmark-workflow.json",
+      "file:docs/diagrams/groundmark-workflow.visual-check.html",
+      "config:docs/diagrams/groundmark-workflow.visual-check.json",
+      "document:openwiki/index.md",
+      "document:openwiki/quickstart.md",
+      "document:knowledge/index.md",
+      "config:openwiki/.claims/architecture/parsing-pipeline.json",
+      "config:openwiki/.claims/concepts/layout-and-rendering.json",
+      "config:openwiki/.claims/features/document-chat.json",
+      "config:openwiki/.claims/operations/development-and-testing.json",
+      "config:openwiki/.claims/quickstart.json",
+      "config:openwiki/.claims/workflows/artifacts-and-exports.json",
+      "document:openwiki/architecture/index.md",
+      "document:openwiki/architecture/parsing-pipeline.md",
+      "document:openwiki/concepts/index.md",
+      "document:openwiki/concepts/layout-and-rendering.md",
+      "document:openwiki/features/document-chat.md",
+      "document:openwiki/features/index.md",
+      "document:openwiki/operations/development-and-testing.md",
+      "document:openwiki/operations/index.md",
+      "document:openwiki/workflows/artifacts-and-exports.md",
+      "document:openwiki/workflows/index.md"
+    ]
+  },
+  {
+    "id": "layer:configuration-and-build",
+    "name": "Configuration & Build Environment",
+    "description": "Python packaging and environment settings, dependency manifests, OpenWiki run metadata, and the documentation-refresh CI workflow.",
+    "nodeIds": [
+      "config:.env.example",
+      "config:pyproject.toml",
+      "document:requirements-dev.txt",
+      "document:requirements.txt",
+      "pipeline:.github/workflows/openwiki-update.yml",
+      "config:openwiki/.last-update.json",
+      "config:openwiki/.page-manifest.json"
+    ]
+  }
+]

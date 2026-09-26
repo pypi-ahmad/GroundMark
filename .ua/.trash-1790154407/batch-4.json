@@ -1,0 +1,183 @@
+{
+  "batchIndex": 4,
+  "totalBatches": 9,
+  "nodes": [
+    {
+      "id": "config:.env.example",
+      "type": "config",
+      "name": ".env.example",
+      "filePath": ".env.example",
+      "summary": "Example environment file detailing API keys and runtime configuration parameters.",
+      "tags": [
+        "configuration",
+        "environment",
+        "secrets-template"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Main project documentation detailing GroundMark architecture, installation, quickstart, and features.",
+      "tags": [
+        "documentation",
+        "entry-point",
+        "overview"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:groundmark-architecture.html",
+      "type": "file",
+      "name": "groundmark-architecture.html",
+      "filePath": "groundmark-architecture.html",
+      "summary": "Standalone interactive architectural visualization and component dependency diagram.",
+      "tags": [
+        "architecture",
+        "visualization",
+        "interactive-diagram"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "config:groundmark-architecture.json",
+      "type": "config",
+      "name": "groundmark-architecture.json",
+      "filePath": "groundmark-architecture.json",
+      "summary": "Structured architecture model specification describing GroundMark subsystems and flows.",
+      "tags": [
+        "architecture",
+        "specification",
+        "configuration"
+      ],
+      "complexity": "moderate"
+    },
+    {
+      "id": "file:groundmark-architecture.visual-check.html",
+      "type": "file",
+      "name": "groundmark-architecture.visual-check.html",
+      "filePath": "groundmark-architecture.visual-check.html",
+      "summary": "Multi-viewport responsive preview contact sheet for architecture diagram verification.",
+      "tags": [
+        "visualization",
+        "responsive-testing",
+        "qa"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "config:groundmark-architecture.visual-check.json",
+      "type": "config",
+      "name": "groundmark-architecture.visual-check.json",
+      "filePath": "groundmark-architecture.visual-check.json",
+      "summary": "Test run configuration and viewport dimensions for architecture visual verification.",
+      "tags": [
+        "configuration",
+        "test-metadata",
+        "viewport-specs"
+      ],
+      "complexity": "complex"
+    },
+    {
+      "id": "document:requirements-dev.txt",
+      "type": "document",
+      "name": "requirements-dev.txt",
+      "filePath": "requirements-dev.txt",
+      "summary": "Development and testing dependencies including pytest, coverage, and linting tools.",
+      "tags": [
+        "configuration",
+        "dev-dependencies",
+        "testing",
+        "linting"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:requirements.txt",
+      "type": "document",
+      "name": "requirements.txt",
+      "filePath": "requirements.txt",
+      "summary": "Production Python dependencies defining packages required for running GroundMark core and UI.",
+      "tags": [
+        "configuration",
+        "dependencies",
+        "python",
+        "packaging"
+      ],
+      "complexity": "simple"
+    },
+    {
+      "id": "file:run.cmd",
+      "type": "file",
+      "name": "run.cmd",
+      "filePath": "run.cmd",
+      "summary": "Windows batch launcher script setting up virtual environment and launching the Streamlit UI.",
+      "tags": [
+        "script",
+        "launcher",
+        "windows-cli"
+      ],
+      "complexity": "simple"
+    }
+  ],
+  "edges": [
+    {
+      "source": "config:.env.example",
+      "target": "file:src/chat.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:src/parse.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:src/ui/app.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:src/chat.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:README.md",
+      "target": "file:src/layout.py",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    },
+    {
+      "source": "document:requirements-dev.txt",
+      "target": "file:tests/__init__.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "document:requirements.txt",
+      "target": "file:src/__init__.py",
+      "type": "configures",
+      "direction": "forward",
+      "weight": 0.6
+    },
+    {
+      "source": "file:run.cmd",
+      "target": "file:src/ui/app.py",
+      "type": "triggers",
+      "direction": "forward",
+      "weight": 0.6
+    }
+  ]
+}

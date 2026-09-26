@@ -1,0 +1,356 @@
+{
+  "scriptCompleted": true,
+  "stats": {
+    "filesScanned": 206,
+    "filesWithImports": 32,
+    "totalEdges": 108
+  },
+  "importMap": {
+    ".env.example": [],
+    ".github/workflows/openwiki-update.yml": [],
+    ".ua/.trash-1790154407/assemble-review.json": [],
+    ".ua/.trash-1790154407/assembled-graph.json": [],
+    ".ua/.trash-1790154407/batch-0.json": [],
+    ".ua/.trash-1790154407/batch-1.json": [],
+    ".ua/.trash-1790154407/batch-2.json": [],
+    ".ua/.trash-1790154407/batch-3.json": [],
+    ".ua/.trash-1790154407/batch-4.json": [],
+    ".ua/.trash-1790154407/batch-5.json": [],
+    ".ua/.trash-1790154407/batch-6.json": [],
+    ".ua/.trash-1790154407/batch-7.json": [],
+    ".ua/.trash-1790154407/batch-8.json": [],
+    ".ua/.trash-1790154407/batches.json": [],
+    ".ua/.trash-1790154407/fingerprint-input.json": [],
+    ".ua/.trash-1790154407/layers.json": [],
+    ".ua/.trash-1790154407/review.json": [],
+    ".ua/.trash-1790154407/tmp/assemble_full_graph.py": [],
+    ".ua/.trash-1790154407/tmp/build_layers.py": [],
+    ".ua/.trash-1790154407/tmp/build_tour.py": [],
+    ".ua/.trash-1790154407/tmp/generate_all_batches.py": [],
+    ".ua/.trash-1790154407/tmp/inspect_extracts.py": [],
+    ".ua/.trash-1790154407/tmp/list_files.py": [],
+    ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-0.json": [],
+    ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-1.json": [],
+    ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-2.json": [],
+    ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-3.json": [],
+    ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-4.json": [],
+    ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-5.json": [],
+    ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-6.json": [],
+    ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-7.json": [],
+    ".ua/.trash-1790154407/tmp/ua-file-analyzer-input-8.json": [],
+    ".ua/.trash-1790154407/tmp/ua-file-extract-results-0.json": [],
+    ".ua/.trash-1790154407/tmp/ua-file-extract-results-1.json": [],
+    ".ua/.trash-1790154407/tmp/ua-file-extract-results-2.json": [],
+    ".ua/.trash-1790154407/tmp/ua-file-extract-results-3.json": [],
+    ".ua/.trash-1790154407/tmp/ua-file-extract-results-4.json": [],
+    ".ua/.trash-1790154407/tmp/ua-file-extract-results-5.json": [],
+    ".ua/.trash-1790154407/tmp/ua-file-extract-results-6.json": [],
+    ".ua/.trash-1790154407/tmp/ua-file-extract-results-7.json": [],
+    ".ua/.trash-1790154407/tmp/ua-file-extract-results-8.json": [],
+    ".ua/.trash-1790154407/tmp/ua-import-map-input.json": [],
+    ".ua/.trash-1790154407/tmp/ua-import-map-output.json": [],
+    ".ua/.trash-1790154407/tmp/ua-inline-validate.cjs": [],
+    ".ua/.trash-1790154407/tmp/ua-scan-files.json": [],
+    ".ua/.trash-1790154407/tour.json": [],
+    ".ua/.trash-1790159001/assemble-review.json": [],
+    ".ua/.trash-1790159001/assembled-graph.json": [],
+    ".ua/.trash-1790159001/batch-0.json": [],
+    ".ua/.trash-1790159001/batch-1.json": [],
+    ".ua/.trash-1790159001/batch-2.json": [],
+    ".ua/.trash-1790159001/batch-3.json": [],
+    ".ua/.trash-1790159001/batch-4.json": [],
+    ".ua/.trash-1790159001/batch-5.json": [],
+    ".ua/.trash-1790159001/batch-6.json": [],
+    ".ua/.trash-1790159001/batch-7.json": [],
+    ".ua/.trash-1790159001/batch-8.json": [],
+    ".ua/.trash-1790159001/batches.json": [],
+    ".ua/.trash-1790159001/fingerprint-input.json": [],
+    ".ua/.trash-1790159001/layers.json": [],
+    ".ua/.trash-1790159001/review.json": [],
+    ".ua/.trash-1790159001/tmp/assemble_full_graph.py": [],
+    ".ua/.trash-1790159001/tmp/build_layers_v2.py": [],
+    ".ua/.trash-1790159001/tmp/build_tour.py": [],
+    ".ua/.trash-1790159001/tmp/changed-files.txt": [],
+    ".ua/.trash-1790159001/tmp/generate_batches_v2.py": [],
+    ".ua/.trash-1790159001/tmp/import-map-input.json": [],
+    ".ua/.trash-1790159001/tmp/import-map-output.json": [],
+    ".ua/.trash-1790159001/tmp/run_phase2.py": [],
+    ".ua/.trash-1790159001/tmp/scan-files.json": [],
+    ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-0.json": [],
+    ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-1.json": [],
+    ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-2.json": [],
+    ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-3.json": [],
+    ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-4.json": [],
+    ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-5.json": [],
+    ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-6.json": [],
+    ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-7.json": [],
+    ".ua/.trash-1790159001/tmp/ua-file-analyzer-input-8.json": [],
+    ".ua/.trash-1790159001/tmp/ua-file-extract-results-0.json": [],
+    ".ua/.trash-1790159001/tmp/ua-file-extract-results-1.json": [],
+    ".ua/.trash-1790159001/tmp/ua-file-extract-results-2.json": [],
+    ".ua/.trash-1790159001/tmp/ua-file-extract-results-3.json": [],
+    ".ua/.trash-1790159001/tmp/ua-file-extract-results-4.json": [],
+    ".ua/.trash-1790159001/tmp/ua-file-extract-results-5.json": [],
+    ".ua/.trash-1790159001/tmp/ua-file-extract-results-6.json": [],
+    ".ua/.trash-1790159001/tmp/ua-file-extract-results-7.json": [],
+    ".ua/.trash-1790159001/tmp/ua-file-extract-results-8.json": [],
+    ".ua/.trash-1790159001/tmp/ua-inline-validate.cjs": [],
+    ".ua/.trash-1790159001/tour.json": [],
+    ".ua/.understandignore": [],
+    ".ua/config.json": [],
+    ".ua/fingerprints.json": [],
+    ".ua/intermediate/scan-result.json": [],
+    ".ua/knowledge-graph.json": [],
+    ".ua/meta.json": [],
+    "AGENTS.md": [],
+    "CLAUDE.md": [],
+    "README.md": [],
+    "docs/ARCHITECTURE.md": [],
+    "docs/COMPLIANCE.md": [],
+    "docs/CONTENT-FILTER-DIAGNOSTICS.md": [],
+    "docs/CONTRIBUTING.md": [],
+    "docs/LAYOUT-EVALUATION.md": [],
+    "docs/MODEL.md": [],
+    "docs/POST-MARKDOWN-EXTRACTION-PLAN.md": [],
+    "docs/PROMPT-EVALUATION.md": [],
+    "docs/PROMPTS.md": [],
+    "docs/RUNBOOK.md": [],
+    "docs/SOL-RESOLUTION-EVALUATION.md": [],
+    "docs/diagrams/groundmark-architecture.html": [],
+    "docs/diagrams/groundmark-architecture.json": [],
+    "docs/diagrams/groundmark-architecture.visual-check.html": [],
+    "docs/diagrams/groundmark-architecture.visual-check.json": [],
+    "docs/diagrams/groundmark-dataflow.html": [],
+    "docs/diagrams/groundmark-dataflow.json": [],
+    "docs/diagrams/groundmark-dataflow.visual-check.html": [],
+    "docs/diagrams/groundmark-dataflow.visual-check.json": [],
+    "docs/diagrams/groundmark-lifecycle.html": [],
+    "docs/diagrams/groundmark-lifecycle.json": [],
+    "docs/diagrams/groundmark-lifecycle.visual-check.html": [],
+    "docs/diagrams/groundmark-lifecycle.visual-check.json": [],
+    "docs/diagrams/groundmark-sequence.html": [],
+    "docs/diagrams/groundmark-sequence.json": [],
+    "docs/diagrams/groundmark-sequence.visual-check.html": [],
+    "docs/diagrams/groundmark-sequence.visual-check.json": [],
+    "docs/diagrams/groundmark-workflow.html": [],
+    "docs/diagrams/groundmark-workflow.json": [],
+    "docs/diagrams/groundmark-workflow.visual-check.html": [],
+    "docs/diagrams/groundmark-workflow.visual-check.json": [],
+    "knowledge/index.md": [],
+    "npm/wheels/groundmark-0.1.0-py3-none-any.whl": [],
+    "openwiki/.claims/architecture/parsing-pipeline.json": [],
+    "openwiki/.claims/concepts/layout-and-rendering.json": [],
+    "openwiki/.claims/features/document-chat.json": [],
+    "openwiki/.claims/operations/development-and-testing.json": [],
+    "openwiki/.claims/quickstart.json": [],
+    "openwiki/.claims/workflows/artifacts-and-exports.json": [],
+    "openwiki/.last-update.json": [],
+    "openwiki/.page-manifest.json": [],
+    "openwiki/architecture/index.md": [],
+    "openwiki/architecture/parsing-pipeline.md": [],
+    "openwiki/concepts/index.md": [],
+    "openwiki/concepts/layout-and-rendering.md": [],
+    "openwiki/features/document-chat.md": [],
+    "openwiki/features/index.md": [],
+    "openwiki/index.md": [],
+    "openwiki/operations/development-and-testing.md": [],
+    "openwiki/operations/index.md": [],
+    "openwiki/quickstart.md": [],
+    "openwiki/workflows/artifacts-and-exports.md": [],
+    "openwiki/workflows/index.md": [],
+    "prompts/runtime/chat-answer.md": [],
+    "prompts/runtime/chat-verify.md": [],
+    "prompts/runtime/parse-page-structured.md": [],
+    "prompts/runtime/parse-page.md": [],
+    "pyproject.toml": [],
+    "requirements-dev.txt": [],
+    "requirements.txt": [],
+    "run.cmd": [],
+    "scripts/evaluate_chat.py": [
+      "src/chat.py",
+      "src/layout.py"
+    ],
+    "scripts/evaluate_layout.py": [
+      "scripts/evaluate_prompts.py",
+      "scripts/evaluate_resolution.py",
+      "src/layout.py",
+      "src/preprocess.py",
+      "src/usage.py"
+    ],
+    "scripts/evaluate_prompts.py": [
+      "src/diagnostics.py",
+      "src/layout.py",
+      "src/llm.py",
+      "src/parse.py",
+      "src/preprocess.py"
+    ],
+    "scripts/evaluate_resolution.py": [
+      "scripts/evaluate_prompts.py",
+      "src/layout.py",
+      "src/models.py",
+      "src/preprocess.py",
+      "src/usage.py"
+    ],
+    "src/__init__.py": [],
+    "src/annotate.py": [
+      "src/layout.py",
+      "src/output_names.py",
+      "src/preprocess.py"
+    ],
+    "src/chat.py": [
+      "src/__init__.py",
+      "src/diagnostics.py",
+      "src/layout.py",
+      "src/models.py",
+      "src/prompts.py",
+      "src/usage.py"
+    ],
+    "src/cli.py": [],
+    "src/diagnostics.py": [],
+    "src/export.py": [
+      "src/annotate.py",
+      "src/figures.py",
+      "src/layout.py",
+      "src/markdown.py",
+      "src/output_names.py"
+    ],
+    "src/figures.py": [
+      "src/annotate.py",
+      "src/layout.py",
+      "src/output_names.py",
+      "src/preprocess.py"
+    ],
+    "src/graph.py": [
+      "src/__init__.py",
+      "src/export.py",
+      "src/layout.py",
+      "src/models.py",
+      "src/output_names.py",
+      "src/parse.py",
+      "src/preprocess.py",
+      "src/usage.py"
+    ],
+    "src/layout.py": [
+      "src/diagnostics.py"
+    ],
+    "src/llm.py": [
+      "src/__init__.py",
+      "src/diagnostics.py",
+      "src/models.py"
+    ],
+    "src/markdown.py": [
+      "src/layout.py",
+      "src/output_names.py"
+    ],
+    "src/models.py": [],
+    "src/output_names.py": [],
+    "src/parse.py": [
+      "src/diagnostics.py",
+      "src/layout.py",
+      "src/llm.py",
+      "src/models.py",
+      "src/preprocess.py",
+      "src/prompts.py"
+    ],
+    "src/preprocess.py": [],
+    "src/prompts.py": [],
+    "src/ui/__init__.py": [],
+    "src/ui/app.py": [
+      "src/__init__.py",
+      "src/chat.py",
+      "src/figures.py",
+      "src/graph.py",
+      "src/markdown.py",
+      "src/models.py",
+      "src/preprocess.py",
+      "src/ui/clipboard.py",
+      "src/usage.py"
+    ],
+    "src/ui/clipboard.py": [],
+    "src/usage.py": [
+      "src/models.py"
+    ],
+    "tests/__init__.py": [],
+    "tests/fake_llm.py": [],
+    "tests/fixtures/chat-evaluation.md": [],
+    "tests/fixtures/make_invoice_png.py": [],
+    "tests/test_annotate.py": [
+      "src/annotate.py",
+      "src/layout.py"
+    ],
+    "tests/test_chat.py": [
+      "src/__init__.py",
+      "src/chat.py",
+      "src/layout.py"
+    ],
+    "tests/test_cli.py": [
+      "src/__init__.py",
+      "src/cli.py"
+    ],
+    "tests/test_cli_extraction.py": [
+      "src/__init__.py",
+      "src/cli.py",
+      "src/layout.py",
+      "src/parse.py"
+    ],
+    "tests/test_diagnostics.py": [
+      "src/__init__.py",
+      "src/diagnostics.py",
+      "src/layout.py",
+      "src/llm.py",
+      "src/usage.py"
+    ],
+    "tests/test_graph.py": [
+      "src/__init__.py",
+      "src/layout.py"
+    ],
+    "tests/test_launcher.py": [],
+    "tests/test_layout_evaluation.py": [
+      "src/layout.py"
+    ],
+    "tests/test_layout_structure.py": [
+      "src/chat.py",
+      "src/figures.py",
+      "src/layout.py",
+      "src/markdown.py"
+    ],
+    "tests/test_markdown.py": [
+      "src/layout.py",
+      "src/markdown.py"
+    ],
+    "tests/test_output_names.py": [
+      "src/markdown.py",
+      "src/output_names.py",
+      "tests/test_layout_structure.py"
+    ],
+    "tests/test_parse.py": [
+      "src/__init__.py",
+      "src/layout.py",
+      "tests/fake_llm.py"
+    ],
+    "tests/test_preprocess.py": [
+      "src/preprocess.py",
+      "tests/fixtures/make_invoice_png.py"
+    ],
+    "tests/test_prompt_evaluation.py": [
+      "scripts/evaluate_prompts.py",
+      "src/layout.py"
+    ],
+    "tests/test_prompts.py": [
+      "src/prompts.py"
+    ],
+    "tests/test_resolution_evaluation.py": [
+      "src/layout.py"
+    ],
+    "tests/test_ui_diagnostics.py": [
+      "src/__init__.py",
+      "src/diagnostics.py",
+      "src/graph.py",
+      "src/layout.py"
+    ],
+    "tests/test_usage.py": [
+      "src/__init__.py",
+      "src/usage.py"
+    ]
+  }
+}

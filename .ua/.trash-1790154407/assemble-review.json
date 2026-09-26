@@ -1,0 +1,13 @@
+{
+  "fixedSectionOk": true,
+  "nodesRecovered": 0,
+  "edgesRestored": 0,
+  "crossBatchEdgesAdded": 0,
+  "typesRemapped": 0,
+  "complexityRemapped": 0,
+  "notes": [
+    "Assembled graph has 296 valid nodes and 798 clean edges.",
+    "Zero dropped dangling edges and zero missing IDs.",
+    "All internal imports from scan-result.json are fully represented."
+  ]
+}

@@ -1,0 +1,303 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 10,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 10,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 0,
+      "failed": 0,
+      "skipped": 10
+    }
+  },
+  "results": [
+    {
+      "path": "docs/ARCHITECTURE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 48,
+      "nonEmptyLines": 29,
+      "sections": [
+        {
+          "heading": "Architecture",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Installation and selected exports",
+          "level": 2,
+          "line": 42
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 2
+      }
+    },
+    {
+      "path": "docs/COMPLIANCE.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 11,
+      "nonEmptyLines": 6,
+      "sections": [
+        {
+          "heading": "Data and output boundaries",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "docs/CONTENT-FILTER-DIAGNOSTICS.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 68,
+      "nonEmptyLines": 53,
+      "sections": [
+        {
+          "heading": "Content-filter diagnostics: September 12, 2026",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Live evidence",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Validation and limits",
+          "level": 2,
+          "line": 47
+        },
+        {
+          "heading": "References",
+          "level": 2,
+          "line": 61
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "docs/CONTRIBUTING.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 22,
+      "nonEmptyLines": 13,
+      "sections": [
+        {
+          "heading": "Contributing",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "docs/LAYOUT-EVALUATION.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 44,
+      "nonEmptyLines": 27,
+      "sections": [
+        {
+          "heading": "Layout comparison: September 23, 2026",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Results",
+          "level": 2,
+          "line": 5
+        },
+        {
+          "heading": "Verification and limits",
+          "level": 2,
+          "line": 24
+        },
+        {
+          "heading": "Reproduction",
+          "level": 2,
+          "line": 34
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 4
+      }
+    },
+    {
+      "path": "docs/MODEL.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 24,
+      "nonEmptyLines": 15,
+      "sections": [
+        {
+          "heading": "Model",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "docs/PROMPT-EVALUATION.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 113,
+      "nonEmptyLines": 93,
+      "sections": [
+        {
+          "heading": "Prompt evaluation: September 12, 2026",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Live scope and controls",
+          "level": 2,
+          "line": 19
+        },
+        {
+          "heading": "Measurements",
+          "level": 2,
+          "line": 42
+        },
+        {
+          "heading": "Source review findings",
+          "level": 2,
+          "line": 70
+        },
+        {
+          "heading": "Artifacts and checks",
+          "level": 2,
+          "line": 93
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    },
+    {
+      "path": "docs/PROMPTS.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 15,
+      "nonEmptyLines": 8,
+      "sections": [
+        {
+          "heading": "Prompt contract",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "docs/RUNBOOK.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 64,
+      "nonEmptyLines": 39,
+      "sections": [
+        {
+          "heading": "Runbook",
+          "level": 1,
+          "line": 1
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 1
+      }
+    },
+    {
+      "path": "docs/SOL-RESOLUTION-EVALUATION.md",
+      "language": "markdown",
+      "fileCategory": "docs",
+      "totalLines": 89,
+      "nonEmptyLines": 71,
+      "sections": [
+        {
+          "heading": "Sol resolution comparison: September 23, 2026",
+          "level": 1,
+          "line": 1
+        },
+        {
+          "heading": "Run and limits",
+          "level": 2,
+          "line": 14
+        },
+        {
+          "heading": "Reference-token F1",
+          "level": 2,
+          "line": 30
+        },
+        {
+          "heading": "Verification and research",
+          "level": 2,
+          "line": 51
+        },
+        {
+          "heading": "Reproduction",
+          "level": 2,
+          "line": 72
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 0,
+        "functionCount": 0,
+        "classCount": 0,
+        "sectionCount": 5
+      }
+    }
+  ]
+}

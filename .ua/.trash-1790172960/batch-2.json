@@ -1,0 +1,40 @@
+{
+  "nodes": [
+    {
+      "id": "document:AGENTS.md",
+      "type": "document",
+      "name": "AGENTS.md",
+      "filePath": "AGENTS.md",
+      "summary": "Repository guidance describing how to treat the generated OpenWiki index and where authoritative project information comes from.",
+      "tags": ["documentation", "repository-guidance", "openwiki"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:CLAUDE.md",
+      "type": "document",
+      "name": "CLAUDE.md",
+      "filePath": "CLAUDE.md",
+      "summary": "Claude-facing repository guidance that delegates its OpenWiki instructions to AGENTS.md.",
+      "tags": ["documentation", "repository-guidance", "claude"],
+      "complexity": "simple"
+    },
+    {
+      "id": "document:README.md",
+      "type": "document",
+      "name": "README.md",
+      "filePath": "README.md",
+      "summary": "Project overview and user guide covering installation, endpoint configuration, web and terminal workflows, generated outputs, parsing behavior, document chat, diagrams, and licensing.",
+      "tags": ["documentation", "entry-point", "installation", "cli", "document-chat"],
+      "complexity": "moderate"
+    }
+  ],
+  "edges": [
+    {
+      "source": "document:CLAUDE.md",
+      "target": "document:AGENTS.md",
+      "type": "documents",
+      "direction": "forward",
+      "weight": 0.5
+    }
+  ]
+}

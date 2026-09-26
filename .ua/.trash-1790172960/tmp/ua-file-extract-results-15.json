@@ -1,0 +1,970 @@
+{
+  "scriptCompleted": true,
+  "filesAnalyzed": 1,
+  "filesSkipped": [],
+  "analysisOutcomes": {
+    "structure": {
+      "succeeded": 1,
+      "failed": 0
+    },
+    "callGraph": {
+      "succeeded": 1,
+      "failed": 0,
+      "skipped": 0
+    }
+  },
+  "results": [
+    {
+      "path": "tests/test_ui_diagnostics.py",
+      "language": "python",
+      "fileCategory": "code",
+      "totalLines": 220,
+      "nonEmptyLines": 193,
+      "functions": [
+        {
+          "name": "upload",
+          "startLine": 18,
+          "endLine": 22,
+          "params": [
+            "color",
+            "pages"
+          ]
+        },
+        {
+          "name": "uploaded",
+          "startLine": 26,
+          "endLine": 30,
+          "params": [
+            "tmp_path",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "startLine": 34,
+          "endLine": 50,
+          "params": [
+            "uploaded",
+            "monkeypatch",
+            "has_diagnostics"
+          ]
+        },
+        {
+          "name": "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+          "startLine": 53,
+          "endLine": 77,
+          "params": [
+            "uploaded",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_same_name_new_bytes_reset_count_and_result",
+          "startLine": 80,
+          "endLine": 93,
+          "params": [
+            "uploaded",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_bad_upload_and_invalid_range_make_no_calls",
+          "startLine": 96,
+          "endLine": 103,
+          "params": [
+            "uploaded",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_migration_resets_legacy_ledger_without_repricing",
+          "startLine": 106,
+          "endLine": 113,
+          "params": [
+            "uploaded"
+          ]
+        },
+        {
+          "name": "test_chat_submission_reruns_and_reset",
+          "startLine": 116,
+          "endLine": 151,
+          "params": [
+            "uploaded",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_chat_sessions_do_not_share_history",
+          "startLine": 154,
+          "endLine": 158,
+          "params": [
+            "uploaded"
+          ]
+        },
+        {
+          "name": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "startLine": 161,
+          "endLine": 203,
+          "params": [
+            "uploaded",
+            "monkeypatch"
+          ]
+        },
+        {
+          "name": "test_detailed_layout_requires_opt_in_and_resets_old_results",
+          "startLine": 206,
+          "endLine": 220,
+          "params": [
+            "uploaded",
+            "monkeypatch"
+          ]
+        }
+      ],
+      "exports": [
+        {
+          "name": "upload",
+          "line": 18,
+          "isDefault": false
+        },
+        {
+          "name": "uploaded",
+          "line": 25,
+          "isDefault": false
+        },
+        {
+          "name": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "line": 33,
+          "isDefault": false
+        },
+        {
+          "name": "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+          "line": 53,
+          "isDefault": false
+        },
+        {
+          "name": "test_same_name_new_bytes_reset_count_and_result",
+          "line": 80,
+          "isDefault": false
+        },
+        {
+          "name": "test_bad_upload_and_invalid_range_make_no_calls",
+          "line": 96,
+          "isDefault": false
+        },
+        {
+          "name": "test_migration_resets_legacy_ledger_without_repricing",
+          "line": 106,
+          "isDefault": false
+        },
+        {
+          "name": "test_chat_submission_reruns_and_reset",
+          "line": 116,
+          "isDefault": false
+        },
+        {
+          "name": "test_chat_sessions_do_not_share_history",
+          "line": 154,
+          "isDefault": false
+        },
+        {
+          "name": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "line": 161,
+          "isDefault": false
+        },
+        {
+          "name": "test_detailed_layout_requires_opt_in_and_resets_old_results",
+          "line": 206,
+          "isDefault": false
+        }
+      ],
+      "callGraph": [
+        {
+          "caller": "upload",
+          "callee": "io.BytesIO",
+          "lineNumber": 19
+        },
+        {
+          "caller": "upload",
+          "callee": "Image.new",
+          "lineNumber": 20
+        },
+        {
+          "caller": "upload",
+          "callee": "image.save",
+          "lineNumber": 21
+        },
+        {
+          "caller": "upload",
+          "callee": "SimpleNamespace",
+          "lineNumber": 22
+        },
+        {
+          "caller": "upload",
+          "callee": "buffer.getvalue",
+          "lineNumber": 22
+        },
+        {
+          "caller": "uploaded",
+          "callee": "monkeypatch.chdir",
+          "lineNumber": 27
+        },
+        {
+          "caller": "uploaded",
+          "callee": "upload",
+          "lineNumber": 28
+        },
+        {
+          "caller": "uploaded",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 29
+        },
+        {
+          "caller": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "callee": "Path",
+          "lineNumber": 35
+        },
+        {
+          "caller": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "callee": "output.mkdir",
+          "lineNumber": 36
+        },
+        {
+          "caller": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "callee": "(output / \"doc.md\").write_text",
+          "lineNumber": 37
+        },
+        {
+          "caller": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "callee": "ParseResult",
+          "lineNumber": 38
+        },
+        {
+          "caller": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "callee": "PageDiagnostic",
+          "lineNumber": 39
+        },
+        {
+          "caller": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "callee": "dict",
+          "lineNumber": 40
+        },
+        {
+          "caller": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "callee": "dict",
+          "lineNumber": 43
+        },
+        {
+          "caller": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "callee": "AppTest.from_file(str(APP)).run",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "callee": "AppTest.from_file",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "callee": "str",
+          "lineNumber": 44
+        },
+        {
+          "caller": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "callee": "app.button[0].click().run",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "callee": "app.button[0].click",
+          "lineNumber": 45
+        },
+        {
+          "caller": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "callee": "any",
+          "lineNumber": 47
+        },
+        {
+          "caller": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "callee": "any",
+          "lineNumber": 48
+        },
+        {
+          "caller": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "callee": "all",
+          "lineNumber": 49
+        },
+        {
+          "caller": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "callee": "item.label.startswith",
+          "lineNumber": 49
+        },
+        {
+          "caller": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "callee": "len",
+          "lineNumber": 50
+        },
+        {
+          "caller": "test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts",
+          "callee": "int",
+          "lineNumber": 50
+        },
+        {
+          "caller": "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 55
+        },
+        {
+          "caller": "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+          "callee": "ParseResult",
+          "lineNumber": 57
+        },
+        {
+          "caller": "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+          "callee": "ParsePage",
+          "lineNumber": 57
+        },
+        {
+          "caller": "run",
+          "callee": "calls.append",
+          "lineNumber": 60
+        },
+        {
+          "caller": "run",
+          "callee": "dict",
+          "lineNumber": 61
+        },
+        {
+          "caller": "run",
+          "callee": "dict",
+          "lineNumber": 62
+        },
+        {
+          "caller": "run",
+          "callee": "dict",
+          "lineNumber": 63
+        },
+        {
+          "caller": "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 66
+        },
+        {
+          "caller": "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+          "callee": "AppTest.from_file(str(APP)).run",
+          "lineNumber": 67
+        },
+        {
+          "caller": "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+          "callee": "AppTest.from_file",
+          "lineNumber": 67
+        },
+        {
+          "caller": "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+          "callee": "str",
+          "lineNumber": 67
+        },
+        {
+          "caller": "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+          "callee": "app.button[0].click().run",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+          "callee": "app.button[0].click",
+          "lineNumber": 69
+        },
+        {
+          "caller": "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+          "callee": "len",
+          "lineNumber": 70
+        },
+        {
+          "caller": "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+          "callee": "app.get",
+          "lineNumber": 70
+        },
+        {
+          "caller": "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+          "callee": "app.get",
+          "lineNumber": 71
+        },
+        {
+          "caller": "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+          "callee": "app.run",
+          "lineNumber": 74
+        },
+        {
+          "caller": "test_sol_only_and_tab_reruns_do_not_repeat_calls",
+          "callee": "len",
+          "lineNumber": 77
+        },
+        {
+          "caller": "test_same_name_new_bytes_reset_count_and_result",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 81
+        },
+        {
+          "caller": "test_same_name_new_bytes_reset_count_and_result",
+          "callee": "dict",
+          "lineNumber": 81
+        },
+        {
+          "caller": "test_same_name_new_bytes_reset_count_and_result",
+          "callee": "AppTest.from_file(str(APP)).run",
+          "lineNumber": 82
+        },
+        {
+          "caller": "test_same_name_new_bytes_reset_count_and_result",
+          "callee": "AppTest.from_file",
+          "lineNumber": 82
+        },
+        {
+          "caller": "test_same_name_new_bytes_reset_count_and_result",
+          "callee": "str",
+          "lineNumber": 82
+        },
+        {
+          "caller": "test_same_name_new_bytes_reset_count_and_result",
+          "callee": "app.button[0].click().run",
+          "lineNumber": 84
+        },
+        {
+          "caller": "test_same_name_new_bytes_reset_count_and_result",
+          "callee": "app.button[0].click",
+          "lineNumber": 84
+        },
+        {
+          "caller": "test_same_name_new_bytes_reset_count_and_result",
+          "callee": "upload",
+          "lineNumber": 86
+        },
+        {
+          "caller": "test_same_name_new_bytes_reset_count_and_result",
+          "callee": "app.run",
+          "lineNumber": 87
+        },
+        {
+          "caller": "test_same_name_new_bytes_reset_count_and_result",
+          "callee": "len",
+          "lineNumber": 93
+        },
+        {
+          "caller": "test_same_name_new_bytes_reset_count_and_result",
+          "callee": "list",
+          "lineNumber": 93
+        },
+        {
+          "caller": "test_same_name_new_bytes_reset_count_and_result",
+          "callee": "Path(\"data/inbox\").glob",
+          "lineNumber": 93
+        },
+        {
+          "caller": "test_same_name_new_bytes_reset_count_and_result",
+          "callee": "Path",
+          "lineNumber": 93
+        },
+        {
+          "caller": "test_bad_upload_and_invalid_range_make_no_calls",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 97
+        },
+        {
+          "caller": "test_bad_upload_and_invalid_range_make_no_calls",
+          "callee": "pytest.fail",
+          "lineNumber": 97
+        },
+        {
+          "caller": "test_bad_upload_and_invalid_range_make_no_calls",
+          "callee": "AppTest.from_file(str(APP)).run",
+          "lineNumber": 98
+        },
+        {
+          "caller": "test_bad_upload_and_invalid_range_make_no_calls",
+          "callee": "AppTest.from_file",
+          "lineNumber": 98
+        },
+        {
+          "caller": "test_bad_upload_and_invalid_range_make_no_calls",
+          "callee": "str",
+          "lineNumber": 98
+        },
+        {
+          "caller": "test_bad_upload_and_invalid_range_make_no_calls",
+          "callee": "app.number_input[0].set_value(2).run",
+          "lineNumber": 99
+        },
+        {
+          "caller": "test_bad_upload_and_invalid_range_make_no_calls",
+          "callee": "app.number_input[0].set_value",
+          "lineNumber": 99
+        },
+        {
+          "caller": "test_bad_upload_and_invalid_range_make_no_calls",
+          "callee": "SimpleNamespace",
+          "lineNumber": 101
+        },
+        {
+          "caller": "test_bad_upload_and_invalid_range_make_no_calls",
+          "callee": "app.run",
+          "lineNumber": 102
+        },
+        {
+          "caller": "test_migration_resets_legacy_ledger_without_repricing",
+          "callee": "AppTest.from_file",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_migration_resets_legacy_ledger_without_repricing",
+          "callee": "str",
+          "lineNumber": 107
+        },
+        {
+          "caller": "test_migration_resets_legacy_ledger_without_repricing",
+          "callee": "dict",
+          "lineNumber": 108
+        },
+        {
+          "caller": "test_migration_resets_legacy_ledger_without_repricing",
+          "callee": "dict",
+          "lineNumber": 109
+        },
+        {
+          "caller": "test_migration_resets_legacy_ledger_without_repricing",
+          "callee": "app.run",
+          "lineNumber": 110
+        },
+        {
+          "caller": "test_migration_resets_legacy_ledger_without_repricing",
+          "callee": "any",
+          "lineNumber": 113
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "upload",
+          "lineNumber": 120
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "tabs",
+          "lineNumber": 123
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "dict",
+          "lineNumber": 124
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "document",
+          "lineNumber": 125
+        },
+        {
+          "caller": "answer",
+          "callee": "calls.append",
+          "lineNumber": 127
+        },
+        {
+          "caller": "answer",
+          "callee": "len",
+          "lineNumber": 127
+        },
+        {
+          "caller": "answer",
+          "callee": "chat.ChatResult",
+          "lineNumber": 128
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 129
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "AppTest.from_file(str(APP)).run",
+          "lineNumber": 130
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "AppTest.from_file",
+          "lineNumber": 130
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "str",
+          "lineNumber": 130
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "app.run",
+          "lineNumber": 132
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "app.button[0].click().run",
+          "lineNumber": 134
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "app.button[0].click",
+          "lineNumber": 134
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "app.chat_input[0].set_value(\"How long?\").run",
+          "lineNumber": 135
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "app.chat_input[0].set_value",
+          "lineNumber": 135
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "len",
+          "lineNumber": 137
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "app.run",
+          "lineNumber": 138
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "len",
+          "lineNumber": 139
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "app.button(key=\"clear_document_chat\").click().run",
+          "lineNumber": 140
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "app.button(key=\"clear_document_chat\").click",
+          "lineNumber": 140
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "app.button",
+          "lineNumber": 140
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "app.chat_input[0].set_value(\"How long?\").run",
+          "lineNumber": 142
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "app.chat_input[0].set_value",
+          "lineNumber": 142
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "app.button[0].click().run",
+          "lineNumber": 143
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "app.button[0].click",
+          "lineNumber": 143
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "app.chat_input[0].set_value(\"How long?\").run",
+          "lineNumber": 145
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "app.chat_input[0].set_value",
+          "lineNumber": 145
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "app.number_input[0].set_value(2).run",
+          "lineNumber": 146
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "app.number_input[0].set_value",
+          "lineNumber": 146
+        },
+        {
+          "caller": "test_chat_submission_reruns_and_reset",
+          "callee": "app.run",
+          "lineNumber": 149
+        },
+        {
+          "caller": "test_chat_sessions_do_not_share_history",
+          "callee": "AppTest.from_file(str(APP)).run",
+          "lineNumber": 155
+        },
+        {
+          "caller": "test_chat_sessions_do_not_share_history",
+          "callee": "AppTest.from_file",
+          "lineNumber": 155
+        },
+        {
+          "caller": "test_chat_sessions_do_not_share_history",
+          "callee": "str",
+          "lineNumber": 155
+        },
+        {
+          "caller": "test_chat_sessions_do_not_share_history",
+          "callee": "dict",
+          "lineNumber": 156
+        },
+        {
+          "caller": "test_chat_sessions_do_not_share_history",
+          "callee": "AppTest.from_file(str(APP)).run",
+          "lineNumber": 157
+        },
+        {
+          "caller": "test_chat_sessions_do_not_share_history",
+          "callee": "AppTest.from_file",
+          "lineNumber": 157
+        },
+        {
+          "caller": "test_chat_sessions_do_not_share_history",
+          "callee": "str",
+          "lineNumber": 157
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 167
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "copies.append",
+          "lineNumber": 167
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 169
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "tabs",
+          "lineNumber": 169
+        },
+        {
+          "caller": "download",
+          "callee": "downloads.append",
+          "lineNumber": 172
+        },
+        {
+          "caller": "download",
+          "callee": "filenames.append",
+          "lineNumber": 173
+        },
+        {
+          "caller": "download",
+          "callee": "original_download",
+          "lineNumber": 174
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 175
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "document",
+          "lineNumber": 176
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "block",
+          "lineNumber": 176
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "block",
+          "lineNumber": 176
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "block",
+          "lineNumber": 177
+        },
+        {
+          "caller": "run",
+          "callee": "calls.append",
+          "lineNumber": 180
+        },
+        {
+          "caller": "run",
+          "callee": "dict",
+          "lineNumber": 181
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 183
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "AppTest.from_file(str(APP)).run",
+          "lineNumber": 184
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "AppTest.from_file",
+          "lineNumber": 184
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "str",
+          "lineNumber": 184
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "app.button[0].click().run",
+          "lineNumber": 185
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "app.button[0].click",
+          "lineNumber": 185
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "app.run",
+          "lineNumber": 187
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "any",
+          "lineNumber": 192
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "app.segmented_control(key=\"view-test_document_view\").set_value(\"Full\").run",
+          "lineNumber": 193
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "app.segmented_control(key=\"view-test_document_view\").set_value",
+          "lineNumber": 193
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "app.segmented_control",
+          "lineNumber": 193
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "app.segmented_control(key=\"view-test_markdown_view\").set_value(\"Raw\").run",
+          "lineNumber": 196
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "app.segmented_control(key=\"view-test_markdown_view\").set_value",
+          "lineNumber": 196
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "app.segmented_control",
+          "lineNumber": 196
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "set",
+          "lineNumber": 199
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "SimpleNamespace",
+          "lineNumber": 200
+        },
+        {
+          "caller": "test_document_view_changes_rendered_raw_copy_and_download_without_calls",
+          "callee": "app.run",
+          "lineNumber": 201
+        },
+        {
+          "caller": "run",
+          "callee": "calls.append",
+          "lineNumber": 209
+        },
+        {
+          "caller": "run",
+          "callee": "dict",
+          "lineNumber": 210
+        },
+        {
+          "caller": "test_detailed_layout_requires_opt_in_and_resets_old_results",
+          "callee": "monkeypatch.setattr",
+          "lineNumber": 211
+        },
+        {
+          "caller": "test_detailed_layout_requires_opt_in_and_resets_old_results",
+          "callee": "AppTest.from_file(str(APP)).run",
+          "lineNumber": 212
+        },
+        {
+          "caller": "test_detailed_layout_requires_opt_in_and_resets_old_results",
+          "callee": "AppTest.from_file",
+          "lineNumber": 212
+        },
+        {
+          "caller": "test_detailed_layout_requires_opt_in_and_resets_old_results",
+          "callee": "str",
+          "lineNumber": 212
+        },
+        {
+          "caller": "test_detailed_layout_requires_opt_in_and_resets_old_results",
+          "callee": "app.button[0].click().run",
+          "lineNumber": 214
+        },
+        {
+          "caller": "test_detailed_layout_requires_opt_in_and_resets_old_results",
+          "callee": "app.button[0].click",
+          "lineNumber": 214
+        },
+        {
+          "caller": "test_detailed_layout_requires_opt_in_and_resets_old_results",
+          "callee": "app.checkbox[0].check().run",
+          "lineNumber": 216
+        },
+        {
+          "caller": "test_detailed_layout_requires_opt_in_and_resets_old_results",
+          "callee": "app.checkbox[0].check",
+          "lineNumber": 216
+        },
+        {
+          "caller": "test_detailed_layout_requires_opt_in_and_resets_old_results",
+          "callee": "app.button[0].click().run",
+          "lineNumber": 219
+        },
+        {
+          "caller": "test_detailed_layout_requires_opt_in_and_resets_old_results",
+          "callee": "app.button[0].click",
+          "lineNumber": 219
+        }
+      ],
+      "metrics": {
+        "importCount": 0,
+        "exportCount": 11,
+        "functionCount": 11,
+        "classCount": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "projectRoot": "D:\\AI\\GroundMark",
+  "batchFiles": [
+    {
+      "path": ".ua/tmp/ua-import-map-input.json",
+      "language": "json",
+      "sizeLines": 808,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-import-map-output.json",
+      "language": "json",
+      "sizeLines": 263,
+      "fileCategory": "config"
+    },
+    {
+      "path": ".ua/tmp/ua-scan-files.json",
+      "language": "json",
+      "sizeLines": 832,
+      "fileCategory": "config"
+    }
+  ],
+  "batchImportData": {
+    ".ua/tmp/ua-import-map-input.json": [],
+    ".ua/tmp/ua-import-map-output.json": [],
+    ".ua/tmp/ua-scan-files.json": []
+  }
+}

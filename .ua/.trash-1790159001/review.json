@@ -1,0 +1,38 @@
+{
+  "issues": [],
+  "warnings": [
+    "Node 'file:groundmark-architecture.html' has no edges (orphan)",
+    "Node 'config:groundmark-architecture.json' has no edges (orphan)",
+    "Node 'file:groundmark-architecture.visual-check.html' has no edges (orphan)",
+    "Node 'config:groundmark-architecture.visual-check.json' has no edges (orphan)",
+    "Node 'document:docs/COMPLIANCE.md' has no edges (orphan)",
+    "Node 'document:docs/CONTRIBUTING.md' has no edges (orphan)",
+    "Node 'document:docs/RUNBOOK.md' has no edges (orphan)",
+    "Node 'file:src/ui/__init__.py' has no edges (orphan)",
+    "Node 'document:tests/fixtures/chat-evaluation.md' has no edges (orphan)"
+  ],
+  "stats": {
+    "totalNodes": 323,
+    "totalEdges": 871,
+    "totalLayers": 9,
+    "tourSteps": 10,
+    "nodeTypes": {
+      "file": 48,
+      "function": 231,
+      "class": 22,
+      "config": 4,
+      "document": 18
+    },
+    "edgeTypes": {
+      "contains": 253,
+      "exports": 253,
+      "imports": 108,
+      "calls": 207,
+      "tested_by": 23,
+      "configures": 4,
+      "documents": 18,
+      "triggers": 1,
+      "defines_schema": 4
+    }
+  }
+}

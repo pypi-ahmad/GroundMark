@@ -1,0 +1,41 @@
+{
+  "issues": [],
+  "warnings": [
+    "Node 'file:groundmark-architecture.html' has no edges (orphan)",
+    "Node 'config:groundmark-architecture.json' has no edges (orphan)",
+    "Node 'file:groundmark-architecture.visual-check.html' has no edges (orphan)",
+    "Node 'config:groundmark-architecture.visual-check.json' has no edges (orphan)",
+    "Node 'file:src/ui/__init__.py' has no edges (orphan)",
+    "Node 'document:tests/fixtures/chat-evaluation.md' has no edges (orphan)",
+    "Node 'pipeline:.github/workflows/openwiki-update.yml' has no edges (orphan)",
+    "Node 'config:openwiki/.last-update.json' has no edges (orphan)",
+    "Node 'config:openwiki/.page-manifest.json' has no edges (orphan)",
+    "Node 'document:knowledge/index.md' has no edges (orphan)"
+  ],
+  "stats": {
+    "totalNodes": 360,
+    "totalEdges": 875,
+    "totalLayers": 9,
+    "tourSteps": 12,
+    "nodeTypes": {
+      "file": 58,
+      "function": 224,
+      "class": 22,
+      "config": 22,
+      "document": 33,
+      "pipeline": 1
+    },
+    "edgeTypes": {
+      "contains": 246,
+      "exports": 211,
+      "imports": 108,
+      "tested_by": 26,
+      "calls": 172,
+      "configures": 9,
+      "defines_schema": 4,
+      "documents": 89,
+      "validates": 5,
+      "related": 5
+    }
+  }
+}
