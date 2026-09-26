@@ -6,8 +6,8 @@
   "visualReview": "pending",
   "artifact": {
     "path": "D:\\AI\\GroundMark\\docs\\diagrams\\groundmark-dataflow.html",
-    "sha256": "758ed0b3a2881df66e91abb96815f9746ede416525a6cbde1283d35c98f89077",
-    "bytes": 728289
+    "sha256": "eb3571f6cf7214acfde93920399d9b941c2f0d3a42a62b75e87014b77c4a4a6b",
+    "bytes": 730062
   },
   "state": {
     "detail": "read",
@@ -94,8 +94,8 @@
         "overflowX": false,
         "overflowY": false,
         "ok": true,
-        "readerWidth": 1286,
-        "diagramWidth": 1256,
+        "readerWidth": 1258,
+        "diagramWidth": 1228,
         "viewBoxWidth": 1080,
         "minimumProjectedNodeTextPx": 7,
         "minimumProjectedNodeText": "PDF / image",
@@ -224,8 +224,8 @@
         "overflowX": false,
         "overflowY": false,
         "ok": true,
-        "readerWidth": 1286,
-        "diagramWidth": 1256,
+        "readerWidth": 1258,
+        "diagramWidth": 1228,
         "viewBoxWidth": 1080,
         "minimumProjectedNodeTextPx": 7,
         "minimumProjectedNodeText": "PDF / image",
@@ -353,8 +353,8 @@
         "overflowX": false,
         "overflowY": false,
         "ok": true,
-        "readerWidth": 1286,
-        "diagramWidth": 1256,
+        "readerWidth": 1258,
+        "diagramWidth": 1228,
         "viewBoxWidth": 1080,
         "minimumProjectedNodeTextPx": 7,
         "minimumProjectedNodeText": "PDF / image",
