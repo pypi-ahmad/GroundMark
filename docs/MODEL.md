@@ -1,10 +1,14 @@
 # Model
 
-Parsing uses `gpt-6-sol`. Each request contains one rasterized page image and asks for text and layout data in a structured response. The parser rejects other model identifiers before preprocessing or contacting the API.
+Parsing uses `gpt-6-sol`. Each request contains one rasterized page image plus compact PP-DocLayoutV3 region hints and asks for text and layout data in a structured response. V3 analyzes that same image when available; failed analysis supplies empty hints and Sol still reads the full image. The image, not detector labels, supplies transcription. The parser rejects other model identifiers before preprocessing or contacting the API.
 
 The response contains page dimensions, ordered blocks, block types, text, table cells, and optional normalized bounding boxes. Pydantic checks its shape locally. The schema has no domain records or inferred business fields.
 
-Both extraction modes use Sol. The default uses the original prompt and response contract. Detailed layout (experimental) asks for heading levels, list structure, table spans and headers, and running-header/footer roles. Word overlap improved in a five-page comparison, but source review found new errors, so this mode stays off by default. The [layout evaluation](LAYOUT-EVALUATION.md) records those findings. Schema validation checks the response structure; it cannot establish transcription accuracy.
+Both extraction modes use Sol and attempt local V3 analysis. The default retains the legacy response contract. Detailed layout (experimental) asks for heading levels, list structure, table spans and headers, and running-header/footer roles. Word overlap improved in a five-page comparison before V3 integration, but source review found new errors, so this mode stays off by default. The [layout evaluation](LAYOUT-EVALUATION.md) records those historical findings, not V3-path accuracy. Schema validation checks the response structure; it cannot establish transcription accuracy.
+
+If V3 analysis or reconciliation fails, the validated Sol blocks are retained unchanged and page diagnostics record the fallback. After response validation, local reconciliation can replace confidently matched boxes and order while preserving every Sol text, table, and structure field. Detector labels never retype blocks or decide Clean-view visibility. The strict response schemas remain unchanged; detector geometry and match evidence live in the saved artifact's separate `layout_metadata` field. See [V3 runtime and matching policy](LAYOUT-V3.md) for failure handling and the uncalibrated initial thresholds.
+
+V3 supplies regions/order, not OCR transcription. Its process-wide runtime prepares on Parse, verifies the actual CUDA device or CPU fallback, and reuses weights across subsequent runs. UI and CLI readiness messages report that verified device. Layout summary counts are inspection aids, not quality scores; polygons remain metadata while matching and rendering use rectangles. CPU/GPU smoke tests exercise local inference only and cannot establish Sol transcription quality.
 
 Pages run in source order. Later requests can include up to 12,000 characters from earlier successful pages to help with continued structures. The prompt tells the model to follow the current page image and avoid copying text that appears only in the context.
 

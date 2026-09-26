@@ -1,29 +1,41 @@
 # Architecture
 
 ```text
-scanned PDF/image -> render pages -> sequential visual parse -> deterministic artifacts
+scanned PDF/image -> render pages -> attempt V3 -> Sol transcription -> reconcile -> artifacts
+                                      |                                  |
+                                      +-- failure: empty hints           +-- failure: retain Sol
 ```
 
-`src/graph.py` runs the fixed `preprocess -> parse -> END` workflow. The preprocess node validates the source and computes its hash. `src/parse.py` uses `src/preprocess.py` to rasterize the selected pages, then sends them to `gpt-6-sol` in source order. A request can include up to 12,000 characters from earlier successful pages. The graph has no extraction review, correction loop, or second model pass over the full document.
+`src/graph.py` runs the fixed `preprocess -> parse -> END` workflow. The preprocess node validates the source and computes its hash. `src/parse.py` retains the 200-DPI/1,600-pixel raster profile and analyzes each selected page with PP-DocLayoutV3 before sending that same image to Sol. Both prompts receive bounded region hints; Sol still reads all text and tables from the image. After strict validation, conservative one-to-one reconciliation applies accepted geometry and order without changing transcription, tables, or structure. A request can include up to 12,000 characters from earlier successful pages. The graph has no extraction review, correction loop, or second model pass over the full document.
 
 The web interface uses Python and Streamlit. For terminal extraction, the installed `groundmark` command accepts a source file and output directory and runs the same graph. `pypdfium2` renders PDF pages, Pillow handles raster images and annotations, and Pydantic validates the layout response. The page image takes precedence when preceding-page context disagrees with it.
 
 `src/layout.py` defines the document, page, block, table, reading-order, and normalized bounding-box types. Renderers, JSON downloads, and annotations use these types. There is no business-field schema.
 
-Saved `ParseResult` JSON uses `schema_version: 2` and records `extraction_profile` as `legacy` or `detailed`. Older files load with unknown structure metadata and are not rewritten. `run_graph`, `parse_document`, and `parse_page` accept `detailed_layout=False`. The default request uses `LegacyParsePage` and the original prompt; detailed layout uses `ParsePage` and the structured prompt. The parser converts both responses to the same internal result type.
+Saved `ParseResult` JSON uses `schema_version: 2` and records `extraction_profile` as `legacy` or `detailed`. Separately validated `layout_metadata` retains V3 regions, provenance, and reconciliation evidence; old JSON without it still loads. `run_graph`, `parse_document`, and `parse_page` accept `detailed_layout=False`. The default request uses `LegacyParsePage`; detailed layout uses `ParsePage`. Both strict Sol schemas remain unchanged. The parser converts and reconciles both responses into the same internal result type before exports, crops, annotations, or chat evidence.
 
 Detailed blocks have a nullable `structure` field. It holds the heading level, list items (text, marker, depth, checkbox state), and table-cell metadata (zero-based position, spans, header status). Cell text stays in the table array, and short rows get empty trailing cells. Validation rejects spans that overlap, exceed the table, leave gaps, or cover nonempty cells. It also rejects invalid list nesting. Every model-facing property is required; null indicates unavailable metadata.
 
 | Module | Responsibility |
 | --- | --- |
 | `src/llm.py` | Configure Sol and invoke structured visual parsing. |
+| `src/layout_detector.py` | Lazy process-wide V3 runtime, pinned cache resolution, and verified device preparation. |
+| `src/layout_reconcile.py` | Normalize pixel geometry, bound prompt hints, reconcile conservatively, and summarize match evidence. |
 | `src/markdown.py` | Render layout blocks into Markdown and self-contained HTML. |
-| `src/annotate.py` | Draw valid model-provided block boxes on source pages. |
+| `src/annotate.py` | Draw valid reconciled block rectangles on source pages. |
 | `src/figures.py` | Save source-matched figure crops with the run basename and page/index suffixes. |
 | `src/ui/app.py` | Present document outputs and the document chat interface. |
 | `src/chat.py` | Answer questions over current parsed pages, check exact evidence, and verify scope and grounding before display. |
 
 Diagnostics identify filtered and failed pages. The app still writes text artifacts for successful pages when another page fails. Annotation errors leave parsed text intact.
+
+The [Python API reference](PYTHON-API.md) describes callable boundaries and schema types. [V3 runtime and matching](LAYOUT-V3.md) defines conversion, matching thresholds, and artifact evidence.
+
+V3 initialization failure uses Sol-only extraction for the run without retrying V3 per page. Individual V3 analysis failures use empty region hints; reconciliation failures retain the validated Sol blocks without a second paid call. Page diagnostics preserve the Sol outcome and usage, with `layout_fallback: true` and a safe layout stage/code. Geometry/order come from V3 only for accepted matches. Split/merge, ambiguous, unmatched, and role/label-mismatched blocks preserve Sol content, boxes, and original positions. Detector labels never retype blocks or hide content in Clean view. Polygon contours remain metadata; matching, crops, and annotations are rectangular. Matching thresholds are not calibrated accuracy guarantees.
+
+The runtime loads once per process under a lock and serializes predictions. First preparation downloads the pinned official snapshot only on a cache miss, or verifies an explicit local directory. Auto mode verifies CUDA placement and inference, then probes CPU after CUDA failure. Readiness reports the device actually used. Streamlit prepares only inside a valid Parse click, before graph execution; failure warns and continues with Sol, passing the preparation failure to the parser to avoid another initialization attempt. A second parser preparation reuses the same model without another probe. Ordinary reruns and tab changes read saved results and display-only session status. No second model cache or layout-off control is introduced.
+
+Progress phases are `layout_preparing`, `layout_ready`, and `page_complete`; all retain the existing counters. Only page completion increments them. Page diagnostics add nullable actual device, layout time, and total parsing time. CLI renders these through stderr, while the UI shows readiness and a count-only Layout summary. Raw labels and transcription belong to artifacts, never progress or error messages. Unexpected graph exceptions use fixed messages.
 
 Each UI session uses an isolated temporary directory for uploads and generated artifacts. A successful parse produces Markdown, HTML, and layout JSON. Successful annotation adds a PDF, page PNGs, and annotation metadata. CLI runs persist only the selected formats in their requested output directory.
 

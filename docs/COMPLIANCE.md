@@ -8,6 +8,10 @@ Uploaded files and generated artifacts stay on the local machine. UI files use a
 
 The supported launcher binds the UI only to loopback addresses and sets an explicit browser Host allowlist, CORS, and XSRF protection. Source size, selected pages, image pixels, parse output tokens, request time, and retries are bounded before paid model work. Table expansion and retained figure data have configurable allocation budgets, but native decoders and framework lifecycle behavior are not sandboxed. HTML exports include a restrictive content-security policy; in-app previews are sanitized and do not execute document markup.
 
-Diagnostics report request status and token counts without printing credentials.
+V3 inference is local. First-use model preparation can download the pinned official weights from Hugging Face; that download does not send document images to the Hub. Sol requests include bounded `given_layout` region hints alongside the page image and preceding-page context. Saved `layout_metadata` includes raw detector labels, geometry, and reconciliation evidence and should be handled with the document artifacts.
+
+V3 misses, label/role mismatches, and runtime failures preserve Sol content; they do not prove that Sol found every source element. Schema validation and conservative matching do not check transcription against the original image. Polygons remain metadata: annotations and figure crops use rectangular boxes.
+
+Diagnostics report status, token counts, actual device when known, safe failure codes, and count-only match summaries. They exclude credentials, model paths, raw provider errors, and untrusted document text. Exported artifacts still contain document content, and their filenames include the source name.
 
 The CLI uses the same endpoint and extraction rules as the UI. It saves only selected artifacts in the requested output directory. The filenames include the source stem and extraction time, while JSON keeps the source hash for grounding. Environment variables inherited by the process take priority over `.env`. The CLI does not accept keys as command-line arguments, and release artifacts contain no keys.
