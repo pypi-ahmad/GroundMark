@@ -1,3 +1,3 @@
 # Files
 
-- [Parsing Pipeline Architecture](parsing-pipeline.md) - How GroundMark validates and rasterizes documents, parses pages sequentially with GPT-6 Sol, records diagnostics, and turns full or partial results into artifacts.
+- [Parsing Pipeline Architecture](parsing-pipeline.md) - How GroundMark rasterizes selected pages, attempts V3 layout, transcribes with Sol, and exports full or partial results.

@@ -2,46 +2,53 @@
   "schemaVersion": 1,
   "pages": {
     "/openwiki/architecture/parsing-pipeline.md": {
-      "gitHead": "7383d46997dec7f85967902c759d731c2fffa2c1",
-      "sourceFingerprint": "sha256:7814010ef56b270fe05e9fb624d5e4fb2d30445caea45bd75a49c44b548d4e90",
-      "pageVersion": "sha256:ba545aeb224aac4873fcda16f89139d94d1b9c989ee4bb9f9b12bf855e32dfbf",
+      "pageVersion": "sha256:6e0404f0b835ca14136ad62a68238fdbf182831c07e08bc067331b8916b4b367",
       "completedBy": "codex",
-      "completedRunId": "6531f4b1-322a-4bb7-aaec-cca5692152ef"
+      "completedRunId": "62edb474-aa34-474e-a072-4a39c7544959",
+      "gitHead": "664ccdc2ffa86c570dd82a610d450edb0f6e7f2c",
+      "sourceFingerprint": "sha256:e1a49f6514928a9857f6bb3542d1a2d5ddf58b874ff302129a9b97623e63099a"
     },
     "/openwiki/concepts/layout-and-rendering.md": {
-      "gitHead": "7383d46997dec7f85967902c759d731c2fffa2c1",
-      "sourceFingerprint": "sha256:7814010ef56b270fe05e9fb624d5e4fb2d30445caea45bd75a49c44b548d4e90",
-      "pageVersion": "sha256:190f149c56d2da1b587b2b3cea463ef4f0c90d3c5fc8e5321f8dfc368d66cc53",
+      "pageVersion": "sha256:378d38f3ad843e56c588882173a666257a8bb253ab63e0248581036da0710d71",
       "completedBy": "codex",
-      "completedRunId": "6531f4b1-322a-4bb7-aaec-cca5692152ef"
+      "completedRunId": "62edb474-aa34-474e-a072-4a39c7544959",
+      "gitHead": "664ccdc2ffa86c570dd82a610d450edb0f6e7f2c",
+      "sourceFingerprint": "sha256:e1a49f6514928a9857f6bb3542d1a2d5ddf58b874ff302129a9b97623e63099a"
+    },
+    "/openwiki/concepts/v3-layout-runtime.md": {
+      "pageVersion": "sha256:28c3a084959eac00f2cef8977deaa6e457df947adbac7cff338dd17674bccc07",
+      "completedBy": "codex",
+      "completedRunId": "62edb474-aa34-474e-a072-4a39c7544959",
+      "gitHead": "664ccdc2ffa86c570dd82a610d450edb0f6e7f2c",
+      "sourceFingerprint": "sha256:e1a49f6514928a9857f6bb3542d1a2d5ddf58b874ff302129a9b97623e63099a"
     },
     "/openwiki/features/document-chat.md": {
-      "gitHead": "7383d46997dec7f85967902c759d731c2fffa2c1",
-      "sourceFingerprint": "sha256:7814010ef56b270fe05e9fb624d5e4fb2d30445caea45bd75a49c44b548d4e90",
-      "pageVersion": "sha256:898859c75a792aa6be857c53af2532714bdf60081853fd105a41f721e63bdb20",
+      "pageVersion": "sha256:4d57bba0ab6a1f73447d62f00ec1a4b7b023b799453fbba4b737ed5bc7bdb9c8",
       "completedBy": "codex",
-      "completedRunId": "6531f4b1-322a-4bb7-aaec-cca5692152ef"
+      "completedRunId": "62edb474-aa34-474e-a072-4a39c7544959",
+      "gitHead": "664ccdc2ffa86c570dd82a610d450edb0f6e7f2c",
+      "sourceFingerprint": "sha256:e1a49f6514928a9857f6bb3542d1a2d5ddf58b874ff302129a9b97623e63099a"
     },
     "/openwiki/operations/development-and-testing.md": {
-      "gitHead": "7383d46997dec7f85967902c759d731c2fffa2c1",
-      "sourceFingerprint": "sha256:7814010ef56b270fe05e9fb624d5e4fb2d30445caea45bd75a49c44b548d4e90",
-      "pageVersion": "sha256:d5bee1f95a14bae867ee82b1e5b3bc5d25b3e390587b6d32f245d12a4daa10a9",
+      "pageVersion": "sha256:4e45c8132d1d86c41a479679b594486fbb1110b2afec518fb322bde4cb3d6272",
       "completedBy": "codex",
-      "completedRunId": "6531f4b1-322a-4bb7-aaec-cca5692152ef"
+      "completedRunId": "62edb474-aa34-474e-a072-4a39c7544959",
+      "gitHead": "664ccdc2ffa86c570dd82a610d450edb0f6e7f2c",
+      "sourceFingerprint": "sha256:e1a49f6514928a9857f6bb3542d1a2d5ddf58b874ff302129a9b97623e63099a"
     },
     "/openwiki/quickstart.md": {
-      "gitHead": "7383d46997dec7f85967902c759d731c2fffa2c1",
-      "sourceFingerprint": "sha256:7814010ef56b270fe05e9fb624d5e4fb2d30445caea45bd75a49c44b548d4e90",
-      "pageVersion": "sha256:10de33e252c56c775b5edf67a02012efad8ae1a4c2299cf7fd3ac047aafba823",
+      "pageVersion": "sha256:2468ddd2f3eecf963eaa9037e4c536842d146e896d266c14c70511298043344b",
       "completedBy": "codex",
-      "completedRunId": "6531f4b1-322a-4bb7-aaec-cca5692152ef"
+      "completedRunId": "62edb474-aa34-474e-a072-4a39c7544959",
+      "gitHead": "664ccdc2ffa86c570dd82a610d450edb0f6e7f2c",
+      "sourceFingerprint": "sha256:e1a49f6514928a9857f6bb3542d1a2d5ddf58b874ff302129a9b97623e63099a"
     },
     "/openwiki/workflows/artifacts-and-exports.md": {
-      "gitHead": "7383d46997dec7f85967902c759d731c2fffa2c1",
-      "sourceFingerprint": "sha256:7814010ef56b270fe05e9fb624d5e4fb2d30445caea45bd75a49c44b548d4e90",
-      "pageVersion": "sha256:135c88733ef391d72155876fb8dc90dfff00c1a1b42d03f0b497ec80212e92e1",
+      "pageVersion": "sha256:eea5ef5631c36bdc129c59398961efd8d5a01a5d74fcadcef2e0a06d59f0b755",
       "completedBy": "codex",
-      "completedRunId": "6531f4b1-322a-4bb7-aaec-cca5692152ef"
+      "completedRunId": "62edb474-aa34-474e-a072-4a39c7544959",
+      "gitHead": "664ccdc2ffa86c570dd82a610d450edb0f6e7f2c",
+      "sourceFingerprint": "sha256:e1a49f6514928a9857f6bb3542d1a2d5ddf58b874ff302129a9b97623e63099a"
     }
   }
 }

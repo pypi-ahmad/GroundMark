@@ -1,14 +1,14 @@
 {
   "schemaVersion": 1,
-  "pageVersion": "sha256:190f149c56d2da1b587b2b3cea463ef4f0c90d3c5fc8e5321f8dfc368d66cc53",
+  "pageVersion": "sha256:378d38f3ad843e56c588882173a666257a8bb253ab63e0248581036da0710d71",
   "claims": [
     {
       "id": "claim_f2cabab44b434ba9876a7916001f56da",
-      "statement": "ParseResult schema version 2 is the stable internal contract for successful pages, extraction profile, filtered pages, diagnostics, and model identity; legacy saved artifacts gain missing structure metadata in memory.",
+      "statement": "ParseResult schema version 2 records successful pages, extraction profile, diagnostics, model identity, and separately validated V3 layout metadata; legacy saved artifacts gain missing structure metadata in memory.",
       "evidence": [
         {
-          "resource": "repo://src/layout.py#L130-L175",
-          "version": "repo-lines-v1:sha256:a1c8891ab2193a144899532219e03bbcb73ae3f2d4a1a45c06ac87674f461850:eyJzZWxlY3RlZExpbmVDb3VudCI6NDYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4N2UwYzI2ODQ4NjBlZjkxMDU4ODRlNWQ1MzkwNTIxNjdiZGY3NDRkNzk4NTg0N2FkYWM2NmZmMmNiYmY2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4ZWMwYTZjNTQwZmFlMDJmNzk4MWU5OWIwMDk2NmU1NzRmMzljMzZiOGMwN2QxYWFhZWU2MTFlNzc2MzcyZWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2NzNlMjg2Y2UzNGJkMzNmOTJkNWM4OTM0ZDU0NTVkYjFiOGI0YzdmZGRlOWQ3ZmM3MzI1MzE4Y2E4YWVhZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+          "resource": "repo://src/layout.py#L348-L384",
+          "version": "repo-lines-v1:sha256:8c11a43e56d9b847ee79366c28d0239e9767b88bec7bbee471387cf19b3b5ee9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0NzEyYzllMGI1ODgwNWYxMmEyYzNlOTkyOGIyMmQ2N2I5YWU3NWVlY2E1MDFjNzNhOWJhYTg5MWU1Yjg0NTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4ZWMwYTZjNTQwZmFlMDJmNzk4MWU5OWIwMDk2NmU1NzRmMzljMzZiOGMwN2QxYWFhZWU2MTFlNzc2MzcyZWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiNTMwZWRlNGYzZTg4MmQ2ZTg1ZTllNmE3N2JiYTI5NTk5OTk3MWU2NTk5NGU0ZTA0MWJjMDAzYjE1NzhkMmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
         }
       ]
     },
@@ -24,19 +24,15 @@
     },
     {
       "id": "claim_69f803929d0e41e18061782519d404b5",
-      "statement": "Renderers preserve page and block order, and Clean view hides only explicitly classified page headers and footers without mutating extraction data.",
+      "statement": "Renderers preserve the reconciled page and block order, and Clean view hides only explicitly classified page headers and footers without mutating extraction data.",
       "evidence": [
         {
-          "resource": "repo://src/markdown.py#L21-L31",
-          "version": "repo-lines-v1:sha256:c791fd65aef3761a515263b5a1aabfb62c8ed84aad3edf7afae2159f02512e6e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1MDIwZjUxYzViZDgzMWY3NGQ1ZjYwMmFhMDNkNWQ0NzcyYWMyMmRjNjY2NDA5NmNkMTkwMTVhMDQwYTVlNTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImIzZDEwMzMxODdmNTg4Zjc5NDM3ZGJjZDU3ZmYyYjIwYzQzYjIzOWRlNjZlOWZhYzRiNGZlN2E5Yjg3ZTI4MjQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1YTYxODdlYjM1MTgzODhkODA4MWMxZmNmNWM3MjkzZjIwNGI0ODFjZmIzMmExOGIzMWFiOTQ0YWI2ZjVjMWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE2NWEyM2NhYzliMGE4ODM0NjZiMDU0MWQ0MjNiODRkNjYzZjBkNzViNDYxYjRiOWM0MWZjMDQ1ZWY1MmE4OWMifQ"
+          "resource": "repo://src/layout_reconcile.py#L311-L320",
+          "version": "repo-lines-v1:sha256:049acd46b29944530d1c304dd431d0078c5d87727e5e97e1ff3e2ec8492ff072:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImVlZDUyZTc4M2ZiZDIxMTVhYzUyZmM4MTM5ZGU5NTBhNDQwMTEzNGVhMmNlZjA1MDNiNjI4ZDA4MGM5NTVhOTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImYzNDljOTQxNDA4YTIyNmE5NTEyNjQ2NmNlZTQ5ZjI3ZDc2N2Y5MzA5OTg1ZmM3MTEwMTQyZDY1YzQ0MmZiMWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI2MjdlMjU1ZDczODhlYTFmMDVjN2UyOWI5MDI3ZDhmM2RiYmNjN2Y2NDBjNDU1MDcxMjBiZTAxYTc3YTkwMDgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiZjFlMDJhNWQ3ZTY3YTVjYjM0NzMwNjgxMzdiYjdlNGYzNGNjZjNiMDFkNGMyZWEyMGQwNGY0M2IzNjFjMmYifQ"
         },
         {
-          "resource": "repo://tests/test_layout_structure.py#L49-L64",
-          "version": "repo-lines-v1:sha256:0ac896482b0c0fe91c9d5281e74f5d7ca6061a513b3ea29460328ad890a3ca5a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3MTExZjY0OWVkZTBiMzRlMzY3ZDA5MWJkZThlNDI0N2Q5YWFlZmE4NGM2OGJiOTI5ODY0ZGUzYzc4ZDNkZTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3NGNhMjliN2I1NjI1MmU3Y2VkOWMzZDUyN2RkNWYyOWQwNmJkNzMzMTVjZTI2NTljYmNkOGUyMmFhMDA1ODQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjOWFjYjQ0YmUzZmI2ZWVhMTY3NTc2YTQxODkyMzZiNDc2NzA1NGQxODMyYjNlYmU3OWJmNjVlNGE5ZjMzN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4MjUyZmY5NmQzMzJjYmE0MDMzYjNiMDIxZDRmNjdmZTE3MzM3MWY2YTQ3ODhiNjNmNDhiMjg0NmJhMzczZmIifQ"
-        },
-        {
-          "resource": "repo://tests/test_layout_structure.py#L98-L107",
-          "version": "repo-lines-v1:sha256:2fa4b768c48946166a1ec54bd6ab8f42cc47985a3fbf4bdb12004cf6eb5b6f57:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyODIzODVlOGMyMjgxYWIyZTU3NmFkODc1ZDI3Y2IxNzcxYjFkYzRhNGRhNTEwMmZkMTQ5YmU1ZTczNGQ5NmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE3MmJkMjZjOWI4ZjRkOTI3MjVjYzc2MmE2N2I5YzFjOGEwZDU3YjA5YWFjNTE2NWFiOWI0M2ZlNmE0ZDI0ODEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjBhYmVhNzEwZDY2YzJmNmFmMTA0ZDcxMDg1ZjhlYmFkMzg1ODkwNmI1Y2UzZWI3ZmUzYTIyZjQ0NDljNjZiNGYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJjZmQ2NDY4YzZlYzE4MzNmMjIxOTA5YjVlYzU1NDlkYWNhYzY4MzhiNmE1MzlhMjRiM2FlNjlhYWFhODRiOGEifQ"
+          "resource": "repo://src/markdown.py#L22-L34",
+          "version": "repo-lines-v1:sha256:8a9c63ab190623ee40cea8f8b1800b4baa6aad4b4189d94cb9c0165e50be365a:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQ1MDIwZjUxYzViZDgzMWY3NGQ1ZjYwMmFhMDNkNWQ0NzcyYWMyMmRjNjY2NDA5NmNkMTkwMTVhMDQwYTVlNTkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImI1YTYxODdlYjM1MTgzODhkODA4MWMxZmNmNWM3MjkzZjIwNGI0ODFjZmIzMmExOGIzMWFiOTQ0YWI2ZjVjMWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE5ZTBlNGE3M2NmNTRiOWVmY2QyZTlmNDllMWYxNWY0OTlkN2FmNGVhY2ExZGQ3OTIxMmNhOTI3ZGY2NDFlODcifQ"
         }
       ]
     },
@@ -91,18 +87,64 @@
       "statement": "Figure extraction uses source-matched normalized boxes and deterministic positional names; invalid or missing boxes degrade to warnings and textual placeholders while valid PNG crops can be embedded or bundled.",
       "evidence": [
         {
-          "resource": "repo://src/figures.py#L17-L70",
-          "version": "repo-lines-v1:sha256:9225e6af0550843588fbe968e9a0f97922ef0b3d6ee553a10a35eb599926b320:eyJzZWxlY3RlZExpbmVDb3VudCI6NTQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhOWIwZGVkYTM3MDBkNDViZTVmYmQwNzE4YzkxY2Q2YWZjZTVkZTkzNzA5YzU3NDhkYWI4ZDUxMjg3YjQyNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjViYzJhYWRlYmM3ZGQyNzI3YTI1YWI2MzBmODFjMWFhNzcwY2UxNzFhNjQ1MjU2NTkwYWExN2Q0YmY5ODNjYTAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5Y2Y1OTM3ZjNiOWU1ZTA4NTM4M2QwOGFiZjNhYzc0NmUzM2ZjY2YyOTBhYWFiYjU4YjdhNmQ2ZDVmOWE5YWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+          "resource": "repo://src/figures.py#L18-L66",
+          "version": "repo-lines-v1:sha256:a17ba2782c6721931b37ffecd870359c65877555e89a34d2eb32a86910caaee2:eyJzZWxlY3RlZExpbmVDb3VudCI6NDksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhOWIwZGVkYTM3MDBkNDViZTVmYmQwNzE4YzkxY2Q2YWZjZTVkZTkzNzA5YzU3NDhkYWI4ZDUxMjg3YjQyNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc2Yzk0NjVjYjUxNDQ1OThiY2EwN2UxZWIwY2Y0Yjc0ZDRhOTRiZDhjYzMwMTEwMzI3MzljMDQ0NTAyMDAxYjgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5Y2Y1OTM3ZjNiOWU1ZTA4NTM4M2QwOGFiZjNhYzc0NmUzM2ZjY2YyOTBhYWFiYjU4YjdhNmQ2ZDVmOWE5YWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ5NTg3NTBiOTJhOGNmOTNhZjVmZDUxMzhiYWQ5OWFiNzcxMjY1ZTFiYjE1MTI3ZGFiNTY1Mjg0OGFiMGZlMzAifQ"
         },
         {
-          "resource": "repo://tests/test_layout_structure.py#L160-L181",
-          "version": "repo-lines-v1:sha256:5cb8f6da384a5b4a76a51214193d8c6282756d467350c1fa453f0196211c5e9f:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg0MWQ3MTViNTM1NDE4ODJiZGQ1MjE2OTE1ZDI5MTUxYTg1NTc4N2YyMTc4YmU3YmM3MmI0ZDVhMWE3OTY1NmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE5NjBiOTg2Mzk0YzYzNTg1NGVhNjc3MGE4ZmFiMGZkZjE3Y2IwZThkOGE3NWIwMDNiM2JjY2FjNjExZTA3ODgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjcyMjRjOTZiYjFiOTY1MDVkMThiZmEwOGVhMDU0NzJlYmI4MjhhNzY5ODUxOTE3NGY4ZmIzZGQxNTM4MDNmN2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+          "resource": "repo://src/markdown.py#L213-L281",
+          "version": "repo-lines-v1:sha256:5ce1acd8947a3bb5a9122c42dc5f67014cc745fa881b3b7725a5e2fbfa9bf815:eyJzZWxlY3RlZExpbmVDb3VudCI6NjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZmODNkZGMwZjJkYmMxOTI4MjIzMDlkMmY5OTQyM2RmZDgwYzQ0M2ZkZWI3MGZjYTZhZGFlNTkwYmEwMzE0ZWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjExNGUzMTAyYWU0ZjA0MGVkOTFlY2UzOGU3N2NhOGIxMzY2MDM3N2RjNjQzNDRjN2ViZGNkNGY4MWJiYjg1YzQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYyY2IyZjk4MTllNjJhYTY5Y2MyZjUyZDBkZjdkYzU5NGJiZjdkNmEzNTMyZWI3ZTA4MTE4ODE5ZGFiN2Y1N2QiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE0Mzc0NWRjOWZmNjMzMjVhMzEzZTQ5NzQ1NDAzNDkzMTMxYWY3MjI1MmU2NTZmYjdkNTYyMjZmZjI2OWNiYzkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_2bf3b8230eb844c6b064445fdf0d093c",
+      "statement": "BBox model validation checks four coordinates; V3 conversion and annotation/figure consumers apply additional geometric eligibility checks, and retained polygons are not drawn.",
+      "evidence": [
+        {
+          "resource": "repo://src/annotate.py#L33-L40",
+          "version": "repo-lines-v1:sha256:b45c9c19aba6e301427164315aeb7a96c2bd985d9807292483d64d58877d3410:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMWViYTk5NzgxOTZkYjkxNjZiODIzMTE1ZWQ2ZjIzZmJhOGQxOTk1NzA2Zjg3YTQ1N2NjMjk3ZmM5NzYyZTk5MSIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2QzMzI0NDE0Y2NhMzA3OWJmMDRhMjcyY2M5NDEyYzhiZTk5NDhkODZiNzBhNWExMzdmYTA1NzE1MmFjMjFmNyIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiMmUyZWYyYTJlZmZkZjAzYTdiZTAyZWFlMTAxNDZkZjJlNTViMmE3MjQwOWVlZWMzN2ZlNTM0Y2I5NzdhMzQ0NCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNmE2NmZiOTg0MjdhNmVjOWExOTAxOTI1NzlkNjY5NTU3NGIyMWJlYWU3OThiMzM5YTlkZDg3NDUzZDQ0OTU4ZCJ9"
+        },
+        {
+          "resource": "repo://src/annotate.py#L58-L61",
+          "version": "repo-lines-v1:sha256:2dd2b0f67cab3ca29a681949a555b46e07b5b7c73972587102ff46d032f71e25:eyJzZWxlY3RlZExpbmVDb3VudCI6NCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTljNzI4N2FjNjMyYWY2MTVjN2FkNzIzMzU2YWNkNzAxNTczYWZjMzI3MzZhMDJkNzM4NjMwMmM0MTI4YTliZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTBiMWE2OGM5ZTkzYTI4YjljZTYwMTE1MDE4ZTk2MDU4NjQ0MTFkMzU3MDJlN2I4NTlmNzU4MTYxZjYyN2Q4MCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiZjJiZjVkOThlNjc4NmE1M2I4ZDEzYzkwMjc5NWE0MjNjMTBkYTkzN2ViOGY3YzI5MDRkMjRmNWE2OWUxODk5YSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiMTY1ZTUyOWJlZDBmN2M4NGE2MTRiODNiOTdkMzM2ZWM5YzM2YjliMDVmYTBmNzA2YzczM2YyMTBjYmQ2ZmMwNCJ9"
+        },
+        {
+          "resource": "repo://src/layout.py#L68-L74",
+          "version": "repo-lines-v1:sha256:b183108ee5abd138f74886f330fc9b266058ae290b912b263440514d6b5d7675:eyJzZWxlY3RlZExpbmVDb3VudCI6NywiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiZDZlNTJhNDg0MzJlNzMzNGQzN2JhMDMzNWIzMjBjYTZmOGVjZTUwNjU3MzM2Y2Q3ZWVlNThhNjY4OGEwYmJhOCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMTg1NjRjZDZhYTgzNDQ4ODVkMmExZGQ3ZDllMjU3MzRjNjQyMzMxYzQwODZlMDM5ZjVjMGU0NGVkN2M5ZGIwZCIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiOGUzMjVlMWE4Mzc4ZDIxZDBjY2VjNjAxM2JjYmYyMjI4OTk5NTcxYzJjMDEwMGIwMThkNDJiYTMzNWJjNTc0OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiNWYyNGU2NjkzZTBiMjA5OGIyNTgxZjUxZjY0ZjdjMGVhZWJhMjg1OWQ2MWM4ZjFjYmY2MTM5OWMzZDg1MWE1NCJ9"
+        },
+        {
+          "resource": "repo://src/layout_reconcile.py#L156-L200",
+          "version": "repo-lines-v1:sha256:650911b1693dc149c5589e454111f8a114d1c6d8424d9c3801d06d9b3ad8a391:eyJzZWxlY3RlZExpbmVDb3VudCI6NDUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImRiOWI0YTkyMTMzMWFlZTUyMzRmOGRkOWUyYzNhYzdjYjEwMWY3MTRkYTBlYjg3N2Q4NmNkYTMyN2U3ZjQ0MWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5YzY4ZmQ0MTliZTVkYmQ1MDAzMjZiYjM0MGZjZWZmNmVhM2Q1MTdiNDZlMjBhYzliMjYxMmQ1ODc0N2FhYzgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjkyYjQwMWIxYjA0ZjY3ZmY1N2U0YzA5YjhhNjFjMTUxMDNmNjRiYWMwYTIyMTVhYzliNWEyNjI5ZDJhMDA5ODciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImVjMDUzODNkYjIyMDU0ZjRmZjg5ZTU4NWQ4ZmUxNWVkNzVhNGM3N2NmZjU0N2I3NDYxMjZlZDAxZjVkZDM4ZTcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_6a92a2ebcf2e4b3f8f3bc1718e521f32",
+      "statement": "Reconciliation changes only accepted boxes and matched-block positions; unmatched Sol blocks and unmatched V3 regions remain represented without synthesizing text.",
+      "evidence": [
+        {
+          "resource": "repo://src/layout_reconcile.py#L261-L345",
+          "version": "repo-lines-v1:sha256:4e485d6030cace5442ee2a31ac8e6763169bc7e017082fdb27e26b1246b391ea:eyJzZWxlY3RlZExpbmVDb3VudCI6ODUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjkxODdmYmJjN2FhMWMyZTBjZmYzNzZlZmNkMGUwNjE2OGZlZTc4NTBmNzVhNDVhMmZmMzIwNTMwNmRmZWJmZDkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijg4MzEyMzNkMjhkOTUzNWQ3YjM3NjFkMjFhM2U5YWU0M2Q4MTYwZmQ1MTAzNWExNTM3ZDAxODJlODY4OGY4OWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImVlZWM4ZDU1ZmQ3NGRhZTE2NDhlY2NkOGY3OGQ0MDg3YWYwMjNjMGEwYTQyYjVlMGJlMmQ0NWM0YTU4Njc0OTciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_d3abf4c51e3e44848ec43acb8ce78234",
+      "statement": "The strict Sol page schemas remain separate from V3 metadata, which is validated as part of ParseResult.",
+      "evidence": [
+        {
+          "resource": "repo://src/layout.py#L167-L197",
+          "version": "repo-lines-v1:sha256:1494cecd53b9d5013d3636532561b0f8e94840664e98941f9abc9110acc8983c:eyJzZWxlY3RlZExpbmVDb3VudCI6MzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU4N2UwYzI2ODQ4NjBlZjkxMDU4ODRlNWQ1MzkwNTIxNjdiZGY3NDRkNzk4NTg0N2FkYWM2NmZmMmNiYmY2ZWMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZlZWJkNTRlMTY5ODFkZWVhMzg0MDc4OWE1YTE0ODcxNDdkNDRmOWU3NmMxMmNmZWUwN2Y5YThiMWU4ZDRmMWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2NzNlMjg2Y2UzNGJkMzNmOTJkNWM4OTM0ZDU0NTVkYjFiOGI0YzdmZGRlOWQ3ZmM3MzI1MzE4Y2E4YWVhZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjgxNmE3MzcxNjJhODhhZGQ2MjEyOWFhY2VmZjk4OGVhZTc0YjljMmIzOTJlZTk3OGY1NDUyYjM4ZWY4OGU3NTMifQ"
+        },
+        {
+          "resource": "repo://src/layout.py#L348-L369",
+          "version": "repo-lines-v1:sha256:dbd073f322d5c94a604ed4a507a7b2802e561cf3f7eeb4010209bcc2ca537609:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0NzEyYzllMGI1ODgwNWYxMmEyYzNlOTkyOGIyMmQ2N2I5YWU3NWVlY2E1MDFjNzNhOWJhYTg5MWU1Yjg0NTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImEyYWIwOTBiY2QxNjIwZmE2MmVhZWUxNTdhNzRmY2E2MzVhYTI5ZTEyY2JmZmQ2MThiNTc5MmQ4N2JjMDNhM2YiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjRiNTMwZWRlNGYzZTg4MmQ2ZTg1ZTllNmE3N2JiYTI5NTk5OTk3MWU2NTk5NGU0ZTA0MWJjMDAzYjE1NzhkMmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0ZDg2ZWY5Zjg3ODJkMWVjZDg4ZTUxMmZlZjBkMjVkOWYxZGEwM2Y4MWQ3MzRiYTAwMDkyYzJmNzJmOGJhMTQifQ"
         }
       ]
     }
   ],
   "verification": {
-    "by": "openwiki/0.5.2",
-    "at": "2026-09-23T13:34:05.703Z"
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-26T10:39:39.522Z"
   }
 }
