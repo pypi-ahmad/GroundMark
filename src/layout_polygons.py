@@ -46,6 +46,20 @@ def angle_between_vectors(v1, v2):
 def extract_custom_vertices(
     polygon, max_allowed_dist, sharp_angle_thresh=45, max_dist_ratio=0.3
 ):
+    """Select corners from an ordered polygon using the adapted PaddleX rules.
+
+    This is part of the native mask decoder, not the bounded Sol guide
+    simplifier.
+
+    Args:
+        polygon: Ordered pixel-coordinate vertices.
+        max_allowed_dist: Distance threshold before scaling by max_dist_ratio.
+        sharp_angle_thresh: Corner angle threshold in degrees.
+        max_dist_ratio: Fraction applied to the distance threshold.
+
+    Returns:
+        Selected vertex tuples in source order.
+    """
     poly = np.array(polygon)
     n = len(poly)
     max_allowed_dist *= max_dist_ratio

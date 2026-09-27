@@ -131,6 +131,14 @@ class ParseBlock(LegacyBlock):
 
     @model_validator(mode="after")
     def validate_structure(self):
+        """Reject detail inconsistent with the block role or table contents.
+
+        Returns:
+            This validated block.
+
+        Raises:
+            ValueError: If heading, list, or table detail conflicts with the block.
+        """
         if self.structure is None:
             return self
         structure = self.structure
@@ -186,6 +194,11 @@ class LegacyParsePage(BaseModel):
     _check_tables = field_validator("blocks", mode="before")(_bounded_blocks)
 
     def to_page(self) -> ParsePage:
+        """Convert a validated default-profile page without inventing structure.
+
+        Returns:
+            An internal page whose blocks have unknown detailed structure.
+        """
         data = self.model_dump()
         data["blocks"] = [{**b, "structure": None} for b in data["blocks"]]
         return ParsePage.model_validate(data)
@@ -278,6 +291,11 @@ class ReconcilePolicy(_LayoutMetadata):
     significant_coverage: float = Field(default=0.80, gt=0, le=1)
 
     def check_active(self):
+        """Reject legacy-only gates and inconsistent active coverage settings.
+
+        Raises:
+            ValueError: If an inactive gate is set or coverage bounds conflict.
+        """
         if self.max_center_distance is not None or self.min_iou_margin is not None:
             raise ValueError("Distance and margin gates are legacy-only policy settings")
         if self.min_partial_coverage > self.min_coverage:
@@ -356,6 +374,14 @@ class LayoutPageArtifact(_LayoutMetadata):
 
     @model_validator(mode="after")
     def validate_references(self):
+        """Enforce unique, in-range guide and one-to-one match references.
+
+        Returns:
+            This validated artifact.
+
+        Raises:
+            ValueError: If guide, candidate, or accepted-match references disagree.
+        """
         if self.guide_contours and (
                 sorted(c.region_index for c in self.guide_contours) != list(range(len(self.layout.regions)))):
             raise ValueError("Invalid guide contour references")
@@ -416,6 +442,14 @@ class ParseResult(BaseModel):
 
     @model_validator(mode="after")
     def validate_layout_metadata(self):
+        """Check saved layout pages against parsed pages and diagnostics.
+
+        Returns:
+            This validated document result.
+
+        Raises:
+            ValueError: If layout pages or reconciliation references disagree.
+        """
         pages = {page.page: page for page in self.pages}
         known_pages = set(pages) | {d.page for d in self.page_diagnostics}
         identities = [entry.layout.page for entry in self.layout_metadata]
