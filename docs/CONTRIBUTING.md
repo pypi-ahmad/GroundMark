@@ -2,6 +2,8 @@
 
 GroundMark turns scanned PDFs and images into grounded Markdown, HTML, JSON, annotations, and chat over parsed pages. Keep changes within that scope. A business-field schema requires an explicit product decision.
 
+For a first local change, start with [onboarding](ONBOARDING.md) and the [zero-to-mastery tutorial](ZERO-TO-MASTERY.md). The [developer guide](DEVELOPER-GUIDE.md) maps modules and tests; the [contributor runbook](CONTRIBUTOR-RUNBOOK.md) has the change and review checklist. This page records the contracts to preserve.
+
 Send `gpt-6-sol` requests through `src/llm.py`. Keep pages in source order and follow the page image when preceding-page context disagrees with it.
 
 Keep document chat in `src/chat.py`, with Luna at medium reasoning, evidence checks, and separate answer verification. Store authored model instructions in Markdown. Do not stream or save unverified chat drafts. The optional chat evaluation uses synthetic data and makes paid calls: `uv run --no-project --python .venv\Scripts\python.exe -m scripts.evaluate_chat`.

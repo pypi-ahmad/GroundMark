@@ -151,9 +151,11 @@ uv run python -m pytest tests
 
 The suite uses fake layout runtimes and fake model responses; it needs neither weights nor paid calls. Use `uv run --extra layout` to include V3 after a base-only sync. Without the extra, extraction uses the documented Sol fallback.
 
+New contributors can start with [onboarding](docs/ONBOARDING.md), then follow the hands-on [zero-to-mastery tutorial](docs/ZERO-TO-MASTERY.md). The [developer guide](docs/DEVELOPER-GUIDE.md) maps the Python modules and their test boundaries; the [contributor runbook](docs/CONTRIBUTOR-RUNBOOK.md) covers a local change and review handoff.
+
 ## Diagrams
 
-The diagrams show parsing, artifact flow, run outcomes, and document chat. Each image links to an interactive version.
+The diagrams show parsing, artifact flow, run outcomes, and document chat. Each image has an interactive version.
 
 <details>
 <summary>Document parsing workflow</summary>
@@ -191,7 +193,8 @@ The editable JSON and visual-check captures are in [docs/diagrams](docs/diagrams
 
 ## Documentation
 
-- Use and development: [Runbook](docs/RUNBOOK.md), [Architecture](docs/ARCHITECTURE.md), [Python API](docs/PYTHON-API.md), [Model](docs/MODEL.md), [V3 runtime and matching](docs/LAYOUT-V3.md), [Prompt contract](docs/PROMPTS.md), [Data and output boundaries](docs/COMPLIANCE.md), [Contributing](docs/CONTRIBUTING.md).
+- Learn and contribute: [Onboarding](docs/ONBOARDING.md), [Zero to mastery](docs/ZERO-TO-MASTERY.md), [Developer guide](docs/DEVELOPER-GUIDE.md), [Contributor runbook](docs/CONTRIBUTOR-RUNBOOK.md), [Contributing](docs/CONTRIBUTING.md).
+- Runtime and reference: [Runbook](docs/RUNBOOK.md), [Architecture](docs/ARCHITECTURE.md), [Python API](docs/PYTHON-API.md), [Model](docs/MODEL.md), [V3 runtime and matching](docs/LAYOUT-V3.md), [Prompt contract](docs/PROMPTS.md), [Data and output boundaries](docs/COMPLIANCE.md).
 - V3 evidence: [ONNX artifact research](docs/PP-DocLayoutV3-ONNX-RESEARCH.md), [runtime implementation](docs/PP-DocLayoutV3-IMPLEMENTATION.md), [reconciliation](docs/V3-AUTHORITATIVE-RECONCILIATION.md), and [completion and offline replay](docs/V3-INTEGRATION-COMPLETION.md).
 - Recorded evaluations: [Layout](docs/LAYOUT-EVALUATION.md), [Sol resolution](docs/SOL-RESOLUTION-EVALUATION.md), [Earlier prompts](docs/PROMPT-EVALUATION.md), [Content-filter diagnostics](docs/CONTENT-FILTER-DIAGNOSTICS.md). These reports record the methods and results from each run.
 

@@ -1,5 +1,7 @@
 # Runbook
 
+This page covers running and troubleshooting GroundMark. For a code change, use the [developer guide](DEVELOPER-GUIDE.md) and [contributor runbook](CONTRIBUTOR-RUNBOOK.md).
+
 ## Setup and runtime preparation
 
 The [README installation instructions](../README.md#install) cover GitHub wheel installs with the `layout` extra through `uv tool`, `uv pip`, or pip, as well as manual cloning. You need Python 3.14+. Once installed, the commands work outside the checkout.

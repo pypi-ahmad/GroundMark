@@ -2,6 +2,8 @@
 
 The installed package is named `src`. These are the current callable and data boundaries, not a promise of a stable third-party SDK. Function signatures and concise docstrings remain in the linked source files. Importing the layout runtime does not import optional ML dependencies or load weights.
 
+This is the reference companion to the [developer guide](DEVELOPER-GUIDE.md). The [onboarding path](ONBOARDING.md) and [zero-to-mastery tutorial](ZERO-TO-MASTERY.md) provide runnable, offline-first exercises.
+
 ## Parsing and orchestration
 
 | Entry point | Contract and side effects |
@@ -35,6 +37,8 @@ See [V3 runtime and matching](LAYOUT-V3.md) for the pinned model, device probe, 
 ## Schema types
 
 These descriptions live here because adding class docstrings to Pydantic models can change the JSON schemas sent to models. Live Sol responses use only `LegacyParsePage` or `ParsePage`; artifact metadata is validated separately.
+
+Documentation audit: 91 of 116 top-level public functions and classes had docstrings before this guide update; the previously undocumented `extract_custom_vertices` now has one. The 24 remaining top-level public classes without docstrings are Pydantic models. Their contracts are described in the tables below rather than added to generated schema descriptions. New and updated docstrings in this pass use Google-style sections. The coverage count excludes methods, tests, scripts, and private names, and is a navigation measure, not a quality score.
 
 ### Pages and blocks — `src.layout`
 
