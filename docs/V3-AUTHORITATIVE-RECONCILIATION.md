@@ -74,7 +74,7 @@ CUDA preparation took 6.06 seconds and CPU preparation 3.31 seconds in these run
 
 ## Limits and next evidence
 
-No reviewed Sol-to-V3 correspondence labels were found. Available provider-produced text/box references do not establish which geometry assignments are correct. The replay demonstrates execution, preservation, and policy sensitivity—not matching accuracy, transcription improvement, or a calibrated threshold choice.
+No reviewed Sol-to-V3 correspondence labels were found. Available provider-produced text/box references do not establish which geometry assignments are correct. The replay demonstrates execution, preservation, and policy sensitivity. It does not establish matching accuracy, transcription improvement, or calibrated thresholds.
 
 Production calibration still needs reviewed accepted/rejected pairs and unsafe partial-coverage examples, followed by held-out verification. More matches must not be interpreted as better accuracy.
 

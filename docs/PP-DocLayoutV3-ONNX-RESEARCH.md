@@ -1,4 +1,4 @@
-# PP-DocLayoutV3 ONNX: Features and Full Decoding
+# PP-DocLayoutV3 ONNX: features and full decoding
 
 Research date: 2026-09-27.
 
