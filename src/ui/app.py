@@ -19,7 +19,7 @@ from src.config import max_pages, max_source_bytes
 from src.preprocess import count_pages, preprocess_pages
 from src.ui.clipboard import copy_buttons
 from src.layout_detector import get_layout_runtime
-from src.layout_reconcile import layout_match_counts
+from src.layout_reconcile import layout_inspection_summary
 from src.diagnostics import layout_failure_diagnostic, layout_failure_summary, layout_ready_summary
 
 st.set_page_config(page_title="ADE - Document Parsing", layout="wide")
@@ -158,6 +158,15 @@ if st.button("Parse", disabled=not valid_range) and valid_range:
     def update_progress(event):
         if event.get("phase", "page_complete") != "page_complete":
             return
+        if event.get("fallback_reason") == "cuda_execution_failed":
+            if "cpu_preparation" in event.get("execution_failures", ()):
+                st.session_state.pop("layout_readiness", None)
+                st.session_state["layout_preparation_error"] = "CUDA execution and CPU recovery failed. Continuing with Sol blocks."
+            elif st.session_state.get("layout_readiness"):
+                st.session_state["layout_readiness"].update(
+                    device="cpu", fallback_reason="cuda_execution_failed",
+                )
+            st.caption("CUDA page execution failed; CPU recovery attempted. See page diagnostics.")
         progress.progress(event["completed"] / event["total"], text=(
             f"Pages: {event['completed']}/{event['total']} completed; "
             f"{event['successful']} successful; {event['failed']} failed"
@@ -195,6 +204,10 @@ if result:
     for warning in result.get("figure_warnings", []):
         st.caption(warning)
     if current_parse and current_parse.page_diagnostics:
+        defect_pages = [str(d.page) for d in current_parse.page_diagnostics if d.application_error]
+        if defect_pages:
+            st.error("Reconciliation application defect on pages " + ", ".join(defect_pages)
+                     + ". Original Sol content was retained; inspect diagnostics.")
         fallback_pages = [str(d.page) for d in current_parse.page_diagnostics if d.layout_fallback]
         if fallback_pages:
             st.warning("V3 unavailable; Sol-only layout used/attempted on pages: " + ", ".join(fallback_pages))
@@ -202,11 +215,16 @@ if result:
             st.json([d.model_dump(exclude_none=True) for d in current_parse.page_diagnostics])
             if any(d.outcome not in {"parsed", "layout_failed", "layout_unavailable"} and not d.filters for d in current_parse.page_diagnostics):
                 st.caption("Filter details are unavailable for one or more failed pages. The provider did not supply recognized annotations.")
-    if current_parse and current_parse.layout_metadata:
+    if current_parse and (current_parse.layout_metadata or current_parse.page_diagnostics):
         with st.expander("Layout summary", expanded=False):
-            st.json([dict(page=entry.layout.page, device=entry.layout.device, **layout_match_counts(entry))
-                     for entry in current_parse.layout_metadata])
-            st.caption("Review counts can include matched blocks. Null counts mean reconciliation was unavailable. Full evidence is in JSON layout_metadata; polygons are metadata only.")
+            by_page = {entry.layout.page: entry for entry in current_parse.layout_metadata}
+            from src.diagnostics import PageDiagnostic
+            diagnostics_by_page = {d.page: d for d in current_parse.page_diagnostics}
+            st.json([layout_inspection_summary(by_page.get(number),
+                     diagnostics_by_page.get(number) or PageDiagnostic(
+                         page=number, layout_device=by_page[number].layout.device))
+                     for number in sorted(set(by_page) | {n for n in diagnostics_by_page if n is not None})])
+            st.caption("Accepted matches can carry split/merge warnings. Unmatched does not prove a detector miss: correspondence and granularity can differ. Null counts mean reconciliation was unavailable. Annotations draw full selected contours; amber V3-only overlays contain no invented text.")
 else:
     current_parse = None
 

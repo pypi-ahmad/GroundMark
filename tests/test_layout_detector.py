@@ -159,7 +159,7 @@ def test_page_failure_does_not_retry_cpu():
 @pytest.fixture
 def snapshot(tmp_path, monkeypatch):
     # Small fake files exercise resolution/checksums, not model loading.
-    files = {"config.json": b"fixture config", "model.safetensors": b"fixture weights"}
+    files = {"inference.yml": b"fixture config", "inference.onnx": b"fixture weights"}
     hashes = {name: hashlib.sha256(data).hexdigest() for name, data in files.items()}
     monkeypatch.setattr(detector, "MODEL_FILES", hashes)
     def populate():
@@ -173,7 +173,7 @@ def test_first_use_download_then_disk_cache_reuse(snapshot):
     calls = []
     def downloader(**kwargs):
         calls.append(kwargs)
-        if kwargs["local_files_only"] and not (directory / "config.json").exists():
+        if kwargs["local_files_only"] and not (directory / "inference.yml").exists():
             raise FileNotFoundError("cold cache")
         if not kwargs["local_files_only"]:
             populate()
@@ -191,7 +191,7 @@ def test_first_use_download_then_disk_cache_reuse(snapshot):
 
 def test_partial_cache_downloads_missing_files(snapshot):
     directory, populate = snapshot
-    (directory / "config.json").write_bytes(b"fixture config")
+    (directory / "inference.yml").write_bytes(b"fixture config")
     calls = []
     def downloader(**kwargs):
         calls.append(kwargs["local_files_only"])
@@ -208,7 +208,7 @@ def test_local_directory_never_downloads_and_rejects_wrong_files(snapshot):
     def forbidden(**kwargs):
         pytest.fail("Local override tried to download")
     assert detector.resolve_model_snapshot(LayoutConfig(model_dir=directory), downloader=forbidden) == directory
-    (directory / "model.safetensors").write_bytes(b"not the pinned model")
+    (directory / "inference.onnx").write_bytes(b"not the pinned model")
     with pytest.raises(detector.LayoutModelUnavailable, match="invalid_model"):
         detector.resolve_model_snapshot(LayoutConfig(model_dir=directory), downloader=forbidden)
 
@@ -245,7 +245,7 @@ def test_base_imports_do_not_load_optional_dependencies():
 import importlib.abc, sys
 class BlockOptional(importlib.abc.MetaPathFinder):
     def find_spec(self, fullname, path=None, target=None):
-        if fullname.split('.')[0] in {'torch', 'torchvision', 'transformers', 'huggingface_hub', 'cv2'}:
+        if fullname.split('.')[0] in {'torch', 'torchvision', 'transformers', 'huggingface_hub', 'cv2', 'onnxruntime'}:
             raise ModuleNotFoundError(fullname)
 sys.meta_path.insert(0, BlockOptional())
 import src, src.cli, src.parse, src.graph, src.markdown, src.layout_detector
@@ -294,3 +294,178 @@ def test_invalid_page_does_not_initialize(page):
     with pytest.raises(ValueError):
         predictor.predict(image(), page)
     assert not resolutions
+
+
+class ExecutionBackend(FakeBackend):
+    def __init__(self, *, cpu_failure=None):
+        super().__init__()
+        self.cpu_failure = cpu_failure
+
+    def predict(self, image):
+        super().predict(image)
+        if image.size != (96, 128) and self.device == "cuda":
+            raise detector.LayoutExecutionError("inference_failed", device="cuda")
+        if self.device == "cpu" and self.cpu_failure:
+            if self.cpu_failure == "prepare" or image.size != (96, 128):
+                if self.cpu_failure == "validation":
+                    raise detector.LayoutInferenceError("invalid_output")
+                raise detector.LayoutExecutionError("inference_failed", device="cpu")
+        return ()
+
+
+def test_execution_recovery_retries_once_and_cpu_is_sticky():
+    backend = ExecutionBackend()
+    predictor, _, loads = runtime(backend)
+    assert predictor.prepare().device == "cuda"
+    recovered = predictor.predict(image())
+    assert recovered.device == "cpu"
+    assert recovered.execution_failures == ("cuda_execution",)
+    assert recovered.fallback_reason == "cuda_execution_failed"
+    later = predictor.predict(image(), 2)
+    assert later.device == "cpu" and later.execution_failures == ()
+    ready = predictor.prepare()
+    assert ready.device == "cpu" and ready.reused
+    assert ready.fallback_reason == "cuda_execution_failed"
+    assert backend.moves == ["cuda", "cpu"] and len(loads) == 1
+    assert backend.calls == [("cuda", (96, 128)), ("cuda", (100, 200)),
+                             ("cpu", (96, 128)), ("cpu", (100, 200)), ("cpu", (100, 200))]
+
+
+@pytest.mark.parametrize("failure,stage", [
+    ("prepare", "cpu_preparation"), ("execute", "cpu_execution"), ("validation", "cpu_validation"),
+])
+def test_failed_recovery_reports_both_stages_without_cuda_reprobe(failure, stage):
+    backend = ExecutionBackend(cpu_failure=failure)
+    predictor, _, _ = runtime(backend)
+    with pytest.raises(detector.LayoutInferenceError) as caught:
+        predictor.predict(image())
+    assert caught.value.failures == ("cuda_execution", stage)
+    assert caught.value.device == ("cuda" if failure == "prepare" else "cpu")
+    calls = len(backend.calls)
+    with pytest.raises(detector.LayoutInferenceError) as later:
+        predictor.predict(image(), 2)
+    if failure == "prepare":
+        assert later.value.code == "recovery_unavailable" and later.value.device is None
+    assert backend.moves == ["cuda", "cpu"]
+    assert len(backend.calls) == calls + (0 if failure == "prepare" else 1)
+
+
+def test_invalid_decoding_does_not_trigger_device_recovery():
+    backend = FakeBackend()
+    predictor, _, _ = runtime(backend)
+    predictor.prepare()
+    def invalid(image):
+        raise detector.LayoutInferenceError("invalid_output")
+    backend.predict = invalid
+    with pytest.raises(detector.LayoutInferenceError) as caught:
+        predictor.predict(image())
+    assert caught.value.code == "invalid_output" and caught.value.device == "cuda"
+    assert backend.moves == ["cuda"]
+
+
+def test_onnx_decoding_keeps_fields_masks_gaps_and_ties_associated(monkeypatch):
+    np = pytest.importorskip("numpy")
+    pytest.importorskip("cv2")
+    from src import layout_polygons
+    boxes = np.array([[9, .9, 10, 10, 50, 50, 142],
+                      [2, .5, 20, 20, 60, 60, 0],
+                      [22, .8, 30, 30, 70, 70, 3],
+                      [21, .7, 40, 40, 80, 80, 3]], dtype=np.float32)
+    masks = np.zeros((4, 200, 200), dtype=np.int32)
+    for i in range(4):
+        masks[i, i, i] = 1
+    def polygons(selected, selected_masks, scale, mode, *, sources):
+        sources.extend(["mask"] * len(selected))
+        assert selected[:, 0].tolist() == [22, 21, 9]
+        assert [int(np.flatnonzero(m)[0]) for m in selected_masks] == [402, 603, 0]
+        assert scale == (8, 4) and mode == "poly"
+        return [np.array([[x, y], [right, y], [right, bottom], [x, bottom]])
+                for x, y, right, bottom in selected[:, 2:6]]
+    monkeypatch.setattr(layout_polygons, "extract_polygon_points_by_masks", polygons)
+    regions = detector._decode_onnx([boxes, np.array([4], dtype=np.int32), masks], 100, 200)
+    assert [r.order for r in regions] == [3, 3, 142]
+    assert [r.label for r in regions] == ["text", "table", "footer_image"]
+    assert [r.score for r in regions] == pytest.approx([.8, .7, .9])
+    assert regions[0].box_px == (30, 30, 70, 70)
+    assert regions[0].polygon_px[0] == (30, 30)
+    for invalid in ([boxes, np.array([3]), masks], [boxes, np.array([4]), masks.astype(float)]):
+        with pytest.raises(detector.LayoutInferenceError, match="invalid_output"):
+            detector._decode_onnx(invalid, 100, 200)
+
+
+def test_upstream_mask_polygon_decode_and_empty_detection():
+    np = pytest.importorskip("numpy")
+    pytest.importorskip("cv2")
+    boxes = np.array([[22, .9, 10, 10, 90, 90, 0]], dtype=np.float32)
+    masks = np.zeros((1, 200, 200), dtype=np.int32)
+    masks[0, 20:160, 20:70] = 1
+    masks[0, 120:160, 20:160] = 1
+    region, = detector._decode_onnx([boxes, np.array([1]), masks], 100, 100)
+    assert len(region.polygon_px) >= 4 and region.order == 0
+    empty = detector._decode_onnx([np.empty((0, 7)), np.array([0]), np.empty((0, 200, 200), dtype=np.int32)], 100, 100)
+    assert empty == ()
+
+
+def test_onnx_preprocessing_and_native_error_boundary(monkeypatch):
+    np = pytest.importorskip("numpy")
+    pytest.importorskip("cv2")
+    pytest.importorskip("onnxruntime")
+    from onnxruntime.capi.onnxruntime_pybind11_state import EPFail, InvalidArgument
+    backend = detector._OnnxBackend(Path("unused"))
+    received = []
+    class Session:
+        def run(self, names, inputs):
+            received.append((names, inputs))
+            return [np.empty((0, 7)), np.array([0]), np.empty((0, 200, 200), dtype=np.int32)]
+    backend.session = Session()
+    source = Image.new("RGB", (100, 200), (255, 128, 0))
+    assert backend.predict(source) == ()
+    names, inputs = received[0]
+    assert names == ["fetch_name_0", "fetch_name_1", "fetch_name_2"]
+    assert inputs["image"].shape == (1, 3, 800, 800)
+    assert inputs["image"].dtype == np.float32 and inputs["image"].flags.c_contiguous
+    assert inputs["image"][0, :, 0, 0].tolist() == pytest.approx([1, 128 / 255, 0])
+    np.testing.assert_array_equal(inputs["image"][0, :, 0, 0],
+                                  np.array([255, 128, 0], dtype=np.float32) * (1.0 / 255.0))
+    assert inputs["im_shape"].tolist() == [[800, 800]]
+    assert inputs["scale_factor"].tolist() == [[4, 8]]
+    def fail(*a):
+        raise EPFail("private native detail")
+    monkeypatch.setattr(backend.session, "run", fail)
+    with pytest.raises(detector.LayoutExecutionError):
+        backend.predict(source)
+    def invalid(*a):
+        raise InvalidArgument("bad input")
+    monkeypatch.setattr(backend.session, "run", invalid)
+    with pytest.raises(detector.LayoutInferenceError, match="invalid_input") as caught:
+        backend.predict(source)
+    assert not isinstance(caught.value, detector.LayoutExecutionError)
+
+
+def test_onnx_provider_must_be_present_and_have_actual_graph_assignment(monkeypatch):
+    ort = pytest.importorskip("onnxruntime")
+    from types import SimpleNamespace
+    backend = detector._OnnxBackend(Path("unused"))
+    preloads, fallback_disabled = [], []
+    monkeypatch.setattr(ort, "preload_dlls", lambda **kw: preloads.append(kw))
+    class Session:
+        providers = ["CPUExecutionProvider"]
+        assignments = []
+        def __init__(self, *a, **kw): self.options = kw
+        def disable_fallback(self): fallback_disabled.append(True)
+        def get_providers(self): return self.providers
+        def get_provider_graph_assignment_info(self): return self.assignments
+    monkeypatch.setattr(ort, "InferenceSession", Session)
+    with pytest.raises(RuntimeError, match="provider unavailable"):
+        backend.use_device("cuda")
+    Session.providers = ["CUDAExecutionProvider", "CPUExecutionProvider"]
+    with pytest.raises(RuntimeError, match="No graph nodes"):
+        backend.use_device("cuda")
+    Session.assignments = [SimpleNamespace(ep_name="CUDAExecutionProvider")]
+    backend.use_device("cuda")
+    assert backend.device == "cuda" and len(preloads) == 3 and len(fallback_disabled) == 3
+    previous = backend.session
+    Session.providers = ["CPUExecutionProvider"]
+    backend.use_device("cpu")
+    assert backend.session is not previous and backend.device == "cpu"
+    assert backend.session.options["providers"] == ["CPUExecutionProvider"] and len(preloads) == 3

@@ -21,4 +21,4 @@ def test_launcher_forwards_arguments_and_exit_status(tmp_path, exit_code):
         cwd=tmp_path, capture_output=True, text=True,
     )
     assert result.returncode == exit_code
-    assert (tmp_path / "calls.txt").read_text().strip() == "run groundmark --port 5806 --headless"
+    assert (tmp_path / "calls.txt").read_text().strip() == "run --extra layout groundmark --port 5806 --headless"

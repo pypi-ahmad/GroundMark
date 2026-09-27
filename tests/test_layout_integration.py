@@ -5,6 +5,7 @@ from dataclasses import replace
 import hashlib
 import io
 import json
+import math
 from pathlib import Path
 from types import SimpleNamespace
 
@@ -115,9 +116,9 @@ def test_active_graph_reconciles_before_json_annotations_crops_and_chat(tmp_path
     assert request["response_format"]["json_schema"]["schema"] == schema.model_json_schema()
     assert request["response_format"]["json_schema"]["strict"] is True
     result = state["parse_result"]
-    assert [b.type for b in result.pages[0].blocks] == ["heading", "table", "figure", "list", "text"]
-    assert result.pages[0].blocks[3] == sol_page(detailed=detailed).blocks[3]
-    assert result.layout_metadata[0].reconciliation.decisions[3].reasons == ("role_disagreement",)
+    assert [b.type for b in result.pages[0].blocks] == ["heading", "list", "table", "figure", "text"]
+    assert result.pages[0].blocks[1].model_dump(exclude={"bbox"}) == sol_page(detailed=detailed).blocks[3].model_dump(exclude={"bbox"})
+    assert result.layout_metadata[0].reconciliation.decisions[3].region_index == 3
     originals = {b.id: b for b in sol_page(detailed=detailed).blocks}
     for block in result.pages[0].blocks:
         assert block.model_dump(exclude={"bbox"}) == originals[block.id].model_dump(exclude={"bbox"})
@@ -126,9 +127,12 @@ def test_active_graph_reconciles_before_json_annotations_crops_and_chat(tmp_path
     assert saved == result
     assert len(saved.layout_metadata) == 1 and saved.layout_metadata[0].reconciliation is not None
     assert saved.layout_metadata[0].layout.regions[0].polygon_px == regions()[0].polygon_px
+    assert len(saved.layout_metadata[0].guide_contours) == 4
+    assert all(c.status == "omitted" and c.reason == "redundant_box"
+               for c in saved.layout_metadata[0].guide_contours)
     with Image.open(state["annotated_page_paths"][0]) as annotated:
-        assert annotated.getpixel((60, 65)) == (220, 30, 30)
-    crop_path, = (tmp_path / "out" / "images").glob("*_figure_002.png")
+        assert annotated.getpixel((60, 65)) == (0, 102, 204)
+    crop_path, = (tmp_path / "out" / "images").glob("*_figure_003.png")
     with Image.open(crop_path) as crop:
         assert crop.size == (30, 30)
     assert "Exact Heading" in Path(state["markdown_path"]).read_text(encoding="utf-8")
@@ -373,7 +377,8 @@ def test_reconciliation_failure_retains_sol_page_and_paid_usage(monkeypatch):
     assert result.pages[0] == sol_page()
     failed = result.page_diagnostics[0]
     assert (failed.outcome, failed.layout_stage, failed.request_id) == ("parsed", "reconciliation", "req-1")
-    assert failed.layout_fallback
+    assert not failed.layout_fallback
+    assert failed.application_error == "reconciliation_failed"
     assert failed.input_tokens == 100 and failed.output_tokens == 20 and failed.usage_known
     assert usage.totals(entries)["input_tokens"] == 200
     assert "private" not in result.model_dump_json() and result.layout_metadata[0].reconciliation is None
@@ -401,6 +406,7 @@ def test_prompt_projection_is_bounded_complete_and_keeps_only_useful_polygons(mo
     # At the boxes-only budget, omit the triangle without dropping either region.
     no_polygons = deepcopy(hints)
     del no_polygons["regions"][0]["polygon_points"]
+    no_polygons["regions"][0]["contour"] = "omitted"
     limit = len(json.dumps(no_polygons, separators=(",", ":")))
     monkeypatch.setattr("src.layout_reconcile.GIVEN_LAYOUT_MAX_BYTES", limit)
     projected = json.loads(given_layout_json(layout))
@@ -417,6 +423,67 @@ def test_dense_layout_and_tiny_boxes_fit_without_geometry_mutation():
     assert box[0] < box[2] and box[1] < box[3]
     with pytest.raises(ValueError, match="layout_prompt_too_large"):
         given_layout_json(convert_layout(runtime(*[region(order=0) for _ in range(301)])))
+
+
+def test_complex_contour_is_full_when_it_fits_and_simplified_only_for_budget(monkeypatch):
+    from src.layout_reconcile import project_layout_guide
+    polygon = tuple((50 + 35 * math.cos(i * math.tau / 120),
+                     50 + 35 * math.sin(i * math.tau / 120)) for i in range(120))
+    layout = convert_layout(runtime(region((15, 15, 85, 85), polygon=polygon)))
+    original = layout.model_dump()
+    text, records = project_layout_guide(layout)
+    assert records[0].status == "full"
+    assert len(json.loads(text)["regions"][0]["polygon_points"]) == 120
+    monkeypatch.setattr("src.layout_reconcile.GIVEN_LAYOUT_MAX_BYTES", 1100)
+    text, records = project_layout_guide(layout)
+    assert len(text.encode()) <= 1100
+    assert records[0].status == "simplified" and 0 < records[0].max_deviation_px <= 1
+    guide = json.loads(text)["regions"][0]
+    assert guide["contour"] == "simplified" and 3 <= len(guide["polygon_points"]) < 120
+    assert layout.model_dump() == original
+    # Even when no contour fits, all base records and explicit statuses survive.
+    del guide["polygon_points"]
+    guide["contour"] = "omitted"
+    base = json.loads(text)
+    base["regions"] = [guide]
+    limit = len(json.dumps(base, separators=(",", ":")).encode())
+    monkeypatch.setattr("src.layout_reconcile.GIVEN_LAYOUT_MAX_BYTES", limit)
+    text, records = project_layout_guide(layout)
+    assert records[0].status == "omitted"
+    assert json.loads(text) == base and layout.model_dump() == original
+    monkeypatch.setattr("src.layout_reconcile.GIVEN_LAYOUT_MAX_BYTES", limit - 1)
+    with pytest.raises(ValueError, match="layout_prompt_too_large"):
+        project_layout_guide(layout)
+
+
+@pytest.mark.parametrize("failed", [False, True])
+def test_recovery_metadata_is_not_overwritten_by_initial_cuda_readiness(monkeypatch, failed):
+    from src.layout_detector import LayoutReadiness
+    data = [payload(1), payload(2)]
+    monkeypatch.setattr(parse, "preprocess_pages", lambda *a, **k: data)
+    failure = LayoutInferenceError("inference_failed", device="cpu",
+                                  failures=("cuda_execution", "cpu_execution"))
+    detector = FakeLayoutRuntime(failures={1: failure} if failed else {})
+    original = detector.predict
+    def predict(image, page_number=1):
+        value = original(image, page_number)
+        return replace(value, fallback_reason="cuda_execution_failed",
+                       execution_failures=("cuda_execution",) if page_number == 1 else ())
+    detector.predict = predict
+    detector.prepare = lambda: LayoutReadiness("cuda", None, .1, False)
+    capture_calls(monkeypatch, detector)
+    progress = []
+    result = parse.parse_document("unused", end_page=2, layout_runtime=detector,
+                                  save_json=False, on_progress=progress.append)
+    assert len(result.pages) == 2
+    assert all(d.layout_device == "cpu" for d in result.page_diagnostics)
+    first = result.page_diagnostics[0]
+    assert first.layout_fallback is failed
+    expected = failure.failures if failed else ("cuda_execution",)
+    assert first.layout_execution_failures == expected
+    assert first.layout_fallback_reason == "cuda_execution_failed"
+    assert progress[1]["device"] == "cuda" and progress[2]["device"] == "cpu"
+    assert result.layout_metadata[-1].guide_contours == ()
 
 
 def test_legacy_json_loading_and_strict_schemas_remain_unchanged():
@@ -486,14 +553,60 @@ def test_cli_reports_safe_device_timings_and_matches(tmp_path, monkeypatch, caps
     stdout, stderr = capsys.readouterr()
     assert stdout.strip().endswith(".json") and "PP-DocLayoutV3" not in stdout
     assert "Preparing PP-DocLayoutV3" in stderr and "ready: CPU" in stderr
-    assert "page 1: parsed" in stderr and "matches=3" in stderr
+    assert "page 1: parsed" in stderr and "matches=4" in stderr
     assert "layout_seconds=" in stderr and "page_seconds=" in stderr
     assert "Exact Heading" not in stderr and str(source) not in stderr and "test-only" not in stderr
     saved = ParseResult.model_validate_json(Path(stdout.strip()).read_text(encoding="utf-8"))
     assert saved.page_diagnostics[0].layout_device == "cpu"
     from src.layout_reconcile import layout_match_counts
     assert layout_match_counts(saved.layout_metadata[0]) == dict(
-        regions=4, matches=3, unmatched_blocks=2, unmatched_regions=1, review_blocks=2)
+        regions=4, matches=4, unmatched_blocks=1, unmatched_regions=0, review_blocks=1,
+        accepted_split=0, accepted_merge=0, accepted_many_to_many=0, accepted_contour_fallback=0)
+
+
+@pytest.mark.parametrize("defect", ["content", "unmatched_box", "detector_geometry"])
+def test_defective_reconciler_preserves_original_paid_page_and_marks_partial(tmp_path, monkeypatch, defect):
+    source = tmp_path / "source.png"
+    Image.new("RGB", (100, 100), "white").save(source)
+    detector = FakeLayoutRuntime(regions={1: regions()})
+    monkeypatch.setattr(parse, "get_layout_runtime", lambda: detector)
+    requests = capture_calls(monkeypatch, detector, detailed=True)
+    real = parse.reconcile_page
+    def broken(page, layout):
+        if defect == "detector_geometry":
+            layout.regions[0].bbox.xyxy = (.6, .6, .91, .9)
+        result = real(page, layout)
+        if defect == "content":
+            result.page.blocks[0].text = "private mutation"
+        elif defect == "unmatched_box":
+            result.page.blocks[-1].bbox = BBox(page=1, xyxy=(0, 0, 1, 1))
+        return result
+    monkeypatch.setattr(parse, "reconcile_page", broken)
+    state = graph.run_graph(str(source), output_dir=tmp_path / "out", detailed_layout=True)
+    assert state["status"] == "parsed_partial" and len(requests) == 1
+    result = state["parse_result"]
+    assert result.pages[0] == sol_page(detailed=True)
+    diagnostic = result.page_diagnostics[0]
+    assert diagnostic.application_error == "reconciliation_invariant_violation"
+    assert not diagnostic.layout_fallback and diagnostic.layout_code is None
+    assert diagnostic.input_tokens == 100 and diagnostic.output_tokens == 20
+    assert result.layout_metadata[0].reconciliation is None
+    assert "private mutation" not in result.model_dump_json()
+
+
+def test_configurable_policy_flows_through_normal_graph(tmp_path, monkeypatch):
+    from src.layout import ReconcilePolicy
+    source = tmp_path / "source.png"
+    Image.new("RGB", (100, 100), "white").save(source)
+    detector = FakeLayoutRuntime(regions={1: regions()})
+    monkeypatch.setattr(parse, "get_layout_runtime", lambda: detector)
+    capture_calls(monkeypatch, detector)
+    policy = ReconcilePolicy(min_score=.99)
+    state = graph.run_graph(str(source), output_dir=tmp_path / "out", reconcile_policy=policy)
+    assert state["status"] == "parsed"
+    artifact = state["parse_result"].layout_metadata[0]
+    assert artifact.reconciliation.policy == policy
+    assert all(d.region_index is None for d in artifact.reconciliation.decisions)
 
 
 def test_graph_unexpected_exception_does_not_leak_raw_text(tmp_path, monkeypatch, capsys):

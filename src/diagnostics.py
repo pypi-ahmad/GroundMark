@@ -27,11 +27,12 @@ class FilterAnnotation(BaseModel):
 
 
 LayoutStage = Literal["initialization", "inference", "conversion", "prompt", "reconciliation"]
+LayoutFailureStage = Literal["cuda_execution", "cpu_preparation", "cpu_execution", "cpu_validation"]
 LayoutCode = Literal[
     "dependencies_unavailable", "download_failed", "invalid_model", "model_load_failed", "devices_failed",
-    "invalid_configuration", "invalid_image", "inference_failed", "invalid_output", "invalid_page",
+    "invalid_configuration", "invalid_image", "invalid_input", "inference_failed", "invalid_output", "invalid_page",
     "invalid_order_base", "invalid_class", "invalid_score", "invalid_order", "invalid_box", "invalid_polygon",
-    "page_mismatch", "invalid_normalized_region", "layout_prompt_too_large", "unexpected_layout_error",
+    "page_mismatch", "invalid_normalized_region", "layout_prompt_too_large", "unexpected_layout_error", "recovery_unavailable",
 ]
 
 
@@ -41,7 +42,10 @@ class PageDiagnostic(BaseModel):
     layout_stage: LayoutStage | None = None
     layout_code: LayoutCode | None = None
     layout_fallback: bool = False
+    application_error: Literal["reconciliation_invariant_violation", "reconciliation_failed"] | None = None
     layout_device: Literal["cpu", "cuda"] | None = None
+    layout_execution_failures: tuple[LayoutFailureStage, ...] = ()
+    layout_fallback_reason: Literal["cuda_unavailable", "cuda_probe_failed", "cuda_execution_failed"] | None = None
     layout_seconds: float | None = Field(default=None, ge=0, allow_inf_nan=False)
     page_seconds: float | None = Field(default=None, ge=0, allow_inf_nan=False)
     http_status: int | None = None
@@ -69,6 +73,13 @@ def layout_failure_diagnostic(exc: Exception, *, page: int, stage: LayoutStage,
     """Map local failures to allowlisted metadata, retaining any paid-call usage."""
     from src.config import ConfigError
     from src.layout_detector import LayoutModelUnavailable
+    if stage == "reconciliation":
+        from src.layout_reconcile import ReconciliationInvariantError
+        return (previous or PageDiagnostic(requested_model=requested_model)).model_copy(update=dict(
+            page=page, layout_stage=stage, layout_code=None, layout_fallback=False,
+            application_error=("reconciliation_invariant_violation" if isinstance(exc, ReconciliationInvariantError)
+                               else "reconciliation_failed"),
+        ))
     code = "invalid_configuration" if isinstance(exc, ConfigError) else getattr(exc, "code", None)
     if not isinstance(code, str) or code not in get_args(LayoutCode):
         code = "unexpected_layout_error"
@@ -78,11 +89,19 @@ def layout_failure_diagnostic(exc: Exception, *, page: int, stage: LayoutStage,
     return baseline.model_copy(update=dict(
         page=page, outcome="layout_unavailable" if stage == "initialization" else "layout_failed",
         layout_stage=stage, layout_code=code,
+        layout_device=getattr(exc, "device", None) if getattr(exc, "device", None) in ("cpu", "cuda") else None,
+        layout_execution_failures=tuple(v for v in getattr(exc, "failures", ())
+                                        if v in get_args(LayoutFailureStage)),
+        layout_fallback_reason=(getattr(exc, "fallback_reason", None)
+                                if getattr(exc, "fallback_reason", None) in ("cuda_unavailable", "cuda_probe_failed", "cuda_execution_failed")
+                                else "cuda_execution_failed" if "cuda_execution" in getattr(exc, "failures", ()) else None),
     ))
 
 
 def layout_failure_summary(diagnostic: PageDiagnostic) -> str:
     """Actionable display text generated only from validated codes."""
+    if diagnostic.application_error:
+        return f"Page {diagnostic.page}: application defect ({diagnostic.application_error}); original Sol content retained."
     summary = f"Page {diagnostic.page}: {diagnostic.outcome} ({diagnostic.layout_stage}: {diagnostic.layout_code})"
     if diagnostic.outcome == "layout_unavailable":
         from src.layout_detector import LayoutModelUnavailable
@@ -94,11 +113,14 @@ def layout_failure_summary(diagnostic: PageDiagnostic) -> str:
 
 def layout_ready_summary(info: dict) -> str:
     """Shared UI/CLI readiness message from the runtime's local summary."""
+    if info.get("fallback_reason") == "cuda_execution_failed":
+        return "PP-DocLayoutV3 ready: CPU; retained after successful CPU recovery from CUDA page execution failure."
     device = "GPU (CUDA)" if info["device"] == "cuda" else "CPU"
     mode = "reused" if info["reused"] else "prepared"
     text = f"PP-DocLayoutV3 ready: {device}; {mode} in {info['preparation_seconds']:.3f}s."
     fallback = {"cuda_unavailable": "CUDA unavailable; verified CPU fallback.",
-                "cuda_probe_failed": "CUDA probe failed; verified CPU fallback."}.get(info.get("fallback_reason"))
+                "cuda_probe_failed": "CUDA probe failed; verified CPU fallback.",
+                "cuda_execution_failed": "CUDA page execution failed; using verified CPU recovery."}.get(info.get("fallback_reason"))
     return f"{text} {fallback}" if fallback else text
 
 

@@ -1,6 +1,6 @@
 """Active layout-parsing entry point. `parse_document` processes a page range
 in source order and calls `parse_page` (V3 analysis, strict Sol transcription,
-then conservative reconciliation) once per page. Direct callers
+then V3-authoritative reconciliation) once per page. Direct callers
 get `<output_dir>/<doc_sha>.json` by default; the graph disables that write
 and owns selective exports instead. This is the only unconditionally-called
 consumer of src/llm.py's model-call plumbing in the active graph (see
@@ -34,9 +34,10 @@ from src.preprocess import inspect_source, iter_preprocessed_pages as preprocess
 from src.prompts import render_prompt
 from src.models import DEFAULT_MODEL
 from src.layout import (ParsePage, ParseResult, LegacyParsePage, LayoutPageArtifact,
-                        NormalizedLayoutPage, ReconciliationDetails, expanded_table_cells)
+                        NormalizedLayoutPage, ReconciliationDetails, ReconcilePolicy, expanded_table_cells)
 from src.layout_detector import LayoutRuntime, LayoutInferenceError, get_layout_runtime
-from src.layout_reconcile import LayoutConversionError, convert_layout, given_layout_json, reconcile_page, layout_match_counts
+from src.layout_reconcile import (LayoutConversionError, convert_layout, project_layout_guide, reconcile_page,
+                                  layout_inspection_summary, check_reconciliation)
 from src.diagnostics import ExtractionCallError, PageDiagnostic, layout_failure_diagnostic
 
 # Pages are parsed in order so each call can use preceding-page context.
@@ -54,23 +55,32 @@ def _layout_error(exc, *, page, stage, diagnostics=None, previous=None):
     return ExtractionCallError(diagnostic)
 
 
+def _decode_page_image(image_b64, mime, width_px, height_px):
+    """Fully decode before inference or a paid fallback request."""
+    try:
+        with Image.open(io.BytesIO(base64.b64decode(image_b64, validate=True))) as image:
+            if image.size != (width_px, height_px) or mime != Image.MIME.get(image.format):
+                raise ValueError("Image metadata mismatch")
+            image.load()
+            return image.copy()
+    except Exception:
+        raise LayoutInferenceError("invalid_image") from None
+
+
 def analyze_page_layout(image_b64: str, mime: str, page_number: int, width_px: int, height_px: int, *,
                         layout_runtime: LayoutRuntime | None = None,
                         diagnostics: list[PageDiagnostic] | None = None,
                         layout_metadata: list[LayoutPageArtifact] | None = None) -> tuple[NormalizedLayoutPage, str]:
     """Analyze the exact image payload, without making any transcription call."""
     stage = "initialization"
+    analysis = None
     try:
-        runtime = layout_runtime if layout_runtime is not None else get_layout_runtime()
         stage = "inference"
-        try:
-            image_bytes = base64.b64decode(image_b64, validate=True)
-            decoded = Image.open(io.BytesIO(image_bytes))
-        except Exception:
-            raise LayoutInferenceError("invalid_image") from None
+        decoded = _decode_page_image(image_b64, mime, width_px, height_px)
         with decoded:
-            if decoded.size != (width_px, height_px) or mime != Image.MIME.get(decoded.format):
-                raise LayoutInferenceError("invalid_image")
+            stage = "initialization"
+            runtime = layout_runtime if layout_runtime is not None else get_layout_runtime()
+            stage = "inference"
             analysis = runtime.predict(decoded, page_number=page_number)
         stage = "conversion"
         layout = convert_layout(analysis)
@@ -79,14 +89,23 @@ def analyze_page_layout(image_b64: str, mime: str, page_number: int, width_px: i
         if layout_metadata is not None:
             layout_metadata.append(LayoutPageArtifact(layout=layout))
         stage = "prompt"
-        return layout, given_layout_json(layout)
+        text, contours = project_layout_guide(layout)
+        if layout_metadata is not None:
+            layout_metadata[-1] = layout_metadata[-1].model_copy(update={"guide_contours": contours})
+        return layout, text
     except Exception as exc:
-        raise _layout_error(exc, page=page_number, stage=stage, diagnostics=diagnostics) from None
+        error = _layout_error(exc, page=page_number, stage=stage, diagnostics=diagnostics)
+        if analysis is not None:
+            error.diagnostic.layout_device = analysis.device
+            error.diagnostic.layout_execution_failures = analysis.execution_failures
+            error.diagnostic.layout_fallback_reason = analysis.fallback_reason
+        raise error from None
 
 
 def reconcile_parsed_page(page: ParsePage, layout: NormalizedLayoutPage, *,
                           diagnostics: list[PageDiagnostic] | None = None,
-                          previous: PageDiagnostic | None = None) -> tuple[ParsePage, LayoutPageArtifact]:
+                          previous: PageDiagnostic | None = None,
+                          reconcile_policy: ReconcilePolicy | None = None) -> tuple[ParsePage, LayoutPageArtifact]:
     """Return reconciled blocks and their artifact, or raise ExtractionCallError.
 
     This helper is strict. The active parser catches layout errors and keeps
@@ -94,12 +113,17 @@ def reconcile_parsed_page(page: ParsePage, layout: NormalizedLayoutPage, *,
     behavior. Optional diagnostics preserve provider metadata from previous.
     """
     try:
-        reconciled = reconcile_page(page, layout)
+        # Protect the original even if a defective reconciler mutates its inputs.
+        reconciled = reconcile_page(page.model_copy(deep=True), layout.model_copy(deep=True),
+                                    **({"policy": reconcile_policy} if reconcile_policy is not None else {}))
         artifact = LayoutPageArtifact(
             layout=reconciled.metadata.layout,
             reconciliation=ReconciliationDetails.model_validate(reconciled.metadata.model_dump(exclude={"layout"})),
         )
-        artifact.check_parsed_page(reconciled.page)
+        if artifact.layout != layout:
+            from src.layout_reconcile import ReconciliationInvariantError
+            raise ReconciliationInvariantError("Detector ownership changed")
+        check_reconciliation(page, reconciled.page, artifact)
         return reconciled.page, artifact
     except Exception as exc:
         raise _layout_error(exc, page=page.page, stage="reconciliation",
@@ -125,6 +149,7 @@ def parse_page(
     layout_runtime: LayoutRuntime | None = None,
     layout_metadata: list[LayoutPageArtifact] | None = None,
     layout_initialization_failure: PageDiagnostic | None = None,
+    reconcile_policy: ReconcilePolicy | None = None,
 ) -> ParsePage:
     """Transcribe one base64 page image and apply compatible V3 geometry.
 
@@ -137,6 +162,8 @@ def parse_page(
     """
     if model != DEFAULT_MODEL:
         raise ValueError("Unsupported model")
+    if reconcile_policy is not None:
+        reconcile_policy.check_active()
     diagnostics = diagnostics if diagnostics is not None else []
     diagnostic_start = len(diagnostics)
     started = perf_counter()
@@ -147,6 +174,13 @@ def parse_page(
         artifact_index = len(layout_metadata) if layout_metadata is not None else 0
         given_layout = '{"regions":[]}'
         try:
+            if fallback is not None:
+                try:
+                    with _decode_page_image(image_b64, mime, width_px, height_px):
+                        pass
+                except LayoutInferenceError as exc:
+                    fallback = None
+                    raise _layout_error(exc, page=page_number, stage="inference") from None
             if fallback is None:
                 layout, given_layout = analyze_page_layout(
                     image_b64, mime, page_number, width_px, height_px, layout_runtime=layout_runtime,
@@ -178,11 +212,19 @@ def parse_page(
         result = result.model_copy(update={"page": page_number, "width_px": width_px, "height_px": height_px})
         if layout is not None:
             try:
-                result, artifact = reconcile_parsed_page(result, layout)
+                result, artifact = reconcile_parsed_page(
+                    result, layout, previous=diagnostics[-1] if diagnostics else None,
+                    reconcile_policy=reconcile_policy,
+                )
                 if layout_metadata is not None:
-                    layout_metadata[artifact_index] = artifact
+                    layout_metadata[artifact_index] = artifact.model_copy(update={
+                        "guide_contours": layout_metadata[artifact_index].guide_contours,
+                    })
             except ExtractionCallError as exc:
-                fallback = exc.diagnostic
+                if len(diagnostics) > diagnostic_start:
+                    diagnostics[-1] = exc.diagnostic
+                else:
+                    diagnostics.append(exc.diagnostic)
         return result
     finally:
         if len(diagnostics) == diagnostic_start:
@@ -191,7 +233,11 @@ def parse_page(
         # its provider metadata even when reconciliation fails after a paid call.
         diagnostics[-1].layout_seconds = layout_seconds
         diagnostics[-1].page_seconds = perf_counter() - started
-        diagnostics[-1].layout_device = layout.device if layout is not None else None
+        diagnostics[-1].layout_device = layout.device if layout is not None else (fallback.layout_device if fallback else None)
+        diagnostics[-1].layout_execution_failures = layout.execution_failures if layout else (
+            fallback.layout_execution_failures if fallback else ())
+        diagnostics[-1].layout_fallback_reason = layout.fallback_reason if layout else (
+            fallback.layout_fallback_reason if fallback else None)
         if fallback is not None:
             diagnostics[-1].layout_fallback = True
             diagnostics[-1].layout_stage = fallback.layout_stage
@@ -208,6 +254,7 @@ def parse_document(
     save_json: bool = True,
     layout_runtime: LayoutRuntime | None = None,
     layout_initialization_failure: PageDiagnostic | None = None,
+    reconcile_policy: ReconcilePolicy | None = None,
 ) -> ParseResult:
     """Layout-parse every page in [start_page, end_page] (1-based, inclusive;
     end_page=None means through the last page, subject to the configured cap).
@@ -225,6 +272,8 @@ def parse_document(
     """
     if model != DEFAULT_MODEL:
         raise ValueError("Unsupported model")
+    if reconcile_policy is not None:
+        reconcile_policy.check_active()
     pages_payload = iter(preprocess_pages(path, start_page=start_page, end_page=end_page))
     try:
         first_payload = next(pages_payload)
@@ -274,6 +323,7 @@ def parse_document(
                 layout_runtime=layout_runtime,
                 layout_metadata=layout_metadata,
                 layout_initialization_failure=initialization_failure,
+                reconcile_policy=reconcile_policy,
             )
             diagnostic = diagnostics[-1] if diagnostics else PageDiagnostic(outcome="parsed")
             return page, diagnostic.model_copy(update={"page": payload["page"]})
@@ -291,8 +341,6 @@ def parse_document(
     selected = chain((first_payload,), pages_payload)
     for payload in selected:
         outcome = parse_payload(payload)
-        if readiness is not None:
-            outcome[1].layout_device = readiness.device
         if outcome[0] is not None:
             added_cells = sum(expanded_table_cells(block.table or []) for block in outcome[0].blocks)
             if table_cells + added_cells > max_table_cells():
@@ -312,8 +360,12 @@ def parse_document(
                          "successful": successful, "failed": len(outcomes) - successful,
                          "page": payload["page"], "outcome": outcome[1].outcome,
                          "layout_fallback": outcome[1].layout_fallback,
+                         "application_error": outcome[1].application_error,
+                         "fallback_reason": outcome[1].layout_fallback_reason,
+                         "execution_failures": outcome[1].layout_execution_failures,
                          "device": outcome[1].layout_device, "layout_seconds": outcome[1].layout_seconds,
-                         "page_seconds": outcome[1].page_seconds, **layout_match_counts(artifact)})
+                         "page_seconds": outcome[1].page_seconds,
+                         **layout_inspection_summary(artifact, outcome[1])})
 
     pages = [page for page, _ in outcomes if page is not None]
     content_filtered_pages = [

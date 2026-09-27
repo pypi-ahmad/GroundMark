@@ -6,5 +6,5 @@ if errorlevel 1 (
     echo uv is required. Install uv, then run this launcher again.
     exit /b 1
 )
-call uv run groundmark %*
+call uv run --extra layout groundmark %*
 exit /b %errorlevel%

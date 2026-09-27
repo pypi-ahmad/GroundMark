@@ -10,7 +10,7 @@ def forbid_native_layout_initialization(monkeypatch):
     initialize = layout_detector.LayoutRuntime._initialize
 
     def guarded(runtime):
-        if runtime._factory is layout_detector._TransformersBackend:
+        if runtime._factory is layout_detector._OnnxBackend:
             pytest.fail("Offline tests must inject a layout runtime/backend before model resolution")
         return initialize(runtime)
 

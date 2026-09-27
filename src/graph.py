@@ -23,7 +23,7 @@ from src.models import DEFAULT_MODEL
 from src.export import DEFAULT_FORMATS, FORMATS, export_result
 from src.parse import parse_document
 from src.preprocess import inspect_source as preprocess
-from src.layout import ParseResult
+from src.layout import ParseResult, ReconcilePolicy
 from src.diagnostics import PageDiagnostic, layout_failure_summary
 from src.output_names import reserve_basename
 
@@ -33,6 +33,7 @@ from src.output_names import reserve_basename
 class GraphState(TypedDict, total=False):
     """Run inputs, parser diagnostics, usage ledger, and selected artifact paths."""
     layout_initialization_failure: PageDiagnostic | None
+    reconcile_policy: ReconcilePolicy | None
     image_path: str
     start_page: int
     end_page: int | None
@@ -105,6 +106,7 @@ def node_parse(state: GraphState) -> dict:
             detailed_layout=state.get("detailed_layout", False),
             save_json=False,
             layout_initialization_failure=state.get("layout_initialization_failure"),
+            reconcile_policy=state.get("reconcile_policy"),
         )
         filtered_pages = ", ".join(str(page) for page in result.content_filtered_pages)
         parse_error = (
@@ -112,7 +114,7 @@ def node_parse(state: GraphState) -> dict:
             if result.content_filtered_pages
             else None
         )
-        other_failures = [d for d in result.page_diagnostics if d.outcome not in ("parsed", "content_filtered")]
+        other_failures = [d for d in result.page_diagnostics if d.application_error or d.outcome not in ("parsed", "content_filtered")]
         if other_failures:
             summary = "; ".join(layout_failure_summary(d) if d.layout_stage else f"Page {d.page}: {d.outcome}"
                                 for d in other_failures)
@@ -166,7 +168,8 @@ def run_graph(image_path: str, *, start_page: int = 1, end_page: int | None = No
               output_dir: str | Path | None = None,
               formats: set[str] | None = None, view: str = "full",
               original_filename: str | None = None,
-              layout_initialization_failure: PageDiagnostic | None = None) -> dict:
+              layout_initialization_failure: PageDiagnostic | None = None,
+              reconcile_policy: ReconcilePolicy | None = None) -> dict:
     """Run extraction and return final state with diagnostics and artifact paths.
 
     Page bounds are 1-based/inclusive. formats=None selects the UI artifact set;
@@ -177,6 +180,8 @@ def run_graph(image_path: str, *, start_page: int = 1, end_page: int | None = No
     """
     if model != DEFAULT_MODEL:
         raise ValueError("Unsupported model")
+    if reconcile_policy is not None:
+        reconcile_policy.check_active()
     if formats is not None and (not formats or not formats <= FORMATS):
         raise ValueError("Unsupported output formats")
     if view not in {"full", "clean"}:
@@ -186,6 +191,7 @@ def run_graph(image_path: str, *, start_page: int = 1, end_page: int | None = No
     app = build_graph()
     initial_state: GraphState = {
         "layout_initialization_failure": layout_initialization_failure,
+        "reconcile_policy": reconcile_policy,
         "image_path": image_path,
         "original_filename": original_filename or Path(image_path).name,
         "started_at": datetime.now(UTC).isoformat(),

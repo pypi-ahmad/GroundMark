@@ -12,7 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 MODULES = (
     "__init__ annotate chat cli config diagnostics export figures graph layout llm "
-    "markdown models output_names parse preprocess prompts usage layout_detector layout_reconcile ui/__init__ ui/app ui/clipboard"
+    "markdown models output_names parse preprocess prompts usage layout_detector layout_polygons layout_reconcile ui/__init__ ui/app ui/clipboard"
 ).split()
 PROMPTS = ("chat-answer", "chat-verify", "parse-page-structured", "parse-page")
 
@@ -26,8 +26,9 @@ def _manifest(*, wheel: bool) -> dict[str, Path | None]:
         prefix = f"groundmark-{version}.dist-info"
         files.update({f"{prefix}/{name}": None for name in ("METADATA", "WHEEL", "entry_points.txt", "RECORD")})
         files[f"{prefix}/licenses/LICENSE"] = ROOT / "LICENSE"
+        files[f"{prefix}/licenses/LICENSE-PADDLEX"] = ROOT / "LICENSE-PADDLEX"
         return files
-    files.update({name: ROOT / name for name in (".gitignore", "LICENSE", "README.md", "pyproject.toml")})
+    files.update({name: ROOT / name for name in (".gitignore", "LICENSE", "LICENSE-PADDLEX", "README.md", "pyproject.toml")})
     files["PKG-INFO"] = None
     return {f"groundmark-{version}/{name}": path for name, path in files.items()}
 

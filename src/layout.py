@@ -16,7 +16,7 @@ import math
 from typing import Literal
 
 from pydantic import BaseModel, ConfigDict, Field, field_validator, model_validator
-from src.diagnostics import PageDiagnostic
+from src.diagnostics import PageDiagnostic, LayoutFailureStage
 from src.config import max_table_cells
 
 # OpenAI's structured-outputs strict mode (with_structured_output(..., method="json_schema"))
@@ -215,6 +215,8 @@ class NormalizedLayoutRegion(_LayoutMetadata):
     order: int | None = Field(ge=0, lt=300, strict=True)
     box_clipped: bool
     polygon_clipped: bool
+    contour_status: Literal["valid", "missing", "unusable"] = "valid"
+    contour_source: Literal["mask", "aabb_fallback", "legacy_unknown"] = "legacy_unknown"
 
     @model_validator(mode="after")
     def validate_geometry(self):
@@ -230,8 +232,13 @@ class NormalizedLayoutRegion(_LayoutMetadata):
             raise ValueError("Invalid normalized layout geometry")
         if not (self.bbox.xyxy[0] < self.bbox.xyxy[2] and self.bbox.xyxy[1] < self.bbox.xyxy[3]):
             raise ValueError("Degenerate normalized box")
-        _validate_polygon(_deduplicate(self.polygon_px))
-        _validate_polygon(list(self.polygon))
+        if self.contour_source == "aabb_fallback" and self.contour_status == "valid":
+            raise ValueError("AABB fallback is not a mask contour")
+        if self.contour_status == "valid":
+            _validate_polygon(_deduplicate(self.polygon_px))
+            _validate_polygon(list(self.polygon))
+        elif self.polygon or (self.contour_status == "missing" and self.polygon_px):
+            raise ValueError("Unavailable contour cannot supply normalized geometry")
         return self
 
 
@@ -244,8 +251,9 @@ class NormalizedLayoutPage(_LayoutMetadata):
     revision: str
     engine: str
     device: Literal["cpu", "cuda"]
-    fallback_reason: Literal["cuda_unavailable", "cuda_probe_failed"] | None
+    fallback_reason: Literal["cuda_unavailable", "cuda_probe_failed", "cuda_execution_failed"] | None
     order_base: Literal[0]
+    execution_failures: tuple[LayoutFailureStage, ...] = ()
 
     @model_validator(mode="after")
     def validate_regions(self):
@@ -263,14 +271,23 @@ class NormalizedLayoutPage(_LayoutMetadata):
 class ReconcilePolicy(_LayoutMetadata):
     min_score: float = Field(default=0.80, ge=0, le=1)
     min_coverage: float = Field(default=0.90, gt=0, le=1)
-    max_center_distance: float = Field(default=0.05, ge=0, le=1)
-    min_iou_margin: float = Field(default=0.10, ge=0, le=1)
+    min_partial_coverage: float = Field(default=0.25, gt=0, le=1)
+    # Historical gates are loadable, but not used by v3-authoritative-v1.
+    max_center_distance: float | None = Field(default=None, ge=0, le=1)
+    min_iou_margin: float | None = Field(default=None, ge=0, le=1)
     significant_coverage: float = Field(default=0.80, gt=0, le=1)
+
+    def check_active(self):
+        if self.max_center_distance is not None or self.min_iou_margin is not None:
+            raise ValueError("Distance and margin gates are legacy-only policy settings")
+        if self.min_partial_coverage > self.min_coverage:
+            raise ValueError("Partial coverage cannot exceed containment coverage")
 
 
 MatchReason = Literal["split", "merge", "many_to_many", "low_score", "weak_overlap", "distant_centers",
                       "not_mutual_best", "ambiguous", "role_disagreement", "label_disagreement",
-                      "missing_order", "missing_box", "invalid_box", "no_overlap"]
+                      "missing_order", "missing_box", "invalid_box", "no_overlap", "assignment_conflict"]
+ReviewFlag = Literal["split", "merge", "many_to_many", "missing_order", "label_alias", "contour_fallback"]
 
 
 class MatchEvidence(_LayoutMetadata):
@@ -282,6 +299,9 @@ class MatchEvidence(_LayoutMetadata):
     center_distance: float = Field(ge=0, le=1)
     score: float = Field(ge=0, le=1)
     reasons: tuple[MatchReason, ...] = ()
+    review_flags: tuple[ReviewFlag, ...] = ()
+    geometry: Literal["polygon", "aabb"] = "aabb"
+    geometry_fallback_reason: Literal["missing", "unusable"] | None = None
 
 
 class BlockDecision(_LayoutMetadata):
@@ -289,10 +309,11 @@ class BlockDecision(_LayoutMetadata):
     output_index: int = Field(ge=0, strict=True)
     region_index: int | None = Field(ge=0, strict=True)
     reasons: tuple[MatchReason, ...]
+    review_flags: tuple[ReviewFlag, ...] = ()
 
 
 class ReconciliationDetails(_LayoutMetadata):
-    policy_version: Literal["conservative-v1", "conservative-v2"] = "conservative-v1"
+    policy_version: Literal["conservative-v1", "conservative-v2", "v3-authoritative-v1"] = "conservative-v1"
     policy: ReconcilePolicy
     candidates: tuple[MatchEvidence, ...]
     decisions: tuple[BlockDecision, ...]
@@ -303,9 +324,17 @@ class ReconciliationMetadata(ReconciliationDetails):
     layout: NormalizedLayoutPage
 
 
+class GuideContour(_LayoutMetadata):
+    region_index: int = Field(ge=0, strict=True)
+    status: Literal["full", "simplified", "omitted"]
+    reason: Literal["redundant_box", "budget_or_precision", "missing", "unusable"] | None = None
+    max_deviation_px: float = Field(default=0, ge=0, le=1)
+
+
 class LayoutPageArtifact(_LayoutMetadata):
     layout: NormalizedLayoutPage
     reconciliation: ReconciliationDetails | None = None
+    guide_contours: tuple[GuideContour, ...] = ()
 
     def check_parsed_page(self, parsed: ParsePage | None) -> None:
         """Check at the page boundary as well as when loading an artifact."""
@@ -319,9 +348,17 @@ class LayoutPageArtifact(_LayoutMetadata):
                 if decision.region_index is not None:
                     if parsed.blocks[decision.output_index].bbox != self.layout.regions[decision.region_index].bbox:
                         raise ValueError("Reconciled geometry disagrees with artifact")
+                    if self.reconciliation.policy_version == "v3-authoritative-v1":
+                        from src.layout_reconcile import CLASS_COMPATIBILITY
+                        label = self.layout.regions[decision.region_index].canonical_label
+                        if parsed.blocks[decision.output_index].type not in CLASS_COMPATIBILITY[label]:
+                            raise ValueError("Reconciled class is incompatible with Sol type")
 
     @model_validator(mode="after")
     def validate_references(self):
+        if self.guide_contours and (
+                sorted(c.region_index for c in self.guide_contours) != list(range(len(self.layout.regions)))):
+            raise ValueError("Invalid guide contour references")
         details = self.reconciliation
         if details is None:
             return self
@@ -337,11 +374,31 @@ class LayoutPageArtifact(_LayoutMetadata):
         pairs = {(c.block_index, c.region_index): c for c in details.candidates}
         if len(pairs) != len(details.candidates) or any(b >= count or r not in regions for b, r in pairs):
             raise ValueError("Invalid candidate references")
+        if details.policy_version == "v3-authoritative-v1":
+            details.policy.check_active()
+            review_only = {"split", "merge", "many_to_many", "missing_order"}
+            for item in (*details.candidates, *details.decisions):
+                if review_only.intersection(item.reasons):
+                    raise ValueError("Informational flags cannot be rejection reasons")
+            for candidate in details.candidates:
+                region = self.layout.regions[candidate.region_index]
+                expected = "polygon" if region.contour_status == "valid" else "aabb"
+                reason = None if expected == "polygon" else region.contour_status
+                if (candidate.geometry, candidate.geometry_fallback_reason, candidate.score) != (expected, reason, region.score):
+                    raise ValueError("Candidate geometry or score disagrees with region")
         for decision in details.decisions:
             if decision.region_index is not None:
                 candidate = pairs.get((decision.original_index, decision.region_index))
                 if candidate is None or candidate.reasons:
                     raise ValueError("Accepted match lacks eligible evidence")
+                if details.policy_version == "v3-authoritative-v1" and (
+                        candidate.score < details.policy.min_score
+                        or max(candidate.sol_coverage, candidate.region_coverage) < details.policy.min_coverage
+                        or min(candidate.sol_coverage, candidate.region_coverage) < details.policy.min_partial_coverage):
+                    raise ValueError("Accepted evidence fails eligibility thresholds")
+                if details.policy_version == "v3-authoritative-v1" and (
+                        decision.reasons or decision.review_flags != candidate.review_flags):
+                    raise ValueError("Accepted decision disagrees with evidence")
         return self
 
 

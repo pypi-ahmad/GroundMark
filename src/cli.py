@@ -96,6 +96,10 @@ def _print_progress(event: dict) -> None:
             text += f"; page {event['page']}: {event['outcome']}"
             if event.get("layout_fallback"):
                 text += "; V3 unavailable for this page; using Sol blocks"
+            if event.get("application_error"):
+                text += "; reconciliation application defect; original Sol content retained"
+            if event.get("fallback_reason") == "cuda_execution_failed":
+                text += "; CUDA execution failed; CPU recovery attempted"
             if event.get("device") in {"cpu", "cuda"}:
                 text += f"; device={event['device']}"
             for field in ("layout_seconds", "page_seconds"):
@@ -103,8 +107,16 @@ def _print_progress(event: dict) -> None:
                     text += f"; {field}={event[field]:.3f}"
             if event.get("matches") is not None:
                 text += f"; matches={event['matches']}; review_blocks={event['review_blocks']}"
+                for field in ("unmatched_blocks", "unmatched_regions", "accepted_split", "accepted_merge",
+                              "accepted_many_to_many", "accepted_contour_fallback"):
+                    if event.get(field) is not None:
+                        text += f"; {field}={event[field]}"
             else:
                 text += "; reconciliation=unavailable"
+            if event.get("model_id"):
+                text += f"; {event['model_provenance']}={event['model_id']}@{event['revision']}"
+            if event.get("layout_stage"):
+                text += f"; layout_stage={event['layout_stage']}; reason={event.get('layout_code') or event.get('application_error')}"
         print(text, file=sys.stderr)
 
 

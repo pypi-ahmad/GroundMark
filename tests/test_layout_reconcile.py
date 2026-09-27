@@ -14,7 +14,8 @@ from src.figures import extract_figures
 from src.layout import BBox, BlockStructure, ListItem, ParseBlock, ParsePage, ParseResult, TableCell
 from src.layout_detector import LABELS, LayoutPageResult, LayoutRegion
 from src.layout_reconcile import (
-    LayoutConversionError, ReconcilePolicy, ROLE_HINTS, convert_layout, reconcile_page,
+    LayoutConversionError, ReconciliationInvariantError, ReconcilePolicy, ROLE_HINTS,
+    CLASS_COMPATIBILITY, convert_layout, reconcile_page,
 )
 from src.markdown import parse_to_html, parse_to_markdown
 
@@ -98,6 +99,11 @@ def test_valid_polygon_shapes_and_redundant_closure(points):
 ])
 def test_invalid_region_fails_closed_with_safe_location(changes, code):
     source = runtime(region(), replace(region(), **changes))
+    if code == "invalid_polygon":
+        converted = convert_layout(source).regions[1]
+        assert converted.contour_status == ("missing" if not changes["polygon_px"] else "unusable")
+        assert converted.polygon == ()
+        return
     with pytest.raises(LayoutConversionError) as exc:
         convert_layout(source)
     assert (exc.value.code, exc.value.page, exc.value.region_index) == (code, 1, 1)
@@ -107,8 +113,9 @@ def test_invalid_region_fails_closed_with_safe_location(changes, code):
 def test_disconnected_clipped_polygon_is_rejected_not_fabricated():
     # Connected above the viewport, but two separate legs inside it.
     points = ((10, -20), (90, -20), (90, 50), (70, 50), (70, -10), (30, -10), (30, 50), (10, 50))
-    with pytest.raises(LayoutConversionError, match="invalid_polygon"):
-        convert_layout(runtime(region((10, -20, 90, 50), polygon=points)))
+    converted = convert_layout(runtime(region((10, -20, 90, 50), polygon=points))).regions[0]
+    assert converted.contour_status == "unusable"
+    assert converted.polygon_px == points and converted.polygon == ()
 
 
 @pytest.mark.parametrize("changes,code", [
@@ -122,7 +129,7 @@ def test_invalid_page_metadata(changes, code):
 
 def test_page_identity_and_dimensions_must_match():
     for layout in (runtime(page=2), runtime(width=200), runtime(height=200)):
-        with pytest.raises(LayoutConversionError, match="page_mismatch"):
+        with pytest.raises(ReconciliationInvariantError, match="Page dimensions"):
             reconcile_page(page(), convert_layout(layout))
 
 
@@ -161,7 +168,7 @@ def test_missing_and_duplicate_ranks_keep_stable_positions():
     blocks = [block(tuple(v / 100 for v in box), text=str(i)) for i, box in enumerate(boxes)]
     result = reconcile(blocks, [region(box, order=rank) for box, rank in zip(boxes, (142, None, 142))])
     assert [b.text for b in result.page.blocks] == ["0", "1", "2"]
-    assert result.metadata.decisions[1].reasons == ("missing_order",)
+    assert result.metadata.decisions[1].review_flags == ("missing_order",)
     assert [r.order for r in result.metadata.layout.regions] == [142, None, 142]
 
 
@@ -171,77 +178,69 @@ def test_missing_and_duplicate_ranks_keep_stable_positions():
     ([block(), block()], [region(), region()], "many_to_many"),
     ([block()], [region(), region((20, 20, 30, 30))], "split"),
 ])
-def test_split_merge_nested_and_many_to_many_never_snap(blocks, regions, reason):
+def test_split_merge_nested_and_many_to_many_assign_once(blocks, regions, reason):
     result = reconcile(blocks, regions)
-    assert result.page == page(*blocks)
-    assert all(d.region_index is None and reason in d.reasons for d in result.metadata.decisions)
-    assert result.metadata.unmatched_region_indices == tuple(range(len(regions)))
+    matched = [d for d in result.metadata.decisions if d.region_index is not None]
+    assert len(matched) == (2 if reason == "many_to_many" else 1)
+    assert all(reason in d.review_flags and not d.reasons for d in matched)
+    assert result.metadata.unmatched_region_indices == tuple(
+        i for i in range(len(regions)) if i not in {d.region_index for d in matched})
+    for decision in result.metadata.decisions:
+        before, after = blocks[decision.original_index], result.page.blocks[decision.output_index]
+        assert before.model_dump(exclude={"bbox"}) == after.model_dump(exclude={"bbox"})
+        if decision.region_index is None:
+            assert before == after
 
 
-def test_equal_scores_use_geometry_but_exact_geometric_ties_are_reviewed():
+def test_geometry_ranking_and_stable_ties_ignore_confidence_after_eligibility():
     result = reconcile([block()], [region((49, 10, 89, 50)), region((11, 10, 51, 50))])
     assert result.metadata.decisions[0].region_index == 1
-    tied = reconcile([block()], [region(), region()])
-    assert tied.metadata.decisions[0].region_index is None
-    assert [c.region_index for c in tied.metadata.candidates] == [0, 1]
-    assert "ambiguous" in tied.metadata.candidates[0].reasons
-    assert tied == reconcile([block()], [region(), region()])
+    regions = [region(score=.8), region(score=.99)]
+    tied = reconcile([block()], regions)
+    assert tied.metadata.decisions[0].region_index == 0
+    assert tied.metadata.candidates[1].reasons == ("assignment_conflict",)
+    assert tied == reconcile([block()], regions)
 
 
-def test_weak_overlap_low_score_and_distance_are_reported():
+def test_weak_overlap_low_score_and_legacy_parameters():
     for layout, reason in ((region((40, 10, 80, 50)), "weak_overlap"),
                            (region(score=.79), "low_score")):
         result = reconcile([block()], [layout])
         assert result.page == page(block())
         assert reason in result.metadata.decisions[0].reasons
-    result = reconcile([block()], [region((11, 10, 51, 50))], policy=ReconcilePolicy(max_center_distance=0))
-    assert "distant_centers" in result.metadata.decisions[0].reasons
+    for policy in (ReconcilePolicy(max_center_distance=0), ReconcilePolicy(min_iou_margin=0)):
+        with pytest.raises(ValueError, match="legacy"):
+            reconcile([block()], [region()], policy=policy)
 
 
-def test_initial_threshold_boundaries_and_policy_evidence():
-    result = reconcile([block((0, 0, 1, 1))], [region((0, 0, 90, 100), score=.80)])
-    assert result.metadata.decisions[0].region_index == 0
-    assert result.metadata.candidates[0].sol_coverage == .9
-    assert result.metadata.policy.min_iou_margin == .1
-    assert result.metadata.policy_version == "conservative-v2"
-    for box in ((0, 0, 89.99, 100), (0, 0, 90, 100)):
-        low_score = .7999 if box[2] == 90 else .8
-        assert reconcile([block((0, 0, 1, 1))], [region(box, score=low_score)]).metadata.decisions[0].region_index is None
+def test_provisional_asymmetric_threshold_boundaries_and_configuration():
+    for blocks, regions in (
+        ([block((0, 0, 1, 1))], [region((0, 0, 25, 100), score=.8)]),
+        ([block((0, 0, .25, 1))], [region((0, 0, 100, 100), score=.8)]),
+    ):
+        result = reconcile(blocks, regions)
+        assert result.metadata.decisions[0].region_index == 0
+        evidence = result.metadata.candidates[0]
+        assert sorted((evidence.sol_coverage, evidence.region_coverage)) == [.25, 1]
+        assert result.metadata.policy_version == "v3-authoritative-v1"
+        strict = reconcile(blocks, regions, policy=ReconcilePolicy(min_partial_coverage=.9))
+        assert strict.metadata.decisions[0].reasons == ("weak_overlap",)
+    for box, score in (((0, 0, 24.99, 100), .8), ((0, 0, 25, 100), .7999)):
+        assert reconcile([block((0, 0, 1, 1))], [region(box, score=score)]).metadata.decisions[0].region_index is None
     with pytest.raises(ValueError):
         ReconcilePolicy(min_score=float("nan"))
 
 
-def test_near_ties_remain_ambiguous_even_if_topology_gate_is_tuned():
-    result = reconcile([block()], [region((11, 10, 51, 50)), region((12, 10, 52, 50))],
-                       policy=ReconcilePolicy(significant_coverage=1))
-    assert result.metadata.decisions[0].region_index is None
-    assert "ambiguous" in result.metadata.decisions[0].reasons
-
-
-def test_iou_margin_boundary_and_zero_margin_does_not_accept_exact_ties():
-    regions = [region(), region((15, 10, 55, 50))]
-    initial = reconcile([block()], regions, policy=ReconcilePolicy(significant_coverage=1))
-    first, second = initial.metadata.candidates
-    margin = first.iou - second.iou
-    assert reconcile([block()], regions, policy=ReconcilePolicy(
-        significant_coverage=1, min_iou_margin=margin)).metadata.decisions[0].region_index == 0
-    result = reconcile([block()], regions, policy=ReconcilePolicy(
-        significant_coverage=1, min_iou_margin=margin + 1e-9))
-    assert "ambiguous" in result.metadata.decisions[0].reasons
-    tied = reconcile([block()], [region((11, 10, 51, 50)), region((11, 10, 51, 50))],
-                     policy=ReconcilePolicy(significant_coverage=1, min_iou_margin=0))
-    assert tied.metadata.decisions[0].region_index is None
-    assert "ambiguous" in tied.metadata.decisions[0].reasons
-
-
-def test_mutual_best_prevents_two_blocks_claiming_one_region_even_with_tuned_policy():
+def test_greedy_eligible_alternatives_and_merge_leftovers():
     blocks = [block(), block((.14, .1, .54, .5), text="Other")]
-    result = reconcile(blocks, [region((11, 10, 51, 50))],
-                       policy=ReconcilePolicy(significant_coverage=1, min_iou_margin=0))
-    assert result.metadata.decisions[0].region_index == 0
-    assert result.metadata.decisions[1].region_index is None
-    assert "not_mutual_best" in result.metadata.decisions[1].reasons
-    assert result.page.blocks[1] == blocks[1]
+    regions = [region((11, 10, 51, 50)), region((12, 10, 52, 50))]
+    result = reconcile(blocks, regions)
+    assert [d.region_index for d in result.metadata.decisions] == [0, 1]
+    assert all("many_to_many" in d.review_flags for d in result.metadata.decisions)
+    merged = reconcile(blocks, regions[:1])
+    assert [d.region_index for d in merged.metadata.decisions] == [0, None]
+    assert merged.metadata.decisions[1].reasons == ("assignment_conflict",)
+    assert merged.page.blocks[1] == blocks[1]
 
 
 @pytest.mark.parametrize("box,reason", [
@@ -289,13 +288,13 @@ def test_all_role_hints_preserve_raw_labels_and_every_sol_type():
             assert result.page.blocks[0].type == kind
             assert result.metadata.layout.regions[0].raw_label == "raw alias"
             assert result.metadata.layout.regions[0].role_hint == ROLE_HINTS[label]
-            assert "label_disagreement" in result.metadata.decisions[0].reasons
+            assert "label_alias" in result.metadata.decisions[0].review_flags
             assert result.page.blocks[0] == source
-            assert result.metadata.decisions[0].region_index is None
+            assert result.metadata.decisions[0].region_index == (0 if kind in CLASS_COMPATIBILITY[label] else None)
 
 
-@pytest.mark.parametrize("kind,label", [("table", "text"), ("heading", "text"),
-                                       ("list", "text"), ("text", "header"), ("figure", "table")])
+@pytest.mark.parametrize("kind,label", [("table", "text"), ("figure", "text"),
+                                       ("page_footer", "header"), ("table", "header"), ("figure", "table")])
 def test_role_mismatch_keeps_sol_box_and_position_even_with_strong_overlap(kind, label):
     source = block(kind=kind)
     other = block((.6, .6, .9, .9), text="Other")
@@ -396,3 +395,113 @@ from src import layout_detector
 assert layout_detector._singleton is None
 """
     subprocess.run([sys.executable, "-B", "-c", code], check=True, capture_output=True, text=True)
+
+
+@pytest.mark.parametrize("reverse", [False, True])
+def test_concave_polygon_disconnected_intersection_has_analytic_area(reverse):
+    # U-shaped region: a bottom-half box intersects two disjoint legs.
+    points = ((0, 0), (100, 0), (100, 100), (75, 100),
+              (75, 25), (25, 25), (25, 100), (0, 100))
+    if reverse:
+        points = points[::-1]
+    result = reconcile([block((0, .5, 1, 1))], [region((0, 0, 100, 100), polygon=points)])
+    evidence = result.metadata.candidates[0]
+    assert evidence.geometry == "polygon" and evidence.geometry_fallback_reason is None
+    assert evidence.sol_coverage == pytest.approx(.5)
+    assert evidence.region_coverage == pytest.approx(.4)
+    assert evidence.iou == pytest.approx(2 / 7)
+    assert result.metadata.decisions[0].region_index is None
+    # Inside the U's void: AABBs overlap, but the valid contour does not.
+    void = reconcile([block((.3, .5, .7, .9))], [region((0, 0, 100, 100), polygon=points)])
+    assert void.metadata.candidates == ()
+    assert void.metadata.decisions[0].reasons == ("no_overlap",)
+
+
+@pytest.mark.parametrize("points,status", [
+    ((), "missing"), (((10, 10), (50, 50), (10, 50), (50, 10)), "unusable"),
+    (((10, 10), (50, 10), (float("nan"), 50)), "unusable"),
+])
+def test_unavailable_contour_uses_explicit_aabb_evidence_and_guide_omission(points, status):
+    from src.layout_reconcile import project_layout_guide
+    result = reconcile([block()], [region(polygon=points)])
+    evidence = result.metadata.candidates[0]
+    assert evidence.geometry == "aabb" and evidence.geometry_fallback_reason == status
+    assert result.metadata.decisions[0].review_flags == ("contour_fallback",)
+    assert result.metadata.decisions[0].region_index == 0
+    guide, records = project_layout_guide(result.metadata.layout)
+    assert records[0].status == "omitted" and records[0].reason == status
+    assert "polygon_points" not in json.loads(guide)["regions"][0]
+    json.dumps(result.metadata.model_dump(mode="json"), allow_nan=False)
+
+
+def test_prompt_projection_never_changes_local_overlap_evidence(monkeypatch):
+    from src.layout_reconcile import project_layout_guide
+    points = ((10, 10), (50, 10), (50, 50), (30, 30), (10, 50))
+    layout = convert_layout(runtime(region(polygon=points)))
+    before = reconcile_page(page(block()), layout)
+    monkeypatch.setattr("src.layout_reconcile.GIVEN_LAYOUT_MAX_BYTES", 220)
+    guide, records = project_layout_guide(layout)
+    assert records[0].status == "omitted"
+    assert len(guide.encode()) <= 220
+    assert reconcile_page(page(block()), layout) == before
+    assert layout.regions[0].polygon_px == points
+
+
+@pytest.mark.parametrize("version", ["conservative-v1", "conservative-v2"])
+def test_actual_legacy_artifact_fields_load_without_new_policy_reinterpretation(version):
+    from src.layout import LayoutPageArtifact, ReconciliationDetails
+    result = reconcile([block()], [region()])
+    details = result.metadata.model_dump(exclude={"layout"})
+    details["policy_version"] = version
+    details["policy"].pop("min_partial_coverage")
+    details["policy"].update(max_center_distance=.05, min_iou_margin=.1)
+    for candidate in details["candidates"]:
+        for name in ("review_flags", "geometry", "geometry_fallback_reason"):
+            candidate.pop(name)
+    for decision in details["decisions"]:
+        decision.pop("review_flags")
+    artifact = LayoutPageArtifact(layout=result.metadata.layout,
+                                  reconciliation=ReconciliationDetails.model_validate(details))
+    artifact.check_parsed_page(result.page)
+    assert artifact.reconciliation.policy_version == version
+    assert artifact.reconciliation.candidates[0].geometry == "aabb"
+
+
+def test_accepted_review_flags_round_trip_and_tampered_evidence_is_rejected():
+    from src.layout import LayoutPageArtifact, ReconciliationDetails
+    result = reconcile([block((.1, .1, .9, .5))],
+                       [region(), region((50, 10, 90, 50))])
+    artifact = LayoutPageArtifact(layout=result.metadata.layout,
+        reconciliation=ReconciliationDetails.model_validate(result.metadata.model_dump(exclude={"layout"})))
+    assert LayoutPageArtifact.model_validate_json(artifact.model_dump_json()) == artifact
+    for change in ("reasons", "score", "sol_coverage", "geometry"):
+        data = artifact.model_dump()
+        data["reconciliation"]["candidates"][0][change] = {
+            "reasons": ("split",), "score": .1, "sol_coverage": .1, "geometry": "aabb"}[change]
+        with pytest.raises(ValueError):
+            LayoutPageArtifact.model_validate(data)
+
+
+def test_class_compatibility_covers_all_25_classes_and_both_profile_types():
+    from typing import get_args
+    from src.layout import LegacyBlock
+    expected_groups = {
+        "text content abstract algorithm reference_content vertical_text":
+            "title heading text list key_value marginalia other page_header page_footer",
+        "doc_title paragraph_title": "title heading text other",
+        "display_formula inline_formula formula_number number": "text key_value other",
+        "figure_title reference": "text heading other",
+        "aside_text footnote vision_footnote": "marginalia text list key_value other",
+        "header": "page_header text marginalia key_value other",
+        "footer": "page_footer text marginalia key_value other",
+        "chart image header_image footer_image seal": "figure",
+        "table": "table",
+    }
+    expected = {label: set(kinds.split()) for labels, kinds in expected_groups.items() for label in labels.split()}
+    assert set(expected) == set(LABELS)
+    for schema in (LegacyBlock, ParseBlock):
+        for kind in get_args(schema.model_fields["type"].annotation):
+            for label in LABELS:
+                result = reconcile([block(kind=kind)], [region(label=label)])
+                assert result.metadata.decisions[0].region_index == (0 if kind in expected[label] else None)
+                assert result.page.blocks[0].type == kind
