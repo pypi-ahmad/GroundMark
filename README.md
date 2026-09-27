@@ -77,7 +77,7 @@ Without a format flag, the command writes Markdown and any figure images it refe
 | `--markdown` | Markdown and figure images |
 | `--html` | Self-contained HTML with embedded figures |
 | `--json` | Full extraction, grounding, and page diagnostics |
-| `--annotated-pdf` | PDF with block boxes |
+| `--annotated-pdf` | PDF with selected V3 contours, Sol boxes, and detector-only overlays |
 | `--annotated-images` | Annotated page PNGs |
 | `--markdown-zip` | ZIP containing the named Markdown file and figures |
 | `--all` | All six formats |
@@ -103,11 +103,11 @@ uv run --extra layout groundmark
 uv run --extra layout groundmark invoice.pdf output --all
 ```
 
-Windows users can also run `run.cmd`, which forwards launcher arguments. For development, run `uv run python -m pytest tests`. The [Runbook](docs/RUNBOOK.md) covers artifacts, builds, upgrades, and troubleshooting.
+Windows users can also run `run.cmd`, which includes the layout extra and forwards launcher arguments. For development, run `uv run python -m pytest tests`. The [Runbook](docs/RUNBOOK.md) covers artifacts, builds, upgrades, and troubleshooting.
 
-GroundMark attempts local PP-DocLayoutV3 analysis before each Sol extraction request. The `layout` extra supplies the runtime dependencies; base imports and offline tests still work without them. First use downloads the pinned official model into the user cache unless an explicit local model directory is configured. Preparation tries CUDA inference, then verifies CPU fallback if needed. If neither works, or dependencies are absent, extraction continues with Sol blocks and records a safe layout-fallback diagnostic. See [runtime configuration and verification](docs/LAYOUT-V3.md).
+GroundMark attempts local PP-DocLayoutV3 analysis before each Sol extraction request. The `layout` extra supplies the runtime dependencies; base imports and offline tests still work without them. First use downloads the pinned official model into the user cache unless an explicit local model directory is configured. The pinned `PaddlePaddle/PP-DocLayoutV3_onnx` export supplies boxes, native order, and decoded mask contours. Preparation verifies CUDA inference, with CPU fallback. A later CUDA execution failure gets one CPU retry; successful recovery retains CPU for later pages. If neither works, or dependencies are absent, extraction continues with Sol blocks and records a safe layout-fallback diagnostic. See [runtime configuration and verification](docs/LAYOUT-V3.md).
 
-In Streamlit, the first valid Parse click shows “Preparing PP-DocLayoutV3…” and then the actual GPU (CUDA) or CPU device. Uploads and previews do not load the model. Preparation failure shows a warning and continues with Sol; another Parse click retries V3. The process keeps one ready model across reruns and uploads. Tab/view changes do not rerun inference. The Detailed layout checkbox remains a separate, experimental Sol structure option.
+In Streamlit, the first valid Parse click shows “Preparing PP-DocLayoutV3…” and then the actual GPU (CUDA) or CPU device. Uploads and previews do not load the model. Preparation failure shows a warning and continues with Sol; another Parse click retries V3. Failed CPU recovery after a page CUDA failure is latched until process restart. The process keeps one ready model across reruns and uploads. Tab/view changes do not rerun inference. The Detailed layout checkbox remains a separate, experimental Sol structure option.
 
 CLI extraction prints readiness, reuse, timings, and each page's outcome to stderr. The UI's Layout summary shows match/review counts; JSON `layout_metadata` retains full evidence. Review counts can overlap accepted matches and do not measure accuracy. Configure `GROUNDMARK_LAYOUT_DEVICE=cpu` for explicit CPU use or leave `auto` for verified CUDA with CPU fallback. `GROUNDMARK_LAYOUT_MODEL_DIR` selects existing pinned files; otherwise the standard Hugging Face cache is used. Restart the process after configuration changes.
 
@@ -115,14 +115,14 @@ CLI extraction prints readiness, reuse, timings, and each page's outcome to stde
 
 - Input preview shows the selected source pages before processing.
 - Markdown has rendered and raw views, plus copy and download controls.
-- Annotated shows grounded block overlays and provides a PDF download.
+- Annotated shows matched V3 contours, unmatched Sol boxes, and detector-only regions, with a PDF download.
 - HTML shows the self-contained rendered output and provides a download.
 - JSON shows the internal layout data with copy and download controls.
 - Chat answers document questions with `gpt-6-luna` at medium reasoning, using short responses and inline page references.
 
 UI artifacts use a per-session temporary directory, cleaned when the upload is replaced or removed. Browser disconnects do not guarantee immediate cleanup or request cancellation; see the [runbook](docs/RUNBOOK.md). CLI extraction writes selected artifacts to the supplied output directory.
 
-Markdown and HTML open in Clean view. Full also shows running headers and footers when the model has classified them. Both views keep unclassified content. JSON and chat include all extracted content from successful pages, while annotations show blocks with valid boxes. Tables without identified headers keep their first row as data. Figures with valid boxes appear as crops in the previews and HTML. **Download Markdown with images** packages the Markdown and crops in a ZIP.
+Markdown and HTML open in Clean view. Full also shows running headers and footers when Sol has classified them. Both views keep unclassified content. JSON and chat include all extracted content from successful pages; annotations also show unmatched detector regions for inspection. Tables without identified headers keep their first row as data. Figures with valid boxes appear as crops in the previews and HTML. **Download Markdown with images** packages the Markdown and crops in a ZIP.
 
 Detailed layout (experimental) adds heading levels, nested lists, checkbox states, merged cells, and page-header/footer roles. It is off by default. In a five-page comparison before V3 integration, mean word-token F1 rose from 95.67% to 95.99%, but source review found new transcription errors. Those results do not measure the V3 path. See [Layout evaluation](docs/LAYOUT-EVALUATION.md) for the results and limits.
 
@@ -132,9 +132,9 @@ LangGraph runs a fixed preprocess, parse, and finish sequence. It has no automat
 
 Saved JSON records `schema_version: 2`, the extraction profile, and separately validated `layout_metadata` with V3 regions, provenance, and reconciliation evidence. Older JSON without that field still loads. Neither strict Sol response schema includes it. The GUI graph saves the full Markdown and HTML; UI downloads use the selected view. CLI exports use the view chosen with `--view`.
 
-GroundMark renders selected pages with the existing 200-DPI/1,600-pixel profile. V3 analyzes the same page image sent to `gpt-6-sol`, and both parsing prompts receive bounded region hints. The image remains the transcription source. After strict response validation, conservative one-to-one reconciliation applies accepted V3 boxes and order without changing Sol text, tables, or structure. Unmatched and ambiguous blocks stay intact. All exports, figure crops, annotations, and chat evidence use the reconciled pages. Polygon contours remain metadata; overlays and crops use rectangles.
+GroundMark renders selected pages with the existing 200-DPI/1,600-pixel profile. V3 analyzes the same page image sent to `gpt-6-sol`, and both parsing prompts receive bounded region hints. The image remains the transcription source. After strict response validation, polygon-aware one-to-one assignment applies qualified V3 boxes and native relative order without changing Sol content, IDs, transcription confidence, or semantic structure. Full contours supply matching evidence and blue matched overlays on annotated images and PDFs. Unmatched Sol boxes are red; detector-only regions are amber and add no text. Unusable contours explicitly use V3 AABBs. Crops and rectangle consumers retain the selected AABB envelopes. All exports, figure crops, annotations, and chat evidence use the reconciled pages.
 
-Pages run in source order. Each Sol request can include up to 12,000 characters from earlier successful pages. Initialization failure uses Sol-only extraction for the selected run; a later V3 failure uses Sol blocks for that page. Successful pages remain usable as partial output. Missed, weak, ambiguous, split/merge, or role/label-mismatched regions retain Sol blocks and boxes. Matching thresholds are initial, uncalibrated rules, not measured accuracy claims.
+Pages run in source order. Each Sol request can include up to 12,000 characters from earlier successful pages. Runtime or unusable-guide failure uses Sol with explicit diagnostics. A reconciliation application defect retains the untouched Sol page and makes the document partial. Unmatched blocks keep their Sol geometry; unmatched V3 regions never invent text. Split/merge matches are allowed with review flags and coverage evidence. Matching thresholds are configurable provisional rules, not measured accuracy claims; see [layout policy](docs/LAYOUT-V3.md). The [completion report](docs/V3-INTEGRATION-COMPLETION.md) separates CPU/CUDA execution and official-decoder checks from still-unmeasured correspondence and reading-order quality, and documents local replay without Sol calls.
 
 The parse-first approach is described by [LlamaParse](https://developers.llamaindex.ai/llamaparse/parse/getting_started/). [LandingAI ADE](https://docs.landing.ai/ade/ade-parse-visualize-sample) shows a similar Markdown and annotation workflow. The [GPT-6 Sol page](https://developers.openai.com/api/docs/models/gpt-6-sol) covers the model's capabilities and pricing.
 
@@ -192,8 +192,9 @@ The editable JSON and visual-check captures are in [docs/diagrams](docs/diagrams
 ## Documentation
 
 - Use and development: [Runbook](docs/RUNBOOK.md), [Architecture](docs/ARCHITECTURE.md), [Python API](docs/PYTHON-API.md), [Model](docs/MODEL.md), [V3 runtime and matching](docs/LAYOUT-V3.md), [Prompt contract](docs/PROMPTS.md), [Data and output boundaries](docs/COMPLIANCE.md), [Contributing](docs/CONTRIBUTING.md).
+- V3 evidence: [ONNX artifact research](docs/PP-DocLayoutV3-ONNX-RESEARCH.md), [runtime implementation](docs/PP-DocLayoutV3-IMPLEMENTATION.md), [reconciliation](docs/V3-AUTHORITATIVE-RECONCILIATION.md), and [completion and offline replay](docs/V3-INTEGRATION-COMPLETION.md).
 - Recorded evaluations: [Layout](docs/LAYOUT-EVALUATION.md), [Sol resolution](docs/SOL-RESOLUTION-EVALUATION.md), [Earlier prompts](docs/PROMPT-EVALUATION.md), [Content-filter diagnostics](docs/CONTENT-FILTER-DIAGNOSTICS.md). These reports record the methods and results from each run.
 
 ## License
 
-[MIT](LICENSE).
+GroundMark's original code is [MIT licensed](LICENSE). Adapted PaddleX polygon routines in `src/layout_polygons.py` retain their [Apache-2.0 notice](LICENSE-PADDLEX).
