@@ -136,7 +136,7 @@ That conversion is lossy: holes, smaller disconnected components, and some bound
 | `poly` | Multi-point contour |
 | `auto` | Chooses rectangle, quadrilateral, or polygon using geometric heuristics |
 
-For maximum contour detail among these modes, `poly` is relevant. `auto` can intentionally simplify a detected shape. Even `poly` uses contour processing and is not a lossless representation of the original binary mask.
+`poly` keeps the most contour detail among these modes. `auto` can intentionally simplify a detected shape. Even `poly` uses contour processing and cannot reproduce every detail of the original binary mask.
 
 Source: [pinned polygon implementation](https://github.com/PaddlePaddle/PaddleX/blob/c50f5da858020db473a2285f089bb8c7bbd6afdc/paddlex/inference/models/layout_analysis/processors.py).
 

@@ -1,6 +1,6 @@
 # Contributor onboarding
 
-Use this guide to get from a fresh checkout to a tested local change. You do not need a provider key or model download.
+This guide takes you from a fresh checkout to a tested local change without a provider key or model download. The [zero-to-mastery tutorial](ZERO-TO-MASTERY.md) follows a page through the code with checkpoints.
 
 ## First session
 
@@ -30,5 +30,3 @@ The page raster and V3 result must refer to the same source page. Matched layout
 Pick a focused documentation or test gap that you can verify without model calls. For example, add an assertion to an existing renderer test for an escaping case, then run `uv run --locked python -m pytest tests/test_markdown.py -q --import-mode=importlib`. If you change runtime behavior, add a regression test that would fail on the old behavior. Update current docs when the contract changes; leave historical evaluation reports and generated `openwiki/` pages untouched unless that work is explicitly requested.
 
 No branch, commit, PR, or publication is implied by a local implementation request. When contributing through GitHub, follow the requested delivery workflow and check [Contributing](CONTRIBUTING.md) and the [contributor runbook](CONTRIBUTOR-RUNBOOK.md) before submitting.
-
-The [Zero to mastery tutorial](ZERO-TO-MASTERY.md) follows a page through the code with checkpoints.
