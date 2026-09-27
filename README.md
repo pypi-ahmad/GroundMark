@@ -4,7 +4,7 @@ GroundMark turns scanned PDFs and images into layout-aware Markdown using `gpt-6
 
 [GitHub repository](https://github.com/pypi-ahmad/GroundMark)
 
-The model is asked to preserve the source text and layout, though transcription errors are still possible. GroundMark keeps page, block, and bounding-box data for reading order, annotations, and JSON output. It does not extract business fields, apply a domain schema, or correct values. Document chat answers questions and summarizes parsed pages.
+GroundMark asks Sol to preserve source text and layout, though transcription errors can still occur. The app keeps page, block, and bounding-box data for reading order, annotations, and JSON output. It does not extract business fields, apply a domain schema, or correct values. Document chat answers questions and summarizes parsed pages.
 
 ![GroundMark architecture: document input, parsing, exports, and document chat](docs/diagrams/groundmark.png)
 
@@ -103,7 +103,7 @@ uv run --extra layout groundmark
 uv run --extra layout groundmark invoice.pdf output --all
 ```
 
-Windows users can also run `run.cmd`, which includes the layout extra and forwards launcher arguments. For development, run `uv run python -m pytest tests`. The [Runbook](docs/RUNBOOK.md) covers artifacts, builds, upgrades, and troubleshooting.
+Windows users can also run `run.cmd`, which includes the layout extra and forwards launcher arguments. For development, run `uv run --locked python -m pytest tests -q --import-mode=importlib`. The [Runbook](docs/RUNBOOK.md) covers artifacts, builds, upgrades, and troubleshooting.
 
 GroundMark attempts local PP-DocLayoutV3 analysis before each Sol extraction request. The `layout` extra supplies the runtime dependencies; base imports and offline tests still work without them. First use downloads the pinned official model into the user cache unless an explicit local model directory is configured. The pinned `PaddlePaddle/PP-DocLayoutV3_onnx` export supplies boxes, native order, and decoded mask contours. Preparation verifies CUDA inference, with CPU fallback. A later CUDA execution failure gets one CPU retry; successful recovery retains CPU for later pages. If neither works, or dependencies are absent, extraction continues with Sol blocks and records a safe layout-fallback diagnostic. See [runtime configuration and verification](docs/LAYOUT-V3.md).
 
@@ -136,7 +136,7 @@ GroundMark renders selected pages with the existing 200-DPI/1,600-pixel profile.
 
 Pages run in source order. Each Sol request can include up to 12,000 characters from earlier successful pages. Runtime or unusable-guide failure uses Sol with explicit diagnostics. A reconciliation application defect retains the untouched Sol page and makes the document partial. Unmatched blocks keep their Sol geometry; unmatched V3 regions never invent text. Split/merge matches are allowed with review flags and coverage evidence. Matching thresholds are configurable provisional rules, not measured accuracy claims; see [layout policy](docs/LAYOUT-V3.md). The [completion report](docs/V3-INTEGRATION-COMPLETION.md) separates CPU/CUDA execution and official-decoder checks from still-unmeasured correspondence and reading-order quality, and documents local replay without Sol calls.
 
-The parse-first approach is described by [LlamaParse](https://developers.llamaindex.ai/llamaparse/parse/getting_started/). [LandingAI ADE](https://docs.landing.ai/ade/ade-parse-visualize-sample) shows a similar Markdown and annotation workflow. The [GPT-6 Sol page](https://developers.openai.com/api/docs/models/gpt-6-sol) covers the model's capabilities and pricing.
+[LlamaParse](https://developers.llamaindex.ai/llamaparse/parse/getting_started/) describes a parse-first approach. [LandingAI ADE](https://docs.landing.ai/ade/ade-parse-visualize-sample) shows a similar Markdown and annotation workflow. The [GPT-6 Sol page](https://developers.openai.com/api/docs/models/gpt-6-sol) covers the model's capabilities and pricing.
 
 Supported inputs are PDF, PNG, JPEG, TIFF, and WebP. Parsing accepts only `gpt-6-sol`; chat uses only `gpt-6-luna`.
 
@@ -145,8 +145,8 @@ Chat reads successfully parsed pages from the current run. It does not read the 
 For development, install the test dependency and run the suite through uv:
 
 ```powershell
-uv sync
-uv run python -m pytest tests
+uv sync --locked
+uv run --locked python -m pytest tests -q --import-mode=importlib
 ```
 
 The suite uses fake layout runtimes and fake model responses; it needs neither weights nor paid calls. Use `uv run --extra layout` to include V3 after a base-only sync. Without the extra, extraction uses the documented Sol fallback.

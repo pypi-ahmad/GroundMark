@@ -1,6 +1,8 @@
 # Zero to mastery: follow a page through GroundMark
 
-Work through the checkpoints in order. The first five use only the checkout and its tests. A real extraction is optional because it can download model weights and make a paid Sol call. Use Windows PowerShell from the repository root.
+Work through the checkpoints in order. The six numbered steps and capstone use only the checkout and its tests. A real extraction is optional because it can download model weights and make a paid Sol call. Use Windows PowerShell from the repository root.
+
+By the end, you should be able to trace one page from the input raster to its saved outputs, identify which model owns each field, reproduce a fallback in an offline test, and make a small verified change. The [developer guide](DEVELOPER-GUIDE.md) is the module map; this tutorial is the hands-on route through it.
 
 ## 1. Prepare an offline environment
 
@@ -64,11 +66,28 @@ Next, read a device-recovery test in `tests/test_layout_detector.py` and a Sol-f
 
 Checkpoint: describe why “unmatched Sol block” does not by itself prove “V3 missed text.” Granularity and correspondence rules can also leave it unmatched. Match counts are not accuracy scores.
 
+Read `test_split_merge_nested_and_many_to_many_assign_once` in `tests/test_layout_reconcile.py`. Follow its accepted decision and its leftover Sol blocks or detector regions. Then read `test_header_body_footer_rank_order_preserves_existing_furniture_types`. Native V3 order positions matched blocks, while unmatched Sol blocks retain their relative order. This deterministic placement rule does not establish that the detector found the correct reading order on a real page.
+
 ## 6. Follow outputs and inspect evidence
 
 `src/graph.py` runs preprocess then parse; `src/export.py` writes selected formats. Markdown and HTML come from `src/markdown.py`; figures use selected AABB envelopes; `src/annotate.py` draws full matched V3 contours, unmatched Sol boxes, and detector-only overlays. Saved JSON retains page diagnostics and separately validated `layout_metadata`. The [runtime runbook](RUNBOOK.md#diagnostics-and-match-inspection) explains the inspection fields.
 
-To check your understanding, choose one existing fixture-backed test and add a focused assertion for content preservation, one-to-one matching, contour fallback, or an annotation overlay. Run its file, the complete offline suite, and `git diff --check`. Avoid changing a matching threshold merely to raise the match count; [evaluation guidance](V3-INTEGRATION-COMPLETION.md) requires reviewed correspondences and page rasters to measure quality.
+Choose one existing fixture-backed test and add a focused assertion for content preservation, one-to-one matching, contour fallback, or an annotation overlay. Run its file, the complete offline suite, and `git diff --check`. Avoid changing a matching threshold merely to raise the match count; [evaluation guidance](V3-INTEGRATION-COMPLETION.md) requires reviewed correspondences and page rasters to measure quality.
+
+## Offline capstone
+
+Start with `test_active_graph_reconciles_before_json_annotations_crops_and_chat` in `tests/test_layout_integration.py`. Compare the fake Sol blocks with the saved parsed blocks, and find the assertions for full-image input, content preservation, artifact serialization, annotations, crops, and chat evidence. Use `test_split_merge_nested_and_many_to_many_assign_once` in `tests/test_layout_reconcile.py` to trace accepted pairs and leftovers. Then read `test_v3_fallback_preserves_every_sol_field_and_full_image` in the integration file: its assertions check that failed V3 inference leaves the Sol page intact and sends an empty guide with the complete image.
+
+Pick one of those contracts and add a focused assertion that the existing tests do not yet make. Run the affected test file. You should be able to explain which assertion proves your claim and which outcomes still need real-page review.
+
+Finish with `uv run --locked python -m pytest tests -q --import-mode=importlib` and `git diff --check`. Record what the tests prove and what they leave open. Fake responses prove local contracts, while a real quality assessment needs paired page rasters, reviewed block correspondences, contours, and order labels. The [contributor runbook](CONTRIBUTOR-RUNBOOK.md) covers the handoff.
+
+## If a checkpoint fails
+
+- `uv sync --locked` fails: check that the selected interpreter meets `requires-python` in `pyproject.toml`, then retry without changing the lockfile.
+- The fixture inspection command cannot find its image: run it from the repository root, where `tests/fixtures/invoice.png` is relative to the current directory.
+- Offline tests try to load weights or call Sol: stop and inspect the changed test or fixture. The offline suite should use injected backends and fake responses.
+- A real extraction reports layout fallback: inspect the saved diagnostic stage and reason before interpreting match counts. The [runtime runbook](RUNBOOK.md#diagnostics-and-match-inspection) lists the fields.
 
 ## Optional: one real extraction
 

@@ -1,6 +1,6 @@
 # Runbook
 
-Use this runbook to install, run, and troubleshoot GroundMark. For a code change, use the [developer guide](DEVELOPER-GUIDE.md) and [contributor runbook](CONTRIBUTOR-RUNBOOK.md).
+For code changes, use the [developer guide](DEVELOPER-GUIDE.md) and [contributor runbook](CONTRIBUTOR-RUNBOOK.md).
 
 ## Setup and runtime preparation
 
@@ -59,7 +59,7 @@ Missing or rejected matches are block-level decisions, not runtime failures: the
 
 ## Development and release checks
 
-For development, use `uv sync` and `uv run python -m pytest tests`. The explicit `tests` path keeps archived release snapshots under `data/` out of collection. `pyproject.toml` defines runtime dependencies, and `uv.lock` locks the checkout environment. Compatibility requirements files install the local package. Run evaluation scripts from the checkout. The installed distribution uses the `src` Python package; its callable boundaries are described in the [Python API reference](PYTHON-API.md).
+For development, use `uv sync --locked` and `uv run --locked python -m pytest tests -q --import-mode=importlib`. The explicit `tests` path keeps archived release snapshots under `data/` out of collection. `pyproject.toml` defines runtime dependencies, and `uv.lock` locks the checkout environment. Compatibility requirements files install the local package. Run evaluation scripts from the checkout. The installed distribution uses the `src` Python package; its callable boundaries are described in the [Python API reference](PYTHON-API.md).
 
 Build with `uv build`. The wheel bundles runtime code, four Markdown prompts, the MIT license, and `LICENSE-PADDLEX` for adapted Apache-2.0 decoding routines. The source archive also contains build metadata and README. Neither includes private documents, credentials, tests, evaluation scripts, or generated architecture files.
 
@@ -110,7 +110,7 @@ Detailed layout is experimental and off by default because source review found n
 | No annotation | Check the annotated export error and source-to-page dimensions. Sol-only blocks need valid normalized boxes; matched V3 contours and detector-only regions require a valid layout artifact. Text artifacts remain usable. |
 | Slow document | Select a smaller range; pages intentionally run sequentially. |
 
-Run `uv sync`, then `uv run python -m pytest tests` after changing code or prompts. The tests use fake model responses and make no paid calls.
+Run `uv sync --locked`, then `uv run --locked python -m pytest tests -q --import-mode=importlib` after changing code or prompts. The tests use fake model responses and make no paid calls.
 
 ## Document chat
 
