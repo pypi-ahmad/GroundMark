@@ -2,7 +2,7 @@
 
 The installed package is named `src`. These are the current callable and data boundaries, not a promise of a stable third-party SDK. Function signatures and concise docstrings remain in the linked source files. Importing the layout runtime does not import optional ML dependencies or load weights.
 
-For a path through these APIs, use the [developer guide](DEVELOPER-GUIDE.md). [Onboarding](ONBOARDING.md) and the [zero-to-mastery tutorial](ZERO-TO-MASTERY.md) include exercises you can run offline.
+The [developer guide](DEVELOPER-GUIDE.md) traces a page through these APIs. [Onboarding](ONBOARDING.md) and the [zero-to-mastery tutorial](ZERO-TO-MASTERY.md) include exercises you can run offline.
 
 ## Parsing and orchestration
 
@@ -38,7 +38,7 @@ See [V3 runtime and matching](LAYOUT-V3.md) for the pinned model, device probe, 
 
 These descriptions live here because adding class docstrings to Pydantic models can change the JSON schemas sent to models. Live Sol responses use only `LegacyParsePage` or `ParsePage`; artifact metadata is validated separately.
 
-Documentation audit: 91 of 116 top-level public functions and classes had docstrings before this guide update; the previously undocumented `extract_custom_vertices` now has one. The 24 remaining top-level public classes without docstrings are Pydantic models. Their contracts are described in the tables below rather than added to generated schema descriptions. New and updated docstrings in this pass use Google-style sections. The coverage count excludes methods, tests, scripts, and private names, and is a navigation measure, not a quality score.
+Documentation audit: 92 of 116 top-level public functions and classes have docstrings. The 24 without them are Pydantic models; their contracts are described below because class docstrings can alter generated schema descriptions. All 15 public methods declared in `src/` have docstrings, including the layout-backend protocol and artifact validators. New and updated docstrings use Google-style sections where parameters, return values, or exceptions need explanation. These counts exclude inherited methods, tests, scripts, and private names; they measure presence, not quality.
 
 ### Pages and blocks in `src.layout`
 

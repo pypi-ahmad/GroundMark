@@ -153,12 +153,33 @@ def parse_page(
 ) -> ParsePage:
     """Transcribe one base64 page image and apply compatible V3 geometry.
 
-    Page identity and pixel dimensions come from preprocessing. Detailed mode
-    selects the structured Sol schema; both modes preserve Sol content. Mutable
-    diagnostics, usage_entries, and layout_metadata collect call evidence.
-    layout_initialization_failure carries a failed preflight so it is not
-    retried. Layout failures use Sol blocks; invalid images and rejected or
-    invalid Sol responses raise ExtractionCallError. No files are written.
+    Args:
+        image_b64: Preprocessed PNG page encoded as base64.
+        mime: Image MIME type from preprocessing.
+        page_number: One-based source page number.
+        width_px: Raster width in pixels.
+        height_px: Raster height in pixels.
+        diagnostics: Optional collector for safe page diagnostics.
+        model: Supported Sol model identifier.
+        usage_entries: Optional collector for incurred model usage.
+        document_context: Bounded text from the preceding successful page.
+        total_pages: Number of selected source pages.
+        detailed_layout: Select the detailed Sol response profile.
+        layout_runtime: Optional injected V3 runtime, useful in offline tests.
+        layout_metadata: Optional collector for validated V3 artifacts.
+        layout_initialization_failure: Failed preflight diagnostic to reuse
+            without retrying initialization.
+        reconcile_policy: Optional validated matching policy.
+
+    Returns:
+        Parsed page with Sol content and eligible V3 geometry and order.
+
+    Raises:
+        ValueError: If the model or matching policy is unsupported.
+        ExtractionCallError: If the image or Sol response is invalid or Sol
+            rejects the call. V3 runtime failures use Sol fallback instead.
+
+    No files are written. Both Sol profiles preserve their content fields.
     """
     if model != DEFAULT_MODEL:
         raise ValueError("Unsupported model")
@@ -256,19 +277,33 @@ def parse_document(
     layout_initialization_failure: PageDiagnostic | None = None,
     reconcile_policy: ReconcilePolicy | None = None,
 ) -> ParseResult:
-    """Layout-parse every page in [start_page, end_page] (1-based, inclusive;
-    end_page=None means through the last page, subject to the configured cap).
+    """Parse an inclusive page range sequentially, preserving partial results.
 
-    Pages are parsed sequentially. Each successful page contributes bounded
-    context to the next page so headings and continued structures remain
-    coherent across the document.
+    Args:
+        path: PDF or raster source path.
+        start_page: One-based first source page.
+        end_page: Inclusive last page; ``None`` selects through the end.
+        model: Supported Sol model identifier.
+        usage_entries: Optional collector for incurred model usage.
+        on_progress: Optional callback for safe preparation and page events.
+        output_dir: Directory for the saved JSON when enabled.
+        detailed_layout: Select the detailed Sol response profile.
+        save_json: Write ``<doc_sha>.json`` under ``output_dir``.
+        layout_runtime: Optional injected V3 runtime.
+        layout_initialization_failure: Failed preflight to reuse for this run.
+        reconcile_policy: Optional validated matching policy.
 
-    Return a ParseResult containing successful pages and per-page diagnostics.
-    V3 initialization failure uses Sol for the range; failed page analysis or
-    reconciliation retains Sol blocks. on_progress receives safe preparation
-    and source-order completion events. save_json writes doc_sha.json beneath
-    output_dir. Source/range validation and output I/O errors may propagate;
-    unsupported model identifiers raise ValueError before processing.
+    Returns:
+        Successful pages and per-page diagnostics in a ``ParseResult``.
+
+    Raises:
+        ValueError: If the model, policy, or selected page range is invalid.
+        PreprocessError: If the source cannot be inspected or rasterized.
+        OSError: If source or output filesystem access fails.
+
+    Each successful page contributes bounded context to the next. V3 failure
+    retains Sol blocks and records a safe diagnostic. Page-call failures leave
+    earlier successful pages and incurred usage in the result.
     """
     if model != DEFAULT_MODEL:
         raise ValueError("Unsupported model")

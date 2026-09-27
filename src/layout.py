@@ -233,6 +233,14 @@ class NormalizedLayoutRegion(_LayoutMetadata):
 
     @model_validator(mode="after")
     def validate_geometry(self):
+        """Check class identity and normalized detector geometry.
+
+        Returns:
+            This validated region.
+
+        Raises:
+            ValueError: If class, box, or contour metadata is inconsistent.
+        """
         # Geometry helpers are imported at validation time, after both modules
         # have loaded; importing saved JSON never loads inference dependencies.
         from src.layout_detector import LABELS
@@ -270,6 +278,14 @@ class NormalizedLayoutPage(_LayoutMetadata):
 
     @model_validator(mode="after")
     def validate_regions(self):
+        """Check region indices, page references, and normalized boxes.
+
+        Returns:
+            This validated layout page.
+
+        Raises:
+            ValueError: If a region disagrees with the page identity or size.
+        """
         for i, region in enumerate(self.regions):
             if region.index != i or region.bbox.page != self.page:
                 raise ValueError("Invalid layout region identity")

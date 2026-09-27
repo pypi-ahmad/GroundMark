@@ -104,10 +104,32 @@ class LayoutPageResult:
 class LayoutBackend(Protocol):
     """Inject this small backend contract instead of importing ML libraries."""
     @property
-    def device(self) -> Device: ...
-    def cuda_available(self) -> bool: ...
-    def use_device(self, device: Device) -> None: ...
-    def predict(self, image: Image.Image) -> tuple[LayoutRegion, ...]: ...
+    def device(self) -> Device:
+        """Return the device currently selected for native execution."""
+        ...
+
+    def cuda_available(self) -> bool:
+        """Report whether a CUDA execution probe can be attempted."""
+        ...
+
+    def use_device(self, device: Device) -> None:
+        """Select a device for subsequent predictions.
+
+        Args:
+            device: CPU or CUDA target selected by the runtime.
+        """
+        ...
+
+    def predict(self, image: Image.Image) -> tuple[LayoutRegion, ...]:
+        """Run one page through the native backend.
+
+        Args:
+            image: Decoded page image supplied by the runtime.
+
+        Returns:
+            Decoded detector regions in the page's pixel coordinates.
+        """
+        ...
 
 
 def _verify_files(directory: Path) -> None:

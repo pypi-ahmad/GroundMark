@@ -172,11 +172,29 @@ def run_graph(image_path: str, *, start_page: int = 1, end_page: int | None = No
               reconcile_policy: ReconcilePolicy | None = None) -> dict:
     """Run extraction and return final state with diagnostics and artifact paths.
 
-    Page bounds are 1-based/inclusive. formats=None selects the UI artifact set;
-    view controls presentation only. on_progress receives safe local events.
-    An optional initialization diagnostic carries a UI preflight failure without
-    retrying V3. Unsupported model, format, or view raises ValueError; source
-    preprocessing errors may propagate. This function may make paid Sol calls.
+    Args:
+        image_path: PDF or raster source path.
+        start_page: One-based first source page.
+        end_page: Inclusive last page, or ``None`` for the end of the source.
+        model: Supported Sol model identifier.
+        detailed_layout: Select the detailed Sol response profile.
+        on_progress: Optional callback for safe local progress events.
+        output_dir: Output directory, or ``None`` for a separate run directory.
+        formats: Requested artifact formats; ``None`` selects the UI set.
+        view: ``full`` or ``clean`` presentation view.
+        original_filename: Optional source filename for output naming.
+        layout_initialization_failure: Failed UI preflight to reuse without
+            retrying V3 preparation.
+        reconcile_policy: Optional validated matching policy.
+
+    Returns:
+        Graph state with parsed result, diagnostics, usage, and output paths.
+
+    Raises:
+        ValueError: If model, policy, formats, or view are unsupported.
+
+    Source preprocessing errors may propagate. This function may make paid
+    Sol calls; the rendering view does not change stored extraction.
     """
     if model != DEFAULT_MODEL:
         raise ValueError("Unsupported model")
