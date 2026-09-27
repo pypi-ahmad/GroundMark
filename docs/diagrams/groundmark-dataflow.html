@@ -5052,7 +5052,7 @@
         <path data-edge-from="input_doc" data-edge-to="rasterizer" data-edge-label="source pages" data-edge-key="3" data-edge-id="f_doc_raster" data-composition-points="157.5,271;208.25,271;208.25,385;259,385" d="M 157.5 271 L 208.25 271 L 208.25 385 L 259 385" class="a-default" stroke-width="1.4" marker-end="url(#arrowhead)"/>
         <path data-edge-from="rasterizer" data-edge-to="sol_engine" data-edge-label="page images" data-edge-key="4" data-edge-id="f_raster_sol" data-composition-points="371,385;422.5,385;422.5,278;474,278" d="M 371 385 L 422.5 385 L 422.5 278 L 474 278" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         <path data-edge-from="sol_engine" data-edge-to="pydantic_val" data-edge-label="strict response" data-edge-key="5" data-edge-id="f_sol_val" data-composition-points="586,271;637.5,271;637.5,157;689,157" d="M 586 271 L 637.5 271 L 637.5 157 L 689 157" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
-        <path data-edge-from="pydantic_val" data-edge-to="annotator" data-edge-label="valid boxes" data-edge-key="6" data-edge-id="f_val_annot" data-composition-points="745,186;745,186;745,356;745,356" d="M 745 186 L 745 186 L 745 356 L 745 356" class="a-default" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="pydantic_val" data-edge-to="annotator" data-edge-label="geometry" data-edge-key="6" data-edge-id="f_val_annot" data-composition-points="745,186;745,186;745,356;745,356" d="M 745 186 L 745 186 L 745 356 L 745 356" class="a-default" stroke-width="1.4" marker-end="url(#arrowhead)"/>
         <path data-edge-from="pydantic_val" data-edge-to="doc_renders" data-edge-label="rendered text" data-edge-key="7" data-edge-id="f_val_renders" data-composition-points="801,157;904,157" d="M 801 157 L 904 157" class="a-emphasis" stroke-width="1.8" marker-end="url(#arrowhead-emphasis)"/>
         <path data-edge-from="pydantic_val" data-edge-to="json_store" data-edge-label="grounded JSON" data-edge-key="8" data-edge-id="f_val_json" data-composition-points="801,157;852.5,157;852.5,271;904,271" d="M 801 157 L 852.5 157 L 852.5 271 L 904 271" class="a-default" stroke-width="1.4" marker-end="url(#arrowhead)"/>
         <path data-edge-from="annotator" data-edge-to="annotated_pdf" data-edge-label="page overlays" data-edge-key="9" data-edge-id="f_annot_overlay" data-composition-points="801,385;904,385" d="M 801 385 L 904 385" class="a-default" stroke-width="1.4" marker-end="url(#arrowhead)"/>
@@ -5188,9 +5188,9 @@
           <rect x="594.75" y="193" width="85.5" height="16" rx="4" class="c-mask"/>
           <text x="637.5" y="204" class="t-backend" font-size="8" text-anchor="middle">strict response</text>
         </g>
-        <g data-detail="context" data-edge-from="pydantic_val" data-edge-to="annotator" data-edge-label="valid boxes" data-edge-key="6" data-edge-id="f_val_annot">
-          <rect x="712.05" y="250" width="65.9" height="16" rx="4" class="c-mask"/>
-          <text x="745" y="261" class="t-muted" font-size="8" text-anchor="middle">valid boxes</text>
+        <g data-detail="context" data-edge-from="pydantic_val" data-edge-to="annotator" data-edge-label="geometry" data-edge-key="6" data-edge-id="f_val_annot">
+          <rect x="719.4" y="250" width="51.2" height="16" rx="4" class="c-mask"/>
+          <text x="745" y="261" class="t-muted" font-size="8" text-anchor="middle">geometry</text>
         </g>
         <g data-detail="context" data-edge-from="pydantic_val" data-edge-to="doc_renders" data-edge-label="rendered text" data-edge-key="7" data-edge-id="f_val_renders">
           <rect x="814.65" y="136" width="75.7" height="16" rx="4" class="c-mask"/>
@@ -5430,7 +5430,7 @@
         </div>
         <ul>
           <li>&bull; Sol reads the complete image, including content V3 misses</li>
-          <li>&bull; Only compatible one-to-one matches replace Sol geometry</li>
+          <li>&bull; Qualified one-to-one matches take V3 geometry and order</li>
           <li>&bull; V3 analysis failure supplies empty hints; Sol blocks remain usable</li>
         </ul>
       </div>

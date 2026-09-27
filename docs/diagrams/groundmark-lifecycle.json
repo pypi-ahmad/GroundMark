@@ -31,8 +31,8 @@
     { "id": "failed-run", "from": "page_failed", "to": "failed_run", "variant": "security" }
   ],
   "cards": [
-    { "dot": "cyan", "title": "V3 failures", "items": ["Unavailable V3 sends empty hints with the image", "Reconciliation failure retains validated Sol blocks"] },
-    { "dot": "emerald", "title": "Conservative matching", "items": ["Compatible one-to-one matches change boxes/order", "Misses and disagreements keep Sol blocks in place"] },
+    { "dot": "cyan", "title": "Failure handling", "items": ["Unavailable V3 sends empty hints with the image", "Reconciliation defects keep Sol and mark the run partial"] },
+    { "dot": "emerald", "title": "Qualified matching", "items": ["One-to-one pairs take V3 geometry and order", "Unmatched Sol blocks keep their original geometry"] },
     { "dot": "rose", "title": "Run outcomes", "items": ["Later pages continue; usable pages remain available", "No successful pages means a failed run"] }
   ]
 }
