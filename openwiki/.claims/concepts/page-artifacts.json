@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:5f68cd2229bbda857610c81694b880c2e8da631999093705c1d30387799cb898",
+  "claims": [
+    {
+      "id": "claim_3d35e90c12ec41f08ae38f587cdb926e",
+      "statement": "ParseResult stores successful pages, extraction profile, content-filtered page numbers, safe page diagnostics, and validated optional layout metadata.",
+      "evidence": [
+        {
+          "resource": "repo://src/layout.py#L405-L441",
+          "version": "repo-lines-v1:sha256:ac3c587810c46545ecb48ab125cc5f2ce574b387d31d0a0ea1070168a37a17d2:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhkNDUwMTRhNjhiNDAzNGI0ZjI1OGZkYjhkMzdhNjRmMDkxNWI4OTAxODljN2Q3NWMyMzU3OTQyOWZlZDk1NWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE4ZWMwYTZjNTQwZmFlMDJmNzk4MWU5OWIwMDk2NmU1NzRmMzljMzZiOGMwN2QxYWFhZWU2MTFlNzc2MzcyZWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijc2NzNlMjg2Y2UzNGJkMzNmOTJkNWM4OTM0ZDU0NTVkYjFiOGI0YzdmZGRlOWQ3ZmM3MzI1MzE4Y2E4YWVhZTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        },
+        {
+          "resource": "repo://tests/test_layout_structure.py#L29-L46",
+          "version": "repo-lines-v1:sha256:3f841ab9c8b230c12de4871766b38113bb58360ee3ba21d68e79c460e9d14e90:eyJzZWxlY3RlZExpbmVDb3VudCI6MTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI0NWE1NmRjOTYwMTRmNWRjZDFjOTgzZGIyYjRkOWNlN2YzMDNjZWViNjBhYzlkMmYxMzkwN2I0Mjk2NjUyMGUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY2Yzk5ZmUwODZlZTcyMjhiM2U3ODM2ODVkOWIwMWIxOTdlMTRiZGFkNDAzMDBiNjY2ZTVhYTBmYTVjM2I3YjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY2MGRmNzQxYzQwM2FkZDEwNDJlOGM4M2YxNWFlODc0NWVlYWExMGIyYzc4ZDdkNWVlNThkMWYzZGEyYzM0N2MiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyZDEzN2M3NDQzYzFkNmY0OGE0MWI1NGMwM2IyZmVmZmI4OTc4Yjc2YmMyZDRiYmI2MWMwYTMyY2NlMTNlZjUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_ba5d9cf1100b43f68e5048814894ed1f",
+      "statement": "The default legacy Sol schema and opt-in detailed schema share content fields, while detailed blocks can add validated heading, list, and table structure.",
+      "evidence": [
+        {
+          "resource": "repo://src/layout.py#L68-L190",
+          "version": "repo-lines-v1:sha256:2fce7f667995baf8002de1279fbdcb6ad0be0f5208f95f4aaffa24b40c5e2aff:eyJzZWxlY3RlZExpbmVDb3VudCI6MTIzLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJkNmU1MmE0ODQzMmU3MzM0ZDM3YmEwMzM1YjMyMGNhNmY4ZWNlNTA2NTczMzZjZDdlZWU1OGE2Njg4YTBiYmE4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI4ZTY5ZWZkYThjMTNjNjA0MGIwNDU4OGFhMDU4OWEwOWYyNzFlNzc5YTdiNmI3MjQwMjgwM2I3ZTRhNWEwZDkzIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI4ZTMyNWUxYTgzNzhkMjFkMGNjZWM2MDEzYmNiZjIyMjg5OTk1NzFjMmMwMTAwYjAxOGQ0MmJhMzM1YmM1NzQ5IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI1YmYyZTAzYzA0Y2RhYTA1ZDczYzk2ZjgyYmI4OTc3MjM1NzFhMzJjM2I1Nzk5ZWJlODllYWU4NGQ0MDI5M2U4In0"
+        },
+        {
+          "resource": "repo://src/parse.py#L190-L212",
+          "version": "repo-lines-v1:sha256:915e3cf0dafac33c2ce354c6fbe048287f9216848b351bfdff4fe7d58f33de48:eyJzZWxlY3RlZExpbmVDb3VudCI6MjMsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE4ZDljMzYxZTc5NzIwYzRiN2UwMzUwNTk1YmNlYmM2YmE1OTRiOGNkNzMxMWQxYzJkNDk0N2I0OGYzZTQxYmYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU1MmZlZWI2NGM3MWJmZDc3N2ViMTA0MTQ1NDNhYzU4MDAxODljZTc4MTZhNWFkNTg1Yjk3YzM1ODUzZTgxMWUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg4ODY3ZTg0NTc0YzNlZDY3MDE3ZjRjZjAzMmE5ZmYzMjgxZDgyYTQ5OTBjMWJjNWM4YjM5MDZiY2MzZDUwYjkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0ZjFiY2M1NzMwNTdjODE2OThiMWZiMmFmMTYwOGE5ODcxNTY1NjcwN2Y4OWM4YjgzMWQ2MmUwYmI4MTQxYTkifQ"
+        },
+        {
+          "resource": "repo://tests/test_layout_structure.py#L49-L98",
+          "version": "repo-lines-v1:sha256:f6a6c5e27193d1168cab392181ce07048e1865c06d4c8f67c2f8068ea3a331b4:eyJzZWxlY3RlZExpbmVDb3VudCI6NTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImE3MTExZjY0OWVkZTBiMzRlMzY3ZDA5MWJkZThlNDI0N2Q5YWFlZmE4NGM2OGJiOTI5ODY0ZGUzYzc4ZDNkZTgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjIyODIzODVlOGMyMjgxYWIyZTU3NmFkODc1ZDI3Y2IxNzcxYjFkYzRhNGRhNTEwMmZkMTQ5YmU1ZTczNGQ5NmMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjJjOWFjYjQ0YmUzZmI2ZWVhMTY3NTc2YTQxODkyMzZiNDc2NzA1NGQxODMyYjNlYmU3OWJmNjVlNGE5ZjMzN2IiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQ0NDc0Yzk0YjhhZjhkNDVhMGM0N2Q5NjY1NGI2ZjllNTUzMmRjOTJlMzA1YTc5NzRkMzJkYzljMWRhNGRhMjAifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_5417c5e50fa0413480554bc7cfb69e82",
+      "statement": "The layout artifact stores normalized V3 region geometry, native order, contour provenance, guide status, and validated one-to-one reconciliation references separately from Sol response models.",
+      "evidence": [
+        {
+          "resource": "repo://src/layout.py#L197-L267",
+          "version": "repo-lines-v1:sha256:e8fa94c0382057e0984a21f85c6f89da240216d70c045123108f4f87932d52be:eyJzZWxlY3RlZExpbmVDb3VudCI6NzEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZjZWE4NTk4OWVlZWNhYzA2ZGQwMjgwNDYxNDRmM2Q2NDJiOTAyYWM3ZmIwODRmOGY5ZDQ1MzJkNWE2ZjFmNjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiMzJhMzVkMTIzYTVhYjY1N2U2ZmQzNDZhM2U1YTMxODE3NTM0MDMwYzQ3YjhiMTdmY2RlYzI0NzVkYWU5OTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQwYTA2OWMxMjU3NmUyZjc2NTY2ZWQ0N2FlZWNhYmQ5YTFjMjA2YmRiMzQ5NWJkNWIwMThkZGYxZWI3MTgyZWYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc2NzNlMjg2Y2UzNGJkMzNmOTJkNWM4OTM0ZDU0NTVkYjFiOGI0YzdmZGRlOWQ3ZmM3MzI1MzE4Y2E4YWVhZTUifQ"
+        },
+        {
+          "resource": "repo://src/layout.py#L293-L403",
+          "version": "repo-lines-v1:sha256:f8e43ddcda33caa135e08f7db23e8b4ba3b4be31e0276a547ee02eaba52044bd:eyJzZWxlY3RlZExpbmVDb3VudCI6MTExLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI3MzkzMmY5NjA1Mjg4YjAxMDhhNTMzOTlkYzYyYWIyYWYxYWMwNTY4NTllZTNjODIxZTU2NmJhNDg1MTNlZGVmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI3ZWI3MDI1NzU5M2RhMDZmNjgyYTNkZGRhNTRhOWQyNjBkNGZjNTE0ZjY0NTIzN2Y1Y2E3NGIwOGY4ZGE2MWE2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlMzQ1MmFiYTViZWIzYWVjNzBkMjY2ODZhM2FlOTMwMWJkOTEzZTExYWU2OTUzMmFmYjMzNjg1NzU1MGZiMDFmIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJiNTA2OWFmYjBiMDNiODJhOTA1NWJlMmZjYjA0YmFmMmVkNDMwNWExNzM3YzA1MzExYjhmMjkyNTE3ZWJmZDVlIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_8ceccee6a829468b8baeee68248d32e8",
+      "statement": "Page diagnostics use bounded outcomes and safe layout failure codes rather than raw provider error text, retaining usage metadata and distinguishing reconciliation application errors.",
+      "evidence": [
+        {
+          "resource": "repo://src/diagnostics.py#L1-L119",
+          "version": "repo-lines-v1:sha256:4443407cc9e8bee96c2e137a8588fd0f21661a8232d10981ff14a9625a21a635:eyJzZWxlY3RlZExpbmVDb3VudCI6MTE5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxNWZhM2Q3MTM4OWU4MjI4MTAzZjlhNzAyYzU3YzhiMWI0YTIwY2E2YzQ1OGJjM2RkNDI2ZmUzNWYwNDljNjNmIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI3ZjYwOTdiNzg0ZDk1ZGNlYmFkN2JkZTk0M2ViYjViMWEyZjVlNTM0Y2I0NzA2MTZmN2VjYWZiN2VlZGRkZTE2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MCwicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIxNDUwODk1N2M5MzcwNDg0NWMzMDMxNzVmNGVlNjY4MDUwOWEyNWQ1MGQyYjFmOGJkNDY1NGJiMmEzMzVkZDZlIn0"
+        },
+        {
+          "resource": "repo://src/parse.py#L222-L245",
+          "version": "repo-lines-v1:sha256:6adb46a0111998462466e7064d3340785ba8331c0d1a30d3be1e0b35a9599a2b:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiM2EyMTlhZTQxMmU2MjA3MjgxMTRkZDhlZTgyOGQ1YmZkZTBmODViMjJjYTc3NTMxNDk1ZDcyODIyOTVjYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE1ZjhmYWQxOTUzY2ExOGIyZjQ5NmI5OGJkMDJjMTg3MmE2ZWMyNTE2ZWY3ZDZlODMxOWM3Yzc4MGFjZThiZTgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1ZGQ4MzU2MThmYzkyM2I4OGZiMTkwZGU4ZDBhYWQwYjVkMThjMjhjZGE5MjVkYzA0MGU0YzNmYmJkYjUwYTUifQ"
+        },
+        {
+          "resource": "repo://tests/test_diagnostics.py#L132-L196",
+          "version": "repo-lines-v1:sha256:106252149228d63187986607e525714ac5b6635352e2cf68162be175eae149ad:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiZWE1MWI4ODdmOWYwMjBjNzI5YTJjNjFiYjc4OTgyODQzNjVlZDQ0Yjc1NzU3NGMyNmE1YjI0MmRiODMxZTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyMWY1MDY1NWIyNzM0MGJkNzM1Y2VmNzQzOTJhYWNiMGVhYjE3NDI4OWRlMGE2NGNiMjBjYWE1ZjAwOWY3MjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImJjYjg3ZGMzODY1MTFhMTZhY2ZkMDRlODk5OWE2NWM1MDg0YTBkYzMwOTgyNDJjOWFlYTljOGQ3ZjBlNDIxMGUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjlkZmUyZmRmZjQ2MzQ5NGUzZTBjMTk4NjFlMGNiNzg1MTdjM2Q5YjNkNDU0NDBiYmUxMmJjYzJlZmM3NjljMTMifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-27T09:37:20.794Z"
+  }
+}

@@ -1,3 +1,3 @@
 # Files
 
-- [Parsing Pipeline Architecture](parsing-pipeline.md) - How GroundMark rasterizes selected pages, attempts V3 layout, transcribes with Sol, and exports full or partial results.
+- [Extraction pipeline](extraction-pipeline.md) - How GroundMark validates pages, combines local layout with whole-page Sol transcription, and produces partial-safe exports.

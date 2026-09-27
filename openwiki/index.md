@@ -4,12 +4,12 @@ okf_version: "0.2"
 
 # Files
 
-- [GroundMark Quickstart](quickstart.md) - Install, configure, and run GroundMark through its Streamlit UI or terminal extractor, with routes into the architecture and contributor documentation.
+- [GroundMark quickstart](quickstart.md) - A task-oriented route into GroundMark's extraction, V3 layout, rendering, chat, operations, and verification knowledge.
 
 # Directories
 
 - [architecture](architecture/)
 - [concepts](concepts/)
-- [features](features/)
 - [operations](operations/)
+- [testing](testing/)
 - [workflows](workflows/)

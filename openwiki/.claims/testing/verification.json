@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:4a9dc672816b59081c9d1f092ad366240b95642b189124faedbd774d231161e7",
+  "claims": [
+    {
+      "id": "claim_56ddd1db294e4ec79eb9f3fc95f5eb69",
+      "statement": "Focused tests cover layout runtime recovery, decode association, polygon reconciliation, bounded guides, partial parser behavior, and annotations using injected or synthetic inputs.",
+      "evidence": [
+        {
+          "resource": "repo://tests/test_layout_detector.py#L316-L445",
+          "version": "repo-lines-v1:sha256:257c7cf471159bf72d68a5af470db7559e5b17c9bd70a037586210a495b69689:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJjYjlmODk0NGE2M2Q4ZTlhOWY4ZTVkZTM1N2MyZTMyZDA5NDY1ZTk0NmY2MWU0NTcxNmZlMmYzZTExMjNjNTViIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiIzMjNlOWUyOGIxODllYTFiM2YwOGZmZmM3YmE3MjUyYTY4NTFlNzExMjYyZmI0NzgxZjllZjgyNjdhZTA1YmNkIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI5OGFhMDlkMDgwMDAxZjJlYzQ3YzRlNTE4NDkwYzMyM2UzMmUwNTExM2JiYzcyMjMwYTkzOWE4YmQxZGJmNWQxIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJmYjE2ZWZmNjc1N2ZlOTI2MmQyNTFkNjRkYzc2NjE1Y2MyNzE4NjY5YTg2NTQyMjJiYzQyY2RhMDZkMWU4ZjIwIn0"
+        },
+        {
+          "resource": "repo://tests/test_layout_integration.py#L398-L597",
+          "version": "repo-lines-v1:sha256:cdfc8b4c842620ceef165d4401f9550a6988fce8bfb78e6a8b07c900722ad46e:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAwLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJkMjJmOTMyOWIxYmU0ZTUxNzY2NWM0MDVhZDgxOGY0ZTk2NDE0NDQyZWE5NzQwZmVjMzE5ZjYzM2Y3NjczNjRlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI4ZTBkMWZjNThlNTY4NTAwYTdjMWQwNTk0N2M1YTE0MzRlN2Y2ZjA3ODU3NWNiNjA1YjZiYzc3MDUwYjJmMTI1IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJhMjEzM2JjZDE3ZDkzNWFiOTNlZTAyYmU3YzdkMGI3OTNhZmM3ZDk2YzRlOWI2ZTE1NzAyMTY5NWY4NDBiZmM0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIwYjI5NzViMTI4MmRmMTU4NDQ0Y2U5MjMzZTY1OWYwMTc2NTViOTFlNzY5MWViMjkyNjY1ZjBmOGFhOWQ0OWFjIn0"
+        },
+        {
+          "resource": "repo://tests/test_layout_reconcile.py#L401-L507",
+          "version": "repo-lines-v1:sha256:f334a4df7b239664c0d1eb406af583b7d6a128629e6208d66b1c07d3fe64289b:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiJkMzQwZjk5NTE0ZjAwN2NlYmYxN2NmMjQyNDljYTUwNGYyZWI0OTg0YzA3NTZjMTE0NTA4NjY3Yjk4MDcwMDk4IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI4NDQ1OWY1MGJkZDZmZGJiMzlkZjRiOGFkYjE0YTU2NjBiOGU3MDlkOWJlODA0MmZhNjYyOGU0OTQ4NjcyMDQ4IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJiZTI2Zjg3NTNkNGQwYzNlY2MwYTJiMmVkYzVjOGZiZTJlYmNlNjkxOGI1N2Q2YjA0MzIyOGU5ZjM1ZWQyZTYxIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MCwiZm9sbG93aW5nQ29udGV4dEhhc2giOiJlM2IwYzQ0Mjk4ZmMxYzE0OWFmYmY0Yzg5OTZmYjkyNDI3YWU0MWU0NjQ5YjkzNGNhNDk1OTkxYjc4NTJiODU1In0"
+        },
+        {
+          "resource": "repo://tests/test_v3_completion.py#L19-L125",
+          "version": "repo-lines-v1:sha256:34b9a1278dff143e3f297e395061a0ae02659a81e5dc828961f67c6bad22f9e2:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA3LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiI5NjViN2E1NWQ0N2MyYzE5ZDRkZGQ2Zjc5MjVhYWIwYjE4N2ZkMWRkMDcwNjUwMGE3NGM1ZjgyYjg4N2Q0Y2I3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI0M2FmZGU5ZGVlYTZlODgyMzZkMzJlNzZjNTA0N2VkNDM5NjI1NjMyOTA3NGNmYTM3ODRmNmJiZDJlNjMxM2Q2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiI2OGE1YzBlMThkOGU1YTE2YTIyM2IwMjFhYzBlY2Q4OGEyZTI2NmY4NWFkYjQxMzg4Yjk5Y2YyNTU2MmM2YTFjIiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiI1M2E1NGUxZjBmM2NiMWMzMjFiNzIwY2E2ZDZiMjU4MzYxZjViOTliZTFlNjJlYjlkYmE2NjhjYzVjMjNlMmJmIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_5f401f078e364d759ca8d07a2491e9b5",
+      "statement": "The existing layout profile evaluator makes paid Sol calls only behind explicit live selection and scores token F1 rather than V3 geometry, correspondence, or order.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/evaluate_layout.py#L1-L34",
+          "version": "repo-lines-v1:sha256:9559eafba2f1a09fd515f16b5221172bf209e37dbaf6666cd6e360de1d09afb7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2NDkzYzkyMTViNzRiZjEwMjg4MjNlOTRjNDRiNzVlNTdiMDg5MGZlMTdiYmQ4ZmVlYjM0YzY5ZDVjM2Q3YzkiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjYzZmNlNTlkMTg1M2UzOTIyY2FhMTViMDRiNjQ3MDE1ZmIzMzA3YWRlMTVjNjU1NDAxZmIyOWZmZDY5OWMxZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk4MWUxZTk3OGQ3NDQ0MWQxMjBjYTU3YmY1ZGM4YmY5OGZiMmY3ZDc1NmE3NWNjNzQ2NmY3MWRlMjVlNjE5OWEifQ"
+        },
+        {
+          "resource": "repo://scripts/evaluate_layout.py#L109-L125",
+          "version": "repo-lines-v1:sha256:e81addb1a3942605c09b67228f5b9b961fc5bcec5ca6df731b85191772e622eb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ0YTFlYjkxN2E4MGNhNjMyMDQ0NTU2NjMwODZjMzZlZGJlMjFmNjc1ZGUxNTVjZmUzOTA3MGIzNzYyZjU3MzUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM2NWYyYmJiYmRmZTllZjRhODU3ZjEwZTI4ZDY3M2ZiYWZhZjVhOGNiY2Q3YjcxMThjZGI4ODk4ZmVmMWJjMjEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ3ZjYzNDkyMDkxMTdmNDhhMjZlMWE2MDI2M2RjMDkwN2E5MTc2OGY2MDNlMzA4YjA5OGU5ZWQ0ZmE2NGIyZjEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_0e45edcc5cca4933b632a99d6c02cf50",
+      "statement": "Offline reconciliation evaluation checks saved inputs by hash and page identity, preserves Sol content, and scores correct matches, order errors, and contour overlap only when review labels are supplied.",
+      "evidence": [
+        {
+          "resource": "repo://scripts/evaluate_reconciliation.py#L189-L248",
+          "version": "repo-lines-v1:sha256:9a358c2b4a5a9c807f9d99d3dbe0ddfb80d0344b5866fe03cd9ac72e7b842077:eyJzZWxlY3RlZExpbmVDb3VudCI6NjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImI5YzZiZDUxYTYxMzQ0MjdiNWM0MjcwNjcwZjE2ZGM1YzJmMGVkZDI4ZWM1OTQ5OGEwMzE2NGU0ODk4MWMyNjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQ2ZDUyNThiZjY1ZmNiNGQ4NTNkYzhhMmMzYmQxZGNlMzNmYjAwNDNjYTVkNTc0ZGQ4YjI1NjkyNTFlZTQ2ZGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImYwNjdhZjM0MDY0N2NjN2QwMThkMTk0ZjdmMDA3MTRmZDViN2ZlNzJlYWU4ODAzZWRhMzFiZDAxNzdiMTQ0YjgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc5ZDk3Njk2YWUzMjZlNjE0MGM0YjA2YjFkYmE2YWM1MWRiZTg0OTEwYmY5MDlkYTMyOGQzYTFlYzVkMWZlYjMifQ"
+        },
+        {
+          "resource": "repo://scripts/evaluate_reconciliation.py#L25-L85",
+          "version": "repo-lines-v1:sha256:24f07784e3d99da176dc1a5a3d113bd058fe054fd219c27e6205484bcc07c401:eyJzZWxlY3RlZExpbmVDb3VudCI6NjEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImExZWExODkxNjk2NDc2MWRmNTIyZjBjMWZkMTliOGVjNmFiNWQwODMwNjMyZmEzYTNiNWM3MzlmYWY4MjhhMWIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImM4ZTgxM2ZkYjg4ZDgwMjg2ZjI2ZDllYjExNjgyYjU1ZGYwYTNiOWFiZWNjNmU4OTAxNWQ1ZGVhZjc5YTMyNDYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImYwODIzYmEyODgzY2ZjYTliODNkY2ExODhmYzY5Y2M2ODUwODkzZTEyMDJhYTlmMTFiMTQ3ZjJmOWJhYjIxNWYifQ"
+        },
+        {
+          "resource": "repo://scripts/evaluate_reconciliation.py#L91-L188",
+          "version": "repo-lines-v1:sha256:737147bdcb7e35782a151410a4e8186c2b3f0fd62fd0ed43d9eadb88e6ee2fd6:eyJzZWxlY3RlZExpbmVDb3VudCI6OTgsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQwMTM2MmY2MDBiY2MzN2IwM2U2MGFiMGZlMjM3ZDBlY2VjMDExMmE5MWY1YmI4NmUwYzEzYTlmMjBlY2JkZmQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM0NTVhMGQ3NWQzYzI0YTQ1YThkM2M5ODlkNGFiZmVkYjBmMDZlZjUzOWJlMDVlODFhZmVlYWQ0OGNmNzI0ZWEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjllZGIxMjVjNmIxNGZiN2FiM2I0MWY1MWI2MTM3Y2YyZTMxZmFhNWEwYTg0YWYwYzNmZDNiZjM1M2NkMDJjYTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFjYzQ1NjI3NTI4MDFkNmQ1YTdiNDllZWQxY2RkZmViZGU3MjgzYjMyZTdhYThhMTA4YzU3ZTA3Y2Y0MTgwNTgifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_8fb705b88966407ca3d45e9628fdcc9a",
+      "statement": "The current V3 integration report explicitly does not establish real-page correspondence, contour, or order accuracy without reviewed representative labels.",
+      "evidence": [
+        {
+          "resource": "repo://docs/V3-INTEGRATION-COMPLETION.md#L74-L84",
+          "version": "repo-lines-v1:sha256:f3392c2bda418717a70d760fd23554f589dd27aeef4e124f2a92eb6a0dc41785:eyJzZWxlY3RlZExpbmVDb3VudCI6MTEsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjAxYmE0NzE5YzgwYjZmZTkxMWIwOTFhN2MwNTEyNGI2NGVlZWNlOTY0ZTA5YzA1OGVmOGY5ODA1ZGFjYTU0NmIiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg5MzNlYjE1ZGViNGVmNjUyYjljMmI5NGZjODhiZTcxNGIzNWMzNTdmOTBmOGNlZDg5N2FlOTg5ZDk0ODBjNTAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijk0NTMzZjYxZTRmNTI4N2ZiNGM1MWFkZTIyN2MxZmMxNGYxNGNmNzNlZTlhYzY2NjgwN2M3ZjhjMzFkYzM4NTEifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-27T09:37:20.794Z"
+  }
+}

@@ -1,3 +1,4 @@
 # Files
 
-- [Artifacts and Export Lifecycle](artifacts-and-exports.md) - How one parsed result becomes collision-safe Markdown, HTML, JSON, annotation, figure, and ZIP outputs while preserving partial work.
+- [Document-grounded chat](document-chat.md) - How parsed pages become bounded evidence for a locally checked and independently verified chat answer.
+- [Rendering, annotations, and exports](render-and-export.md) - How one parsed result produces safe text outputs, figure crops, and V3-aware page overlays.
