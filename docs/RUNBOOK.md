@@ -1,6 +1,6 @@
 # Runbook
 
-This page covers running and troubleshooting GroundMark. For a code change, use the [developer guide](DEVELOPER-GUIDE.md) and [contributor runbook](CONTRIBUTOR-RUNBOOK.md).
+Use this runbook to install, run, and troubleshoot GroundMark. For a code change, use the [developer guide](DEVELOPER-GUIDE.md) and [contributor runbook](CONTRIBUTOR-RUNBOOK.md).
 
 ## Setup and runtime preparation
 

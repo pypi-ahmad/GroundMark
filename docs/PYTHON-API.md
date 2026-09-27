@@ -2,7 +2,7 @@
 
 The installed package is named `src`. These are the current callable and data boundaries, not a promise of a stable third-party SDK. Function signatures and concise docstrings remain in the linked source files. Importing the layout runtime does not import optional ML dependencies or load weights.
 
-This is the reference companion to the [developer guide](DEVELOPER-GUIDE.md). The [onboarding path](ONBOARDING.md) and [zero-to-mastery tutorial](ZERO-TO-MASTERY.md) provide runnable, offline-first exercises.
+For a path through these APIs, use the [developer guide](DEVELOPER-GUIDE.md). [Onboarding](ONBOARDING.md) and the [zero-to-mastery tutorial](ZERO-TO-MASTERY.md) include exercises you can run offline.
 
 ## Parsing and orchestration
 
@@ -40,7 +40,7 @@ These descriptions live here because adding class docstrings to Pydantic models 
 
 Documentation audit: 91 of 116 top-level public functions and classes had docstrings before this guide update; the previously undocumented `extract_custom_vertices` now has one. The 24 remaining top-level public classes without docstrings are Pydantic models. Their contracts are described in the tables below rather than added to generated schema descriptions. New and updated docstrings in this pass use Google-style sections. The coverage count excludes methods, tests, scripts, and private names, and is a navigation measure, not a quality score.
 
-### Pages and blocks — `src.layout`
+### Pages and blocks in `src.layout`
 
 | Type | Meaning and validation boundary |
 | --- | --- |
@@ -53,7 +53,7 @@ Documentation audit: 91 of 116 top-level public functions and classes had docstr
 
 `expanded_table_cells` counts rectangularized table cells. `check_document_tables` enforces the document-wide budget; schema validation handles malformed shapes. They read the configured resource limit and do not call models.
 
-### Artifact-only layout evidence — `src.layout`
+### Artifact-only layout evidence in `src.layout`
 
 | Type | Retained information |
 | --- | --- |
