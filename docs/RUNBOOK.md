@@ -2,7 +2,7 @@
 
 ## Setup and runtime preparation
 
-The [README installation instructions](../README.md#install) cover GitHub wheel installs with `uv tool`, `uv pip`, or pip, as well as manual cloning. You need Python 3.14+. Once installed, the commands work outside the checkout.
+The [README installation instructions](../README.md#install) cover GitHub wheel installs with the `layout` extra through `uv tool`, `uv pip`, or pip, as well as manual cloning. You need Python 3.14+. Once installed, the commands work outside the checkout.
 
 Set `OPENAI_API_KEY`, and optionally `OPENAI_BASE_URL`, in the environment or a `.env` file. The launcher reads `.env` from the current folder, or from the UI's `--workspace` folder when provided. `--env-file PATH` selects a specific file. Variables already in the process take priority. After setting Windows User or Machine variables, open a new terminal so GroundMark inherits them.
 
@@ -14,7 +14,7 @@ GroundMark attempts PP-DocLayoutV3 before Sol extraction. Use `uv sync --extra l
 
 Upload and preview remain lightweight. A valid Streamlit Parse click displays “Preparing PP-DocLayoutV3…” before starting the graph, then shows GPU (CUDA) or CPU. Initialization failure warns and continues with Sol; another Parse click retries initial preparation after the issue is resolved. Failed CPU recovery after a page CUDA failure requires process restart. Ordinary reruns and tab/view changes neither reload weights nor rerun inference. Model readiness is process-wide; parsed results and status display are session-local. Detailed layout remains a separate experimental Sol option.
 
-The default `GROUNDMARK_LAYOUT_DEVICE=auto` verifies CUDA inference and retries CPU if initialization/probing fails. `cpu` skips CUDA. Set `GROUNDMARK_LAYOUT_MODEL_DIR` for the four pinned local files; otherwise standard Hugging Face user-cache configuration applies. A malformed local override fails rather than downloading elsewhere. Restart the process after changing configuration. No model files belong in Git.
+The default `GROUNDMARK_LAYOUT_DEVICE=auto` verifies CUDA inference and retries CPU if initialization/probing fails. `cpu` skips CUDA. Set `GROUNDMARK_LAYOUT_MODEL_DIR` for the two pinned local files (`inference.onnx` and `inference.yml`); otherwise standard Hugging Face user-cache configuration applies. A malformed local override fails rather than downloading elsewhere. Restart the process after changing configuration. No model files belong in Git.
 
 The default limits are 100 MiB per source, 250 selected pages, 50,000,000 pixels per raster image, and 16,384 output tokens per parse call. Override them with the positive-integer variables shown in `.env.example`; invalid or nonpositive values stop the operation.
 
@@ -80,7 +80,7 @@ Resource limits in `.env.example` include 10,000 expanded table cells across a d
 For releases produced by the attestation-enabled workflow, verify the downloaded wheel before installing it. Authenticate `gh` first, replace the tag below with the intended release, and require successful verification:
 
 ```powershell
-$releaseTag = "v1.0.0"
+$releaseTag = "v1.1.0"
 $releaseWheel = "groundmark-$($releaseTag.Substring(1))-py3-none-any.whl"
 gh attestation verify $releaseWheel --repo pypi-ahmad/GroundMark --signer-workflow pypi-ahmad/GroundMark/.github/workflows/release.yml --source-ref "refs/tags/$releaseTag" --deny-self-hosted-runners
 if ($LASTEXITCODE -ne 0) { throw "Release provenance verification failed" }

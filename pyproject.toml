@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "groundmark"
-version = "1.0.0"
+version = "1.1.0"
 description = "Grounded document extraction with Markdown, HTML, annotations, and document chat"
 readme = "README.md"
 license = "MIT AND Apache-2.0"
