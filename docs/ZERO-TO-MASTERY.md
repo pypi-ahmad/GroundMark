@@ -68,7 +68,7 @@ Checkpoint: describe why “unmatched Sol block” does not by itself prove “V
 
 `src/graph.py` runs preprocess then parse; `src/export.py` writes selected formats. Markdown and HTML come from `src/markdown.py`; figures use selected AABB envelopes; `src/annotate.py` draws full matched V3 contours, unmatched Sol boxes, and detector-only overlays. Saved JSON retains page diagnostics and separately validated `layout_metadata`. The [runtime runbook](RUNBOOK.md#diagnostics-and-match-inspection) explains the inspection fields.
 
-For a mastery exercise, choose one existing fixture-backed test and add a focused assertion for content preservation, one-to-one matching, contour fallback, or an annotation overlay. Run its file, the complete offline suite, and `git diff --check`. Avoid changing a matching threshold merely to raise the match count; [evaluation guidance](V3-INTEGRATION-COMPLETION.md) requires reviewed correspondences and page rasters to measure quality.
+To check your understanding, choose one existing fixture-backed test and add a focused assertion for content preservation, one-to-one matching, contour fallback, or an annotation overlay. Run its file, the complete offline suite, and `git diff --check`. Avoid changing a matching threshold merely to raise the match count; [evaluation guidance](V3-INTEGRATION-COMPLETION.md) requires reviewed correspondences and page rasters to measure quality.
 
 ## Optional: one real extraction
 

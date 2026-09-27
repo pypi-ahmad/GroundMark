@@ -1,6 +1,6 @@
 # Contributor runbook
 
-Use this when a change is ready to be implemented or reviewed. The [runtime runbook](RUNBOOK.md) covers installation, extraction, artifacts, and release operations; this page covers the contributor loop.
+This runbook covers a contributor's work from the first edit through review. The [runtime runbook](RUNBOOK.md) covers installation, extraction, artifacts, and release operations.
 
 ## Before editing
 

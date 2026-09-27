@@ -1,6 +1,6 @@
 # Contributor onboarding
 
-This is the shortest route from a fresh checkout to a tested, local change. It does not require a provider key or a model download.
+Use this guide to get from a fresh checkout to a tested local change. You do not need a provider key or model download.
 
 ## First session
 
@@ -31,4 +31,4 @@ Pick a focused documentation or test gap that you can verify without model calls
 
 No branch, commit, PR, or publication is implied by a local implementation request. When contributing through GitHub, follow the requested delivery workflow and check [Contributing](CONTRIBUTING.md) and the [contributor runbook](CONTRIBUTOR-RUNBOOK.md) before submitting.
 
-For a guided tour with checkpoints, continue to [Zero to mastery](ZERO-TO-MASTERY.md).
+The [Zero to mastery tutorial](ZERO-TO-MASTERY.md) follows a page through the code with checkpoints.

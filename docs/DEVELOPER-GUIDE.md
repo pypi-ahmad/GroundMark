@@ -1,6 +1,6 @@
 # Developer guide
 
-GroundMark's Python package is named `src`. The CLI, Streamlit UI, and direct `run_graph` callers use the same parsing path. This guide is a map for changing that path; [Python API](PYTHON-API.md) lists callable contracts, and the [runbook](RUNBOOK.md) covers installation and operations.
+GroundMark's Python package is named `src`. The CLI, Streamlit UI, and direct `run_graph` callers use the same parsing path. Use this guide to locate the code and tests for a change. [Python API](PYTHON-API.md) lists callable contracts, and the [runbook](RUNBOOK.md) covers installation and operations.
 
 ## Set up a checkout
 
