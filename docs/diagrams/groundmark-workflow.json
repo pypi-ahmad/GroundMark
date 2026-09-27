@@ -60,11 +60,11 @@
     },
     {
       "dot": "cyan",
-      "title": "Sol fallback",
+      "title": "Matching and fallback",
       "items": [
-        "Misses and mismatches retain Sol boxes and positions",
-        "Compatible one-to-one matches use V3 geometry/order",
-        "Reconciliation failure retains Sol without another call"
+        "Unmatched Sol blocks retain content and geometry",
+        "Qualified pairs use V3 geometry and order",
+        "Reconciliation defects keep Sol and mark the run partial"
       ]
     },
     {

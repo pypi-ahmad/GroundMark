@@ -1,4 +1,7 @@
-"""Two-stage, bounded layout comparison. Baseline runs before schema changes."""
+"""Paid Sol profile comparison; token F1 does not measure V3 correspondence,
+polygon overlap, or reading-order accuracy. For local saved-response replay,
+use scripts.evaluate_reconciliation. Baseline runs before schema changes.
+"""
 from __future__ import annotations
 
 import argparse

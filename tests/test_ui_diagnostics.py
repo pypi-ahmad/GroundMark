@@ -47,7 +47,7 @@ def test_failed_run_shows_current_diagnostics_and_excludes_stale_artifacts(uploa
     assert not any("STALE MARKDOWN" in item.value for item in app.markdown)
     assert any("exclude unknown usage" in item.value for item in app.caption)
     assert all(item.label.startswith("Reported ") for item in app.metric)
-    assert len(app.expander) == int(has_diagnostics)
+    assert len(app.expander) == 2 * int(has_diagnostics)
 
 
 def test_sol_only_and_tab_reruns_do_not_repeat_calls(uploaded, monkeypatch):
@@ -300,5 +300,25 @@ def test_layout_summary_uses_saved_counts_and_does_not_blame_provider_for_v3_fai
     assert not app.exception
     summary = next(e for e in app.expander if e.label == "Layout summary")
     import json
-    assert json.loads(summary.json[0].value)[0]["matches"] == 3
+    assert json.loads(summary.json[0].value)[0]["matches"] == 4
     assert not any("provider did not supply" in c.value for c in app.caption)
+
+
+def test_cpu_recovery_updates_readiness_on_reruns_without_inference(uploaded, monkeypatch, fake_layout_runtime):
+    from src.layout_detector import LayoutReadiness
+    calls = []
+    monkeypatch.setattr(fake_layout_runtime, "prepare", lambda: LayoutReadiness("cuda", None, .1, False))
+    def run(*a, **kw):
+        calls.append(True)
+        kw["on_progress"](dict(phase="page_complete", completed=1, total=1, successful=1, failed=0,
+                               device="cpu", fallback_reason="cuda_execution_failed",
+                               execution_failures=("cuda_execution",)))
+        return dict(status="parsed", token_usage=[])
+    monkeypatch.setattr(graph, "run_graph", run)
+    app = AppTest.from_file(str(APP)).run()
+    app.button[0].click().run()
+    assert not app.exception and app.session_state["layout_readiness"]["device"] == "cpu"
+    app.run()
+    assert len(calls) == 1 and not app.exception
+    assert any("CPU recovery" in c.value for c in app.caption)
+    assert not any("GPU (CUDA)" in c.value for c in app.caption)

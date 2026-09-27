@@ -1,0 +1,74 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:4f650e08f21b686349bd432932ba20c97666b8ffac9422aaf1c5c74aca003a42",
+  "claims": [
+    {
+      "id": "claim_61fb3f9aad5548a0a7f31dd89b34d0d7",
+      "statement": "The application runs a two-node preprocess-to-parse graph, with per-run output and usage state and parsed, partial, or failed statuses.",
+      "evidence": [
+        {
+          "resource": "repo://src/graph.py#L33-L64",
+          "version": "repo-lines-v1:sha256:641c93be3d92cebc8201f5eacf840d74a48f05fb1a7330eca89421e83e50c0b7:eyJzZWxlY3RlZExpbmVDb3VudCI6MzIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiODQzNjAyMDNiY2M0N2Q2NDJkODJmNWNkODVkNThlMTcwMWQyYzY5OGE3ZjEyNDllNmI3OGRhOGQ5ZmM1ODMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY1ZDc0YzViNmQ1ZWU5MzFhYWIxOTdmYTc0YmE0YzA2OTgwY2RjNDc5Y2Y2NDBjYWMwY2MzNTRkN2M2OWYyYTUiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImY3NWIyZWE2YjMyNmExZGM1NDdhNWVhYjdlZGU3ZmY1MjgwOWY0NWU1YzFlZWU4Y2EwMzJlZjJjNDNjMzM0YTEiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjllY2IxODFmNjNmNTdmYTZhZWM1NzEzNjQ3MTVkYjBhNTNkZjY4ZmNjY2YxM2VlMTZjYzkyZGM4MzVjYTlhNTgifQ"
+        },
+        {
+          "resource": "repo://src/graph.py#L89-L217",
+          "version": "repo-lines-v1:sha256:484779e6325caa03db5b6852d30b46b57f70d85f2d3dad3416d0a670a1b344d6:eyJzZWxlY3RlZExpbmVDb3VudCI6MTI5LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIxOWMzZjI4ZGExODc1NjliZTMyOGY0ZmFiYzU5ODM2NDA0MDEyNTc5ZTZiOWUzNDNkODZhMzA4YmYxYjFhZWZhIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI3ZWI3MDI1NzU5M2RhMDZmNjgyYTNkZGRhNTRhOWQyNjBkNGZjNTE0ZjY0NTIzN2Y1Y2E3NGIwOGY4ZGE2MWE2IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJlOTM3ZmIwNzhjMjgxYTdiOTQzYWUzYTcxNmJjYzYzY2I0ZWVkNmRjYmNhNzU2ZDU3NjgzYjFjZTIwODg1MzY0IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJkZjI0ZWRhNWE3Nzk3YzZhOWZiODNiZTNlODVlNGNiMjdiNzgwZDc0MTIwZDA5MDNlNjViYTEwNGE0Zjc4MjE1In0"
+        }
+      ]
+    },
+    {
+      "id": "claim_38edc1a89507481099813fe1f0cc011b",
+      "statement": "Preprocessing validates the source and selected page range and yields source-numbered PNG rasters, rendering PDFs at 200 DPI with a 1600-pixel long-edge cap.",
+      "evidence": [
+        {
+          "resource": "repo://src/preprocess.py#L113-L197",
+          "version": "repo-lines-v1:sha256:6e1e09d111e3e7b70a91f57b7ccb6d95a82dec93bc15245f36929903935c132f:eyJzZWxlY3RlZExpbmVDb3VudCI6ODUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjJjMmYzZTc2OTJlY2FhMDY5MTZmNGM3NmM5YmQ4NjZhM2RiY2VlNDY1MmQxNWQ0YWZhMjU4OWFmMDg5ZDk5N2YiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVlODRmZmY2OGMzZjg4NTMyMjk5M2JkOGRlMzdhNTM2NGI4NzhjNWZhNDlmMTRhNGRlOGRjNmE4MmRjODc5MDciLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImE1OWRlMmRlMzkwNjU0ZDkwY2RhYzQzN2VjMDI5ZDA3ODNjNjk3N2VhN2Y2MTE1YmEwODhlMTIxYTVkZTRhYmQifQ"
+        },
+        {
+          "resource": "repo://src/preprocess.py#L25-L34",
+          "version": "repo-lines-v1:sha256:6afd222156bdce7dbbb208f5a29ae599ea902acac714f45be8036448b8d0d7eb:eyJzZWxlY3RlZExpbmVDb3VudCI6MTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijc3MDNiZWQwNDljMWNiYmE1ZWQzYTEzMWQxN2ZmZDhkMjYxYzdhM2YzMDU0NGI4ODgxZDMyNzFmNTZlODk5MDUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImU1YjNlOGI3ZWJlZmM2MjQ0ZDQ4MjBjMzk0MjM1ZDIwZjJlZWY2NTNiMDU3YzIxZGQ5ZmE4NTMwN2Y5NzI4YjYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY0ZDIyODJjOWU4Yzg4Y2ExMmNmMjllMDU3ZGQ2ZTA0YjE2MjY2MWZiYzUyM2U1ODRkYzE4ZTYwYTg3N2IzMTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImU2NjMwYjIwZmVlNzk5ZGY1YjQwNTM2MjVhNjQ5Mzc4OTVjYmVhODQ3MWFlN2NjOGMxMDlkOGE4ZmNjMGFiOWUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_db6ce3d5652642b18ed909411dc1589f",
+      "statement": "Document parsing prepares V3 once, processes pages sequentially, and supplies bounded previous-page context to each complete-page Sol request.",
+      "evidence": [
+        {
+          "resource": "repo://src/parse.py#L143-L222",
+          "version": "repo-lines-v1:sha256:c149313c808c0cb62e9f485b3cadb03fdb899dd3eb2bcd3e0013fa55baca5ddf:eyJzZWxlY3RlZExpbmVDb3VudCI6ODAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjRhOTM5NTBlNWUwZTdkYzE3ZTZkNThjZGU2MTdiNjExNTlmNjZkYWNhOGE4YTY0NmQ0ZmYyZjk5M2RlN2YxOGEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJiM2EyMTlhZTQxMmU2MjA3MjgxMTRkZDhlZTgyOGQ1YmZkZTBmODViMjJjYTc3NTMxNDk1ZDcyODIyOTVjYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZhMjc0Yzg0ZTRmMmZkNjdmYzg1ZjU1NzlhNWUyNjAwMDI2NzQxMzAxZGRhMzMxYjNkNzlhMmY4MDcxNWEyYmYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjU0YTYzNjU3ZTc3MWYwMDQ2NzI5ODAwYTllODg1ZjI5YjQwYzQzMDY0YTIzNjJmNDJmMWY2ZjFiZmFkNjUwZDYifQ"
+        },
+        {
+          "resource": "repo://src/parse.py#L247-L377",
+          "version": "repo-lines-v1:sha256:d09cc9c6481b08faa02449e1166cbf8a8326fb930a21d945dfaedf44b99281c4:eyJzZWxlY3RlZExpbmVDb3VudCI6MTMxLCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIyNjAxODFiNjQ0Nzc3MjNmYTA5ZjhiYTQzMzVjMWVmOTBmMTEyYmZjNjhkNDJkM2YzNTYxZTEwOWNkZjc2MTc3IiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiJjMmU4ZTI5ODIzMTczYWM0NjQ0YjBkMjEyMDMzZGE1YWVhNmFkN2Y5YmEwN2Y3NDA5ZDg3ZTlhY2JmOTAzZWUxIiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJjOTk1NGYzM2I4MDFhYmY2OTlhMzA2ZWZiM2IyMWRhOWJiMThmNDY1ZWE5ZmM5ZDRhMDk4MDdiNmIzZDkyMTQ3IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiJkNjU1YTQ5MjNmNjBmNjEyMGYyYTRjMDU4YTk3OTM0NTQ4MjM2MTM0M2ZhNjkyYmQzMGY0NGJjM2VmMTNjMDcwIn0"
+        }
+      ]
+    },
+    {
+      "id": "claim_bd2d79cfef824ebe8092297c46bcb28b",
+      "statement": "Layout analysis and guide failures allow Sol extraction, while page diagnostics retain source-order partial results and reconciliation defects are separately marked as application errors.",
+      "evidence": [
+        {
+          "resource": "repo://src/diagnostics.py#L85-L119",
+          "version": "repo-lines-v1:sha256:7f51aa159bfd48216dee0d98eaa78ac327f1e38d564221164e41ac7f5dc6160f:eyJzZWxlY3RlZExpbmVDb3VudCI6MzUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImUwNTc2ZjMxOWFiNDMzMGMxYmU4ZjA4NDNhODEyNGI1YTg4ZjFhZGRkYzA2N2M3M2MzNmEyZmZhYWU5MjM3OWYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdmNjA5N2I3ODRkOTVkY2ViYWQ3YmRlOTQzZWJiNWIxYTJmNWU1MzRjYjQ3MDYxNmY3ZWNhZmI3ZWVkZGRlMTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjQ0MWE2YjE2MmM2NTM1NTFmNDJiZmZjMWJiMTk0Yzg1M2QzYmJjNzM3YTQ3MjNiMzdjZWJhMmQ2NzM3MzQ0YTIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjE0NTA4OTU3YzkzNzA0ODQ1YzMwMzE3NWY0ZWU2NjgwNTA5YTI1ZDUwZDJiMWY4YmQ0NjU0YmIyYTMzNWRkNmUifQ"
+        },
+        {
+          "resource": "repo://src/parse.py#L167-L245",
+          "version": "repo-lines-v1:sha256:a28f04953b4d24549fe6728d4d5010d37b33de88ceddde9f5d51325602c37f1e:eyJzZWxlY3RlZExpbmVDb3VudCI6NzksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjhiZDY1MTg2NjYxYWZhNTRhNzNkYTdlNzVkMmRjNjEzMzdmMjlkN2QxMjc4ZDgwY2M5MmM3YjdlZjQ5MzQwNTEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImIxOTMzNDY3NTQ2YWNmYzYwMDBjMmM3ODM4ZTE1NDFiYjI2OGNjMmQ5MTM2OWFjYjZkM2Y0MmI5MjFkYjk3NTQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijc1ZGQ4MzU2MThmYzkyM2I4OGZiMTkwZGU4ZDBhYWQwYjVkMThjMjhjZGE5MjVkYzA0MGU0YzNmYmJkYjUwYTUifQ"
+        },
+        {
+          "resource": "repo://src/parse.py#L70-L131",
+          "version": "repo-lines-v1:sha256:9c445c18b7ef7105a3581e713d076bf10e979546210b971fb3fc739fbf6896e4:eyJzZWxlY3RlZExpbmVDb3VudCI6NjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2ODBiYzY1OGZhNTBmNjU1YzlhZWNlNzY5MmRiZmJiZjA2YmFjMzRkNmRhNjdkMjc3MDA3OTU3NTViYWNhNjYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjZlZjkwNGQzNGMwNTQyMzc5NGFhOTJkNThjOWU4ZTVlMTU2NmNmZDdkMDc2ZTA4YzMxZDg4MzgyZjIxNjgzM2UiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY3YjU0NDQwODZjOWMyNzdlZWM5OTA1Zjg4ODMxNWRkMThlNDFjOTljMzQ2MWZjYTI4ODg4ZGZiZWU2MmE5ZGMifQ"
+        },
+        {
+          "resource": "repo://tests/test_parse.py#L75-L164",
+          "version": "repo-lines-v1:sha256:ad72a5280a50bd150ca8a9c25a186fb89ebb7ffa04490e2c958987de16e2bc04:eyJzZWxlY3RlZExpbmVDb3VudCI6OTAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjNhOGVjYjJjMGFmY2UwZjY2NGZiNzZiOWI4NzE0ZmE1ZmQwM2IwMWQ5Y2FlNjg0ZDkwMWY5MmZkODM2NGY4YzgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkODQzMWM5MTcxMmE5MGI0OTkyNjg5ODIzOTk3MDRjOWMxN2FmMzgzMjVjZGM4NWJiZTk2ZTI3M2M2YjZkODYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImE5NTJlZTlkYWJjYTY1MGMwYmE3OThkZDkxYjhmZWRhYmRiMjRmNTBlODY2MDlhYmUyZmIyOTNhNTNkMTA5YWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImQzNWI3NmY4NjM1Yjg1ZTdmYjk2OTdkMDg4MjAzMjQ1MzlmNmY4NmU1N2IwZWFlYzgzNWU4OWY2MjE1MWFlMmUifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-27T09:37:20.794Z"
+  }
+}

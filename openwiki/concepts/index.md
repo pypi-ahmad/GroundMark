@@ -1,4 +1,4 @@
 # Files
 
-- [Layout Model and Rendering](layout-and-rendering.md) - Sol block schemas, separately validated V3 evidence, conservative reconciliation, and loss-aware rendering.
-- [PP-DocLayoutV3 Runtime and Reconciliation](v3-layout-runtime.md) - Official local V3 model preparation, page geometry, conservative matching, and Sol fallback.
+- [PP-DocLayoutV3 detection and reconciliation](layout-v3.md) - The pinned ONNX layout runtime, contour and order decode, bounded Sol guide, match ownership, and failure paths.
+- [Page data and provenance](page-artifacts.md) - GroundMark's Sol page schemas, normalized boxes, V3 metadata, validation, and safe per-page diagnostics.

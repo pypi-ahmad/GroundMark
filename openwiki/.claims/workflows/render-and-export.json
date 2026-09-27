@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:f1ffe1e9f1964b6db9cf85116c024f6583231620c1b0efa26f0762df0c187a82",
+  "claims": [
+    {
+      "id": "claim_2311d657a5fa4dabaab6faeb756d5aa4",
+      "statement": "Markdown and HTML are rendered locally from validated parsed blocks, with Clean view hiding only classified page headers and footers and source markup escaped.",
+      "evidence": [
+        {
+          "resource": "repo://src/markdown.py#L20-L43",
+          "version": "repo-lines-v1:sha256:53d80cae6b4d88105af2c4873b9fcf63fa08a9ccf8567284914c07ffb5c9830a:eyJzZWxlY3RlZExpbmVDb3VudCI6MjQsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU5MzY0YWIwNGIzZjE5NmFkNTNjOGE4MDRjM2EzMWNmYzI2MjRiMWZlZjlmOWIzOGRiZWUxMmMxMGU1Y2ZiMDEiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImNiZjZlNWQyMzA1OGY3ZDRiMWU4NTZhNzIyMTNkNWI3NDRmNmVlYzI1NzMxMWYyZGZmODk1NDI0MjZkM2Y4MTkiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjRiMmRjZjdhZWU0MGQ0ODEwNzUzN2UwZWY0YzYyZDIwYjgyZDMxNTZmNmE1MTI1ZTU4NTI0ZDJkY2MxOTIzYzcifQ"
+        },
+        {
+          "resource": "repo://src/markdown.py#L203-L267",
+          "version": "repo-lines-v1:sha256:84e99f5312fb2a8c27b2514fa126eb2182359eed65110659805b73c3ad863618:eyJzZWxlY3RlZExpbmVDb3VudCI6NjUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcyOWQxZjIxMjQyM2RiYTYyNzgwNzE4MzIxZmEwMjM3Y2U3NjZlZWJlMTQyOGRkZTE5ZWVkNmRiMTA4ODQ3ZTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhlODMzNTg2MjA3NWJkYzg5MjAyNjJiMTVjZjNkMDIxY2NiNzI0ZWVlZGUyNmY4N2YxYjU1NDJjY2I5NDE1MDQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjFiZTU5MWZiNWMxOTJmY2NhNjViNjNhMDg3Mzc2MGZjZGU4YmY4MzZjY2JhMmY2ZGRjNGE3NDA1MDMxOGQ3NDgifQ"
+        },
+        {
+          "resource": "repo://src/markdown.py#L45-L64",
+          "version": "repo-lines-v1:sha256:a6e51999bf153821716aa0eb9a205906ab7f64b887303f7ab28afc604522e137:eyJzZWxlY3RlZExpbmVDb3VudCI6MjAsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImJkYjU2YTVmNzQ1OTQxMTRkY2UwOTg4NjczZTllNjZkMmNmZTc0ODcyNDcyODc3Mzc4YWJiMGQ3YTRmMjFjYTUiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjI4MzMxY2UwMmM0MTE3MDkxZTliOTgwMGU1YTQ5NThmNDJkODJiNDAwZGFiNzllM2YzOGM0OTIyZDdjYjQ4MzQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjI0YjY5NmMxZjI0OWQ0NGIwZjFhNjJhZmVmN2E1ZGQxYzhkODE4YjkyYTI2ZGUxYzY2ZjYwN2FhOWZlYTUwMDYifQ"
+        },
+        {
+          "resource": "repo://tests/test_markdown.py#L60-L85",
+          "version": "repo-lines-v1:sha256:00347430c74203135b971ce2bee0bed4d5d406d2cbeaf475c38f9e80b6077bb6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkYTBlNWVmYWFlOTdjZjk1YzRjNGQ4NzY5YzU0OWE4YjdmYjNjY2JkMTYwNjVkYWEwOGU3ZGU0NGYwM2U2ZmEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjEwZWY2NGJiZGIxMzBlMjdmMjNlMzZjM2YwZTM1YjA2OThkMjcwN2ZhNjU3NGUyMjFlZWQ5ZDJhZWY2ODdkMGQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjhiOTc0ZGE0MDg2MzJhNGFhN2UyYWU4MGI4NjAzOTFhM2RjZDgyMTFjNzllY2FkN2NhOGU5NTEyOGIwMDE4MzIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjVkNTMxMTJiZWI2MGNjMTU2ODE3YWNlMDFjMzc1ZTI3Nzg4NTk5M2U4NjJmZWQwMDRjNDc0NTgyMTFjYmU0YWMifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_a2fa0065855c4ea39d5733eaa421767e",
+      "statement": "Exports independently select text, JSON, figure, and annotation artifacts; JSON can survive all-page failure and individual presentation failures are collected as export errors.",
+      "evidence": [
+        {
+          "resource": "repo://src/export.py#L1-L95",
+          "version": "repo-lines-v1:sha256:8da7c885afcaf0e9dd72f5915e5c9835325d2cb3a73a6fbd82266659e6b7f33a:eyJzZWxlY3RlZExpbmVDb3VudCI6OTUsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5NDU3YTc1NDFjNDBlMDUxY2Y0YjI1Zjc0ZmNjYTFlMWU5MjdkNjZiMmY5ZjkzZDA1MjhkNTFmNDM2MzJlYjQiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjU3YzJhNDZhMDMxY2ZmMWRhZjdhNWUxNTJjZjRiOTdjOGJiNDJjZmYyNzljYzNjZTJkOTE2ZjdlZWQ5YzE1MjciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjowLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjowLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImUzYjBjNDQyOThmYzFjMTQ5YWZiZjRjODk5NmZiOTI0MjdhZTQxZTQ2NDliOTM0Y2E0OTU5OTFiNzg1MmI4NTUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_df6fd796cefb45578975c8fa76712088",
+      "statement": "Figure extraction verifies the source hash and uses normalized rectangular block boxes with count and byte budgets, omitting failed crops without changing transcription.",
+      "evidence": [
+        {
+          "resource": "repo://src/figures.py#L18-L73",
+          "version": "repo-lines-v1:sha256:a51e7a517b5e6ad1d77aac742277deb7debc53a2bb4da08db224dbe99645e779:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjZhOWIwZGVkYTM3MDBkNDViZTVmYmQwNzE4YzkxY2Q2YWZjZTVkZTkzNzA5YzU3NDhkYWI4ZDUxMjg3YjQyNjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA3MDgyNDY2YTFiNWVlOTVmMjQwYWZmZDA3ODY5NTJlYjA3YmEwOWY1MTdjNmUxNGE1NDRiYTQyOGQ2NmE0YTgiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE5Y2Y1OTM3ZjNiOWU1ZTA4NTM4M2QwOGFiZjNhYzc0NmUzM2ZjY2YyOTBhYWFiYjU4YjdhNmQ2ZDVmOWE5YWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImRlMTE3OTJjNzkzMGNjMTQ2MGY2ZTMxYTY2ZGE4MmJhMTc2MTMxNjk5ZmQ2OGU1ZmRhNzNiNzNjMDM3YTlkNTkifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_70a2552c7e624ad5a734d12728df7d75",
+      "statement": "Annotations validate block-to-region mappings and draw matched V3 contours or explicit V3 AABB fallback, Sol boxes for unmatched blocks, and distinct detector-only overlays.",
+      "evidence": [
+        {
+          "resource": "repo://src/annotate.py#L45-L81",
+          "version": "repo-lines-v1:sha256:e210d1f809579f2d89745c728d7c6ff24b70255d8d6971a8151b33bfa54471f9:eyJzZWxlY3RlZExpbmVDb3VudCI6MzcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImQyY2NkNWFhZDQxYjZjMmMyNmY5ODAwNTU2ZTk2OWMxNmJiMTJkMzNkY2M3MGFmYWQ2M2FmYzk4NTE4NzAxZjgiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE4NzZkZjZkMmU0OTYwNTBiYTU1MjBmYWQ4YTYyMTJhZGY0YTEwMjEzZTIyNDY3NWI2NDk1YTY3MWViMTdmZjAiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjBlMjFjOTU4OGMwYTNiMjVjZWYxYzRjNDViZDczNjdjMTgzOWRlMjczNGYzMTg3N2MyYmZkODUyZmU3NmYyOWEifQ"
+        },
+        {
+          "resource": "repo://src/annotate.py#L82-L187",
+          "version": "repo-lines-v1:sha256:0d4d9d32968aec529a7f7e32cf69ee5090605f8bef9635c6796d9fb6904ea55e:eyJzZWxlY3RlZExpbmVDb3VudCI6MTA2LCJmaXJzdFNlbGVjdGVkTGluZUhhc2giOiIwZTA5YjEzNWUyZWNiOTU4ZjIzYWU1MTA2NTZmOGVlYzAxNzgxMTQ5MmFhMjU4ZjFlMzcwMzQ0Mzc5MGI1YzNlIiwibGFzdFNlbGVjdGVkTGluZUhhc2giOiI4MGQ4MzMzNTcwYjhiYjNhZGNmYWY5YWRjYWE4YjMxNWUwZmVkYmRmY2U5N2RmOWRmYmUzN2E1NzQ4YmRhYTU3IiwicHJlY2VkaW5nQ29udGV4dExpbmVDb3VudCI6MywicHJlY2VkaW5nQ29udGV4dEhhc2giOiJiZmY4MjVhNzEyNjYzODU2ZWI2MWNjZGQ0NGNjYTMwYmZhODliMDViZTZlZjY3ZGQ4MWU4ZjhiNzI3ZWMyY2I3IiwiZm9sbG93aW5nQ29udGV4dExpbmVDb3VudCI6MywiZm9sbG93aW5nQ29udGV4dEhhc2giOiIwYzY0MGUyYWE4ZjY5Mjc3ODFkMDEyNzc4YjdhZGUwNDFjYmE3Yjc4N2ZhMjBhOTkzMWQ0MDA3N2Y2NjIzMmY5In0"
+        },
+        {
+          "resource": "repo://tests/test_v3_completion.py#L19-L85",
+          "version": "repo-lines-v1:sha256:37ae3ee9cf83f6cd879ed4a073165a8cdc51e2c30d0bd981708cfd04dc6e789f:eyJzZWxlY3RlZExpbmVDb3VudCI6NjcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6Ijk2NWI3YTU1ZDQ3YzJjMTlkNGRkZDZmNzkyNWFhYjBiMTg3ZmQxZGQwNzA2NTAwYTc0YzVmODJiODg3ZDRjYjciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjQxZDk0MzM0NzhmMjYyYjk5ZGM1ZDY4MjI0MGQ1MjA1N2FhYzU1NmVmZDVmYzRkNjAyOTI4MTlhMDUwMjNmZTciLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjY4YTVjMGUxOGQ4ZTVhMTZhMjIzYjAyMWFjMGVjZDg4YTJlMjY2Zjg1YWRiNDEzODhiOTljZjI1NTYyYzZhMWMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjhmZGYxNzUzMjNmMTk2NzM1MzJkNGZmNzlmMWMxZGFjMGIzN2U1MTA0NWY0NjViMWJhM2M4MTVmN2Y3OGJlYTYifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-27T09:37:20.794Z"
+  }
+}

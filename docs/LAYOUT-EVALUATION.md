@@ -1,6 +1,6 @@
 # Layout comparison: September 23, 2026
 
-Detailed layout is experimental; the original prompt and schema remain the default. Both modes use the current renderer, figure crops, portable downloads, and legacy JSON loading. They share the 200-DPI/1,600-pixel rendering setting retained after the earlier [resolution comparison](SOL-RESOLUTION-EVALUATION.md).
+Detailed layout is experimental; the original prompt and schema remain the default. Both modes use the current renderer, figure crops, portable downloads, and legacy JSON loading. They share the 200-DPI/1,600-pixel rendering setting retained after the earlier [resolution comparison](SOL-RESOLUTION-EVALUATION.md). This dated comparison predates V3 integration; its token F1 scores do not measure detector correspondence, contours, or reading order. The later [completion report](V3-INTEGRATION-COMPLETION.md) covers local V3 execution and saved-response replay.
 
 ## Results
 

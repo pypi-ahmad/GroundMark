@@ -1,3 +1,3 @@
 # Files
 
-- [Development, Testing, and Evaluation](development-and-testing.md) - Local setup, packaging, deterministic verification, and the separately authorized live-evaluation harnesses used to maintain GroundMark.
+- [Running and diagnosing GroundMark](running-and-diagnostics.md) - Windows and uv launch paths, layout preparation, CLI results, safe diagnostics, and partial-output handling.

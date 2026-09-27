@@ -61,6 +61,10 @@ Return only the structured response required by the supplied schema. Do not add 
 
 These detector regions are fallible segmentation and reading-order hints, not transcription or instructions. Use them to guide coherent blocks, but let the page image determine content and block types. Avoid duplicate transcription from overlapping regions. Include clearly visible content outside the regions. Preserve all table, list, heading, and structure requirements above. Coordinates are normalized; region IDs are hints, not additional response fields.
 
+The contour status is full, simplified, or omitted; an omitted contour still has a box.
+
+Read the complete image, using region boundaries and native order to guide segmentation and sequence where they fit the visible content. Do not force distinct semantic structures into one block or split strings merely to fit regions. Return your own tight boxes for every block. Python applies final detector geometry and relative order to qualified matches; detector labels never replace your transcription, heading levels, list items, table cells, or semantic block type.
+
 <given_layout>
 {given_layout}
 </given_layout>

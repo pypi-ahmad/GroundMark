@@ -32,7 +32,7 @@
     { "id": "f_doc_raster", "from": "input_doc", "to": "rasterizer", "label": "source pages", "variant": "default" },
     { "id": "f_raster_sol", "from": "rasterizer", "to": "sol_engine", "label": "page images", "variant": "emphasis" },
     { "id": "f_sol_val", "from": "sol_engine", "to": "pydantic_val", "label": "strict response", "variant": "emphasis" },
-    { "id": "f_val_annot", "from": "pydantic_val", "to": "annotator", "label": "valid boxes", "variant": "default" },
+    { "id": "f_val_annot", "from": "pydantic_val", "to": "annotator", "label": "geometry", "variant": "default" },
     { "id": "f_val_renders", "from": "pydantic_val", "to": "doc_renders", "label": "rendered text", "route": "straight", "variant": "emphasis" },
     { "id": "f_val_json", "from": "pydantic_val", "to": "json_store", "label": "grounded JSON", "variant": "default" },
     { "id": "f_annot_overlay", "from": "annotator", "to": "annotated_pdf", "label": "page overlays", "route": "straight", "variant": "default" }
@@ -52,7 +52,7 @@
       "title": "Structured Extraction",
       "items": [
         "Sol reads the complete image, including content V3 misses",
-        "Only compatible one-to-one matches replace Sol geometry",
+        "Qualified one-to-one matches take V3 geometry and order",
         "V3 analysis failure supplies empty hints; Sol blocks remain usable"
       ]
     },

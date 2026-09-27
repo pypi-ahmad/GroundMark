@@ -4,7 +4,7 @@ import io
 
 from PIL import Image
 
-from src.layout_detector import LayoutPageResult, LayoutReadiness
+from src.layout_detector import LayoutPageResult, LayoutReadiness, LayoutInferenceError
 
 
 def payload(page=1, width=100, height=100, color="white", sha="synthetic"):
@@ -35,6 +35,9 @@ class FakeLayoutRuntime:
         self.events.append(("v3", page_number))
         self.images[page_number] = (image.size, image.convert("RGB").tobytes())
         if page_number in self.failures:
-            raise self.failures[page_number]
+            failure = self.failures[page_number]
+            if isinstance(failure, LayoutInferenceError) and failure.device is None:
+                failure.device = "cpu"
+            raise failure
         return LayoutPageResult(page_number, image.width, image.height,
                                 tuple(self.regions.get(page_number, ())), "cpu", None)

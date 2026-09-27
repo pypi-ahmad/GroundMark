@@ -5042,7 +5042,7 @@
         <path data-edge-from="parser_core" data-edge-to="sol_model" data-edge-label="image + hints" data-edge-key="4" data-composition-points="840,230;840,130" d="M 840 230 L 840 130" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         <path data-edge-from="parser_core" data-edge-to="layout_contract" data-edge-key="5" data-composition-points="900,260;960,260" d="M 900 260 L 960 260" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         <path data-edge-from="layout_contract" data-edge-to="renderer" data-edge-label="Structure" data-edge-key="6" data-composition-points="1020,230;1020,130" d="M 1020 230 L 1020 130" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="layout_contract" data-edge-to="annotator" data-edge-label="Boxes" data-edge-key="7" data-composition-points="1020,290;1020,390" d="M 1020 290 L 1020 390" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="layout_contract" data-edge-to="annotator" data-edge-label="Geometry" data-edge-key="7" data-composition-points="1020,290;1020,390" d="M 1020 290 L 1020 390" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         <path data-edge-from="renderer" data-edge-to="run_store" data-edge-label="Markdown/HTML" data-edge-key="8" data-composition-points="1080,100;1110,100;1110,253;1140,253" d="M 1080 100 L 1102 100 Q 1110 100 1110 108 L 1110 245 Q 1110 253 1118 253 L 1140 253" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         <path data-edge-from="annotator" data-edge-to="run_store" data-edge-label="PDF Overlays" data-edge-key="9" data-composition-points="1080,420;1110,420;1110,267;1140,267" d="M 1080 420 L 1102 420 Q 1110 420 1110 412 L 1110 275 Q 1110 267 1118 267 L 1140 267" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         <path data-edge-from="ui_app" data-edge-to="chat_engine" data-edge-key="10" data-composition-points="100,290;100,390" d="M 100 290 L 100 390" class="a-default" stroke-width="1.5" marker-end="url(#arrowhead)"/>
@@ -5152,26 +5152,26 @@
         <text data-detail="context" x="1020" y="114" class="t-muted" font-size="9" text-anchor="middle">Markdown &amp; HTML</text>
         </g>
 
-        <g id="node-layout_contract" data-node-id="layout_contract" data-node-label="Grounding Model" tabindex="0" role="button" aria-label="Focus Grounding Model, Blocks, Boxes &amp; Order, GroundMark Core Pipeline" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Blocks, Boxes &amp; Order" data-node-context="GroundMark Core Pipeline">
-          <title>Grounding Model · Blocks, Boxes &amp; Order · GroundMark Core Pipeline</title>
+        <g id="node-layout_contract" data-node-id="layout_contract" data-node-label="Grounding Model" tabindex="0" role="button" aria-label="Focus Grounding Model, Blocks + contours, GroundMark Core Pipeline" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Blocks + contours" data-node-context="GroundMark Core Pipeline">
+          <title>Grounding Model · Blocks + contours · GroundMark Core Pipeline</title>
           <rect x="960" y="230" width="120" height="60" rx="6" class="c-mask"/>
           <rect x="960" y="230" width="120" height="60" rx="6" class="c-backend" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(966 236) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
           <text data-node-label="" data-detail-anchor="" x="1020" y="258" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Grounding Model</text>
-        <text data-detail="context" x="1020" y="274" class="t-muted" font-size="8.8" text-anchor="middle">Blocks, Boxes &amp; Order</text>
+        <text data-detail="context" x="1020" y="274" class="t-muted" font-size="9" text-anchor="middle">Blocks + contours</text>
         </g>
 
-        <g id="node-annotator" data-node-id="annotator" data-node-label="Annotator" tabindex="0" role="button" aria-label="Focus Annotator, Box Overlay on Pages, GroundMark Core Pipeline" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Box Overlay on Pages" data-node-context="GroundMark Core Pipeline">
-          <title>Annotator · Box Overlay on Pages · GroundMark Core Pipeline</title>
+        <g id="node-annotator" data-node-id="annotator" data-node-label="Annotator" tabindex="0" role="button" aria-label="Focus Annotator, Contours and boxes, GroundMark Core Pipeline" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Contours and boxes" data-node-context="GroundMark Core Pipeline">
+          <title>Annotator · Contours and boxes · GroundMark Core Pipeline</title>
           <rect x="960" y="390" width="120" height="60" rx="6" class="c-mask"/>
           <rect x="960" y="390" width="120" height="60" rx="6" class="c-backend" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(966 396) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
           <text data-node-label="" data-detail-anchor="" x="1020" y="418" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Annotator</text>
-        <text data-detail="context" x="1020" y="434" class="t-muted" font-size="9" text-anchor="middle">Box Overlay on Pages</text>
+        <text data-detail="context" x="1020" y="434" class="t-muted" font-size="9" text-anchor="middle">Contours and boxes</text>
         </g>
 
         <g id="node-run_store" data-node-id="run_store" data-node-label="Selected outputs" tabindex="0" role="button" aria-label="Focus Selected outputs, Session / CLI files, GroundMark Core Pipeline" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Session / CLI files" data-node-context="GroundMark Core Pipeline">
@@ -5202,9 +5202,9 @@
           <rect x="993.4" y="210" width="53.199999999999996" height="14" rx="3" class="c-mask"/>
           <text x="1020" y="220" class="t-muted" font-size="8" text-anchor="middle">Structure</text>
         </g>
-        <g data-detail="context" data-edge-from="layout_contract" data-edge-to="annotator" data-edge-label="Boxes" data-edge-key="7">
-          <rect x="1003" y="294" width="34" height="14" rx="3" class="c-mask"/>
-          <text x="1020" y="304" class="t-muted" font-size="8" text-anchor="middle">Boxes</text>
+        <g data-detail="context" data-edge-from="layout_contract" data-edge-to="annotator" data-edge-label="Geometry" data-edge-key="7">
+          <rect x="995.8" y="294" width="48.4" height="14" rx="3" class="c-mask"/>
+          <text x="1020" y="304" class="t-muted" font-size="8" text-anchor="middle">Geometry</text>
         </g>
         <g data-detail="context" data-edge-from="renderer" data-edge-to="run_store" data-edge-label="Markdown/HTML" data-edge-key="8">
           <rect x="1073.8" y="156.5" width="72.4" height="14" rx="3" class="c-mask"/>
@@ -5455,9 +5455,9 @@
           <h3>Reconciliation and fallback</h3>
         </div>
         <ul>
-          <li>&bull; Compatible one-to-one matches use V3 boxes and order</li>
-          <li>&bull; Misses, mismatches and V3 failures retain Sol blocks</li>
-          <li>&bull; All artifacts use final blocks; polygons stay metadata</li>
+          <li>&bull; Qualified one-to-one matches use V3 geometry and order</li>
+          <li>&bull; Unmatched Sol blocks and V3 failures retain Sol content</li>
+          <li>&bull; Full contours guide matching and annotation overlays</li>
         </ul>
       </div>
 

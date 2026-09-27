@@ -15,8 +15,8 @@
     { "id": "sol_model", "type": "cloud", "label": "gpt-6-sol", "sublabel": "Image transcription", "pos": [780, 70], "size": [120, 60] },
     { "id": "parser_core", "type": "backend", "label": "Page parser", "sublabel": "Validate / reconcile", "pos": [780, 230], "size": [120, 60] },
     { "id": "renderer", "type": "backend", "label": "Artifact Renderer", "sublabel": "Markdown & HTML", "pos": [960, 70], "size": [120, 60] },
-    { "id": "layout_contract", "type": "backend", "label": "Grounding Model", "sublabel": "Blocks, Boxes & Order", "pos": [960, 230], "size": [120, 60] },
-    { "id": "annotator", "type": "backend", "label": "Annotator", "sublabel": "Box Overlay on Pages", "pos": [960, 390], "size": [120, 60] },
+    { "id": "layout_contract", "type": "backend", "label": "Grounding Model", "sublabel": "Blocks + contours", "pos": [960, 230], "size": [120, 60] },
+    { "id": "annotator", "type": "backend", "label": "Annotator", "sublabel": "Contours and boxes", "pos": [960, 390], "size": [120, 60] },
     { "id": "run_store", "type": "backend", "label": "Selected outputs", "sublabel": "Session / CLI files", "pos": [1140, 230], "size": [120, 60] }
   ],
   "boundaries": [
@@ -31,7 +31,7 @@
     { "from": "parser_core", "to": "sol_model", "label": "image + hints" },
     { "from": "parser_core", "to": "layout_contract" },
     { "from": "layout_contract", "to": "renderer", "label": "Structure" },
-    { "from": "layout_contract", "to": "annotator", "label": "Boxes", "labelDy": 24 },
+    { "from": "layout_contract", "to": "annotator", "label": "Geometry", "labelDy": 24 },
     { "from": "renderer", "to": "run_store", "label": "Markdown/HTML" },
     { "from": "annotator", "to": "run_store", "label": "PDF Overlays" },
     { "from": "ui_app", "to": "chat_engine" },
@@ -51,9 +51,9 @@
       "dot": "emerald",
       "title": "Reconciliation and fallback",
       "items": [
-        "Compatible one-to-one matches use V3 boxes and order",
-        "Misses, mismatches and V3 failures retain Sol blocks",
-        "All artifacts use final blocks; polygons stay metadata"
+        "Qualified one-to-one matches use V3 geometry and order",
+        "Unmatched Sol blocks and V3 failures retain Sol content",
+        "Full contours guide matching and annotation overlays"
       ]
     },
     {

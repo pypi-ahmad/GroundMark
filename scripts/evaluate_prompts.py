@@ -125,10 +125,10 @@ def run_page(payload: dict, prompt: str, *, max_completion_tokens: int | None = 
         if layout is not None:
             page, artifact = reconcile_parsed_page(page, layout, diagnostics=diagnostics,
                                                    previous=diagnostics[-1] if diagnostics else None)
-            layout_metadata[-1] = artifact
+            layout_metadata[-1] = artifact.model_copy(update={"guide_contours": layout_metadata[-1].guide_contours})
         outcome.update(status="parsed", result=page.model_dump())
     except ExtractionCallError as exc:
-        outcome["status"] = exc.diagnostic.outcome
+        outcome["status"] = "application_error" if exc.diagnostic.application_error else exc.diagnostic.outcome
     except ContentFilterFinishReasonError:
         outcome["status"] = "content_filtered"
     except Exception as exc:

@@ -1,0 +1,70 @@
+{
+  "schemaVersion": 1,
+  "pageVersion": "sha256:157d596c4bc85744aae69845fd21186b9c6cf04e24ebd46b7e8f940bbbd67f5b",
+  "claims": [
+    {
+      "id": "claim_b7a806082c6a40c48848206067abe286",
+      "statement": "Document chat draws text and table evidence only from successful parsed pages, including valid Sol fallback pages, and excludes failed or content-filtered pages without applying presentation filters.",
+      "evidence": [
+        {
+          "resource": "repo://src/chat.py#L60-L81",
+          "version": "repo-lines-v1:sha256:f37e19180384860c39cfb3332d011318d03868de6f3108e051d93bb0023d72f6:eyJzZWxlY3RlZExpbmVDb3VudCI6MjIsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImM5MGVlYWU1NzQzN2JhMDU3ZjJmODU1YTJmMmRkZjMyYzMyMjM5OWM5M2RjNjAzNWFkZDA3NDg0ZjRlYjVkZGYiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjE3YzhmMDRhZTIxODc4OTkzZjE4MDVhZmFmMDAyZmRiN2U1MjI2MzA1N2I4M2FjZjcwNzU4NThjZDIwOGI0NTMiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImJhMDMwNDYwYjQxYjhlNzE1YWNmMzI4N2YwZWJhZDgwY2Y4YjIxM2EzYTk0MTkxNGQ0NmFmZjY0MzcxMGIyMTIifQ"
+        },
+        {
+          "resource": "repo://tests/test_chat.py#L119-L126",
+          "version": "repo-lines-v1:sha256:2dab3cc82c41fd6555ae983faea14aebb9af715cc53a8fb432cbe6bc2a281ab4:eyJzZWxlY3RlZExpbmVDb3VudCI6OCwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiNWY3OGZjYTA1NjNmMDVhZmJlNzIyMDAyMTFhYTJkMmE3YjYyMzVjYTE4OTNlZDVmYjJjMGJkZDAxZjA0N2RiZiIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiN2ViNzAyNTc1OTNkYTA2ZjY4MmEzZGRkYTU0YTlkMjYwZDRmYzUxNGY2NDUyMzdmNWNhNzRiMDhmOGRhNjFhNiIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNGIzOGVmMzhjODRlZGYwMDU3OWVjNDRhZmE0Y2IyM2Q3NTg0MGMwZDdjNzhkYzFmZGFmOWU3YmI0ZDQ0ZjU0MCIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiZTM1YzI5NTkwNDI4NTlkZTk4MDAwM2VlODc5ZDhlMzcwZDkyNGRjMmJjNzdiNzlmYjQyNzczMjM1Yjg1NThmMyJ9"
+        }
+      ]
+    },
+    {
+      "id": "claim_eb2b5c9f698a477bbc713952cf555850",
+      "statement": "Chat bounds question and request size and passes only the last six accepted turns as history.",
+      "evidence": [
+        {
+          "resource": "repo://src/chat.py#L154-L179",
+          "version": "repo-lines-v1:sha256:52d9d00e1c6367e6a297f39aa7c0264847275a9b1a210944fd1dda0af9da8d79:eyJzZWxlY3RlZExpbmVDb3VudCI6MjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjY4OWYzMTViYzBjYWNmYzA5Njk3YTU4Mjk5NjY1ZTRjZjZmYjVhN2ZkZDVkNDExMjM2OTgyOTZkMDUyZDhlNTciLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6ImZmZjFhMzhmODEzNWNmMTAzNjM1MmQxOWMyMTUxNjVjMjllNzU4ZmQzZjg4MDc2OTczNmY0ZmE0OWFlOGNhOWQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImQ4NzNmODlmZmZkMDIxOTYxNDkzMGIxY2U3MGJmMzkyNWRhYmQyMDQ1ZDQ5NzFiYzhjMmNkYjVmYWExNWViNWQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjIxY2FhYzVhOWE1YWJmOWQzMjc3N2EyYjE0Yzc2NzdhOGVkY2QzNDUwZDNlYzA4MTg0YTM0ZmQ2MWY1ODc3ZGMifQ"
+        },
+        {
+          "resource": "repo://src/chat.py#L17-L22",
+          "version": "repo-lines-v1:sha256:2f13520083b6affecd413852254c752df2a4926fa6ffbee1645f41713a17e709:eyJzZWxlY3RlZExpbmVDb3VudCI6NiwiZmlyc3RTZWxlY3RlZExpbmVIYXNoIjoiMTIwN2I2ODliMjVkOTk0MjM3NTJkZTJlMTU5OWVkZmE2MWZiYTYzMTliMzMyYjg5OGI2ZGEyYjI3OGNkYzQwZCIsImxhc3RTZWxlY3RlZExpbmVIYXNoIjoiMjQxM2NjYWY2Nzc1ZGU3ZTk5YTdhNDU5ZGFmOTAxNmU0ODNhNzIzMTE3OWE3MDU0YjA2NDM1NmY0NDkzNThmZSIsInByZWNlZGluZ0NvbnRleHRMaW5lQ291bnQiOjMsInByZWNlZGluZ0NvbnRleHRIYXNoIjoiNTAwMDcwMWNmZjVjNzk0NDNhMWY3OTBhZDlhN2QxZTJhZjBlNWRlMmEyM2JjNWI0MDZjNTEwYjNkOGFmYzE3OSIsImZvbGxvd2luZ0NvbnRleHRMaW5lQ291bnQiOjMsImZvbGxvd2luZ0NvbnRleHRIYXNoIjoiODM4NTA5MDdlNzU5ZWY3Y2U5NmY5YmI5ZjhlOTVmNDcyNzI5MWFkMjcwMGQ0OGNhYTRjZDMyYjE1NjhmZGIyNiJ9"
+        },
+        {
+          "resource": "repo://tests/test_chat.py#L90-L108",
+          "version": "repo-lines-v1:sha256:5915a76f0a952375b398ccdeb79d19fb87b9db60485304ceb65ea99b72082508:eyJzZWxlY3RlZExpbmVDb3VudCI6MTksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVjOTZmMTViNjIzZjhiZmViOTYzOWMxMGNkOTY4ZGFhNTZjYzViM2ZmNzBkYWY5NzZjMzBkNDYwNzBjYTU5NmMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjdlYjcwMjU3NTkzZGEwNmY2ODJhM2RkZGE1NGE5ZDI2MGQ0ZmM1MTRmNjQ1MjM3ZjVjYTc0YjA4ZjhkYTYxYTYiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6ImRmYzY4YmRkYmI1NzliOTc4MGZiMGNkMWFlZWFjMDk4MmQyOWEzZDA2YjM3M2VjOThiYzE3ZjM2OWE5NGM2ODYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjMyYjI0NTFlMGMyZTRhNTM0YWFlMDVhYWVmYjA4NmUxYWIzN2YzMDhjZDBkODI1NWZkNGFjYmFjMzdmYTQzYmUifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_3cc0b80f77f64089a47f2d38833ba290",
+      "statement": "Chat locally checks quoted page evidence and style, then displays an answer only after a separate verifier approves it; failed model outputs are not exposed.",
+      "evidence": [
+        {
+          "resource": "repo://src/chat.py#L128-L193",
+          "version": "repo-lines-v1:sha256:c828da6d5044b889e7bb2a9762fb83f10a84c5f77046515094d8bdb64cf1333b:eyJzZWxlY3RlZExpbmVDb3VudCI6NjYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjE2ZmRkZTE1Zjk5ZjNlYWQwYzI0NzhhZjEwZGExMDJmYjYxMjU2N2FiOGNkMDk0MDZiOWRhYmViMmRhOTM2YTMiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjMwZTI0YTAwNDA2MzIwZWY2Y2Q4ZDhhNmE0OTFmZTE4ZjNjMmY1ZThlZDNkNjU1ZDI0ZDY1YWNlMGY2ZTg3YjMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjVmODg3NTE0Y2JmZjk3NWQ2OWY2NGU1NTIxNzJmMTI2NjZkMGE0M2RkNWIxYjQxOTAxOGY2YjAzMDQ3ZTgxZjQiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6IjJiOGI5Njk0MzAxNWExOGI0OTg5ZjM0OWVmZDUyOWUzMDI4OTkzMDQ1ODE0ZmE5OGFjNTVmZjM5ZTM4ZmQ1Y2UifQ"
+        },
+        {
+          "resource": "repo://tests/test_chat.py#L41-L87",
+          "version": "repo-lines-v1:sha256:ffbe87680ee5de431e1bb9927b0f5918b178bc767d210285dd96530a00dcb3c6:eyJzZWxlY3RlZExpbmVDb3VudCI6NDcsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImY0NmI0MmE5YTA3ZjQxMDE0Y2UwMjFjOTMyZWE0Y2Q3ZDMyYzMyNTI4Mjc4NDVlNTgwYThlMmY4ODU3MWViNzIiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjM5NzY5MDBiODlkMjBhMGM0OWIwMWE4ZGYwYzg0NTFhNDU1MDFlZjEwMTEyMjNmZGQyNjdlY2EwNzQ2Nzg1YWMiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjUzNDU5ZmQ0MDA2MzU3MGFkY2RjZGY5YmYwMjhkZjVlZjA1M2M3ZmEwMjExZDY2OGViMGRiODFkYjdmODYyNzgiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImI5MmJkYjBmNzIwYTYyMmMxNTVhYmQ3ZjU4MTAzNDE1MWM4NGEyNTY3M2NlMGJmODhlMjMwYmQzZTc2Y2M5YzcifQ"
+        }
+      ]
+    },
+    {
+      "id": "claim_49668ba857f04453ac5ea7113cfbad84",
+      "statement": "The Streamlit UI clears prior result/chat state when document scope changes and enables question submission only when parsed page evidence is available.",
+      "evidence": [
+        {
+          "resource": "repo://src/ui/app.py#L326-L354",
+          "version": "repo-lines-v1:sha256:32873b7d6778d9e4f74cbbb2d8cd6598bdf92e81a5f03784746d6cb0d7cf589d:eyJzZWxlY3RlZExpbmVDb3VudCI6MjksImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6ImNiZmZkZTY4ZGU3OTZhZjBhM2RlMzQ5MzFhMWYxZjc1NmM2MWUzMDU3MDhlNmY3OWMwNzk4NTBkODg0Yzg2YTAiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjA2MWYxZjg3M2RkYjNiZWYwY2E2ODU5Njg1OTc2Y2ZkZTRlNDhkMGYyODEyYTExZjBjYmQzYjMwYjlmNTI0ZDQiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6Ijg3YjNlNjMwZDZiZmE3NzdlMTU3OTM1MTYxOTRkODIxMjhkNjNlNzVhNGQ4OTQ0OGM2NzczZmQwZjA2OGZmOTYiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjoxLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6ImY0MGQwZjlhODUwMDUxMGYyZWY2MjAxYTU5ZjZiNzRmOWU3N2QxNWFlOTlkZDg4MmViYmExMjBhMDdmMjczYjIifQ"
+        },
+        {
+          "resource": "repo://src/ui/app.py#L87-L142",
+          "version": "repo-lines-v1:sha256:ff061a913e481e8dfe22d4122b39ffdcc568c6ce83b0ef60e8f2b29bf96dcb65:eyJzZWxlY3RlZExpbmVDb3VudCI6NTYsImZpcnN0U2VsZWN0ZWRMaW5lSGFzaCI6IjVkZTFhNmE5ZWI0MTAyOTA5YmRlNWNmNDdlMjFkMGM2NDE5ZjJlMDY4OWMzMmQzNDg2OWE4Yzg3NGI0MTE2NWEiLCJsYXN0U2VsZWN0ZWRMaW5lSGFzaCI6IjcxM2UwYmE4Nzg4YzE1ZjBjZjI3M2NkMDVkZDI0N2E1MjM5ZTllMzZhZDlmZTZmMzRlZTNlZjhhNzg3YTAyYzAiLCJwcmVjZWRpbmdDb250ZXh0TGluZUNvdW50IjozLCJwcmVjZWRpbmdDb250ZXh0SGFzaCI6IjYwY2QyMzFjMjIxYzk4YjIzZTdjNWVmOTQ2MDM2ZjZiOTI5N2UxMjQ5M2M5ZDEzYjExMjExYTU5NTVkNzlhNDIiLCJmb2xsb3dpbmdDb250ZXh0TGluZUNvdW50IjozLCJmb2xsb3dpbmdDb250ZXh0SGFzaCI6Ijg4M2UyMGYyNGNhMDYxZWI1NGZmMTRlOWZmMjEyNjdkOWJiZTQ1ZmE0MDZhZWM1NjZkMWI3NWFkNTg4NDA2ZDIifQ"
+        }
+      ]
+    }
+  ],
+  "verification": {
+    "by": "openwiki/0.6.0",
+    "at": "2026-09-27T09:37:20.794Z"
+  }
+}
