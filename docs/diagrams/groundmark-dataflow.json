@@ -2,7 +2,7 @@
   "schema_version": 1,
   "diagram_type": "dataflow",
   "meta": {
-    "title": "GroundMark document extraction data flow",
+    "title": "GroundMark extraction data flow",
     "viewBox": [1080, 600],
     "quality_profile": "showcase",
     "legend": { "entries": { "dashed": { "label": "layout hints" } } }
@@ -16,10 +16,10 @@
   ],
   "nodes": [
     { "id": "input_doc", "type": "external", "label": "Document Input", "sublabel": "PDF / image", "stage": 0, "row": 1, "width": 115, "tag": "source" },
-    { "id": "local_layout", "type": "backend", "label": "PP-DocLayoutV3", "sublabel": "local regions / order", "stage": 1, "row": 0 },
+    { "id": "local_layout", "type": "backend", "label": "PP-DocLayoutV3", "sublabel": "ONNX contours / order", "stage": 1, "row": 0 },
     { "id": "rasterizer", "type": "backend", "label": "Rasterizer", "sublabel": "pypdfium2 pages", "stage": 1, "row": 2 },
     { "id": "sol_engine", "type": "cloud", "label": "gpt-6-sol", "sublabel": "visual extraction", "stage": 2, "row": 1, "tag": "model" },
-    { "id": "pydantic_val", "type": "backend", "label": "Reconcile", "sublabel": "validated Sol blocks", "stage": 3, "row": 0 },
+    { "id": "pydantic_val", "type": "backend", "label": "Reconcile", "sublabel": "Sol text + V3 geometry", "stage": 3, "row": 0 },
     { "id": "annotator", "type": "backend", "label": "Annotator", "sublabel": "source page overlays", "stage": 3, "row": 2 },
     { "id": "doc_renders", "type": "database", "label": "Text Formats", "sublabel": "Markdown & HTML", "stage": 4, "row": 0 },
     { "id": "json_store", "type": "database", "label": "Layout JSON", "sublabel": "schema_version: 2", "stage": 4, "row": 1 },
@@ -28,12 +28,12 @@
   "flows": [
     { "id": "f_raster_layout", "from": "rasterizer", "to": "local_layout", "label": "same image", "variant": "default", "labelDx": -35 },
     { "id": "f_layout_sol", "from": "local_layout", "to": "sol_engine", "label": "region hints", "variant": "dashed" },
-    { "id": "f_layout_reconcile", "from": "local_layout", "to": "pydantic_val", "label": "geometry / order", "variant": "dashed", "route": "straight" },
+    { "id": "f_layout_reconcile", "from": "local_layout", "to": "pydantic_val", "label": "full geometry / order", "variant": "default", "route": "straight" },
     { "id": "f_doc_raster", "from": "input_doc", "to": "rasterizer", "label": "source pages", "variant": "default" },
     { "id": "f_raster_sol", "from": "rasterizer", "to": "sol_engine", "label": "page images", "variant": "emphasis" },
     { "id": "f_sol_val", "from": "sol_engine", "to": "pydantic_val", "label": "strict response", "variant": "emphasis" },
     { "id": "f_val_annot", "from": "pydantic_val", "to": "annotator", "label": "geometry", "variant": "default" },
-    { "id": "f_val_renders", "from": "pydantic_val", "to": "doc_renders", "label": "rendered text", "route": "straight", "variant": "emphasis" },
+    { "id": "f_val_renders", "from": "pydantic_val", "to": "doc_renders", "label": "validated blocks", "route": "straight", "variant": "emphasis" },
     { "id": "f_val_json", "from": "pydantic_val", "to": "json_store", "label": "grounded JSON", "variant": "default" },
     { "id": "f_annot_overlay", "from": "annotator", "to": "annotated_pdf", "label": "page overlays", "route": "straight", "variant": "default" }
   ],

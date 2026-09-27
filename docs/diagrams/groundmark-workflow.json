@@ -2,7 +2,7 @@
   "schema_version": 1,
   "diagram_type": "workflow",
   "meta": {
-    "title": "GroundMark document parsing workflow",
+    "title": "GroundMark parsing workflow",
     "viewBox": [1080, 500],
     "quality_profile": "showcase"
   },
@@ -31,7 +31,7 @@
   "nodes": [
     { "id": "submit_input", "lane": "client", "col": 0, "type": "frontend", "label": "Submit", "sublabel": "PDF / image" },
     { "id": "raster_pages", "lane": "pipeline", "col": 0, "type": "backend", "label": "Render page", "sublabel": "200 DPI / 1,600 px" },
-    { "id": "local_layout", "lane": "pipeline", "col": 1, "type": "backend", "label": "V3 layout", "sublabel": "local regions/order" },
+    { "id": "local_layout", "lane": "pipeline", "col": 1, "type": "backend", "label": "V3 layout", "sublabel": "ONNX contours/order" },
     { "id": "visual_parse", "lane": "pipeline", "col": 3, "type": "cloud", "label": "Sol", "sublabel": "full image + hints" },
     { "id": "reconcile", "lane": "client", "col": 3, "type": "backend", "label": "Reconcile", "sublabel": "validated blocks" },
     { "id": "write_exports", "lane": "pipeline", "col": 5, "type": "backend", "label": "Export", "sublabel": "save files", "width": 70 },
@@ -43,7 +43,7 @@
     { "from": "raster_pages", "to": "local_layout" },
     { "from": "local_layout", "to": "visual_parse" },
     { "from": "visual_parse", "to": "reconcile" },
-    { "from": "reconcile", "to": "write_exports", "fromSide": "right", "toSide": "left", "via": [[540, 119], [540, 243]] },
+    { "from": "reconcile", "to": "write_exports", "route": "drop" },
     { "from": "write_exports", "to": "present_output" },
     { "from": "visual_parse", "to": "filter_diag", "variant": "security", "role": "error" },
     { "from": "filter_diag", "to": "write_exports", "variant": "dashed" }
@@ -63,7 +63,7 @@
       "title": "Matching and fallback",
       "items": [
         "Unmatched Sol blocks retain content and geometry",
-        "Qualified pairs use V3 geometry and order",
+        "Qualified pairs use V3 geometry and native order",
         "Reconciliation defects keep Sol and mark the run partial"
       ]
     },
@@ -72,7 +72,7 @@
       "title": "Outputs and diagnostics",
       "items": [
         "All consumers use the same final parsed blocks",
-        "Sol failures do not discard other successful pages",
+        "Sol failures retain other successful pages",
         "JSON retains V3 evidence and explicit fallback status"
       ]
     }

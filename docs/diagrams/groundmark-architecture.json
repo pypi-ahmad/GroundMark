@@ -3,24 +3,25 @@
   "diagram_type": "architecture",
   "meta": {
     "title": "GroundMark architecture",
+    "viewBox": [1330, 700],
     "quality_profile": "showcase"
   },
   "components": [
     { "id": "input_doc", "type": "external", "label": "Document Input", "sublabel": "PDF / Image", "pos": [40, 70], "size": [120, 60] },
-    { "id": "ui_app", "type": "frontend", "label": "UI / CLI", "sublabel": "Parse and export", "pos": [40, 230], "size": [120, 60] },
-    { "id": "chat_engine", "type": "backend", "label": "Chat Engine", "sublabel": "Evidence Verification", "pos": [40, 390], "size": [120, 60] },
-    { "id": "luna_model", "type": "cloud", "label": "gpt-6-luna", "sublabel": "Draft + Verify", "pos": [230, 390], "size": [120, 60] },
-    { "id": "graph_coord", "type": "backend", "label": "Render pages", "sublabel": "200 DPI / 1600 px", "pos": [420, 230], "size": [120, 60] },
-    { "id": "preprocessor", "type": "backend", "label": "PP-DocLayoutV3", "sublabel": "Local regions / order", "pos": [600, 230], "size": [120, 60] },
+    { "id": "ui_app", "type": "frontend", "label": "UI / CLI", "sublabel": "Parse and export", "pos": [40, 290], "size": [120, 60] },
+    { "id": "chat_engine", "type": "backend", "label": "Chat Engine", "sublabel": "Evidence Verification", "pos": [40, 500], "size": [120, 60] },
+    { "id": "luna_model", "type": "cloud", "label": "gpt-6-luna", "sublabel": "Draft + Verify", "pos": [230, 500], "size": [120, 60] },
+    { "id": "graph_coord", "type": "backend", "label": "Render pages", "sublabel": "200 DPI / 1600 px", "pos": [420, 290], "size": [120, 60] },
+    { "id": "preprocessor", "type": "backend", "label": "PP-DocLayoutV3", "sublabel": "ONNX contours / order", "pos": [600, 290], "size": [120, 60] },
     { "id": "sol_model", "type": "cloud", "label": "gpt-6-sol", "sublabel": "Image transcription", "pos": [780, 70], "size": [120, 60] },
-    { "id": "parser_core", "type": "backend", "label": "Page parser", "sublabel": "Validate / reconcile", "pos": [780, 230], "size": [120, 60] },
+    { "id": "parser_core", "type": "backend", "label": "Page parser", "sublabel": "Validate + match", "pos": [780, 290], "size": [120, 60] },
     { "id": "renderer", "type": "backend", "label": "Artifact Renderer", "sublabel": "Markdown & HTML", "pos": [960, 70], "size": [120, 60] },
-    { "id": "layout_contract", "type": "backend", "label": "Grounding Model", "sublabel": "Blocks + contours", "pos": [960, 230], "size": [120, 60] },
-    { "id": "annotator", "type": "backend", "label": "Annotator", "sublabel": "Contours and boxes", "pos": [960, 390], "size": [120, 60] },
-    { "id": "run_store", "type": "backend", "label": "Selected outputs", "sublabel": "Session / CLI files", "pos": [1140, 230], "size": [120, 60] }
+    { "id": "layout_contract", "type": "backend", "label": "ParseResult", "sublabel": "Blocks + V3 artifact", "pos": [960, 290], "size": [120, 60] },
+    { "id": "annotator", "type": "backend", "label": "Annotator", "sublabel": "Contours and boxes", "pos": [960, 500], "size": [120, 60] },
+    { "id": "run_store", "type": "backend", "label": "Selected outputs", "sublabel": "Session / CLI files", "pos": [1140, 290], "size": [120, 60] }
   ],
   "boundaries": [
-    { "kind": "region", "label": "GroundMark Core Pipeline", "wraps": ["graph_coord", "preprocessor", "sol_model", "parser_core", "renderer", "layout_contract", "annotator", "run_store"] },
+    { "kind": "region", "label": "Extraction workflow", "wraps": ["graph_coord", "preprocessor", "sol_model", "parser_core", "renderer", "layout_contract", "annotator", "run_store"] },
     { "kind": "region", "label": "Document chat workflow", "wraps": ["chat_engine", "luna_model"] }
   ],
   "connections": [
@@ -28,7 +29,7 @@
     { "from": "ui_app", "to": "graph_coord" },
     { "from": "graph_coord", "to": "preprocessor" },
     { "from": "preprocessor", "to": "parser_core", "label": "regions" },
-    { "from": "parser_core", "to": "sol_model", "label": "image + hints" },
+    { "from": "parser_core", "to": "sol_model", "label": "full image + hints" },
     { "from": "parser_core", "to": "layout_contract" },
     { "from": "layout_contract", "to": "renderer", "label": "Structure" },
     { "from": "layout_contract", "to": "annotator", "label": "Geometry", "labelDy": 24 },
@@ -44,7 +45,7 @@
       "items": [
         "LangGraph orchestrates source-order page parsing",
         "V3 and Sol receive the same rendered page image",
-        "Sol transcribes text and tables; V3 suggests layout"
+        "Sol returns strict text/table blocks; V3 supplies geometry"
       ]
     },
     {
@@ -52,7 +53,7 @@
       "title": "Reconciliation and fallback",
       "items": [
         "Qualified one-to-one matches use V3 geometry and order",
-        "Unmatched Sol blocks and V3 failures retain Sol content",
+        "Unmatched Sol blocks and V3 failures retain Sol geometry",
         "Full contours guide matching and annotation overlays"
       ]
     },

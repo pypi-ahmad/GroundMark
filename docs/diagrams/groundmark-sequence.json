@@ -2,7 +2,7 @@
   "schema_version": 1,
   "diagram_type": "sequence",
   "meta": {
-    "title": "GroundMark parse and chat sequence",
+    "title": "GroundMark parse/chat sequence",
     "viewBox": [
       1080,
       660
@@ -86,7 +86,7 @@
       "from": "v3",
       "to": "graph",
       "y": 282,
-      "label": "regions / typed failure",
+      "label": "regions / safe failure",
       "variant": "return"
     },
     {
@@ -110,7 +110,7 @@
       "from": "graph",
       "to": "ui",
       "y": 366,
-      "label": "reconciled or Sol artifacts",
+      "label": "reconciled or Sol result",
       "variant": "return"
     },
     {
@@ -205,7 +205,7 @@
       "dot": "emerald",
       "title": "One image, two roles",
       "items": [
-        "V3 supplies fallible regions and order; Sol reads text",
+        "V3 supplies geometry and order; Sol reads text",
         "The parser processes selected pages in source order",
         "Up to 12,000 preceding characters accompany each page"
       ]
